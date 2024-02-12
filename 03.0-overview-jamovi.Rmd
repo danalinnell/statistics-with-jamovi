@@ -2,9 +2,9 @@
 
 # 3. Overview of jamovi
 
-jamovi is a free and open statistical software that helps us run our descriptive and inferential statistics. Why are we using jamovi and not another program?
+[jamovi](https://www.jamovi.org/) is a free and open statistical software that helps us run our descriptive and inferential statistics. Why are we using jamovi and not another program?
 
-1.  Did I mention it's free? You won't ever have to pay a dime to use the software in the future.
+1.  Did I mention it's free? You won't ever have to pay a dime to use the software in the future, unless you use the paid version of [jamovi Cloud](https://www.jamovi.org/cloud.html).
 
 2.  It's open source, meaning that the statistical community helps support and improve the program. As jamovi says, "jamovi is made by the scientific community, for the scientific community."
 
@@ -22,7 +22,7 @@ Here are some additional resources on jamovi I recommend you bookmark and use wh
 
 -   [jamovi docs](https://docs.jamovi.org/) provide more support for using jamovi, including tips for transitioning from SPSS to jamovi and from jamovi to R
 
--   caution: these use an older version of jamovi! [Introduction to jamovi LinkedIn Learning course](https://www.linkedin.com/learning/introduction-to-jamovi/) by Barton Poulson, founder of [datalab.cc](https://datalab.cc/jamovi/) (you can find the video on YouTube and other places now, too, if you do not have LinkedIn Learning)
+-   caution: these use an older version of jamovi! [Introduction to jamovi LinkedIn Learning course](https://www.linkedin.com/learning/introduction-to-jamovi/) by Barton Poulson, founder of [datalab.cc](https://datalab.cc/jamovi/) (you can find the video on YouTube and other places now, too, if you do not have LinkedIn Learning).
 
 ### Navigating the jamovi interface {.unlisted .unnumbered}
 

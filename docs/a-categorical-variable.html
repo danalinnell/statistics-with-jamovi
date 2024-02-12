@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1. Introduction | Statistics with jamovi</title>
+  <title>5.2 A categorical variable | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1. Introduction | Statistics with jamovi" />
+  <meta property="og:title" content="5.2 A categorical variable | Statistics with jamovi" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1. Introduction | Statistics with jamovi" />
+  <meta name="twitter:title" content="5.2 A categorical variable | Statistics with jamovi" />
   
   <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="statistics-foundations.html"/>
+<link rel="prev" href="a-continuous-variable.html"/>
+<link rel="next" href="a-continuous-variable-split-by-a-categorical-variable.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -170,64 +170,17 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1 hasAnchor">
-<h1>1. Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This chapter will introduce you to the course, the instructor (Dr. Dana Linnell), and the textbook.</p>
-<div id="getting-help-in-this-class" class="section level3 unnumbered hasAnchor">
-<h3>1.1 Getting help in this class<a href="introduction.html#getting-help-in-this-class" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Come to student hours regularly! They are often available both in-person or online, depending on whether you are enrolled in an in-person or online section of the course. I am <em>always</em> available to help you. Depending on the semester, there may also be a graduate assistant (GA) who can support you as well. We will be scheduling regularly recurring student hours each week so you can come ask questions, get help on your homework, or just have a space to come together to work on your assignments in a dedicated online space.</p>
-<p>If you have questions, you can message me on Teams or email me at linnellda@uwstout.edu. See your course on Canvas if you have any questions about Teams.</p>
-</div>
-<div id="dana-your-instructor" class="section level3 unnumbered hasAnchor">
-<h3>1.2 Dana, your instructor<a href="introduction.html#dana-your-instructor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>My name is Dana Linnell (pronounced DAY-nuh lih-NELL) and I started teaching at UW-Stout in Fall 2019. I teach statistics, research methods, interpersonal effectiveness, and evaluation in the Department of Psychology. I <em>love</em> statistics! It is one way we can answer our research questions and test our hypotheses.</p>
-<p><img src="images/01-intro/cyanide-happiness_statistics.png" /></p>
-<p>However, I know not everyone likes statistics. Some of you may not care much about it, and some of you may be apprehensive or anxious about taking this course. Please know that <strong>I am here for you and I want to make this class an enjoyable learning experience</strong>. If there is anything I can do to help make this class more enjoyable and to help you learn, please reach out to me.</p>
-</div>
-<div id="navigating-this-websitebook" class="section level3 unnumbered hasAnchor">
-<h3>1.3 Navigating this website/book<a href="introduction.html#navigating-this-websitebook" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="info">
-<p>
-This book was developed using a coding language called R in a
-graphical user interface called RStudio using a package called <a
-href="https://bookdown.org/yihui/bookdown">bookdown</a>. This book is
-hosted on a platform called GitHub. You can see the code for this book
-<a href="https://github.com/danawanzer/stats-with-jamovi">here</a> if
-you are interested.
-</p>
-</div>
-<p>There are some icons at the top of this book that you may find useful:</p>
-<ol style="list-style-type: decimal">
-<li><p>The first icon of the toolbar, which looks like three horizontal lines, toggles the visibility of the sidebar, which contains the table of contents. You can also hit the <code>S</code> key on your keyboard to toggle the sidebar.</p></li>
-<li><p>The second icon of the toolbar, which looks like a magnifying glass, is the search feature, which you can use to search the entire book. You can also hit the <code>F</code> (Find) key on your keyboard.</p></li>
-<li><p>The third icon, which is a capital A, is for font/theme settings, which you can use to change font size (smaller or bigger), font family (serif or sans serif), and theme (white, sepia, or night).</p></li>
-<li><p>The fourth icon, which is a lower-case i, provides information on the keyboard shortcuts.</p></li>
-</ol>
-</div>
-<div id="technology-tips" class="section level3 unnumbered hasAnchor">
-<h3>1.4 Technology Tips<a href="introduction.html#technology-tips" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To succeed in this course, you will need a computer capable of installing and running Microsoft Word, Microsoft Excel, and jamovi. The Stout Surplus store (<a href="https://www.facebook.com/uwstoutsurplussales">Facebook</a>; <a href="https://www.uwstout.edu/directory/surplus-property">website</a>) may have laptops and desktops they are selling for cheap. You may also find it useful to have a mouse in this course since we’ll be pointing and clicking a lot in jamovi; you can get small portable ones to bring with you to campus if you’re in my in-person section.</p>
-<p>You may also find it beneficial to have two monitors in this course. When doing activities and assignments in this course, I recommend having jamovi open on one monitor and then the assignment and textbook open on the other monitor. The Stout Surplus store may have extra monitors they are selling for cheap.</p>
-<p>If you are unable to get a second monitor in this course, learn how to snap windows side by side in <a href="https://support.microsoft.com/en-us/windows/snap-your-windows-885a9b1e-a983-a3b1-16cd-c531795e6241#WindowsVersion=Windows_10">Windows</a> or <a href="https://support.apple.com/en-us/HT204948">Mac</a>. Learn also how to use the <a href="https://www.youtube.com/watch?v=hTqGCs3HPGU">Alt+Tab function</a> on your computer as well to switch back and forth from open applications. For Macs, use Cmd+Tab.</p>
-<p>When you are working on this course, I recommend that you only have open the application and windows you actually need for this course. Ample research has shown that multitasking does not work, and so when you switch from one activity to another (e.g., from working on another course to this one) you should wrap up your tasks, save your files, close them all, and then start fresh. This will clean up your taskbar and help you focus on this course. It will also free up your computer’s resources so it won’t start slowing down.</p>
-<p>Another friendly reminder: restart your computer frequently, at least once a week. Your computer will begin slowing down the longer you wait in between restarts. Also, be sure to update your computer regularly.</p>
-<p>Note that jamovi also has a <a href="https://cloud.jamovi.org/">Cloud version</a>. The free version will not be sufficient for all this course, but you can pay for the cloud version if you wish. Please note that the desktop version is strongly recommended as it is free and should work fine with the minimum technical specifications of computers that Stout requires.</p>
-</div>
-<div id="errors-mistakes-and-suggestions" class="section level3 unnumbered hasAnchor">
-<h3>1.5 Errors, mistakes, and suggestions<a href="introduction.html#errors-mistakes-and-suggestions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>I am human, therefore I err. If you find an error in the textbook or something you think might be a mistake, please let me know ASAP so I can update this for everyone else. Let me know which section you find the error or mistake in and what the error or mistake is. For example, if there was an error here you could say, “There was an error in chapter 1, last section, that the first sentence should really be ‘To err is human (Alexander Pope, 1711).’”</p>
-<p>In addition, if you have ideas to help make this textbook even better, please let me know. I would love to make this a useful resource to you both during our course and in your future research. Help me in making that a reality!</p>
-
-<hr />
-</div>
+<div id="a-categorical-variable" class="section level2 hasAnchor">
+<h2>5.2 A categorical variable<a href="a-categorical-variable.html#a-categorical-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For this you would choose the single option under <strong>Bar Plots</strong>: <code>Bar plot</code>. It will simply show the frequencies of a categorical variable.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="statistics-foundations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="a-continuous-variable.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="a-continuous-variable-split-by-a-categorical-variable.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

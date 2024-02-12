@@ -1,7 +1,7 @@
 ---
 title: "Statistics with jamovi"
 author: "Dana Linnell"
-date: "Last Update: 2024-02-11"
+date: "Last Update: 2024-02-12"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
