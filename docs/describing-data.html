@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Describing data | Statistics with jamovi</title>
+  <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Describing data | Statistics with jamovi" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Describing data | Statistics with jamovi" />
+  
+  <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  
+
+<meta name="author" content="Dana Linnell" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="overview-of-jamovi.html"/>
+<link rel="next" href="visualizing-data.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats with jamovi</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="part"><span><b>I Overview</b></span></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#getting-help-in-this-class"><i class="fa fa-check"></i>1.1 Getting help in this class</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#dana-your-instructor"><i class="fa fa-check"></i>1.2 Dana, your instructor</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#navigating-this-websitebook"><i class="fa fa-check"></i>1.3 Navigating this website/book</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#technology-tips"><i class="fa fa-check"></i>1.4 Technology Tips</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#errors-mistakes-and-suggestions"><i class="fa fa-check"></i>1.5 Errors, mistakes, and suggestions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html"><i class="fa fa-check"></i>2.1 Describing our data</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-central-tendency"><i class="fa fa-check"></i>Measures of Central Tendency</a></li>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-dispersion"><i class="fa fa-check"></i>Measures of Dispersion</a></li>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-the-shape-of-the-distribution"><i class="fa fa-check"></i>Measures of the Shape of the Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html"><i class="fa fa-check"></i>2.2 Levels of measurement</a>
+<ul>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html#examples-of-levels-of-measurement"><i class="fa fa-check"></i>Examples of levels of measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>2.3 Descriptive vs inferential statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html#an-example"><i class="fa fa-check"></i>An example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html"><i class="fa fa-check"></i>2.4 Design &amp; Methods Key Terms</a>
+<ul>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#variables"><i class="fa fa-check"></i>Variables</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#study-design-terms"><i class="fa fa-check"></i>Study design terms</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#reliability-and-validity"><i class="fa fa-check"></i>Reliability and validity</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#statistical-terms"><i class="fa fa-check"></i>Statistical terms</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#other-terms"><i class="fa fa-check"></i>Other terms</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Intro to jamovi</b></span></li>
+<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html"><i class="fa fa-check"></i>3. Overview of jamovi</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i>Describing data</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html#data-variables"><i class="fa fa-check"></i>Data variables</a></li>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html#describing-your-data"><i class="fa fa-check"></i>Describing your data</a></li>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html#writing-up-descriptive-statistics"><i class="fa fa-check"></i>Writing up descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i>Visualizing data</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html#expanding-your-data-visualization"><i class="fa fa-check"></i>Expanding your data visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html"><i class="fa fa-check"></i>Cleaning data</a>
+<ul>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#data-setup"><i class="fa fa-check"></i>Data setup</a></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#compute-create-new-variables-using-some-computation"><i class="fa fa-check"></i>Compute (create new variables using some computation)</a></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#transform-revise-current-variables"><i class="fa fa-check"></i>Transform (revise current variables)</a></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#filters"><i class="fa fa-check"></i>Filters</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+    target="blank"><img alt="Creative Commons License" 
+    style="border-width:0" 
+    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics with jamovi</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="describing-data" class="section level2 hasAnchor">
+<h2>Describing data<a href="describing-data.html#describing-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As a reminder, <strong>descriptive statistics</strong> are used to summarize, organize, and overall <em>describe</em> our sample data.</p>
+<div id="data-variables" class="section level3 hasAnchor">
+<h3>Data variables<a href="describing-data.html#data-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First, it’s important to understand the different types of variables in jamovi and how they map onto our levels of measurement.</p>
+<p>Variables in jamovi can be one of three data types:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Integer</strong>, meaning the values are discrete whole numbers</li>
+<li><strong>Decimal</strong>, meaning the values are numbers with decimals</li>
+<li><strong>Text</strong>, meaning the values are alphanumeric, not just numeric</li>
+</ol>
+<p>Furthermore, variables in jamovi can be one of four measure types:</p>
+<ol style="list-style-type: decimal">
+<li><p><img src="images/03-jamovi/variable-nominal.png" /> Nominal</p></li>
+<li><p><img src="images/03-jamovi/variable-ordinal.png" /> Ordinal</p></li>
+<li><p><img src="images/03-jamovi/variable-continuous.png" /> Continuous (meaning jamovi combines interval and ratio and doesn’t distinguish between the two)</p></li>
+<li><p><img src="images/03-jamovi/variable-id.png" /> ID (used for any identifying variable you likely wouldn’t ever analyze, like participant ID number or name)</p></li>
+</ol>
+<p>There are a few great things about jamovi when it comes to these data variables. First, jamovi will try to automatically determine what the data and measure types are when you type in data or when you open a dataset; this is fabulous, until it goes wrong. It’s important that you always double check your data and measure types first!</p>
+<p>Second, those little icons will be really helpful to let you know what variables can go in which boxes. For example, we would never analyze a nominal variable as our dependent variable for a t-test, and jamovi will help remind you of that. When performing an independent samples t-test, the dependent variables box will have a little ruler icon indicating you should be putting continuous variables in that box. Similarly, it will tell you to put nominal or ordinal variables in the grouping variable (independent variable) box. Sweet!</p>
+</div>
+<div id="describing-your-data" class="section level3 hasAnchor">
+<h3>Describing your data<a href="describing-data.html#describing-your-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We explore our data partly to describe our data and partly to check our data before performing inferential statistics. jamovi puts all our descriptive statistics into one useful analysis under the Analyses tab within the Exploration menu called <code>Descriptives</code>.</p>
+<div id="describing-nominal-or-ordinal-data" class="section level4 hasAnchor">
+<h4>Describing nominal or ordinal data<a href="describing-data.html#describing-nominal-or-ordinal-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Nominal and ordinal data is described mainly using frequencies. Choose your categorical variable(s) and move it to the Variables box and then select the option <code>Frequency tables</code>. Note that it tells you it’s best for nominal and ordinal data with the two icons!</p>
+<p>I recommend you watch this video by Alexander Swan on <a href="https://youtu.be/eGdkYZbljbQ">how to describe categorical data in jamovi</a>.</p>
+</div>
+<div id="describing-continuous-data" class="section level4 hasAnchor">
+<h4>Describing continuous data<a href="describing-data.html#describing-continuous-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Continuous data is described using a variety of measures of central tendency, dispersion, and more. Choose your continuous variable(s) in the list of variables on the left side and move it to the Variables box.</p>
+<p>I recommend you watch this video by Alexander Swan on <a href="https://youtu.be/oVE0nxJ0J44">how to describe continuous data in jamovi</a>.</p>
+<p>In the <code>Descriptives</code> analysis, these are under the <code>Statistics</code> drop-down menu. There are a ton of possible options!</p>
+<ol style="list-style-type: decimal">
+<li><strong>Sample size</strong>: you can ask for the sample size (<code>N</code>) and number of missing values (<code>Missing</code>)</li>
+<li><strong>Percentile values</strong>: these are useful for creating quartiles (<code>Cut points for 4 equal groups</code>) or <code>Percentiles</code> of various sizes.</li>
+<li><strong>Dispersion</strong>: you should already be familiar with most of the measures of dispersion, particularly the <code>Minimum</code> and <code>Maximum</code>, but there is also the <code>Std. deviation</code> (SD) and <code>Variance</code> (which is just SD<sup>2</sup>). We’ll learn about the <code>S. E. Mean</code> later.</li>
+<li><strong>Central Tendency</strong>: similarly, you should also be familiar with all of the measures of central tendency: <code>Mean</code>, <code>Median</code>, <code>Mode</code>, and <code>Sum</code>.</li>
+<li><strong>Distribution</strong>: you should also be familiar with both <code>Skewness</code> and <code>Kurtosis</code> and later we will learn what those values mean and how that helps us test for normality</li>
+<li><strong>Normality</strong>: lastly, there is a statistical test for normality called the <code>Shapiro-Wilk</code> test that we will learn about later.</li>
+</ol>
+</div>
+<div id="describing-one-variable-split-by-another-variable" class="section level4 hasAnchor">
+<h4>Describing one variable split by another variable<a href="describing-data.html#describing-one-variable-split-by-another-variable" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Sometimes we want to get the descriptive statistics for one variable across multiple groups of another variable. Usually, this is a continuous variable split by a categorical variable. In that case, move your continuous variable to the <code>Varables</code> box and the variable you want split by categories in to the <code>Split by</code> box.</p>
+</div>
+</div>
+<div id="writing-up-descriptive-statistics" class="section level3 hasAnchor">
+<h3>Writing up descriptive statistics<a href="describing-data.html#writing-up-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We’ll learn more about writing up our inferential statistics results later, but first let’s learn how we might report our descriptive statistics.</p>
+<p>In small examples, we might write-up our descriptive statistics into a paragraph<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> (note that there is also an independent t-test and a chi-square test of independence!):</p>
+<p><img src="images/02-stats-foundations/example1.png" width="602" /></p>
+<p>In examples with many variables, we might write-up our descriptive statistics into a table<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>:</p>
+<p><img src="images/02-stats-foundations/example2.png" width="400" /></p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>This comes from <a href="https://thesiscommons.org/bk57d/">Wanzer (2017) Developmentally appropriate evaluations: How evaluation practices differ across age of participants</a><a href="describing-data.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>This comes from <a href="https://psycnet.apa.org/record/2018-49650-001">Wanzer et al. (2020) Experiencing flow while viewing art: Development of the aesthetic experience questionnaire</a><a href="describing-data.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="overview-of-jamovi.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualizing-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
