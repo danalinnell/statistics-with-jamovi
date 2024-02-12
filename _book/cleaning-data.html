@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Cleaning data | Statistics with jamovi</title>
+  <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Cleaning data | Statistics with jamovi" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Cleaning data | Statistics with jamovi" />
+  
+  <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  
+
+<meta name="author" content="Dana Linnell" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="visualizing-data.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats with jamovi</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="part"><span><b>I Overview</b></span></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#getting-help-in-this-class"><i class="fa fa-check"></i>1.1 Getting help in this class</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#dana-your-instructor"><i class="fa fa-check"></i>1.2 Dana, your instructor</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#navigating-this-websitebook"><i class="fa fa-check"></i>1.3 Navigating this website/book</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#technology-tips"><i class="fa fa-check"></i>1.4 Technology Tips</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#errors-mistakes-and-suggestions"><i class="fa fa-check"></i>1.4 Errors, mistakes, and suggestions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html"><i class="fa fa-check"></i>2.1 Describing our data</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-central-tendency"><i class="fa fa-check"></i>Measures of Central Tendency</a></li>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-dispersion"><i class="fa fa-check"></i>Measures of Dispersion</a></li>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-the-shape-of-the-distribution"><i class="fa fa-check"></i>Measures of the Shape of the Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html"><i class="fa fa-check"></i>2.2 Levels of measurement</a>
+<ul>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html#examples-of-levels-of-measurement"><i class="fa fa-check"></i>Examples of levels of measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>2.3 Descriptive vs inferential statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html#an-example"><i class="fa fa-check"></i>An example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html"><i class="fa fa-check"></i>2.4 Design &amp; Methods Key Terms</a>
+<ul>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#study-design-terms"><i class="fa fa-check"></i>Study design terms</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#variables"><i class="fa fa-check"></i>Variables</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#reliability-and-validity"><i class="fa fa-check"></i>Reliability and validity</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#statistical-terms"><i class="fa fa-check"></i>Statistical terms</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#other-terms"><i class="fa fa-check"></i>Other terms</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Intro to jamovi</b></span></li>
+<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html"><i class="fa fa-check"></i>3. Overview of jamovi</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i>Describing data</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html#data-variables"><i class="fa fa-check"></i>Data variables</a></li>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html#describing-your-data"><i class="fa fa-check"></i>Describing your data</a></li>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html#writing-up-descriptive-statistics"><i class="fa fa-check"></i>Writing up descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i>Visualizing data</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html#expanding-your-data-visualization"><i class="fa fa-check"></i>Expanding your data visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html"><i class="fa fa-check"></i>Cleaning data</a>
+<ul>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#data-setup"><i class="fa fa-check"></i>Data setup</a></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#compute-create-new-variables-using-some-computation"><i class="fa fa-check"></i>Compute (create new variables using some computation)</a></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#transform-revise-current-variables"><i class="fa fa-check"></i>Transform (revise current variables)</a></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#filters"><i class="fa fa-check"></i>Filters</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+    target="blank"><img alt="Creative Commons License" 
+    style="border-width:0" 
+    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics with jamovi</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="cleaning-data" class="section level2 hasAnchor">
+<h2>Cleaning data<a href="cleaning-data.html#cleaning-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are four basic types of cleaning we will be learning about: checking your data is setup correctly, computing new variables, transforming variables, and using filters.</p>
+<p>The following video walks through some of these data cleaning techniques.</p>
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/BGOZtlHRv6k" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+<div id="data-setup" class="section level3 hasAnchor">
+<h3>Data setup<a href="cleaning-data.html#data-setup" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As previously mentioned, it’s really important to check that the data types and measurement types of your variables are correct. You should open the Setup (<img src="images/03-jamovi/menu-variable-edit.png" width="15" />) option under the Data tab to check.</p>
+<p>When you’re in Setup, here’s the things you should be doing for all variables:</p>
+<ol style="list-style-type: decimal">
+<li><p>Make sure the variable name is meaningful to you. You may also want to change it to something that will appear nicely in your data visualizations or tables (e.g., don’t write <code>Q35</code> but rather <code>BDI Score</code>).</p></li>
+<li><p>Add a description to your variable so you have more context. Maybe you write <code>Average score of all BDI items</code> for the description of your <code>BDI Score</code> variable.</p></li>
+<li><p>Check your measure and data types are correct.</p></li>
+<li><p>Specify if there is a code for missing values. Make sure the code <em>does not</em> match the code you use for actual variables! For example, if I have a variable that ranges from 0-10, then I wouldn’t use 9 as a code for missing values; instead, I might use 99 or -9.</p></li>
+<li><p>Add labels to levels. For example, the variable <code>Athlete</code> is 0 for non-athlete and 1 for athlete. Rather than keeping just the 0 and 1, you can specify under Levels that 0 is non-athlete.</p></li>
+</ol>
+</div>
+<div id="compute-create-new-variables-using-some-computation" class="section level3 hasAnchor">
+<h3>Compute (create new variables using some computation)<a href="cleaning-data.html#compute-create-new-variables-using-some-computation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sometimes you need to create new variables from your raw (meaning uncleaned) data. I recommend you watch this video by Alexander Swan on <a href="https://youtu.be/_CqfI3eFqD4">computing variables in jamovi</a>.</p>
+<p>Perhaps you collected data on a scale that has five items. Normally, we create an average score of all the five items and that new <em>computed</em> average score is what we use in our analyses.</p>
+<p>Let’s open the Big 5 dataset built into jamovi. You can open this dataset by clicking the three horizontal lines on the top left of jamovi (the menu), choose Open, then select Data Library. In the main Data Library folder is a dataset called Big 5.</p>
+<p>This dataset has the scores on all five subscales of the Big Five personality test. Let’s imagine we want the average score of the entire Big Five test. We would click on the Data tab and choose <code>Compute</code>. We would rename the computed variable (e.g., <code>Big5_Avg</code>), add in a description, and then create the formula.</p>
+<p>In this case, we need to select the function <code>MEAN</code>. Below the function, it provides a template of what the formula should look like. We need to specify the function <code>MEAN()</code>, add all the variables we want to calculate in the mean (i.e., the five subscales of the Big 5), and there are two alternative options: <code>ignore_missing</code> is defaulted to 0 (meaning DON’T ignore missing, or rather include missing) and <code>min_valid</code> is defaulted to 0 (meaning it’s ignoring this; perhaps you only want to include people that have at least three valid cases).</p>
+<p>The basic formula, then is to do MEAN(var1, var2, … varn). You can see what we need to do with this dataset below. There’s actually no missing data, so the two additional arguments aren’t necessary for us to worry about.</p>
+<p><img src="images/03-jamovi/compute.png" /></p>
+<p>Note that this was creating an average score using the MEAN() function. Sometimes, psychological scales want you to create a total score using the SUM() function. jamovi also has a lot of other functions you may need to use in the future.</p>
+<p>If you’d like to learn more about computed variables in jamovi, <a href="https://blog.jamovi.org/2017/11/28/jamovi-formulas.html">check out this jamovi blog post on the topic</a>.</p>
+</div>
+<div id="transform-revise-current-variables" class="section level3 hasAnchor">
+<h3>Transform (revise current variables)<a href="cleaning-data.html#transform-revise-current-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sometimes we want to take an existing variable and transform it in some way or we want to do a computation across multiple variables (e.g., reverse-score multiple items in a dataset).</p>
+<p>I recommend you watch this video by Alexander Swan on <a href="https://youtu.be/-duFdGa11kw">transforming variables in jamovi</a>.</p>
+<p>If you want to learn more about transforming variables, <a href="https://blog.jamovi.org/2018/10/23/transforming-variables.html">the jamovi blog has a great blog post on the topic</a>.</p>
+<div id="recoding" class="section level4 hasAnchor">
+<h4>Recoding<a href="cleaning-data.html#recoding" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Maybe we want to recode variables. Perhaps we want to recode the Neuroticism scale into low, moderate, and high extraversion. The scale ranges from 1-5, so I’m going to say that scores between 1-2.333 are low, 2.334 to 3.666 is moderate, and 3.667 to 5 is high. First, I create a new Transform variable:</p>
+<p><img src="images/03-jamovi/transform1.png" /></p>
+<p>Then I need to specify the transformation. Click Edit to do so (or, when creating a new transformation, click the transformation and select Create New Transform). We need to specify the recode conditions. Click <code>Add recode condition</code> twice. For the first formula, we want to specify that if the $source (meaning the score for the variable we’re using for the transformation, in this case Neuroticism) is less than or equal to 2.333, then it will be recoded as <code>low</code>. We do the same for moderate. Then we can end with an else statement: all other values (else) are recoded as <code>high</code>. We can either let it auto determine the measure type, but I like to be in control of my data and therefore specify it is an ordinal variable.</p>
+<p>Notice the use of apostrophes around the text! We need to do this because jamovi thinks we’re recoding the numeric variable as another numeric variable. By wrapping in apostrophes or quotation marks, we are telling jamovi that it will be text.</p>
+<p><img src="images/03-jamovi/transform2.png" /></p>
+</div>
+<div id="reverse-scoring" class="section level4 hasAnchor">
+<h4>Reverse-scoring<a href="cleaning-data.html#reverse-scoring" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Sometimes items need to be reverse-scored because they are in the opposite direction of the entire scale.</p>
+<p>Let’s imagine we have a Happiness Scale with the following four items:</p>
+<ol style="list-style-type: decimal">
+<li>I am happy.</li>
+<li>I am content.</li>
+<li>Life is overall positive.</li>
+<li>I am unhappy.</li>
+</ol>
+<p>The happiness scale suggests that higher scores is higher happiness, but the fourth item is opposite. Higher scores on that item actually indicate lower happiness. Therefore, we would need to use “Transform” to recode the items so the highest score is the lowest score and so on. For example, if it were rated on a 5-point scale then you would need to recode so a 1 = 5, 2 = 4, 3 = 3, 4 = 2, and 5 = 1.</p>
+<p>We would do this using the recode function like so. Imagine the item was #1 in the “Scale”. Note that we use a double equal sign in jamovi (this is part of the R language).</p>
+<p><img src="images/02-stats-foundations/reverse-score.png" /></p>
+</div>
+<div id="multiple-transformations" class="section level4 hasAnchor">
+<h4>Multiple transformations<a href="cleaning-data.html#multiple-transformations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Maybe we instead want to do a transformation across multiple variables. Perhaps we have multiple items that need to be reverse-scored. Or maybe like in our first example above we want to use our previous <code>Low_mod_high</code> transformation to perform on <em>all</em> the subscales of the Big 5.</p>
+<p>We can click a new variable (e.g., Openness), select Transform, rename the variable, and select the <code>Low_mod_high</code> transformation we already used. Voila! The work we did previously can easily be used again in this analysis.</p>
+</div>
+</div>
+<div id="filters" class="section level3 hasAnchor">
+<h3>Filters<a href="cleaning-data.html#filters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sometimes we only want to analyze certain pieces of our data. We can filter by rows and by columns. <a href="https://blog.jamovi.org/2018/04/25/jamovi-filters.html">Check out this blog post by jamovi on more details of filters</a>.</p>
+<div id="row-filters" class="section level4 hasAnchor">
+<h4>Row filters<a href="cleaning-data.html#row-filters" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Maybe we only want to analyze data from people who are low in neuroticism. We would create the following filter:</p>
+<p><img src="images/03-jamovi/filter-row.png" /></p>
+<p>You’ll notice in the dataset it will add a new column named <code>Filter 1</code> (the name of the filter) and there will either be an X or a green check mark indicating whether it’s removed (X) or kept (check) in the analyses.</p>
+<p>If you want to take off the filter, but keep it available, click on the filter column and toggle the green button on the top right from <code>active</code> to <code>inactive</code>. It will then grey out the column.</p>
+<p>A couple things to note:</p>
+<ul>
+<li><p>Notice that to say it equals to <code>low</code> you have to use a double equal sign: <code>==</code></p></li>
+<li><p>Another common thing you may want to specify is that the variable is <em>not</em> equal to something. You would use the following: <code>!=</code></p></li>
+<li><p>Otherwise you should be familiar with the other operations: <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></p></li>
+</ul>
+</div>
+<div id="column-filters" class="section level4 hasAnchor">
+<h4>Column filters<a href="cleaning-data.html#column-filters" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Column filters are useful when you want to use a filter for <em>some</em> but not all of your analyses. Rather than creating a filter, we need to compute a new variable using the <code>FILTER()</code> function.</p>
+<p>For example, we learned how to reverse score our hypothetical happiness item above. We could then say we only want people who are high in that variable for another analysis. We could apply a column filter that is <code>FILTER(Scale1_Reverse_Scored, Scale1_Reverse_Scored &gt; 3)</code> .</p>
+<p><img src="images/02-stats-foundations/column-filter.png" /></p>
+
+</div>
+</div>
+</div>
+<!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="visualizing-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
