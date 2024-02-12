@@ -21,3 +21,4 @@ bookdown::gitbook:
       size: 2
     sharing: null
   split_by: section
+bookdown::epub_book: default

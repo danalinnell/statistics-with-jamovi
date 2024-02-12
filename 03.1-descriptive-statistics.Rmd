@@ -71,9 +71,21 @@ In examples with many variables, we might write-up our descriptive statistics in
 
 ![](images/02-stats-foundations/example2.png){width="400"}
 
-## Visualizing data {-#visualizing-data}
+## Visualizing data {#visualizing-data .unnumbered}
 
 "A picture is worth a thousand words," and in a world in which journal articles have word count limits, figures and graphs are priceless. They are also an incredibly powerful way to examine your data because it can often illuminate patterns you may not be able to see through a table.
+
+```{block, type="info"}
+
+**Remember: it is incredibly important to always visualize your data!** You never know what descriptive statistics may be hiding.
+```
+
+Here's a [video](https://www.youtube.com/watch?v=d2wU0kmCJEY) walking through why it's so important to look at your data.
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=d2wU0kmCJEY")
+```
 
 jamovi has some plots built into its platform, both under the `Plots` drop-down menu in the `Descriptives` analysis and as options for many of the inferential statistical analyses.
 
@@ -90,16 +102,6 @@ There are three options under **Box Plots**: `Box plot`, `Violin` (which is real
 [When you want to visualize the frequencies of a categorical variable]{.underline}
 
 For this you would choose the single option under **Bar Plots**: `Bar plot`. It will simply show the frequencies of a categorical variable.
-
-```{block, type="info"}
-
-**Remember: it is incredibly important to always visualize your data!** You never know what descriptive statistics may be hiding.
-```
-
-```{r echo = FALSE, message = FALSE, warning = FALSE}
-library(vembedr)
-embed_url("https://www.youtube.com/watch?v=d2wU0kmCJEY")
-```
 
 ### Expanding your data visualization
 

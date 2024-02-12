@@ -1,16 +1,20 @@
+---
+---
+---
+
 # 2. Statistics foundations
 
 ```{r intro-setup, echo = FALSE, message=FALSE}
-library(tidyverse)
+library(tidyverse, webshot)
 ```
 
 You have learned about both quantitative and qualitative methods. We will be focusing primarily on quantitative methods in this class and in this textbook. By quantitative methods, I mean methods that predominantly collect data that deals with numbers. We can then analyze that data using statistical procedures, which we will shorthand to "statistics." Understanding what we mean by statistics is the purpose of this chapter.
 
 ## 2.1 Describing our data
 
-First, let's understand some basic statistics related to how we describe our data, including measures of central tendency (averages), measures of dispersion (spread), and measures of shape of the distribution (particularly a normal distribution).
+First, let's understand some basic statistics related to how we describe our data, including measures of central tendency (averages), measures of dispersion (spread), and measures of shape of the distribution (particularly a normal distribution). Here's a [video](https://www.youtube.com/watch?v=QirHpjLkHmc) walking you through what we learn in this chapter.
 
-```{r echo = FALSE, message = FALSE, warning = FALSE}
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://www.youtube.com/watch?v=QirHpjLkHmc")
 ```

@@ -32,9 +32,9 @@ I recommend you watch this video by Alexander Swan on [navigating the jamovi int
 
 I recommend you watch this video by Alexander Swan on [opening files in jamovi](https://youtu.be/nB85VyskK08).
 
-I occasionally get questions on how to open .sav files (SPSS files) in jamovi. Here's a video walking you through that.
+I occasionally get questions on how to open .sav files (SPSS files) in jamovi. Here's a [video](https://www.youtube.com/watch?v=e-09OfLVs2U) walking you through that.
 
-```{r echo = FALSE, message = FALSE, warning = FALSE}
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://www.youtube.com/watch?v=e-09OfLVs2U")
 ```
