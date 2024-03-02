@@ -6,6 +6,17 @@ Now that we've covered descriptive statistics and are familiar with our statisti
 
 One of the ways we make inferences is using hypothesis testing. We are going to be learning about **Null Hypothesis Significance Testing (NHST)**, which means we test and make inferences about the null hypothesis (which we'll learn about in more detail soon).
 
+```{block, type="info"}
+
+I have created a 4-page "cheat sheet" of the hypothesis testing 4-step process detailed here, with brief details on how it differs for the various inferential statistics we'll learn in this textbook. 
+
+I highly recommend you save this and refer to it often. If possible, print it out and have it by your side as you go through all of your inferential statistics so you know how to go through each step!
+
+[Statistics with jamovi - Overarching handout](https://github.com/danalinnell/statistics-with-jamovi/blob/master/Statistics%20with%20jamovi%20-%20Overarching%20handout.pdf)
+
+Note: It will not preview the file in GitHub. When you click the link, click the download button to download the raw file.
+```
+
 Regardless of the inferential statistic we are performing, hypothesis testing goes through the same basic set of procedures:
 
 1.  **Look at the data** by examining the descriptive statistics and describing your hypotheses.
@@ -19,15 +30,6 @@ embed_url("https://www.youtube.com/watch?v=Eqs9L6gDaJg")
 ```
 
 Let's go through each of these in turn, using a hypothetical example.
-
-```{block, type="info"}
-
-I have created a 4-page "cheat sheet" of the hypothesis testing 4-step process detailed here, with brief details on how it differs for the various inferential statistics we'll learn in this textbook. 
-
-I highly recommend you save this and refer to it often. If possible, print it out and have it by your side as you go through all of your inferential statistics so you know how to go through each step!
-
-[Statistics with jamovi - Overarching handout](LINK GOES HERE)
-```
 
 ## 7.1 Example of hypothesis testing
 
