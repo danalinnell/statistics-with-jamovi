@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5.1 Example of hypothesis testing | Statistics with jamovi</title>
+  <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5.1 Example of hypothesis testing | Statistics with jamovi" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5.1 Example of hypothesis testing | Statistics with jamovi" />
+  
+  <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  
+
+<meta name="author" content="Dana Linnell" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="hypothesis-testing.html"/>
+<link rel="next" href="final-note-about-hypothesis-testing.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats with jamovi</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#part-overview"><i class="fa fa-check"></i>(PART) Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#getting-help-in-this-class"><i class="fa fa-check"></i>1.1 Getting help in this class</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#dana-your-instructor"><i class="fa fa-check"></i>1.2 Dana, your instructor</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#navigating-this-websitebook"><i class="fa fa-check"></i>1.3 Navigating this website/book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technology-tips"><i class="fa fa-check"></i>1.4 Technology Tips</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#errors-mistakes-and-suggestions"><i class="fa fa-check"></i>1.5 Errors, mistakes, and suggestions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html"><i class="fa fa-check"></i>2.1 Describing our data</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-central-tendency"><i class="fa fa-check"></i>Measures of Central Tendency</a></li>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-dispersion"><i class="fa fa-check"></i>Measures of Dispersion</a></li>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-the-shape-of-the-distribution"><i class="fa fa-check"></i>Measures of the Shape of the Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html"><i class="fa fa-check"></i>2.2 Levels of measurement</a>
+<ul>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html#examples-of-levels-of-measurement"><i class="fa fa-check"></i>Examples of levels of measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>2.3 Descriptive vs inferential statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html#an-example"><i class="fa fa-check"></i>An example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html"><i class="fa fa-check"></i>2.4 Design &amp; Methods Key Terms</a>
+<ul>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#variables"><i class="fa fa-check"></i>Variables</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#study-design-terms"><i class="fa fa-check"></i>Study design terms</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#reliability-and-validity"><i class="fa fa-check"></i>Reliability and validity</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#statistical-terms"><i class="fa fa-check"></i>Statistical terms</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#other-terms"><i class="fa fa-check"></i>Other terms</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Intro to jamovi</b></span></li>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i>4. Describing data</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-variables.html"><a href="data-variables.html"><i class="fa fa-check"></i>4.1 Data variables</a></li>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html"><i class="fa fa-check"></i>4.2 Describing your data</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html#describing-nominal-or-ordinal-data"><i class="fa fa-check"></i>Describing nominal or ordinal data</a></li>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html#describing-continuous-data"><i class="fa fa-check"></i>Describing continuous data</a></li>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html#describing-one-variable-split-by-another-variable"><i class="fa fa-check"></i>Describing one variable split by another variable</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="writing-up-descriptive-statistics.html"><a href="writing-up-descriptive-statistics.html"><i class="fa fa-check"></i>4.3 Writing up descriptive statistics</a></li>
+<li class="chapter" data-level="" data-path="a-continuous-variable.html"><a href="a-continuous-variable.html"><i class="fa fa-check"></i>5.1 A continuous variable</a></li>
+<li class="chapter" data-level="" data-path="a-categorical-variable.html"><a href="a-categorical-variable.html"><i class="fa fa-check"></i>5.2 A categorical variable</a></li>
+<li class="chapter" data-level="" data-path="a-continuous-variable-split-by-a-categorical-variable.html"><a href="a-continuous-variable-split-by-a-categorical-variable.html"><i class="fa fa-check"></i>5.3 A continuous variable split by a categorical variable</a></li>
+<li class="chapter" data-level="" data-path="expanding-your-data-visualization.html"><a href="expanding-your-data-visualization.html"><i class="fa fa-check"></i>5.4 Expanding your data visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html"><i class="fa fa-check"></i>6. Cleaning data</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-setup.html"><a href="data-setup.html"><i class="fa fa-check"></i>6.1 Data setup</a></li>
+<li class="chapter" data-level="" data-path="compute.html"><a href="compute.html"><i class="fa fa-check"></i>6.2 Compute</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>6.3 Transform</a>
+<ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#recoding"><i class="fa fa-check"></i>Recoding</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#reverse-scoring"><i class="fa fa-check"></i>Reverse-scoring</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#multiple-transformations"><i class="fa fa-check"></i>Multiple transformations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="filter.html"><a href="filter.html"><i class="fa fa-check"></i>6.4 Filter</a>
+<ul>
+<li class="chapter" data-level="" data-path="filter.html"><a href="filter.html#row-filters"><i class="fa fa-check"></i>Row filters</a></li>
+<li class="chapter" data-level="" data-path="filter.html"><a href="filter.html#column-filters"><i class="fa fa-check"></i>Column filters</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II NHST</b></span></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i>5. Hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>5.1 Example of hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-1.-look-at-the-data"><i class="fa fa-check"></i>Step 1. Look at the data</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-2.-check-assumptions"><i class="fa fa-check"></i>Step 2. Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-3.-perform-the-test"><i class="fa fa-check"></i>Step 3. Perform the test</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-4.-interpret-the-results"><i class="fa fa-check"></i>Step 4. Interpret the results</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="final-note-about-hypothesis-testing.html"><a href="final-note-about-hypothesis-testing.html"><i class="fa fa-check"></i>5.2 Final note about hypothesis testing</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+    target="blank"><img alt="Creative Commons License" 
+    style="border-width:0" 
+    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics with jamovi</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="example-of-hypothesis-testing" class="section level2 hasAnchor">
+<h2>5.1 Example of hypothesis testing<a href="example-of-hypothesis-testing.html#example-of-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Imagine a researcher wants to replicate Alburt Bandura’s famous Bobo doll experiment. In their replication study, the researcher randomly assigns 30 six-year-old children to one of two conditions: one group watches a video of an adult showing aggressive behavior toward a Bobo doll and the other group watches a video of an adult passively playing with a Bobo doll. After watching their assigned video, children then went to the same room from the videos with the same Bobo doll. Researchers observed for aggressive behaviors<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<div class="info">
+<p>
+The example we are going to go through is an example of an
+independent samples t-test. There are two groups (children watching
+aggresive behaviors vs children watching passive behaviors) being
+measured on their aggressive behaviors.
+</p>
+<p>
+Although I do not expect you to understand an independent samples
+t-test to get through this chapter, you may want to explore that chapter
+in the textbook as well. Otherwise, we will learn about it in more
+detail later.
+</p>
+</div>
+<div id="step-1.-look-at-the-data" class="section level3 hasAnchor">
+<h3>Step 1. Look at the data<a href="example-of-hypothesis-testing.html#step-1.-look-at-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The first step is to look at our data. We need to make sure we understand our study, what research design was used, how data was collected, and what the dataset looks like.</p>
+<div id="describe-the-data" class="section level4 hasAnchor">
+<h4>Describe the data<a href="example-of-hypothesis-testing.html#describe-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Although we are working with a hypothetical scenario, we can think about what the data would look like in a spreadsheet. We have two variables:</p>
+<ol style="list-style-type: decimal">
+<li>The independent variable is what condition of the study they were randomly assigned to. The variable might be called “condition” which might have two categories or levels, one being “aggressive” and the other being “passive”.</li>
+<li>The dependent variable is the observed aggressive behaviors. The variable might be called “aggression” which would be a continuous measure of how many aggressive behaviors were observed for the child.</li>
+</ol>
+<p>This would result in two columns, one for each variable, and 30 rows, one for each participant in the study.</p>
+</div>
+<div id="specify-the-hypotheses" class="section level4 hasAnchor">
+<h4>Specify the hypotheses<a href="example-of-hypothesis-testing.html#specify-the-hypotheses" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>As mentioned previously, we are using Null Hypothesis Significance Testing, or NHST. We are therefore <em>testing hypotheses</em> in our inferential statistics, and specifically we are testing the <em>null</em> hypothesis. We need to first write out our hypotheses, which are our <strong>alternative</strong> and <strong>null</strong> hypotheses.</p>
+<p>The alternative hypothesis is that there is an effect of the IV on the DV, or a relationship between two variables, or difference between groups. We usually write this out as H<sub>1</sub> although sometimes you’ll see it written as H<sub>a</sub>.</p>
+<div class="info">
+<p>
+Your hypotheses should very clearly describe both the IV and DV.
+</p>
+</div>
+<p>The null hypothesis is that there is no effect, no relationship, or no difference. Most null hypotheses tend to be <em>nill</em> hypotheses, and nill means zero. That’s hopefully an easy way to remember the difference between null and alternative hypotheses. We usually write the null hypothesis out as H<sub>0</sub>.</p>
+<div class="info">
+<p>
+Regardless of our research question, our null hypothesis is always
+that there is no effect. This is what “null” means: none or zero
+effect.
+</p>
+</div>
+<p>The two hypotheses—our alternative and null hypotheses—must be <strong>mutually exclusive</strong> and <strong>exhaustive</strong>. Mutually exclusive means a potential result of the study cannot support both the alternative and null hypothesis; it must exclusively support only one. Exhaustive means the entire possible universe of results must be captured in our two hypotheses; it must exhaust all possible results.</p>
+<div class="warning">
+<p>
+A common error students make in writing out their hypotheses is that
+they are not mutually exclusive or exhaustive. If there is any possible
+value that, if you got it, would not support either hypothesis then your
+hypotheses are not exhaustive. If there is any possible value that, if
+you got it, would support both hypotheses then your hypotheses are not
+mutually exclusive.
+</p>
+</div>
+<p>We might also have <strong>directional</strong> or <strong>non-directional</strong> hypotheses. Directional hypotheses are also called one-tailed hypotheses because only one tail of the distribution would lead us to fail to reject the null hypothesis. Non-directional hypotheses are such that we don’t know whether the difference will be greater or less than 0, but we just think there will be a difference; these are also called two-tailed hypotheses because both tails of the distribution would lead us to fail to reject the null hypothesis. This will make a little more sense below and a lot more sense in the next chapter.</p>
+<p>Let’s go back to our Bobo doll replication study. What might the hypotheses be? There should be theory and research to support alternative hypotheses. There is ample research now that viewing aggression leads to aggression through imitation and observed learning. Therefore, the researcher likely has a hypothesis that watching the aggressive adult will lead to more aggressive behavior than watching the passive adult.</p>
+<p>Therefore, our hypotheses would be:</p>
+<p><strong>H<sub>1</sub></strong>: Children watching the video with the adult aggressively playing with the Bobo doll will exhibit <em>more</em> aggressive behaviors than children watching the video with the adult playing passively.</p>
+<p><strong>H<sub>0</sub></strong>: There will be <em>no difference</em> in children’s aggressive behaviors between the two groups OR children watching the video with the adult aggressively playing with the Bobo doll will exhibit <em>fewer</em> aggressive behaviors than children watching the video with the adult playing passively.</p>
+<p>Let’s analyze these hypotheses in more detail:</p>
+<ol style="list-style-type: decimal">
+<li><p>The hypotheses are mutually exclusive because no possible result could be both more aggressive AND no difference in aggression, for example.</p></li>
+<li><p>The hypotheses are exhaustive because all possible results are that there are fewer, zero, or more aggressive behaviors when comparing the groups. Basically, it encompasses negative infinity to positive infinity!</p></li>
+<li><p>The hypotheses are one-tailed because we anticipate a direction in the difference between the groups. If we had no prior thought about how one group would compare to another, then we could have had a two-tailed, non-directional hypothesis.</p></li>
+<li><p>Furthermore, note how I have clearly described the IV (the groups of watching the video with the adult aggressively vs passively playing with the Bobo doll) and the DV (aggressive behaviors).</p></li>
+</ol>
+<p>A common error in a directional hypothesis like this is to forget that the null hypothesis is both no difference <em>and</em> the opposite. In other words, we have three possible options for our null and alternative hypotheses based on direction (<span class="math inline">\(\mu\)</span> is the Greek letter “mu” and we often use it to signify the mean):</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Two-tailed</th>
+<th>One-tailed (greater)</th>
+<th>One-tailed (less than)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Alternative</strong> (H<sub>1</sub>)</td>
+<td><span class="math inline">\(\mu_1\)</span> != <span class="math inline">\(\mu_2\)</span></td>
+<td><span class="math inline">\(\mu_1\)</span> &gt; <span class="math inline">\(\mu_2\)</span></td>
+<td><span class="math inline">\(\mu_1\)</span> &lt; <span class="math inline">\(\mu_2\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Null</strong> (H<sub>0</sub>)</td>
+<td><span class="math inline">\(\mu_1\)</span> == <span class="math inline">\(\mu_2\)</span></td>
+<td><span class="math inline">\(\mu_1\)</span> &lt;= <span class="math inline">\(\mu_2\)</span></td>
+<td><span class="math inline">\(\mu_1\)</span> &gt;= <span class="math inline">\(\mu_2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Since we’re talking about mean differences, we could also reformulate the above table slightly differently:</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Two-tailed</th>
+<th>One-tailed (greater)</th>
+<th>One-tailed (less than)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Alternative</strong> (H<sub>1</sub>)</td>
+<td><span class="math inline">\(\mu_{diff}\)</span> != 0</td>
+<td><span class="math inline">\(\mu_{diff}\)</span> &gt; 0</td>
+<td><span class="math inline">\(\mu_{diff}\)</span> &lt; 0</td>
+</tr>
+<tr class="even">
+<td><strong>Null</strong> (H<sub>0</sub>)</td>
+<td><span class="math inline">\(\mu_{diff}\)</span> == 0</td>
+<td><span class="math inline">\(\mu_{diff}\)</span> &lt;= 0</td>
+<td><span class="math inline">\(\mu_{diff}\)</span> &gt;= 0</td>
+</tr>
+</tbody>
+</table>
+<div class="info">
+<p>
+Note: != means “not equal” like the ≠ symbol. I write != because that
+is the notation that R uses for “not equal.”
+</p>
+<p>
+Similarly, you might be wondering why I use == instead of just =.
+Again, this is the notion R uses for “exactly equal to.” In R, a single
+equal sign is usually equivalent to the assignment operator (e.g., x =
+10 means assign 10 to the variable x).
+</p>
+</div>
+</div>
+</div>
+<div id="step-2.-check-assumptions" class="section level3 hasAnchor">
+<h3>Step 2. Check assumptions<a href="example-of-hypothesis-testing.html#step-2.-check-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We’re going to skip over this for now (read more in the “Parametric Assumptions” chapter later). Just keep in the back of your head that you need to understand whether you met the assumptions to know exactly what statistical test to perform.</p>
+</div>
+<div id="step-3.-perform-the-test" class="section level3 hasAnchor">
+<h3>Step 3. Perform the test<a href="example-of-hypothesis-testing.html#step-3.-perform-the-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="info">
+<p>
+For this example chapter, we’re going to walk through how we might do
+these analyses by hand. Back in the day before computers existed, or
+before they were more widely available, this is how folks would analyze
+their data!
+</p>
+<p>
+This helps us both understand the “behind the scenes” processes of
+our statistical programs, but also gives us a greater appreciation for
+what our statistical programs provide us.
+</p>
+</div>
+<p>The basic thing we’re trying to do with our inferential testing is determine what constitutes “more” aggression versus “no difference” in aggression.</p>
+<p>No difference seems easy. That’s a difference of zero, right? Well, not exactly, because it’s highly unlikely we would get an <em>exact</em> difference of zero. Therefore the question is: which values are close enough to a difference of zero that we’d still say that there is no difference? If our values are within that range, then we would fail to reject the null hypothesis. If our values are <em>outside</em> that range, then we would reject the null hypothesis.</p>
+<div class="warning">
+<p>
+Note my language carefully here: fail to reject the null hypothesis
+OR reject the null hypothesis. Note how I am not saying support the
+alternative hypothesis!
+</p>
+<p>
+Through NHST, we are only ever testing the null hypothesis and
+therefore can only make conclusions about the null hypothesis. This is
+why we need replication studies to provide ample support for alternative
+hypotheses.
+</p>
+</div>
+<p>Let’s try to visualize this. We are saying that the null hypothesis is there is no difference (or less aggression), but at some point no difference turns into <em>greater</em> difference. Furthermore, we have a directional hypothesis in that we do not think the difference will be negative, that children watching the adult play aggressively will exhibit fewer aggressive behaviors. Basically, we need to know what the critical value is in the figure below, which is the point at which we say “Okay, this difference is big enough that I will reject the null hypothesis.”</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<img src="04.0-hypothesis-testing_files/figure-html/unnamed-chunk-10-1.png" alt="Critical area of statistical significance" width="672" />
+<p class="caption">
+Figure 1: Critical area of statistical significance
+</p>
+</div>
+<div class="info">
+<p>
+This visual is for a one-tailed, directional hypothesis with an alpha
+of 5%. Therefore, the critical region is only on one side and covers 5%
+of the area under the curve.
+</p>
+<p>
+If our test had been for a two-tailed, non-directional hypothesis
+with an alpha of 5% then the critical region would be on both sides of
+the curve, with 2.5% of the area under the curve on both sides.
+</p>
+<p>
+If our test had been one-tailed with an alpha of 1%, then the
+critical region would be further to the right (larger, and in fact would
+be 2.048, which you can find in the table below) and would only be 1% of
+the area under the curve.
+</p>
+</div>
+<p>We figure out that critical value based on what we set as our level of significance, also known as the <strong>alpha level</strong>. Most studies you read use the arbitrary <span class="math inline">\(\alpha\)</span> = .05 (or 5%), although we really should be thinking critically about what alpha level we use (more on that in the next chapter). In the visualization above, we set the alpha to 5% and so the area shaded in red is exactly 5% of the area under the curve of the normal distribution.</p>
+<p>Our alpha is the level of which we are saying would be considered “surprising” versus “not surprising.” If we got a mean difference that fell in that red area, then we would consider that “surprising” <em>if we believed the null hypothesis was true</em>. Basically, if we assume there is a mean difference of 0 (i.e., the null hypothesis), values past the critical value would be considered surprising enough that we would say that we reject the null hypothesis.</p>
+<p>In other words, <em>the area in red are values that are unlikely to occur if the null hypothesis (in this case, mean difference &lt;= 0) were true.</em></p>
+<div id="set-the-criteria-for-obtaining-the-critical-t-value" class="section level4 hasAnchor">
+<h4>Set the criteria for obtaining the critical t-value<a href="example-of-hypothesis-testing.html#set-the-criteria-for-obtaining-the-critical-t-value" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Now that we understand that a bit better, how do we find out our critical value, or the values in the red region? Back in the day before computers, some fancy mathematicians and statisticians figured out the exact <em>t</em>-values based on things like the direction of our hypothesis, our alpha, and our degrees of freedom. Let’s figure these out for our example:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Direction of our hypothesis</strong>: We have already determined we’re using a one-tailed hypothesis because we have a directional hypothesis. We think children in the aggression condition will have more aggressive behaviors than children in the passive condition.</li>
+<li><strong>Alpha</strong>: Let’s stick with the default that most psychological research uses of <span class="math inline">\(\alpha\)</span> = .05</li>
+<li><strong>Degrees of freedom</strong>: For this test, this is calculated by n<sub>1</sub> + n<sub>2</sub> - 2, or N - 2. We have 30 children total, so 30 - 2 is 28</li>
+</ol>
+<div class="info">
+<p>
+In our course, we will always assume that alpha is 5%. However, our
+next chapter will explain more about when we might change our alpha,
+typically to something lower like 1% or .5% or .1%.
+</p>
+</div>
+</div>
+<div id="determine-the-critical-t-value" class="section level4 hasAnchor">
+<h4>Determine the critical t-value<a href="example-of-hypothesis-testing.html#determine-the-critical-t-value" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We then go to a t-table like the one below and find the cell we are looking for to identify our <strong>critical t-value (<em>t</em><sub>crit</sub>)</strong> which we will then compare to our <strong>obtained t-value (<em>t<sub>obt</sub></em>)</strong> in the 4th step.</p>
+<p><img src="images/03-jamovi/t-table.png" /></p>
+<p>First, we have a one-tailed hypothesis and our alpha probability is set at .05 so we’re going to look under the sixth column (t<sub>.95</sub>, one-tail = .05). Then we need to find the row for our degrees of freedom (df = 28). That leads us to our critical t-value, a <strong><em>t<sub>crit</sub></em></strong> <strong>of</strong> <strong>1.701</strong>.</p>
+<div class="info">
+<p>
+If our alpha was still .05 but we had a two-tailed test, then we
+would look under the seventh column (t.975, two-tails = .05).
+</p>
+<p>
+If our alpha was .01 and one-tailed, we’d look at the eighth column,
+and if it was .01 and two-tailed we’d look at the ninth column.
+</p>
+</div>
+</div>
+<div id="calculating-the-exact-t-score-and-p-value" class="section level4 hasAnchor">
+<h4>Calculating the exact t-score and p-value<a href="example-of-hypothesis-testing.html#calculating-the-exact-t-score-and-p-value" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We’re going to figure out how to get our obtained t-value (<em>t<sub>obt</sub></em>) results based on the data from our study. We had 30 participants, 15 in each condition. Imagine that the researcher performed the experiment and got the following results:</p>
+<ul>
+<li><p>Children who watched the video of the adult playing aggressively with the Bobo doll displayed an average of 51.10 aggressive behaviors (<em>SD</em> = 3.50).</p></li>
+<li><p>Children who watched the video of the adult playing passively with the Bobo doll displayed an average of 27.40 aggressive behaviors (<em>SD</em> = 3.30).</p></li>
+</ul>
+<p>The mean difference is 51.10 - 27.40 = 23.70. We’ll learn how to conduct a t-test in jamovi later, but for now you can just input the numbers into <a href="https://www.graphpad.com/quickcalcs/ttest1/?format=SD">this calculator</a> (note: select to <code>Enter mean, SD and N</code> and choose the test <code>Unpaired t test</code>). It nicely gives you a lot of the values, but the one we are looking for is the test statistic, which is <strong><em>t<sub>obt</sub></em></strong> <strong>= 19.08</strong> (notice we round to two decimals in APA style).</p>
+<div class="info">
+<p>
+The calculator also gives us our exact p-value, which in this case is
+&lt; .00001 but in APA style we typically report p-values to three
+decimal places, so we would say p &lt; .001. The probability of getting
+a t-value as large as we did is less than .1% (less than our alpha of
+.05, so it is statistically significant). Very surprising!
+</p>
+<p>
+This calculator is acting as a statistical software and therefore
+giving us our exact p-value just like jamovi will provide for you once
+we move to the software. For now, just appreciate that we can estimate
+whether we met the p-value threshold when we analyze things by hand
+below.
+</p>
+</div>
+</div>
+</div>
+<div id="step-4.-interpret-the-results" class="section level3 hasAnchor">
+<h3>Step 4. Interpret the results<a href="example-of-hypothesis-testing.html#step-4.-interpret-the-results" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We then need to compare our <strong>critical t-value (<em>t</em><sub>crit</sub> = 1.701)</strong> to our <strong>obtained t-value (<em>t<sub>obt</sub></em> = 19.08):</strong></p>
+<ul>
+<li><p>When <em>t<sub>obt</sub> &gt; t<sub>crit</sub></em> then the results are statistically significant (<em>p</em> &lt; α) and we reject the null hypothesis.</p></li>
+<li><p>When <em>t<sub>obt</sub> &lt; t<sub>crit</sub></em> then the results are not statistically significant (<em>p</em> &gt; α) and we fail to reject the null hypothesis.</p></li>
+</ul>
+<p>Since 19.08 &gt; 1.701, <em>we</em> <em>reject the null hypothesis that there is no difference in conditions or that children in the passive condition displayed more aggression than children in the aggressive condition.</em></p>
+<div class="warning">
+<p>
+A common mistake is assuming that p &lt; .05 means that the
+alternative hypothesis is true. This is inaccurate because the p-value
+is the probability of our data given the null hypothesis is true. It
+says nothing about the alternative hypothesis.
+</p>
+<p>
+Similarly, a common mistake is assuming p &gt; .05 means the
+alternative hypothesis is false. This is incorrect for the same exact
+reason; NHST says nothing about the alternative hypothesis.
+</p>
+</div>
+<div id="type-1-and-2-errors" class="section level4 hasAnchor">
+<h4>Type 1 and 2 errors<a href="example-of-hypothesis-testing.html#type-1-and-2-errors" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>However, this is when <strong>Type 1</strong> (false positive) and <strong>Type 2</strong> (false negative) errors come into play. Just because we get a result <em>does not automatically mean that result is 100% accurate</em>. There are many things that could lead us to an inaccurate interpretation! Perhaps it was a fluke, perhaps you didn’t do something correct in your study, or perhaps the effect does or does not actually exist.</p>
+<p>I like to use this table when discussing errors. On the far left column, we have our results: were they statistically significant (<em>p</em> &lt; .05) or not (<em>p</em> &gt; .05)? On the top row, we have whether <em>in the real world</em> the null or alternative hypothesis is true. In reality, we can <em>never</em> truly know whether the null or alternative hypothesis is true. We can at best approximate our understanding of the real world through replication!</p>
+<table>
+<colgroup>
+<col width="49%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>H<sub>0</sub> is true</th>
+<th>H<sub>1</sub> is true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><em>p</em></strong> <strong>&lt; .05</strong> (statistically significant)</td>
+<td>Type 1 error</td>
+<td>Correct interpretation</td>
+</tr>
+<tr class="even">
+<td><strong><em>p</em></strong> <strong>&gt; .05</strong> (statistically non-significant)</td>
+<td>Correct interpretation</td>
+<td>Type 2 error</td>
+</tr>
+</tbody>
+</table>
+<p>Therefore, any time we get a statistically significant result (<em>p</em> &lt; .05), then <em>either</em> we made a correct interpretation <em>or we made a Type 1 (false positive) error!</em></p>
+<p>Similarly, any time we get a statistically non-significant results (<em>p</em> &gt; .05) then <em>either</em> we made a correct interpretation <em>or we made a Type 2 (false negative) error</em>!</p>
+<div class="warning">
+<p>
+Another common mistake is to assume statistically significant results
+mean the null hypothesis is false. However, we can never know beyond a
+certainty of a doubt whether a significant result is a correct
+interpretation; we could also be making a Type 1 error.
+</p>
+<p>
+Similarly, a common mistake is to assume non-significant results mean
+the null hypothesis is true. We never know for sure whether the null or
+alternative is true, so in this case we could be making a Type 2
+error.
+</p>
+</div>
+<p><em>If you’d like to read a more in-depth discussion of error control, I recommend also reading <a href="https://lakens.github.io/statistical_inferences/02-errorcontrol.html">Daniel Lakens’ chapter in his textbook “Improving Your Statistical Inferences.”</a></em></p>
+<p>Next week we’ll learn a lot more about p-values, errors, and more. For now, tuck this piece of information into your brain to remember!</p>
+</div>
+<div id="write-up-the-results-in-apa-format" class="section level4 hasAnchor">
+<h4>Write up the results in APA format<a href="example-of-hypothesis-testing.html#write-up-the-results-in-apa-format" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This is described in more detail in the Writing up results chapter, but when you are done performing a test and interpreting the results then you need to write up the results for your paper or assignment.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>The study design was actually much more impressive than what I’m describing. They accounted for the children’s baseline aggression and the gender of both the child and the person in the video. If you are interested, you can read more here: <a href="https://www.simplypsychology.org/bobo-doll.html" class="uri">https://www.simplypsychology.org/bobo-doll.html</a><a href="example-of-hypothesis-testing.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="hypothesis-testing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="final-note-about-hypothesis-testing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
