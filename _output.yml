@@ -5,8 +5,10 @@ bookdown::gitbook:
   css: [style.css]
   config:
     toc:
+      toc_float: true
       collapse: section
-      scroll_highlight: yes
+      toc_depth: 4
+      scroll_highlight: true
       before: |
         <li><a href="./">Stats with jamovi</a></li>
       after: |
@@ -22,3 +24,5 @@ bookdown::gitbook:
     sharing: null
   split_by: section
 bookdown::epub_book: default
+# bookdown::bs4_book: 
+#   default: true

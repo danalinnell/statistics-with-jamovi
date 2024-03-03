@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8.1 Effect sizes | Statistics with jamovi</title>
+  <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8.1 Effect sizes | Statistics with jamovi" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8.1 Effect sizes | Statistics with jamovi" />
+  
+  <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  
+
+<meta name="author" content="Dana Linnell" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="bean.html"/>
+<link rel="next" href="alpha-p-values-1.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats with jamovi</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="part"><span><b>I Overview</b></span></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#getting-help-in-this-class"><i class="fa fa-check"></i>1.1 Getting help in this class</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#dana-your-instructor"><i class="fa fa-check"></i>1.2 Dana, your instructor</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#navigating-this-websitebook"><i class="fa fa-check"></i>1.3 Navigating this website/book</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#technology-tips"><i class="fa fa-check"></i>1.4 Technology Tips</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#errors-mistakes-and-suggestions"><i class="fa fa-check"></i>1.5 Errors, mistakes, and suggestions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html"><i class="fa fa-check"></i>2.1 Describing our data</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-central-tendency"><i class="fa fa-check"></i>Measures of Central Tendency</a></li>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-dispersion"><i class="fa fa-check"></i>Measures of Dispersion</a></li>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-the-shape-of-the-distribution"><i class="fa fa-check"></i>Measures of the Shape of the Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html"><i class="fa fa-check"></i>2.2 Levels of measurement</a>
+<ul>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html#examples-of-levels-of-measurement"><i class="fa fa-check"></i>Examples of levels of measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>2.3 Descriptive vs inferential statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html#an-example"><i class="fa fa-check"></i>An example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html"><i class="fa fa-check"></i>2.4 Design &amp; Methods Key Terms</a>
+<ul>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#variables"><i class="fa fa-check"></i>Variables</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#study-design-terms"><i class="fa fa-check"></i>Study design terms</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#reliability-and-validity"><i class="fa fa-check"></i>Reliability and validity</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#statistical-terms"><i class="fa fa-check"></i>Statistical terms</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#other-terms"><i class="fa fa-check"></i>Other terms</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Intro to jamovi</b></span></li>
+<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html"><i class="fa fa-check"></i>3. Overview of jamovi</a>
+<ul>
+<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html#installing-jamovi"><i class="fa fa-check"></i>Installing jamovi</a></li>
+<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html#opening-spss-.sav-files-in-jamovi"><i class="fa fa-check"></i>Opening SPSS (.sav) files in jamovi</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i>4. Describing data</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-variables.html"><a href="data-variables.html"><i class="fa fa-check"></i>4.1 Data variables</a></li>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html"><i class="fa fa-check"></i>4.2 Describing your data</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html#describing-nominal-or-ordinal-data"><i class="fa fa-check"></i>Describing nominal or ordinal data</a></li>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html#describing-continuous-data"><i class="fa fa-check"></i>Describing continuous data</a></li>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html#describing-one-variable-split-by-another-variable"><i class="fa fa-check"></i>Describing one variable split by another variable</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="writing-up-descriptive-statistics.html"><a href="writing-up-descriptive-statistics.html"><i class="fa fa-check"></i>4.3 Writing up descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i>5. Visualizing data</a>
+<ul>
+<li class="chapter" data-level="" data-path="a-continuous-variable.html"><a href="a-continuous-variable.html"><i class="fa fa-check"></i>5.1 A continuous variable</a></li>
+<li class="chapter" data-level="" data-path="a-categorical-variable.html"><a href="a-categorical-variable.html"><i class="fa fa-check"></i>5.2 A categorical variable</a></li>
+<li class="chapter" data-level="" data-path="a-continuous-variable-split-by-a-categorical-variable.html"><a href="a-continuous-variable-split-by-a-categorical-variable.html"><i class="fa fa-check"></i>5.3 A continuous variable split by a categorical variable</a></li>
+<li class="chapter" data-level="" data-path="expanding-your-data-visualization.html"><a href="expanding-your-data-visualization.html"><i class="fa fa-check"></i>5.4 Expanding your data visualization</a></li>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html"><i class="fa fa-check"></i>5.1 Effect sizes</a>
+<ul>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html#types-of-effect-sizes"><i class="fa fa-check"></i>Types of effect sizes</a></li>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html#small-medium-and-large-effect-sizes"><i class="fa fa-check"></i>Small, medium, and large effect sizes</a></li>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html#what-makes-an-effect-practically-significant"><i class="fa fa-check"></i>What makes an effect practically significant?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html"><i class="fa fa-check"></i>Alpha &amp; p-values</a>
+<ul>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#p-values"><i class="fa fa-check"></i>p-values</a></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#alpha"><i class="fa fa-check"></i>Alpha</a></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#videos-and-resources"><i class="fa fa-check"></i>Videos and resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html"><i class="fa fa-check"></i>Sample size &amp; power analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#sample-size-n"><i class="fa fa-check"></i>Sample size (N)</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#bean-power-analysis"><i class="fa fa-check"></i>BEAN: Power analysis</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#power-analysis-example-1"><i class="fa fa-check"></i>Power analysis example #1</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#play-with-jpower"><i class="fa fa-check"></i>Play with jpower</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#extending-our-knowledge-of-power-analysis"><i class="fa fa-check"></i>Extending our knowledge of power analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html"><i class="fa fa-check"></i>6. Cleaning data</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-setup.html"><a href="data-setup.html"><i class="fa fa-check"></i>6.1 Data setup</a></li>
+<li class="chapter" data-level="" data-path="compute.html"><a href="compute.html"><i class="fa fa-check"></i>6.2 Compute</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>6.3 Transform</a>
+<ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#recoding"><i class="fa fa-check"></i>Recoding</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#reverse-scoring"><i class="fa fa-check"></i>Reverse-scoring</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#multiple-transformations"><i class="fa fa-check"></i>Multiple transformations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="filter.html"><a href="filter.html"><i class="fa fa-check"></i>6.4 Filter</a>
+<ul>
+<li class="chapter" data-level="" data-path="filter.html"><a href="filter.html#row-filters"><i class="fa fa-check"></i>Row filters</a></li>
+<li class="chapter" data-level="" data-path="filter.html"><a href="filter.html#column-filters"><i class="fa fa-check"></i>Column filters</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III NHST</b></span></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i>7. Hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>7.1 Example of hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-1.-look-at-the-data"><i class="fa fa-check"></i>Step 1. Look at the data</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-2.-check-assumptions"><i class="fa fa-check"></i>Step 2. Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-3.-perform-the-test"><i class="fa fa-check"></i>Step 3. Perform the test</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-4.-interpret-the-results"><i class="fa fa-check"></i>Step 4. Interpret the results</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="final-note-about-hypothesis-testing.html"><a href="final-note-about-hypothesis-testing.html"><i class="fa fa-check"></i>7.2 Final note about hypothesis testing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bean.html"><a href="bean.html"><i class="fa fa-check"></i>8. BEAN</a>
+<ul>
+<li class="chapter" data-level="" data-path="effect-sizes-1.html"><a href="effect-sizes-1.html"><i class="fa fa-check"></i>8.1 Effect sizes</a>
+<ul>
+<li class="chapter" data-level="" data-path="effect-sizes-1.html"><a href="effect-sizes-1.html#types-of-effect-sizes-1"><i class="fa fa-check"></i>Types of effect sizes</a></li>
+<li class="chapter" data-level="" data-path="effect-sizes-1.html"><a href="effect-sizes-1.html#small-medium-and-large-effect-sizes-1"><i class="fa fa-check"></i>Small, medium, and large effect sizes</a></li>
+<li class="chapter" data-level="" data-path="effect-sizes-1.html"><a href="effect-sizes-1.html#what-makes-an-effect-practically-significant-1"><i class="fa fa-check"></i>What makes an effect practically significant?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="alpha-p-values-1.html"><a href="alpha-p-values-1.html"><i class="fa fa-check"></i>8.2 Alpha &amp; p-values</a>
+<ul>
+<li class="chapter" data-level="" data-path="alpha-p-values-1.html"><a href="alpha-p-values-1.html#p-values-1"><i class="fa fa-check"></i>p-values</a></li>
+<li class="chapter" data-level="" data-path="alpha-p-values-1.html"><a href="alpha-p-values-1.html#alpha-1"><i class="fa fa-check"></i>Alpha</a></li>
+<li class="chapter" data-level="" data-path="alpha-p-values-1.html"><a href="alpha-p-values-1.html#videos-and-resources-1"><i class="fa fa-check"></i>Videos and resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html"><i class="fa fa-check"></i>8.3 Power</a>
+<ul>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#bean-alpha-and-power"><i class="fa fa-check"></i>B(E)A(N): Alpha and power</a></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#how-alpha-and-power-relate-to-one-another"><i class="fa fa-check"></i>How alpha and power relate to one another</a></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#video"><i class="fa fa-check"></i>Video</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis-1.html"><a href="sample-size-power-analysis-1.html"><i class="fa fa-check"></i>8.4 Sample size &amp; power analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis-1.html"><a href="sample-size-power-analysis-1.html#sample-size-n-1"><i class="fa fa-check"></i>Sample size (N)</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis-1.html"><a href="sample-size-power-analysis-1.html#bean-power-analysis-1"><i class="fa fa-check"></i>BEAN: Power analysis</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis-1.html"><a href="sample-size-power-analysis-1.html#power-analysis-example-1-1"><i class="fa fa-check"></i>Power analysis example #1</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis-1.html"><a href="sample-size-power-analysis-1.html#play-with-jpower-1"><i class="fa fa-check"></i>Play with jpower</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis-1.html"><a href="sample-size-power-analysis-1.html#extending-our-knowledge-of-power-analysis-1"><i class="fa fa-check"></i>Extending our knowledge of power analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="inferential-statistics.html"><a href="inferential-statistics.html"><i class="fa fa-check"></i>9. Inferential statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html"><i class="fa fa-check"></i>9.1 Choosing the correct test</a>
+<ul>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html#forward-mapping-choose-the-correct-test"><i class="fa fa-check"></i>Forward mapping: Choose the correct test</a></li>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html#backwards-map-determine-the-data-you-need"><i class="fa fa-check"></i>Backwards map: Determine the data you need</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html"><i class="fa fa-check"></i>9.2 Parametric assumptions</a>
+<ul>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#intervalratio-data"><i class="fa fa-check"></i>Interval/ratio data</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#independent-scores"><i class="fa fa-check"></i>Independent scores</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#normal-distribution"><i class="fa fa-check"></i>Normal distribution</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#homogeneity-of-variance"><i class="fa fa-check"></i>Homogeneity of variance</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#recapping-parametric-assumptions"><i class="fa fa-check"></i>Recapping parametric assumptions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html"><i class="fa fa-check"></i>9.3 Violated assumptions</a>
+<ul>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#intervalratio-data-1"><i class="fa fa-check"></i>Interval/ratio data</a></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#independent-data"><i class="fa fa-check"></i>Independent data</a></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#normality-or-homogeneity-of-variance"><i class="fa fa-check"></i>Normality or homogeneity of variance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="reliability.html"><a href="reliability.html"><i class="fa fa-check"></i>7. Reliability</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+    target="blank"><img alt="Creative Commons License" 
+    style="border-width:0" 
+    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics with jamovi</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="effect-sizes-1" class="section level2 hasAnchor">
+<h2>8.1 Effect sizes<a href="effect-sizes-1.html#effect-sizes-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>An <strong>effect size</strong> is a quantitative description of the strength of a phenomenon (phenomenon means thing being studied). The larger the value, the stronger the phenomenon (e.g., bigger mean differences or stronger relationship). Whereas the p-value tells us about the statistical significance of an effect, the effect size tells us the <strong>practical significance</strong>, or how much we should care about the significance.</p>
+<div id="types-of-effect-sizes-1" class="section level3 hasAnchor">
+<h3>Types of effect sizes<a href="effect-sizes-1.html#types-of-effect-sizes-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are two basic effect sizes we tend to talk about:</p>
+<p>The <strong><em>d</em></strong> family of effect sizes are standardized mean differences. They start at 0 (no mean difference) and can go up to infinity, with larger values meaning larger standardized mean differences. Some of the effect sizes in this family:</p>
+<ul>
+<li><p>Cohen’s <em>d</em> is perhaps the most popular standardized mean difference effect size. Generally, the equation is the mean difference divided by the pooled standard deviation, but in reality the equation differs based on a variety of scenarios and whether you are using a one-sample, independent samples, or paired samples <em>t</em>-test.</p></li>
+<li><p>Hedge’s <em>g</em> is a less biased version of Cohen’s <em>d</em>. Cohen’s <em>d</em> is particularly problematic for small sample sizes, so Hedge’s <em>g</em> is generally preferred, but you’ll see that not all statistical programs provide this effect size. It’s not that difficult to calculate Hedge’s <em>g</em> based on Cohen’s <em>d</em>, but just keep this information in mind.</p></li>
+</ul>
+<p>The <strong><em>r</em></strong> family of effect sizes are measures of strength of association. They range from -1 to +1 such that 0 is no relationship and |1| is a perfect relationship between the variables. As you’ll read about in the correlation and regression chapters, this family of effect sizes can describe the proportion of variance explained by squaring the correlation (e.g., with a correlation of <em>r</em> = .8, then the r-squared is .8<sup>2</sup> or .8 * .8 which is 64% variance explained). Some of the effect sizes in this family:</p>
+<ul>
+<li><p><em>r</em> is a correlation. It’s a standardized measure of the strength of association where <em>r</em> = -1 or +1 means a perfect relationship and <em>r</em> = 0 is no relationship at all. We typically work with Pearson’s correlation, but we will also learn about Spearman correlation and rho.</p></li>
+<li><p><span class="math inline">\(\eta^2\)</span> (eta-squared) measures the proportion of variance in the dependent variable associated with the different groups of the independent variable. This is considered a biased estimate, especially when trying to compare values across studies, so there are two more preferred effect sizes. We’ll cover the difference between these three in a later chapter (ANOVA).</p></li>
+<li><p><span class="math inline">\(\eta^2_p\)</span> (partial eta-squared) is calculated slightly differently and is considered a less biased estimate (again, we’ll learn about this in a later chapter). This can allow for better comparisons of effect sizes across studies. It’s still not perfect, though.</p></li>
+<li><p><span class="math inline">\(\omega^2\)</span> (omega-squared) is calculated even more differently and is considered the least biased estimate. There is also <span class="math inline">\(\omega^2_p\)</span> (partial omega-squared) and <span class="math inline">\(\omega^2_G\)</span> (generalized omega-squared) but as jamovi doesn’t provide it we won’t go over it in this course.</p></li>
+</ul>
+<div class="info">
+<p>
+What is all this about more or less biased effect sizes? It has to do
+with how the standard deviations are calculated in these effect sizes
+and the fact that we’re dealing with samples and trying to infer the
+population’s effect size. Cohen’s d and eta-squared tend to slightly
+overestimate the true population effect, so there are options that
+provide corrections for this overestimation and lead to less biased
+results.
+</p>
+</div>
+<p>We’ll also learn about phi and Cramer’s V as effect sizes for the chi-square test and beta as an effect size for regression in subsequent chapters.</p>
+<p>If you nerded out over this information and want to learn more, <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863/full">check out this great journal article by Daniel Lakens</a> or this <a href="https://lakens.github.io/statistical_inferences/06-effectsize.html">chapter on effect sizes by Daniel Lakens</a>.</p>
+</div>
+<div id="small-medium-and-large-effect-sizes-1" class="section level3 hasAnchor">
+<h3>Small, medium, and large effect sizes<a href="effect-sizes-1.html#small-medium-and-large-effect-sizes-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>What is considered a small, medium, and large effect size? Quite frankly, <em>it depends</em>.</p>
+<p>You may have seen some heuristics online about what small, medium, and large is for Cohen’s <em>d</em> (e.g., .2, .5, and .8) and <em>r</em> (e.g., .1, .3, and .5) but these heuristics should not be used without critical thought. In fact, Cohen (who is regularly cited for these heuristics) said that the way we should determine cut-offs is based on looking across studies to find what is considered small, medium, and large <em>in that particular context</em>.</p>
+<p>As an example, a correlation of <em>r</em> = .03 might be considered so small to be not meaningful, but it’s in fact the correlation between taking aspirin after a heart attack and the prevalence of a future heart attack<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> and was considered so practically important that it’s now standard practice. Think why: taking aspirin after a heart attack is easy and cheap, and if it reduces to chances of a future heart attack even slightly then it has more benefit than harm.</p>
+<p>Let’s take another example. Let’s imagine that we have created an educational intervention that has a <em>d</em> = 1.00 increase in students’ GPAs. That’s big, right? Yup, but imagine that educational intervention costs $100,000 per student. That would be way too expensive to be practical. It would be unlikely that anyone would use the educational intervention, instead looking to see how they could reduce the cost of the intervention while keeping the biggest possible effect on students’ GPAs.</p>
+</div>
+<div id="what-makes-an-effect-practically-significant-1" class="section level3 hasAnchor">
+<h3>What makes an effect practically significant?<a href="effect-sizes-1.html#what-makes-an-effect-practically-significant-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We’ll get into p-values in a moment, which are about statistical significance, but they don’t tell us anything about how meaningful the effect is. That’s what an effect size is for. But how do we know if it’s meaningful or practically significant?</p>
+<p>Lakens (who also did the great journal article on effect sizes above) has a fantastic new preprint out on <a href="https://psyarxiv.com/9d3yf/">Sample Size Justification</a>. In it, he provides an overview of six possible ways to determine which effect sizes are interesting:</p>
+<ol style="list-style-type: decimal">
+<li>“Smallest effect size of interest: what is the smallest effect size that is theoretically and practically interesting?</li>
+<li>Minimally statistically detectable effect: given the test and sample size, what is the critical effect size that can be statistically significant?</li>
+<li>Expected effect size: which effect size is expected based on theoretical predictions or previous research?</li>
+<li>Width of confidence interval: which effect sizes are excluded based on the expected width of the confidence interval around the effect size?</li>
+<li>Sensitivity power analysis: across a range of possible effect sizes, which effects does a design have sufficient power to detect when performing a hypothesis test?</li>
+<li>Distribution of effect sizes in a research area: what is the empirical range of effect sizes in a specific research area, and which effects are <em>a priori</em> unlikely to be observed?” (p. 3)</li>
+</ol>
+<p>Basically, what does past research have to say about what effect size you can expect (#3 and #6)? What is the smallest effect size you care about (#1)? What is the smallest effect size you can reasonably obtain (e.g., due to sample size limitations; #2, #3, and #4)? This is the justification you use to determine what effect size you are looking for. This is important for when you are then determining what sample size you need, which will be discussed in a separate section.</p>
+<p>As a fun followup, as an example of #6, <a href="https://journals.sagepub.com/stoken/default+domain/U7HVJPIXFWBBWQDKMGXT/full">this study in the field of education</a> collected effect sizes of many education interventions to figure out benchmarks for small (&lt;.05), medium (&lt;.20), and large (&gt;= .20) effect sizes based on existing data rather than poor quality heuristics.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="9">
+<li id="fn9"><p>More recent studies have actually shown that the relationship between aspirin and future heart attacks is actually a lot stronger than <em>r</em> = .03, but the point here is to show that even what appears to be a very small correlation isn’t very meaningful.<a href="effect-sizes-1.html#fnref9" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bean.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="alpha-p-values-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"toc_float": true,
+"toc_depth": 4,
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -59,15 +59,15 @@ Sometimes we want to get the descriptive statistics for one variable across mult
 
 We'll learn more about writing up our inferential statistics results later, but first let's learn how we might report our descriptive statistics.
 
-In small examples, we might write-up our descriptive statistics into a paragraph[^03.1-descriptive-statistics-1] (note: I also describe an independent t-test and a chi-square test of independence in this paragraph):
+In small examples, we might write-up our descriptive statistics into a paragraph[^04-descriptive-statistics-1] (note: I also describe an independent t-test and a chi-square test of independence in this paragraph):
 
-[^03.1-descriptive-statistics-1]: This comes from [Wanzer (2017) Developmentally appropriate evaluations: How evaluation practices differ across age of participants](https://thesiscommons.org/bk57d/)
+[^04-descriptive-statistics-1]: This comes from [Wanzer (2017) Developmentally appropriate evaluations: How evaluation practices differ across age of participants](https://thesiscommons.org/bk57d/)
 
 ![](images/02-stats-foundations/example1.png){width="602"}
 
-In examples with many variables, we might write-up our descriptive statistics into a table[^03.1-descriptive-statistics-2]:
+In examples with many variables, we might write-up our descriptive statistics into a table[^04-descriptive-statistics-2]:
 
-[^03.1-descriptive-statistics-2]: This comes from [Wanzer et al. (2020) Experiencing flow while viewing art: Development of the aesthetic experience questionnaire](https://psycnet.apa.org/record/2018-49650-001)
+[^04-descriptive-statistics-2]: This comes from [Wanzer et al. (2020) Experiencing flow while viewing art: Development of the aesthetic experience questionnaire](https://psycnet.apa.org/record/2018-49650-001)
 
 ![](images/02-stats-foundations/example2.png){width="400"}
 
@@ -75,17 +75,23 @@ In examples with many variables, we might write-up our descriptive statistics in
 
 "A picture is worth a thousand words," and in a world in which journal articles have word count limits, figures and graphs are priceless. They are also an incredibly powerful way to examine your data because it can often illuminate patterns you may not be able to see through a table.
 
-```{block, type="info"}
-
-**Remember: it is incredibly important to always visualize your data!** You never know what descriptive statistics may be hiding.
-```
+<div class="info">
+<p><strong>Remember: it is incredibly important to always visualize your
+data!</strong> You never know what descriptive statistics may be
+hiding.</p>
+</div>
 
 Here's a [video](https://www.youtube.com/watch?v=d2wU0kmCJEY) walking through why it's so important to look at your data.
 
-```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
-library(vembedr)
-embed_url("https://www.youtube.com/watch?v=d2wU0kmCJEY")
+
+```{=html}
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/d2wU0kmCJEY" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
 ```
+
 
 jamovi has some plots built into its platform, both under the `Plots` drop-down menu in the `Descriptives` analysis and as options for many of the inferential statistical analyses.
 
@@ -105,14 +111,14 @@ There are three options under **Box Plots**: `Box plot`, `Violin` (which is real
 
 ## 5.4 Expanding your data visualization
 
-Although these can be useful plots, I often do most of my data visualizations in other platforms. For most of my work, I use Excel because I find it pretty easy to make beautiful graphs. Here's an example of a visualization I made in Excel[^03.1-descriptive-statistics-3]:
+Although these can be useful plots, I often do most of my data visualizations in other platforms. For most of my work, I use Excel because I find it pretty easy to make beautiful graphs. Here's an example of a visualization I made in Excel[^04-descriptive-statistics-3]:
 
-[^03.1-descriptive-statistics-3]: This comes from [Wanzer et al. (2020) Promoting intentions to persist in computing: An examination of six years of the EarSketch program](https://doi.org/10.1080/08993408.2020.1714313)
+[^04-descriptive-statistics-3]: This comes from [Wanzer et al. (2020) Promoting intentions to persist in computing: An examination of six years of the EarSketch program](https://doi.org/10.1080/08993408.2020.1714313)
 
 ![](images/02-stats-foundations/example3.png)
 
-For some more complicated figures, I turn to the `ggplot2` package in R. Here's an example of a visualization I made in R[^03.1-descriptive-statistics-4]:
+For some more complicated figures, I turn to the `ggplot2` package in R. Here's an example of a visualization I made in R[^04-descriptive-statistics-4]:
 
-[^03.1-descriptive-statistics-4]: This comes from [Wanzer (2020) What is evaluation? Perspectives of how evaluation differs (or not) from research](https://journals.sagepub.com/doi/10.1177/1098214020920710)
+[^04-descriptive-statistics-4]: This comes from [Wanzer (2020) What is evaluation? Perspectives of how evaluation differs (or not) from research](https://journals.sagepub.com/doi/10.1177/1098214020920710)
 
 ![](images/02-stats-foundations/example4.png)

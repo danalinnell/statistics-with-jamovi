@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Step 4: Interpret results | Statistics with jamovi</title>
+  <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Step 4: Interpret results | Statistics with jamovi" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Step 4: Interpret results | Statistics with jamovi" />
+  
+  <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  
+
+<meta name="author" content="Dana Linnell" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="step-3-perform-the-test-1.html"/>
+<link rel="next" href="fishers-exact-test.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats with jamovi</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="part"><span><b>I Overview</b></span></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#getting-help-in-this-class"><i class="fa fa-check"></i>1.1 Getting help in this class</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#dana-your-instructor"><i class="fa fa-check"></i>1.2 Dana, your instructor</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#navigating-this-websitebook"><i class="fa fa-check"></i>1.3 Navigating this website/book</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#technology-tips"><i class="fa fa-check"></i>1.4 Technology Tips</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#errors-mistakes-and-suggestions"><i class="fa fa-check"></i>1.5 Errors, mistakes, and suggestions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html"><i class="fa fa-check"></i>2.1 Describing our data</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-central-tendency"><i class="fa fa-check"></i>Measures of Central Tendency</a></li>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-dispersion"><i class="fa fa-check"></i>Measures of Dispersion</a></li>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-the-shape-of-the-distribution"><i class="fa fa-check"></i>Measures of the Shape of the Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html"><i class="fa fa-check"></i>2.2 Levels of measurement</a>
+<ul>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html#examples-of-levels-of-measurement"><i class="fa fa-check"></i>Examples of levels of measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>2.3 Descriptive vs inferential statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html#an-example"><i class="fa fa-check"></i>An example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html"><i class="fa fa-check"></i>2.4 Design &amp; Methods Key Terms</a>
+<ul>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#variables"><i class="fa fa-check"></i>Variables</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#study-design-terms"><i class="fa fa-check"></i>Study design terms</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#reliability-and-validity"><i class="fa fa-check"></i>Reliability and validity</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#statistical-terms"><i class="fa fa-check"></i>Statistical terms</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#other-terms"><i class="fa fa-check"></i>Other terms</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Intro to jamovi</b></span></li>
+<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html"><i class="fa fa-check"></i>3. Overview of jamovi</a>
+<ul>
+<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html#installing-jamovi"><i class="fa fa-check"></i>Installing jamovi</a></li>
+<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html#opening-spss-.sav-files-in-jamovi"><i class="fa fa-check"></i>Opening SPSS (.sav) files in jamovi</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i>4. Describing data</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-variables.html"><a href="data-variables.html"><i class="fa fa-check"></i>4.1 Data variables</a></li>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html"><i class="fa fa-check"></i>4.2 Describing your data</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html#describing-nominal-or-ordinal-data"><i class="fa fa-check"></i>Describing nominal or ordinal data</a></li>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html#describing-continuous-data"><i class="fa fa-check"></i>Describing continuous data</a></li>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html#describing-one-variable-split-by-another-variable"><i class="fa fa-check"></i>Describing one variable split by another variable</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="writing-up-descriptive-statistics.html"><a href="writing-up-descriptive-statistics.html"><i class="fa fa-check"></i>4.3 Writing up descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i>5. Visualizing data</a>
+<ul>
+<li class="chapter" data-level="" data-path="a-continuous-variable.html"><a href="a-continuous-variable.html"><i class="fa fa-check"></i>5.1 A continuous variable</a></li>
+<li class="chapter" data-level="" data-path="a-categorical-variable.html"><a href="a-categorical-variable.html"><i class="fa fa-check"></i>5.2 A categorical variable</a></li>
+<li class="chapter" data-level="" data-path="a-continuous-variable-split-by-a-categorical-variable.html"><a href="a-continuous-variable-split-by-a-categorical-variable.html"><i class="fa fa-check"></i>5.3 A continuous variable split by a categorical variable</a></li>
+<li class="chapter" data-level="" data-path="expanding-your-data-visualization.html"><a href="expanding-your-data-visualization.html"><i class="fa fa-check"></i>5.4 Expanding your data visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html"><i class="fa fa-check"></i>6. Cleaning data</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-setup.html"><a href="data-setup.html"><i class="fa fa-check"></i>6.1 Data setup</a></li>
+<li class="chapter" data-level="" data-path="compute.html"><a href="compute.html"><i class="fa fa-check"></i>6.2 Compute</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>6.3 Transform</a>
+<ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#recoding"><i class="fa fa-check"></i>Recoding</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#reverse-scoring"><i class="fa fa-check"></i>Reverse-scoring</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#multiple-transformations"><i class="fa fa-check"></i>Multiple transformations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="filter.html"><a href="filter.html"><i class="fa fa-check"></i>6.4 Filter</a>
+<ul>
+<li class="chapter" data-level="" data-path="filter.html"><a href="filter.html#row-filters"><i class="fa fa-check"></i>Row filters</a></li>
+<li class="chapter" data-level="" data-path="filter.html"><a href="filter.html#column-filters"><i class="fa fa-check"></i>Column filters</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III NHST</b></span></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i>7. Hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>7.1 Example of hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-1.-look-at-the-data"><i class="fa fa-check"></i>Step 1. Look at the data</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-2.-check-assumptions"><i class="fa fa-check"></i>Step 2. Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-3.-perform-the-test"><i class="fa fa-check"></i>Step 3. Perform the test</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-4.-interpret-the-results"><i class="fa fa-check"></i>Step 4. Interpret the results</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="final-note-about-hypothesis-testing.html"><a href="final-note-about-hypothesis-testing.html"><i class="fa fa-check"></i>7.2 Final note about hypothesis testing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bean.html"><a href="bean.html"><i class="fa fa-check"></i>8. BEAN</a>
+<ul>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html"><i class="fa fa-check"></i>8.1 Effect sizes</a>
+<ul>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html#types-of-effect-sizes"><i class="fa fa-check"></i>Types of effect sizes</a></li>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html#small-medium-and-large-effect-sizes"><i class="fa fa-check"></i>Small, medium, and large effect sizes</a></li>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html#what-makes-an-effect-practically-significant"><i class="fa fa-check"></i>What makes an effect practically significant?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html"><i class="fa fa-check"></i>8.2 Alpha &amp; p-values</a>
+<ul>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#p-values"><i class="fa fa-check"></i>p-values</a></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#alpha"><i class="fa fa-check"></i>Alpha</a></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#videos-and-resources"><i class="fa fa-check"></i>Videos and resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html"><i class="fa fa-check"></i>8.3 Power</a>
+<ul>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#bean-alpha-and-power"><i class="fa fa-check"></i>B(E)A(N): Alpha and power</a></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#how-alpha-and-power-relate-to-one-another"><i class="fa fa-check"></i>How alpha and power relate to one another</a></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#video"><i class="fa fa-check"></i>Video</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html"><i class="fa fa-check"></i>8.4 Sample size &amp; power analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#sample-size-n"><i class="fa fa-check"></i>Sample size (N)</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#bean-power-analysis"><i class="fa fa-check"></i>BEAN: Power analysis</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#power-analysis-example-1"><i class="fa fa-check"></i>Power analysis example #1</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#play-with-jpower"><i class="fa fa-check"></i>Play with jpower</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#extending-our-knowledge-of-power-analysis"><i class="fa fa-check"></i>Extending our knowledge of power analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="inferential-statistics.html"><a href="inferential-statistics.html"><i class="fa fa-check"></i>9. Inferential statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html"><i class="fa fa-check"></i>9.1 Choosing the correct test</a>
+<ul>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html#forward-mapping-choose-the-correct-test"><i class="fa fa-check"></i>Forward mapping: Choose the correct test</a></li>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html#backwards-map-determine-the-data-you-need"><i class="fa fa-check"></i>Backwards map: Determine the data you need</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html"><i class="fa fa-check"></i>9.2 Parametric assumptions</a>
+<ul>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#intervalratio-data"><i class="fa fa-check"></i>Interval/ratio data</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#independent-scores"><i class="fa fa-check"></i>Independent scores</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#normal-distribution"><i class="fa fa-check"></i>Normal distribution</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#homogeneity-of-variance"><i class="fa fa-check"></i>Homogeneity of variance</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#recapping-parametric-assumptions"><i class="fa fa-check"></i>Recapping parametric assumptions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html"><i class="fa fa-check"></i>9.3 Violated assumptions</a>
+<ul>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#intervalratio-data-1"><i class="fa fa-check"></i>Interval/ratio data</a></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#independent-data"><i class="fa fa-check"></i>Independent data</a></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#normality-or-homogeneity-of-variance"><i class="fa fa-check"></i>Normality or homogeneity of variance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="writing-up-results-in-apa-style.html"><a href="writing-up-results-in-apa-style.html"><i class="fa fa-check"></i>10. Writing up results in APA style</a></li>
+<li class="part"><span><b>IV Chi-square</b></span></li>
+<li class="chapter" data-level="" data-path="chi-square-overview.html"><a href="chi-square-overview.html"><i class="fa fa-check"></i>11. Chi-square overview</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html"><i class="fa fa-check"></i>12. Chi-square goodness-of-fit</a>
+<ul>
+<li class="chapter" data-level="" data-path="step-1-look-at-the-data.html"><a href="step-1-look-at-the-data.html"><i class="fa fa-check"></i>Step 1: Look at the data</a>
+<ul>
+<li class="chapter" data-level="" data-path="step-1-look-at-the-data.html"><a href="step-1-look-at-the-data.html#data-set-up"><i class="fa fa-check"></i>Data set-up</a></li>
+<li class="chapter" data-level="" data-path="step-1-look-at-the-data.html"><a href="step-1-look-at-the-data.html#describe-your-data"><i class="fa fa-check"></i>Describe your data</a></li>
+<li class="chapter" data-level="" data-path="step-1-look-at-the-data.html"><a href="step-1-look-at-the-data.html#specify-the-hypotheses-1"><i class="fa fa-check"></i>Specify the hypotheses</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="step-2-check-assumptions.html"><a href="step-2-check-assumptions.html"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="step-3-perform-the-test.html"><a href="step-3-perform-the-test.html"><i class="fa fa-check"></i>Step 3: Perform the test</a>
+<ul>
+<li class="chapter" data-level="" data-path="step-3-perform-the-test.html"><a href="step-3-perform-the-test.html#expected-proportions-different-expected-frequencies"><i class="fa fa-check"></i>Expected proportions: Different Expected Frequencies</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="step-4-interpret-results.html"><a href="step-4-interpret-results.html"><i class="fa fa-check"></i>Step 4: Interpret results</a>
+<ul>
+<li class="chapter" data-level="" data-path="step-4-interpret-results.html"><a href="step-4-interpret-results.html#visualize-the-results"><i class="fa fa-check"></i>Visualize the results</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="additional-practice.html"><a href="additional-practice.html"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html"><i class="fa fa-check"></i>13. Chi-square test of independence</a>
+<ul>
+<li class="chapter" data-level="" data-path="step-1-look-at-the-data-1.html"><a href="step-1-look-at-the-data-1.html"><i class="fa fa-check"></i>Step 1: Look at the data</a>
+<ul>
+<li class="chapter" data-level="" data-path="step-1-look-at-the-data-1.html"><a href="step-1-look-at-the-data-1.html#data-set-up-1"><i class="fa fa-check"></i>Data set-up</a></li>
+<li class="chapter" data-level="" data-path="step-1-look-at-the-data-1.html"><a href="step-1-look-at-the-data-1.html#describe-the-data-1"><i class="fa fa-check"></i>Describe the data</a></li>
+<li class="chapter" data-level="" data-path="step-1-look-at-the-data-1.html"><a href="step-1-look-at-the-data-1.html#specify-the-hypotheses-2"><i class="fa fa-check"></i>Specify the hypotheses</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="step-2-check-assumptions-1.html"><a href="step-2-check-assumptions-1.html"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="step-3-perform-the-test-1.html"><a href="step-3-perform-the-test-1.html"><i class="fa fa-check"></i>Step 3: Perform the test</a>
+<ul>
+<li class="chapter" data-level="" data-path="step-3-perform-the-test-1.html"><a href="step-3-perform-the-test-1.html#ordinal-variables"><i class="fa fa-check"></i>Ordinal variable(s)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="step-4-interpret-results-1.html"><a href="step-4-interpret-results-1.html"><i class="fa fa-check"></i>Step 4: Interpret results</a>
+<ul>
+<li class="chapter" data-level="" data-path="step-4-interpret-results-1.html"><a href="step-4-interpret-results-1.html#write-up-the-results-in-apa-style-1"><i class="fa fa-check"></i>Write up the results in APA style</a></li>
+<li class="chapter" data-level="" data-path="step-4-interpret-results-1.html"><a href="step-4-interpret-results-1.html#visualize-the-results-1"><i class="fa fa-check"></i>Visualize the results</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="fishers-exact-test.html"><a href="fishers-exact-test.html"><i class="fa fa-check"></i>Fisher’s exact test</a></li>
+<li class="chapter" data-level="" data-path="additional-practice-1.html"><a href="additional-practice-1.html"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html"><i class="fa fa-check"></i>14. McNemar’s test</a>
+<ul>
+<li class="chapter" data-level="" data-path="step-1-look-at-the-data-2.html"><a href="step-1-look-at-the-data-2.html"><i class="fa fa-check"></i>Step 1: Look at the data</a>
+<ul>
+<li class="chapter" data-level="" data-path="step-1-look-at-the-data-2.html"><a href="step-1-look-at-the-data-2.html#data-set-up-2"><i class="fa fa-check"></i>Data set-up</a></li>
+<li class="chapter" data-level="" data-path="step-1-look-at-the-data-2.html"><a href="step-1-look-at-the-data-2.html#specify-the-hypotheses-3"><i class="fa fa-check"></i>Specify the hypotheses</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="step-2-check-assumptions-2.html"><a href="step-2-check-assumptions-2.html"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="step-3-perform-the-test-2.html"><a href="step-3-perform-the-test-2.html"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="step-4-interpret-results-2.html"><a href="step-4-interpret-results-2.html"><i class="fa fa-check"></i>Step 4: Interpret results</a>
+<ul>
+<li class="chapter" data-level="" data-path="step-4-interpret-results-2.html"><a href="step-4-interpret-results-2.html#write-up-the-results-in-apa-style-2"><i class="fa fa-check"></i>Write up the results in APA style</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>V Psychometrics</b></span></li>
+<li class="chapter" data-level="" data-path="reliability.html"><a href="reliability.html"><i class="fa fa-check"></i>25. Reliability</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+    target="blank"><img alt="Creative Commons License" 
+    style="border-width:0" 
+    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics with jamovi</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="step-4-interpret-results-1" class="section level2 hasAnchor">
+<h2>Step 4: Interpret results<a href="step-4-interpret-results-1.html#step-4-interpret-results-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="images/09-chi-square/chi-square_results1.png" /></p>
+<p>The first table shows us our observed and expected frequencies. We use the expected frequencies to test our assumption that expected frequencies are greater than 5. Our smallest expected frequncy is 13.53 so we meet this assumption.</p>
+<p><img src="images/09-chi-square/chi-square_results2.png" /></p>
+<p>The second table gives us our results. Our p-value (<em>p</em> = .005) is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. The degrees of freedom (df) is the number of categories of one variable minus one times the number of categories in the second variable minus one which is (<em>r</em> - 1)(<em>c</em> - 1) or in this case (2-1)(3-1) = 2.</p>
+<p>jamovi also gives us our Cramer’s V value. Note that it does not provide Phi because we don’t have a perfect square table (e.g., 2x2 or 3x3). These are measures of effect size for the chi-square. Cramer’s V can be interpreted similar to a correlation (ranges from 0 to 1, with higher scores meaning stronger relationships between the variables).</p>
+<div class="info">
+<p>
+Currently, jamovi cannot tell us where the differences are if the
+chi-square is statistically significant. That means that the expected
+frequencies in one cell differ significantly from the observed
+frequencies, but which cells? For now, just eyeball the comparisons if
+the chi-square is statistically significant. Someday I’m sure jamovi
+will include standardized residuals for us to test this more
+quantitatively.
+</p>
+</div>
+<div id="write-up-the-results-in-apa-style-1" class="section level3 hasAnchor">
+<h3>Write up the results in APA style<a href="step-4-interpret-results-1.html#write-up-the-results-in-apa-style-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can write up our results in APA something like this:</p>
+<blockquote>
+<p>Pearson’s <span class="math inline">\(\chi^2\)</span> test of independence showed a significant association between species and choice, <span class="math inline">\(\chi^2\)</span> (2) = 10.72, <em>p</em> = .005, Cramer’s V = .24. Robots were more likely to say they prefer flowers (70%) compared to humans (30%) and humans were more likely to say they prefer data (60%) compared to robots (40%). Robots (46%) and humans (54%) were equally likely to prefer puppies.</p>
+</blockquote>
+<p>We can also use the observed frequencies to either visualize (see the next table) or write-up in a table. Here’s an example write-up with a table.</p>
+<blockquote>
+<p>Pearson’s <span class="math inline">\(\chi^2\)</span> test of independence showed a significant association between species and choice, <span class="math inline">\(\chi^2\)</span> (2) = 10.72, <em>p</em> = .005, Cramer’s V = .24. Robots were more likely to say they prefer flowers whereas humans were more likely to say they prefer data (see table below).</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Robots</th>
+<th>Humans</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>puppy</td>
+<td>13 (46%)</td>
+<td>15 (54%)</td>
+</tr>
+<tr class="even">
+<td>flower</td>
+<td>30 (70%)</td>
+<td>13 (30%)</td>
+</tr>
+<tr class="odd">
+<td>data</td>
+<td>44 (40%)</td>
+<td>65 (60%)</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div id="visualize-the-results-1" class="section level3 hasAnchor">
+<h3>Visualize the results<a href="step-4-interpret-results-1.html#visualize-the-results-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>jamovi has some decent plots with some of the latest updates. Here’s one I created after tinkering with the settings under Plots on the chi-square setup. These are sufficient for your homework assignments in this class, but note that sometimes when there are many bars or long labels for the categories of your variable it will scrunch up. Hopefully jamovi will fix it in the future.</p>
+<p><img src="images/09-chi-square/chi-square_results4.png" /></p>
+<p>However, you can also create these pretty easily in Excel. There are two that I think work well for this dataset and our research questions. The first is a clustered column chart:</p>
+<p><img src="images/11-independence/independence_excel1.png" width="500" /></p>
+<p>The second is a stacked bar chart with connected lines:</p>
+<p><img src="images/11-independence/independence_excel2.png" width="500" /></p>
+<p>Which do you choose? Whichever you think better communicates the message of the results of the analysis! This takes skill and practice, and probably an entirely separate course on effective data visualization.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="step-3-perform-the-test-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="fishers-exact-test.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"toc_float": true,
+"toc_depth": 4,
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
