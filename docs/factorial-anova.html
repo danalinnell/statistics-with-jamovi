@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>13.4 Factorial ANOVA | Statistics with jamovi</title>
+  <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="13.4 Factorial ANOVA | Statistics with jamovi" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="13.4 Factorial ANOVA | Statistics with jamovi" />
+  
+  <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
+  
+
+<meta name="author" content="Dana Linnell" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="repeated-measures-anova.html"/>
+<link rel="next" href="ancova.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats with jamovi</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="part"><span><b>I Overview</b></span></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#getting-help-in-this-class"><i class="fa fa-check"></i>1.1 Getting help in this class</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#dana-your-instructor"><i class="fa fa-check"></i>1.2 Dana, your instructor</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#navigating-this-websitebook"><i class="fa fa-check"></i>1.3 Navigating this website/book</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#technology-tips"><i class="fa fa-check"></i>1.4 Technology Tips</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#errors-mistakes-and-suggestions"><i class="fa fa-check"></i>1.5 Errors, mistakes, and suggestions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html"><i class="fa fa-check"></i>2.1 Describing our data</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-central-tendency"><i class="fa fa-check"></i>Measures of Central Tendency</a></li>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-dispersion"><i class="fa fa-check"></i>Measures of Dispersion</a></li>
+<li class="chapter" data-level="" data-path="describing-our-data.html"><a href="describing-our-data.html#measures-of-the-shape-of-the-distribution"><i class="fa fa-check"></i>Measures of the Shape of the Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html"><i class="fa fa-check"></i>2.2 Levels of measurement</a>
+<ul>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html#examples-of-levels-of-measurement"><i class="fa fa-check"></i>Examples of levels of measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>2.3 Descriptive vs inferential statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html#an-example"><i class="fa fa-check"></i>An example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html"><i class="fa fa-check"></i>2.4 Design &amp; Methods Key Terms</a>
+<ul>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#variables"><i class="fa fa-check"></i>Variables</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#study-design-terms"><i class="fa fa-check"></i>Study design terms</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#reliability-and-validity"><i class="fa fa-check"></i>Reliability and validity</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#statistical-terms"><i class="fa fa-check"></i>Statistical terms</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#other-terms"><i class="fa fa-check"></i>Other terms</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Intro to jamovi</b></span></li>
+<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html"><i class="fa fa-check"></i>3. Overview of jamovi</a>
+<ul>
+<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html#installing-jamovi"><i class="fa fa-check"></i>3.1 Installing jamovi</a></li>
+<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html#navigating-the-jamovi-interface"><i class="fa fa-check"></i>3.2 Navigating the jamovi interface</a></li>
+<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html#additional-jamovi-videos-and-resources"><i class="fa fa-check"></i>3.3 Additional jamovi videos and resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i>4. Describing data</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-variables.html"><a href="data-variables.html"><i class="fa fa-check"></i>4.1 Data variables</a></li>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html"><i class="fa fa-check"></i>4.2 Describing your data</a>
+<ul>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html#describing-nominal-or-ordinal-data"><i class="fa fa-check"></i>Describing nominal or ordinal data</a></li>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html#describing-continuous-data"><i class="fa fa-check"></i>Describing continuous data</a></li>
+<li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html#describing-one-variable-split-by-another-variable"><i class="fa fa-check"></i>Describing one variable split by another variable</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="writing-up-descriptive-statistics.html"><a href="writing-up-descriptive-statistics.html"><i class="fa fa-check"></i>4.3 Writing up descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i>5. Visualizing data</a>
+<ul>
+<li class="chapter" data-level="" data-path="a-continuous-variable.html"><a href="a-continuous-variable.html"><i class="fa fa-check"></i>5.1 A continuous variable</a></li>
+<li class="chapter" data-level="" data-path="a-categorical-variable.html"><a href="a-categorical-variable.html"><i class="fa fa-check"></i>5.2 A categorical variable</a></li>
+<li class="chapter" data-level="" data-path="a-continuous-variable-split-by-a-categorical-variable.html"><a href="a-continuous-variable-split-by-a-categorical-variable.html"><i class="fa fa-check"></i>5.3 A continuous variable split by a categorical variable</a></li>
+<li class="chapter" data-level="" data-path="expanding-your-data-visualization.html"><a href="expanding-your-data-visualization.html"><i class="fa fa-check"></i>5.4 Expanding your data visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html"><i class="fa fa-check"></i>6. Cleaning data</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-setup.html"><a href="data-setup.html"><i class="fa fa-check"></i>6.1 Data setup</a></li>
+<li class="chapter" data-level="" data-path="compute.html"><a href="compute.html"><i class="fa fa-check"></i>6.2 Compute</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i>6.3 Transform</a>
+<ul>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#recoding"><i class="fa fa-check"></i>Recoding</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#reverse-scoring"><i class="fa fa-check"></i>Reverse-scoring</a></li>
+<li class="chapter" data-level="" data-path="transform.html"><a href="transform.html#multiple-transformations"><i class="fa fa-check"></i>Multiple transformations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="filter.html"><a href="filter.html"><i class="fa fa-check"></i>6.4 Filter</a>
+<ul>
+<li class="chapter" data-level="" data-path="filter.html"><a href="filter.html#row-filters"><i class="fa fa-check"></i>Row filters</a></li>
+<li class="chapter" data-level="" data-path="filter.html"><a href="filter.html#column-filters"><i class="fa fa-check"></i>Column filters</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III NHST</b></span></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i>7. Hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>7.1 Example of hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-1.-look-at-the-data"><i class="fa fa-check"></i>Step 1. Look at the data</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-2.-check-assumptions"><i class="fa fa-check"></i>Step 2. Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-3.-perform-the-test"><i class="fa fa-check"></i>Step 3. Perform the test</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#step-4.-interpret-the-results"><i class="fa fa-check"></i>Step 4. Interpret the results</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="final-note-about-hypothesis-testing.html"><a href="final-note-about-hypothesis-testing.html"><i class="fa fa-check"></i>7.2 Final note about hypothesis testing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bean.html"><a href="bean.html"><i class="fa fa-check"></i>8. BEAN</a>
+<ul>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html"><i class="fa fa-check"></i>8.1 Effect sizes</a>
+<ul>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html#types-of-effect-sizes"><i class="fa fa-check"></i>Types of effect sizes</a></li>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html#small-medium-and-large-effect-sizes"><i class="fa fa-check"></i>Small, medium, and large effect sizes</a></li>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html#what-makes-an-effect-practically-significant"><i class="fa fa-check"></i>What makes an effect practically significant?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html"><i class="fa fa-check"></i>8.2 Alpha &amp; p-values</a>
+<ul>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#p-values"><i class="fa fa-check"></i>p-values</a></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#alpha"><i class="fa fa-check"></i>Alpha</a></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#videos-and-resources"><i class="fa fa-check"></i>Videos and resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html"><i class="fa fa-check"></i>8.3 Power</a>
+<ul>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#bean-alpha-and-power"><i class="fa fa-check"></i>B(E)A(N): Alpha and power</a></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#how-alpha-and-power-relate-to-one-another"><i class="fa fa-check"></i>How alpha and power relate to one another</a></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#video"><i class="fa fa-check"></i>Video</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html"><i class="fa fa-check"></i>8.4 Sample size &amp; power analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#sample-size-n"><i class="fa fa-check"></i>Sample size (N)</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#bean-power-analysis"><i class="fa fa-check"></i>BEAN: Power analysis</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#power-analysis-example-1"><i class="fa fa-check"></i>Power analysis example #1</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#play-with-jpower"><i class="fa fa-check"></i>Play with jpower</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#extending-our-knowledge-of-power-analysis"><i class="fa fa-check"></i>Extending our knowledge of power analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="inferential-statistics.html"><a href="inferential-statistics.html"><i class="fa fa-check"></i>9. Inferential statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html"><i class="fa fa-check"></i>9.1 Choosing the correct test</a>
+<ul>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html#forward-mapping-choose-the-correct-test"><i class="fa fa-check"></i>Forward mapping: Choose the correct test</a></li>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html#backwards-map-determine-the-data-you-need"><i class="fa fa-check"></i>Backwards map: Determine the data you need</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html"><i class="fa fa-check"></i>9.2 Parametric assumptions</a>
+<ul>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#intervalratio-data"><i class="fa fa-check"></i>Interval/ratio data</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#independent-scores"><i class="fa fa-check"></i>Independent scores</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#normal-distribution"><i class="fa fa-check"></i>Normal distribution</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#homogeneity-of-variance"><i class="fa fa-check"></i>Homogeneity of variance</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#recapping-parametric-assumptions"><i class="fa fa-check"></i>Recapping parametric assumptions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html"><i class="fa fa-check"></i>9.3 Violated assumptions</a>
+<ul>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#intervalratio-data-1"><i class="fa fa-check"></i>Interval/ratio data</a></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#independent-data"><i class="fa fa-check"></i>Independent data</a></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#normality-or-homogeneity-of-variance"><i class="fa fa-check"></i>Normality or homogeneity of variance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="writing-up-results-in-apa-style.html"><a href="writing-up-results-in-apa-style.html"><i class="fa fa-check"></i>10. Writing up results in APA style</a></li>
+<li class="part"><span><b>IV Inferential Statistics</b></span></li>
+<li class="chapter" data-level="" data-path="chi-square.html"><a href="chi-square.html"><i class="fa fa-check"></i>11. Chi-square</a>
+<ul>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html"><i class="fa fa-check"></i>11.1 Chi-square goodness-of-fit</a>
+<ul>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#step-1-look-at-the-data"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#step-2-check-assumptions"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#step-3-perform-the-test"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#step-4-interpret-results"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#additional-practice"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html"><i class="fa fa-check"></i>11.2 Chi-square test of independence</a>
+<ul>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#step-1-look-at-the-data-1"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#step-2-check-assumptions-1"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#step-3-perform-the-test-1"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#step-4-interpret-results-1"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#fishers-exact-test"><i class="fa fa-check"></i>Fisher’s exact test</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#additional-practice-1"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html"><i class="fa fa-check"></i>11.3 McNemar’s test</a>
+<ul>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html#step-1-look-at-the-data-2"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html#step-2-check-assumptions-2"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html#step-3-perform-the-test-2"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html#step-4-interpret-results-2"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="t-tests.html"><a href="t-tests.html"><i class="fa fa-check"></i>12. t-tests</a>
+<ul>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html"><i class="fa fa-check"></i>12.1 One sample t-test</a>
+<ul>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#step-1-look-at-the-data-3"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#step-2-check-assumptions-3"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#step-3-perform-the-test-3"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#step-4-interpret-results-3"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#wilcoxon-w-test"><i class="fa fa-check"></i>Wilcoxon W test</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#your-turn"><i class="fa fa-check"></i>Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i>12.2 Independent t-test</a>
+<ul>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#step-1-look-at-the-data-4"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#step-2-check-assumptions-4"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#step-3-perform-the-test-4"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#step-4-interpret-results-4"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#welchs-t-test"><i class="fa fa-check"></i>Welch’s t-test</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#mann-whitney-u-test"><i class="fa fa-check"></i>Mann-Whitney U test</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#additional-practice-2"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html"><i class="fa fa-check"></i>11. Dependent t-test</a>
+<ul>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#step-1-look-at-the-data-5"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#step-2-check-assumptions-5"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#step-3-perform-the-test-5"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#step-4-interpret-results-5"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#wilcoxon-rank"><i class="fa fa-check"></i>Wilcoxon rank</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#additional-practice-3"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i>13. ANOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i>13.1 One-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#step-1-look-at-the-data-6"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-assumptions"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#step-3-perform-the-test-6"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#step-4-interpret-results-6"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#welchs-f-test"><i class="fa fa-check"></i>Welch’s F-test</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#kruskal-wallis-test"><i class="fa fa-check"></i>Kruskal-Wallis test</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#additional-practice-4"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html"><i class="fa fa-check"></i>13.2 Finding Group Differences</a>
+<ul>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#post-hoc-comparisons"><i class="fa fa-check"></i>Post hoc comparisons</a></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#welchs-f-test-post-hoc-tests"><i class="fa fa-check"></i>Welch’s F-test post hoc tests</a></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#kruskal-wallis-post-hoc-tests"><i class="fa fa-check"></i>Kruskal-Wallis post hoc tests</a></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#planned-contrasts"><i class="fa fa-check"></i>Planned Contrasts</a></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#additional-practice-5"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html"><i class="fa fa-check"></i>13.3 Repeated Measures ANOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#step-1-look-at-the-data-7"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#step-2-check-assumptions-6"><i class="fa fa-check"></i>Step 2: Check Assumptions</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#step-3-perform-the-test-7"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#step-4-interpret-results-7"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#friedmans-test"><i class="fa fa-check"></i>Friedman’s test</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#additional-practice-6"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i>13.4 Factorial ANOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="factorial-anova.html"><a href="factorial-anova.html#independent-factorial-anova"><i class="fa fa-check"></i>Independent Factorial ANOVA</a></li>
+<li class="chapter" data-level="" data-path="factorial-anova.html"><a href="factorial-anova.html#repeated-measures-factorial-anova"><i class="fa fa-check"></i>Repeated Measures Factorial ANOVA</a></li>
+<li class="chapter" data-level="" data-path="factorial-anova.html"><a href="factorial-anova.html#mixed-factorial-anova"><i class="fa fa-check"></i>Mixed Factorial ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i>13.5 ANCOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html#step-1-look-at-the-data-8"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html#step-2-check-assumptions-7"><i class="fa fa-check"></i>Step 2: Check Assumptions</a></li>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html#step-3-perform-the-test-8"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html#step-3-interpret-results"><i class="fa fa-check"></i>Step 3: Interpret results</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i>14. Correlation and regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i>14.1 Correlation</a>
+<ul>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#step-1-look-at-the-data-9"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#step-2-check-assumptions-8"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#step-3-perform-the-test-9"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#step-4-interpreting-results"><i class="fa fa-check"></i>Step 4: Interpreting results</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#comparing-strengths-of-correlations"><i class="fa fa-check"></i>Comparing strengths of correlations</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#additional-practice-7"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i>14.2 Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#step-1-look-at-the-data-10"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#step-2-check-assumptions-9"><i class="fa fa-check"></i>Step 2: Check Assumptions</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#step-3-perform-the-test-10"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#step-4-interpret-results-8"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#categorical-predictors"><i class="fa fa-check"></i>Categorical Predictors</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#hierarchical-regression"><i class="fa fa-check"></i>Hierarchical regression</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#additional-practice-8"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html"><i class="fa fa-check"></i>14.3 General Linear Model</a>
+<ul>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html#correlation-as-a-regression"><i class="fa fa-check"></i>Correlation as a regression</a></li>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html#independent-t-test-as-a-regression"><i class="fa fa-check"></i>Independent t-test as a regression</a></li>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html#dependent-t-test-as-a-regression"><i class="fa fa-check"></i>Dependent t-test as a regression</a></li>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html#one-way-anova-as-a-regression"><i class="fa fa-check"></i>One-way ANOVA as a regression</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>V Psychometrics</b></span></li>
+<li class="chapter" data-level="" data-path="reliability.html"><a href="reliability.html"><i class="fa fa-check"></i>25. Reliability</a></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="" data-path="answers-to-your-turn-exercises.html"><a href="answers-to-your-turn-exercises.html"><i class="fa fa-check"></i>Answers to Your Turn exercises</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+    target="blank"><img alt="Creative Commons License" 
+    style="border-width:0" 
+    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics with jamovi</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="factorial-anova" class="section level2 hasAnchor">
+<h2>13.4 Factorial ANOVA<a href="factorial-anova.html#factorial-anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Factorial ANOVA allows us to examine two or more independent variables (IVs) simultaneously against a continuous DV. There are several types of factorial designs:</p>
+<ul>
+<li><strong>Independent factorial design</strong>: several between-group (independent) IVs</li>
+<li><strong>Repeated measures factorial design</strong>: several within-group (repeated-measures) IVs</li>
+<li><strong>Mixed factorial design</strong>: some between-group and some within-group IVs</li>
+</ul>
+<p>Furthermore, you may read about ANOVAs referred to as “one-way”, “two-way”, “three-way” or greater. This simply refers to how many independent variables there are. Factorial ANOVAs are sometimes also referenced by how many groups per IV there are; for example, a 2 x 3 ANOVA is a factorial ANOVA in which the first IV has two conditions and the second IV has three conditions. You would also specify which IVs are between-group and which are within-group. For example, you might write that your design is a 2 (between-subjects: gender) x3 (within-subjects: task) mixed factorial.</p>
+<p>We won’t be going into too much detail on the different factorial ANOVA designs. Instead, I will walk through illustrative cases so that if you want to apply them in the future you can mimic the procedures below. Note that the assumptions are essentially the same as the one-way ANOVA and/or repeated measures ANOVA depending on whether you are using between- or within-group IVs, respectively.</p>
+<div id="independent-factorial-anova" class="section level3 hasAnchor">
+<h3>Independent Factorial ANOVA<a href="factorial-anova.html#independent-factorial-anova" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The independent factorial ANOVA has multiple between-group IVs. Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “rtfm”. This data has two IVs: attend (whether or not the student turned up to lectures) and reading (whether or not the student actually read the textbook). 1 = they did and 0 = they did not.</p>
+<p>Here’s a video walking through the independent factorial ANOVA.</p>
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/EynjbSDW56I" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+<p>Because we do not have a within-group IV, we will select the ANOVA analysis. Move grade to your Dependent Variable box and both attend and reading to your Fixed Factors. Select all the same options as you did for the one-way ANOVA (i.e., <span class="math inline">\(\omega^2\)</span>, assumption checks, Tukey’s post hoc tests for the two variables attend and reading, estimated marginal means).</p>
+<p>Let’s go through the output (check that your output matches!) and then discuss how to write up the results in APA format. First, we need to check assumptions. The Levene’s test and Shapiro-Wilk’s test are shown below. We can see that we meet the assumption of normality but fail to meet the assumption of homogeneity of variance. Unfortunately, we cannot perform a Welch’s F-test with more than one independent factorial so we will note this failed assumption and move on.</p>
+<p><img src="images/06-factorial-anova/independent-factorial_assumptions.png" /></p>
+<p>Let’s look at the main results next. We got three lines of results in addition to the typical residuals (error). The first two lines are our main effects of <code>attend</code> and <code>reading</code> on grades. The p-values for both are statistically significant indicating attend affects grades and reading affects grades. However, it also added an interaction term of <code>attend * reading</code>, which is not statistically significant. This means we do not have an interaction between attend and reading on grades. Interactions will be discussed in more detail in the next section.</p>
+<p><img src="images/06-factorial-anova/independent-factorial_results.png" /></p>
+<p>Although we could simply look at the means to know whether attending or reading had higher grades than not attending or not reading because there are only two conditions, we can also look at the post hoc tests and definitely need to look at them if we have three or more conditions per IV. These are shown below. Because the mean differences are negative, we can determine that the second group had higher means than the first group. We can confirm that with the estimated marginal means (not shown here).</p>
+<p><img src="images/06-factorial-anova/independent-factorial_posthoc.png" /></p>
+<p>Last, we can write-up our results!</p>
+<blockquote>
+<p>We were interested in knowing how attendance and reading affected student grades. An independent factorial ANOVA showed that both attendance (<em>F</em> [1, 4] = 18.25, <em>p</em> = .013, <span class="math inline">\(\omega^2\)</span> = .26) and reading (<em>F</em> [1, 4] = 44.17, <em>p</em> = .003, <span class="math inline">\(\omega^2\)</span> = .64) affected student grades; there was no significant interaction between attendance and reading (<em>F</em> [1, 4] = 8.00, <em>p</em> = .660, <span class="math inline">\(\omega^2\)</span> = -.01). Tukey’s post hoc comparisons show that students who attended lectures (<em>M</em> = 75.50, <em>SE</em> = 2.98) had higher grades than students who did not (<em>M</em> = 57.50, <em>SE</em> = 2.98; <em>p</em> = .003, <em>d</em> = 4.70); furthermore, students who read (<em>M</em> = 80.50, <em>SE</em> = 2.98) had higher grades than students who did not (<em>M</em> = 52.50, <em>SE</em> = 2.98; <em>p</em> = .013; <em>d</em> = 3.02).</p>
+</blockquote>
+<div id="interactions" class="section level4 hasAnchor">
+<h4>Interactions<a href="factorial-anova.html#interactions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Interactions occur when the effect of one IV on the DV depends on the level of the other IV. If you did not want to test for interaction effects, you could remove them from the Model Terms in the Model drop-down menu.</p>
+<p>However, by default they will include them. If you have 2-3 IVs, it may be reasonable to look at these interactions. However, 3-variable interactions (e.g., IV1 * IV2 * IV3) are pushing it and 4-variable interactions are highly implausible. Be critical in which interaction terms you include!</p>
+<p>jamovi can provide a plot of your interaction, which can be helpful to help interpret your results. Below is the plot for our interaction of attendance on reading.</p>
+<p><img src="images/06-factorial-anova/independent-factorial_plot.png" /></p>
+<p>The parallel lines that are sloping upward tell me there is a significant main effect for both IVs but no interaction. How do I know that? With two variables, there are only so many interaction shapes possible. You can <a href="https://statisticsbyjim.com/regression/interaction-effects/">read more about interaction effects</a> from Statistics by Jim. <a href="https://courses.washington.edu/smartpsy/interactions.htm">This website</a> does a fantastic time showing you all 8 combinations of the three effects (2 main effects and 1 interaction effect). Spend some time looking through it and familiarizing yourself with the plots!</p>
+</div>
+</div>
+<div id="repeated-measures-factorial-anova" class="section level3 hasAnchor">
+<h3>Repeated Measures Factorial ANOVA<a href="factorial-anova.html#repeated-measures-factorial-anova" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This is also sometimes called the two-way (or three-way or n-way, depending on the <em>n</em> of IVs you have) repeated measures ANOVA. Let’s go through an example repeated measures factorial ANOVA. The dataset is courtesy of <a href="https://www.real-statistics.com/anova-repeated-measures/two-within-subjects-factors/">Real Statistics Using Excel</a>.</p>
+<blockquote>
+<p>A company has created a new training program for their customer service staff. To test the effectiveness of the program they took a sample of 10 employees and assessed their performance in three areas:  Product (knowledge of the company’s products and services), Client (their ability to relate to the customer with politeness and empathy) and Action (their ability to take action to help the customer). They then had the same 10 employees take the training course and rated their performance after the program in the same three areas. -<a href="A%20company%20has%20created%20a%20new%20training%20program%20for%20their%20customer%20service%20staff.%20To%20test%20the%20effectiveness%20of%20the%20program%20they%20took%20a%20sample%20of%2010%20employees%20and%20assessed%20their%20performance%20in%20three%20areas:%20Product%20(knowledge%20of%20the%20company’s%20products%20and%20services),%20Client%20(their%20ability%20to%20relate%20to%20the%20customer%20with%20politeness%20and%20empathy)%20and%20Action%20(their%20ability%20to%20take%20action%20to%20help%20the%20customer).%20They%20then%20had%20the%20same%2010%20employees%20take%20the%20training%20course%20and%20rated%20their%20performance%20after%20the%20program%20in%20the%20same%20three%20areas.%20Based%20on%20the%20data%20in%20Figure%201,%20determine%20whether%20the%20program%20was%20effective.">Real Statistics Using Excel</a></p>
+</blockquote>
+<p>You can find the dataset here to follow along: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Repeated-measures-factorial-ANOVA.xlsx">Repeated-measures-factorial-ANOVA.xlsx Download</a></p>
+<p>Here’s a video walking through the repeated measures factorial ANOVA.</p>
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/BQAFjSzoFHU" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+<p>In jamovi, select Repeated Measures ANOVA under the ANOVA analysis option. Here are the general steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>In Repeated Measures Factors, you’ll need to name both factors. Rename <code>RM Factor 1</code> to Time and <code>RM Factor 2</code> to Area. Under Time, specify two levels: Pre and Post. Under Area, specify three levels: Product, Client, and Action.</p></li>
+<li><p>In Repeated Measures Cells, you’ll now have six cells with the combinations of the 6 columns you have. Drag the variable from the left into the correct cell on the right. Be careful here! For example, you need to put the Pre-Product variable into the cell “Pre, Product”.</p></li>
+<li><p>Name your dependent variable label “Performance” and select `Generalised <span class="math inline">\(\eta^2\)</span>.</p></li>
+<li><p>Under Assumption Checks, select Sphericity tests</p></li>
+<li><p>Under Post Hoc Tests, move Area and Time over and select Tukey.</p></li>
+<li><p>Under Estimated Marginal Means, move Time over into Term 1, Area into Term 2, and both Time and Area into Term 3. Select plots and tables, Observed scores, and Equal cell weights.</p></li>
+</ol>
+<p>Now let’s go over selected output. Not shown here is the Q-Q plot, which we use to test normality. First, we need to check our assumption of sphericity. All the Mauchly’s W’s are not statistically significant so we satisfy the assumption of sphericity and do not need to apply any sphericity corrections.</p>
+<p><img src="images/06-factorial-anova/rm-factorial_assumption.png" /></p>
+<p>Next let’s look at the within subjects effects table. Remember, we do not need to worry about the between subjects effects table because we do not have one; it will be used in the mixed factorial design below. Overall, we see a significant main effect of area, a significant main effect of time, and a significant interaction effect of both area and time. Neat!</p>
+<p><img src="images/06-factorial-anova/rm-factorial_results.png" /></p>
+<p>Next, we can look at post hoc comparisons because the main effects were all statistically significant. For area, we can see that client and action had significantly higher means than product, but there was no difference between client and action. Furthermore, post-intervention performance was significantly higher than pre-intervention.</p>
+<p><img src="images/06-factorial-anova/rm-factorial_tukey.png" /></p>
+<p>Last, let’s look at the interaction to get a sense of what the interaction looks like. It appears that although there are no differences between pre- and post-intervention for product, there are significant differences from pre- to post-intervention for both client and action. To be more specific on where the statistically significant differences are, you can also ask for post hoc tests for the interaction term. This is where including a plot can be very helpful for your audience!</p>
+<p><img src="images/06-factorial-anova/rm-factorial_interaction.png" /></p>
+<p>Now we have everything we need (in addition to the estimated marginal means) and can write-up our results.</p>
+<blockquote>
+<p>We tested a 2 (time: pre- and post-intervention) x 3 (area: product, client, action) repeated measures factorial design to examine how both time and area affected performance. We satisfied the assumption of sphericity for all effects. There was a significant main effect of time (<em>F</em> [1, 9] = 33.85, <em>p</em> &lt; .001, <span class="math inline">\(\eta^2_G\)</span> = .25) such that performance at post-intervention (<em>M</em> = 26.80, <em>SE</em> = 1.84) was higher than at pre-intervention (<em>M</em> = 19.37, <em>SE</em> = 1.84). There was also a significant main effect of area (<em>F</em> [2, 18] = 26.96, <em>p</em> &lt; .001, <span class="math inline">\(\eta^2_G\)</span> = .36) such that both client (<em>M</em> = 25.10, <em>SE</em> = 1.95) and action (<em>M</em> = 27.65, <em>SE</em> = 19.5) performance was higher than product performance (<em>M</em> = 16.50, <em>SE</em> = 1.95), but there was no difference between client and action performance. Lastly, there was a significant interaction between time and area such that there were no differences in product performance from pre- to post-intervention but there was for client and action performance (see Figure 1).</p>
+</blockquote>
+</div>
+<div id="mixed-factorial-anova" class="section level3 hasAnchor">
+<h3>Mixed Factorial ANOVA<a href="factorial-anova.html#mixed-factorial-anova" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can find the dataset here to follow along: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/mixed-factorial.sav">mixed-factorial.sav Download</a></p>
+<p>This dataset comes from a larger studying examining the effect of a delayed reward preference of three commodities (food, money, and music) on food cravings (as rated by the Food Craving Questionnaire [FCQ]) for each participant. Participants were in one of two conditions: the control condition did not do anything and the experimental condition had participants do the tasks while fasting.</p>
+<p>Therefore, this study is a 2 (between-subjects: condition [control or fasting]) x 3 (within-subjects: reward [food, money, and music]) mixed factorial design.</p>
+<p>Here’s a video walking through the mixed factorial ANOVA.</p>
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/lbZK_FoZKW4" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+<p>To perform a mixed factorial ANOVA, we use the same procedures as the repeated measures ANOVA but we also need to add a between-subjects factor.</p>
+<ol style="list-style-type: decimal">
+<li><p>To perform a mixed factorial ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose “Repeated Measures ANOVA”.</p></li>
+<li><p>Under “Repeated Measures Factors” name your independent variable. In this case you can name it “Reward”. Rename the three levels of Task: Food, Money, and Music.</p></li>
+<li><p>Under “Repeated Measures Cells” move the given variable into the correct level. For example, you’ll move FQ_1 to Food, FQ_2 to Money, and FQ_3 to Music.</p></li>
+<li><p>Under “Between Subject Factors” add your between-subjects variable “condition.</p></li>
+<li><p>Select Generalised <span class="math inline">\(\eta^2\)</span> as your measure of effect size.</p></li>
+<li><p>In the Assumption Checks drop-down menu, select <code>Sphericity tests</code>.</p></li>
+<li><p>In the Post Hoc Tests drop-down menu, move your two independent variables over and select <code>Tukey</code>. Remember that we only interpret these if the overall <em>F</em> is statistically significant.</p></li>
+<li><p>In the Estimated Marginal Means drop-down menu, move Reward, Condition, and both reward and condition into the terms under Marginal Means. Select tables and plots, and select <code>Observed scores</code>. Uncheck <code>Equal cell weights</code>.</p></li>
+</ol>
+<p>Now let’s go through the output!</p>
+<p>First, as always we check our assumption of sphericity. Mauchly’s W is not statistically significant (<em>p</em> = .073) so we satisfy the assumption of sphericity. We do not need to apply a sphericity correction.</p>
+<p><img src="images/06-factorial-anova/mixed_assumptions.png" /></p>
+<p>Next, we interpret out output! This time we interpret both our within subjects effects and between subjects effects tables. In the within subjects effects table, our main effect of reward is statistically significant. In the between subjects effects table, our main effect of condition is statistically significant. However, in the within subjects effects table, there is no statistically significant interaction effect of reward on condition.</p>
+<p><img src="images/06-factorial-anova/mixed_results.png" /></p>
+<p>To understand where the differences lie between conditions or reward preferences, we look to our post hoc tests. For reward, it looks like there is only a significant difference between food and music (<em>p</em> = .009). For condition, it looks like cravings were higher in the fasting group than in the control group. We can look at the estimated marginal means tables to find the actual Means of the conditions and see the plots.</p>
+<p><img src="images/06-factorial-anova/mixed_posthoc.png" /></p>
+<p>We can look at the interaction plot, but notice that the lines are parallel which is a good indication that there is no significant interaction.</p>
+<p><img src="images/06-factorial-anova/mixed_interaction.png" /></p>
+<p>Lastly, we can write up the results in APA style!</p>
+<blockquote>
+<p>To test how both condition (control or fasting) and reward preference (food, money, and music) affected food cravings, we performed a mixed factorial ANOVA. There was a significant main effect of condition (<em>F</em> [1, 98] = 82.44, <em>p</em> &lt; .001, <span class="math inline">\(\eta^2_G\)</span> = .43) and a significant main effect of reward (<em>F</em> [2, 196] = 4.45, <em>p</em> = .013, <span class="math inline">\(\eta^2_G\)</span> = .00). However, there was no statistically significant interaction effect of reward on condition (<em>F</em> [2, 196] = .66, <em>p</em> = .519, <span class="math inline">\(\eta^2_G\)</span> = .00).</p>
+<p>For condition, participants who fasted (<em>M</em> = 3.81, <em>SE</em> = .11) reported significantly more food cravings than participants in the control condition (<em>M</em> = 2.33, <em>SE</em> = .11; <span class="math inline">\(p_{Tukey}\)</span> &lt; .001). For reward, the food reward (<em>M</em> = 3.14, <em>SE</em> = .09) led to significantly higher food cravings than the music reward (<em>M</em> = 3.00, <em>SE</em> = .09; <span class="math inline">\(p_{Tukey}\)</span> = .009), but there was no differences between the money reward (<em>M</em> = 3.07, <em>SE</em> = .09) and both food (<span class="math inline">\(p_{Tukey}\)</span> = .340) or music (<span class="math inline">\(p_{Tukey}\)</span> = .258).</p>
+</blockquote>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="repeated-measures-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ancova.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"toc_float": true,
+"toc_depth": 4,
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
