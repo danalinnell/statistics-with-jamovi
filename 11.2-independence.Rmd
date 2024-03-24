@@ -1,6 +1,10 @@
 ## 11.2 Chi-square test of independence
 
-
+```{r ind-t_setup, echo = FALSE, message=FALSE}
+library(tidyverse)
+library(viridis)
+options(knitr.graphics.auto_pdf = TRUE)
+```
 
 The $\chi^2$ (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness-of-fit test we are looking at the relationship, independence, or association between *two* variables.
 
@@ -10,11 +14,9 @@ Our basic hypotheses for the chi-square test of indepdendence is as follows:
 
 -   $H_1$: At least one category in one variable has significantly different frequencies in another variable than we would expect.
 
-<div class="danger">
-<p>Note that these are not how you should report your hypotheses! You
-should specify your hypotheses in relation to the nature of your two
-variables. It should be clear what your two variables are.</p>
-</div>
+```{block, type="danger"}
+Note that these are not how you should report your hypotheses! You should specify your hypotheses in relation to the nature of your two variables. It should be clear what your two variables are.
+```
 
 There is no directionality for a chi-square test, so there is no such thing as a one-tailed or two-tailed hypothesis.
 
@@ -30,15 +32,10 @@ This is what we would call a 2x3 chi-square test because the first variable spec
 
 Here's a video walking through the chi-square test of independence example in this chapter.
 
-
-```{=html}
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/6a5soxXTfkw" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=6a5soxXTfkw")
 ```
-
 
 #### Data set-up
 
@@ -115,15 +112,9 @@ The second table gives us our results. Our p-value (*p* = .005) is less than .05
 
 jamovi also gives us our Cramer's V value. Note that it does not provide Phi because we don't have a perfect square table (e.g., 2x2 or 3x3). These are measures of effect size for the chi-square. Cramer's V can be interpreted similar to a correlation (ranges from 0 to 1, with higher scores meaning stronger relationships between the variables).
 
-<div class="info">
-<p>Currently, jamovi cannot tell us where the differences are if the
-chi-square is statistically significant. That means that the expected
-frequencies in one cell differ significantly from the observed
-frequencies, but which cells? For now, just eyeball the comparisons if
-the chi-square is statistically significant. Someday I’m sure jamovi
-will include standardized residuals for us to test this more
-quantitatively.</p>
-</div>
+```{block, type="info"}
+Currently, jamovi cannot tell us where the differences are if the chi-square is statistically significant. That means that the expected frequencies in one cell differ significantly from the observed frequencies, but which cells? For now, just eyeball the comparisons if the chi-square is statistically significant. Someday I'm sure jamovi will include standardized residuals for us to test this more quantitatively.
+```
 
 #### Write up the results in APA style
 

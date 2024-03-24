@@ -1,6 +1,10 @@
 ## 11.3 McNemar's test
 
-
+```{r ind-t_setup, echo = FALSE, message=FALSE}
+library(tidyverse)
+library(viridis)
+options(knitr.graphics.auto_pdf = TRUE)
+```
 
 McNemar's test is based on the $\chi^2$ (chi-square) test of independence (or association), but is used in a repeated measures or within-subjects design.
 

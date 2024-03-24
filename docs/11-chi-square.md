@@ -2,8 +2,6 @@
 
 # 11. Chi-square
 
-## 11.1 Chi-square overview
-
 
 
 The chi-square (pronounced "kai") is a categorical data analysis such that you are only analyzing categorical data. There are two basic types of chi-square tests we'll be covering:

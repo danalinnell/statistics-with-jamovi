@@ -1,6 +1,10 @@
 ## 11.1 Chi-square goodness-of-fit
 
-
+```{r ind-t_setup, echo = FALSE, message=FALSE}
+library(tidyverse)
+library(viridis)
+options(knitr.graphics.auto_pdf = TRUE)
+```
 
 The $\chi^2$ (chi-square) goodness-of-fit tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution.
 
@@ -10,13 +14,9 @@ Our general hypotheses for the chi-square goodness-of-fit test is as follows:
 
 -   $H_1$: At least one observed frequency doesn't match the expected frequency. In other words, the frequencies of at least one category of the independent variable are not what we would expect.
 
-<div class="danger">
-<p>Note that these are not how you should report your hypotheses! You
-should specify your hypotheses in relation to the nature of your data.
-For example, if we have a deck of cards and want to see if people don’t
-choose cards randomly, the null hypothesis would be that there is a 25%
-probability of getting each hearts, clubs, spades, and diamonds.</p>
-</div>
+```{block, type="danger"}
+Note that these are not how you should report your hypotheses! You should specify your hypotheses in relation to the nature of your data. For example, if we have a deck of cards and want to see if people don't choose cards randomly, the null hypothesis would be that there is a 25% probability of getting each hearts, clubs, spades, and diamonds.
+```
 
 There is no directionality for a chi-square test, so there is no such thing as a one-tailed or two-tailed hypothesis.
 
@@ -26,15 +26,10 @@ Let's run an example with data from lsj-data. Open data from your Data Library i
 
 Here's a video walking through the chi-square goodness of fit test example for this chapter.
 
-
-```{=html}
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/Pg1EA0eh2p0" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=Pg1EA0eh2p0")
 ```
-
 
 #### Data set-up
 
