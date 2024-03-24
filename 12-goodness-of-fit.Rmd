@@ -1,4 +1,4 @@
-# 12. Chi-square goodness-of-fit
+## 11.2 Chi-square goodness-of-fit
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)
@@ -20,7 +20,7 @@ Note that these are not how you should report your hypotheses! You should specif
 
 There is no directionality for a chi-square test, so there is no such thing as a one-tailed or two-tailed hypothesis.
 
-## Step 1: Look at the data
+### Step 1: Look at the data
 
 Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "randomness". This dataset has participants pull two cards from a deck. For now, we're just going to work with `choice_1`. We're interested in finding out if participants pull cards randomly from the deck.
 
@@ -31,13 +31,13 @@ library(vembedr)
 embed_url("https://www.youtube.com/watch?v=Pg1EA0eh2p0")
 ```
 
-### Data set-up
+#### Data set-up
 
 Our data set-up for a chi-square goodness-of-fit test is pretty simple, We just need a single column with the nominal categories of the independent variable that each participant is in.
 
 ![](images/09-chi-square/chi-square_data.png)
 
-### Describe your data
+#### Describe your data
 
 Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. With nominal variables like `choice_1`, we should request Frequency tables, not descriptive statistics like the mean and median. The mean for `choice_1` would be, quite frankly, meaningless. What's the average card type? It can't exist. So we do frequencies instead.
 
@@ -49,7 +49,7 @@ A bar plot can visualize these descriptive statistics nicely.
 
 ![](images/09-chi-square/chi-square_bar.png){width="300"}
 
-### Specify the hypotheses
+#### Specify the hypotheses
 
 We're interested in finding out if participants pull cards randomly from a deck of cards. A typical deck of cards has 52 cards, 13 for each of the four suits (clubs, spades, hearts, diamonds). Because there are 4 suits, then 1/4 is 25% which is our expected frequency of pulling cards randomly from the deck.
 
@@ -57,13 +57,13 @@ We're interested in finding out if participants pull cards randomly from a deck 
 
 -   $H_1$: Participants pull cards not at random from the deck. In other words, participants have a different probability than 25% of pulling at least one of the types of cards.
 
-## Step 2: Check assumptions
+### Step 2: Check assumptions
 
 The chi-square goodness-of-fit test has just one assumption: **Expected frequencies are sufficiently large**, which is usually greater than 5.
 
 You test for this assumption by checking the "Expected counts" box. You will then see rows of expected counts in your contingency table. Look at the "expected" numbers and check that they are all 5 or greater.
 
-## Step 3: Perform the test
+### Step 3: Perform the test
 
 To perform the chi-square goodness of fit test, do the following steps:
 
@@ -77,7 +77,7 @@ When you are done, your setup should look like this:
 
 ![](images/09-chi-square/chi-square_setup.png)
 
-### Expected proportions: Different Expected Frequencies
+#### Expected proportions: Different Expected Frequencies
 
 As you will see in the output, jamovi automatically assumed equal proportions of frequencies (in this case 1/4 or 25% chance of pulling each card). However, there might be times when you want to test a different null hypothesis. Maybe we're testing the whether our sample frequencies match the population frequencies and those are uneven (e.g., whether our 40/60 gender split matches the 36/64 gender split in the population).
 
@@ -87,7 +87,7 @@ For example, in our current scenario maybe we think our deck is a little stacked
 
 ![](images/09-chi-square/chi-square_results3.png)
 
-## Step 4: Interpret results
+### Step 4: Interpret results
 
 ![](images/09-chi-square/chi-square_results.png)
 
@@ -105,7 +105,7 @@ We can write up our results in APA something like this:
 
 Note that I described the data in the first sentence, but I could have also described it in more detail in the last sentence as part of my interpretation or I could have even written up the results in a table! There are many ways to write up results in APA style, and what's important is you have the four pieces of information as described in the Writing Results chapter of this textbook.
 
-### Visualize the results
+#### Visualize the results
 
 The bar plot we can get using Exploration - Descriptives (as shown above in [Describe your data]) does a decent job of visualizing the results. You can use the default bar plot in jamovi for your assignments.
 
@@ -113,7 +113,7 @@ If you want to take your visualizations up a notch, we can also do this fairly s
 
 ![](images/09-chi-square/chi-square_excel.png){width="500"}
 
-## Additional practice
+### Additional practice
 
 One additional practice you can conduct is performing the same analysis as above but with `choice_2`! However, if you want to see how `choice_1` relates to `choice_2` then we need to perform the chi-square test of independence, which is in the next chapter.
 

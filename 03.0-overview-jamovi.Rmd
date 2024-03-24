@@ -14,7 +14,7 @@
 
 5.  It promotes reproducibility. jamovi will save your data, analyses, options, and results all in one file so you can easily pick up where you left off. This will make your homework and future data analyses a breeze.
 
-### Installing jamovi
+### 3.1 Installing jamovi
 
 To install jamovi, go to <https://www.jamovi.org/download.html>. I recommend downloading the "current" version with the latest features, but you may want to get the "solid" version that is more stable.
 
@@ -22,7 +22,7 @@ jamovi has more [documentation on how to install jamovi](https://docs.jamovi.org
 
 Chromebooks may have an issue installing jamovi if your version of Chromebook does not use Linux. Watch this video for support on [installing jamovi on a Chromebook](https://www.youtube.com/watch?v=h4ECIS57TPw).
 
-### Navigating the jamovi interface {.unlisted .unnumbered}
+### 3.2 Navigating the jamovi interface
 
 I recommend you watch this video by Alexander Swan on [navigating the jamovi interface in jamovi](https://youtu.be/t0tQcs-E5Z4) to understand everything. Note that he is using a Mac in his demonstrations and that he has downloaded a ton of add-on modules which is why his Analyses tab looks different from yours.
 
@@ -31,7 +31,7 @@ library(vembedr)
 embed_url("https://youtu.be/t0tQcs-E5Z4")
 ```
 
-### Opening data in jamovi {.unlisted .unnumbered}
+#### Opening data in jamovi
 
 I recommend you watch this video by Alexander Swan on [opening files in jamovi](https://youtu.be/nB85VyskK08).
 
@@ -40,7 +40,7 @@ library(vembedr)
 embed_url("https://youtu.be/nB85VyskK08")
 ```
 
-### Opening SPSS (.sav) files in jamovi
+#### Opening SPSS (.sav) files in jamovi
 
 Here's another video walking you through [how to open .sav files in jamovi](https://www.youtube.com/watch?v=e-09OfLVs2U).
 
@@ -49,7 +49,7 @@ library(vembedr)
 embed_url("https://www.youtube.com/watch?v=e-09OfLVs2U")
 ```
 
-### Entering data in jamovi {.unlisted .unnumbered}
+#### Entering data in jamovi
 
 Occasionally you need to manually enter data into jamovi instead of opening a pre-existing data file. I recommend you watch this video by Alexander Swan on [entering data manually in jamovi](https://youtu.be/g3a2hGwNZ7o).
 
@@ -58,7 +58,7 @@ library(vembedr)
 embed_url("https://youtu.be/g3a2hGwNZ7o")
 ```
 
-### Annotating output in jamovi {.unlisted .unnumbered}
+#### Annotating output in jamovi
 
 Sometimes I may ask you to submit a file of your output with annotations. I recommend you watch this video by Alexander Swan on [annotating output in jamovi](https://youtu.be/I6SZtH__ICA).
 
@@ -67,7 +67,7 @@ library(vembedr)
 embed_url("https://youtu.be/I6SZtH__ICA")
 ```
 
-### Additional jamovi videos and resources {.unlisted .unnumbered}
+### 3.3 Additional jamovi videos and resources
 
 Here are some additional resources on jamovi I recommend you bookmark and use when you are struggling or need additional support:
 

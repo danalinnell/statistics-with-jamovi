@@ -1,4 +1,4 @@
-# 13. Chi-square test of independence
+## 11.3 Chi-square test of independence
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)
@@ -22,7 +22,7 @@ There is no directionality for a chi-square test, so there is no such thing as a
 
 We often communicate what kind of chi-square test we are performing by using language like "We performed a 2x3 chi-square test of independence." This means that there are two variables, the first of which has 2 categories to the categorical variable and the second of which has 3 categories to the categorical variable. We might describe it in even more detail, such as "We performed a 2 (condition: experimental vs control) x 3 (mood: happy, sad, or neutral) chi-square test of independence."
 
-## Step 1: Look at the data
+### Step 1: Look at the data
 
 Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "chapek9". This dataset indicates the ID number of the participant, the species (robot or human), and their preference of the three things (puppy, flower, or data).
 
@@ -37,7 +37,7 @@ library(vembedr)
 embed_url("https://www.youtube.com/watch?v=6a5soxXTfkw")
 ```
 
-### Data set-up
+#### Data set-up
 
 Our data set-up for a chi-square test of independence is pretty simple. We just need two columns of nominal data, with one row per participant. Here's our data for our example we'll be working with, which you can find in the lsj-data called `chapek9`:
 
@@ -54,13 +54,13 @@ Our data set-up for a chi-square test of independence is pretty simple. We just 
 | 9   | human   | puppy  |
 | 10  | robot   | flower |
 
-### Describe the data
+#### Describe the data
 
 Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Remember that for nominal variables we should report frequency statistics, not means and medians and such. Bar plots continue to be a good way of visualizing the data.
 
 ![](images/11-independence/independence_data.png)
 
-### Specify the hypotheses
+#### Specify the hypotheses
 
 The question here is whether humans and robots differ in preferring puppies, flowers, or data so we can determine who is a robot so only robots are let into the city. Therefore, our hypotheses might be something like this:
 
@@ -68,7 +68,7 @@ The question here is whether humans and robots differ in preferring puppies, flo
 
 -   $H_1$: Humans and robots have different preferences.
 
-## Step 2: Check assumptions
+### Step 2: Check assumptions
 
 The chi-square test of independence has the following assumptions:
 
@@ -80,7 +80,7 @@ The chi-square test of independence has the following assumptions:
 
     -   This requires knowing how your data was collected. If it's a within-subjects design (i.e., all participants are in all conditions of one variable), then most likely you want to use McNemar's test. If it's a between-subjects design (i.e., some participants are in one condition of a variable), then you most likely meet this assumption and can perform the chi-square test of independence.
 
-## Step 3: Perform the test
+### Step 3: Perform the test
 
 1.  Go to the Analyses tab, click the Frequencies button, and choose "Independent Samples - $\chi^2$ test of association".
 
@@ -96,11 +96,11 @@ When you are done, part of your setup should look like this (note: not all the s
 
 ![](images/11-independence/independence_setup.png)
 
-### Ordinal variable(s)
+#### Ordinal variable(s)
 
 If either of your variables are ordinal, instead of selecting `Phi and Cramer's V` you should select `Gamma` or `Kendall's tau-b`. Which do you choose? `Kendall's tau-b` should only be chosen if you have a square table (e.g., 3x3, 4x4, 5x5) whereas `Gamma` can be done with any size table. `Kendall's tau-b` will be a slightly more conservative estimate compared to `Gamma`.
 
-## Step 4: Interpret results
+### Step 4: Interpret results
 
 ![](images/09-chi-square/chi-square_results1.png)
 
@@ -116,7 +116,7 @@ jamovi also gives us our Cramer's V value. Note that it does not provide Phi bec
 Currently, jamovi cannot tell us where the differences are if the chi-square is statistically significant. That means that the expected frequencies in one cell differ significantly from the observed frequencies, but which cells? For now, just eyeball the comparisons if the chi-square is statistically significant. Someday I'm sure jamovi will include standardized residuals for us to test this more quantitatively.
 ```
 
-### Write up the results in APA style
+#### Write up the results in APA style
 
 We can write up our results in APA something like this:
 
@@ -132,7 +132,7 @@ We can also use the observed frequencies to either visualize (see the next table
 > | flower | 30 (70%) | 13 (30%) |
 > | data   | 44 (40%) | 65 (60%) |
 
-### Visualize the results
+#### Visualize the results
 
 jamovi has some decent plots with some of the latest updates. Here's one I created after tinkering with the settings under Plots on the chi-square setup. These are sufficient for your homework assignments in this class, but note that sometimes when there are many bars or long labels for the categories of your variable it will scrunch up. Hopefully jamovi will fix it in the future.
 
@@ -148,7 +148,7 @@ The second is a stacked bar chart with connected lines:
 
 Which do you choose? Whichever you think better communicates the message of the results of the analysis! This takes skill and practice, and probably an entirely separate course on effective data visualization.
 
-## Fisher's exact test {#fishers-exact-test}
+### Fisher's exact test {#fishers-exact-test}
 
 If you violate the assumption that your expected frequencies are sufficiently large and you have a 2x2 table, you can still perform the $\chi^2$ test of independence but instead of selecting $\chi^2$you'll select `Fisher's exact test`. You'll interpret your results exactly the same but specify you used Fisher's exact test. Here's an example write-up from the results above:
 
@@ -156,7 +156,7 @@ If you violate the assumption that your expected frequencies are sufficiently la
 
 Note that what changes is only the p-value from the chi-square test and Fisher's exact test.
 
-## Additional practice
+### Additional practice
 
 Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
 

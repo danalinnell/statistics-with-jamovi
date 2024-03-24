@@ -1,6 +1,8 @@
-# (PART) Chi-square {.unnumbered}
+# (PART) Inferential Statistics {.unnumbered}
 
-# 11. Chi-square overview
+# 11. Chi-square
+
+## 11.1 Chi-square overview
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)
