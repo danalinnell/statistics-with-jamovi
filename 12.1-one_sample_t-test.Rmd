@@ -24,14 +24,6 @@ There are three different types of alternative hypotheses we could have for the 
     -   $H_1$: The sample has a smaller mean than the population.
     -   $H_0$: The mean for the sample is greater than or equal to the mean for the population.
 
-This is also the first time we'll be doing the full hypothesis testing procedures!
-
-1.  Specify the hypotheses
-2.  Look at the data
-3.  Check assumptions
-4.  Perform the test
-5.  Interpret results
-
 For this chapter, we're going to work with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "zeppo". This dataset is hypothetical data of 20 psychology students taking Dr. Zeppo's introductory statistics class. Dr. Zeppo wants to know if the psychology students tend to get the same grade as everyone else (*M* = 67.5) or whether they get a higher or lower grade. As students in a psychology course, we're going to assume psychology students get higher grades.
 
 ### Step 1: Look at the data
