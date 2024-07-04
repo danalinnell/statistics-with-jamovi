@@ -104,7 +104,7 @@ You can select these corrections in the Assumption Checks drop-down menu.
 Here's what statistic you should choose based on satisfying assumptions:
 
 |                               | **Normality: satisfied**                                       | **Normality: not satisfied**       |
-|------------------|------------------------------------|------------------|
+|-------------------------------|----------------------------------------------------------------|------------------------------------|
 | **Sphericity: satisfied**     | Repeated measures ANOVA                                        | [Friedman's test](#friedmans-test) |
 | **Sphericity: not satisfied** | Repeated measures ANOVA with one of the sphericity corrections | [Friedman's test](#friedmans-test) |
 

@@ -14,6 +14,8 @@
 
 5.  It promotes reproducibility. jamovi will save your data, analyses, options, and results all in one file so you can easily pick up where you left off. This will make your homework and future data analyses a breeze.
 
+And if you don't want to hear it from me, here's another person's description of what jamovi is and why [it's a great alternative to SPSS that provides a useful path toward learning R](https://medium.com/@Frank.M.LoSchiavo/jamovi-a-free-alternative-to-spss-that-provides-a-gateway-to-r-e55f7167d005).
+
 ### 3.1 Installing jamovi
 
 To install jamovi, go to <https://www.jamovi.org/download.html>. I recommend downloading the "current" version with the latest features, but you may want to get the "solid" version that is more stable.
@@ -76,3 +78,5 @@ Here are some additional resources on jamovi I recommend you bookmark and use wh
 -   [jamovi docs](https://docs.jamovi.org/) provide more support for using jamovi, including tips for transitioning from SPSS to jamovi and from jamovi to R
 
 -   caution: these use an older version of jamovi! [Introduction to jamovi LinkedIn Learning course](https://www.linkedin.com/learning/introduction-to-jamovi/) by Barton Poulson, founder of [datalab.cc](https://datalab.cc/jamovi/) (you can find the video on YouTube and other places now, too, if you do not have LinkedIn Learning).
+
+-   Want more practice with jamovi? Want to do so using real data with a focus on DEI? Check out [Neumann, Hood, & Neumann's (2013) datasets and problem sets](https://jamovipractice.edublogs.org/)!
