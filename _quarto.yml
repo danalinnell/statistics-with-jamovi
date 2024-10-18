@@ -1,0 +1,34 @@
+project:
+  type: book
+
+format:
+  html:
+    theme: cosmo
+  docx: default
+  # pdf:
+  #   documentclass: scrreprt
+  # epub: default
+
+book:
+  title: "Stats with jamovi"
+  
+  chapters:
+    - index.qmd
+    
+    - part: "Overview"
+      chapters:
+        - 01.0-intro.qmd
+        - 02.0-statistics-foundations.qmd
+        - 02.4-key-terms.qmd
+    
+    - part: "Intro to jamovi"
+      chapters: 
+        - 03.0-overview-jamovi.qmd
+    
+    - part: "NHST"
+    
+    - part: "Inferential Statistics"
+    
+    - part: "Psychometrics"
+    
+    - part: "Appendices"
