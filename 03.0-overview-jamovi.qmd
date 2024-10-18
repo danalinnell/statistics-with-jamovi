@@ -47,9 +47,11 @@ embed_url("https://youtu.be/nB85VyskK08")
 Here's another video walking you through [how to open .sav files in jamovi](https://www.youtube.com/watch?v=e-09OfLVs2U).
 
 ```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
-library(vembedr)
-embed_url("https://www.youtube.com/watch?v=e-09OfLVs2U")
+# library(vembedr)
+# embed_url("https://www.youtube.com/watch?v=e-09OfLVs2U")
 ```
+
+{{< video https://www.youtube.com/watch?v=e-09OfLVs2U >}}
 
 #### Entering data in jamovi
 

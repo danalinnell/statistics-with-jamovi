@@ -6,7 +6,6 @@ site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
-link-citations: yes
 description: "This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD."
 ---
 

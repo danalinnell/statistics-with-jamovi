@@ -49,11 +49,11 @@ There are also multiple **measures of dispersion** that describe the spread of o
 
 -   **Standard deviation**: is the square of the variance. This is represented by the equation $\sqrt{\frac{\sum (X-\mu)^2}{N}}$ if we are examining the whole population. If we only have a sample, we replace the denominator `N` with `N-1`.
 
-```{block, type="info"}
+::: {.callout-note}
 
 I sometimes present equations, like above, to help some folks better understand various things in this course. However, I very rarely expect you to calculate things, and when I do, I give you a lot of support in how to do so. 
 
-```
+:::
 
 ### Measures of the Shape of the Distribution
 
@@ -78,7 +78,7 @@ Student (a pseudonym of William Gosset) wrote this in his [1927 paper](https://w
 
 When skew and kurtosis are zero, then we have a special type of distribution called the **normal distribution** in which the data are symmetrical on both sides of the mean. We sometimes call this a "bell curve". Scribbr has a great article on the [normal distribution](https://www.scribbr.com/statistics/normal-distribution/) I encourage you to read!
 
-![](images/02-stats-foundations/standard-normal-distribution-example.webp)
+![](images/02-stats-foundations/standard-normal-distribution-example.png)
 
 Although there are many ways we can visualize the distribution the two most common ways we will visualize the distribution using jamovi are with a **histogram** which could also be a density curve or a **boxplot**. We'll learn more about visualizing in Chapter 3 "Visualizing data".
 

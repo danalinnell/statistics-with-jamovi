@@ -24,9 +24,9 @@ However, I know not everyone likes statistics. Some of you may not care much abo
 
 ### 1.3 Navigating this website/book { .unnumbered}
 
-```{block, type="info"}
+::: {.callout-note}
 This book was developed using a coding language called R in a graphical user interface called RStudio using a package called [bookdown](https://bookdown.org/yihui/bookdown). This book is hosted on a platform called GitHub. You can see the code for this book [here](https://github.com/danawanzer/stats-with-jamovi) if you are interested.
-```
+:::
 
 There are some icons at the top of this book that you may find useful:
 
