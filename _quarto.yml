@@ -4,6 +4,7 @@ project:
 format:
   html:
     theme: cosmo
+  docx: default
   pdf:
     documentclass: scrreprt
   epub: default
