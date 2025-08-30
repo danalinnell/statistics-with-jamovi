@@ -49,11 +49,9 @@ There are also multiple **measures of dispersion** that describe the spread of o
 
 -   **Standard deviation**: is the square of the variance. This is represented by the equation $\sqrt{\frac{\sum (X-\mu)^2}{N}}$ if we are examining the whole population. If we only have a sample, we replace the denominator `N` with `N-1`.
 
-```{block, type="info"}
-
-I sometimes present equations, like above, to help some folks better understand various things in this course. However, I very rarely expect you to calculate things, and when I do, I give you a lot of support in how to do so. 
-
-```
+::: {.info data-latex=""}
+I sometimes present equations, like above, to help some folks better understand various things in this course. However, I very rarely expect you to calculate things, and when I do, I give you a lot of support in how to do so.
+:::
 
 ### Measures of the Shape of the Distribution
 
@@ -78,7 +76,7 @@ Student (a pseudonym of William Gosset) wrote this in his [1927 paper](https://w
 
 When skew and kurtosis are zero, then we have a special type of distribution called the **normal distribution** in which the data are symmetrical on both sides of the mean. We sometimes call this a "bell curve". Scribbr has a great article on the [normal distribution](https://www.scribbr.com/statistics/normal-distribution/) I encourage you to read!
 
-![](images/02-stats-foundations/standard-normal-distribution-example.webp)
+![](images/02-stats-foundations/standard-normal-distribution-example.png)
 
 Although there are many ways we can visualize the distribution the two most common ways we will visualize the distribution using jamovi are with a **histogram** which could also be a density curve or a **boxplot**. We'll learn more about visualizing in Chapter 3 "Visualizing data".
 
@@ -111,7 +109,7 @@ One semester, a student asked, "Isn't time a continuous variable?" To which I re
 Here's another example. Notice that studying can be measured at different levels. Depending on the nature of the question and response options, it might be nominal, ordinal, or continuous! Here's an example of data at the continuous, ordinal, and nominal level.
 
 | Name               | Study_Continuous        | Study_Ordinal                        | Study_Nominal                         |
-|--------------------|-------------------------|--------------------------------------|---------------------------------------|
+|-----------------|-----------------|-------------------|--------------------|
 | *Name (Character)* | *Hours studied per day* | *Likert scale of amount of studying* | *Whether or not they study every day* |
 | Jesus              | 5.0                     | A great deal                         | Yes                                   |
 | Nicky              | 4.5                     | A great deal                         | Yes                                   |
@@ -127,7 +125,7 @@ Because continuous variables have more information, we want to avoid doing thing
 
 Another thing to keep in mind is that just because we put numbers to something does not necessarily make it continuous! Be careful and think critically. If I said cat = 1, dog = 2, and frog = 3 it doesn't make it an ordinal or continuous variable.
 
-[![XKCD: Assinging Numbers](https://imgs.xkcd.com/comics/assigning_numbers.png)](https://xkcd.com/2610/)
+![](images/02-stats-foundations/assigning_numbers.png)
 
 ## 2.3 Descriptive vs inferential statistics
 

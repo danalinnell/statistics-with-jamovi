@@ -60,7 +60,7 @@ We'll be testing how both Dan's and Dan's baby's quality of sleep affect Dan's g
 
 Here's a video walking through the regression.
 
-```{r echo = FALSE, message = FALSE, warning = FALSE}
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://www.youtube.com/watch?v=SfubvsatkdA")
 ```

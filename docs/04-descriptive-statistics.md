@@ -75,22 +75,12 @@ In examples with many variables, we might write-up our descriptive statistics in
 
 "A picture is worth a thousand words," and in a world in which journal articles have word count limits, figures and graphs are priceless. They are also an incredibly powerful way to examine your data because it can often illuminate patterns you may not be able to see through a table.
 
-<div class="info">
-<p><strong>Remember: it is incredibly important to always visualize your
-data!</strong> You never know what descriptive statistics may be
-hiding.</p>
-</div>
+:::{.info data-latex=""}
+**Remember: it is incredibly important to always visualize your data!** You never know what descriptive statistics may be hiding.
+:::
 
 Here's a [video](https://www.youtube.com/watch?v=d2wU0kmCJEY) walking through why it's so important to look at your data.
 
-
-```{=html}
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/d2wU0kmCJEY" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-```
 
 
 jamovi has some plots built into its platform, both under the `Plots` drop-down menu in the `Descriptives` analysis and as options for many of the inferential statistical analyses.

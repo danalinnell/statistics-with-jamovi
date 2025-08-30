@@ -5,14 +5,6 @@ There are four basic types of cleaning we will be learning about: checking your 
 The following [video](https://www.youtube.com/watch?v=BGOZtlHRv6k) walks through some of these data cleaning techniques.
 
 
-```{=html}
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/BGOZtlHRv6k" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-```
-
 
 ## 6.1 Data setup
 
@@ -60,13 +52,10 @@ This dataset has the scores on all five subscales of the Big Five personality te
 
 6.  When you are complete, click outside of the function box and it will automatically create your computed variable.
 
-<div class="warning">
-<p>jamovi will often tell you if there is an error in your formula. For
-example, if you get the warning “Column <code>NAME</code> does not exist
-in the dataset” that means you entered something incorrect; typically,
-you either mispelled a variable or forgot to separate variables with
-commas.</p>
-</div>
+:::{.info data-latex=""}
+
+jamovi will often tell you if there is an error in your formula. For example, if you get the warning "Column `NAME` does not exist in the dataset" that means you entered something incorrect; typically, you either mispelled a variable or forgot to separate variables with commas. 
+:::
 
 You can see what we need to do with this dataset below. There's actually no missing data, so the two additional arguments aren't necessary for us to worry about.
 
@@ -74,15 +63,8 @@ You can see what we need to do with this dataset below. There's actually no miss
 
 Note that this was creating an average score using the `MEAN()` function. Sometimes, psychological scales want you to create a total score using the `SUM()` function. jamovi also has a lot of other functions you may need to use in the future.
 
-<div class="info">
-<p>After computing a new variable, I always like to double check the
-work to make sure it’s okay. I review to make sure if there is any
-missing data that it’s appropriate (e.g., I specified min_valid=9 for a
-10-item scale, so only people with at least 9 valid responses should
-have a mean calculated). If I’m doing other basic math, I also like to
-make sure that I specified it correctly by manually calculating a few
-rows myself.</p>
-</div>
+:::{.info data-latex=""}
+After computing a new variable, I always like to double check the work to make sure it's okay. I review to make sure if there is any missing data that it's appropriate (e.g., I specified min_valid=9 for a 10-item scale, so only people with at least 9 valid responses should have a mean calculated). If I'm doing other basic math, I also like to make sure that I specified it correctly by manually calculating a few rows myself. :::
 
 If you'd like to learn more about computed variables in jamovi, [check out this jamovi blog post on the topic](https://blog.jamovi.org/2017/11/28/jamovi-formulas.html).
 
@@ -138,15 +120,10 @@ Your data should now look like this:
 
 ![](images/03-jamovi/transform4.png)
 
-<div class="info">
-<p>Just like with computing new variables, when transforming new
-variables I like to peruse the newly transformed variable to make sure
-it did what I expected. In this case I see that participant 35 has a
-Neuroticism score of 1.917 which was correctly coded as low whereas
-participant 40 has a Neuroticism score of 3.688 which was correctly
-coded as high. A quick perusall makes me feel confident that I did my
-transformation correctly!</p>
-</div>
+:::{.info data-latex=""}
+
+Just like with computing new variables, when transforming new variables I like to peruse the newly transformed variable to make sure it did what I expected. In this case I see that participant 35 has a Neuroticism score of 1.917 which was correctly coded as low whereas participant 40 has a Neuroticism score of 3.688 which was correctly coded as high. A quick perusall makes me feel confident that I did my transformation correctly!
+:::
 
 ### Reverse-scoring
 
@@ -163,12 +140,10 @@ The happiness scale suggests that higher scores is higher happiness. However, th
 
 The way we do this is by recoding the levels so the highest score is the lowest score and so on. For example, if it were rated on a 5-point scale then you would need to recode so a 1 = 5, 2 = 4, 3 = 3, 4 = 2, and 5 = 1.
 
-<div class="info">
-<p>Alternatively, instead of transforming you could use compute where
-the formula is the maximum value + 1 minus the value. For example, if
-you have a 5-point scale then you would do “6-variablename” in the
-computation box.</p>
-</div>
+:::{.info data-latex=""}
+
+Alternatively, instead of transforming you could use compute where the formula is the maximum value + 1 minus the value. For example, if you have a 5-point scale then you would do "6-variablename" in the computation box.
+:::
 
 We can use the same recoding feature as before to do this. The only difference is that we are going to use the double equal sign `==` (R is a bit weird in that we use `==` to mean `=`). See the screenshot below to see how we are specifying that if the source variable equals the value, then use the reverse-scored value. We should add 4 recode conditions in this case and then have the final else use value for the 5th category.
 

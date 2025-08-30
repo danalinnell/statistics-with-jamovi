@@ -6,10 +6,10 @@ Power can range from 0-100%, but typically people set it at 80%. This means that
 
 However, in practice, power is often far lower than 80% due to insufficient sample sizes for the effect sizes of interest, something we'll investigate in the final section of this chapter and in the homework.
 
-```{block, type="info"}
+:::{.info data-latex=""}
 
 Just like with alpha, you have to critically set your power level too. Although we commonly set it to 80%, that still leaves a large likelihood of a false negative if the alternative hypothesis is true. To better detect a statistically significant result (assuming the alternative is true) then we should aim for higher power levels. 
-```
+:::
 
 Power is based on the assumption that the alternative hypothesis is true whereas the *p*-value is based on the assumption that the null hypothesis is true. If we want to increase the likelihood of supporting our alternative hypothesis, then we should be doing all we can to increase our power!
 
@@ -50,10 +50,10 @@ Which cell should each of the following items go?
 
 We'll eventually see how power, alpha, effect sizes, and sample size all interrelate (BEAN!). For now, let's examine how alpha and power relate to one another in the context of hypothesis testing. Note that a lot of this comes from Daniel Lakens' [Improving your Statistical Inference](https://lakens.github.io/statistical_inferences/errorcontrol.html) work.
 
-```{block, type="warning"}
+:::{.warning data-latex=""}
 
 Remember: we never know for certain if the null or alternative hypotheses are true! These are for illustrative purposes, and you can use the following if you have some idea about the probability of one over the other. For example, if many studies have found a particular effect you might put more weight on the alternative hypothesis is true (e.g., 75%). As another example, if you are doing a completely novel study you might put equal weight (50%/50%) on both hypotheses. 
-```
+:::
 
 #### Assuming the null hypothesis is 100% true
 
@@ -114,10 +114,10 @@ You might be fine with a statistically significant result being 16 times more li
 
 ##### Increasing power
 
-```{block, type="info"}
+:::{.info data-latex=""}
 
 Remember: the researcher sets the alpha and power levels! Let's find out what happens when we adjust those values. 
-```
+:::
 
 Let's try it again, but this time let's increase our power to 95% and keep our alpha at 5% (50/50 on the hypotheses). Fill out the table!
 

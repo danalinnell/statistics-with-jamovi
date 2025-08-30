@@ -37,10 +37,10 @@ Sometimes, people like to put the statistics inside a parentheses. In that case,
 
 Note that these are not the only way we can write up the results in APA format. The key is that we include all four pieces of information as specified above, that the information is correct, and that the information is presented in a logical order based on how we test hypotheses.
 
-```{block, type="info"}
+:::{.info data-latex=""}
 
 One tip I strongly recommend when writing up your results is to read out your results minus everything in parentheses to check for correct grammar. 
-```
+:::
 
 ### 7 Common Errors {.unlisted .unnumbered}
 
@@ -54,7 +54,7 @@ The following video details 7 common errors that folks make when reporting stati
 6.  ***N*** (populations or the full study sample) or ***n*** (samples, or a sub-sample within a study)
 7.  **Blanks and F**: to aid readability, there is no space between the statistcal test and the parentheses for the degrees of freedom, but for the F-statistic there is a space between the two degrees of freedom, such as *F*(2, 126)
 
-```{r echo = FALSE, message = FALSE, warning = FALSE}
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://www.youtube.com/watch?v=rlZnbQUGhjc")
 ```

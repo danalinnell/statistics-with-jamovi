@@ -1,5 +1,0 @@
-# (PART) Psychometrics {.unnumbered}
-
-# 25. Reliability
-
-This chapter will eventually discuss reliability testing. Stay tuned!

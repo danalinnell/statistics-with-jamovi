@@ -25,7 +25,7 @@ I'm going to skip some of the looking at the data stuff. Look at how the data is
 
 Here's a video walking through the ANCOVA test.
 
-```{r echo = FALSE, message = FALSE, warning = FALSE}
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://www.youtube.com/watch?v=OdKyMYoO0VU")
 ```

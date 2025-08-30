@@ -32,7 +32,7 @@ For this chapter, we're going to work with data from lsj-data. Open data from yo
 
 Here's a video walking through the dependent t-test.
 
-```{r echo = FALSE, message = FALSE, warning = FALSE}
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://www.youtube.com/watch?v=ywMPrS9Bo3Q")
 ```
@@ -84,9 +84,9 @@ We test for normality using the Shapiro-Wilk test and the Q-Q plot, as well as l
 
 ![](images/03_dependent_t-test/dependent_normality.png)
 
-```{block, type="info"}
+:::{.info data-latex=""}
 Why don't we test for homogeneity of variance with the dependent t-test? It's because just like normality is technically testing for the normality of the difference scores between the two groups, homogeneity of variance would be with the difference of variance in scores between the two groups, which is just a single value. Therefore, there's nothing to test for variance in the dependent t-test. However, once we have three or more conditions, which we'd test with the repeated measures ANOVA, we then test for this assumption using a similar term called sphericity! We'll learn more in the repeated measures ANOVA chapter.
-```
+:::
 
 ### Step 3: Perform the test
 
@@ -102,9 +102,9 @@ If the alternative hypothesis is non-directional (two-tailed) then you choose `M
 
 If the alternative hypothesis is directional (one-tailed) then you choose `Measure 1 > Measure 2` or `Measure 1 < Measure 2` depending on which group you think has the higher average.
 
-```{block, type="warning"}
+:::{.warning data-latex=""}
 Remember that the hypothesis you use is based on your alternative hypothesis and research question! This is not based on what the data looks like. It's a function of the research question you have prior to looking at the data.
-```
+:::
 
 #### Perform the test
 
@@ -134,9 +134,9 @@ Once we are satisfied we have satisfied the assumptions for the dependent t-test
 
 Our p-value is less than .05, so our results are statistically significant. Therefore, we reject the null hypothesis that there is no difference between the two groups.
 
-```{block, type="info"}
+:::{.info data-latex=""}
 What is "df"? That stands for degrees of freedom. The "key terms" chapter covers them in more detail, but in the case of the independent samples t-test they are calculated by the number of participants in our sample minus 1 (n-1) which in this case is 20-1 or 19. 
-```
+:::
 
 #### A note about positive and negative t values
 
@@ -206,9 +206,9 @@ To conduct this in jamovi, under Tests select `Wilcoxon rank`. Here is the outpu
 
 ![](images/03_dependent_t-test/dependent_results_full.png)
 
-```{block, type="danger"}
+:::{.danger data-latex=""}
 Note that you never perform both tests simultaneously like I'm showing here! You only select the correct test depending on which assumptions were met. However, I'm showing both here so you can see the comparisons. 
-```
+:::
 
 You will interpret the results similarly to the dependent t-test:
 

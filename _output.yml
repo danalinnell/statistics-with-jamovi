@@ -23,6 +23,13 @@ bookdown::gitbook:
       size: 2
     sharing: null
   split_by: section
-bookdown::epub_book: default
+bookdown::word_document2: default
+# bookdown::epub_book: default
+# bookdown::pdf_book:
+#   includes:
+#     in_header: preamble.tex
+#   toc: true
+#   toc_depth: 2
+#   always_allow_html: true
 # bookdown::bs4_book: 
 #   default: true

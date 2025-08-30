@@ -54,7 +54,7 @@ For this chapter, we're going to work with example data from lsj-data. Open data
 
 Here's a video walking through the one-way ANOVA test.
 
-```{r echo = FALSE, message = FALSE, warning = FALSE}
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://www.youtube.com/watch?v=NBxLBXtvp8E")
 ```
@@ -123,7 +123,7 @@ We test for homogeneity of variance using the Levene's test, looking at the grou
 If you fail to meet one or both of the assumptions of normality (and no transformations fixed your data; refer back to the Cleaning Data chapter to recall how to transform data) and homogeneity of variances, jamovi has the alternative statistics easily built in. Here's what statistic you should choose based on satisfying assumptions:
 
 |                                            | **Normality: satisfied**                                            | **Normality: not satisfied**                             |
-|--------------------------------------------|---------------------------------------------------------------------|----------------------------------------------------------|
+|-------------------|-----------------------------|------------------------|
 | **Homogeneity of Variance: satisfied**     | one-way ANOVA (but using the ANOVA function)                        | [Kruskal-Wallis test] (using the one-way ANOVA function) |
 | **Homogeneity of Variance: not satisfied** | [Welch's F-test](#welchs-f-test) (using the one-way ANOVA function) | [Kruskal-Wallis test] (using the one-way ANOVA function) |
 
@@ -133,9 +133,9 @@ Unlike a t-test, we can't have a one-tailed test with an ANOVA. Our planned cont
 
 #### Perform the test
 
-```{block, type="danger"}
+:::{.danger data-latex=""}
 Do not use the `One-Way ANOVA` analysis in jamovi! The options there are too limited for our use. Instead, be sure you use the `ANOVA` analysis!!!
-```
+:::
 
 1.  To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the **ANOVA** button, and choose "ANOVA".
 
@@ -177,11 +177,11 @@ Lastly, we have our effect size, which we prefer to use omega-squared ($\omega^2
 
 #### Write up the results in APA style
 
-```{block, type="danger"}
+:::{.danger data-latex=""}
 This write-up is only sufficient if your results are not statistically significant. 
 
 If your F-test is statistically significant, then you also need to report the group differences as described in the next chapter!
-```
+:::
 
 We can write up the results of the overall F-test in APA something like this (again, go to the next chapter to go over the group differences because our significant F-test means this write-up is not sufficient):
 

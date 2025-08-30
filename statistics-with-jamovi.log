@@ -1,2 +1,2734 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.20)  20 SEP 2024 17:20
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**statistics-with-jamovi.tex
+(./statistics-with-jamovi.tex
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-08-30>
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2024/02/08 v1.4n Standard LaTeX document class
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count194
+\c@chapter=\count195
+\c@section=\count196
+\c@subsection=\count197
+\c@subsubsection=\count198
+\c@paragraph=\count199
+\c@subparagraph=\count266
+\c@figure=\count267
+\c@table=\count268
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/05/23 v2.17q AMS math features
+\@mathmargin=\skip51
+For additional information on amsmath, use the `?' option.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen142
+)) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen143
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count269
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count270
+\leftroot@=\count271
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count272
+\DOTSCASE@=\count273
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen144
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count274
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count275
+\dotsspace@=\muskip17
+\c@parentequation=\count276
+\dspbrk@lvl=\count277
+\tag@help=\toks18
+\row@=\count278
+\column@=\count279
+\maxfields@=\count280
+\andhelp@=\toks19
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
+\@envbody=\toks20
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks22
+\inpenc@posthook=\toks23
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks24
+)
+\FV@CodeLineNo=\count281
+\FV@InFile=\read2
+\FV@TabBox=\box54
+\c@FancyVerbLine=\count282
+\FV@StepNumber=\count283
+\FV@OutFile=\write3
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip54
+\fb@frw=\dimen151
+\fb@frh=\dimen152
+\FrameRule=\dimen153
+\FrameSep=\dimen154
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2024-04-26 v4.20 Multi-page Table package (DPC)
+\LTleft=\skip55
+\LTright=\skip56
+\LTpre=\skip57
+\LTpost=\skip58
+\LTchunksize=\count284
+\LTcapwidth=\dimen155
+\LT@head=\box55
+\LT@firsthead=\box56
+\LT@foot=\box57
+\LT@lastfoot=\box58
+\LT@gbox=\box59
+\LT@cols=\count285
+\LT@rows=\count286
+\c@LT@tables=\count287
+\c@LT@chunks=\count288
+\LT@p@ftn=\toks25
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen156
+\lightrulewidth=\dimen157
+\cmidrulewidth=\dimen158
+\belowrulesep=\dimen159
+\belowbottomsep=\dimen160
+\aboverulesep=\dimen161
+\abovetopsep=\dimen162
+\cmidrulesep=\dimen163
+\cmidrulekern=\dimen164
+\defaultaddspace=\dimen165
+\@cmidla=\count289
+\@cmidlb=\count290
+\@aboverulesep=\dimen166
+\@belowrulesep=\dimen167
+\@thisruleclass=\count291
+\@lastruleclass=\count292
+\@thisrulewidth=\dimen168
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/06/14 v2.6d Tabular extension package (FMi)
+\col@sep=\dimen169
+\ar@mcellbox=\box60
+\extrarowheight=\dimen170
+\NC@list=\toks26
+\extratabsurround=\skip59
+\backup@length=\skip60
+\ar@cellbox=\box61
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count293
+\calc@Bcount=\count294
+\calc@Adimen=\dimen171
+\calc@Bdimen=\dimen172
+\calc@Askip=\skip61
+\calc@Bskip=\skip62
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count295
+\calc@Cskip=\skip63
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count296
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
+Package: footnote 1997/01/28 1.13 Save footnotes around boxes
+\fn@notes=\box62
+\fn@width=\dimen173
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/05/23 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen174
+\Gin@req@width=\dimen175
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/soul/soul.sty
+Package: soul 2023-06-14 v3.1 Permit use of UTF-8 characters in soul (HO)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/soul/soul-ori.sty
+Package: soul-ori 2023-06-14 v3.1 letterspacing/underlining (mf)
+\SOUL@word=\toks27
+\SOUL@lasttoken=\toks28
+\SOUL@syllable=\toks29
+\SOUL@cmds=\toks30
+\SOUL@buffer=\toks31
+\SOUL@token=\toks32
+\SOUL@syllgoal=\dimen176
+\SOUL@syllwidth=\dimen177
+\SOUL@charkern=\dimen178
+\SOUL@hyphkern=\dimen179
+\SOUL@dimen=\dimen180
+\SOUL@dimeni=\dimen181
+\SOUL@minus=\count297
+\SOUL@comma=\count298
+\SOUL@apo=\count299
+\SOUL@grave=\count300
+\SOUL@spaceskip=\skip64
+\SOUL@ttwidth=\dimen182
+\SOUL@uldp=\dimen183
+\SOUL@ulht=\dimen184
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2024/07/10 version 6.3.0 text color boxes
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks33
+\pgfutil@tempdima=\dimen185
+\pgfutil@tempdimb=\dimen186
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box63
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks34
+\pgfkeys@temptoks=\toks35
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks36
+))
+\pgf@x=\dimen187
+\pgf@y=\dimen188
+\pgf@xa=\dimen189
+\pgf@ya=\dimen190
+\pgf@xb=\dimen191
+\pgf@yb=\dimen192
+\pgf@xc=\dimen193
+\pgf@yc=\dimen194
+\pgf@xd=\dimen195
+\pgf@yd=\dimen196
+\w@pgf@writea=\write4
+\r@pgf@reada=\read3
+\c@pgf@counta=\count301
+\c@pgf@countb=\count302
+\c@pgf@countc=\count303
+\c@pgf@countd=\count304
+\t@pgf@toka=\toks37
+\t@pgf@tokb=\toks38
+\t@pgf@tokc=\toks39
+\pgf@sys@id@count=\count305
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+))) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count306
+\pgfsyssoftpath@bigbuffer@items=\count307
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen197
+\pgfmath@count=\count308
+\pgfmath@box=\box64
+\pgfmath@toks=\toks40
+\pgfmath@stack@operand=\toks41
+\pgfmath@stack@operation=\toks42
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count309
+)) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen198
+\pgf@picmaxx=\dimen199
+\pgf@picminy=\dimen256
+\pgf@picmaxy=\dimen257
+\pgf@pathminx=\dimen258
+\pgf@pathmaxx=\dimen259
+\pgf@pathminy=\dimen260
+\pgf@pathmaxy=\dimen261
+\pgf@xx=\dimen262
+\pgf@xy=\dimen263
+\pgf@yx=\dimen264
+\pgf@yy=\dimen265
+\pgf@zx=\dimen266
+\pgf@zy=\dimen267
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen268
+\pgf@path@lasty=\dimen269
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen270
+\pgf@shorten@start@additional=\dimen271
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box65
+\pgf@hbox=\box66
+\pgf@layerbox@main=\box67
+\pgf@picture@serial@count=\count310
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen272
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen273
+\pgf@pt@y=\dimen274
+\pgf@pt@temp=\dimen275
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen276
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen277
+\pgf@sys@shading@range@num=\count311
+\pgf@shadingcount=\count312
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box68
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box69
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen278
+\pgf@nodesepend=\dimen279
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen280
+\pgffor@skip=\dimen281
+\pgffor@stack=\toks43
+\pgffor@toks=\toks44
+)) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count313
+\pgfplotmarksize=\dimen282
+)
+\tikz@lastx=\dimen283
+\tikz@lasty=\dimen284
+\tikz@lastxsaved=\dimen285
+\tikz@lastysaved=\dimen286
+\tikz@lastmovetox=\dimen287
+\tikz@lastmovetoy=\dimen288
+\tikzleveldistance=\dimen289
+\tikzsiblingdistance=\dimen290
+\tikz@figbox=\box70
+\tikz@figbox@bg=\box71
+\tikz@tempbox=\box72
+\tikz@tempbox@bg=\box73
+\tikztreelevel=\count314
+\tikznumberofchildren=\count315
+\tikznumberofcurrentchild=\count316
+\tikz@fig@count=\count317
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count318
+\pgfmatrixcurrentcolumn=\count319
+\pgf@matrix@numberofcolumns=\count320
+)
+\tikz@expandcount=\count321
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks45
+\verbatim@line=\toks46
+\verbatim@in@stream=\read4
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box74
+\tcb@upperbox=\box75
+\tcb@lowerbox=\box76
+\tcb@phantombox=\box77
+\c@tcbbreakpart=\count322
+\c@tcblayer=\count323
+\c@tcolorbox@number=\count324
+\l__tcobox_tmpa_box=\box78
+\l__tcobox_tmpa_dim=\dimen291
+\tcb@temp=\box79
+\tcb@temp=\box80
+\tcb@temp=\box81
+\tcb@temp=\box82
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 116.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/newunicodechar/newunicodechar.sty
+Package: newunicodechar 2018/04/08 v1.2 Defining Unicode characters
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count325
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen292
+\Hy@linkcounter=\count326
+\Hy@pagecounter=\count327
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-07-10 v7.01j Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count328
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-07-10 v7.01j Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4040.
+Package hyperref Info: Hyper figures OFF on input line 4157.
+Package hyperref Info: Link nesting OFF on input line 4162.
+Package hyperref Info: Hyper index ON on input line 4165.
+Package hyperref Info: Plain pages OFF on input line 4172.
+Package hyperref Info: Backreferencing OFF on input line 4177.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4424.
+\c@Hy@tempcnt=\count329
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen293
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count330
+\Field@Width=\dimen294
+\Fld@charsize=\dimen295
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count331
+\c@Item=\count332
+\c@Hfootnote=\count333
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-07-10 v7.01j Hyperref driver for pdfTeX
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count334
+\c@bookmark@seq@number=\count335
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip65
+) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
+\BKM@id=\count336
+)) (/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count337
+\l__pdf_internal_box=\box83
+) (./statistics-with-jamovi.aux
 
-! sh: xelatex: command not found
+LaTeX Warning: Label `fig:unnamed-chunk-1' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-2' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-1' multiply defined.
+
+)
+\openout1 = `statistics-with-jamovi.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package hyperref Info: Link coloring OFF on input line 177.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 179.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 179.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 179.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 179.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 179.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 179.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 179.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 179.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 179.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+[1
+
+
+{/Users/danalinnell/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
+
+[2
+
+] (./statistics-with-jamovi.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 10.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 10.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 10.
+
+
+[3]
+
+[4])
+\tf@toc=\write5
+\openout5 = `statistics-with-jamovi.toc'.
+
+
+
+[5]
+
+[6
+
+]
+<images/Cover.jpg, id=153, 1784.6675pt x 1003.75pt>
+File: images/Cover.jpg Graphic file (type jpg)
+<use images/Cover.jpg>
+Package pdftex.def Info: images/Cover.jpg  used on input line 187.
+(pdftex.def)             Requested size: 344.99965pt x 194.03804pt.
+
+
+[7 <./images/Cover.jpg>]
+<images/Dale.jpg, id=162, 864.22874pt x 863.225pt>
+File: images/Dale.jpg Graphic file (type jpg)
+<use images/Dale.jpg>
+Package pdftex.def Info: images/Dale.jpg  used on input line 199.
+(pdftex.def)             Requested size: 344.99963pt x 344.59895pt.
+
+
+[8 <./images/Dale.jpg>]
+
+[9
+
+]
+
+[10]
+Chapter 1.
+<images/01-intro/cyanide-happiness_statistics.png, id=176, 721.69624pt x 293.095pt>
+File: images/01-intro/cyanide-happiness_statistics.png Graphic file (type png)
+<use images/01-intro/cyanide-happiness_statistics.png>
+Package pdftex.def Info: images/01-intro/cyanide-happiness_statistics.png  used on input line 221.
+(pdftex.def)             Requested size: 345.0007pt x 140.11154pt.
+
+Underfull \vbox (badness 1577) has occurred while \output is active []
+
+
+
+[11
+
+]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 238.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+
+[12 <./images/01-intro/cyanide-happiness_statistics.png>]
+
+[13]
+
+[14]
+Chapter 2.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 285.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+
+[15
+
+{/Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+<images/02-stats-foundations/tendency-1.png, id=223, 505.89pt x 284.56313pt>
+File: images/02-stats-foundations/tendency-1.png Graphic file (type png)
+<use images/02-stats-foundations/tendency-1.png>
+Package pdftex.def Info: images/02-stats-foundations/tendency-1.png  used on input line 294.
+(pdftex.def)             Requested size: 345.00414pt x 194.06482pt.
+<images/02-stats-foundations/box-whisker-plot.jpg, id=225, 1204.5pt x 661.47125pt>
+File: images/02-stats-foundations/box-whisker-plot.jpg Graphic file (type jpg)
+<use images/02-stats-foundations/box-whisker-plot.jpg>
+Package pdftex.def Info: images/02-stats-foundations/box-whisker-plot.jpg  used on input line 313.
+(pdftex.def)             Requested size: 344.99533pt x 189.45993pt.
+
+Underfull \vbox (badness 6364) has occurred while \output is active []
+
+
+
+[16 <./images/02-stats-foundations/tendency-1.png (PNG copy)>]
+
+[17{/Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./images/02-stats-foundations/box-whisker-plot.jpg>]
+<images/02-stats-foundations/skewness-1.png, id=242, 505.89pt x 94.85437pt>
+File: images/02-stats-foundations/skewness-1.png Graphic file (type png)
+<use images/02-stats-foundations/skewness-1.png>
+Package pdftex.def Info: images/02-stats-foundations/skewness-1.png  used on input line 343.
+(pdftex.def)             Requested size: 345.00414pt x 64.68826pt.
+<images/02-stats-foundations/kurtosis.png, id=244, 1048.91875pt x 476.78125pt>
+File: images/02-stats-foundations/kurtosis.png Graphic file (type png)
+<use images/02-stats-foundations/kurtosis.png>
+Package pdftex.def Info: images/02-stats-foundations/kurtosis.png  used on input line 360.
+(pdftex.def)             Requested size: 344.99188pt x 156.81448pt.
+<images/02-stats-foundations/standard-normal-distribution-example.png, id=246, 1563.8425pt x 1114.1625pt>
+File: images/02-stats-foundations/standard-normal-distribution-example.png Graphic file (type png)
+<use images/02-stats-foundations/standard-normal-distribution-example.png>
+Package pdftex.def Info: images/02-stats-foundations/standard-normal-distribution-example.png  used on input line 364.
+(pdftex.def)             Requested size: 345.0009pt x 245.79654pt.
+
+Underfull \vbox (badness 1888) has occurred while \output is active []
+
+
+
+[18 <./images/02-stats-foundations/skewness-1.png> <./images/02-stats-foundations/kurtosis.png>]
+<images/01-intro/Levels of measurement.png, id=254, 963.6pt x 542.025pt>
+File: images/01-intro/Levels of measurement.png Graphic file (type png)
+<use images/01-intro/Levels of measurement.png>
+Package pdftex.def Info: images/01-intro/Levels of measurement.png  used on input line 372.
+(pdftex.def)             Requested size: 344.99901pt x 194.06194pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[19 <./images/02-stats-foundations/standard-normal-distribution-example.png>]
+
+[20 <./images/01-intro/Levels of measurement.png>]
+Overfull \hbox (10.86862pt too wide) in paragraph at lines 411--412
+[]\T1/lmr/m/n/10 Study_Continuous  
+ []
+
+
+
+[21]
+<images/02-stats-foundations/assigning_numbers.png, id=272, 226.74713pt x 308.05087pt>
+File: images/02-stats-foundations/assigning_numbers.png Graphic file (type png)
+<use images/02-stats-foundations/assigning_numbers.png>
+Package pdftex.def Info: images/02-stats-foundations/assigning_numbers.png  used on input line 437.
+(pdftex.def)             Requested size: 226.75694pt x 308.06421pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[22 <./images/02-stats-foundations/assigning_numbers.png (PNG copy)>]
+<images/02-stats-foundations/descriptive-vs-inferential.png, id=277, 885.3075pt x 374.14781pt>
+File: images/02-stats-foundations/descriptive-vs-inferential.png Graphic file (type png)
+<use images/02-stats-foundations/descriptive-vs-inferential.png>
+Package pdftex.def Info: images/02-stats-foundations/descriptive-vs-inferential.png  used on input line 453.
+(pdftex.def)             Requested size: 344.99835pt x 145.80287pt.
+
+Underfull \vbox (badness 1168) has occurred while \output is active []
+
+
+
+[23 <./images/02-stats-foundations/descriptive-vs-inferential.png>]
+
+[24]
+<images/02-stats-foundations/Possible-relationships-of-a-covariate-and-a-confounder-to-an-exposure-variable-and-an.png, id=297, 853.1875pt x 611.28375pt>
+File: images/02-stats-foundations/Possible-relationships-of-a-covariate-and-a-confounder-to-an-exposure-variable-and-an.png Graphic file (type png)
+<use images/02-stats-foundations/Possible-relationships-of-a-covariate-and-a-confounder-to-an-exposure-variable-and-an.png>
+Package pdftex.def Info: images/02-stats-foundations/Possible-relationships-of-a-covariate-and-a-confounder-to-an-exposure-variable-and-an.png  used on input line 502.
+(pdftex.def)             Requested size: 345.00528pt x 247.18614pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[25]
+
+[26 <./images/02-stats-foundations/Possible-relationships-of-a-covariate-and-a-confounder-to-an-exposure-variable-and-an.png>]
+<images/01-intro/reliability-validity.jpg, id=312, 947.54pt x 329.23pt>
+File: images/01-intro/reliability-validity.jpg Graphic file (type jpg)
+<use images/01-intro/reliability-validity.jpg>
+Package pdftex.def Info: images/01-intro/reliability-validity.jpg  used on input line 556.
+(pdftex.def)             Requested size: 344.98895pt x 119.86903pt.
+
+
+[27]
+
+[28 <./images/01-intro/reliability-validity.jpg>]
+
+[29]
+
+[30
+
+]
+
+[31]
+
+[32]
+Chapter 3.
+
+
+[33
+
+]
+
+[34]
+
+[35]
+
+[36
+
+]
+Chapter 4.
+<images/03-jamovi/variable-nominal.png, id=399, 40.15pt x 40.15pt>
+File: images/03-jamovi/variable-nominal.png Graphic file (type png)
+<use images/03-jamovi/variable-nominal.png>
+Package pdftex.def Info: images/03-jamovi/variable-nominal.png  used on input line 699.
+(pdftex.def)             Requested size: 40.15111pt x 40.15111pt.
+<images/03-jamovi/variable-ordinal.png, id=400, 40.15pt x 40.15pt>
+File: images/03-jamovi/variable-ordinal.png Graphic file (type png)
+<use images/03-jamovi/variable-ordinal.png>
+Package pdftex.def Info: images/03-jamovi/variable-ordinal.png  used on input line 701.
+(pdftex.def)             Requested size: 40.15111pt x 40.15111pt.
+<images/03-jamovi/variable-continuous.png, id=401, 40.15pt x 40.15pt>
+File: images/03-jamovi/variable-continuous.png Graphic file (type png)
+<use images/03-jamovi/variable-continuous.png>
+Package pdftex.def Info: images/03-jamovi/variable-continuous.png  used on input line 703.
+(pdftex.def)             Requested size: 40.15111pt x 40.15111pt.
+<images/03-jamovi/variable-id.png, id=402, 40.15pt x 40.15pt>
+File: images/03-jamovi/variable-id.png Graphic file (type png)
+<use images/03-jamovi/variable-id.png>
+Package pdftex.def Info: images/03-jamovi/variable-id.png  used on input line 705.
+(pdftex.def)             Requested size: 40.15111pt x 40.15111pt.
+
+
+[37 <./images/03-jamovi/variable-nominal.png> <./images/03-jamovi/variable-ordinal.png> <./images/03-jamovi/variable-continuous.png>]
+
+[38 <./images/03-jamovi/variable-id.png>]
+<images/02-stats-foundations/example1.png, id=431, 858.8085pt x 428.19975pt>
+File: images/02-stats-foundations/example1.png Graphic file (type png)
+<use images/02-stats-foundations/example1.png>
+Package pdftex.def Info: images/02-stats-foundations/example1.png  used on input line 757.
+(pdftex.def)             Requested size: 453.20068pt x 225.9647pt.
+
+Overfull \hbox (108.20068pt too wide) in paragraph at lines 757--758
+[][] 
+ []
+
+
+Underfull \vbox (badness 1796) has occurred while \output is active []
+
+
+
+[39]
+<images/02-stats-foundations/example2.png, id=448, 357.13425pt x 591.4095pt>
+File: images/02-stats-foundations/example2.png Graphic file (type png)
+<use images/02-stats-foundations/example2.png>
+Package pdftex.def Info: images/02-stats-foundations/example2.png  used on input line 761.
+(pdftex.def)             Requested size: 301.12965pt x 498.66664pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[40 <./images/02-stats-foundations/example1.png>]
+
+[41 <./images/02-stats-foundations/example2.png>]
+
+[42
+
+]
+
+[43]
+<images/02-stats-foundations/example3.png, id=473, 579.3645pt x 481.8pt>
+File: images/02-stats-foundations/example3.png Graphic file (type png)
+<use images/02-stats-foundations/example3.png>
+Package pdftex.def Info: images/02-stats-foundations/example3.png  used on input line 795.
+(pdftex.def)             Requested size: 345.00462pt x 286.90613pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[44]
+<images/02-stats-foundations/example4.png, id=482, 467.94826pt x 561.297pt>
+File: images/02-stats-foundations/example4.png Graphic file (type png)
+<use images/02-stats-foundations/example4.png>
+Package pdftex.def Info: images/02-stats-foundations/example4.png  used on input line 799.
+(pdftex.def)             Requested size: 345.00531pt x 413.82875pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[45 <./images/02-stats-foundations/example3.png>]
+
+[46 <./images/02-stats-foundations/example4.png>]
+Chapter 5.
+<images/03-jamovi/menu-variable-edit.png, id=496, 2001.4775pt x 1610.015pt>
+File: images/03-jamovi/menu-variable-edit.png Graphic file (type png)
+<use images/03-jamovi/menu-variable-edit.png>
+Package pdftex.def Info: images/03-jamovi/menu-variable-edit.png  used on input line 809.
+(pdftex.def)             Requested size: 11.26927pt x 9.06516pt.
+
+
+[47
+
+ <./images/03-jamovi/menu-variable-edit.png>]
+
+[48]
+<images/03-jamovi/compute.png, id=521, 612.48825pt x 504.08325pt>
+File: images/03-jamovi/compute.png Graphic file (type png)
+<use images/03-jamovi/compute.png>
+Package pdftex.def Info: images/03-jamovi/compute.png  used on input line 872.
+(pdftex.def)             Requested size: 345.00978pt x 283.94609pt.
+
+
+[49 <./images/03-jamovi/compute.png>]
+
+[50]
+<images/03-jamovi/transform1.png, id=545, 612.48825pt x 323.40825pt>
+File: images/03-jamovi/transform1.png Graphic file (type png)
+<use images/03-jamovi/transform1.png>
+Package pdftex.def Info: images/03-jamovi/transform1.png  used on input line 911.
+(pdftex.def)             Requested size: 345.00978pt x 182.1733pt.
+<images/03-jamovi/transform3.png, id=546, 868.24374pt x 495.8525pt>
+File: images/03-jamovi/transform3.png Graphic file (type png)
+<use images/03-jamovi/transform3.png>
+Package pdftex.def Info: images/03-jamovi/transform3.png  used on input line 928.
+(pdftex.def)             Requested size: 344.99939pt x 197.02855pt.
+
+
+[51 <./images/03-jamovi/transform1.png>]
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 934.
+(/Users/danalinnell/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<images/03-jamovi/transform4.png, id=558, 868.24374pt x 747.79375pt>
+File: images/03-jamovi/transform4.png Graphic file (type png)
+<use images/03-jamovi/transform4.png>
+Package pdftex.def Info: images/03-jamovi/transform4.png  used on input line 945.
+(pdftex.def)             Requested size: 344.99939pt x 297.1382pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[52 <./images/03-jamovi/transform3.png>]
+
+[53 <./images/03-jamovi/transform4.png>]
+<images/02-stats-foundations/reverse-score.png, id=579, 469.755pt x 384.43625pt>
+File: images/02-stats-foundations/reverse-score.png Graphic file (type png)
+<use images/02-stats-foundations/reverse-score.png>
+Package pdftex.def Info: images/02-stats-foundations/reverse-score.png  used on input line 982.
+(pdftex.def)             Requested size: 344.997pt x 282.33727pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[54]
+
+[55 <./images/02-stats-foundations/reverse-score.png>]
+<images/03-jamovi/filter-row.png, id=594, 612.48825pt x 497.4585pt>
+File: images/03-jamovi/filter-row.png Graphic file (type png)
+<use images/03-jamovi/filter-row.png>
+Package pdftex.def Info: images/03-jamovi/filter-row.png  used on input line 1000.
+(pdftex.def)             Requested size: 345.00978pt x 280.21442pt.
+
+
+[56 <./images/03-jamovi/filter-row.png>]
+<images/02-stats-foundations/column-filter.png, id=601, 469.755pt x 409.53pt>
+File: images/02-stats-foundations/column-filter.png Graphic file (type png)
+<use images/02-stats-foundations/column-filter.png>
+Package pdftex.def Info: images/02-stats-foundations/column-filter.png  used on input line 1023.
+(pdftex.def)             Requested size: 344.997pt x 300.76659pt.
+
+
+[57 <./images/02-stats-foundations/column-filter.png>]
+
+[58
+
+]
+
+[59]
+
+[60]
+Chapter 6.
+
+
+[61
+
+]
+
+[62]
+Underfull \vbox (badness 2790) has occurred while \output is active []
+
+
+
+[63]
+
+[64]
+
+[65]
+<07-hypothesis-testing_files/figure-latex/unnamed-chunk-2-1.pdf, id=664, 469.755pt x 325.215pt>
+File: 07-hypothesis-testing_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+<use 07-hypothesis-testing_files/figure-latex/unnamed-chunk-2-1.pdf>
+Package pdftex.def Info: 07-hypothesis-testing_files/figure-latex/unnamed-chunk-2-1.pdf  used on input line 1223.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[66]
+
+[67 <./07-hypothesis-testing_files/figure-latex/unnamed-chunk-2-1.pdf>]
+<images/03-jamovi/t-table.png, id=681, 516.7305pt x 563.706pt>
+File: images/03-jamovi/t-table.png Graphic file (type png)
+<use images/03-jamovi/t-table.png>
+Package pdftex.def Info: images/03-jamovi/t-table.png  used on input line 1266.
+(pdftex.def)             Requested size: 345.00128pt x 376.36504pt.
+
+Underfull \vbox (badness 7685) has occurred while \output is active []
+
+
+
+[68]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[69 <./images/03-jamovi/t-table.png>]
+
+[70]
+Underfull \vbox (badness 4927) has occurred while \output is active []
+
+
+
+[71]
+
+[72]
+Chapter 7.
+
+
+[73
+
+]
+
+[74]
+
+[75]
+
+[76]
+<images/05-bean/notawful_jess_hartnett.jpeg, id=757, 562.1pt x 446.66875pt>
+File: images/05-bean/notawful_jess_hartnett.jpeg Graphic file (type jpg)
+<use images/05-bean/notawful_jess_hartnett.jpeg>
+Package pdftex.def Info: images/05-bean/notawful_jess_hartnett.jpeg  used on input line 1486.
+(pdftex.def)             Requested size: 344.99901pt x 274.15099pt.
+
+
+[77 <./images/05-bean/notawful_jess_hartnett.jpeg>]
+
+[78]
+<08.2-p-values_files/figure-latex/unnamed-chunk-1-1.pdf, id=776, 469.755pt x 325.215pt>
+File: 08.2-p-values_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
+<use 08.2-p-values_files/figure-latex/unnamed-chunk-1-1.pdf>
+Package pdftex.def Info: 08.2-p-values_files/figure-latex/unnamed-chunk-1-1.pdf  used on input line 1534.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+
+[79]
+
+[80 <./08.2-p-values_files/figure-latex/unnamed-chunk-1-1.pdf>]
+
+[81]
+
+[82]
+
+[83]
+<images/05-bean/null.png, id=843, 973.83826pt x 490.83376pt>
+File: images/05-bean/null.png Graphic file (type png)
+<use images/05-bean/null.png>
+Package pdftex.def Info: images/05-bean/null.png  used on input line 1691.
+(pdftex.def)             Requested size: 344.99431pt x 173.88396pt.
+
+
+[84 <./images/05-bean/null.png>]
+<images/05-bean/alternative.png, id=851, 955.77075pt x 489.027pt>
+File: images/05-bean/alternative.png Graphic file (type png)
+<use images/05-bean/alternative.png>
+Package pdftex.def Info: images/05-bean/alternative.png  used on input line 1726.
+(pdftex.def)             Requested size: 344.996pt x 176.51968pt.
+
+
+[85 <./images/05-bean/alternative.png>]
+Overfull \hbox (147.04344pt too wide) in paragraph at lines 1764--1764
+ \T1/lmr/bx/n/10 7.3.2.3.1 In-creas-ing power[] [] 
+ []
+
+[86]
+
+[87]
+
+[88]
+
+[89]
+<images/05-bean/power-table.png, id=910, 305.943pt x 104.18925pt>
+File: images/05-bean/power-table.png Graphic file (type png)
+<use images/05-bean/power-table.png>
+Package pdftex.def Info: images/05-bean/power-table.png  used on input line 1914.
+(pdftex.def)             Requested size: 265.74342pt x 90.49922pt.
+
+
+[90 <./images/05-bean/power-table.png>]
+<images/05-bean/power-contour.png, id=918, 401.5pt x 351.3125pt>
+File: images/05-bean/power-contour.png Graphic file (type png)
+<use images/05-bean/power-contour.png>
+Package pdftex.def Info: images/05-bean/power-contour.png  used on input line 1941.
+(pdftex.def)             Requested size: 344.05798pt x 301.05074pt.
+<images/05-bean/power-demo.png, id=919, 401.5pt x 301.125pt>
+File: images/05-bean/power-demo.png Graphic file (type png)
+<use images/05-bean/power-demo.png>
+Package pdftex.def Info: images/05-bean/power-demo.png  used on input line 1947.
+(pdftex.def)             Requested size: 401.27846pt x 300.95883pt.
+
+Overfull \hbox (56.27846pt too wide) in paragraph at lines 1947--1948
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[91 <./images/05-bean/power-contour.png>]
+
+[92 <./images/05-bean/power-demo.png>]
+Chapter 8.
+<images/Statistical Choices.png, id=937, 962.84718pt x 721.94719pt>
+File: images/Statistical Choices.png Graphic file (type png)
+<use images/Statistical Choices.png>
+Package pdftex.def Info: images/Statistical Choices.png  used on input line 1978.
+(pdftex.def)             Requested size: 344.99393pt x 258.67801pt.
+
+
+[93
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[94 <./images/Statistical Choices.png>]
+
+[95]
+
+[96]
+
+[97]
+
+[98]
+
+[99]
+<images/06-inferential/histogram.png, id=1010, 357.335pt x 351.3125pt>
+File: images/06-inferential/histogram.png Graphic file (type png)
+<use images/06-inferential/histogram.png>
+Package pdftex.def Info: images/06-inferential/histogram.png  used on input line 2199.
+(pdftex.def)             Requested size: 301.1408pt x 296.06538pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[100]
+<images/06-inferential/boxplot.png, id=1016, 351.3125pt x 351.3125pt>
+File: images/06-inferential/boxplot.png Graphic file (type png)
+<use images/06-inferential/boxplot.png>
+Package pdftex.def Info: images/06-inferential/boxplot.png  used on input line 2201.
+(pdftex.def)             Requested size: 301.14722pt x 301.14722pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[101 <./images/06-inferential/histogram.png>]
+
+[102 <./images/06-inferential/boxplot.png>]
+
+[103]
+<images/06-inferential/qqplot.png, id=1037, 801.59476pt x 373.395pt>
+File: images/06-inferential/qqplot.png Graphic file (type png)
+<use images/06-inferential/qqplot.png>
+Package pdftex.def Info: images/06-inferential/qqplot.png  used on input line 2259.
+(pdftex.def)             Requested size: 345.00928pt x 160.71056pt.
+
+Underfull \vbox (badness 4024) has occurred while \output is active []
+
+
+
+[104 <./images/06-inferential/qqplot.png>]
+<images/06-inferential/homogeneity.png, id=1047, 464.73625pt x 351.3125pt>
+File: images/06-inferential/homogeneity.png Graphic file (type png)
+<use images/06-inferential/homogeneity.png>
+Package pdftex.def Info: images/06-inferential/homogeneity.png  used on input line 2300.
+(pdftex.def)             Requested size: 376.41302pt x 284.54547pt.
+
+Overfull \hbox (31.41302pt too wide) in paragraph at lines 2300--2301
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[105]
+
+[106 <./images/06-inferential/homogeneity.png>]
+
+[107]
+Underfull \vbox (badness 1533) has occurred while \output is active []
+
+
+
+[108]
+<images/03-jamovi/winsorize.png, id=1087, 691.383pt x 502.87875pt>
+File: images/03-jamovi/winsorize.png Graphic file (type png)
+<use images/03-jamovi/winsorize.png>
+Package pdftex.def Info: images/03-jamovi/winsorize.png  used on input line 2431.
+(pdftex.def)             Requested size: 344.99437pt x 250.93231pt.
+
+
+[109]
+Overfull \hbox (15.52774pt too wide) in paragraph at lines 2461--2461
+[]|\T1/lmr/m/n/10 Reciprocal|  
+ []
+
+
+Overfull \hbox (3.08363pt too wide) in paragraph at lines 2462--2462
+[]|\T1/lmr/m/n/10 Reverse 
+ []
+
+
+
+[110 <./images/03-jamovi/winsorize.png>]
+
+[111]
+
+[112
+
+]
+Chapter 9.
+
+
+[113]
+
+[114]
+
+[115]
+
+[116
+
+]
+
+[117]
+
+[118]
+Chapter 10.
+
+
+[119
+
+]
+<images/09-chi-square/chi-square_data.png, id=1167, 204.01219pt x 216.81pt>
+File: images/09-chi-square/chi-square_data.png Graphic file (type png)
+<use images/09-chi-square/chi-square_data.png>
+Package pdftex.def Info: images/09-chi-square/chi-square_data.png  used on input line 2621.
+(pdftex.def)             Requested size: 204.02103pt x 216.81938pt.
+
+
+[120]
+<images/09-chi-square/chi-square_descriptives.png, id=1175, 874.76813pt x 524.71031pt>
+File: images/09-chi-square/chi-square_descriptives.png Graphic file (type png)
+<use images/09-chi-square/chi-square_descriptives.png>
+Package pdftex.def Info: images/09-chi-square/chi-square_descriptives.png  used on input line 2629.
+(pdftex.def)             Requested size: 345.00238pt x 206.94203pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[121 <./images/09-chi-square/chi-square_data.png>]
+<images/09-chi-square/chi-square_bar.png, id=1183, 351.3125pt x 351.3125pt>
+File: images/09-chi-square/chi-square_bar.png Graphic file (type png)
+<use images/09-chi-square/chi-square_bar.png>
+Package pdftex.def Info: images/09-chi-square/chi-square_bar.png  used on input line 2633.
+(pdftex.def)             Requested size: 225.85237pt x 225.85237pt.
+
+
+[122 <./images/09-chi-square/chi-square_descriptives.png> <./images/09-chi-square/chi-square_bar.png>]
+<images/09-chi-square/chi-square_setup.png, id=1191, 606.01407pt x 389.20406pt>
+File: images/09-chi-square/chi-square_setup.png Graphic file (type png)
+<use images/09-chi-square/chi-square_setup.png>
+Package pdftex.def Info: images/09-chi-square/chi-square_setup.png  used on input line 2668.
+(pdftex.def)             Requested size: 345.00624pt x 221.57544pt.
+
+Underfull \vbox (badness 7814) has occurred while \output is active []
+
+
+
+[123]
+<images/09-chi-square/chi-square_results3.png, id=1201, 924.45375pt x 590.205pt>
+File: images/09-chi-square/chi-square_results3.png Graphic file (type png)
+<use images/09-chi-square/chi-square_results3.png>
+Package pdftex.def Info: images/09-chi-square/chi-square_results3.png  used on input line 2678.
+(pdftex.def)             Requested size: 345.00479pt x 220.26364pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[124 <./images/09-chi-square/chi-square_setup.png>]
+<images/09-chi-square/chi-square_results.png, id=1208, 433.62pt x 441.90094pt>
+File: images/09-chi-square/chi-square_results.png Graphic file (type png)
+<use images/09-chi-square/chi-square_results.png>
+Package pdftex.def Info: images/09-chi-square/chi-square_results.png  used on input line 2682.
+(pdftex.def)             Requested size: 345.01738pt x 351.60626pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[125 <./images/09-chi-square/chi-square_results3.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[126 <./images/09-chi-square/chi-square_results.png>]
+<images/09-chi-square/chi-square_excel.png, id=1222, 359.817pt x 216.81pt>
+File: images/09-chi-square/chi-square_excel.png Graphic file (type png)
+<use images/09-chi-square/chi-square_excel.png>
+Package pdftex.def Info: images/09-chi-square/chi-square_excel.png  used on input line 2706.
+(pdftex.def)             Requested size: 376.40797pt x 226.80699pt.
+
+Overfull \hbox (31.40797pt too wide) in paragraph at lines 2706--2707
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[127]
+Overfull \hbox (54.57397pt too wide) in paragraph at lines 2714--2715
+[]\T1/lmr/m/n/10 Another ad-di-tional prac-tice is in our Sam-ple Dataset. Open the \T1/lmtt/m/n/10 Sample_Dataset_2014.xlsx
+ []
+
+
+
+[128 <./images/09-chi-square/chi-square_excel.png>]
+
+[129]
+<images/11-independence/independence_data.png, id=1244, 313.9228pt x 304.13625pt>
+File: images/11-independence/independence_data.png Graphic file (type png)
+<use images/11-independence/independence_data.png>
+Package pdftex.def Info: images/11-independence/independence_data.png  used on input line 2814.
+(pdftex.def)             Requested size: 313.9316pt x 304.14478pt.
+
+
+[130]
+
+[131 <./images/11-independence/independence_data.png>]
+<images/11-independence/independence_setup.png, id=1263, 666.23906pt x 611.28375pt>
+File: images/11-independence/independence_setup.png Graphic file (type png)
+<use images/11-independence/independence_setup.png>
+Package pdftex.def Info: images/11-independence/independence_setup.png  used on input line 2869.
+(pdftex.def)             Requested size: 345.00273pt x 316.54488pt.
+
+
+[132]
+<images/09-chi-square/chi-square_results1.png, id=1275, 382.42876pt x 406.51875pt>
+File: images/09-chi-square/chi-square_results1.png Graphic file (type png)
+<use images/09-chi-square/chi-square_results1.png>
+Package pdftex.def Info: images/09-chi-square/chi-square_results1.png  used on input line 2879.
+(pdftex.def)             Requested size: 345.01715pt x 366.7505pt.
+
+Underfull \vbox (badness 3250) has occurred while \output is active []
+
+
+
+[133 <./images/11-independence/independence_setup.png>]
+<images/09-chi-square/chi-square_results2.png, id=1284, 292.09125pt x 253.69781pt>
+File: images/09-chi-square/chi-square_results2.png Graphic file (type png)
+<use images/09-chi-square/chi-square_results2.png>
+Package pdftex.def Info: images/09-chi-square/chi-square_results2.png  used on input line 2883.
+(pdftex.def)             Requested size: 292.09943pt x 253.70493pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[134 <./images/09-chi-square/chi-square_results1.png>]
+
+[135 <./images/09-chi-square/chi-square_results2.png>]
+<images/09-chi-square/chi-square_results4.png, id=1296, 456.95718pt x 437.38406pt>
+File: images/09-chi-square/chi-square_results4.png Graphic file (type png)
+<use images/09-chi-square/chi-square_results4.png>
+Package pdftex.def Info: images/09-chi-square/chi-square_results4.png  used on input line 2924.
+(pdftex.def)             Requested size: 345.01102pt x 330.23296pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[136]
+<images/11-independence/independence_excel1.png, id=1303, 361.35pt x 216.81pt>
+File: images/11-independence/independence_excel1.png Graphic file (type png)
+<use images/11-independence/independence_excel1.png>
+Package pdftex.def Info: images/11-independence/independence_excel1.png  used on input line 2928.
+(pdftex.def)             Requested size: 376.40717pt x 225.84428pt.
+
+Overfull \hbox (31.40717pt too wide) in paragraph at lines 2928--2929
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[137 <./images/09-chi-square/chi-square_results4.png>]
+<images/11-independence/independence_excel2.png, id=1309, 361.35pt x 216.81pt>
+File: images/11-independence/independence_excel2.png Graphic file (type png)
+<use images/11-independence/independence_excel2.png>
+Package pdftex.def Info: images/11-independence/independence_excel2.png  used on input line 2932.
+(pdftex.def)             Requested size: 376.40717pt x 225.84428pt.
+
+Overfull \hbox (31.40717pt too wide) in paragraph at lines 2932--2933
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[138 <./images/11-independence/independence_excel1.png> <./images/11-independence/independence_excel2.png>]
+
+[139]
+
+[140]
+<images/12-mcnemar/mcnemar_setup.png, id=1335, 598.48593pt x 448.67625pt>
+File: images/12-mcnemar/mcnemar_setup.png Graphic file (type png)
+<use images/12-mcnemar/mcnemar_setup.png>
+Package pdftex.def Info: images/12-mcnemar/mcnemar_setup.png  used on input line 3041.
+(pdftex.def)             Requested size: 345.00342pt x 258.64407pt.
+<images/12-mcnemar/mcnemar_results.png, id=1336, 450.18187pt x 376.40625pt>
+File: images/12-mcnemar/mcnemar_results.png Graphic file (type png)
+<use images/12-mcnemar/mcnemar_results.png>
+Package pdftex.def Info: images/12-mcnemar/mcnemar_results.png  used on input line 3045.
+(pdftex.def)             Requested size: 345.0131pt x 288.47249pt.
+
+
+[141 <./images/12-mcnemar/mcnemar_setup.png>]
+
+[142 <./images/12-mcnemar/mcnemar_results.png>]
+Chapter 11.
+
+
+[143
+
+]
+<images/07.1-one_sample_t-test/data.png, id=1363, 204.765pt x 215.00325pt>
+File: images/07.1-one_sample_t-test/data.png Graphic file (type png)
+<use images/07.1-one_sample_t-test/data.png>
+Package pdftex.def Info: images/07.1-one_sample_t-test/data.png  used on input line 3125.
+(pdftex.def)             Requested size: 204.76448pt x 215.00272pt.
+
+Underfull \vbox (badness 1043) has occurred while \output is active []
+
+
+
+[144]
+<images/07.1-one_sample_t-test/descriptives.png, id=1372, 206.57175pt x 209.583pt>
+File: images/07.1-one_sample_t-test/descriptives.png Graphic file (type png)
+<use images/07.1-one_sample_t-test/descriptives.png>
+Package pdftex.def Info: images/07.1-one_sample_t-test/descriptives.png  used on input line 3131.
+(pdftex.def)             Requested size: 206.57437pt x 209.58566pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[145 <./images/07.1-one_sample_t-test/data.png>]
+<images/07.1-one_sample_t-test/plot.png, id=1380, 351.3125pt x 351.3125pt>
+File: images/07.1-one_sample_t-test/plot.png Graphic file (type png)
+<use images/07.1-one_sample_t-test/plot.png>
+Package pdftex.def Info: images/07.1-one_sample_t-test/plot.png  used on input line 3133.
+(pdftex.def)             Requested size: 393.75142pt x 393.75142pt.
+
+Overfull \hbox (48.75142pt too wide) in paragraph at lines 3133--3134
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[146 <./images/07.1-one_sample_t-test/descriptives.png>]
+
+[147 <./images/07.1-one_sample_t-test/plot.png>]
+
+[148]
+<images/07.1-one_sample_t-test/normality.png, id=1401, 370.986pt x 475.7775pt>
+File: images/07.1-one_sample_t-test/normality.png Graphic file (type png)
+<use images/07.1-one_sample_t-test/normality.png>
+Package pdftex.def Info: images/07.1-one_sample_t-test/normality.png  used on input line 3181.
+(pdftex.def)             Requested size: 345.0134pt x 442.46849pt.
+
+Overfull \hbox (8.6224pt too wide) in paragraph at lines 3181--3182
+[][]\T1/lmr/m/n/10 ``) 
+ []
+
+
+
+[149 <./images/07.1-one_sample_t-test/normality.png>]
+
+[150]
+Underfull \hbox (badness 1264) in paragraph at lines 3234--3236
+[]\T1/lmr/m/n/10 Under Ad-di-tional Statis-tics, se-lect \T1/lmtt/m/n/10 Mean difference\T1/lmr/m/n/10 , \T1/lmtt/m/n/10 Effect size\T1/lmr/m/n/10 ,
+ []
+
+<images/07.1-one_sample_t-test/setup.png, id=1418, 501.072pt x 513.71925pt>
+File: images/07.1-one_sample_t-test/setup.png Graphic file (type png)
+<use images/07.1-one_sample_t-test/setup.png>
+Package pdftex.def Info: images/07.1-one_sample_t-test/setup.png  used on input line 3241.
+(pdftex.def)             Requested size: 344.99843pt x 353.7063pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[151]
+<images/07.1-one_sample_t-test/results.png, id=1430, 510.10574pt x 237.88875pt>
+File: images/07.1-one_sample_t-test/results.png Graphic file (type png)
+<use images/07.1-one_sample_t-test/results.png>
+Package pdftex.def Info: images/07.1-one_sample_t-test/results.png  used on input line 3247.
+(pdftex.def)             Requested size: 345.00703pt x 160.89465pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[152 <./images/07.1-one_sample_t-test/setup.png>]
+
+[153 <./images/07.1-one_sample_t-test/results.png>]
+<images/07.1-one_sample_t-test/results-plot.png, id=1443, 401.5pt x 301.125pt>
+File: images/07.1-one_sample_t-test/results-plot.png Graphic file (type png)
+<use images/07.1-one_sample_t-test/results-plot.png>
+Package pdftex.def Info: images/07.1-one_sample_t-test/results-plot.png  used on input line 3307.
+(pdftex.def)             Requested size: 345.02596pt x 258.76945pt.
+
+
+[154]
+<images/07.1-one_sample_t-test/wilcoxon.png, id=1454, 581.17125pt x 255.95625pt>
+File: images/07.1-one_sample_t-test/wilcoxon.png Graphic file (type png)
+<use images/07.1-one_sample_t-test/wilcoxon.png>
+Package pdftex.def Info: images/07.1-one_sample_t-test/wilcoxon.png  used on input line 3317.
+(pdftex.def)             Requested size: 345.0075pt x 151.9463pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[155 <./images/07.1-one_sample_t-test/results-plot.png>]
+
+[156 <./images/07.1-one_sample_t-test/wilcoxon.png>]
+
+[157]
+<images/02-independent_t-test/independent_t-test_data.png, id=1479, 286.671pt x 215.00325pt>
+File: images/02-independent_t-test/independent_t-test_data.png Graphic file (type png)
+<use images/02-independent_t-test/independent_t-test_data.png>
+Package pdftex.def Info: images/02-independent_t-test/independent_t-test_data.png  used on input line 3417.
+(pdftex.def)             Requested size: 286.67029pt x 215.00272pt.
+
+
+[158 <./images/02-independent_t-test/independent_t-test_data.png>]
+<images/02-independent_t-test/independent_t-test_descriptives_all.png, id=1488, 199.34476pt x 184.89075pt>
+File: images/02-independent_t-test/independent_t-test_descriptives_all.png Graphic file (type png)
+<use images/02-independent_t-test/independent_t-test_descriptives_all.png>
+Package pdftex.def Info: images/02-independent_t-test/independent_t-test_descriptives_all.png  used on input line 3425.
+(pdftex.def)             Requested size: 199.34425pt x 184.89027pt.
+<images/02-independent_t-test/independent_t-test_plot_all.png, id=1489, 351.3125pt x 351.3125pt>
+File: images/02-independent_t-test/independent_t-test_plot_all.png Graphic file (type png)
+<use images/02-independent_t-test/independent_t-test_plot_all.png>
+Package pdftex.def Info: images/02-independent_t-test/independent_t-test_plot_all.png  used on input line 3427.
+(pdftex.def)             Requested size: 397.51454pt x 397.51454pt.
+
+Overfull \hbox (52.51454pt too wide) in paragraph at lines 3427--3428
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[159 <./images/02-independent_t-test/independent_t-test_descriptives_all.png>]
+
+[160 <./images/02-independent_t-test/independent_t-test_plot_all.png>]
+<images/02-independent_t-test/independent_t-test_normality.png, id=1501, 722.7pt x 627.09282pt>
+File: images/02-independent_t-test/independent_t-test_normality.png Graphic file (type png)
+<use images/02-independent_t-test/independent_t-test_normality.png>
+Package pdftex.def Info: images/02-independent_t-test/independent_t-test_normality.png  used on input line 3469.
+(pdftex.def)             Requested size: 344.99533pt x 299.35533pt.
+
+Underfull \vbox (badness 1142) has occurred while \output is active []
+
+
+
+[161]
+<images/02-independent_t-test/independent_t-test_skewkurtosis.png, id=1512, 199.947pt x 145.7445pt>
+File: images/02-independent_t-test/independent_t-test_skewkurtosis.png Graphic file (type png)
+<use images/02-independent_t-test/independent_t-test_skewkurtosis.png>
+Package pdftex.def Info: images/02-independent_t-test/independent_t-test_skewkurtosis.png  used on input line 3482.
+(pdftex.def)             Requested size: 199.95259pt x 145.74858pt.
+
+Underfull \vbox (badness 5431) has occurred while \output is active []
+
+
+
+[162 <./images/02-independent_t-test/independent_t-test_normality.png>]
+<images/02-independent_t-test/independent_t-test_homogeneity.png, id=1518, 724.95844pt x 240.9pt>
+File: images/02-independent_t-test/independent_t-test_homogeneity.png Graphic file (type png)
+<use images/02-independent_t-test/independent_t-test_homogeneity.png>
+Package pdftex.def Info: images/02-independent_t-test/independent_t-test_homogeneity.png  used on input line 3488.
+(pdftex.def)             Requested size: 345.00043pt x 114.64188pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[163 <./images/02-independent_t-test/independent_t-test_skewkurtosis.png> <./images/02-independent_t-test/independent_t-test_homogeneity.png>]
+
+[164]
+Underfull \hbox (badness 1264) in paragraph at lines 3560--3562
+[]\T1/lmr/m/n/10 Under Ad-di-tional Statis-tics, se-lect \T1/lmtt/m/n/10 Mean difference\T1/lmr/m/n/10 , \T1/lmtt/m/n/10 Effect size\T1/lmr/m/n/10 ,
+ []
+
+<images/02-independent_t-test/independent_t-test_setup.png, id=1543, 544.28343pt x 639.89063pt>
+File: images/02-independent_t-test/independent_t-test_setup.png Graphic file (type png)
+<use images/02-independent_t-test/independent_t-test_setup.png>
+Package pdftex.def Info: images/02-independent_t-test/independent_t-test_setup.png  used on input line 3567.
+(pdftex.def)             Requested size: 344.99326pt x 405.59373pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[165]
+<images/02-independent_t-test/independent_t-test_ind-results.png, id=1554, 726.46407pt x 310.91156pt>
+File: images/02-independent_t-test/independent_t-test_ind-results.png Graphic file (type png)
+<use images/02-independent_t-test/independent_t-test_ind-results.png>
+Package pdftex.def Info: images/02-independent_t-test/independent_t-test_ind-results.png  used on input line 3573.
+(pdftex.def)             Requested size: 345.0075pt x 147.65605pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[166 <./images/02-independent_t-test/independent_t-test_setup.png>]
+
+[167 <./images/02-independent_t-test/independent_t-test_ind-results.png>]
+<images/02-independent_t-test/t-test results and write-up comparison/independent.png, id=1567, 583.05045pt x 314.61902pt>
+File: images/02-independent_t-test/t-test results and write-up comparison/independent.png Graphic file (type png)
+<use images/02-independent_t-test/t-test results and write-up comparison/independent.png>
+Package pdftex.def Info: images/02-independent_t-test/t-test results and write-up comparison/independent.png  used on input line 3636.
+(pdftex.def)             Requested size: 726.51593pt x 392.03421pt.
+
+Overfull \hbox (381.51593pt too wide) in paragraph at lines 3636--3637
+[][] 
+ []
+
+
+
+[168]
+<images/02-independent_t-test/independent_t-test_plot2.png, id=1577, 401.5pt x 301.125pt>
+File: images/02-independent_t-test/independent_t-test_plot2.png Graphic file (type png)
+<use images/02-independent_t-test/independent_t-test_plot2.png>
+Package pdftex.def Info: images/02-independent_t-test/independent_t-test_plot2.png  used on input line 3642.
+(pdftex.def)             Requested size: 345.02596pt x 258.76945pt.
+
+
+[169 <./images/02-independent_t-test/t-test results and write-up comparison/independent.png>]
+<images/02-independent_t-test/independent_t-test_plot.png, id=1585, 511.9125pt x 351.3125pt>
+File: images/02-independent_t-test/independent_t-test_plot.png Graphic file (type png)
+<use images/02-independent_t-test/independent_t-test_plot.png>
+Package pdftex.def Info: images/02-independent_t-test/independent_t-test_plot.png  used on input line 3646.
+(pdftex.def)             Requested size: 345.00269pt x 236.76654pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[170 <./images/02-independent_t-test/independent_t-test_plot2.png>]
+<images/02-independent_t-test/independent_t-test_full-results.png, id=1591, 819.06pt x 347.79938pt>
+File: images/02-independent_t-test/independent_t-test_full-results.png Graphic file (type png)
+<use images/02-independent_t-test/independent_t-test_full-results.png>
+Package pdftex.def Info: images/02-independent_t-test/independent_t-test_full-results.png  used on input line 3654.
+(pdftex.def)             Requested size: 345.00269pt x 146.4993pt.
+
+
+[171 <./images/02-independent_t-test/independent_t-test_plot.png> <./images/02-independent_t-test/independent_t-test_full-results.png>]
+File: images/02-independent_t-test/independent_t-test_full-results.png Graphic file (type png)
+<use images/02-independent_t-test/independent_t-test_full-results.png>
+Package pdftex.def Info: images/02-independent_t-test/independent_t-test_full-results.png  used on input line 3679.
+(pdftex.def)             Requested size: 345.00269pt x 146.4993pt.
+
+
+[172]
+
+[173]
+
+[174]
+<images/03_dependent_t-test/dependent_data.png, id=1619, 295.1025pt x 207.77625pt>
+File: images/03_dependent_t-test/dependent_data.png Graphic file (type png)
+<use images/03_dependent_t-test/dependent_data.png>
+Package pdftex.def Info: images/03_dependent_t-test/dependent_data.png  used on input line 3802.
+(pdftex.def)             Requested size: 295.10626pt x 207.77888pt.
+
+Underfull \vbox (badness 2318) has occurred while \output is active []
+
+
+
+[175]
+<images/03_dependent_t-test/dependent_descriptives.png, id=1629, 290.2845pt x 203.5605pt>
+File: images/03_dependent_t-test/dependent_descriptives.png Graphic file (type png)
+<use images/03_dependent_t-test/dependent_descriptives.png>
+Package pdftex.def Info: images/03_dependent_t-test/dependent_descriptives.png  used on input line 3810.
+(pdftex.def)             Requested size: 290.28378pt x 203.56pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[176 <./images/03_dependent_t-test/dependent_data.png>]
+
+[177 <./images/03_dependent_t-test/dependent_descriptives.png>]
+<images/03_dependent_t-test/dependent_normality.png, id=1645, 810.02625pt x 584.93532pt>
+File: images/03_dependent_t-test/dependent_normality.png Graphic file (type png)
+<use images/03_dependent_t-test/dependent_normality.png>
+Package pdftex.def Info: images/03_dependent_t-test/dependent_normality.png  used on input line 3852.
+(pdftex.def)             Requested size: 345.00438pt x 249.1342pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[178]
+Underfull \vbox (badness 1533) has occurred while \output is active []
+
+
+
+[179 <./images/03_dependent_t-test/dependent_normality.png>]
+Underfull \hbox (badness 1264) in paragraph at lines 3893--3895
+[]\T1/lmr/m/n/10 Under Ad-di-tional Statis-tics, se-lect \T1/lmtt/m/n/10 Mean difference\T1/lmr/m/n/10 , \T1/lmtt/m/n/10 Effect size\T1/lmr/m/n/10 ,
+ []
+
+<images/03_dependent_t-test/dependent_setup.png, id=1661, 548.80031pt x 624.08156pt>
+File: images/03_dependent_t-test/dependent_setup.png Graphic file (type png)
+<use images/03_dependent_t-test/dependent_setup.png>
+Package pdftex.def Info: images/03_dependent_t-test/dependent_setup.png  used on input line 3900.
+(pdftex.def)             Requested size: 345.0091pt x 392.33546pt.
+
+
+[180]
+<images/03_dependent_t-test/dependent_results.png, id=1674, 816.80156pt x 323.70938pt>
+File: images/03_dependent_t-test/dependent_results.png Graphic file (type png)
+<use images/03_dependent_t-test/dependent_results.png>
+Package pdftex.def Info: images/03_dependent_t-test/dependent_results.png  used on input line 3906.
+(pdftex.def)             Requested size: 344.9986pt x 136.72755pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[181 <./images/03_dependent_t-test/dependent_setup.png>]
+
+[182 <./images/03_dependent_t-test/dependent_results.png>]
+<images/02-independent_t-test/t-test results and write-up comparison/dependent.png, id=1691, 603.69902pt x 319.50948pt>
+File: images/02-independent_t-test/t-test results and write-up comparison/dependent.png Graphic file (type png)
+<use images/02-independent_t-test/t-test results and write-up comparison/dependent.png>
+Package pdftex.def Info: images/02-independent_t-test/t-test results and write-up comparison/dependent.png  used on input line 3952.
+(pdftex.def)             Requested size: 345.00554pt x 182.5952pt.
+<images/03_dependent_t-test/dependent_results_plot.png, id=1692, 401.5pt x 301.125pt>
+File: images/03_dependent_t-test/dependent_results_plot.png Graphic file (type png)
+<use images/03_dependent_t-test/dependent_results_plot.png>
+Package pdftex.def Info: images/03_dependent_t-test/dependent_results_plot.png  used on input line 3958.
+(pdftex.def)             Requested size: 345.02596pt x 258.76945pt.
+
+Underfull \vbox (badness 2460) has occurred while \output is active []
+
+
+
+[183 <./images/02-independent_t-test/t-test results and write-up comparison/dependent.png>]
+<images/03_dependent_t-test/dependent_results_plot2.png, id=1701, 1019.60925pt x 397.485pt>
+File: images/03_dependent_t-test/dependent_results_plot2.png Graphic file (type png)
+<use images/03_dependent_t-test/dependent_results_plot2.png>
+Package pdftex.def Info: images/03_dependent_t-test/dependent_results_plot2.png  used on input line 3964.
+(pdftex.def)             Requested size: 344.99786pt x 134.49414pt.
+
+
+[184 <./images/03_dependent_t-test/dependent_results_plot.png> <./images/03_dependent_t-test/dependent_results_plot2.png>]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 3970.
+<images/03_dependent_t-test/dependent_results_full.png, id=1709, 714.41907pt x 357.58594pt>
+File: images/03_dependent_t-test/dependent_results_full.png Graphic file (type png)
+<use images/03_dependent_t-test/dependent_results_full.png>
+Package pdftex.def Info: images/03_dependent_t-test/dependent_results_full.png  used on input line 3993.
+(pdftex.def)             Requested size: 344.99937pt x 172.68144pt.
+
+
+[185 <./images/03_dependent_t-test/dependent_results_full.png>]
+
+[186]
+Chapter 12.
+
+
+[187
+
+]
+
+[188]
+
+[189]
+<images/04_one-way-anova/anova_data.png, id=1745, 384.6872pt x 368.1253pt>
+File: images/04_one-way-anova/anova_data.png Graphic file (type png)
+<use images/04_one-way-anova/anova_data.png>
+Package pdftex.def Info: images/04_one-way-anova/anova_data.png  used on input line 4143.
+(pdftex.def)             Requested size: 345.0237pt x 330.16943pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[190 <./images/04_one-way-anova/anova_data.png>]
+<images/04_one-way-anova/anova_descriptives.png, id=1752, 307.90031pt x 421.575pt>
+File: images/04_one-way-anova/anova_descriptives.png Graphic file (type png)
+<use images/04_one-way-anova/anova_descriptives.png>
+Package pdftex.def Info: images/04_one-way-anova/anova_descriptives.png  used on input line 4149.
+(pdftex.def)             Requested size: 307.90424pt x 421.58038pt.
+
+
+[191 <./images/04_one-way-anova/anova_descriptives.png>]
+<images/04_one-way-anova/anova_graph.png, id=1759, 494.84875pt x 351.3125pt>
+File: images/04_one-way-anova/anova_graph.png Graphic file (type png)
+<use images/04_one-way-anova/anova_graph.png>
+Package pdftex.def Info: images/04_one-way-anova/anova_graph.png  used on input line 4153.
+(pdftex.def)             Requested size: 345.00243pt x 244.93071pt.
+
+
+[192 <./images/04_one-way-anova/anova_graph.png>]
+<images/04_one-way-anova/one-way_assumptions1.png, id=1768, 664.73344pt x 347.79938pt>
+File: images/04_one-way-anova/one-way_assumptions1.png Graphic file (type png)
+<use images/04_one-way-anova/one-way_assumptions1.png>
+Package pdftex.def Info: images/04_one-way-anova/one-way_assumptions1.png  used on input line 4195.
+(pdftex.def)             Requested size: 345.00409pt x 180.51175pt.
+
+Underfull \vbox (badness 2781) has occurred while \output is active []
+
+
+
+[193]
+<images/04_one-way-anova/one-way_assumptions2.png, id=1779, 665.48625pt x 410.2828pt>
+File: images/04_one-way-anova/one-way_assumptions2.png Graphic file (type png)
+<use images/04_one-way-anova/one-way_assumptions2.png>
+Package pdftex.def Info: images/04_one-way-anova/one-way_assumptions2.png  used on input line 4197.
+(pdftex.def)             Requested size: 344.99876pt x 212.6972pt.
+
+Underfull \vbox (badness 2653) has occurred while \output is active []
+
+
+
+[194 <./images/04_one-way-anova/one-way_assumptions1.png> <./images/04_one-way-anova/one-way_assumptions2.png>]
+
+[195]
+<images/04_one-way-anova/one-way_setup.png, id=1805, 603.75563pt x 639.13782pt>
+File: images/04_one-way-anova/one-way_setup.png Graphic file (type png)
+<use images/04_one-way-anova/one-way_setup.png>
+Package pdftex.def Info: images/04_one-way-anova/one-way_setup.png  used on input line 4259.
+(pdftex.def)             Requested size: 345.00105pt x 365.21931pt.
+
+Underfull \vbox (badness 1603) has occurred while \output is active []
+
+
+
+[196 <./images/04_one-way-anova/one-way_setup.png>]
+<images/04_one-way-anova/one-way_results.png, id=1814, 565.36218pt x 197.98969pt>
+File: images/04_one-way-anova/one-way_results.png Graphic file (type png)
+<use images/04_one-way-anova/one-way_results.png>
+Package pdftex.def Info: images/04_one-way-anova/one-way_results.png  used on input line 4265.
+(pdftex.def)             Requested size: 345.00845pt x 120.82185pt.
+
+
+[197 <./images/04_one-way-anova/one-way_results.png>]
+File: images/04_one-way-anova/anova_graph.png Graphic file (type png)
+<use images/04_one-way-anova/anova_graph.png>
+Package pdftex.def Info: images/04_one-way-anova/anova_graph.png  used on input line 4310.
+(pdftex.def)             Requested size: 345.00243pt x 244.93071pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[198]
+<images/04_one-way-anova/one-way_results_Welch.png, id=1829, 666.23906pt x 182.93344pt>
+File: images/04_one-way-anova/one-way_results_Welch.png Graphic file (type png)
+<use images/04_one-way-anova/one-way_results_Welch.png>
+Package pdftex.def Info: images/04_one-way-anova/one-way_results_Welch.png  used on input line 4318.
+(pdftex.def)             Requested size: 345.00273pt x 94.72955pt.
+
+
+[199 <./images/04_one-way-anova/one-way_results_Welch.png>]
+<images/04_one-way-anova/one-way_results_Kruskal.png, id=1836, 620.3175pt x 176.91093pt>
+File: images/04_one-way-anova/one-way_results_Kruskal.png Graphic file (type png)
+<use images/04_one-way-anova/one-way_results_Kruskal.png>
+Package pdftex.def Info: images/04_one-way-anova/one-way_results_Kruskal.png  used on input line 4328.
+(pdftex.def)             Requested size: 344.99965pt x 98.39188pt.
+
+
+[200 <./images/04_one-way-anova/one-way_results_Kruskal.png>]
+
+[201]
+<images/04_one-way-anova/posthoc.png, id=1853, 536.9661pt x 133.6995pt>
+File: images/04_one-way-anova/posthoc.png Graphic file (type png)
+<use images/04_one-way-anova/posthoc.png>
+Package pdftex.def Info: images/04_one-way-anova/posthoc.png  used on input line 4412.
+(pdftex.def)             Requested size: 345.01724pt x 85.90602pt.
+
+
+[202 <./images/04_one-way-anova/posthoc.png>]
+
+[203]
+<images/04_one-way-anova/contrasts_deviation.png, id=1868, 545.03625pt x 165.61874pt>
+File: images/04_one-way-anova/contrasts_deviation.png Graphic file (type png)
+<use images/04_one-way-anova/contrasts_deviation.png>
+Package pdftex.def Info: images/04_one-way-anova/contrasts_deviation.png  used on input line 4463.
+(pdftex.def)             Requested size: 319.99677pt x 97.23657pt.
+
+
+[204 <./images/04_one-way-anova/contrasts_deviation.png>]
+<images/04_one-way-anova/contrasts_simple.png, id=1877, 545.03625pt x 165.61874pt>
+File: images/04_one-way-anova/contrasts_simple.png Graphic file (type png)
+<use images/04_one-way-anova/contrasts_simple.png>
+Package pdftex.def Info: images/04_one-way-anova/contrasts_simple.png  used on input line 4467.
+(pdftex.def)             Requested size: 319.99677pt x 97.23657pt.
+<images/04_one-way-anova/contrasts_difference.png, id=1878, 545.03625pt x 165.61874pt>
+File: images/04_one-way-anova/contrasts_difference.png Graphic file (type png)
+<use images/04_one-way-anova/contrasts_difference.png>
+Package pdftex.def Info: images/04_one-way-anova/contrasts_difference.png  used on input line 4471.
+(pdftex.def)             Requested size: 319.99677pt x 97.23657pt.
+<images/04_one-way-anova/contrasts_helmert.png, id=1879, 545.03625pt x 165.61874pt>
+File: images/04_one-way-anova/contrasts_helmert.png Graphic file (type png)
+<use images/04_one-way-anova/contrasts_helmert.png>
+Package pdftex.def Info: images/04_one-way-anova/contrasts_helmert.png  used on input line 4475.
+(pdftex.def)             Requested size: 319.99677pt x 97.23657pt.
+<images/04_one-way-anova/contrasts_repeated.png, id=1880, 545.03625pt x 165.61874pt>
+File: images/04_one-way-anova/contrasts_repeated.png Graphic file (type png)
+<use images/04_one-way-anova/contrasts_repeated.png>
+Package pdftex.def Info: images/04_one-way-anova/contrasts_repeated.png  used on input line 4479.
+(pdftex.def)             Requested size: 319.99677pt x 97.23657pt.
+
+
+[205 <./images/04_one-way-anova/contrasts_simple.png> <./images/04_one-way-anova/contrasts_difference.png> <./images/04_one-way-anova/contrasts_helmert.png> <./images/04_one-way-anova/contrasts_repeated.png>]
+<images/04_one-way-anova/contrasts_polynomial.png, id=1891, 545.03625pt x 165.61874pt>
+File: images/04_one-way-anova/contrasts_polynomial.png Graphic file (type png)
+<use images/04_one-way-anova/contrasts_polynomial.png>
+Package pdftex.def Info: images/04_one-way-anova/contrasts_polynomial.png  used on input line 4483.
+(pdftex.def)             Requested size: 319.99677pt x 97.23657pt.
+
+
+[206 <./images/04_one-way-anova/contrasts_polynomial.png>]
+<images/05-repeated-measures-anova/Laerd1.png, id=1901, 511.15968pt x 338.76563pt>
+File: images/05-repeated-measures-anova/Laerd1.png Graphic file (type png)
+<use images/05-repeated-measures-anova/Laerd1.png>
+Package pdftex.def Info: images/05-repeated-measures-anova/Laerd1.png  used on input line 4540.
+(pdftex.def)             Requested size: 344.99449pt x 228.64142pt.
+
+Underfull \vbox (badness 5403) has occurred while \output is active []
+
+
+
+[207]
+<images/05-repeated-measures-anova/Laerd2.png, id=1908, 536.0025pt x 363.60844pt>
+File: images/05-repeated-measures-anova/Laerd2.png Graphic file (type png)
+<use images/05-repeated-measures-anova/Laerd2.png>
+Package pdftex.def Info: images/05-repeated-measures-anova/Laerd2.png  used on input line 4544.
+(pdftex.def)             Requested size: 344.99515pt x 234.03462pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[208 <./images/05-repeated-measures-anova/Laerd1.png> <./images/05-repeated-measures-anova/Laerd2.png>]
+<images/05-repeated-measures-anova/rm_data.png, id=1914, 388.45125pt x 143.03438pt>
+File: images/05-repeated-measures-anova/rm_data.png Graphic file (type png)
+<use images/05-repeated-measures-anova/rm_data.png>
+Package pdftex.def Info: images/05-repeated-measures-anova/rm_data.png  used on input line 4560.
+(pdftex.def)             Requested size: 345.00923pt x 127.03827pt.
+
+
+[209 <./images/05-repeated-measures-anova/rm_data.png>]
+<images/05-repeated-measures-anova/rm_descriptives.png, id=1922, 318.43968pt x 246.1697pt>
+File: images/05-repeated-measures-anova/rm_descriptives.png Graphic file (type png)
+<use images/05-repeated-measures-anova/rm_descriptives.png>
+Package pdftex.def Info: images/05-repeated-measures-anova/rm_descriptives.png  used on input line 4568.
+(pdftex.def)             Requested size: 318.4389pt x 246.16908pt.
+
+
+[210 <./images/05-repeated-measures-anova/rm_descriptives.png>]
+<images/05-repeated-measures-anova/rm-anova_sphericity.png, id=1931, 500.62032pt x 151.3153pt>
+File: images/05-repeated-measures-anova/rm-anova_sphericity.png Graphic file (type png)
+<use images/05-repeated-measures-anova/rm-anova_sphericity.png>
+Package pdftex.def Info: images/05-repeated-measures-anova/rm-anova_sphericity.png  used on input line 4619.
+(pdftex.def)             Requested size: 345.0159pt x 104.28297pt.
+
+
+[211]
+
+[212 <./images/05-repeated-measures-anova/rm-anova_sphericity.png>]
+<images/05-repeated-measures-anova/rm-anova_setup1.png, id=1955, 603.0028pt x 560.0925pt>
+File: images/05-repeated-measures-anova/rm-anova_setup1.png Graphic file (type png)
+<use images/05-repeated-measures-anova/rm-anova_setup1.png>
+Package pdftex.def Info: images/05-repeated-measures-anova/rm-anova_setup1.png  used on input line 4690.
+(pdftex.def)             Requested size: 344.99411pt x 320.44397pt.
+
+
+[213]
+<images/05-repeated-measures-anova/rm-anova_setup2.png, id=1969, 600.74437pt x 391.4625pt>
+File: images/05-repeated-measures-anova/rm-anova_setup2.png Graphic file (type png)
+<use images/05-repeated-measures-anova/rm-anova_setup2.png>
+Package pdftex.def Info: images/05-repeated-measures-anova/rm-anova_setup2.png  used on input line 4692.
+(pdftex.def)             Requested size: 345.01283pt x 224.82039pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[214 <./images/05-repeated-measures-anova/rm-anova_setup1.png>]
+<images/05-repeated-measures-anova/rm-anova_results.png, id=1975, 538.26094pt x 349.305pt>
+File: images/05-repeated-measures-anova/rm-anova_results.png Graphic file (type png)
+<use images/05-repeated-measures-anova/rm-anova_results.png>
+Package pdftex.def Info: images/05-repeated-measures-anova/rm-anova_results.png  used on input line 4698.
+(pdftex.def)             Requested size: 345.00325pt x 223.89021pt.
+
+
+[215 <./images/05-repeated-measures-anova/rm-anova_setup2.png> <./images/05-repeated-measures-anova/rm-anova_results.png>]
+<images/05-repeated-measures-anova/rm-anova_tukey.png, id=1983, 589.4522pt x 208.52907pt>
+File: images/05-repeated-measures-anova/rm-anova_tukey.png Graphic file (type png)
+<use images/05-repeated-measures-anova/rm-anova_tukey.png>
+Package pdftex.def Info: images/05-repeated-measures-anova/rm-anova_tukey.png  used on input line 4706.
+(pdftex.def)             Requested size: 345.00354pt x 122.05106pt.
+
+
+[216 <./images/05-repeated-measures-anova/rm-anova_tukey.png>]
+<images/05-repeated-measures-anova/RM ANOVA visual.png, id=1990, 401.5pt x 351.3125pt>
+File: images/05-repeated-measures-anova/RM ANOVA visual.png Graphic file (type png)
+<use images/05-repeated-measures-anova/RM ANOVA visual.png>
+Package pdftex.def Info: images/05-repeated-measures-anova/RM ANOVA visual.png  used on input line 4724.
+(pdftex.def)             Requested size: 345.02596pt x 301.8977pt.
+<images/05-repeated-measures-anova/rm-anova_friedman_setup.png, id=1991, 600.74437pt x 438.8897pt>
+File: images/05-repeated-measures-anova/rm-anova_friedman_setup.png Graphic file (type png)
+<use images/05-repeated-measures-anova/rm-anova_friedman_setup.png>
+Package pdftex.def Info: images/05-repeated-measures-anova/rm-anova_friedman_setup.png  used on input line 4730.
+(pdftex.def)             Requested size: 345.01283pt x 252.05826pt.
+
+
+[217 <./images/05-repeated-measures-anova/RM ANOVA visual.png>]
+<images/05-repeated-measures-anova/rm-anova_friedman.png, id=1999, 450.18187pt x 481.04718pt>
+File: images/05-repeated-measures-anova/rm-anova_friedman.png Graphic file (type png)
+<use images/05-repeated-measures-anova/rm-anova_friedman.png>
+Package pdftex.def Info: images/05-repeated-measures-anova/rm-anova_friedman.png  used on input line 4734.
+(pdftex.def)             Requested size: 345.0131pt x 368.66785pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[218 <./images/05-repeated-measures-anova/rm-anova_friedman_setup.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[219 <./images/05-repeated-measures-anova/rm-anova_friedman.png>]
+
+[220]
+<images/06-factorial-anova/independent-factorial_assumptions.png, id=2018, 461.47406pt x 271.76532pt>
+File: images/06-factorial-anova/independent-factorial_assumptions.png Graphic file (type png)
+<use images/06-factorial-anova/independent-factorial_assumptions.png>
+Package pdftex.def Info: images/06-factorial-anova/independent-factorial_assumptions.png  used on input line 4797.
+(pdftex.def)             Requested size: 344.99916pt x 203.17242pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[221]
+<images/06-factorial-anova/independent-factorial_results.png, id=2024, 606.76688pt x 201.75375pt>
+File: images/06-factorial-anova/independent-factorial_results.png Graphic file (type png)
+<use images/06-factorial-anova/independent-factorial_results.png>
+Package pdftex.def Info: images/06-factorial-anova/independent-factorial_results.png  used on input line 4801.
+(pdftex.def)             Requested size: 344.99966pt x 114.71452pt.
+<images/06-factorial-anova/independent-factorial_posthoc.png, id=2025, 648.17157pt x 349.305pt>
+File: images/06-factorial-anova/independent-factorial_posthoc.png Graphic file (type png)
+<use images/06-factorial-anova/independent-factorial_posthoc.png>
+Package pdftex.def Info: images/06-factorial-anova/independent-factorial_posthoc.png  used on input line 4805.
+(pdftex.def)             Requested size: 345.00294pt x 185.92493pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[222 <./images/06-factorial-anova/independent-factorial_assumptions.png> <./images/06-factorial-anova/independent-factorial_results.png>]
+<images/06-factorial-anova/independent-factorial_plot.png, id=2033, 514.92375pt x 351.3125pt>
+File: images/06-factorial-anova/independent-factorial_plot.png Graphic file (type png)
+<use images/06-factorial-anova/independent-factorial_plot.png>
+Package pdftex.def Info: images/06-factorial-anova/independent-factorial_plot.png  used on input line 4821.
+(pdftex.def)             Requested size: 345.00497pt x 235.3835pt.
+
+
+[223 <./images/06-factorial-anova/independent-factorial_posthoc.png>]
+
+[224 <./images/06-factorial-anova/independent-factorial_plot.png>]
+<images/06-factorial-anova/rm-factorial_assumption.png, id=2053, 519.44063pt x 216.81pt>
+File: images/06-factorial-anova/rm-factorial_assumption.png Graphic file (type png)
+<use images/06-factorial-anova/rm-factorial_assumption.png>
+Package pdftex.def Info: images/06-factorial-anova/rm-factorial_assumption.png  used on input line 4857.
+(pdftex.def)             Requested size: 344.99568pt x 143.99818pt.
+
+
+[225 <./images/06-factorial-anova/rm-factorial_assumption.png>]
+<images/06-factorial-anova/rm-factorial_results.png, id=2066, 560.8453pt x 274.02374pt>
+File: images/06-factorial-anova/rm-factorial_results.png Graphic file (type png)
+<use images/06-factorial-anova/rm-factorial_results.png>
+Package pdftex.def Info: images/06-factorial-anova/rm-factorial_results.png  used on input line 4861.
+(pdftex.def)             Requested size: 344.99911pt x 168.56332pt.
+<images/06-factorial-anova/rm-factorial_tukey.png, id=2067, 575.90157pt x 355.3275pt>
+File: images/06-factorial-anova/rm-factorial_tukey.png Graphic file (type png)
+<use images/06-factorial-anova/rm-factorial_tukey.png>
+Package pdftex.def Info: images/06-factorial-anova/rm-factorial_tukey.png  used on input line 4865.
+(pdftex.def)             Requested size: 345.00757pt x 212.8674pt.
+
+
+[226 <./images/06-factorial-anova/rm-factorial_results.png> <./images/06-factorial-anova/rm-factorial_tukey.png>]
+<images/06-factorial-anova/rm-factorial_interaction.png, id=2074, 511.9125pt x 351.3125pt>
+File: images/06-factorial-anova/rm-factorial_interaction.png Graphic file (type png)
+<use images/06-factorial-anova/rm-factorial_interaction.png>
+Package pdftex.def Info: images/06-factorial-anova/rm-factorial_interaction.png  used on input line 4869.
+(pdftex.def)             Requested size: 345.00269pt x 236.76654pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[227 <./images/06-factorial-anova/rm-factorial_interaction.png>]
+<images/06-factorial-anova/mixed_assumptions.png, id=2081, 490.83376pt x 143.78719pt>
+File: images/06-factorial-anova/mixed_assumptions.png Graphic file (type png)
+<use images/06-factorial-anova/mixed_assumptions.png>
+Package pdftex.def Info: images/06-factorial-anova/mixed_assumptions.png  used on input line 4913.
+(pdftex.def)             Requested size: 345.01178pt x 101.0694pt.
+
+
+[228]
+<images/06-factorial-anova/mixed_results.png, id=2095, 610.53094pt x 382.42876pt>
+File: images/06-factorial-anova/mixed_results.png Graphic file (type png)
+<use images/06-factorial-anova/mixed_results.png>
+Package pdftex.def Info: images/06-factorial-anova/mixed_results.png  used on input line 4917.
+(pdftex.def)             Requested size: 345.01584pt x 216.11348pt.
+<images/06-factorial-anova/mixed_posthoc.png, id=2096, 569.87906pt x 347.04657pt>
+File: images/06-factorial-anova/mixed_posthoc.png Graphic file (type png)
+<use images/06-factorial-anova/mixed_posthoc.png>
+Package pdftex.def Info: images/06-factorial-anova/mixed_posthoc.png  used on input line 4921.
+(pdftex.def)             Requested size: 344.99962pt x 210.09885pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[229 <./images/06-factorial-anova/mixed_assumptions.png> <./images/06-factorial-anova/mixed_results.png>]
+<images/06-factorial-anova/mixed_interaction.png, id=2104, 545.03625pt x 351.3125pt>
+File: images/06-factorial-anova/mixed_interaction.png Graphic file (type png)
+<use images/06-factorial-anova/mixed_interaction.png>
+Package pdftex.def Info: images/06-factorial-anova/mixed_interaction.png  used on input line 4925.
+(pdftex.def)             Requested size: 344.99638pt x 222.37335pt.
+
+
+[230 <./images/06-factorial-anova/mixed_posthoc.png> <./images/06-factorial-anova/mixed_interaction.png>]
+File: images/02-stats-foundations/Possible-relationships-of-a-covariate-and-a-confounder-to-an-exposure-variable-and-an.png Graphic file (type png)
+<use images/02-stats-foundations/Possible-relationships-of-a-covariate-and-a-confounder-to-an-exposure-variable-and-an.png>
+Package pdftex.def Info: images/02-stats-foundations/Possible-relationships-of-a-covariate-and-a-confounder-to-an-exposure-variable-and-an.png  used on input line 4941.
+(pdftex.def)             Requested size: 345.00528pt x 247.18614pt.
+
+
+[231]
+<images/07-ancova/ancova_assumptions.png, id=2115, 407.27156pt x 267.24844pt>
+File: images/07-ancova/ancova_assumptions.png Graphic file (type png)
+<use images/07-ancova/ancova_assumptions.png>
+Package pdftex.def Info: images/07-ancova/ancova_assumptions.png  used on input line 4965.
+(pdftex.def)             Requested size: 345.01413pt x 226.3956pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[232]
+<images/07-ancova/ancova_assumptions2.png, id=2124, 542.77782pt x 224.33812pt>
+File: images/07-ancova/ancova_assumptions2.png Graphic file (type png)
+<use images/07-ancova/ancova_assumptions2.png>
+Package pdftex.def Info: images/07-ancova/ancova_assumptions2.png  used on input line 4979.
+(pdftex.def)             Requested size: 345.0162pt x 142.60031pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[233 <./images/07-ancova/ancova_assumptions.png>]
+<images/07-ancova/ancova_assumptions3.png, id=2131, 588.69937pt x 259.7203pt>
+File: images/07-ancova/ancova_assumptions3.png Graphic file (type png)
+<use images/07-ancova/ancova_assumptions3.png>
+Package pdftex.def Info: images/07-ancova/ancova_assumptions3.png  used on input line 4985.
+(pdftex.def)             Requested size: 345.00307pt x 152.20723pt.
+
+Underfull \hbox (badness 6110) in paragraph at lines 4998--5000
+[]\T1/lmr/m/n/10 Under As-sump-tion Checks, se-lect all three as-sump-tion checks:
+ []
+
+
+
+[234 <./images/07-ancova/ancova_assumptions2.png> <./images/07-ancova/ancova_assumptions3.png>]
+<images/07-ancova/ancova_results.png, id=2143, 587.94656pt x 216.81pt>
+File: images/07-ancova/ancova_results.png Graphic file (type png)
+<use images/07-ancova/ancova_results.png>
+Package pdftex.def Info: images/07-ancova/ancova_results.png  used on input line 5009.
+(pdftex.def)             Requested size: 345.00148pt x 127.22205pt.
+<images/07-ancova/ancova_tukey.png, id=2144, 639.89063pt x 343.2825pt>
+File: images/07-ancova/ancova_tukey.png Graphic file (type png)
+<use images/07-ancova/ancova_tukey.png>
+Package pdftex.def Info: images/07-ancova/ancova_tukey.png  used on input line 5015.
+(pdftex.def)             Requested size: 344.99876pt x 185.08168pt.
+
+Underfull \vbox (badness 6110) has occurred while \output is active []
+
+
+
+[235 <./images/07-ancova/ancova_results.png>]
+
+[236 <./images/07-ancova/ancova_tukey.png>]
+
+[237]
+
+[238
+
+]
+Chapter 13.
+
+
+[239]
+<images/08-correlation/correlation-examples.png, id=2173, 542.025pt x 157.33781pt>
+File: images/08-correlation/correlation-examples.png Graphic file (type png)
+<use images/08-correlation/correlation-examples.png>
+Package pdftex.def Info: images/08-correlation/correlation-examples.png  used on input line 5045.
+(pdftex.def)             Requested size: 345.00911pt x 100.14847pt.
+<images/08-correlation/correlation-data.png, id=2178, 528.47438pt x 241.65282pt>
+File: images/08-correlation/correlation-data.png Graphic file (type png)
+<use images/08-correlation/correlation-data.png>
+Package pdftex.def Info: images/08-correlation/correlation-data.png  used on input line 5061.
+(pdftex.def)             Requested size: 376.40482pt x 172.11673pt.
+
+Overfull \hbox (31.40482pt too wide) in paragraph at lines 5061--5062
+[][] 
+ []
+
+
+Underfull \vbox (badness 1072) has occurred while \output is active []
+
+
+
+[240 <./images/08-correlation/correlation-examples.png>]
+<images/08-correlation/correlation-descriptives.png, id=2190, 413.29407pt x 328.97906pt>
+File: images/08-correlation/correlation-descriptives.png Graphic file (type png)
+<use images/08-correlation/correlation-descriptives.png>
+Package pdftex.def Info: images/08-correlation/correlation-descriptives.png  used on input line 5069.
+(pdftex.def)             Requested size: 345.00786pt x 274.62375pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[241 <./images/08-correlation/correlation-data.png>]
+
+[242 <./images/08-correlation/correlation-descriptives.png>]
+<images/08-correlation/correlation-plots.png, id=2207, 521.69907pt x 525.46312pt>
+File: images/08-correlation/correlation-plots.png Graphic file (type png)
+<use images/08-correlation/correlation-plots.png>
+Package pdftex.def Info: images/08-correlation/correlation-plots.png  used on input line 5101.
+(pdftex.def)             Requested size: 344.99908pt x 347.48825pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[243]
+<images/08-correlation/linear-non-linear.png, id=2215, 814.30986pt x 305.3662pt>
+File: images/08-correlation/linear-non-linear.png Graphic file (type png)
+<use images/08-correlation/linear-non-linear.png>
+Package pdftex.def Info: images/08-correlation/linear-non-linear.png  used on input line 5111.
+(pdftex.def)             Requested size: 345.00232pt x 129.37587pt.
+
+
+[244 <./images/08-correlation/correlation-plots.png>]
+Underfull \hbox (badness 2197) in paragraph at lines 5123--5124
+\T1/lmtt/m/n/10 Correlated positively \T1/lmr/m/n/10 or \T1/lmtt/m/n/10 Correlated negatively\T1/lmr/m/n/10 . How-ever, if you
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5136--5138
+[]\T1/lmr/m/n/10 Under Ad-di-tional Op-tions, se-lect \T1/lmtt/m/n/10 Report significance\T1/lmr/m/n/10 , \T1/lmtt/m/n/10 Flag
+ []
+
+
+
+[245 <./images/08-correlation/linear-non-linear.png>]
+<images/08-correlation/correlation-setup.png, id=2234, 604.50844pt x 611.28375pt>
+File: images/08-correlation/correlation-setup.png Graphic file (type png)
+<use images/08-correlation/correlation-setup.png>
+Package pdftex.def Info: images/08-correlation/correlation-setup.png  used on input line 5143.
+(pdftex.def)             Requested size: 376.40556pt x 380.62431pt.
+
+Overfull \hbox (31.40556pt too wide) in paragraph at lines 5143--5144
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[246 <./images/08-correlation/correlation-setup.png>]
+<images/08-correlation/correlation-matrix.png, id=2242, 477.28313pt x 295.85532pt>
+File: images/08-correlation/correlation-matrix.png Graphic file (type png)
+<use images/08-correlation/correlation-matrix.png>
+Package pdftex.def Info: images/08-correlation/correlation-matrix.png  used on input line 5149.
+(pdftex.def)             Requested size: 344.99817pt x 213.85533pt.
+File: images/08-correlation/correlation-plots.png Graphic file (type png)
+<use images/08-correlation/correlation-plots.png>
+Package pdftex.def Info: images/08-correlation/correlation-plots.png  used on input line 5167.
+(pdftex.def)             Requested size: 344.99908pt x 347.48825pt.
+
+
+[247 <./images/08-correlation/correlation-matrix.png>]
+<images/08-correlation/correlation-plot1.png, id=2252, 531.9875pt x 475.7775pt>
+File: images/08-correlation/correlation-plot1.png Graphic file (type png)
+<use images/08-correlation/correlation-plot1.png>
+Package pdftex.def Info: images/08-correlation/correlation-plot1.png  used on input line 5171.
+(pdftex.def)             Requested size: 376.41498pt x 336.6428pt.
+
+Overfull \hbox (31.41498pt too wide) in paragraph at lines 5171--5172
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[248]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[249 <./images/08-correlation/correlation-plot1.png>]
+<images/08-correlation/compare-correlations-independent.png, id=2266, 539.76656pt x 188.95593pt>
+File: images/08-correlation/compare-correlations-independent.png Graphic file (type png)
+<use images/08-correlation/compare-correlations-independent.png>
+Package pdftex.def Info: images/08-correlation/compare-correlations-independent.png  used on input line 5200.
+(pdftex.def)             Requested size: 345.00467pt x 120.77568pt.
+
+Underfull \vbox (badness 2285) has occurred while \output is active []
+
+
+
+[250]
+<images/08-correlation/correlation-filters.png, id=2275, 505.89pt x 288.3272pt>
+File: images/08-correlation/correlation-filters.png Graphic file (type png)
+<use images/08-correlation/correlation-filters.png>
+Package pdftex.def Info: images/08-correlation/correlation-filters.png  used on input line 5212.
+(pdftex.def)             Requested size: 345.00414pt x 196.63182pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[251 <./images/08-correlation/compare-correlations-independent.png>]
+<images/08-correlation/compare-correlations-dependent.png, id=2284, 560.8453pt x 161.85469pt>
+File: images/08-correlation/compare-correlations-dependent.png Graphic file (type png)
+<use images/08-correlation/compare-correlations-dependent.png>
+Package pdftex.def Info: images/08-correlation/compare-correlations-dependent.png  used on input line 5216.
+(pdftex.def)             Requested size: 344.99911pt x 99.56349pt.
+
+
+[252 <./images/08-correlation/correlation-filters.png> <./images/08-correlation/compare-correlations-dependent.png>]
+
+[253]
+<images/13-regression/dragon_categorical.png, id=2305, 646.8165pt x 465.4188pt>
+File: images/13-regression/dragon_categorical.png Graphic file (type png)
+<use images/13-regression/dragon_categorical.png>
+Package pdftex.def Info: images/13-regression/dragon_categorical.png  used on input line 5280.
+(pdftex.def)             Requested size: 169.0467pt x 121.63808pt.
+<images/13-regression/dragons_continuous.png, id=2306, 494.8086pt x 352.4367pt>
+File: images/13-regression/dragons_continuous.png Graphic file (type png)
+<use images/13-regression/dragons_continuous.png>
+Package pdftex.def Info: images/13-regression/dragons_continuous.png  used on input line 5280.
+(pdftex.def)             Requested size: 169.04811pt x 120.40768pt.
+<images/13-regression/good-regression-line.pdf, id=2307, 433.62pt x 433.62pt>
+File: images/13-regression/good-regression-line.pdf Graphic file (type pdf)
+<use images/13-regression/good-regression-line.pdf>
+Package pdftex.def Info: images/13-regression/good-regression-line.pdf  used on input line 5293.
+(pdftex.def)             Requested size: 169.05156pt x 169.05156pt.
+<images/13-regression/bad-regression-line.pdf, id=2308, 433.62pt x 433.62pt>
+File: images/13-regression/bad-regression-line.pdf Graphic file (type pdf)
+<use images/13-regression/bad-regression-line.pdf>
+Package pdftex.def Info: images/13-regression/bad-regression-line.pdf  used on input line 5293.
+(pdftex.def)             Requested size: 169.05156pt x 169.05156pt.
+
+
+[254 <./images/13-regression/dragon_categorical.png> <./images/13-regression/dragons_continuous.png>]
+<images/13-regression/dragon_predict_mlr.png, id=2317, 519.3804pt x 352.4367pt>
+File: images/13-regression/dragon_predict_mlr.png Graphic file (type png)
+<use images/13-regression/dragon_predict_mlr.png>
+Package pdftex.def Info: images/13-regression/dragon_predict_mlr.png  used on input line 5304.
+(pdftex.def)             Requested size: 169.05023pt x 114.71266pt.
+<images/13-regression/dragon_residual.png, id=2318, 519.3804pt x 352.4367pt>
+File: images/13-regression/dragon_residual.png Graphic file (type png)
+<use images/13-regression/dragon_residual.png>
+Package pdftex.def Info: images/13-regression/dragon_residual.png  used on input line 5304.
+(pdftex.def)             Requested size: 169.05023pt x 114.71266pt.
+<images/13-regression/dragon_residual_distribution.png, id=2319, 670.1838pt x 424.4658pt>
+File: images/13-regression/dragon_residual_distribution.png Graphic file (type png)
+<use images/13-regression/dragon_residual_distribution.png>
+Package pdftex.def Info: images/13-regression/dragon_residual_distribution.png  used on input line 5315.
+(pdftex.def)             Requested size: 169.04878pt x 107.06827pt.
+
+
+[255 <./images/13-regression/good-regression-line.pdf> <./images/13-regression/bad-regression-line.pdf> <./images/13-regression/dragon_predict_mlr.png> <./images/13-regression/dragon_residual.png>]
+File: images/08-correlation/correlation-data.png Graphic file (type png)
+<use images/08-correlation/correlation-data.png>
+Package pdftex.def Info: images/08-correlation/correlation-data.png  used on input line 5338.
+(pdftex.def)             Requested size: 344.99608pt x 157.75462pt.
+
+
+[256 <./images/13-regression/dragon_residual_distribution.png>]
+File: images/08-correlation/correlation-descriptives.png Graphic file (type png)
+<use images/08-correlation/correlation-descriptives.png>
+Package pdftex.def Info: images/08-correlation/correlation-descriptives.png  used on input line 5346.
+(pdftex.def)             Requested size: 345.00786pt x 274.62375pt.
+
+
+[257]
+<images/13-regression/regression-cooks.png, id=2359, 560.8453pt x 168.63pt>
+File: images/13-regression/regression-cooks.png Graphic file (type png)
+<use images/13-regression/regression-cooks.png>
+Package pdftex.def Info: images/13-regression/regression-cooks.png  used on input line 5370.
+(pdftex.def)             Requested size: 344.99911pt x 103.73126pt.
+
+
+[258 <./images/13-regression/regression-cooks.png>]
+<images/13-regression/regression-normality.png, id=2369, 559.33969pt x 538.26094pt>
+File: images/13-regression/regression-normality.png Graphic file (type png)
+<use images/13-regression/regression-normality.png>
+Package pdftex.def Info: images/13-regression/regression-normality.png  used on input line 5384.
+(pdftex.def)             Requested size: 345.01178pt x 332.01pt.
+
+
+[259 <./images/13-regression/regression-normality.png>]
+<images/13-regression/regression-residuals.png, id=2377, 401.5pt x 301.125pt>
+File: images/13-regression/regression-residuals.png Graphic file (type png)
+<use images/13-regression/regression-residuals.png>
+Package pdftex.def Info: images/13-regression/regression-residuals.png  used on input line 5396.
+(pdftex.def)             Requested size: 345.02596pt x 258.76945pt.
+File: images/08-correlation/linear-non-linear.png Graphic file (type png)
+<use images/08-correlation/linear-non-linear.png>
+Package pdftex.def Info: images/08-correlation/linear-non-linear.png  used on input line 5402.
+(pdftex.def)             Requested size: 345.00232pt x 129.37587pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[260 <./images/13-regression/regression-residuals.png>]
+<images/08-correlation/homoscedasticity.png, id=2385, 1669.23625pt x 432.61626pt>
+File: images/08-correlation/homoscedasticity.png Graphic file (type png)
+<use images/08-correlation/homoscedasticity.png>
+Package pdftex.def Info: images/08-correlation/homoscedasticity.png  used on input line 5408.
+(pdftex.def)             Requested size: 344.9974pt x 89.41302pt.
+<images/13-regression/regression-durbinwatson.png, id=2386, 539.01375pt x 121.20282pt>
+File: images/13-regression/regression-durbinwatson.png Graphic file (type png)
+<use images/13-regression/regression-durbinwatson.png>
+Package pdftex.def Info: images/13-regression/regression-durbinwatson.png  used on input line 5418.
+(pdftex.def)             Requested size: 345.00052pt x 77.57692pt.
+
+
+[261 <./images/08-correlation/homoscedasticity.png>]
+<images/13-regression/regression-multicollinearity.png, id=2393, 529.22719pt x 123.46124pt>
+File: images/13-regression/regression-multicollinearity.png Graphic file (type png)
+<use images/13-regression/regression-multicollinearity.png>
+Package pdftex.def Info: images/13-regression/regression-multicollinearity.png  used on input line 5443.
+(pdftex.def)             Requested size: 345.003pt x 80.48431pt.
+
+
+[262 <./images/13-regression/regression-durbinwatson.png> <./images/13-regression/regression-multicollinearity.png>]
+<images/13-regression/regression-results.png, id=2404, 579.66562pt x 280.79906pt>
+File: images/13-regression/regression-results.png Graphic file (type png)
+<use images/13-regression/regression-results.png>
+Package pdftex.def Info: images/13-regression/regression-results.png  used on input line 5473.
+(pdftex.def)             Requested size: 344.9982pt x 167.1225pt.
+
+Underfull \vbox (badness 6396) has occurred while \output is active []
+
+
+
+[263]
+
+[264 <./images/13-regression/regression-results.png>]
+
+[265]
+<images/13-regression/transform.png, id=2431, 554.82281pt x 297.36093pt>
+File: images/13-regression/transform.png Graphic file (type png)
+<use images/13-regression/transform.png>
+Package pdftex.def Info: images/13-regression/transform.png  used on input line 5513.
+(pdftex.def)             Requested size: 345.0025pt x 184.90634pt.
+
+
+[266 <./images/13-regression/transform.png>]
+<images/13-regression/regression-categorical.png, id=2439, 575.14874pt x 346.29375pt>
+File: images/13-regression/regression-categorical.png Graphic file (type png)
+<use images/13-regression/regression-categorical.png>
+Package pdftex.def Info: images/13-regression/regression-categorical.png  used on input line 5530.
+(pdftex.def)             Requested size: 345.01292pt x 207.73029pt.
+<images/13-regression/regression-categorical-EMM.png, id=2440, 1086.30844pt x 621.07031pt>
+File: images/13-regression/regression-categorical-EMM.png Graphic file (type png)
+<use images/13-regression/regression-categorical-EMM.png>
+Package pdftex.def Info: images/13-regression/regression-categorical-EMM.png  used on input line 5538.
+(pdftex.def)             Requested size: 345.00684pt x 197.24922pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[267 <./images/13-regression/regression-categorical.png>]
+<images/13-regression/hierarchical-setup.png, id=2446, 568.37344pt x 579.66562pt>
+File: images/13-regression/hierarchical-setup.png Graphic file (type png)
+<use images/13-regression/hierarchical-setup.png>
+Package pdftex.def Info: images/13-regression/hierarchical-setup.png  used on input line 5544.
+(pdftex.def)             Requested size: 345.01613pt x 351.87074pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[268 <./images/13-regression/regression-categorical-EMM.png>]
+<images/13-regression/hierarchical-results.png, id=2453, 582.67688pt x 289.08pt>
+File: images/13-regression/hierarchical-results.png Graphic file (type png)
+<use images/13-regression/hierarchical-results.png>
+Package pdftex.def Info: images/13-regression/hierarchical-results.png  used on input line 5548.
+(pdftex.def)             Requested size: 345.00333pt x 171.16443pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[269 <./images/13-regression/hierarchical-setup.png>]
+
+[270 <./images/13-regression/hierarchical-results.png>]
+
+[271]
+<images/14-regression-wrap-up/correlation.png, id=2475, 453.19313pt x 544.28343pt>
+File: images/14-regression-wrap-up/correlation.png Graphic file (type png)
+<use images/14-regression-wrap-up/correlation.png>
+Package pdftex.def Info: images/14-regression-wrap-up/correlation.png  used on input line 5617.
+(pdftex.def)             Requested size: 344.99739pt x 414.34073pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[272]
+<images/14-regression-wrap-up/t-test.png, id=2483, 551.81157pt x 519.44063pt>
+File: images/14-regression-wrap-up/t-test.png Graphic file (type png)
+<use images/14-regression-wrap-up/t-test.png>
+Package pdftex.def Info: images/14-regression-wrap-up/t-test.png  used on input line 5623.
+(pdftex.def)             Requested size: 345.0161pt x 324.77641pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[273 <./images/14-regression-wrap-up/correlation.png>]
+<images/14-regression-wrap-up/dependent_t-test.png, id=2490, 609.77812pt x 524.71031pt>
+File: images/14-regression-wrap-up/dependent_t-test.png Graphic file (type png)
+<use images/14-regression-wrap-up/dependent_t-test.png>
+Package pdftex.def Info: images/14-regression-wrap-up/dependent_t-test.png  used on input line 5629.
+(pdftex.def)             Requested size: 345.00911pt x 296.8782pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[274 <./images/14-regression-wrap-up/t-test.png>]
+<images/14-regression-wrap-up/anova1.png, id=2497, 472.76625pt x 465.23813pt>
+File: images/14-regression-wrap-up/anova1.png Graphic file (type png)
+<use images/14-regression-wrap-up/anova1.png>
+Package pdftex.def Info: images/14-regression-wrap-up/anova1.png  used on input line 5639.
+(pdftex.def)             Requested size: 169.05592pt x 166.36395pt.
+<images/14-regression-wrap-up/anova2.png, id=2498, 475.7775pt x 405.76593pt>
+File: images/14-regression-wrap-up/anova2.png Graphic file (type png)
+<use images/14-regression-wrap-up/anova2.png>
+Package pdftex.def Info: images/14-regression-wrap-up/anova2.png  used on input line 5639.
+(pdftex.def)             Requested size: 169.05101pt x 144.17484pt.
+
+
+[275 <./images/14-regression-wrap-up/dependent_t-test.png>]
+
+[276 <./images/14-regression-wrap-up/anova1.png> <./images/14-regression-wrap-up/anova2.png>] (./statistics-with-jamovi.aux)
+ ***********
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-08-30>
+ ***********
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 26593 strings out of 475539
+ 544922 string characters out of 5776235
+ 838399 words of memory out of 5000000
+ 47809 multiletter control sequences out of 15000+600000
+ 654091 words of font info for 94 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 98i,11n,101p,1219b,632s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri7.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/danalinnell/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on statistics-with-jamovi.pdf (276 pages, 11232554 bytes).
+PDF statistics:
+ 3004 PDF objects out of 3580 (max. 8388607)
+ 2332 compressed objects within 24 object streams
+ 990 named destinations out of 1000 (max. 500000)
+ 1314 words of extra memory for PDF output out of 10000 (max. 10000000)
+

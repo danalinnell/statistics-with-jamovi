@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -601,18 +601,18 @@ sample minus 1 (n-1) which in this case is 20-1 or 19.
 <p>Here’s what this looks like in jamovi:</p>
 <p><img src="images/03_dependent_t-test/dependent_results_plot2.png" /></p>
 <p>To make our lives a bit easier, here is the code in the Rj editor that you can copy-paste (that kind of copy-pasting I allow!) into your own jamovi. You’ll need to edit things like the list of names in line 3, the name of your DV (line 4), the name of your IV (line 5), and re-specify those names in line 9. Then you push the play button (green triangle) at the top right to run the code and you should get output on the right like you see above.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="dependent-t-test.html#cb1-1" tabindex="-1"></a>long <span class="ot">&lt;-</span> <span class="fu">reshape</span>(data, </span>
-<span id="cb1-2"><a href="dependent-t-test.html#cb1-2" tabindex="-1"></a>                <span class="at">direction =</span> <span class="st">&quot;long&quot;</span>, </span>
-<span id="cb1-3"><a href="dependent-t-test.html#cb1-3" tabindex="-1"></a>                <span class="at">varying =</span> <span class="fu">list</span>(<span class="fu">names</span>(data)[<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]),</span>
-<span id="cb1-4"><a href="dependent-t-test.html#cb1-4" tabindex="-1"></a>                <span class="at">v.names =</span> <span class="st">&quot;Test Score&quot;</span>,</span>
-<span id="cb1-5"><a href="dependent-t-test.html#cb1-5" tabindex="-1"></a>                <span class="at">timevar =</span> <span class="st">&quot;Test Time&quot;</span>)</span>
-<span id="cb1-6"><a href="dependent-t-test.html#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="dependent-t-test.html#cb1-7" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="dependent-t-test.html#cb1-8" tabindex="-1"></a>jmv<span class="sc">::</span><span class="fu">descriptives</span>(<span class="at">data =</span> long,</span>
-<span id="cb1-9"><a href="dependent-t-test.html#cb1-9" tabindex="-1"></a>                  <span class="at">formula =</span> <span class="st">`</span><span class="at">Test Score</span><span class="st">`</span> <span class="sc">~</span> <span class="st">`</span><span class="at">Test Time</span><span class="st">`</span>,</span>
-<span id="cb1-10"><a href="dependent-t-test.html#cb1-10" tabindex="-1"></a>                  <span class="at">box =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb1-11"><a href="dependent-t-test.html#cb1-11" tabindex="-1"></a>                  <span class="at">violin =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb1-12"><a href="dependent-t-test.html#cb1-12" tabindex="-1"></a>                  <span class="at">dot =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="dependent-t-test.html#cb2-1" tabindex="-1"></a>long <span class="ot">&lt;-</span> <span class="fu">reshape</span>(data, </span>
+<span id="cb2-2"><a href="dependent-t-test.html#cb2-2" tabindex="-1"></a>                <span class="at">direction =</span> <span class="st">&quot;long&quot;</span>, </span>
+<span id="cb2-3"><a href="dependent-t-test.html#cb2-3" tabindex="-1"></a>                <span class="at">varying =</span> <span class="fu">list</span>(<span class="fu">names</span>(data)[<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]),</span>
+<span id="cb2-4"><a href="dependent-t-test.html#cb2-4" tabindex="-1"></a>                <span class="at">v.names =</span> <span class="st">&quot;Test Score&quot;</span>,</span>
+<span id="cb2-5"><a href="dependent-t-test.html#cb2-5" tabindex="-1"></a>                <span class="at">timevar =</span> <span class="st">&quot;Test Time&quot;</span>)</span>
+<span id="cb2-6"><a href="dependent-t-test.html#cb2-6" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="dependent-t-test.html#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="dependent-t-test.html#cb2-8" tabindex="-1"></a>jmv<span class="sc">::</span><span class="fu">descriptives</span>(<span class="at">data =</span> long,</span>
+<span id="cb2-9"><a href="dependent-t-test.html#cb2-9" tabindex="-1"></a>                  <span class="at">formula =</span> <span class="st">`</span><span class="at">Test Score</span><span class="st">`</span> <span class="sc">~</span> <span class="st">`</span><span class="at">Test Time</span><span class="st">`</span>,</span>
+<span id="cb2-10"><a href="dependent-t-test.html#cb2-10" tabindex="-1"></a>                  <span class="at">box =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-11"><a href="dependent-t-test.html#cb2-11" tabindex="-1"></a>                  <span class="at">violin =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-12"><a href="dependent-t-test.html#cb2-12" tabindex="-1"></a>                  <span class="at">dot =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>Here’s a video walking through how to use the Rj editor if you’d like to learn how to use it and practice using R code: <a href="https://www.loom.com/share/397052ce381141b395b7f65246535b09" class="uri">https://www.loom.com/share/397052ce381141b395b7f65246535b09</a></p>
 </div>
 </div>
