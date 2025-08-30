@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6.2 Compute | Statistics with jamovi</title>
+  <title>Threats to Internal Validity (MRS. SMITH) | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6.2 Compute | Statistics with jamovi" />
+  <meta property="og:title" content="Threats to Internal Validity (MRS. SMITH) | Statistics with jamovi" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6.2 Compute | Statistics with jamovi" />
+  <meta name="twitter:title" content="Threats to Internal Validity (MRS. SMITH) | Statistics with jamovi" />
   
   <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-setup.html"/>
-<link rel="next" href="transform.html"/>
+<link rel="prev" href="threats-to-external-validity.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -446,44 +446,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="compute" class="section level2 hasAnchor">
-<h2>6.2 Compute<a href="compute.html#compute" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Sometimes you need to create new variables from your raw (meaning uncleaned) data. I recommend you watch this video by Alexander Swan on <a href="https://youtu.be/_CqfI3eFqD4">computing variables in jamovi</a>.</p>
-<p>Perhaps you collected data on a scale that has five items. Normally, we create an average score of all the five items and that new <em>computed</em> average score is what we use in our analyses.</p>
-<p>Let’s open the Big 5 dataset built into jamovi. You can open this dataset by clicking the three horizontal lines on the top left of jamovi (the menu), choose Open, then select Data Library. In the main Data Library folder is a dataset called Big 5.</p>
-<p>This dataset has the scores on all five subscales of the Big Five personality test. Let’s imagine we want the average score of the entire Big Five test.</p>
+<div id="threats-to-internal-validity-mrs.-smith" class="section level2 hasAnchor">
+<h2>Threats to Internal Validity (MRS. SMITH)<a href="threats-to-internal-validity-mrs.-smith.html#threats-to-internal-validity-mrs.-smith" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
-<li><p>Go to the Data tab in jamovi.</p></li>
-<li><p>Click <code>Compute</code>. Note that jamovi will create a new variable directly after the column you have selected. If you want this variable to be at the end of your dataset, you should select the last column of the dataset and then click Compute.</p></li>
-<li><p>Rename the computed variable to something meaningful (e.g., <code>Big5_Avg</code>)</p></li>
-<li><p>Add in an informative description for your computed variable (e.g., <code>Mean score of the Big 5 personality traits</code>)</p></li>
-<li><p>Click the <span class="math inline">\(f_x\)</span> (formula) button.</p>
-<ol style="list-style-type: decimal">
-<li><p>Under Functions, find the function we are computing. In this case it is <code>Mean</code> but sometimes scales want us to use <code>Sum</code>. These are the two functions we will primarily use in this course.</p></li>
-<li><p>jamovi tells us more information about the particular formula function. In this case, it says <code>MEAN(*number1, number2, ..., ignore_missing=0, min_valid=0)</code>. Therefore, we need to specify the numbers we are calculating the mean for. The <code>ignore_missing</code> argument is defaulted to 0 (do not ignore missing values) but you could set it to 1 (ignore missing values). The <code>min_valid</code> argument is defaulted to 0 variables, but you could specify the minimum number of valid responses we want in order to calculate the function.</p></li>
-<li><p>Double click on the function <code>Mean</code> to enter it into the formula box. You should see <code>=MEAN()</code> now.</p></li>
-<li><p>Click inside the parentheses and double click the first variable of the Big 5. Then add a comma. Double click the second variable and add a comma. Repeat until you have all variables in the formula box.</p></li>
-</ol></li>
-<li><p>When you are complete, click outside of the function box and it will automatically create your computed variable.</p></li>
+<li><p><strong>Maturation</strong>: physiological processes that count account for changes in the behavior due to simple passage of time. For instance, the aging process of simply growing older and the developmental changes associated, or physiological states like hunger, fatigue, attention span, or motivation that change over time naturally.</p></li>
+<li><p><strong>Regression to the mean</strong>: the tendency that participants who receive extreme scores when tested tend to have less extreme scores on subsequent retesting even in the absence of treatment effects.</p></li>
+<li><p><strong>Selection of subjects</strong>: Any bias in selecting and assigning participants to groups that results in systematic differences between the participants in each group.</p></li>
+<li><p><strong>Selection by maturation interaction</strong>: The treatment and no-treatment groups, although similar at one point, would have grown apart (i.e., developed differently) even if no treatment had been administered. Even though pretest scores may have been the same, groups that are not matched as well on other relevant variables may cause the groups to naturally become different after a period of time.</p></li>
+<li><p><strong>Mortality</strong>: Differential dropping out of some subjects from the comparison groups before the experiment is finished, resulting in differences between the groups that may be unrelated to the treatment effects. The subjects who drop out may be different than those who complete the treatment, which may inflate, obscure, or confuse the treatment effects of interest. Researcher’s exclusion criteria may also cause a mortality bias.</p></li>
+<li><p><strong>Instrumentation</strong>: Changes in the measurement procedures that may result in differences between the comparison groups that are confused with the treatment effects.</p></li>
+<li><p><strong>Testing</strong>: When participants are repeatedly tested, changes in test scores may be due to practice or knowledge about the test procedure gained from earlier experiences rather than any treatment effects. Similar to maturation except that the change is caused by the treatment procedure itself.</p></li>
+<li><p><strong>History</strong>: Extraneous events occurring during the course of the experiment that may affect the participants’ responses on the dependent measure. Examples may be major events in society or minor events within the experimental situation.</p></li>
 </ol>
-<div class="info">
-<p>jamovi will often tell you if there is an error in your formula. For example, if you get the warning “Column <code>NAME</code> does not exist in the dataset” that means you entered something incorrect; typically, you either mispelled a variable or forgot to separate variables with commas.</p>
+
 </div>
-<p>You can see what we need to do with this dataset below. There’s actually no missing data, so the two additional arguments aren’t necessary for us to worry about.</p>
-<p><img src="images/03-jamovi/compute.png" /></p>
-<p>Note that this was creating an average score using the <code>MEAN()</code> function. Sometimes, psychological scales want you to create a total score using the <code>SUM()</code> function. jamovi also has a lot of other functions you may need to use in the future.</p>
-<div class="info">
-<p>After computing a new variable, I always like to double check the work to make sure it’s okay. I review to make sure if there is any missing data that it’s appropriate (e.g., I specified min_valid=9 for a 10-item scale, so only people with at least 9 valid responses should have a mean calculated). If I’m doing other basic math, I also like to make sure that I specified it correctly by manually calculating a few rows myself.</p>
-</div>
-<p>If you’d like to learn more about computed variables in jamovi, <a href="https://blog.jamovi.org/2017/11/28/jamovi-formulas.html">check out this jamovi blog post on the topic</a>.</p>
-</div>
+<!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="data-setup.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="transform.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="threats-to-external-validity.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
