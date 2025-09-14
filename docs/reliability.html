@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="general-linear-model.html"/>
-<link rel="next" href="threats-to-reliability.html"/>
+<link rel="next" href="validity.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,70 +54,6 @@
 <link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <style type="text/css">
   
@@ -141,14 +77,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
-<li class="part"><span><b>I Overview</b></span></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a>
+<li class="chapter" data-level="" data-path=""><a href="#part-overview"><i class="fa fa-check"></i>(PART) Overview</a>
 <ul>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#getting-help-in-this-class"><i class="fa fa-check"></i>1.1 Getting help in this class</a></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#dana-your-instructor"><i class="fa fa-check"></i>1.2 Dana, your instructor</a></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#navigating-this-websitebook"><i class="fa fa-check"></i>1.3 Navigating this website/book</a></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#technology-tips"><i class="fa fa-check"></i>1.4 Technology Tips</a></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#errors-mistakes-and-suggestions"><i class="fa fa-check"></i>1.5 Errors, mistakes, and suggestions</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#getting-help-in-this-class"><i class="fa fa-check"></i>1.1 Getting help in this class</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#dana-your-instructor"><i class="fa fa-check"></i>1.2 Dana, your instructor</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#navigating-this-websitebook"><i class="fa fa-check"></i>1.3 Navigating this website/book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technology-tips"><i class="fa fa-check"></i>1.4 Technology Tips</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#errors-mistakes-and-suggestions"><i class="fa fa-check"></i>1.5 Errors, mistakes, and suggestions</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
@@ -175,12 +110,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#other-terms"><i class="fa fa-check"></i>Other terms</a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>II Intro to jamovi</b></span></li>
-<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html"><i class="fa fa-check"></i>3. Overview of jamovi</a>
+<li class="chapter" data-level="" data-path=""><a href="#part-intro-to-jamovi"><i class="fa fa-check"></i>(PART) Intro to jamovi</a>
 <ul>
-<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html#installing-jamovi"><i class="fa fa-check"></i>3.1 Installing jamovi</a></li>
-<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html#navigating-the-jamovi-interface"><i class="fa fa-check"></i>3.2 Navigating the jamovi interface</a></li>
-<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html#additional-jamovi-videos-and-resources"><i class="fa fa-check"></i>3.3 Additional jamovi videos and resources</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#installing-jamovi"><i class="fa fa-check"></i>3.1 Installing jamovi</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#navigating-the-jamovi-interface"><i class="fa fa-check"></i>3.2 Navigating the jamovi interface</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#additional-jamovi-videos-and-resources"><i class="fa fa-check"></i>3.3 Additional jamovi videos and resources</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i>4. Describing data</a>
 <ul>
@@ -192,9 +126,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="describing-your-data.html"><a href="describing-your-data.html#describing-one-variable-split-by-another-variable"><i class="fa fa-check"></i>Describing one variable split by another variable</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="writing-up-descriptive-statistics.html"><a href="writing-up-descriptive-statistics.html"><i class="fa fa-check"></i>4.3 Writing up descriptive statistics</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i>5. Visualizing data</a>
-<ul>
 <li class="chapter" data-level="" data-path="a-continuous-variable.html"><a href="a-continuous-variable.html"><i class="fa fa-check"></i>5.1 A continuous variable</a></li>
 <li class="chapter" data-level="" data-path="a-categorical-variable.html"><a href="a-categorical-variable.html"><i class="fa fa-check"></i>5.2 A categorical variable</a></li>
 <li class="chapter" data-level="" data-path="a-continuous-variable-split-by-a-categorical-variable.html"><a href="a-continuous-variable-split-by-a-categorical-variable.html"><i class="fa fa-check"></i>5.3 A continuous variable split by a categorical variable</a></li>
@@ -216,8 +147,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="filter.html"><a href="filter.html#column-filters"><i class="fa fa-check"></i>Column filters</a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>III NHST</b></span></li>
-<li class="chapter" data-level="" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i>7. Hypothesis testing</a>
+<li class="chapter" data-level="" data-path=""><a href="#part-nhst"><i class="fa fa-check"></i>(PART) NHST</a>
 <ul>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>7.1 Example of hypothesis testing</a>
 <ul>
@@ -280,7 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="writing-up-results-in-apa-style.html"><a href="writing-up-results-in-apa-style.html"><i class="fa fa-check"></i>10. Writing up results in APA style</a></li>
-<li class="part"><span><b>IV Inferential Statistics</b></span></li>
+<li class="part"><span><b>I Inferential Statistics</b></span></li>
 <li class="chapter" data-level="" data-path="chi-square.html"><a href="chi-square.html"><i class="fa fa-check"></i>11. Chi-square</a>
 <ul>
 <li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html"><i class="fa fa-check"></i>11.1 Chi-square goodness-of-fit</a>
@@ -411,10 +341,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html#one-way-anova-as-a-regression"><i class="fa fa-check"></i>One-way ANOVA as a regression</a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>V Psychometrics</b></span></li>
+<li class="part"><span><b>II Psychometrics</b></span></li>
 <li class="chapter" data-level="" data-path="reliability.html"><a href="reliability.html"><i class="fa fa-check"></i>15. Reliability</a>
 <ul>
-<li class="chapter" data-level="" data-path="threats-to-reliability.html"><a href="threats-to-reliability.html"><i class="fa fa-check"></i>Threats to Reliability</a></li>
+<li class="chapter" data-level="" data-path="reliability.html"><a href="reliability.html#threats-to-reliability"><i class="fa fa-check"></i>Threats to Reliability</a></li>
+<li class="chapter" data-level="" data-path="reliability.html"><a href="reliability.html#measuring-reliability"><i class="fa fa-check"></i>Measuring Reliability</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="validity.html"><a href="validity.html"><i class="fa fa-check"></i>16. Validity</a>
 <ul>
@@ -451,8 +382,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="info">
 <p>This chapter is a work in progress.</p>
 </div>
-<p><strong>Reliability</strong> is the consistency of a measure. There are three types
-of consistency:</p>
+<p><strong>Reliability</strong> is the consistency of a measure. This is a crude, rough
+definition. More exactly, reliability is the extent to which observed or
+measured scores are consistent with differences in their true scores. We
+can never get a true score for participants, and so reliability helps us
+determine how close we got to a true score with observed scores.</p>
+<p>There are three types of consistency:</p>
 <ol style="list-style-type: decimal">
 <li><p><em>Test-retest reliability</em>: consistency over time (measured with a
 correlation, usually)</p></li>
@@ -464,6 +399,94 @@ soon)</p></li>
 (various methods, including percent agreement, interclass or
 intraclass correlation, Cohen’s Kappa, Fleiss’ Kappa, etc.)</p></li>
 </ol>
+<div id="threats-to-reliability" class="section level3 hasAnchor">
+<h3>Threats to Reliability<a href="reliability.html#threats-to-reliability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Error is what takes us away from a participant’s true score. In other
+words, error can produce threats to the reliability scores that we
+produce. There are three areas that can introduce error to our
+reliability scores:</p>
+<ol style="list-style-type: decimal">
+<li><p><em>The researcher or measurement instrument:</em> For example, if you’re
+measuring time to do a task, when do you start and stop the
+stopwatch? How quickly can you react to starting and stopping the
+stopwatch? What if multiple researchers are using a stopwatch?</p></li>
+<li><p><em>The participant</em>: For instance, a participant’s mood may affect how
+they respond to a survey or the time of day may affect their weight
+on a scale (note that their weight fluctuates throughout the day but
+that affects the reliability of their weight, not the reliability of
+the scale!)</p></li>
+<li><p><em>The environment</em>: For example, baking at different altitudes
+requires different oven temperatures and baking times.</p></li>
+</ol>
+</div>
+<div id="measuring-reliability" class="section level3 hasAnchor">
+<h3>Measuring Reliability<a href="reliability.html#measuring-reliability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="test-retest-reliability" class="section level4 hasAnchor">
+<h4>Test-retest reliability<a href="reliability.html#test-retest-reliability" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Once you have collected data of a test at two time points, you can check
+for test-retest reliability using a correlation test. Higher correlation
+values indicate higher test-retest reliability (i.e., consistency across
+time points). If you have multiple time points to measure the test-test
+reliability with you can use a test of internal consistency instead (see
+below).</p>
+<p>You can also check for equivalence, similar to test-retest reliability,
+with parallel forms of tests, which are two versions of the same test.
+For example, instead of giving the same test to all participants, you
+might create two or more versions of the same test that measure things
+equivalently and check that equivalency using test-retest reliability.
+This is also tested with correlation.</p>
+</div>
+<div id="internal-consistency" class="section level4 hasAnchor">
+<h4>Internal consistency<a href="reliability.html#internal-consistency" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>There are some older methods of testing internal consistency of a test
+such as split-half reliability; we will not discuss them here as they
+are typically inappropriate to use now that we have more advanced
+computation abilities.</p>
+<p>Historically, Cronbach’s alpha has been the most popular way to test for
+internal consistency. Mathematically, it’s essentially an average score
+of all possible split-half reliability estimates.</p>
+<p>However, more contemporary views of Cronbach’s alpha is that it is not
+the most ideal indicator of reliability (e.g., <a href="https://psycnet.apa.org/record/2017-23572-001">McNeish,
+2018</a>). One reason for
+this is that the assumptions of Cronbach’s alpha (i.e., tau equivalence,
+items measured on a continuous scale and are normally distributed, error
+of items do not covary, scale is unidimensional) are often difficult to
+meet and therefor can introduce error to alpha scores.</p>
+<p>There are many strategies one can use to overcome some of these
+limitations of Cronbach’s alpha (e.g., confidence intervals,
+bootstrapping) but another popular strategy is to use an alternative
+test of internal consistency: coefficient omega. There are various types
+of coefficient omega and <a href="https://doi.org/10.1177/2515245920951747">Flora
+(2020)</a> provides guidance on
+selecting the correct coefficient omega (see Fig. 4 of the article for a
+decision tree).</p>
+</div>
+<div id="inter-rater-reliability" class="section level4 hasAnchor">
+<h4>Inter-rater reliability<a href="reliability.html#inter-rater-reliability" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>You might think that you can test for inter-rater reliability just by
+looking at the percent of agreement; do raters agree or don’t they and
+then scale that to 0-100%. However, this is a weak approach to
+inter-rater reliability because it doesn’t account for agreement that
+occurs by chance or <em>degree</em> of agreement if there are ordinal ratings.
+As such, this is a poor estimate of reliability and you should avoid
+using percent agreement as your measurement.</p>
+<p>There are a variety of tests of inter-rater reliability depending on the
+number of raters, the level of measurement of the ratings, and whether
+there is any missingness to the data. Typically, most measures are
+interpreted similar to a correlation such that higher values (which top
+out at 1.00) indicate higher reliability.</p>
+<p>A generally useful measure of inter-rater reliability is Cohen’s kappa.
+This is used when two raters are rating all samples with a binary rating
+(e.g., yes vs no).</p>
+<p>Other measures of inter-rater reliability include intraclass correlation
+coefficient (ICC), Fleiss’ kappa, Kendall’s W coefficient, and
+Krippendorff’s alpha. There are many tools out there to help you measure
+inter-rater reliability; for example,
+<a href="https://www.k-alpha.org/">k-alpha.org</a> can support you in calculating
+Krippendorff’s alpha.</p>
+
+</div>
+</div>
 </div>
             </section>
 
@@ -471,7 +494,7 @@ intraclass correlation, Cohen’s Kappa, Fleiss’ Kappa, etc.)</p></li>
         </div>
       </div>
 <a href="general-linear-model.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="threats-to-reliability.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="validity.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
