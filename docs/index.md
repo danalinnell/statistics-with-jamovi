@@ -20,7 +20,7 @@ Welcome! This book is designed to help you learn statistics in a way that is pra
 
 ------------------------------------------------------------------------
 
-### What You’ll Learn { .unnumbered}
+### What You’ll Learn {.unlisted .unnumbered}
 
 By using this book, you will learn how to:
 
@@ -31,7 +31,7 @@ By using this book, you will learn how to:
 
 ------------------------------------------------------------------------
 
-### Get Started with *jamovi* { .unnumbered}
+### Get Started with *jamovi* {.unlisted .unnumbered}
 
 This book uses *jamovi*, a free and user-friendly statistical software.
 
@@ -43,7 +43,7 @@ This book uses *jamovi*, a free and user-friendly statistical software.
 
 ------------------------------------------------------------------------
 
-### A Note About Learning Statistics { .unnumbered}
+### A Note About Learning Statistics {.unlisted .unnumbered}
 
 Statistics can feel overwhelming at first—and that’s completely normal.\
 This book is designed to help you build confidence step by step, even if you’ve struggled with math in the past.
@@ -52,7 +52,7 @@ Focus on understanding what results **mean**, not just how to calculate them.
 
 ------------------------------------------------------------------------
 
-### About this Book { .unnumbered}
+### About this Book {.unlisted .unnumbered}
 
 This is an open educational resource (OER), meaning it is **free to use and continuously improved** based on feedback from students and instructors.
 
@@ -70,7 +70,7 @@ If you notice an error or have a suggestion, please email me at linnellda\@uwsto
 
 ------------------------------------------------------------------------
 
-### About the Author { .unnumbered}
+### About the Author {.unlisted .unnumbered}
 
 Dana Linnell is a faculty member at the University of Wisconsin–Stout who teaches research methods and statistics. This book reflects her commitment to making statistics more accessible, applied, and meaningful for students.
 
