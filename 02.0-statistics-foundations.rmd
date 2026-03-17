@@ -10,7 +10,7 @@ Some of this material may feel familiar from previous courses, while other conce
 
 ------------------------------------------------------------------------
 
-### How to Use This Chapter {.unlisted}
+### How to Use This Chapter {.unlisted .unnumbered}
 
 This chapter is organized into short sections that introduce foundational concepts and terminology.\
 \
@@ -18,7 +18,7 @@ You are not expected to memorize everything right away. Instead, focus on unders
 
 ------------------------------------------------------------------------
 
-### What You’ll Learn {.unlisted}
+### What You’ll Learn {.unlisted .unnumbered}
 
 By working through this chapter, you will begin to to:
 
@@ -29,7 +29,7 @@ By working through this chapter, you will begin to to:
 
 ------------------------------------------------------------------------
 
-### Chapter Sections {.unlisted}
+### Chapter Sections {.unlisted .unnumbered}
 
 -   **2.1 Describing Our Data**:Introduces what data are, how we summarize them, and why descriptive statistics matter.
 
@@ -41,7 +41,7 @@ By working through this chapter, you will begin to to:
 
 ------------------------------------------------------------------------
 
-### Why This Matters {.unlisted}
+### Why This Matters {.unlisted .unnumbered}
 
 These foundational ideas will be used throughout the rest of the textbook and in your work as a researcher or practitioner.
 
@@ -56,7 +56,7 @@ You do not need to master all of this immediately—these ideas will become clea
 
 ------------------------------------------------------------------------
 
-### A Note on Learning Statistics {.unlisted}
+### A Note on Learning Statistics {.unlisted .unnumbered}
 
 It’s completely normal if some of these concepts feel challenging or unfamiliar at first. Statistics builds over time, and you will revisit many of these ideas in later chapters with more context and examples.
 
