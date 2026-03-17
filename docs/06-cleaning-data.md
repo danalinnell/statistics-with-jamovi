@@ -5,6 +5,14 @@ There are four basic types of cleaning we will be learning about: checking your 
 The following [video](https://www.youtube.com/watch?v=BGOZtlHRv6k) walks through some of these data cleaning techniques.
 
 
+```{=html}
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/BGOZtlHRv6k" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+```
+
 
 ## 6.1 Data setup
 
