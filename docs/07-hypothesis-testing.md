@@ -25,14 +25,6 @@ Regardless of the inferential statistic we are performing, hypothesis testing go
 4.  **Interpret the results** and make a decision about whether you reject or fail to reject the null hypothesis, write-up the results in APA format, and provide a visualization of the results.
 
 
-```{=html}
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/Eqs9L6gDaJg" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-```
-
 
 Let's go through each of these in turn, using a hypothetical example.
 
@@ -154,10 +146,7 @@ Through NHST, we are only ever testing the null hypothesis and therefore can onl
 
 Let's try to visualize this. We are saying that the null hypothesis is there is no difference (or less aggression), but at some point no difference turns into *greater* difference. Furthermore, we have a directional hypothesis in that we do not think the difference will be negative, that children watching the adult play aggressively will exhibit fewer aggressive behaviors. Basically, we need to know what the critical value is in the figure below, which is the point at which we say "Okay, this difference is big enough that I will reject the null hypothesis."
 
-<div class="figure">
-<img src="07-hypothesis-testing_files/figure-html/unnamed-chunk-2-1.png" alt="Critical area of statistical significance" width="672" />
-<p class="caption">(\#fig:unnamed-chunk-2)Critical area of statistical significance</p>
-</div>
+![(\#fig:unnamed-chunk-2)Critical area of statistical significance](07-hypothesis-testing_files/figure-docx/unnamed-chunk-2-1.png)
 
 :::{.info data-latex=""}
 

@@ -55,11 +55,3 @@ The following video details 7 common errors that folks make when reporting stati
 7.  **Blanks and F**: to aid readability, there is no space between the statistcal test and the parentheses for the degrees of freedom, but for the F-statistic there is a space between the two degrees of freedom, such as *F*(2, 126)
 
 
-```{=html}
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/rlZnbQUGhjc" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-```
-
