@@ -8,9 +8,69 @@
 library(tidyverse, webshot)
 ```
 
-You have learned about both quantitative and qualitative methods. We will be focusing primarily on quantitative methods in this class and in this textbook. By quantitative methods, I mean methods that predominantly collect data that deals with numbers. We can then analyze that data using statistical procedures, which we will shorthand to "statistics." Understanding what we mean by statistics is the purpose of this chapter.
+This chapter introduces key ideas that will support everything you learn in this course and throughout the rest of this textbook.
 
-## 2.1 Describing our data
+Some of this material may feel familiar from previous courses, while other concepts may be new. The goal of this chapter is not to master everything at once, but to build a strong foundation you can return to as needed.
+
+------------------------------------------------------------------------
+
+### How to Use This Chapter
+
+This chapter is organized into short sections that introduce foundational concepts and terminology.\
+\
+You are not expected to memorize everything right away. Instead, focus on understanding the big ideas and use this chapter as a resource you can revisit throughout the course.
+
+------------------------------------------------------------------------
+
+### What You’ll Learn
+
+By working through this chapter, you will begin to to:
+
+-   Understand how data are used to answer research questions
+-   Distinguish between describing data and making inferences
+-   Recognize different types of variables
+-   Become familiar with key statistical terms used throughout the course
+
+------------------------------------------------------------------------
+
+### Chapter Sections
+
+-   **2.1 Describing Our Data**:Introduces what data are, how we summarize them, and why descriptive statistics matter.
+
+-   **2.2 Levels of Measurement**: Explains different types of variables and how they influence the analyses we choose.
+
+-   **2.3 Descriptive vs Inferential Statistics**: Builds the conceptual foundation for hypothesis testing and statistical inference.
+
+-   **2.4 Key Terms & Concepts**: Provides definitions and explanations of statistical terms you will encounter throughout the textbook. You do not need to memorize all of these now—return to this section as needed.
+
+------------------------------------------------------------------------
+
+### Why This Matters
+
+These foundational ideas will be used throughout the rest of the textbook and in your work as a researcher or practitioner.
+
+For example:
+
+-   You will use **types of variables** to determine which statistical test to run
+-   You will use **descriptive statistics** to summarize and interpret data
+-   You will use these concepts to understand **hypothesis testing** and draw conclusions from data
+-   You will rely on **key terms and concepts** when interpreting output and writing results in APA style
+
+You do not need to master all of this immediately—these ideas will become clearer as you apply them in later chapters.
+
+------------------------------------------------------------------------
+
+### A Note on Learning Statistics
+
+It’s completely normal if some of these concepts feel challenging or unfamiliar at first. Statistics builds over time, and you will revisit many of these ideas in later chapters with more context and examples.
+
+Focus on understanding the big picture—you will have many opportunities to practice and apply these concepts as you move forward.
+
+## 2.1 Describing data
+
+Before we can analyze data, we need to understand what our data represent and how they are organized.
+
+At its core, statistics is about using data to answer questions. Data are pieces of information we collect about people, behaviors, or outcomes of interest.
 
 First, let's understand some basic statistics related to how we describe our data, including measures of central tendency (averages), measures of dispersion (spread), and measures of shape of the distribution (particularly a normal distribution). Here's a [video](https://www.youtube.com/watch?v=QirHpjLkHmc) walking you through what we learn in this chapter.
 
@@ -19,66 +79,184 @@ library(vembedr)
 embed_url("https://www.youtube.com/watch?v=QirHpjLkHmc")
 ```
 
-### Measures of Central Tendency
+::: callout-tip
+### Learning Objectives
 
-There are multiple **measures of central tendency** (these are *all* averages so you must be careful when you say that word to explain which type you mean!):
+By the end of this section, you should be able to:
 
--   **Mean**: the sum of all points divided by the total number of points. The mean can be susceptible to outliers.
-
--   **Median**: the middlemost value. The median less susceptible to outliers and best used when the data is skewed.
-
--   **Mode**: the most frequently occurring score. Our data can also be **multimodal** when there are multiple modes or **bimodal** when there are two modes.
-
-Note that depending on the shape of the distribution, the mean, median, and mode may not be the same value. If we have a **normal distribution** then they will be the exact same! However, if we have a positively skewed distribution, the mean and median will be pulled towards the positively skewed data, as shown in this figure by [Peter Prevos](https://lucidmanager.org/data-science/descriptive-statistics-in-water-quality/).
-
-![](images/02-stats-foundations/tendency-1.png)
-
-### Measures of Dispersion
-
-There are also multiple **measures of dispersion** that describe the spread of our data:
-
--   **Range**: the difference between the maximum and minimum value (e.g., if the minimum score is 17 and the maximum is 49, then the range is 32)
-
--   **Quartile**: when a dataset is divided into four equal parts, the first quartile (Q1) is at the 25th percentile, the second quartile (Q2) is at the 50th percentile, and the third quartile (Q3) is at the 75th percentile. Note that the median is also the 50th percentile!
-
-    -   **Interquartile range**: the middle 50% (Q1 to Q3)
-
-[![Simply Psychology](images/02-stats-foundations/box-whisker-plot.jpg)](https://www.simplypsychology.org/box-whisker-plot.jpg)
-
--   **Variance**: is the measurement of the spread between numbers in a dataset. More specifically, it is the sum of the squared deviations from the mean. This means first (a) calculating the mean, (b) subtracting each score from the mean (aka deviations from the mean), (c) squaring each of those deviations values, and (d) summing all those squared deviations. This is represented by the equation $\frac{\sum (X-\mu)^2}{N}$
-
--   **Standard deviation**: is the square of the variance. This is represented by the equation $\sqrt{\frac{\sum (X-\mu)^2}{N}}$ if we are examining the whole population. If we only have a sample, we replace the denominator `N` with `N-1`.
-
-::: {.info data-latex=""}
-I sometimes present equations, like above, to help some folks better understand various things in this course. However, I very rarely expect you to calculate things, and when I do, I give you a lot of support in how to do so.
+-   Define what data are and explain why context matters
+-   Identify observations (rows) and variables (columns) in a dataset
+-   Distinguish between categorical and numerical variables
+-   Describe how datasets are structured for analysis
+-   Recognize features of a well-organized dataset
 :::
 
-### Measures of the Shape of the Distribution
+### What Are Data?
 
-We also have two main **measures of shape** that describe the shape of the distribution of our data:
+In research, data are typically organized in a dataset (often a spreadsheet format), where:
 
--   **Skew**: in a non-normal distribution, it is when one tail of the distribution is longer than another. Present in asymmetric distributions
+-   **Rows** represent individual observations (e.g., participants)
+-   **Columns** represent variables (e.g., age, test score, group membership)
 
-    -   **Negative skew**: when the tail points to the negative end of the spectrum; in other words, most of the values are on the right side of the distribution
+Each value in the dataset tells us something about a specific observation on a specific variable.
 
-    -   **Positive skew**: when the tail points to the positive end of the spectrum; in other words, most of the values are on the left side of the distribution
+::: {.info data-latex=""}
+**Is "data" singular or plural?**
 
-[![Figure by Peter Prevos.](images/02-stats-foundations/skewness-1.png)](https://lucidmanager.org/r4h2o/stats.html)
+In formal scientific writing, including APA style, “data” is treated as plural (the singular form is datum). For example, "The data are consistent with the hypothesis."
 
--   **Kurtosis**: the weight of the tails relative to a normal distribution. In other words, it's how flat or skinny the distribution is. There are some fancy terms related to kurtosis that you may hear about, but honestly I don't hear them used very frequently by researchers.
+However, in common usage, “data” is often treated as singular when referring to a set or collection of information. For example, "The data is stored in a spreadsheet."
 
-    -   **Leptokurtic**: light tails; values are more concentrated around the mean. Think of kangoroos which can be noted for "lepping".
-    -   **Platykurtic**: heavy tails; values are less concentrated around the mean. Think of a platypus!
+In this textbook, we will treat data as singular for ease of readability. However, you may see “data” treated as plural in research articles and formal writing, so it’s helpful to be familiar with both conventions.
+:::
 
-Student (a pseudonym of William Gosset) wrote this in his [1927 paper](https://www.jstor.org/stable/2332181)).
+------------------------------------------------------------------------
 
-![](images/02-stats-foundations/kurtosis.png)
+### Data Need Context
 
-When skew and kurtosis are zero, then we have a special type of distribution called the **normal distribution** in which the data are symmetrical on both sides of the mean. We sometimes call this a "bell curve". Scribbr has a great article on the [normal distribution](https://www.scribbr.com/statistics/normal-distribution/) I encourage you to read!
+Data are only meaningful when we understand what they represent.
 
-![](images/02-stats-foundations/standard-normal-distribution-example.png)
+For example, a value of “75” could represent:
 
-Although there are many ways we can visualize the distribution the two most common ways we will visualize the distribution using jamovi are with a **histogram** which could also be a density curve or a **boxplot**. We'll learn more about visualizing in Chapter 3 "Visualizing data".
+-   A test score
+
+-   A heart rate
+
+-   A temperature
+
+To interpret data correctly, we need to know:
+
+-   What each variable represents
+
+-   How it was measured
+
+-   What the values mean
+
+This is why clear variable names and documentation are important when working with datasets.
+
+------------------------------------------------------------------------
+
+### How to Read and Work With Data
+
+To understand and use a dataset effectively, it’s important to recognize how data are organized. Well-structured datasets follow a few key principles:
+
+-   **Rows represent observations** (e.g., one participant, one trial, or one case)
+-   **Columns represent variables** (e.g., age, condition, score)
+-   **Each cell contains a single value** for one observation on one variable
+-   **Variable names are clear and consistent**, so you know what each column represents
+-   **Missing data are clearly labeled** (e.g., NA), rather than left blank, although *jamovi* knows to treat blank cells as missing data
+-   **Data are stored in a clean, rectangular format**, making them easier to analyze
+
+Understanding this structure will help you read datasets, identify variables, and prepare your data for analysis in tools like jamovi.
+
+Following these principles also helps prevent errors and makes data easier to analyze, share, and reproduce ([Broman & Woo, 2018](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989)).
+
+------------------------------------------------------------------------
+
+### What Is a Variable?
+
+A **variable** is anything we measure or record that can vary across individuals or observations.
+
+Examples of variables include:
+
+-   Age
+-   Gender
+-   Test scores
+-   Survey responses
+
+Some variables describe characteristics of participants, while others represent outcomes we are interested in understanding.
+
+You will learn more about different types of variables in the next section.
+
+------------------------------------------------------------------------
+
+### Types of Data
+
+Not all variables are the same. Broadly, variables fall into two categories:
+
+-   **Categorical variables** describe groups or categories (e.g., gender, major, treatment condition)
+-   **Numerical variables** represent quantities or amounts (e.g., age, height, test scores)
+
+Understanding the type of data you are working with will help you decide how to summarize and analyze it. You'll learn more about this and how to apply it in future chapters.
+
+------------------------------------------------------------------------
+
+### Why Do We Describe Data?
+
+Once we collect data, the first step is to **describe what we have**. Raw data (a spreadsheet full of numbers) can be difficult to interpret on their own. Descriptive statistics help us:
+
+-   Summarize large amounts of data
+-   Identify patterns or trends
+-   Understand what is typical or unusual
+-   Prepare for further analysis
+
+------------------------------------------------------------------------
+
+### What Does It Mean to Describe Data?
+
+When we describe data, we are typically trying to understand three key features:
+
+1.  **Center (What is typical?)**: This tells us what a “typical” value looks like, often summarized using measures like the mean or median. These are called *measures of central tendency*.
+
+2.  **Variability (How spread out are the values?)**: This tells us how much the data differ from one another. Some datasets are tightly clustered, while others are more spread out. These are called *measures of dispersion*.
+
+3.  **Shape (What does the distribution look like?)**: This refers to how the data are distributed—for example, whether values are evenly spread out or skewed in one direction.
+
+You will learn how to calculate and interpret these in later chapters.
+
+------------------------------------------------------------------------
+
+### Types of Descriptive Information
+
+There are two main ways we describe data:
+
+1.  Numerical summaries, using measures of central tendency (e.g., mean, median, mode) and dispersion (e.g., standard deviation, variance).
+
+2.  Visual summaries, using graphs and charts (e.g., histograms, bar charts) which help us quickly see patterns and differences.
+
+------------------------------------------------------------------------
+
+### Looking Ahead
+
+Describing data is always the first step in any statistical analysis.
+
+You will use these ideas when you:
+
+-   Summarize your data (Chapter 4)
+-   Visualize patterns (Chapter 5)
+-   Begin hypothesis testing (Chapter 7)
+-   Interpret results from statistical tests (Chapters 11–14)
+
+Understanding your data before analyzing it will help you make better decisions and avoid mistakes.
+
+------------------------------------------------------------------------
+
+### Key Takeaways
+
+-   Data are organized into rows (observations) and columns (variables)
+-   Variables are characteristics or outcomes that can vary
+-   Describing data involves understanding center, variability, and shape
+-   Descriptive statistics summarize and simplify data
+-   Describing data is the first step in any analysis
+
+::: callout-tip
+### Check Your Understanding
+
+By the end of this section, you should be able to:
+
+1.  In a dataset, what does each **row** represent? What does each **column** represent?\
+2.  Give an example of a **categorical variable** and a **numerical variable**.\
+3.  Why is it important that each cell contains only one value?\
+4.  What are two features of a well-organized dataset?\
+5.  Why do data need context to be meaningful?
+:::
+
+::: {.callout-tip collapse="true"}
+### Answers
+
+1.  Rows represent observations (e.g., participants), and columns represent variables.\
+2.  Categorical: major. Numerical: age.
+:::
 
 ## 2.2 Levels of measurement
 
@@ -108,16 +286,16 @@ One semester, a student asked, "Isn't time a continuous variable?" To which I re
 
 Here's another example. Notice that studying can be measured at different levels. Depending on the nature of the question and response options, it might be nominal, ordinal, or continuous! Here's an example of data at the continuous, ordinal, and nominal level.
 
-| Name               | Study_Continuous        | Study_Ordinal                        | Study_Nominal                         |
-|-----------------|-----------------|-------------------|--------------------|
+| Name | Study_Continuous | Study_Ordinal | Study_Nominal |
+|------------------|------------------|------------------|-------------------|
 | *Name (Character)* | *Hours studied per day* | *Likert scale of amount of studying* | *Whether or not they study every day* |
-| Jesus              | 5.0                     | A great deal                         | Yes                                   |
-| Nicky              | 4.5                     | A great deal                         | Yes                                   |
-| Bradford           | 3.2                     | A moderate amount                    | Yes                                   |
-| Sylvia             | 1.7                     | A small amount                       | Yes                                   |
-| Martha             | 0.2                     | Rarely                               | Yes                                   |
-| Lillian            | 0.0                     | Never                                | No                                    |
-| Trayvon            | 0.0                     | Never                                | No                                    |
+| Jesus | 5.0 | A great deal | Yes |
+| Nicky | 4.5 | A great deal | Yes |
+| Bradford | 3.2 | A moderate amount | Yes |
+| Sylvia | 1.7 | A small amount | Yes |
+| Martha | 0.2 | Rarely | Yes |
+| Lillian | 0.0 | Never | No |
+| Trayvon | 0.0 | Never | No |
 
 We can make any continuous variable into an ordinal and nominal variable and any ordinal variable into a nominal variable. But if we have a nominal variable we cannot make it ordinal, nor can we make an ordinal variable continuous. In other words, continuous variables *contain more information* than categorical variables. Often, we want to avoid losing information and so we should aim to keep the variable at the highest level of measurement.
 
