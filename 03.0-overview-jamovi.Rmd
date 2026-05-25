@@ -2,40 +2,76 @@
 
 # 3. Overview of jamovi
 
-[jamovi](https://www.jamovi.org/) is a free and open statistical software that helps us run our descriptive and inferential statistics. Why are we using jamovi and not another program?
+In this chapter, we begin working with statistical software: **jamovi**.
 
-1.  Did I mention it's free? You won't ever have to pay a dime to use the software in the future, unless you use the paid version of [jamovi Cloud](https://www.jamovi.org/cloud.html).
+The goal of this chapter is not to perform statistical analyses yet. Instead, we will focus on becoming familiar with jamovi, understanding how data are organized in the software, and learning some basic tasks that will prepare us for later chapters.
 
-2.  It's open source, meaning that the statistical community helps support and improve the program. As jamovi says, "jamovi is made by the scientific community, for the scientific community."
+The concepts introduced in Chapter 2—such as variables, datasets, and levels of measurement—are directly applied here. As you work through this chapter, you will start to see how those ideas appear in practice.
 
-3.  It's built on top of the R statistical language, meaning you can begin learning how to code (if you want). I do all of my statistical analyses using R in a different program called RStudio (actually this book was developed in RStudio and hosted on GitHub!). It's a very powerful tool which is also free and open source.
+------------------------------------------------------------------------
 
-4.  It's incredibly easy to learn and use. I have taught statistics using both SPSS and jamovi, and students greatly prefer jamovi.
+## 3.1 What is jamovi?
 
-5.  It promotes reproducibility. jamovi will save your data, analyses, options, and results all in one file so you can easily pick up where you left off. This will make your homework and future data analyses a breeze.
+[jamovi](https://www.jamovi.org/) is a free, open-source statistical software program that allows you to:
+
+-   Organize and manage data
+-   Perform statistical analyses
+-   Create tables and visualizations
+
+### Why are we using jamovi?
+
+There are several reasons we use jamovi in this course:
+
+1.  **It’s free.**: You will never have to pay to use jamovi. This means you can continue using it in future courses, research projects, or your career. There is an optional paid version of [jamovi Cloud](https://www.jamovi.org/cloud.html), but it is not required.
+2.  **It’s open source.**: jamovi is developed and maintained by the statistical community. As the developers describe it, *“jamovi is made by the scientific community, for the scientific community.”* This means the software is continuously improving and grounded in current best practices.
+3.  **It’s built on R.**: jamovi is built on top of the R statistical programming language. If you are interested in learning to code, jamovi provides a natural entry point. Many researchers (including me) use R in environments like RStudio for more advanced analyses. In fact, this textbook was created using RStudio and hosted on GitHub.
+4.  **It’s easy to learn and use.**: Compared to other statistical software (e.g., SPSS), jamovi is much more intuitive. Students typically find it easier to learn and prefer using it for their analyses.
+5.  **It supports reproducibility.**: jamovi saves your data, analyses, settings, and results all in one file. This makes it easy to return to your work, check what you did, and reproduce your results—an important part of good scientific practice.
 
 And if you don't want to hear it from me, here's another person's description of what jamovi is and why [it's a great alternative to SPSS that provides a useful path toward learning R](https://medium.com/@Frank.M.LoSchiavo/jamovi-a-free-alternative-to-spss-that-provides-a-gateway-to-r-e55f7167d005).
 
-### 3.1 Installing jamovi
+### Additional jamovi videos and resources
 
-To install jamovi, go to <https://www.jamovi.org/download.html>. I recommend downloading the "current" version with the latest features, but you may want to get the "solid" version that is more stable.
+Although this textbook aims to serve all your basic jamovi and statistical needs, here are some additional resources on jamovi that I recommend you bookmark and use when you are struggling or need additional support:
 
-jamovi has more [documentation on how to install jamovi](https://docs.jamovi.org/_pages/um_1_installation.html) per operating system. Installation on macOS and Windows should be pretty straightforward. Here's some guidance if you are getting an error on Windows that "[The app you're trying to install isn't a Microsoft verified app.](https://answers.microsoft.com/en-us/windows/forum/all/the-app-youre-trying-to-install-isnt-a-microsoft/5379f8e3-72e1-4cf4-8497-7983af281a05)"
+-   [jamovi 2022 tutorials](https://www.youtube.com/playlist?list=PLvYqRUmlLZUMJ0EUxuTAA1f407wmBQ1QX) by Alexander Swan on YouTube
+-   [jamovi docs](https://docs.jamovi.org/) provide more support for using jamovi, including tips for transitioning from SPSS to jamovi and from jamovi to R
+-   [Introduction to jamovi LinkedIn Learning course](https://www.linkedin.com/learning/introduction-to-jamovi/) by Barton Poulson, founder of [datalab.cc](https://datalab.cc/jamovi/) (you can find the video on YouTube and other places now, too, if you do not have LinkedIn Learning) [Caution: this course uses an older version of jamovi]
+-   practice resources and datasets for additional hands-on work by [Neumann, Hood, & Neumann (2013)](https://jamovipractice.edublogs.org/)!
 
-Chromebooks may have an issue installing jamovi if your version of Chromebook does not use Linux. Watch this video for support on [installing jamovi on a Chromebook](https://www.youtube.com/watch?v=h4ECIS57TPw).
+Keep in mind that some tutorials may use older versions of jamovi, so the menus or layout may look slightly different from what you see on your screen.
 
-### 3.2 Navigating the jamovi interface
+## 3.2 Installing jamovi
 
-I recommend you watch this video by Alexander Swan on [navigating the jamovi interface in jamovi](https://youtu.be/t0tQcs-E5Z4) to understand everything. Note that he is using a Mac in his demonstrations and that he has downloaded a ton of add-on modules which is why his Analyses tab looks different from yours.
+To install jamovi, go to the [download page](https://www.jamovi.org/download.html).
 
-```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
-library(vembedr)
-embed_url("https://youtu.be/t0tQcs-E5Z4")
-```
+I recommend downloading the **current** version with the latest features, but you may want to get the solid version if you prefer something more stable.
 
-#### Opening data in jamovi
+jamovi has more [documentation on how to install jamovi](https://docs.jamovi.org/_pages/um_1_installation.html) per operating system. Installation on macOS and Windows should be pretty straightforward.
 
-I recommend you watch this video by Alexander Swan on [opening files in jamovi](https://youtu.be/nB85VyskK08).
+A few notes:
+
+-   Here's some guidance if you are getting an error on Windows that "[The app you're trying to install isn't a Microsoft verified app.](https://answers.microsoft.com/en-us/windows/forum/all/the-app-youre-trying-to-install-isnt-a-microsoft/5379f8e3-72e1-4cf4-8497-7983af281a05)"
+-   Chromebooks can be trickier. If your Chromebook does not use Linux, you may have difficulty installing jamovi. If so, look for Chromebook-specific installation support, such as this video on [installing jamovi on a Chromebook](https://www.youtube.com/watch?v=h4ECIS57TPw).
+
+If you are unable to install jamovi right away, do not panic. Contact the instructor or teaching assistant for support. The most important thing is to start getting familiar with the software and how it is organized.
+
+## 3.3 Opening data in jamovi
+
+Before we can analyze data, we need to get it into jamovi and make sure it is set up correctly.
+
+You can open existing datasets in jamovi, including files such as Excel spreadsheets and SPSS files.
+
+When you open a file, take a moment to look through the data and ask:
+
+-   Are the rows and columns organized the way I expect?
+-   Are the variables labeled clearly?
+-   Are the variable types set correctly?
+-   Are there missing values or unusual entries?
+
+That quick first look can save you a lot of problems later.
+
+Alexander Swan has a video on [opening files in jamovi](https://youtu.be/nB85VyskK08).
 
 ```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
@@ -44,39 +80,231 @@ embed_url("https://youtu.be/nB85VyskK08")
 
 #### Opening SPSS (.sav) files in jamovi
 
-Here's another video walking you through [how to open .sav files in jamovi](https://www.youtube.com/watch?v=e-09OfLVs2U).
+If you are working with SPSS files (with a .sav file extension), jamovi can usually open them directly. This can be especially useful if you are working with older datasets or files shared by others.
+
+Alexander Swan has an additional video on [opening .sav files in jamovi](https://www.youtube.com/watch?v=e-09OfLVs2U).
 
 ```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://www.youtube.com/watch?v=e-09OfLVs2U")
 ```
 
-#### Entering data in jamovi
+#### Entering data manually in jamovi
 
-Occasionally you need to manually enter data into jamovi instead of opening a pre-existing data file. I recommend you watch this video by Alexander Swan on [entering data manually in jamovi](https://youtu.be/g3a2hGwNZ7o).
+Sometimes you will need to enter data manually rather than opening an existing file.
+
+If you are entering data manually:
+
+-   make sure your variable names are clear
+-   make sure each row is a case and each column is a variable
+-   make sure variable types are set correctly
+-   enter data consistently
+
+This is also a good time to apply what we learned in Chapter 2 about good datasets and spreadsheets.
+
+Alexander Swan has yet another video on [entering data manually in jamovi](https://youtu.be/g3a2hGwNZ7o).
 
 ```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://youtu.be/g3a2hGwNZ7o")
 ```
 
-#### Annotating output in jamovi
+### Annotating output in jamovi
 
-Sometimes I may ask you to submit a file of your output with annotations. I recommend you watch this video by Alexander Swan on [annotating output in jamovi](https://youtu.be/I6SZtH__ICA).
+Sometimes you may need to submit output files from jamovi with annotations. This can be helpful for showing your work, identifying key results, or explaining how you interpreted an analysis.
+
+If you have not done this before, it is worth reviewing a short tutorial by Alexander Swan on [annotating output in jamovi](https://youtu.be/I6SZtH__ICA).
 
 ```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://youtu.be/I6SZtH__ICA")
 ```
 
-### 3.3 Additional jamovi videos and resources
+## 3.4 Navigating the jamovi interface
 
-Here are some additional resources on jamovi I recommend you bookmark and use when you are struggling or need additional support:
+Once you open jamovi, you will see a spreadsheet-like layout. This is where your data will appear.
 
--   [jamovi 2022 tutorials](https://www.youtube.com/playlist?list=PLvYqRUmlLZUMJ0EUxuTAA1f407wmBQ1QX) by Alexander Swan on YouTube
+Like we discussed in Chapter 2:
 
--   [jamovi docs](https://docs.jamovi.org/) provide more support for using jamovi, including tips for transitioning from SPSS to jamovi and from jamovi to R
+-   each **row** represents a **case** or **observation**
+-   each **column** represents a **variable**
 
--   caution: these use an older version of jamovi! [Introduction to jamovi LinkedIn Learning course](https://www.linkedin.com/learning/introduction-to-jamovi/) by Barton Poulson, founder of [datalab.cc](https://datalab.cc/jamovi/) (you can find the video on YouTube and other places now, too, if you do not have LinkedIn Learning).
+This structure is important to keep in mind, because many problems in statistical analysis begin with incorrectly structured or incorrectly labeled data.
 
--   Want more practice with jamovi? Want to do so using real data with a focus on DEI? Check out [Neumann, Hood, & Neumann's (2013) datasets and problem sets](https://jamovipractice.edublogs.org/)!
+I recommend watching a short video by Alexander Swan on [navigating the jamovi interface in jamovi](https://youtu.be/t0tQcs-E5Z4) so you can become familiar with the layout and the basic menus. Note that some demonstrations you find online may use a Mac and may include extra modules, so the screen may look a little different from yours.
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://youtu.be/t0tQcs-E5Z4")
+```
+
+### Understanding variable setup in jamovi
+
+#### Variable Name
+
+First, you should use an informative yet brief variable name. Refer back to Chapter 2 for tips on variable names from [Broman & Woo (2018)](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989).
+
+#### Variable Description
+
+Second, you should provide a longer description of the variable. You could provide the full text of the item in the survey, more details on how the variable was measured, or anything else that can help you or others better understand the variable.
+
+#### Measure type
+
+One of the most important parts of working in jamovi is correctly identifying your variable types. In jamovi, variables are set as one of four measure types:
+
+1.  ![](images/03-jamovi/variable-nominal.png) **Nominal**: categories with no order
+
+2.  ![](images/03-jamovi/variable-ordinal.png) **Ordinal**: categories with a meaningful order
+
+3.  ![](images/03-jamovi/variable-continuous.png) **Continuous**: numerical variables
+
+4.  ![](images/03-jamovi/variable-id.png) **ID**: an identifier variable that you would not usually analyze, such as participant ID
+
+#### Data type
+
+Additionally, variables can be one of three data types:
+
+1.  **Integer**, meaning the values are discrete whole numbers
+2.  **Decimal**, meaning the values are numbers with decimals
+3.  **Text**, meaning the values are alphanumeric, not just numeric
+
+These levels of measurement and data types connect directly to the ideas from Chapter 2. A variable may be coded numerically (for example, 0 = no and 1 = yes), but that does not mean it is continuous. You still need to specify the correct variable type.
+
+#### Missing values
+
+You can specify which values are intended to be missing values. For example, -99 is commonly defined as a missing value in a dataset.
+
+#### Levels
+
+For categorical variables, you can specify that text that aligns with numeric values of a variable. For example, if you have a dataset in which pretest is coded as 1 and posttest is coded as 2, you can specify this in the Levels box.
+
+There is a toggle you can select to retain unused levels in analyses if you want any level that has no data to always show up (e.g., in a graph).
+
+#### Check Your Understanding
+
+1. A variable is coded as:
+   - 0 = No
+   - 1 = Yes
+
+   Should this variable be set as continuous, ordinal, or nominal in jamovi? Why?
+
+2. You open a dataset and jamovi labels a variable as continuous, but it represents categories such as:
+   - 1 = Freshman
+   - 2 = Sophomore
+   - 3 = Junior
+   - 4 = Senior
+
+   What should you do?
+
+3. In an independent samples *t*-test:
+   - What type of variable should go in the dependent variable box?
+   - What type of variable should go in the grouping variable box?
+
+4. Why is jamovi’s automatic detection of variable type helpful, but not enough on its own?
+
+5. A student says, “If jamovi lets me run the analysis, it must be the right one.” What is wrong with that reasoning?
+
+::: {.callout-tip collapse="true"}
+#### Answers
+
+1. **Nominal.** The numbers are labels for categories, not continuous quantities.
+
+2. Change the variable type to **ordinal**, because the categories have a meaningful order.
+
+3. 
+   - Dependent variable → **continuous**
+   - Grouping variable → **categorical** (nominal or ordinal)
+
+4. jamovi’s automatic detection is helpful because it saves time, but it can make mistakes. You still need to confirm that the variable type matches what the variable actually represents.
+
+5. jamovi can help guide you, but it is not a substitute for statistical reasoning. A variable can be set incorrectly, and software cannot always determine whether the analysis truly matches the research question.
+:::
+
+### How jamovi helps you work with variables
+
+Once you understand how variables are defined, it’s important to understand how jamovi helps you work with them.
+
+1.  **jamovi will try to automatically determine variable types.**
+
+When you enter data or open a dataset, jamovi will guess the data type and measure type for you. This is incredibly helpful—*until it’s wrong*.
+
+Always double-check your variables before running any analyses. Incorrect variable types are one of the most common sources of errors in statistical work.
+
+2.  **The icons help guide your analysis choices.**
+
+Those small icons next to variables are not just decorative—they tell you what kind of variable you are working with and where it can be used.
+
+For example:
+
+-   A **ruler icon** indicates a continuous variable
+
+-   A **Venn icon** indicates a nominal variable
+
+-   A **histogram icon** indicates an ordinal variable
+
+These icons also appear in analysis menus to guide you.
+
+3.  **jamovi helps prevent (some) mistakes—but not all.**
+
+When you run analyses, jamovi will often indicate what types of variables belong in each box.
+
+For example, in an **independent samples t-test**:
+
+-   The *dependent variable* box shows a ruler icon → you should enter a **continuous variable**
+-   The *grouping variable* box shows a Venn diagram or historgram → you should enter a **nominal or ordinal variable**
+
+This is incredibly helpful—but you still need to understand *why* those choices matter. jamovi is a guide, not a substitute for statistical reasoning.
+
+::: {.warning data-latex=""}
+**Most common mistake** \
+Running an analysis with incorrectly specified variables. Always check:
+
+-   Variable type (nominal, ordinal, continuous)
+-   Data type (numeric vs text)
+-   Whether the variable fits the analysis
+:::
+
+### A first look at your data
+
+After loading or entering your data, your next step is to quickly check that your dataset is ready for analysis.
+
+At this stage, that does not mean running formal statistical tests. Instead, it means making sure your data are set up correctly.
+
+As you look through your data, consider:
+
+-   Are the variables named clearly?
+-   Are the variable types correct?
+-   Are there obvious data entry mistakes?
+-   Are there missing values that aren't coded as missing?
+-   Are there values that seem impossible or unusual?
+
+We will learn more about cleaning and preparing data in Chapter 6, but building this habit now will make your analyses much smoother.
+
+If something goes wrong in your analysis later, the first place to check is your variable setup.
+
+#### Check Your Understanding
+
+1. You see a value of 999 in a test score variable where scores should range from 0 to 100. What should you do before analyzing the data?
+
+2. Why is it important to look through your dataset before running analyses?
+
+3. You notice that a variable contains the values:
+   - Yes
+   - yes
+   - Y
+
+   Why might this be a problem?
+
+4. If something looks wrong in your analysis output later, what is one of the first things you should check?
+
+::: {.callout-tip collapse="true"}
+#### Answers
+
+1. Investigate the value before analyzing the data. It may be a data entry error, a missing value code, or some other issue.
+
+2. Looking through the dataset helps you catch mistakes, incorrect variable types, missing values, and unusual or impossible values before they affect your results.
+
+3. jamovi may treat these as different categories, which would distort frequencies and percentages.
+
+4. Check your variable setup and the raw data values first.
+:::

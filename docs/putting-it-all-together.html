@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.3 Descriptive vs inferential statistics | Statistics with jamovi</title>
+  <title>2.5 Putting it all together | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.3 Descriptive vs inferential statistics | Statistics with jamovi" />
+  <meta property="og:title" content="2.5 Putting it all together | Statistics with jamovi" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.3 Descriptive vs inferential statistics | Statistics with jamovi" />
+  <meta name="twitter:title" content="2.5 Putting it all together | Statistics with jamovi" />
   
   <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="types-of-variables-and-levels-of-measurement.html"/>
-<link rel="next" href="key-terms-and-concepts.html"/>
+<link rel="prev" href="key-terms-and-concepts.html"/>
+<link rel="next" href="statistics-foundations-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -443,60 +443,149 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="descriptive-vs-inferential-statistics" class="section level2 hasAnchor">
-<h2>2.3 Descriptive vs inferential statistics<a href="descriptive-vs-inferential-statistics.html#descriptive-vs-inferential-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="putting-it-all-together" class="section level2 hasAnchor">
+<h2>2.5 Putting it all together<a href="putting-it-all-together.html#putting-it-all-together" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="callout-tip" title="Learning Objectives">
 <p>By the end of this section, you should be able to:</p>
 <ul>
-<li>distinguish between descriptive and inferential statistics</li>
-<li>explain the difference between a sample and a population</li>
-<li>explain the difference between a statistic and a parameter</li>
-<li>describe why researchers often use samples to make inferences about populations</li>
-<li>identify when a claim is descriptive versus inferential</li>
+<li>connect variables, datasets, distributions, descriptive statistics, and inferential statistics</li>
+<li>identify appropriate descriptive summaries for different variable types</li>
+<li>explain why descriptive statistics come before inferential statistics</li>
+<li>apply the main ideas from the chapter to a simple dataset</li>
 </ul>
 </div>
-<p>There are two broad types of statistics that we use when working with data: <strong>descriptive statistics</strong> and <strong>inferential statistics</strong>.</p>
-<p><strong>Descriptive statistics</strong> are used to summarize, organize, and describe the data we have collected. They focus on the sample data in front of us. Common descriptive statistics include measures of central tendency, measures of dispersion, descriptions of shape, and visualizations such as tables and graphs.</p>
-<p><strong>Inferential statistics</strong> are used when we collect data from a sample and use those data to make inferences about a larger population. Common inferential statistics include t-tests, ANOVA, correlation, chi-square tests, and regression.</p>
-<p>A <strong>population</strong> is the full group we are interested in understanding. A <strong>sample</strong> is the smaller group we actually collect data from. A <strong>parameter</strong> describes a population, such as the true average test score of all students in a university. A <strong>statistic</strong> describes a sample, such as the average test score of the students in our study. In research, we often use statistics to estimate unknown population parameters.</p>
-<p>We typically use both descriptive and inferential statistics. We use descriptive statistics to summarize our sample, and we use inferential statistics to evaluate what the sample may suggest about the population. Some studies are purely descriptive, with no attempt to generalize beyond the collected data. However, when we conduct inferential statistics, we still begin by describing the sample.</p>
-<p><img src="images/02-stats-foundations/descriptive-vs-inferential.png" /></p>
-<p>This can feel abstract, so let’s walk through a simple example.</p>
-<p>Imagine we are conducting a study to examine whether watching <em>Schitt’s Creek</em> (a very good show, but not helpful for studying) versus watching video lessons on studying techniques (useful, but perhaps less exciting) affects test performance in UW–Stout students.</p>
-<p>Our <strong>population of interest</strong> is all UW–Stout students. However, it is not feasible to collect data from every student due to time, access, and logistical constraints. Instead, we collect data from a <strong>sample</strong>. For simplicity, we use students from two sections of an introductory psychology course, about 80 students total. This is a <strong>convenience sample</strong>, not a random sample, but it works for illustrating our concepts.</p>
-<p>We randomly assign half of the students to watch <em>Schitt’s Creek</em> and the other half to watch study skills videos. One week later, all students take an exam, and we record their test scores.</p>
-<p>First, we use descriptive statistics to summarize the sample. We might create a histogram of test scores, calculate the mean score for each group, examine the standard deviation to understand variability, and check the range of scores. These summaries help us understand what the data look like.</p>
-<p>Next, we ask our research question: Which group performed better on the exam? To answer this, we use inferential statistics. We take our descriptive statistics, such as means, standard deviations, and sample sizes, and use a statistical test. In this case, we would use an independent samples t-test, which you will learn about later.</p>
-<p>Rather than calculating this by hand, we typically use statistical software like jamovi, which provides a test statistic, a <em>p</em>-value, and an effect size. These results help us evaluate whether the observed difference in our sample is larger than we would expect if there were no real difference in the population.</p>
-<div class="callout-note" title="Why this matters">
-<p>Descriptive statistics tell us what happened in the data we collected. Inferential statistics help us decide what, if anything, those data suggest about a larger population. If we confuse the two, we can easily overstate what a study shows.</p>
-</div>
+<p>This chapter introduced the language we will use throughout the rest of the book. The most important idea is that statistical decisions depend on what your data represent.</p>
+<p>Before choosing a graph, calculating a statistic, or running a test in jamovi, ask:</p>
+<ol style="list-style-type: decimal">
+<li>What is my research question?</li>
+<li>What are my variables?</li>
+<li>How is each variable measured?</li>
+<li>Am I describing my sample or making an inference about a population?</li>
+<li>What does the distribution of my data look like?</li>
+</ol>
+<p>If you can answer those questions, you are already doing a lot of the thinking that statistics requires.</p>
+<p>Here is a quick reference for the major variable types:</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+<th>Common summaries</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nominal</td>
+<td>Categories with no order</td>
+<td>Major</td>
+<td>Counts, frequencies, percentages</td>
+</tr>
+<tr class="even">
+<td>Ordinal</td>
+<td>Ordered categories</td>
+<td>Satisfaction ratings</td>
+<td>Frequencies, percentages, medians, ranges</td>
+</tr>
+<tr class="odd">
+<td>Continuous</td>
+<td>Numerical values with meaningful distance between values</td>
+<td>Test scores, reaction time</td>
+<td>Means, standard deviations, ranges, visual distributions</td>
+</tr>
+</tbody>
+</table>
+<p>And here is a quick reference for features of a distribution:</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Question</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Center</td>
+<td>What is typical?</td>
+<td>Helps describe the general location of the values</td>
+</tr>
+<tr class="even">
+<td>Variability</td>
+<td>How spread out are values?</td>
+<td>Shows whether values are similar or very different</td>
+</tr>
+<tr class="odd">
+<td>Shape</td>
+<td>What pattern do values form?</td>
+<td>Helps us recognize skew, normality, and other patterns</td>
+</tr>
+<tr class="even">
+<td>Outliers</td>
+<td>Are there unusual values?</td>
+<td>Can influence results and may need closer attention</td>
+</tr>
+</tbody>
+</table>
+<p>A few key ideas to carry forward:</p>
+<ul>
+<li>A variable’s level of measurement depends on <strong>how it is measured</strong>, not just what it represents.</li>
+<li>Assigning numbers to categories does <strong>not</strong> make a variable continuous.</li>
+<li>Collapsing variables into categories can reduce information.</li>
+<li>Descriptive statistics help us understand the data we collected.</li>
+<li>Inferential statistics help us evaluate what our sample may suggest about a population.</li>
+<li>We should look at our data before jumping to conclusions.</li>
+</ul>
+<p>In the next chapters, you will begin working directly with data in jamovi. You will learn how to open datasets, check variable types, describe variables numerically, visualize distributions, and prepare data for analysis. Each of those skills builds directly on the ideas in this chapter.</p>
 <div class="callout-tip" title="Check Your Understanding">
 <ol style="list-style-type: decimal">
-<li>You collect data from 50 UW–Stout students and calculate the mean GPA. Is this descriptive or inferential statistics? Explain briefly.</li>
-<li>You use those 50 students to test whether UW–Stout students have a higher GPA than the national average. Is this descriptive or inferential statistics? Explain briefly.</li>
-<li>A researcher reports that 62% of participants preferred online classes. What type of statistic is this?</li>
-<li>Why do we typically use both descriptive and inferential statistics in the same study?</li>
-<li>A study includes only descriptive statistics and no inferential tests. Give one reason why that might be appropriate.</li>
+<li>A dataset includes the following variables: major, stress rating on a 1–5 scale, and hours of sleep last night. For each variable, identify whether it is categorical or continuous and state one appropriate way to describe it.</li>
+<li>Why is it important to correctly identify variable types before running analyses?</li>
+<li>A researcher reports only the mean for a variable. What important information might still be missing?</li>
+<li>Explain the difference between a statistic and a parameter.</li>
+<li>A variable is coded as 1 = cat, 2 = dog, and 3 = frog. Why is this still not a continuous variable?</li>
 </ol>
 </div>
 <div class="callout-tip" collapse="true" title="Answers">
 <ol style="list-style-type: decimal">
-<li>Descriptive. You are summarizing the sample you collected.</li>
-<li>Inferential. You are using the sample to make a claim about a larger population.</li>
-<li>Descriptive. It summarizes the sample data.</li>
-<li>Descriptive statistics summarize what the sample looks like, and inferential statistics help us evaluate what the sample may suggest about the population.</li>
-<li>Answers will vary. For example, the goal of the study may simply be to describe a group or summarize observations without making broader population claims.</li>
+<li>Major is categorical and could be described with frequencies or percentages. Stress rating is ordinal and could be described with frequencies, percentages, or a median. Hours of sleep is continuous and could be described with a mean and standard deviation.</li>
+<li>Variable type determines what descriptive statistics, graphs, and analyses are appropriate. If a variable is classified incorrectly, the results may be misleading.</li>
+<li>Variability, shape, range, outliers, and sample size may still be missing. The mean alone does not fully describe the data.</li>
+<li>A statistic describes a sample, while a parameter describes a population. We often use statistics to estimate parameters.</li>
+<li>Because the numbers are only labels for categories; they do not represent meaningful numerical quantities.</li>
 </ol>
 </div>
+<div class="callout-note" title="Reflection">
+<p>Think about a dataset you might collect in your own field.</p>
+<ul>
+<li>What variables would you measure?</li>
+<li>Would they be categorical or continuous?</li>
+<li>What might the distribution of your data look like?</li>
+<li>What would you want to describe or compare?</li>
+</ul>
+<p>Taking a moment to think through these questions can help you connect these concepts to real-world data.</p>
 </div>
+
+</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="types-of-variables-and-levels-of-measurement.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="key-terms-and-concepts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="key-terms-and-concepts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="statistics-foundations-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

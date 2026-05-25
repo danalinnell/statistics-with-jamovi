@@ -1,63 +1,217 @@
-# 4. Describing data
+# 4. Describing Data in jamovi
 
-As a reminder, **descriptive statistics** are used to summarize, organize, and overall *describe* our sample data.
+In this chapter, we begin describing our data using statistical summaries.
 
-## 4.1 Data variables
+In Chapter 2, we learned what descriptive statistics are and why they matter. In Chapter 3, we learned how to set up and navigate data in jamovi. Now, we will bring those together and begin using jamovi to describe our data.
 
-First, it's important to understand the different types of variables in jamovi and how they map onto our levels of measurement.
+By the end of this chapter, you should be able to:
 
-Variables in jamovi can be one of three data types:
+-   Generate descriptive statistics in jamovi
+-   Choose appropriate descriptive statistics based on variable type
+-   Interpret measures of center and variability
+-   Write up descriptive statistics clearly
 
-1.  **Integer**, meaning the values are discrete whole numbers
-2.  **Decimal**, meaning the values are numbers with decimals
-3.  **Text**, meaning the values are alphanumeric, not just numeric
+------------------------------------------------------------------------
 
-Furthermore, variables in jamovi can be one of four measure types:
+## 4.1 Describing continuous variables
 
-1.  ![](images/03-jamovi/variable-nominal.png) Nominal
+We will start by describing **continuous variables**, such as test scores, age, or reaction time.
 
-2.  ![](images/03-jamovi/variable-ordinal.png) Ordinal
+### Running descriptive statistics in jamovi
 
-3.  ![](images/03-jamovi/variable-continuous.png) Continuous (meaning jamovi combines interval and ratio and doesn't distinguish between the two)
+To generate descriptive statistics:
 
-4.  ![](images/03-jamovi/variable-id.png) ID (used for any identifying variable you likely wouldn't ever analyze, like participant ID number or name)
+1.  Click **Exploration**
+2.  Select **Descriptives**
+3.  Move your variable into the **Variables** box
 
-There are a few great things about jamovi when it comes to these data variables. First, jamovi will try to automatically determine what the data and measure types are when you type in data or when you open a dataset; this is fabulous, until it goes wrong. It's important that you always double check your data and measure types first!
+Once you do this, jamovi will automatically generate output.
 
-Second, those little icons will be really helpful to let you know what variables can go in which boxes. For example, we would never analyze a nominal variable as our dependent variable for a t-test, and jamovi will help remind you of that. When performing an independent samples t-test, the dependent variables box will have a little ruler icon indicating you should be putting continuous variables in that box. Similarly, it will tell you to put nominal or ordinal variables in the grouping variable (independent variable) box. Sweet!
+In the options panel, you can select which statistics to display.
 
-## 4.2 Describing your data
+For most purposes, you should include:
 
-We explore our data partly to describe our data and partly to check our data before performing inferential statistics. jamovi puts all our descriptive statistics into one useful analysis under the Analyses tab within the Exploration menu called `Descriptives`.
+-   **Mean**: the average value
+-   **Median**: the middlemost value
+-   **Standard deviation**: average spread around the mean
+-   **Variance**: squared spread
+-   **Minimum and maximum**: the lowest and highest values, respectively
+-   **N (sample size)**: the total number of observations
 
-### Describing nominal or ordinal data
+You may also include:
 
-Nominal and ordinal data is described mainly using frequencies. Choose your categorical variable(s) and move it to the Variables box and then select the option `Frequency tables`. Note that it tells you it's best for nominal and ordinal data with the two icons!
+-   **Skewness**: the shape of the tail of the distribution
+-   **Kurtosis**: the shape of the height of the distribution
 
-I recommend you watch this video by Alexander Swan on [how to describe categorical data in jamovi](https://youtu.be/eGdkYZbljbQ).
+------------------------------------------------------------------------
 
-### Describing continuous data
+### Interpreting the output
 
-Continuous data is described using a variety of measures of central tendency, dispersion, and more. Choose your continuous variable(s) in the list of variables on the left side and move it to the Variables box.
+Once you run the analysis, jamovi will provide a table of descriptive statistics.
+
+When interpreting a continuous variable, focus on:
+
+-   **Center** such as mean or median
+-   **Variability** such as standard deviation or variance
+-   **Range** such as the highest and lowest values
+
+You can ask yourself the following questions to understand the distribution of the data:
+
+-   Are the mean and median similar, which suggests a more normal distribution?
+-   Are the values tightly clustered or widely spread out?
+-   Are there potential outliers?
+-   Do the highest and lowest values make sense based on the dataset?
+
+This information is often used to write-up results in APA Style. For example:
+
+> The average test score was 78.4 (SD = 10.2), with scores ranging from 52 to 95.
+
+This tells us:
+
+-   the typical score (mean)
+-   how spread out scores are (SD)
+-   the range of observed values
 
 I recommend you watch this video by Alexander Swan on [how to describe continuous data in jamovi](https://youtu.be/oVE0nxJ0J44).
 
-In the `Descriptives` analysis (these are under the `Statistics` drop-down menu, there are a ton of possible options!
+------------------------------------------------------------------------
 
-1.  **Sample size**: you can ask for the sample size (`N`) and number of missing values (`Missing`)
-2.  **Percentile values**: these are useful for creating quartiles (`Cut points for 4 equal groups`) or `Percentiles` of various sizes.
-3.  **Dispersion**: you should already be familiar with most of the measures of dispersion, particularly the `Minimum` and `Maximum`, but there is also the `Std. deviation` (SD) and `Variance` (which is just SD^2^). We'll learn about the `S. E. Mean` later.
-4.  **Central tendency**: similarly, you should also be familiar with all of the measures of central tendency: `Mean`, `Median`, `Mode`, and `Sum`.
-5.  **Distribution**: you should also be familiar with both `Skewness` and `Kurtosis` and later we will learn what those values mean and how that helps us test for normality.
-6.  **Normality**: lastly, there is a statistical test for normality called the `Shapiro-Wilk` test that we will learn about later.
+## 4.2 Describing categorical variables
 
-### Describing one variable split by another variable
+Now let’s describe **categorical variables**, such as gender, major, or condition.
 
-Sometimes we want to get the descriptive statistics for one variable across multiple groups of another variable. Usually, this is a continuous variable split by a categorical variable. In that case, move your continuous variable to the `Varables` box and the variable you want split by categories in to the `Split by` box.
+### Running frequencies in jamovi
 
-## 4.3 Writing up descriptive statistics
+To describe categorical variables:
 
-We'll learn more about writing up our inferential statistics results later, but first let's learn how we might report our descriptive statistics.
+1.  Click **Exploration**
+2.  Select **Descriptives**
+3.  Move your variable into the **Variables** box
+4.  Select the **Frequency tables** check box
+
+------------------------------------------------------------------------
+
+### Interpreting output
+
+Example:
+
+| Category | Count | Percent |
+|----------|-------|---------|
+| Yes      | 45    | 56.3%   |
+| No       | 35    | 43.8%   |
+
+Interpretation:
+
+> 56.3% of participants responded “Yes,” while 43.8% responded “No.”
+
+**Key reminder**
+
+For categorical variables:
+
+-   We do **not** calculate means or standard deviations
+-   We describe how often each category occurs
+-   A statistics table will be provided, but as the variable is categorical it will only provide N and Missing, as the other statistics are used for continuous variables
+
+I recommend you watch this video by Alexander Swan on [how to describe categorical data in jamovi](https://youtu.be/eGdkYZbljbQ).
+
+------------------------------------------------------------------------
+
+## 4.3 Describing a continuous variable by a categorical variable
+
+Often, we want to describe a continuous variable **across groups**.
+
+Example:
+
+-   Test scores by condition
+-   Stress levels by major
+
+------------------------------------------------------------------------
+
+### Running grouped descriptives
+
+In **Descriptives**:
+
+1.  Click **Exploration**
+2.  Select **Descriptives**
+3.  Place your continuous variable in the **Variables** box
+4.  Place your categorical variable in the **Split by** box
+
+------------------------------------------------------------------------
+
+### Interpreting output
+
+jamovi will now provide descriptive statistics **for each group separately**.
+
+This allows you to compare:
+
+-   group means
+-   group variability
+-   sample sizes
+
+For example:
+
+> Students in the intervention group scored higher (M = 82.3, SD = 8.5) than students in the control group (M = 75.6, SD = 11.2).
+
+::: {.warning data-latex=""}
+Descriptive statistics are not inferential statistics. We can describe differences—but we are not yet testing whether those differences are statistically significant. That comes later. Be careful that you write up descriptive statistics as simply *describing* the data and not making causal inferences.
+:::
+
+------------------------------------------------------------------------
+
+## 4.4 Choosing the right descriptive statistics
+
+Not all statistics are appropriate for all variables.
+
+Here is a quick reminder from Chapter 2. The type of variable determines:
+
+-   what statistics you can compute
+-   how you interpret the results
+
+This is why correctly setting your variable type in jamovi (Chapter 3) is so important.
+
+| Variable Type | What to Report           |
+|---------------|--------------------------|
+| Continuous    | Mean, median, SD, range  |
+| Ordinal       | Median, frequencies      |
+| Nominal       | Frequencies, percentages |
+
+------------------------------------------------------------------------
+
+## 4.5 Writing up descriptive statistics
+
+Being able to compute statistics is not enough—you also need to communicate them clearly.
+
+------------------------------------------------------------------------
+
+### Basic format (continuous variable)
+
+> *M* = *, SD =*
+
+Example:
+
+> Participants reported moderate stress levels (M = 3.45, SD = 0.82).
+
+------------------------------------------------------------------------
+
+### Including range
+
+> Scores ranged from \_\_\_ to \_\_\_
+
+------------------------------------------------------------------------
+
+### Group comparisons
+
+> Group A (*M* = , *SD* = ) scored higher/lower than Group B (*M* = , *SD* = ).
+
+------------------------------------------------------------------------
+
+### Tips
+
+-   Always include **units** (e.g., test scores, minutes, ratings)
+-   Round consistently (typically 2 decimal places)
+-   Be clear and concise
+
+### Examples from the literature
 
 In small examples, we might write-up our descriptive statistics into a paragraph[^04-descriptive-statistics-1] (note: I also describe an independent t-test and a chi-square test of independence in this paragraph):
 
@@ -71,52 +225,24 @@ In examples with many variables, we might write-up our descriptive statistics in
 
 ![](images/02-stats-foundations/example2.png){width="400"}
 
-# 5. Visualizing data {#visualizing-data .unnumbered}
+------------------------------------------------------------------------
 
-"A picture is worth a thousand words," and in a world in which journal articles have word count limits, figures and graphs are priceless. They are also an incredibly powerful way to examine your data because it can often illuminate patterns you may not be able to see through a table.
+## 4.6 Common mistakes
 
-:::{.info data-latex=""}
-**Remember: it is incredibly important to always visualize your data!** You never know what descriptive statistics may be hiding.
-:::
+Here are a few common mistakes to avoid:
 
-Here's a [video](https://www.youtube.com/watch?v=d2wU0kmCJEY) walking through why it's so important to look at your data.
+-   Reporting means for categorical variables
+-   Ignoring variability (only reporting the mean)
+-   Misinterpreting skewed data
+-   Forgetting to report sample size
+-   Not checking your data before analysis
 
+------------------------------------------------------------------------
 
-```{=html}
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/d2wU0kmCJEY" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-```
+## 4.7 Looking ahead
 
+In this chapter, we focused on summarizing data numerically.
 
-jamovi has some plots built into its platform, both under the `Plots` drop-down menu in the `Descriptives` analysis and as options for many of the inferential statistical analyses.
+In the next chapter, we will learn how to **visualize data** using graphs, which can often reveal patterns that numbers alone cannot.
 
-We'll learn more about how to choose and conduct better data visualizations later, but for now here are some recommended visualizations depending on what you are trying to do. Note that we will do most of our visualizations in jamovi, but we may also learn how to visualize data via Excel. There are also excellent LinkedIn Learning courses on data visualization in Excel and other tools that I strongly recommend; they are free for you if you are a UW-Stout student.
-
-## 5.1 A continuous variable
-
-First, there are two **Histogram** options: `Histogram` and `Density`. These are useful for seeing the overall distribution of your data and to help check for normality. Which should you use? I think they're both pretty great, and in fact you can combine the two to have a histogram plot with a density overlay. I like this option best because it presents more information and better lets us see if the if the density curve looks normally distributed.
-
-## 5.2 A categorical variable
-
-For this you would choose the single option under **Bar Plots**: `Bar plot`. It will simply show the frequencies of a categorical variable.
-
-## 5.3 A continuous variable split by a categorical variable
-
-There are three options under **Box Plots**: `Box plot`, `Violin` (which is really a density plot with its mirror image!), `Data` (which can be Jittered or Stacked; I prefer Jittered so you can see the density of data points really well), and `Mean`. Personally, I love checking all four boxes! This gives you the best of all of them: the distribution of your data with the `Violin` option, the quartiles and mean with the `Box plot` option, a visualization of all your data points using the `Data` option, which is really useful because the other two options can be *hiding* weird things in your data, and what the `Mean` is.
-
-## 5.4 Expanding your data visualization
-
-Although these can be useful plots, I often do most of my data visualizations in other platforms. For most of my work, I use Excel because I find it pretty easy to make beautiful graphs. Here's an example of a visualization I made in Excel[^04-descriptive-statistics-3]:
-
-[^04-descriptive-statistics-3]: This comes from [Wanzer et al. (2020) Promoting intentions to persist in computing: An examination of six years of the EarSketch program](https://doi.org/10.1080/08993408.2020.1714313)
-
-![](images/02-stats-foundations/example3.png)
-
-For some more complicated figures, I turn to the `ggplot2` package in R. Here's an example of a visualization I made in R[^04-descriptive-statistics-4]:
-
-[^04-descriptive-statistics-4]: This comes from [Wanzer (2020) What is evaluation? Perspectives of how evaluation differs (or not) from research](https://journals.sagepub.com/doi/10.1177/1098214020920710)
-
-![](images/02-stats-foundations/example4.png)
+Together, descriptive statistics and visualizations provide a complete picture of your data.

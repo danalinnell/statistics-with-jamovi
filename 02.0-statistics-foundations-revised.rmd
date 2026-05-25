@@ -1,0 +1,439 @@
+# 2. Statistics foundations
+
+```{r intro-setup, echo = FALSE, message=FALSE}
+library(tidyverse, webshot)
+```
+
+This chapter introduces some of the statistical language we will use throughout the book. You do not need to memorize every term right now. Instead, focus on understanding the big ideas: what data are, what kinds of variables we work with, how we describe data, and how we use samples to make inferences about populations.
+
+You will come back to these ideas again and again. If something does not fully click the first time through, that is okay. The goal here is to build a foundation we can keep returning to.
+
+As you read, pay special attention to the examples. In statistics, the same word can mean different things depending on how something is measured. For example, “time” might be categorical in one study and continuous in another. That is why I want you to focus less on memorizing definitions and more on asking: What does this variable actually represent?
+
+::: {.callout-tip title="What You'll Learn"}
+By the end of this chapter, you should be able to:
+
+-   explain how data are used to answer research questions
+-   recognize how datasets are organized into rows and columns
+-   distinguish among nominal, ordinal, interval, and ratio variables
+-   explain the difference between descriptive and inferential statistics
+-   use key statistical terms that will appear throughout the textbook
+:::
+
+::: {.callout-note title="Chapter Sections"}
+-   **2.1 Describing Data**: Introduces what data are, how we summarize them, and why descriptive statistics matter.
+
+-   **2.2 Types of Variables and Levels of Measurement**: Explains different types of variables and how they influence the summaries, graphs, and analyses we choose.
+
+-   **2.3 Descriptive vs Inferential Statistics**: Builds the conceptual foundation for sampling, generalization, and statistical inference.
+
+-   **2.4 Key Terms and Concepts**: Provides definitions and explanations of statistical terms you will encounter throughout the textbook. You do not need to memorize all of these now. Return to this section as needed.
+
+-   **2.5 Putting It All Together**: Pulls the chapter together and gives you practice applying the main ideas.
+:::
+
+These ideas matter because they help you avoid some of the most common mistakes in statistics. Before you can run a statistical test, you need to know what kind of variables you have. Before you interpret a result, you need to know whether you are describing your sample or making an inference about a population. Before you report a mean, you need to know whether a mean makes sense for that variable.
+
+These may seem like small details, but they shape almost every decision you make when analyzing data.
+
+## 2.1 Describing data
+
+::: {.callout-tip title="Learning Objectives"}
+By the end of this section, you should be able to:
+
+-   explain what data are and why context matters
+-   identify observations and variables in a dataset
+-   recognize features of a well-organized dataset
+-   explain what it means to describe data
+-   identify the main features we look for in a distribution
+:::
+
+Before we can analyze data, we need to understand what our data represent.
+
+At its core, statistics is about using data to answer questions. In most research settings, data are organized in a dataset, often in a spreadsheet format. Each row usually represents one observation, such as one participant, and each column represents one variable, such as age, condition, or test score. Statistical software, including jamovi, expects data to be organized in a clear and consistent way.
+
+Here is the basic structure to keep in mind:
+
+-   **Rows** represent observations, cases, or participants.
+-   **Columns** represent variables.
+-   **Cells** contain one value for one observation on one variable.
+
+A value by itself does not mean much. For example, 75 could be a test score, heart rate, temperature, percentile rank, or something else entirely. To interpret data correctly, we need to know what each variable represents, how it was measured, and what the values mean. This is why clear variable names and documentation are important when working with datasets.
+
+::: {.callout-note title="Is data singular or plural?"}
+In formal scientific writing, including APA style, *data* is usually treated as plural: “The data are consistent with the hypothesis.” In everyday speech, many people use *data* as singular: “The data is stored in a spreadsheet.”
+
+You will see both. In your formal research writing, use the plural form unless your instructor or style guide says otherwise.
+:::
+
+A well-organized dataset usually has one row for each observation, one column for each variable, one value in each cell, clear variable names, and clearly coded missing data. jamovi knows to treat blank cells as missing, but in many other contexts you may see missing values coded as `NA` or another clearly documented value. Good organization helps prevent errors and makes data easier to analyze, share, and reproduce ([Broman & Woo, 2018](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989)).
+
+A **variable** is anything we measure or record that can vary across individuals or observations. Examples include age, major, test score, treatment condition, or survey response. Variables can be measured in different ways, and those differences matter. The next section explains levels of measurement, which help us decide how to summarize variables and what analyses are appropriate.
+
+Once we collect data, the first step is to describe what we have. Raw data can be difficult to interpret on their own, especially when we have many rows. Descriptive statistics and visualizations help us summarize the data, identify patterns, notice unusual values, and prepare for further analysis.
+
+When we describe data, we usually focus on four features:
+
+1.  **Center**: What is typical? Common measures include the mean, median, and mode. These are called *measures of central tendency*.
+2.  **Variability**: How spread out are the values? Common measures include the range, interquartile range, variance, and standard deviation. These are called *measures of dispersion*.
+3.  **Shape**: What does the distribution look like? For example, is it approximately normal, skewed in one direction, or shaped in some other way?
+4.  **Outliers**: Are there unusually high or low values that need closer attention?
+
+A **distribution** shows how values in a dataset are spread out and how often they occur. Instead of looking at one score at a time, a distribution helps us see the whole picture: where values cluster, how spread out they are, whether the data are symmetrical or skewed, and whether any values look unusual.
+
+One particular distribution we care a lot about in psychological research is the **normal distribution**, sometimes called a bell curve. In a normal distribution, most values cluster around the center, fewer values appear as you move away from the center, and the left and right sides are approximately symmetrical. Many statistical methods assume that data are approximately normally distributed, which is why we return to this idea often.
+
+Not all data are normally distributed, though. In a **skewed distribution**, one side of the distribution stretches out more than the other. A right-skewed or positively skewed distribution has a tail that extends to the right. A left-skewed or negatively skewed distribution has a tail that extends to the left. **Kurtosis** is another aspect of shape that describes how heavy or light the tails of a distribution are. You do not need to master skew and kurtosis yet, but you should know that distributions can differ in center, variability, shape, and outliers.
+
+::: {.callout-note title="Why this matters"}
+Describing data is not busywork. It is how we catch problems, understand what our data actually look like, and avoid jumping too quickly into statistical tests. Before you interpret any inferential test, you should have some sense of the sample, variables, distributions, and possible unusual values.
+:::
+
+Here is a video walking through some of the ideas in this chapter.
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=QirHpjLkHmc")
+```
+
+::: {.callout-tip title="Check Your Understanding"}
+1.  In a dataset, what does each **row** represent? What does each **column** represent?
+2.  Why do data need context to be meaningful?
+3.  What are two features of a well-organized dataset?
+4.  What are the four main features we often examine when describing data?
+5.  Why can two datasets with the same mean still be very different?
+:::
+
+::: {.callout-tip collapse="true" title="Answers"}
+1.  Rows represent observations, cases, or participants. Columns represent variables.
+2.  A value does not mean much by itself. We need to know what the variable represents, how it was measured, and what the values mean.
+3.  Answers will vary. Examples include one row per observation, one column per variable, one value per cell, clear variable names, and clearly coded missing data.
+4.  Center, variability, shape, and outliers.
+5.  They may have different variability, different shapes, or different outliers.
+:::
+
+## 2.2 Types of variables and levels of measurement
+
+::: {.callout-tip title="Learning Objectives"}
+By the end of this section, you should be able to:
+
+-   distinguish among nominal, ordinal, interval, and ratio variables
+-   explain why a variable's level of measurement depends on how it is measured
+-   identify whether a variable is categorical or continuous for the purposes of analysis
+-   explain why assigning numbers to categories does not make a variable continuous
+-   explain why collapsing variables can reduce information
+:::
+
+In Section 2.1, we introduced variables as things we measure or record that can vary across observations. Now we need to get more specific. Variables can be measured at different **levels of measurement**, and those levels help us decide what kinds of summaries, graphs, and analyses are appropriate.
+
+![](images/01-intro/Levels%20of%20measurement.png)
+
+Broadly, variables are either **categorical** or **continuous**. Categorical variables describe groups or categories. Continuous variables represent quantities or amounts. We can refine those broad categories into four levels of measurement: nominal, ordinal, interval, and ratio.
+
+**Nominal variables** are categorical variables with no inherent order. Examples include major, treatment group, eye color, type of pet, or whether someone is an athlete. A special type of nominal variable has only two categories, such as yes/no or present/absent. These are often called **dichotomous**, **binary**, or **dummy-coded** variables.
+
+With nominal variables, we can count how many observations fall into each category and calculate percentages. We cannot meaningfully order or average the values. If I code cat = 1, dog = 2, and frog = 3, that does not mean dogs are “more” than cats or that frogs are three times cats. The numbers are just labels.
+
+**Ordinal variables** are categorical variables with a meaningful order, but the distances between the categories are not necessarily equal. Examples include class rank, satisfaction ratings, and Likert-scale responses such as strongly disagree to strongly agree. With ordinal variables, we can order values and often use medians, ranges, frequencies, and percentages. However, we should be cautious about assuming the distance between “strongly disagree” and “disagree” is exactly the same as the distance between “agree” and “strongly agree.”
+
+**Interval variables** are continuous variables with equal spacing between values, but no true zero point. Temperature in Celsius or Fahrenheit is a classic example. The difference between 20 and 30 degrees is the same size as the difference between 30 and 40 degrees, but 0 degrees does not mean there is no temperature. Because there is no true zero, ratio statements are not meaningful. We would not say that 40°F is twice as warm as 20°F.
+
+**Ratio variables** are continuous variables with equal spacing between values and a true zero point. Examples include reaction time, number of correct responses, time spent studying, height, weight, and frequency of a behavior. Because ratio variables have a true zero, we can make meaningful ratio statements, such as “twice as long” or “half as many.”
+
+In this course, I will usually ask you to distinguish among **nominal**, **ordinal**, and **continuous** variables. You should understand the difference between interval and ratio variables, but most of the analyses we use in jamovi treat both as continuous.
+
+::: {.callout-note title="A quick note about counts"}
+Some quantitative variables are continuous, while others are discrete counts. For example, reaction time can take on many possible decimal values, whereas number of errors is counted in whole numbers. In practice, jamovi often treats both as continuous variables, and we will usually do the same in this course.
+:::
+
+A simple way to identify variable type is to ask three questions:
+
+1.  Is this variable describing **categories** or **numbers**?
+2.  If it describes categories, is there a meaningful order? If yes, it is ordinal. If no, it is nominal.
+3.  If it describes numbers, does zero represent none of the thing being measured? If yes, it is ratio. If no, it is interval.
+
+The most important thing to remember is this: a variable's level of measurement depends on **how it is measured**, not just what it is.
+
+One semester, a student asked, “Isn't time a continuous variable?” The answer is: it depends. If time is measured as pre vs. post, it is a nominal variable with two categories. If time is measured as month of the year, it may be treated as ordinal in some contexts because the months have a meaningful sequence, although months can also be cyclical depending on the research question. If time is measured as response time, exact date, or time remaining, it is typically continuous.
+
+So “time” is not automatically one type of variable. Its level of measurement depends on the way the researcher defines and records it.
+
+Here is another example. The construct **studying** could be measured in different ways.
+
+| Name | Study_Continuous | Study_Ordinal | Study_Nominal |
+|----|---:|----|----|
+| *Name (Character)* | *Hours studied per day* | *Amount of studying* | *Studies every day?* |
+| Jesus | 5.0 | A great deal | Yes |
+| Nicky | 4.5 | A great deal | Yes |
+| Bradford | 3.2 | A moderate amount | Yes |
+| Sylvia | 1.7 | A small amount | Yes |
+| Martha | 0.2 | Rarely | Yes |
+| Lillian | 0.0 | Never | No |
+| Trayvon | 0.0 | Never | No |
+
+Notice that the same general idea can be measured as continuous, ordinal, or nominal. Hours studied per day is continuous. Amount of studying on an ordered scale is ordinal. Whether someone studies every day is nominal.
+
+This matters because different ways of measuring a variable preserve different amounts of information. In general, moving from **continuous → ordinal → nominal** reduces information. If we turn hours studied into low, medium, and high, we lose the exact differences between people. If we turn hours studied into “studied every day” versus “did not study every day,” we lose even more information.
+
+For that reason, researchers usually want to avoid collapsing variables into categories unless there is a strong reason to do so. A **mean split** or **median split**, for example, turns a continuous variable into categories such as “above average” and “below average.” This may seem convenient, but it removes information and can make analyses less precise.
+
+At the same time, “more information” does not always mean “better.” The best level of measurement depends on your research question and how the construct is most meaningfully measured.
+
+::: {.callout-note title="Why this matters"}
+Variable type determines what descriptive statistics, graphs, and analyses are appropriate. If you treat a nominal variable as continuous, you might calculate a mean that does not mean anything. If you collapse a continuous variable into categories too quickly, you may throw away information you needed.
+:::
+
+![](images/02-stats-foundations/assigning_numbers.png)
+
+::: {.callout-tip title="Check Your Understanding"}
+1.  Is “favorite color” a nominal, ordinal, interval, or ratio variable?
+2.  Is a 1–5 satisfaction rating scale nominal or ordinal? Why?
+3.  What makes ratio variables different from interval variables?
+4.  Why can’t we calculate a meaningful average for nominal data?
+5.  Give one example of each type of variable: nominal, ordinal, interval, and ratio.
+:::
+
+::: {.callout-tip collapse="true" title="Answers"}
+1.  Nominal.
+2.  Ordinal, because the responses are ordered but the spacing between values is not guaranteed to be equal.
+3.  Ratio variables have a true zero point; interval variables do not.
+4.  Because the categories do not have numerical meaning or order.
+5.  Answers will vary. For example, nominal: major; ordinal: class rank; interval: temperature in Celsius; ratio: height.
+:::
+
+## 2.3 Descriptive vs inferential statistics
+
+::: {.callout-tip title="Learning Objectives"}
+By the end of this section, you should be able to:
+
+-   distinguish between descriptive and inferential statistics
+-   explain the difference between a sample and a population
+-   explain the difference between a statistic and a parameter
+-   describe why researchers often use samples to make inferences about populations
+-   identify when a claim is descriptive versus inferential
+:::
+
+There are two broad types of statistics that we use when working with data: **descriptive statistics** and **inferential statistics**.
+
+**Descriptive statistics** are used to summarize, organize, and describe the data we have collected. They focus on the sample data in front of us. Common descriptive statistics include measures of central tendency, measures of dispersion, descriptions of shape, and visualizations such as tables and graphs.
+
+**Inferential statistics** are used when we collect data from a sample and use those data to make inferences about a larger population. Common inferential statistics include t-tests, ANOVA, correlation, chi-square tests, and regression.
+
+A **population** is the full group we are interested in understanding. A **sample** is the smaller group we actually collect data from. A **parameter** describes a population, such as the true average test score of all students in a university. A **statistic** describes a sample, such as the average test score of the students in our study. In research, we often use statistics to estimate unknown population parameters.
+
+We typically use both descriptive and inferential statistics. We use descriptive statistics to summarize our sample, and we use inferential statistics to evaluate what the sample may suggest about the population. Some studies are purely descriptive, with no attempt to generalize beyond the collected data. However, when we conduct inferential statistics, we still begin by describing the sample.
+
+![](images/02-stats-foundations/descriptive-vs-inferential.png)
+
+This can feel abstract, so let’s walk through a simple example.
+
+Imagine we are conducting a study to examine whether watching *Schitt’s Creek* (a very good show, but not helpful for studying) versus watching video lessons on studying techniques (useful, but perhaps less exciting) affects test performance in UW–Stout students.
+
+Our **population of interest** is all UW–Stout students. However, it is not feasible to collect data from every student due to time, access, and logistical constraints. Instead, we collect data from a **sample**. For simplicity, we use students from two sections of an introductory psychology course, about 80 students total. This is a **convenience sample**, not a random sample, but it works for illustrating our concepts.
+
+We randomly assign half of the students to watch *Schitt’s Creek* and the other half to watch study skills videos. One week later, all students take an exam, and we record their test scores.
+
+First, we use descriptive statistics to summarize the sample. We might create a histogram of test scores, calculate the mean score for each group, examine the standard deviation to understand variability, and check the range of scores. These summaries help us understand what the data look like.
+
+Next, we ask our research question: Which group performed better on the exam? To answer this, we use inferential statistics. We take our descriptive statistics, such as means, standard deviations, and sample sizes, and use a statistical test. In this case, we would use an independent samples t-test, which you will learn about later.
+
+Rather than calculating this by hand, we typically use statistical software like jamovi, which provides a test statistic, a *p*-value, and an effect size. These results help us evaluate whether the observed difference in our sample is larger than we would expect if there were no real difference in the population.
+
+::: {.callout-note title="Why this matters"}
+Descriptive statistics tell us what happened in the data we collected. Inferential statistics help us decide what, if anything, those data suggest about a larger population. If we confuse the two, we can easily overstate what a study shows.
+:::
+
+::: {.callout-tip title="Check Your Understanding"}
+1.  You collect data from 50 UW–Stout students and calculate the mean GPA. Is this descriptive or inferential statistics? Explain briefly.
+2.  You use those 50 students to test whether UW–Stout students have a higher GPA than the national average. Is this descriptive or inferential statistics? Explain briefly.
+3.  A researcher reports that 62% of participants preferred online classes. What type of statistic is this?
+4.  Why do we typically use both descriptive and inferential statistics in the same study?
+5.  A study includes only descriptive statistics and no inferential tests. Give one reason why that might be appropriate.
+:::
+
+::: {.callout-tip collapse="true" title="Answers"}
+1.  Descriptive. You are summarizing the sample you collected.
+2.  Inferential. You are using the sample to make a claim about a larger population.
+3.  Descriptive. It summarizes the sample data.
+4.  Descriptive statistics summarize what the sample looks like, and inferential statistics help us evaluate what the sample may suggest about the population.
+5.  Answers will vary. For example, the goal of the study may simply be to describe a group or summarize observations without making broader population claims.
+:::
+
+## 2.4 Key terms and concepts
+
+::: {.callout-tip title="Learning Objectives"}
+By the end of this section, you should be able to:
+
+-   define key research design and statistical terms used throughout the textbook
+-   distinguish between independent and dependent variables
+-   recognize common study design terms
+-   explain reliability and validity at a basic level
+-   use this section as a reference when unfamiliar terms appear later
+:::
+
+This section introduces terms that will come up throughout the book. You do not need to memorize all of them now. Instead, use this section as a reference point when you encounter these terms later.
+
+**Independent variable (IV)**: The variable that is thought to be the cause of some effect. In experimental research, it is the variable that is manipulated. It may also be called a predictor variable or exposure variable.
+
+**Dependent variable (DV)**: The variable that is thought to be affected by the independent variable. It may also be called an outcome variable. In research, this is the variable we measure.
+
+For example, if we study whether watching study skills videos improves exam performance, the type of video is the independent variable and exam performance is the dependent variable.
+
+**Confounding variable**: A variable that affects or is related to both the independent variable and dependent variable. Confounds make it harder to interpret whether the IV is actually related to changes in the DV.
+
+**Covariate**: A variable that is related to the dependent variable and may be statistically controlled in an analysis. Covariates are not usually the main focus of the study.
+
+![](images/02-stats-foundations/covariate-confounder.png)
+
+**Between-subjects design**: Participants are only exposed to one condition. In other words, there are different people in each condition.
+
+**Within-subjects design**: Participants are exposed to every condition. In other words, the same people appear in each condition. This may also be called a repeated-measures design.
+
+**Cross-sectional research**: Data are collected at one point in time. This is often non-experimental research because the independent variable is not manipulated and there is no random assignment.
+
+**Longitudinal research**: Data are collected from the same participants across multiple time points.
+
+**Correlational research**: A study in which variables are measured but not manipulated. Correlational research can tell us whether variables are related, but correlation does not establish causation. It is one necessary condition for causal inference, but it is not sufficient by itself.
+
+**Experimental research**: Research in which the independent variable is manipulated and participants are randomly assigned to conditions.
+
+**Quasi-experimental research**: Research in which the independent variable is manipulated or groups are compared, but there is no random assignment.
+
+**Random assignment**: Participants are randomly assigned to conditions. Random assignment helps reduce systematic differences between groups before the study begins.
+
+**Hypothesis**: A prediction about what we think the answer to our research question will be. In null hypothesis significance testing, we usually distinguish between the alternative hypothesis and the null hypothesis.
+
+**Alternative hypothesis**: The hypothesis that there is an effect, relationship, or difference. This is often what the researcher expects to find.
+
+**Null hypothesis**: The hypothesis that there is no effect, relationship, or difference. A special type of null hypothesis is the **nil hypothesis**, which states that the effect is exactly zero.
+
+**Falsification**: A key idea in science. We generally try to falsify hypotheses rather than prove them. In null hypothesis significance testing, we test against the null hypothesis; we do not prove the alternative hypothesis.
+
+**Theory**: A broader explanation of a behavior or phenomenon that can generate predictions about future observations.
+
+**Qualitative methods**: Methods that focus on words, meaning, interpretation, and context. Interviews, focus groups, and open-ended responses are common examples.
+
+**Quantitative methods**: Methods that focus on numerical data and statistical analysis. Surveys with numeric responses, test scores, and behavioral counts are common examples.
+
+**Reliability**: The consistency of a measure. A measure may be consistent across time, across items, or across raters. For example, a reliable scale should generally produce consistent results when the construct being measured has not changed.
+
+**Validity**: The extent to which evidence supports the interpretation and use of scores for a particular purpose. People often say validity means “measuring what you intend to measure,” which is a decent starting point, but validity is really about the quality of the inferences we make from the data.
+
+![](images/02-stats-foundations/reliability-validity.png)
+
+Some validity terms you may encounter include:
+
+-   **Construct validity**: Evidence that scores relate to the broader construct they are intended to represent.
+-   **Content validity**: Evidence that the measure adequately covers the content or domain of interest.
+-   **Convergent validity**: Evidence that scores are related to measures of theoretically similar constructs.
+-   **Discriminant validity**: Evidence that scores are not too strongly related to measures of theoretically different constructs.
+-   **Criterion validity**: Evidence that scores are related to an important outcome or criterion.
+-   **Internal validity**: Evidence that the observed relationship reflects a causal relationship rather than some other explanation.
+-   **External validity**: Evidence that findings generalize across people, settings, measures, or contexts.
+-   **Statistical conclusion validity**: Evidence that the statistical conclusions are appropriate given the design, measures, and analyses.
+
+**Systematic variation**: Variation that is introduced in a predictable or patterned way. In an experiment, we intentionally create systematic variation by assigning people to different conditions. However, systematic variation can also be unintentional, such as when one researcher is consistently warmer to participants than another researcher.
+
+**Unsystematic variation**: Random variation that is not patterned or predictable. Some amount of unsystematic variation is expected in research.
+
+**Degrees of freedom (*df*)**: The number of values that are free to vary once certain constraints are in place. The easiest way to understand this is with a simple example. If four numbers must add up to 10, the first three numbers are free to vary, but the fourth number is constrained by the values of the first three. In that case, the degrees of freedom would be 3, or *n* - 1.
+
+**Confidence interval**: A range of plausible values for a population parameter. In repeated sampling, a 95% confidence interval procedure should produce intervals that contain the true population parameter about 95% of the time. We will return to confidence intervals later.
+
+::: {.callout-note title="Why this matters"}
+Statistical tests are not just button-clicking procedures. They are connected to research design, measurement, sampling, and interpretation. These terms give us the language to explain what we did and what our results can and cannot tell us.
+:::
+
+::: {.callout-tip title="Check Your Understanding"}
+1.  In a study examining whether sleep affects exam performance, what might the IV and DV be?
+2.  What is the difference between a between-subjects design and a within-subjects design?
+3.  Why does correlation not establish causation?
+4.  What is the difference between reliability and validity?
+5.  What is one reason a confounding variable can make a study difficult to interpret?
+:::
+
+::: {.callout-tip collapse="true" title="Answers"}
+1.  The IV might be amount of sleep or sleep condition. The DV might be exam performance.
+2.  In a between-subjects design, different people are in each condition. In a within-subjects design, the same people are measured across conditions or time points.
+3.  Because the variables are measured rather than manipulated, and other variables may explain the relationship.
+4.  Reliability is consistency. Validity is about whether evidence supports the interpretation and use of scores.
+5.  A confounding variable is related to both the IV and DV, so it can provide an alternative explanation for the results.
+:::
+
+## 2.5 Putting it all together
+
+::: {.callout-tip title="Learning Objectives"}
+By the end of this section, you should be able to:
+
+-   connect variables, datasets, distributions, descriptive statistics, and inferential statistics
+-   identify appropriate descriptive summaries for different variable types
+-   explain why descriptive statistics come before inferential statistics
+-   apply the main ideas from the chapter to a simple dataset
+:::
+
+This chapter introduced the language we will use throughout the rest of the book. The most important idea is that statistical decisions depend on what your data represent.
+
+Before choosing a graph, calculating a statistic, or running a test in jamovi, ask:
+
+1.  What is my research question?
+2.  What are my variables?
+3.  How is each variable measured?
+4.  Am I describing my sample or making an inference about a population?
+5.  What does the distribution of my data look like?
+
+If you can answer those questions, you are already doing a lot of the thinking that statistics requires.
+
+Here is a quick reference for the major variable types:
+
+| Type | Description | Example | Common summaries |
+|----|----|----|----|
+| Nominal | Categories with no order | Major | Counts, frequencies, percentages |
+| Ordinal | Ordered categories | Satisfaction ratings | Frequencies, percentages, medians, ranges |
+| Continuous | Numerical values with meaningful distance between values | Test scores, reaction time | Means, standard deviations, ranges, visual distributions |
+
+And here is a quick reference for features of a distribution:
+
+| Feature | Question | Why it matters |
+|----|----|----|
+| Center | What is typical? | Helps describe the general location of the values |
+| Variability | How spread out are values? | Shows whether values are similar or very different |
+| Shape | What pattern do values form? | Helps us recognize skew, normality, and other patterns |
+| Outliers | Are there unusual values? | Can influence results and may need closer attention |
+
+A few key ideas to carry forward:
+
+-   A variable’s level of measurement depends on **how it is measured**, not just what it represents.
+-   Assigning numbers to categories does **not** make a variable continuous.
+-   Collapsing variables into categories can reduce information.
+-   Descriptive statistics help us understand the data we collected.
+-   Inferential statistics help us evaluate what our sample may suggest about a population.
+-   We should look at our data before jumping to conclusions.
+
+In the next chapters, you will begin working directly with data in jamovi. You will learn how to open datasets, check variable types, describe variables numerically, visualize distributions, and prepare data for analysis. Each of those skills builds directly on the ideas in this chapter.
+
+::: {.callout-tip title="Check Your Understanding"}
+1.  A dataset includes the following variables: major, stress rating on a 1–5 scale, and hours of sleep last night. For each variable, identify whether it is categorical or continuous and state one appropriate way to describe it.
+2.  Why is it important to correctly identify variable types before running analyses?
+3.  A researcher reports only the mean for a variable. What important information might still be missing?
+4.  Explain the difference between a statistic and a parameter.
+5.  A variable is coded as 1 = cat, 2 = dog, and 3 = frog. Why is this still not a continuous variable?
+:::
+
+::: {.callout-tip collapse="true" title="Answers"}
+1.  Major is categorical and could be described with frequencies or percentages. Stress rating is ordinal and could be described with frequencies, percentages, or a median. Hours of sleep is continuous and could be described with a mean and standard deviation.
+2.  Variable type determines what descriptive statistics, graphs, and analyses are appropriate. If a variable is classified incorrectly, the results may be misleading.
+3.  Variability, shape, range, outliers, and sample size may still be missing. The mean alone does not fully describe the data.
+4.  A statistic describes a sample, while a parameter describes a population. We often use statistics to estimate parameters.
+5.  Because the numbers are only labels for categories; they do not represent meaningful numerical quantities.
+:::
+
+::: {.callout-note title="Reflection"}
+Think about a dataset you might collect in your own field.
+
+-   What variables would you measure?
+-   Would they be categorical or continuous?
+-   What might the distribution of your data look like?
+-   What would you want to describe or compare?
+
+Taking a moment to think through these questions can help you connect these concepts to real-world data.
+:::

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.3 Descriptive vs inferential statistics | Statistics with jamovi</title>
+  <title>2.2 Types of variables and levels of measurement | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.3 Descriptive vs inferential statistics | Statistics with jamovi" />
+  <meta property="og:title" content="2.2 Types of variables and levels of measurement | Statistics with jamovi" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.3 Descriptive vs inferential statistics | Statistics with jamovi" />
+  <meta name="twitter:title" content="2.2 Types of variables and levels of measurement | Statistics with jamovi" />
   
   <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Linnell, PhD." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="types-of-variables-and-levels-of-measurement.html"/>
-<link rel="next" href="key-terms-and-concepts.html"/>
+<link rel="prev" href="describing-data.html"/>
+<link rel="next" href="descriptive-vs-inferential-statistics.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -443,50 +443,130 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="descriptive-vs-inferential-statistics" class="section level2 hasAnchor">
-<h2>2.3 Descriptive vs inferential statistics<a href="descriptive-vs-inferential-statistics.html#descriptive-vs-inferential-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="types-of-variables-and-levels-of-measurement" class="section level2 hasAnchor">
+<h2>2.2 Types of variables and levels of measurement<a href="types-of-variables-and-levels-of-measurement.html#types-of-variables-and-levels-of-measurement" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="callout-tip" title="Learning Objectives">
 <p>By the end of this section, you should be able to:</p>
 <ul>
-<li>distinguish between descriptive and inferential statistics</li>
-<li>explain the difference between a sample and a population</li>
-<li>explain the difference between a statistic and a parameter</li>
-<li>describe why researchers often use samples to make inferences about populations</li>
-<li>identify when a claim is descriptive versus inferential</li>
+<li>distinguish among nominal, ordinal, interval, and ratio variables</li>
+<li>explain why a variable’s level of measurement depends on how it is measured</li>
+<li>identify whether a variable is categorical or continuous for the purposes of analysis</li>
+<li>explain why assigning numbers to categories does not make a variable continuous</li>
+<li>explain why collapsing variables can reduce information</li>
 </ul>
 </div>
-<p>There are two broad types of statistics that we use when working with data: <strong>descriptive statistics</strong> and <strong>inferential statistics</strong>.</p>
-<p><strong>Descriptive statistics</strong> are used to summarize, organize, and describe the data we have collected. They focus on the sample data in front of us. Common descriptive statistics include measures of central tendency, measures of dispersion, descriptions of shape, and visualizations such as tables and graphs.</p>
-<p><strong>Inferential statistics</strong> are used when we collect data from a sample and use those data to make inferences about a larger population. Common inferential statistics include t-tests, ANOVA, correlation, chi-square tests, and regression.</p>
-<p>A <strong>population</strong> is the full group we are interested in understanding. A <strong>sample</strong> is the smaller group we actually collect data from. A <strong>parameter</strong> describes a population, such as the true average test score of all students in a university. A <strong>statistic</strong> describes a sample, such as the average test score of the students in our study. In research, we often use statistics to estimate unknown population parameters.</p>
-<p>We typically use both descriptive and inferential statistics. We use descriptive statistics to summarize our sample, and we use inferential statistics to evaluate what the sample may suggest about the population. Some studies are purely descriptive, with no attempt to generalize beyond the collected data. However, when we conduct inferential statistics, we still begin by describing the sample.</p>
-<p><img src="images/02-stats-foundations/descriptive-vs-inferential.png" /></p>
-<p>This can feel abstract, so let’s walk through a simple example.</p>
-<p>Imagine we are conducting a study to examine whether watching <em>Schitt’s Creek</em> (a very good show, but not helpful for studying) versus watching video lessons on studying techniques (useful, but perhaps less exciting) affects test performance in UW–Stout students.</p>
-<p>Our <strong>population of interest</strong> is all UW–Stout students. However, it is not feasible to collect data from every student due to time, access, and logistical constraints. Instead, we collect data from a <strong>sample</strong>. For simplicity, we use students from two sections of an introductory psychology course, about 80 students total. This is a <strong>convenience sample</strong>, not a random sample, but it works for illustrating our concepts.</p>
-<p>We randomly assign half of the students to watch <em>Schitt’s Creek</em> and the other half to watch study skills videos. One week later, all students take an exam, and we record their test scores.</p>
-<p>First, we use descriptive statistics to summarize the sample. We might create a histogram of test scores, calculate the mean score for each group, examine the standard deviation to understand variability, and check the range of scores. These summaries help us understand what the data look like.</p>
-<p>Next, we ask our research question: Which group performed better on the exam? To answer this, we use inferential statistics. We take our descriptive statistics, such as means, standard deviations, and sample sizes, and use a statistical test. In this case, we would use an independent samples t-test, which you will learn about later.</p>
-<p>Rather than calculating this by hand, we typically use statistical software like jamovi, which provides a test statistic, a <em>p</em>-value, and an effect size. These results help us evaluate whether the observed difference in our sample is larger than we would expect if there were no real difference in the population.</p>
-<div class="callout-note" title="Why this matters">
-<p>Descriptive statistics tell us what happened in the data we collected. Inferential statistics help us decide what, if anything, those data suggest about a larger population. If we confuse the two, we can easily overstate what a study shows.</p>
+<p>In Section 2.1, we introduced variables as things we measure or record that can vary across observations. Now we need to get more specific. Variables can be measured at different <strong>levels of measurement</strong>, and those levels help us decide what kinds of summaries, graphs, and analyses are appropriate.</p>
+<p><img src="images/01-intro/Levels%20of%20measurement.png" /></p>
+<p>Broadly, variables are either <strong>categorical</strong> or <strong>continuous</strong>. Categorical variables describe groups or categories. Continuous variables represent quantities or amounts. We can refine those broad categories into four levels of measurement: nominal, ordinal, interval, and ratio.</p>
+<p><strong>Nominal variables</strong> are categorical variables with no inherent order. Examples include major, treatment group, eye color, type of pet, or whether someone is an athlete. A special type of nominal variable has only two categories, such as yes/no or present/absent. These are often called <strong>dichotomous</strong>, <strong>binary</strong>, or <strong>dummy-coded</strong> variables.</p>
+<p>With nominal variables, we can count how many observations fall into each category and calculate percentages. We cannot meaningfully order or average the values. If I code cat = 1, dog = 2, and frog = 3, that does not mean dogs are “more” than cats or that frogs are three times cats. The numbers are just labels.</p>
+<p><strong>Ordinal variables</strong> are categorical variables with a meaningful order, but the distances between the categories are not necessarily equal. Examples include class rank, satisfaction ratings, and Likert-scale responses such as strongly disagree to strongly agree. With ordinal variables, we can order values and often use medians, ranges, frequencies, and percentages. However, we should be cautious about assuming the distance between “strongly disagree” and “disagree” is exactly the same as the distance between “agree” and “strongly agree.”</p>
+<p><strong>Interval variables</strong> are continuous variables with equal spacing between values, but no true zero point. Temperature in Celsius or Fahrenheit is a classic example. The difference between 20 and 30 degrees is the same size as the difference between 30 and 40 degrees, but 0 degrees does not mean there is no temperature. Because there is no true zero, ratio statements are not meaningful. We would not say that 40°F is twice as warm as 20°F.</p>
+<p><strong>Ratio variables</strong> are continuous variables with equal spacing between values and a true zero point. Examples include reaction time, number of correct responses, time spent studying, height, weight, and frequency of a behavior. Because ratio variables have a true zero, we can make meaningful ratio statements, such as “twice as long” or “half as many.”</p>
+<p>In this course, I will usually ask you to distinguish among <strong>nominal</strong>, <strong>ordinal</strong>, and <strong>continuous</strong> variables. You should understand the difference between interval and ratio variables, but most of the analyses we use in jamovi treat both as continuous.</p>
+<div class="callout-note" title="A quick note about counts">
+<p>Some quantitative variables are continuous, while others are discrete counts. For example, reaction time can take on many possible decimal values, whereas number of errors is counted in whole numbers. In practice, jamovi often treats both as continuous variables, and we will usually do the same in this course.</p>
 </div>
+<p>A simple way to identify variable type is to ask three questions:</p>
+<ol style="list-style-type: decimal">
+<li>Is this variable describing <strong>categories</strong> or <strong>numbers</strong>?</li>
+<li>If it describes categories, is there a meaningful order? If yes, it is ordinal. If no, it is nominal.</li>
+<li>If it describes numbers, does zero represent none of the thing being measured? If yes, it is ratio. If no, it is interval.</li>
+</ol>
+<p>The most important thing to remember is this: a variable’s level of measurement depends on <strong>how it is measured</strong>, not just what it is.</p>
+<p>One semester, a student asked, “Isn’t time a continuous variable?” The answer is: it depends. If time is measured as pre vs. post, it is a nominal variable with two categories. If time is measured as month of the year, it may be treated as ordinal in some contexts because the months have a meaningful sequence, although months can also be cyclical depending on the research question. If time is measured as response time, exact date, or time remaining, it is typically continuous.</p>
+<p>So “time” is not automatically one type of variable. Its level of measurement depends on the way the researcher defines and records it.</p>
+<p>Here is another example. The construct <strong>studying</strong> could be measured in different ways.</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th align="right">Study_Continuous</th>
+<th>Study_Ordinal</th>
+<th>Study_Nominal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Name (Character)</em></td>
+<td align="right"><em>Hours studied per day</em></td>
+<td><em>Amount of studying</em></td>
+<td><em>Studies every day?</em></td>
+</tr>
+<tr class="even">
+<td>Jesus</td>
+<td align="right">5.0</td>
+<td>A great deal</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Nicky</td>
+<td align="right">4.5</td>
+<td>A great deal</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Bradford</td>
+<td align="right">3.2</td>
+<td>A moderate amount</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Sylvia</td>
+<td align="right">1.7</td>
+<td>A small amount</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Martha</td>
+<td align="right">0.2</td>
+<td>Rarely</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Lillian</td>
+<td align="right">0.0</td>
+<td>Never</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Trayvon</td>
+<td align="right">0.0</td>
+<td>Never</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Notice that the same general idea can be measured as continuous, ordinal, or nominal. Hours studied per day is continuous. Amount of studying on an ordered scale is ordinal. Whether someone studies every day is nominal.</p>
+<p>This matters because different ways of measuring a variable preserve different amounts of information. In general, moving from <strong>continuous → ordinal → nominal</strong> reduces information. If we turn hours studied into low, medium, and high, we lose the exact differences between people. If we turn hours studied into “studied every day” versus “did not study every day,” we lose even more information.</p>
+<p>For that reason, researchers usually want to avoid collapsing variables into categories unless there is a strong reason to do so. A <strong>mean split</strong> or <strong>median split</strong>, for example, turns a continuous variable into categories such as “above average” and “below average.” This may seem convenient, but it removes information and can make analyses less precise.</p>
+<p>At the same time, “more information” does not always mean “better.” The best level of measurement depends on your research question and how the construct is most meaningfully measured.</p>
+<div class="callout-note" title="Why this matters">
+<p>Variable type determines what descriptive statistics, graphs, and analyses are appropriate. If you treat a nominal variable as continuous, you might calculate a mean that does not mean anything. If you collapse a continuous variable into categories too quickly, you may throw away information you needed.</p>
+</div>
+<p><img src="images/02-stats-foundations/assigning_numbers.png" /></p>
 <div class="callout-tip" title="Check Your Understanding">
 <ol style="list-style-type: decimal">
-<li>You collect data from 50 UW–Stout students and calculate the mean GPA. Is this descriptive or inferential statistics? Explain briefly.</li>
-<li>You use those 50 students to test whether UW–Stout students have a higher GPA than the national average. Is this descriptive or inferential statistics? Explain briefly.</li>
-<li>A researcher reports that 62% of participants preferred online classes. What type of statistic is this?</li>
-<li>Why do we typically use both descriptive and inferential statistics in the same study?</li>
-<li>A study includes only descriptive statistics and no inferential tests. Give one reason why that might be appropriate.</li>
+<li>Is “favorite color” a nominal, ordinal, interval, or ratio variable?</li>
+<li>Is a 1–5 satisfaction rating scale nominal or ordinal? Why?</li>
+<li>What makes ratio variables different from interval variables?</li>
+<li>Why can’t we calculate a meaningful average for nominal data?</li>
+<li>Give one example of each type of variable: nominal, ordinal, interval, and ratio.</li>
 </ol>
 </div>
 <div class="callout-tip" collapse="true" title="Answers">
 <ol style="list-style-type: decimal">
-<li>Descriptive. You are summarizing the sample you collected.</li>
-<li>Inferential. You are using the sample to make a claim about a larger population.</li>
-<li>Descriptive. It summarizes the sample data.</li>
-<li>Descriptive statistics summarize what the sample looks like, and inferential statistics help us evaluate what the sample may suggest about the population.</li>
-<li>Answers will vary. For example, the goal of the study may simply be to describe a group or summarize observations without making broader population claims.</li>
+<li>Nominal.</li>
+<li>Ordinal, because the responses are ordered but the spacing between values is not guaranteed to be equal.</li>
+<li>Ratio variables have a true zero point; interval variables do not.</li>
+<li>Because the categories do not have numerical meaning or order.</li>
+<li>Answers will vary. For example, nominal: major; ordinal: class rank; interval: temperature in Celsius; ratio: height.</li>
 </ol>
 </div>
 </div>
@@ -495,8 +575,8 @@
           </div>
         </div>
       </div>
-<a href="types-of-variables-and-levels-of-measurement.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="key-terms-and-concepts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="describing-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="descriptive-vs-inferential-statistics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

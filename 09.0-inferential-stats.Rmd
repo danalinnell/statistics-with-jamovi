@@ -1,49 +1,169 @@
 # 9. Inferential statistics
 
-We've learned about hypothesis testing for inferential statistics two chapters ago and learned about some specific components of statistical testing in the last chapter. We have alluded to the fact that there are multiple inferential statistics we can perform, and that is the purpose of this chapter.
+In Chapter 7, we introduced the framework for hypothesis testing, and in Chapter 8, we explored the key components that influence our ability to detect effects (BEAN: power, effect size, alpha, and sample size).
 
-Although there are many more types, we are going to cover two basic types of inferential statistics:
+At this point, you may be wondering:
 
-1.  **Parametric statistics**, which have an assumption of normal distribution
-2.  **Non-parametric statistics**, which have no assumptions about the distribution of the data
+> *How do I actually choose which statistical test to use?*
+
+That is the focus of this chapter.
+
+There are many different inferential statistical tests, and each is designed to answer a specific type of research question. Choosing the correct test depends on:
+
+-   the type of variables you are working with\
+-   the structure of your data\
+-   the assumptions of the statistical test
+
+------------------------------------------------------------------------
+
+### Types of inferential statistics
+
+Broadly, inferential tests can be grouped into two categories:
+
+1.  **Parametric statistics**: Assume certain characteristics about the data (e.g., normality)\
+2.  **Non-parametric statistics**: Make fewer or different assumptions about the data
+
+These distinctions will become important when deciding which test is appropriate and what to do when assumptions are not met.
+
+------------------------------------------------------------------------
+
+### What this chapter will cover
+
+In this chapter, we focus on three key skills:
+
+1.  **Choosing the correct inferential test**
+    -   Based on your research question and variables
+2.  **Understanding and checking assumptions**
+    -   What assumptions are\
+    -   Why they matter\
+    -   How to evaluate them
+3.  **Responding to violated assumptions**
+    -   What to do when assumptions are not met\
+    -   When to use alternative approaches (e.g., non-parametric tests)
+
+------------------------------------------------------------------------
+
+### Connecting back to the 4-step framework
+
+This chapter builds directly on the 4-step hypothesis testing framework from Chapter 7:
+
+1.  Look at the data\
+2.  Check assumptions ← *major focus of this chapter*\
+3.  Perform the test\
+4.  Interpret the results
+
+> Choosing the correct test and checking assumptions are critical steps that ensure your results are valid and meaningful.
+
+------------------------------------------------------------------------
+
+### Looking ahead
+
+In the following chapters, we will apply these ideas to specific statistical tests (e.g., t-tests, ANOVA, correlation). This chapter provides the foundation you need to make informed decisions about which test to use and whether its results can be trusted.
 
 ## 9.1 Choosing the correct test
 
-It is important that you learn how to identify *which* inferential statistic you should perform. This chart can help you determine what statistical test to perform. Note that on the right dark red boxes are parametric tests, light red boxes are non-parametric tests, and white boxes will not be covered in this class at all (in fact, there are many others not even shown that we won't cover!). Data types are indicated in either blue (continuous), green (categorical), or teal (both). Number of variables or levels of the variables are either 1 (light orange), 2/2+ (orange), or 3+ (dark orange). Between-subjects designs, meaning designs with different participants in each group, are in black whereas within-subjects designs, meaning designs with the same participants in each group, are in light grey.
+It is important that you learn how to identify *which* inferential statistic you should perform. This chart can help you determine what statistical test to perform. Note that on the right dark red boxes are parametric tests, light red boxes are non-parametric tests, and white boxes will not be covered in this class at all (in fact, there are many others not even shown that we won't cover!). are indicated in either blue (continuous), green (categorical), or teal (both). Number of variables or levels of the variables are either 1 (light orange), 2/2+ (orange), or 3+ (dark orange). Between-subjects designs, meaning designs with different participants in each group, are in black whereas within-subjects designs, meaning designs with the same participants in each group, are in light grey.
+
+It is important that you learn how to identify *which* inferential statistic you should perform. In this course, we will focus on a structured way of making that decision.
+
+Before looking at specific tests, remember:
+
+> Choosing the correct test is part of **Step 2: Check assumptions** and **Step 3: Perform the test** in our 4-step framework.
+
+------------------------------------------------------------------------
+
+### A decision tool for choosing tests
+
+The chart below can help you determine which statistical test to perform.
+
+-   **Dark red boxes** = parametric tests\
+-   **Light red boxes** = non-parametric tests\
+-   **White boxes** = not covered in this course
+
+Data types: - **Blue** = continuous variables\
+- **Green** = categorical variables\
+- **Teal** = both
+
+Number of variables or levels of the variables: - **Light orange** = one\
+- **Orange** = two\
+- **Dark orange** = three or more
+
+Type of design: - **Black** = between-subjects designs (different participants)\
+- **Light grey** = within-subjects designs (same participants)
 
 ![](images/Statistical%20Choices.png)
-
-Note: if you are a student in PSYC 290 or 790, you have access to a high-resolution PDF of this chart on Canvas.
-
-:::{.info data-latex=""}
-You may find it helpful to first think whether you have a between-subjects or a within-subjects design. If you have groups, are participants in the same conditions (within-subjects) or different conditions (between-subjects)? Then that narrows down the possibility of what inferential statistic you would use. For example, if you know you have a repeated measures design with only one IV, then it's either a dependent t-test or repeated measures ANOVA depending on whether there are 2 or 3+ categories to the IV.
-:::
-
-First, you need to determine what level of measurement your dependent variable (DV) is. We will only be covering statistical tests that have *one* dependent variable. Therefore, you need to know whether the variable is categorical (i.e., nominal or ordinal) or it's continuous (i.e., interval or ratio).
-
-:::{.info data-latex=""}
-Go back to Chapter 2 "Levels of Measurement" to refresh yourself on the difference between categorical and continous variables! This is very important information to remember throughout this course. Furthermore, you need to know exactly how things are measured or manipulated to determine the level of measurement. 
-:::
-
-Next, you need to determine how many independent variables (IVs) there are and then what level of measurement your IV(s) are. In the case of a single categorical IV, we also need to know how many levels there are to the IV (i.e., how many categories there are). For categorical variables, we also need to know if the participants are different (i.e., between-subjects) or the same (i.e., within-subjects) within each level of the category.
-
-Lastly, for many of the statistical tests we need to know whether we meet the assumptions of parametric tests. If we don't meet the assumption, then there are alternative tests we can perform. We'll learn about assumption checking in the next section of this chapter.
-
-:::{.info data-latex=""}
-Checking assumptions is very important to know which exact test to perform. For now, we'll assume the assumptions are met, but we'll learn more about checking assumptions in the next chapter.
-:::
 
 Another tool that can help you determine the statistical test you want to perform is <https://stathand.net/>
 
 ------------------------------------------------------------------------
 
-We can both *forward map* and *backwards map* with the chart above.
+### A step-by-step approach
 
-Forward mapping involves understanding your data and your research question and then determining what statistical test to perform. Forward mapping is mostly what you need to understand how to do!
+Rather than trying to memorize the chart, use the following process:
 
-Backwards mapping involves determining what kind of data is needed to perform a particular statistical test. This is more for educational and understanding purposes and generally is not how you analyze data. You may also use it to justify which statistical test you performed.
+::: {.info data-latex=""}
+Instead of following the chart, you may also find it helpful to first think whether you have a between-subjects or a within-subjects design. If you have groups, are participants in the same conditions (within-subjects) or different conditions (between-subjects)? Then that narrows down the possibility of what inferential statistic you would use. For example, if you know you have a repeated measures design with only one IV, then it's either a dependent t-test or repeated measures ANOVA depending on whether there are 2 or 3+ categories to the IV.
+:::
 
-Let's do some examples of forwards mapping. You may want to read the example and try your hand at it first and then check your answers!
+#### Step 1: Identify your dependent variable (DV)
+
+In this textbook, we will only be working with **one dependent variable**.
+
+Ask: - Is your DV **categorical** (nominal/ordinal)?\
+- Or **continuous** (interval/ratio)?
+
+::: info
+Go back to Chapter 2 “Levels of Measurement” if you need a refresher. This is one of the most important concepts for choosing the correct test.
+:::
+
+------------------------------------------------------------------------
+
+#### Step 2: Identify your independent variable(s) (IVs)
+
+Ask: - How many IVs do you have?\
+- What type are they (categorical or continuous)?
+
+If you have a categorical IV: - How many **levels** (groups) are there?
+
+------------------------------------------------------------------------
+
+#### Step 3: Determine your design
+
+Ask: - Are the **same participants** in each condition? → within-subjects\
+- Are **different participants** in each condition? → between-subjects
+
+::: info
+A helpful starting point is to ask:\
+“Can participants be in more than one condition?”
+
+-   Yes → within-subjects\
+-   No → between-subjects\
+:::
+
+------------------------------------------------------------------------
+
+#### Step 4: Consider assumptions
+
+For now, assume that assumptions are met. Later in this chapter, we will learn how to check them.
+
+If assumptions are violated, we may need to use a **non-parametric alternative**.
+
+::: info
+We will return to assumption checking in Section 9.2.
+:::
+
+------------------------------------------------------------------------
+
+### Choosing tests: Forward vs backward mapping
+
+We can use the chart in two ways:
+
+-   **Forward mapping**: Start with your data and determine the test\
+-   **Backward mapping**: Start with a test and determine what data it requires
+
+> Forward mapping is what you will use most often.
+
+------------------------------------------------------------------------
 
 ### Forward mapping: Choose the correct test
 
@@ -52,48 +172,44 @@ library(vembedr)
 embed_url("https://www.youtube.com/watch?v=Q9sbIMCck1Q")
 ```
 
-A researcher is interested in understanding whether athletes have higher English scores than non-athletes. In other words, what is the effect of athletic status on English test scores?
+#### Example 1
 
-1.  What is the DV? What is the level of measurement? It's English test scores, which is a continuous variable.
+A researcher is interested in understanding whether athletes have higher English scores than non-athletes.
 
-2.  How many IVs are there? We only have one IV, and it is athletic status.
+1.  **DV**: English test scores → continuous
+2.  **IVs**: One → athletic status
+3.  **IV type**: Categorical
+4.  **Levels**: 2 (athlete vs non-athlete)
+5.  **Design**: Between-subjects (participants cannot be both)
+6.  **Assumptions**: Assume met
 
-3.  What is the level of measurement of the IV? Athletic status is a categorical variable.
+**Statistical test → Independent t-test**
 
-4.  How many categories to the IV? Athletic status is measured as either athlete or non-athlete, so there are 2 levels.
+### Example 2
 
-5.  Are the same or different participants used in each category? People can either be an athlete or not an athlete, but they can't be both, so this is a between-subjects variable (aka "different").
+A researcher is interested in whether people perform better on exams at the start, middle, or end of the semester. All participants complete all three exams.
 
-6.  Do data meet the assumptions for parametric tests? We don't know. We would need to test this. For now, let's assume we meet the assumptions.
+1.  **DV**: Exam score → continuous
+2.  **IVs**: One → time
+3.  **IV type**: Categorical
+4.  **Levels**: 3 (start, middle, end)
+5.  **Design**: Within-subjects (same participants)
+6.  **Assumptions**: Assume met
 
-7.  Statistical test? Independent t-test
+**Statistical test → One-way repeated measures ANOVA**
 
-A researcher is interested to know whether people perform better on the exam at the start, middle, or end of the semester. The researchers has all participants complete all three exams.
-
-1.  What is the DV? What is the level of measurement? In this case, the exam is our DV and it's a continuous variable.
-
-2.  How many IVs are there? We only have one IV, and it is time of the exam.
-
-3.  What is the level of measurement of the IV? The time of the exam is a categorical variable.
-
-4.  How many categories to the IV? Type of test has three categories: start, middle, or end of the semester.
-
-5.  Are the same or different participants used in each category? Although the researcher could have designed a between-subjects design, this particular study has all participants participate in all conditions, so it is a within-subjects design (aka "same").
-
-6.  Do data meet the assumptions for parametric tests? We don't know. We would need to test this. For now, let's assume we meet the assumptions.
-
-7.  Statistical test? One-way repeated measures ANOVA
+------------------------------------------------------------------------
 
 ### Backwards map: Determine the data you need
 
-Let me start off by saying we don't normally do this. We perform the test based on the data we have. But in our learning, we also want to ensure we learn all the tests. Imagine I gave you a dataset and wanted you to perform two different tests that I told you about.
+We don’t typically do this in practice, but it helps you understand the tests.
 
-Here are the variables in the dataset:
+Imagine I gave you a dataset and wanted you to perform two different tests that I told you about. Here are the variables in the dataset:
 
-1.  Mile time (continuous variable ranging from 5-30 minutes)
-2.  BMI (categorical variable of underweight, normal, or overweight)
-3.  Happiness at the start of the semester (continuous variable ranging from 0-10)
-4.  Happiness at the end of the semester (continuous variable ranging from 0-10)
+1.  Mile time (ranging from 5-30 minutes)
+2.  BMI (underweight, normal, or overweight)
+3.  Happiness at the start of the semester (ranging from 0-10 where 0 is not at all happy and 10 is extremely happy)
+4.  Happiness at the end of the semester (ranging from 0-10 where 0 is not at all happy and 10 is extremely happy)
 
 If I told you I wanted you to perform a dependent t-test, what data would you use?
 
@@ -108,3 +224,39 @@ If I told you I wanted you to perform a one-way independent ANOVA, what data wou
 2.  We only have three continuous variables: mile time and our two happiness variables.
 3.  We only have one categorical variable (BMI), and it has 3 levels: underweight, normal, overweight.
 4.  Now this is where we need to think critically. What would be the most interesting test here? How BMI affects happiness or how BMI affects mile time? Weight and performance on running a mile seem to make most sense here. Therefore, we could look at how BMI affects mile time. Though keep in mind we are not randomizing here and so this is *not* an experimental design!
+
+### Check your understanding
+
+1. What is the first thing you should identify when choosing an inferential test?  
+
+2. Why is it important to determine whether your design is within-subjects or between-subjects?  
+
+3. A researcher measures test scores (continuous) for two groups of students (online vs in-person), with different students in each group.  
+   → What statistical test would you use?
+
+4. A researcher measures heart rate (continuous) for the same participants before and after exercise.  
+   → What statistical test would you use?
+
+5. A researcher measures satisfaction (continuous) across three different teaching methods, with different students in each group.  
+   → What statistical test would you use?
+
+6. A researcher measures satisfaction (continuous) across three time points (beginning, middle, end of semester) using the same participants.  
+   → What statistical test would you use?
+
+::: {.callout-answer collapse="true"}
+1. The dependent variable and its level of measurement  
+
+2. Because it determines which statistical tests are appropriate  
+
+3. Independent samples t-test  
+   - Continuous DV, 1 categorical IV (2 levels), between-subjects  
+
+4. Dependent (paired) t-test  
+   - Continuous DV, 2 levels, within-subjects  
+
+5. One-way independent ANOVA  
+   - Continuous DV, 1 categorical IV (3+ levels), between-subjects  
+
+6. One-way repeated measures ANOVA  
+   - Continuous DV, 1 categorical IV (3+ levels), within-subjects  
+:::

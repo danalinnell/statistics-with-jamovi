@@ -1,54 +1,126 @@
 ## 9.3 Violated assumptions
 
-What do you do if you have violated assumptions? Let's first talk about the assumptions we don't test (interval/ratio data and independent scores) before we turn to the other two assumptions (normality and homogeneity of variance).
+In the previous section, we learned how to identify and evaluate the assumptions of parametric tests.
+
+But what happens when those assumptions are **not** met?
+
+> Violations of assumptions are common—and they do not mean your analysis is “ruined.”
+
+Instead, they require you to make thoughtful decisions about how to proceed.
+
+------------------------------------------------------------------------
+
+### A general approach
+
+When an assumption is violated, you have several options depending on:
+
+-   the type of violation
+-   the severity of the violation
+-   your research goals
+
+Broadly, your options include:
+
+-   choosing a different statistical test
+-   modifying your data (carefully and transparently)
+-   using alternative approaches that are more appropriate for your data
+
+In this section, we will walk through what to do for each assumption. This [video](https://www.youtube.com/watch?v=ypF1omeM-7g) also walks through the chapter.
 
 ```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://www.youtube.com/watch?v=ypF1omeM-7g")
 ```
 
+------------------------------------------------------------------------
+
 ### Interval/ratio data
 
-If you are trying to perform a statistical test with a categorical DV, the answer is simple: perform the test that requires a categorical DV and do not try to treat it as continuous. For example, if you have an ordinal DV and a categorical IV, you can perform a chi-square. If you have an ordinal DV and a continuous IV, you can perform a logistic regression (we won't be covering that in this class). Go back to the section on choosing the correct statistical test and you'll see four options of statistical tests that can be performed with a categorical DV.
+If you are trying to perform a statistical test with a categorical DV, the answer is simple:
+
+> Use a statistical test that is appropriate for a categorical dependent variable.
+
+Do **not** try to treat a categorical variable as continuous.
+
+For example:
+
+-   Ordinal DV + categorical IV → chi-square\
+-   Ordinal DV + continuous IV → logistic regression (not covered in this course)
+
+Refer back to Section 9.1 to identify appropriate tests for categorical outcomes.
+
+------------------------------------------------------------------------
 
 ### Independent data
 
-We won't be covering it in this class, but if you violate this assumption then you need to use a statistical test that accounts for nested data or can correlate the errors among dependent data. For example, multilevel modeling (aka hierarchical modeling) is one approach.
+If you violate the assumption of independence, this is a **design issue**, not a data issue.
+
+This typically occurs with **nested or clustered data**, such as:
+
+-   students within classrooms\
+-   employees within organizations
+
+In these cases, you need statistical methods that account for dependence, such as:
+
+-   multilevel modeling (hierarchical modeling)
+
+We will not cover these methods in this course, but it is important to recognize:
+
+> Violations of independence cannot be “fixed” with simple data adjustments.
+
+------------------------------------------------------------------------
 
 ### Normality or homogeneity of variance
 
-If you violate either normality or homogeneity of variance, there are a few options you can choose.
+If you violate either normality or homogeneity of variance, you have several options:
 
-:::{.info data-latex=""}
+A.  Remove outliers
+B.  Winsorize or trim the data
+C.  Transform the data
+D.  Perform a non-parametric test
 
-Something I commonly hear from students when they read this section is whether this isn't messing with our data and making it invalid. However, outliers and non-normal data do not play nicely with our inferential statistics, so what we are doing is making our data more appropriate for our tests. Whatever changes we make should be transparently reported so that our readers and reviewers can critically examine our methods. 
+::: info
+A common concern is whether modifying data “invalidates” the analysis.
+
+Outliers and non-normal data can distort statistical results. Adjusting data is often about making it more appropriate for the assumptions of the test. Any changes should be transparently reported so others can evaluate your decisions.
 :::
 
-#### Remove outliers
+#### A: Remove outliers
 
-First, double check that you do not have any outliers. How do you know if data is an outlier? To look for outliers in single variables (aka univariate outliers), you can just look at your data. To look for multivariate outliers (outliers across multiple variables), you can look at Mahalanobis distance or Cook's distance, which you would need to use the Rj editor to perform in jamovi and we won't cover in this class.
+Before doing anything else, check for outliers.
 
-What can you do in case of outliers?
+- **Univariate outliers** → examine individual variables  
+- **Multivariate outliers** → require more advanced methods (e.g., Mahalanobis distance, Cook’s distance; not covered here)
 
-1.  Ignore them, but this is not a good solution
-2.  Delete the outlier cases, but this is not recommended either because you lose data and we now know how important it is to have a large sample size
-3.  Winsorize, trim, or modify your data, especially if there are only a few outliers
-4.  Transform the variable, especially if there are a lot of outliers
+What can you do with outliers?
 
-#### Winsorize or trim the data
+1. Ignore them: not recommended  
+2. Delete them: generally not recommended (loss of data)  
+3. Winsorize or trim: often appropriate for a few extreme values  
+4. Transform the variable: useful when many outliers exist  
 
-Winsorizing is used when both tails of the distribution have outliers whereas trimming is used when it's just one or a few outliers on one side of the distribution. In both cases, we replace the extreme valuse with the next-most-extreme values. There's more to Winsorizing than what I've described here, so I encourage you to learn more if you are interested.
+#### B. Winsorize or trim the data
 
-We can do this through the Transform feature on jamovi. For example, here's what it looks like to trim the Reading variable to get rid of the few scores on the far left of the histogram. We want to take those values less than 60 and replace their scores with a new score of 60. If we were winsorizing on both ends, we might take values greater than 100 and replace with 100.
+- **Winsorizing** → used when both tails have outliers  
+- **Trimming** → used when outliers are on one side of the distribution of data (e.g., the high or low end but not both) 
+
+In both cases, extreme values are replaced with less extreme values.
+
+In jamovi, this can be done using the **Transform** feature.
+
+Example:
+- Replace values < 60 with 60 (trimming)  
+- Replace values > 100 with 100 and values < 20 with 20 (winsorizing)  
 
 ![](images/03-jamovi/winsorize.png)
 
-#### Transforming data
+#### C. Transforming data
 
-If we violate the assumption of normality or homogeneity of variance (or both!) then we can explore whether transformations of the entire variable can improve the normality of our data. There are a variety of different transformations you can try, and here's a list of a few:
+If violations persist, you can transform the entire variable.
+
+Common transformations:
 
 +---------------+------------------------------------------+-----------------------------+-----------------------------+---------------------------------+
-| Name          | Syntax                                   | Corrects for positive skew? | Corrects for negative skew? | Corrects for unequal variances? |
+| Name          | Syntax                                   | Corrects positive skew?     | Corrects negative skew?     | Helps unequal variances?        |
 +===============+==========================================+=============================+=============================+=================================+
 | Log           | log(X)                                   | Yes                         | No                          | Yes                             |
 +---------------+------------------------------------------+-----------------------------+-----------------------------+---------------------------------+
@@ -56,16 +128,61 @@ If we violate the assumption of normality or homogeneity of variance (or both!) 
 +---------------+------------------------------------------+-----------------------------+-----------------------------+---------------------------------+
 | Reciprocal    | 1/X                                      | Yes                         | No                          | Yes                             |
 +---------------+------------------------------------------+-----------------------------+-----------------------------+---------------------------------+
-| Reverse Score | (1+MAX) - X\                             | No                          | Yes                         | No                              |
-|               | then do one of the above transformations |                             |                             |                                 |
+| Reverse Score | (1+MAX) - X, then transform              | No                          | Yes                         | No                              |
 +---------------+------------------------------------------+-----------------------------+-----------------------------+---------------------------------+
 
-When you perform a transformation, then you need to check whether the transformation actually improved the situation. How do you do that? Check normality and homogeneity of variance again with your newly transformed data! You should check with the 4 methods to test for normality and 2 methods to test for homogeneity of variance.
+After transforming your data:
 
-#### Non-parametric tests
+> You must re-check assumptions using your new variable.
 
-If all else fails--meaning there are no outliers or no transformations fix the violated assumption(s)--then you can perform a non-parametric test. These tests have *no* assumption of normally distributed data or homogeneity of variance! As you saw in the chart about choosing the correct statistical test, many of our parametric tests have non-parametric equivalents.
+#### D. Non-parametric tests
 
-You might wonder why we don't just use non-parametric tests and just get rid of all these parametric tests. However, if we meet our assumptions then the parametric test will be more capable of detecting effects if they exist compared to non-parametric tests. When we don't meet assumptions, then the non-parametric tests will be more capable of detecting effects.
+If transformations and adjustments do not resolve the issue, you can use a **non-parametric test**.
 
-When we cover each individual statistical test (e.g., independent t-test) we will also cover its non-parametric equivalent (e.g., Mann-Whitney test). So stay tuned and just remember you have this option if you violate assumptions!
+Non-parametric tests:
+
+- Do not rely on normality  
+- Are more robust to violations  
+- Often have lower statistical power when assumptions *are* met  
+
+> Parametric tests are preferred when assumptions are met, but non-parametric tests are more appropriate when assumptions are violated.
+
+As we move into specific statistical tests, you will learn the non-parametric equivalents (e.g., Mann–Whitney instead of independent t-test).
+
+---
+
+## Putting it all together
+
+When assumptions are violated, think through your options in order:
+
+1. Check for and address outliers  
+2. Consider transformations  
+3. If needed, use a non-parametric alternative  
+
+> There is no single “correct” solution—your goal is to make a justified and transparent decision.
+
+---
+
+## Check your understanding
+
+1. What should you do if your dependent variable is categorical but you planned to use a parametric test?  
+
+2. Why is violating independence different from violating normality?  
+
+3. What is one advantage and one disadvantage of removing outliers?  
+
+4. When would you use a transformation instead of winsorizing?  
+
+5. When should you use a non-parametric test?  
+
+::: {.callout-answer collapse="true"}
+1. Use a statistical test appropriate for a categorical dependent variable  
+
+2. Because independence is a design issue and cannot be fixed through simple data adjustments  
+
+3. Advantage: removes extreme influence; Disadvantage: reduces sample size  
+
+4. When there are many outliers or a skewed distribution across the entire variable  
+
+5. When assumptions are violated and cannot be resolved through other methods  
+:::
