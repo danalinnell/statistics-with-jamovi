@@ -1,0 +1,41 @@
+# 2. Statistics Foundations
+
+```{r, echo = FALSE, message=FALSE}
+library(tidyverse, webshot)
+```
+
+This chapter introduces some of the statistical language we will use throughout the book. You do not need to memorize every term right now. Instead, focus on understanding the big ideas: what data are, what kinds of variables we work with, how we describe data, and how we use samples to make inferences about populations.
+
+You will come back to these ideas again and again. If something does not fully click the first time through, that is okay. The goal here is to build a foundation we can keep returning to.
+
+As you read, pay special attention to the examples. In statistics, the same word can mean different things depending on how something is measured. For example, “time” might be categorical in one study and continuous in another. That is why I want you to focus less on memorizing definitions and more on asking: What does this variable actually represent?
+
+## What You’ll Learn
+
+By the end of this chapter, you should be able to:
+
+-   explain how data are used to answer research questions
+-   recognize how datasets are organized into rows and columns
+-   distinguish among nominal, ordinal, interval, and ratio variables
+-   explain the difference between descriptive and inferential statistics
+-   use key statistical terms that will appear throughout the textbook
+
+## Chapter Sections
+
+- [2.1 Describing Data](02.1-describing-data.qmd): Introduces what data are, how we summarize them, and why descriptive statistics matter.
+
+- [2.2 Types of Variables and Levels of Measurement](02.2-types-of-variables-levels-of-measurement.qmd): Explains different types of variables and how they influence the analyses we choose.
+
+- [2.3 Descriptive vs. Inferential Statistics](02.3-descriptive-vs-inferential-statistics.qmd): Builds the conceptual foundation for hypothesis testing and statistical inference.
+
+- [2.4 Understanding Distributions and Variability](02.4-understanding-distributions-variability.qmd): Explains how distributions are shaped and why variability matters.
+
+- [2.5 Putting It All Together](02.5-putting-it-all-together.qmd): Reviews major chapter concepts and helps connect them to future analyses.
+
+## Why This Matters
+
+These ideas matter because they help you avoid some of the most common mistakes in statistics.
+
+For example, before you can run a statistical test, you need to know what kind of variables you have. Before you interpret a result, you need to know whether you are describing your sample or making an inference about a population. Before you report a mean, you need to know whether a mean makes sense for that variable.
+
+These may seem like small details, but they shape almost every decision you make when analyzing data.

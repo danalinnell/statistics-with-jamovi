@@ -1,0 +1,159 @@
+# 2.1 Describing Data {.unnumbered}
+
+Before we can analyze data, we need to understand what our data represent.
+
+At its core, statistics is about using data to answer questions. In most research settings, data are organized in a dataset, often in a spreadsheet format. Each row usually represents one observation, such as one participant, and each column represents one variable, such as age, condition, or test score.
+
+This structure matters because statistical software, including jamovi, expects data to be organized in a clear and consistent way.
+
+First, let's understand some basic statistics related to how we describe our data, including measures of central tendency (averages), measures of dispersion (spread), and measures of shape of the distribution (particularly a normal distribution). Here's a [video](https://www.youtube.com/watch?v=QirHpjLkHmc) walking you through what we learn in this chapter.
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=QirHpjLkHmc")
+```
+
+::: callout-tip
+## Learning Objectives
+
+By the end of this section, you should be able to:
+
+-   Define what data are and explain why context matters
+-   Identify observations (rows) and variables (columns) in a dataset
+-   Distinguish between categorical and numerical variables
+-   Describe how datasets are structured for analysis
+-   Recognize features of a well-organized dataset
+:::
+
+## What Are Data?
+
+In research, data are typically organized in a dataset (often a spreadsheet format), where:
+
+-   **Rows** represent individual *observations* (e.g., participants)
+-   **Columns** represent *variables* (e.g., age, test score, group membership)
+
+Each value in the dataset tells us something about a specific observation on a specific variable.
+
+::: {.info data-latex=""}
+**Is "data" singular or plural?**
+
+In formal scientific writing, including APA style, \*data\* is usually treated as plural: “The data are consistent with the hypothesis.” In everyday speech, many people use \*data\* as singular: “The data is stored in a spreadsheet.”\
+\
+You will see both. In your formal research writing, use the plural form unless your instructor or style guide says otherwise.
+:::
+
+## Data Need Context
+
+Data are only meaningful when we understand what they represent. For example, a value of 75 does not mean much by itself. It could be a test score, heart rate, temperature, percentile rank, or something else entirely. To interpret data correctly, we need to know what each variable represents, how it was measured, and what the values mean.
+
+This is why clear variable names and documentation are important when working with datasets.
+
+## How to Read and Work With Data
+
+To understand and use a dataset effectively, it’s important to recognize how data are organized. Well-structured datasets follow a few key principles:
+
+-   **Rows represent observations** (e.g., one participant, one trial, or one case)
+-   **Columns represent variables** (e.g., age, condition, score)
+-   **Each cell contains a single value** for one observation on one variable
+-   **Variable names are clear and consistent**, so you know what each column represents
+-   **Missing data are clearly labeled** (e.g., NA), rather than left blank, although *jamovi* knows to treat blank cells as missing data
+-   **Data are stored in a clean, rectangular format**, making them easier to analyze
+
+Understanding this structure will help you read datasets, identify variables, and prepare your data for analysis in tools like jamovi.
+
+Following these principles also helps prevent errors and makes data easier to analyze, share, and reproduce ([Broman & Woo, 2018](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989)).
+
+## What Is a Variable?
+
+A **variable** is anything we measure or record that can vary across individuals or observations.
+
+Examples of variables include:
+
+-   Age
+-   Gender
+-   Test scores
+-   Survey responses
+
+Some variables describe characteristics of participants, while others represent outcomes we are interested in understanding.
+
+You will learn more about different types of variables in the next section.
+
+## Types of Data
+
+Not all variables are the same. Broadly, variables fall into two categories:
+
+-   **Categorical variables** describe groups or categories (e.g., gender, major, treatment condition)
+-   **Continuous/numerical variables** represent quantities or amounts (e.g., age, height, test scores)
+
+Variables are sometimes coded numerically (e.g., 0 = no, 1 = yes), but these numbers are simply labels. Coding a variable with numbers does not make it a continuous variable.
+
+Understanding the type of data you are working with will help you decide how to summarize and analyze it. In the next section, we will look more closely at different types of variables and what they allow us to do in statistical analysis.
+
+## Why Do We Describe Data?
+
+Once we collect data, the first step is to **describe what we have**. Raw data (a spreadsheet full of numbers) can be difficult to interpret on their own. Descriptive statistics help us:
+
+-   Summarize large amounts of data
+-   Identify patterns or trends
+-   Understand what is typical or unusual
+-   Prepare for further analysis
+
+## What Does It Mean to Describe Data?
+
+When we describe data, we are typically trying to understand three key features:
+
+1.  **Center (What is typical?)**: This tells us what a “typical” value looks like, often summarized using measures like the mean or median. These are called *measures of central tendency*.
+
+2.  **Variability (How spread out are the values?)**: This tells us how much the data differ from one another. Some datasets are tightly clustered, while others are more spread out. These are called *measures of dispersion*.
+
+3.  **Shape (What does the distribution look like?)**: This refers to how the data are distributed—for example, whether values are evenly spread out or skewed in one direction.
+
+You will learn how to calculate and interpret these in later chapters.
+
+## Types of Descriptive Information
+
+There are two main ways we describe data:
+
+1.  Numerical summaries, using measures of central tendency (e.g., mean, median, mode) and dispersion (e.g., standard deviation, variance).
+
+2.  Visual summaries, using graphs and charts (e.g., histograms, bar charts) which help us quickly see patterns and differences.
+
+## Looking Ahead
+
+Describing data is always the first step in any statistical analysis.
+
+You will use these ideas when you:
+
+-   Summarize your data (Chapter 4)
+-   Visualize patterns (Chapter 5)
+-   Begin hypothesis testing (Chapter 7)
+-   Interpret results from statistical tests (Chapters 11–14)
+
+Understanding your data before analyzing it will help you make better decisions and avoid mistakes.
+
+## Key Takeaways
+
+-   Data are organized into rows (observations) and columns (variables)
+-   Variables are characteristics or outcomes that can vary
+-   Describing data involves understanding center, variability, and shape
+-   Descriptive statistics summarize and simplify data
+-   Describing data is the first step in any analysis
+
+::: callout-tip
+## Check Your Understanding
+
+By the end of this section, you should be able to:
+
+1.  In a dataset, what does each **row** represent? What does each **column** represent?\
+2.  Give an example of a **categorical variable** and a **continuous variable**.\
+3.  Why is it important that each cell contains only one value?\
+4.  What are two features of a well-organized dataset?\
+5.  Why do data need context to be meaningful?
+:::
+
+::: {.callout-tip collapse="true"}
+## Answers
+
+1.  Rows represent observations (e.g., participants), and columns represent variables.\
+2.  Categorical: major. Continuous: age.
+:::

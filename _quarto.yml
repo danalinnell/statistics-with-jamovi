@@ -1,0 +1,30 @@
+project:
+  type: book
+  output-dir: docs-quarto
+
+book:
+  title: "Stats with jamovi"
+  author: "Dana Linnell"
+  sidebar:
+    collapse-level: 1
+  chapters:
+    - part: index.qmd
+      chapters: 
+        - 01.0-intro.qmd
+    
+    - part: 02.0-statistics-foundations.qmd
+      chapters:
+        - 02.1-describing-data.qmd
+        - 02.2-types-of-variables-levels-of-measurement.qmd
+        - 02.3-descriptive-vs-inferential-statistics.qmd
+        - 02.4-understanding-distributions-variability.qmd
+        - 02.5-putting-it-all-together.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    toc-location: right
+    number-sections: true
+    css: style.css

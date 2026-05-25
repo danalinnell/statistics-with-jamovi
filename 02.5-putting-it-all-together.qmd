@@ -1,0 +1,134 @@
+# 2.5 Putting It All Together {.unnumbered}
+
+In this chapter, we introduced the foundational ideas needed to understand and work with data. These concepts will be used throughout the rest of the course and serve as a reference point as you learn new statistical techniques.
+
+------------------------------------------------------------------------
+
+## Big Picture Summary
+
+-   **Data** are values collected to answer questions
+-   A dataset is made up of **cases (observations)** and **variables**
+-   Variables can be **categorical** or **continuous**, and how a variable is measured affects what we can do with it
+-   **Descriptive statistics** summarize the data we observe
+-   **Inferential statistics** allow us to make conclusions about a population based on a sample
+-   Data form **distributions**, which can be described by their center, variability, shape, and outliers
+
+------------------------------------------------------------------------
+
+## How These Concepts Connect
+
+These ideas are not separate—they work together as part of a process. You can think of working with data as a sequence:
+
+-   We begin by defining **variables** and collecting data
+-   These data form a **dataset**
+-   When we examine all values together, we see a **distribution**
+-   We use **descriptive statistics** to summarize that distribution
+-   We use **inferential statistics** to answer research questions about a population
+
+Understanding how these pieces fit together will make the rest of the course much easier.
+
+------------------------------------------------------------------------
+
+## Quick Reference
+
+### Types of Variables
+
+| Type | Description | Example | What You Can Do |
+|------------------|------------------|------------------|------------------|
+| Nominal | Categories with no order | Major | Counts, frequencies, percentages |
+| Ordinal | Ordered categories | Satisfaction ratings | Rankings, medians |
+| Continuous | Numerical values | Test scores, reaction time | Means, standard deviation |
+
+------------------------------------------------------------------------
+
+### Features of a Distribution
+
+| Feature     | Question                     | Why It Matters          |
+|-------------|------------------------------|-------------------------|
+| Center      | Where are most values?       | Describes typical value |
+| Variability | How spread out are values?   | Shows consistency       |
+| Shape       | What pattern do values form? | Affects interpretation  |
+| Outliers    | Are there unusual values?    | Can influence results   |
+
+------------------------------------------------------------------------
+
+## Key Ideas to Remember
+
+-   A variable’s level of measurement depends on **how it is measured**, not just what it represents
+-   Assigning numbers to categories does **not** make a variable continuous
+-   Collapsing variables into categories can reduce information
+-   Distributions provide a **complete picture** of the data, not just a single value
+-   Both descriptive and inferential statistics are typically used together
+
+------------------------------------------------------------------------
+
+## Looking Ahead
+
+In the next chapters, you will begin working directly with data:
+
+-   **Chapter 3:** Getting started with jamovi
+-   **Chapter 4:** Describing data using statistics
+-   **Chapter 5:** Visualizing data
+-   **Chapter 6:** Cleaning and preparing data
+
+Each of these chapters will build directly on the concepts introduced here.
+
+------------------------------------------------------------------------
+
+## Check Your Understanding
+
+1.  A dataset includes the following variables:
+
+    -   Major
+    -   Stress rating on a 1–5 scale
+    -   Hours of sleep last night
+
+    For each variable:
+
+    -   Identify whether it is categorical or continuous
+    -   State one appropriate way to describe it
+
+2.  Why is it important to correctly identify variable types before running analyses?
+
+3.  A researcher reports only the mean for a variable. What important information might still be missing?
+
+4.  Explain the difference between a **statistic** and a **parameter**.
+
+5.  A variable is coded as:
+
+    -   1 = cat
+    -   2 = dog
+    -   3 = frog
+
+    Why is this still not a continuous variable?
+
+::: {.callout-tip collapse="true"}
+## Answers
+
+1.  
+
+    -   **Major** → categorical → frequencies or percentages\
+    -   **Stress rating** → ordinal (categorical) → median or frequencies\
+    -   **Hours of sleep** → continuous → mean and standard deviation
+
+2.  Variable type determines what descriptive statistics, graphs, and analyses are appropriate. If a variable is classified incorrectly, the results may be misleading.
+
+3.  Variability, shape, range, and possibly sample size. The mean alone does not fully describe the data.
+
+4.  A **statistic** describes a sample, while a **parameter** describes a population. We often use statistics to estimate parameters.
+
+5.  Because the numbers are only labels for categories; they do not represent meaningful numerical quantities.
+:::
+
+------------------------------------------------------------------------
+
+## Reflection
+
+Think about a dataset you might collect in your own field:
+
+-   What variables would you measure?
+-   Would they be categorical or continuous?
+-   What might the distribution of your data look like?
+-   What would you want to describe or compare?
+
+Taking a moment to think through these questions can help you connect these concepts to real-world data.

@@ -1,0 +1,674 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Stats with jamovi",
+    "section": "",
+    "text": "1. Statistics with jamovi\nWelcome! This book is designed to help you learn statistics in a way that is practical, approachable, and relevant to real-world research and decision making.",
+    "crumbs": [
+      "1. Statistics with jamovi"
+    ]
+  },
+  {
+    "objectID": "index.html#what-youll-learn",
+    "href": "index.html#what-youll-learn",
+    "title": "Stats with jamovi",
+    "section": "What You’ll Learn",
+    "text": "What You’ll Learn\nBy using this book, you will learn how to:\n\nUnderstand and interpret statistical results\nAnalyze data using jamovi\nConnect statistics to research and real-world decisions\nCommunicate findings clearly using APA-style reporting",
+    "crumbs": [
+      "1. Statistics with jamovi"
+    ]
+  },
+  {
+    "objectID": "index.html#get-started-with-jamovi",
+    "href": "index.html#get-started-with-jamovi",
+    "title": "Stats with jamovi",
+    "section": "Get Started with jamovi",
+    "text": "Get Started with jamovi\nThis book uses jamovi, a free and user-friendly statistical software.\n\nDownload jamovi: https://www.jamovi.org\nUse the example datasets provided in each chapter\nFollow step-by-step instructions to run analyses\n\nYou do not need prior experience with statistics or software—this book will guide you.",
+    "crumbs": [
+      "1. Statistics with jamovi"
+    ]
+  },
+  {
+    "objectID": "index.html#a-note-about-learning-statistics",
+    "href": "index.html#a-note-about-learning-statistics",
+    "title": "Stats with jamovi",
+    "section": "A Note About Learning Statistics",
+    "text": "A Note About Learning Statistics\nStatistics can feel overwhelming at first—and that’s completely normal.\nThis book is designed to help you build confidence step by step, even if you’ve struggled with math in the past.\nFocus on understanding what results mean, not just how to calculate them.",
+    "crumbs": [
+      "1. Statistics with jamovi"
+    ]
+  },
+  {
+    "objectID": "index.html#about-this-book",
+    "href": "index.html#about-this-book",
+    "title": "Stats with jamovi",
+    "section": "About this Book",
+    "text": "About this Book\nThis is an open educational resource (OER), meaning it is free to use and continuously improved based on feedback from students and instructors.\nThis book was created to:\n\nMake statistics more accessible and applied\nEmphasize interpretation over memorization\nIntegrate hands-on data analysis using jamovi\n\nIt is built using open-source tools and updated regularly to reflect new features, examples, and feedback.\nIf you notice an error or have a suggestion, please email me at linnellda@uwstout.edu.",
+    "crumbs": [
+      "1. Statistics with jamovi"
+    ]
+  },
+  {
+    "objectID": "index.html#about-the-author",
+    "href": "index.html#about-the-author",
+    "title": "Stats with jamovi",
+    "section": "About the Author",
+    "text": "About the Author\nDana Linnell is a faculty member at the University of Wisconsin–Stout who teaches research methods and statistics. This book reflects her commitment to making statistics more accessible, applied, and meaningful for students.\nDedication: This book is dedicated to my graduate statistics professor, Dr. Dale Berger, who gave us a similar set of resources when he taught statistics at Claremont Graduate University. I still have my binder of handouts, homework assignments, and notes, which have been instrumental throughout my career. Thank you for showing me the joy of statistics!\n\n\n\nImage of Dale Berger and Dana Linnell at her master’s graduation ceremony",
+    "crumbs": [
+      "1. Statistics with jamovi"
+    ]
+  },
+  {
+    "objectID": "01.0-intro.html",
+    "href": "01.0-intro.html",
+    "title": "1.1 How to Use This Book",
+    "section": "",
+    "text": "What This Book Is Trying to Help You Do\nThis book is designed to help you learn statistics with jamovi, a free statistical software program. My goal is not for you to memorize formulas or become a mathematician. My goal is for you to learn how to use statistics to answer research questions, interpret results, and explain what those results mean.\nIf you are feeling nervous about statistics, you are not alone. Many students come into this course feeling unsure, anxious, or convinced that they are “not a stats person.” That is okay. Statistics is a skill, and skills develop with practice, feedback, and patience.\nThis chapter explains how to use the book, what the book assumes, how to navigate the online version, and how to get help when you need it.\nBy the end of this book, you should be better able to:",
+    "crumbs": [
+      "1. Statistics with jamovi",
+      "1.1 How to Use This Book"
+    ]
+  },
+  {
+    "objectID": "01.0-intro.html#what-this-book-is-trying-to-help-you-do",
+    "href": "01.0-intro.html#what-this-book-is-trying-to-help-you-do",
+    "title": "1.1 How to Use This Book",
+    "section": "",
+    "text": "understand why a particular statistical test fits a research question\nuse jamovi to run statistical analyses\nread statistical output without getting overwhelmed\ninterpret results in plain language\nwrite up results clearly and accurately\nmake thoughtful decisions about data, assumptions, and evidence",
+    "crumbs": [
+      "1. Statistics with jamovi",
+      "1.1 How to Use This Book"
+    ]
+  },
+  {
+    "objectID": "01.0-intro.html#common-challenges-and-how-to-handle-them",
+    "href": "01.0-intro.html#common-challenges-and-how-to-handle-them",
+    "title": "1.1 How to Use This Book",
+    "section": "Common Challenges (and How to Handle Them)",
+    "text": "Common Challenges (and How to Handle Them)\n“I don’t understand the math.”\nThat is okay. There is some math in this book because formulas can sometimes help us understand what a statistic is doing. However, this is not a course where the main goal is hand calculations. Most of the time, I care much more about whether you understand what the statistic means, why you chose it, and how to interpret the results.\n“I got lost in jamovi.”\nThis happens, especially when you are new to statistical software. Slow down, go back to the previous step, and compare your screen to the example. A lot of learning jamovi is simply repetition. The more you practice opening data, checking variables, selecting analyses, and reading output, the more familiar it will become.\n“I don’t know what the output means.”\nThis is one of the most common challenges in statistics. When you look at output, start with the research question. Ask yourself: What was I trying to find out? What test did I run? Which part of the output helps me answer the question? Then use the interpretation sections in this book to help connect the statistical results back to the research question.",
+    "crumbs": [
+      "1. Statistics with jamovi",
+      "1.1 How to Use This Book"
+    ]
+  },
+  {
+    "objectID": "01.0-intro.html#navigating-this-book",
+    "href": "01.0-intro.html#navigating-this-book",
+    "title": "1.1 How to Use This Book",
+    "section": "Navigating This Book",
+    "text": "Navigating This Book\nThis book is meant to be used as an online resource, not just read straight through from beginning to end. You will likely move back and forth between chapters, especially once you start working on assignments in jamovi.\nA few features may help:\n\nUse the sidebar/table of contents to jump between chapters and sections.\nUse the search feature when you are trying to find a specific term, test, or jamovi step.\nUse the previous/next buttons when you are working through chapters in order.\nAdjust the font size or display settings if that makes the book easier to read.\n\nMy recommendation is to keep this book open while you work in jamovi. When you get stuck, search the book first, then go back to the relevant section and compare your screen to the example.",
+    "crumbs": [
+      "1. Statistics with jamovi",
+      "1.1 How to Use This Book"
+    ]
+  },
+  {
+    "objectID": "01.0-intro.html#technology-tips",
+    "href": "01.0-intro.html#technology-tips",
+    "title": "1.1 How to Use This Book",
+    "section": "Technology Tips",
+    "text": "Technology Tips\nYou will need access to a computer that can run jamovi and open common file types such as Word, Excel, PDF, and data files.\nI strongly recommend using the desktop version of jamovi when possible. jamovi Cloud exists, but the free version may not be sufficient for everything you need to do. The desktop version is free and is the version this book assumes you are using unless otherwise noted.\nYou will often be moving back and forth between this book, assignment instructions, datasets, and jamovi. If you have two monitors, this is a great course to use them. If not, learn how to snap windows side-by-side or switch quickly between open applications. On Windows, Alt+Tab lets you move between open applications. On Mac, use Cmd+Tab.\nOne very practical tip: close what you are not using. When you are working on statistics, try to have only the book, the assignment, your data file, and jamovi open. It reduces visual clutter, helps your computer run better, and makes it easier to focus.\nAlso, restart your computer regularly. I know this sounds like basic technology advice, but many mysterious software problems are solved by saving your work, closing programs, restarting your computer, and trying again. And sometimes that breather can help you better solve problems!",
+    "crumbs": [
+      "1. Statistics with jamovi",
+      "1.1 How to Use This Book"
+    ]
+  },
+  {
+    "objectID": "01.0-intro.html#getting-help",
+    "href": "01.0-intro.html#getting-help",
+    "title": "1.1 How to Use This Book",
+    "section": "Getting Help",
+    "text": "Getting Help\nLearning statistics is not something most people do perfectly the first time. Getting stuck is part of the process.\nIf you are in one of my courses, check Canvas for the current options for getting help. Depending on the semester, this may include student hours, Teams, email, class discussion spaces, or support from a teaching assistant or graduate assistant.\nWhen you ask for help, it is useful to include:\n\nthe chapter or assignment you are working on\nwhat step you got stuck on\nwhat you already tried\na screenshot of what you are seeing in jamovi, if relevant\nyour jamovi file, if you are asking about an analysis\n\nYou do not need to have a perfectly formed question before asking for help. “I got lost around this step” is a completely reasonable place to start.",
+    "crumbs": [
+      "1. Statistics with jamovi",
+      "1.1 How to Use This Book"
+    ]
+  },
+  {
+    "objectID": "01.0-intro.html#a-final-tip",
+    "href": "01.0-intro.html#a-final-tip",
+    "title": "1.1 How to Use This Book",
+    "section": "A Final Tip",
+    "text": "A Final Tip\nOne final thing to keep in mind: most mistakes in statistics are not signs that you “can’t do stats.” They are usually small process errors: the wrong variable type, the wrong box in jamovi, a missed assumption check, or an interpretation that moved too quickly.\nSlow down. Check your setup. Ask what the research question is. Then ask what the statistic is helping you decide. That process will take you much further than memorizing isolated rules.",
+    "crumbs": [
+      "1. Statistics with jamovi",
+      "1.1 How to Use This Book"
+    ]
+  },
+  {
+    "objectID": "01.0-intro.html#errors-mistakes-and-suggestions",
+    "href": "01.0-intro.html#errors-mistakes-and-suggestions",
+    "title": "1.1 How to Use This Book",
+    "section": "Errors, Mistakes, and Suggestions",
+    "text": "Errors, Mistakes, and Suggestions\nI am human, therefore I err.\nIf you find an error in this book, something that seems unclear, or something that does not match what you are seeing in jamovi, please let me know. It is especially helpful if you tell me the chapter or section, what seems wrong or confusing, and what you think might need to be updated.\nI also welcome suggestions. This book is meant to be useful to students in this course and to anyone else learning statistics with jamovi. If something would make the book clearer, more accessible, or easier to use, I would genuinely like to know.",
+    "crumbs": [
+      "1. Statistics with jamovi",
+      "1.1 How to Use This Book"
+    ]
+  },
+  {
+    "objectID": "02.0-statistics-foundations.html",
+    "href": "02.0-statistics-foundations.html",
+    "title": "2. Statistics Foundations",
+    "section": "",
+    "text": "What You’ll Learn\nThis chapter introduces some of the statistical language we will use throughout the book. You do not need to memorize every term right now. Instead, focus on understanding the big ideas: what data are, what kinds of variables we work with, how we describe data, and how we use samples to make inferences about populations.\nYou will come back to these ideas again and again. If something does not fully click the first time through, that is okay. The goal here is to build a foundation we can keep returning to.\nAs you read, pay special attention to the examples. In statistics, the same word can mean different things depending on how something is measured. For example, “time” might be categorical in one study and continuous in another. That is why I want you to focus less on memorizing definitions and more on asking: What does this variable actually represent?\nBy the end of this chapter, you should be able to:",
+    "crumbs": [
+      "2. Statistics Foundations"
+    ]
+  },
+  {
+    "objectID": "02.0-statistics-foundations.html#what-youll-learn",
+    "href": "02.0-statistics-foundations.html#what-youll-learn",
+    "title": "2. Statistics Foundations",
+    "section": "",
+    "text": "explain how data are used to answer research questions\nrecognize how datasets are organized into rows and columns\ndistinguish among nominal, ordinal, interval, and ratio variables\nexplain the difference between descriptive and inferential statistics\nuse key statistical terms that will appear throughout the textbook",
+    "crumbs": [
+      "2. Statistics Foundations"
+    ]
+  },
+  {
+    "objectID": "02.0-statistics-foundations.html#chapter-sections",
+    "href": "02.0-statistics-foundations.html#chapter-sections",
+    "title": "2. Statistics Foundations",
+    "section": "Chapter Sections",
+    "text": "Chapter Sections\n\n2.1 Describing Data: Introduces what data are, how we summarize them, and why descriptive statistics matter.\n2.2 Types of Variables and Levels of Measurement: Explains different types of variables and how they influence the analyses we choose.\n2.3 Descriptive vs. Inferential Statistics: Builds the conceptual foundation for hypothesis testing and statistical inference.\n2.4 Understanding Distributions and Variability: Explains how distributions are shaped and why variability matters.\n2.5 Putting It All Together: Reviews major chapter concepts and helps connect them to future analyses.",
+    "crumbs": [
+      "2. Statistics Foundations"
+    ]
+  },
+  {
+    "objectID": "02.0-statistics-foundations.html#why-this-matters",
+    "href": "02.0-statistics-foundations.html#why-this-matters",
+    "title": "2. Statistics Foundations",
+    "section": "Why This Matters",
+    "text": "Why This Matters\nThese ideas matter because they help you avoid some of the most common mistakes in statistics.\nFor example, before you can run a statistical test, you need to know what kind of variables you have. Before you interpret a result, you need to know whether you are describing your sample or making an inference about a population. Before you report a mean, you need to know whether a mean makes sense for that variable.\nThese may seem like small details, but they shape almost every decision you make when analyzing data.",
+    "crumbs": [
+      "2. Statistics Foundations"
+    ]
+  },
+  {
+    "objectID": "02.1-describing-data.html",
+    "href": "02.1-describing-data.html",
+    "title": "2.1 Describing Data",
+    "section": "",
+    "text": "What Are Data?\nBefore we can analyze data, we need to understand what our data represent.\nAt its core, statistics is about using data to answer questions. In most research settings, data are organized in a dataset, often in a spreadsheet format. Each row usually represents one observation, such as one participant, and each column represents one variable, such as age, condition, or test score.\nThis structure matters because statistical software, including jamovi, expects data to be organized in a clear and consistent way.\nFirst, let’s understand some basic statistics related to how we describe our data, including measures of central tendency (averages), measures of dispersion (spread), and measures of shape of the distribution (particularly a normal distribution). Here’s a video walking you through what we learn in this chapter.\nIn research, data are typically organized in a dataset (often a spreadsheet format), where:\nEach value in the dataset tells us something about a specific observation on a specific variable.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.1 Describing Data"
+    ]
+  },
+  {
+    "objectID": "02.1-describing-data.html#what-are-data",
+    "href": "02.1-describing-data.html#what-are-data",
+    "title": "2.1 Describing Data",
+    "section": "",
+    "text": "Rows represent individual observations (e.g., participants)\nColumns represent variables (e.g., age, test score, group membership)\n\n\n\nIs “data” singular or plural?\nIn formal scientific writing, including APA style, *data* is usually treated as plural: “The data are consistent with the hypothesis.” In everyday speech, many people use *data* as singular: “The data is stored in a spreadsheet.”\n\nYou will see both. In your formal research writing, use the plural form unless your instructor or style guide says otherwise.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.1 Describing Data"
+    ]
+  },
+  {
+    "objectID": "02.1-describing-data.html#data-need-context",
+    "href": "02.1-describing-data.html#data-need-context",
+    "title": "2.1 Describing Data",
+    "section": "Data Need Context",
+    "text": "Data Need Context\nData are only meaningful when we understand what they represent. For example, a value of 75 does not mean much by itself. It could be a test score, heart rate, temperature, percentile rank, or something else entirely. To interpret data correctly, we need to know what each variable represents, how it was measured, and what the values mean.\nThis is why clear variable names and documentation are important when working with datasets.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.1 Describing Data"
+    ]
+  },
+  {
+    "objectID": "02.1-describing-data.html#how-to-read-and-work-with-data",
+    "href": "02.1-describing-data.html#how-to-read-and-work-with-data",
+    "title": "2.1 Describing Data",
+    "section": "How to Read and Work With Data",
+    "text": "How to Read and Work With Data\nTo understand and use a dataset effectively, it’s important to recognize how data are organized. Well-structured datasets follow a few key principles:\n\nRows represent observations (e.g., one participant, one trial, or one case)\nColumns represent variables (e.g., age, condition, score)\nEach cell contains a single value for one observation on one variable\nVariable names are clear and consistent, so you know what each column represents\nMissing data are clearly labeled (e.g., NA), rather than left blank, although jamovi knows to treat blank cells as missing data\nData are stored in a clean, rectangular format, making them easier to analyze\n\nUnderstanding this structure will help you read datasets, identify variables, and prepare your data for analysis in tools like jamovi.\nFollowing these principles also helps prevent errors and makes data easier to analyze, share, and reproduce (Broman & Woo, 2018).",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.1 Describing Data"
+    ]
+  },
+  {
+    "objectID": "02.1-describing-data.html#what-is-a-variable",
+    "href": "02.1-describing-data.html#what-is-a-variable",
+    "title": "2.1 Describing Data",
+    "section": "What Is a Variable?",
+    "text": "What Is a Variable?\nA variable is anything we measure or record that can vary across individuals or observations.\nExamples of variables include:\n\nAge\nGender\nTest scores\nSurvey responses\n\nSome variables describe characteristics of participants, while others represent outcomes we are interested in understanding.\nYou will learn more about different types of variables in the next section.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.1 Describing Data"
+    ]
+  },
+  {
+    "objectID": "02.1-describing-data.html#types-of-data",
+    "href": "02.1-describing-data.html#types-of-data",
+    "title": "2.1 Describing Data",
+    "section": "Types of Data",
+    "text": "Types of Data\nNot all variables are the same. Broadly, variables fall into two categories:\n\nCategorical variables describe groups or categories (e.g., gender, major, treatment condition)\nContinuous/numerical variables represent quantities or amounts (e.g., age, height, test scores)\n\nVariables are sometimes coded numerically (e.g., 0 = no, 1 = yes), but these numbers are simply labels. Coding a variable with numbers does not make it a continuous variable.\nUnderstanding the type of data you are working with will help you decide how to summarize and analyze it. In the next section, we will look more closely at different types of variables and what they allow us to do in statistical analysis.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.1 Describing Data"
+    ]
+  },
+  {
+    "objectID": "02.1-describing-data.html#why-do-we-describe-data",
+    "href": "02.1-describing-data.html#why-do-we-describe-data",
+    "title": "2.1 Describing Data",
+    "section": "Why Do We Describe Data?",
+    "text": "Why Do We Describe Data?\nOnce we collect data, the first step is to describe what we have. Raw data (a spreadsheet full of numbers) can be difficult to interpret on their own. Descriptive statistics help us:\n\nSummarize large amounts of data\nIdentify patterns or trends\nUnderstand what is typical or unusual\nPrepare for further analysis",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.1 Describing Data"
+    ]
+  },
+  {
+    "objectID": "02.1-describing-data.html#what-does-it-mean-to-describe-data",
+    "href": "02.1-describing-data.html#what-does-it-mean-to-describe-data",
+    "title": "2.1 Describing Data",
+    "section": "What Does It Mean to Describe Data?",
+    "text": "What Does It Mean to Describe Data?\nWhen we describe data, we are typically trying to understand three key features:\n\nCenter (What is typical?): This tells us what a “typical” value looks like, often summarized using measures like the mean or median. These are called measures of central tendency.\nVariability (How spread out are the values?): This tells us how much the data differ from one another. Some datasets are tightly clustered, while others are more spread out. These are called measures of dispersion.\nShape (What does the distribution look like?): This refers to how the data are distributed—for example, whether values are evenly spread out or skewed in one direction.\n\nYou will learn how to calculate and interpret these in later chapters.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.1 Describing Data"
+    ]
+  },
+  {
+    "objectID": "02.1-describing-data.html#types-of-descriptive-information",
+    "href": "02.1-describing-data.html#types-of-descriptive-information",
+    "title": "2.1 Describing Data",
+    "section": "Types of Descriptive Information",
+    "text": "Types of Descriptive Information\nThere are two main ways we describe data:\n\nNumerical summaries, using measures of central tendency (e.g., mean, median, mode) and dispersion (e.g., standard deviation, variance).\nVisual summaries, using graphs and charts (e.g., histograms, bar charts) which help us quickly see patterns and differences.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.1 Describing Data"
+    ]
+  },
+  {
+    "objectID": "02.1-describing-data.html#looking-ahead",
+    "href": "02.1-describing-data.html#looking-ahead",
+    "title": "2.1 Describing Data",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nDescribing data is always the first step in any statistical analysis.\nYou will use these ideas when you:\n\nSummarize your data (Chapter 4)\nVisualize patterns (Chapter 5)\nBegin hypothesis testing (Chapter 7)\nInterpret results from statistical tests (Chapters 11–14)\n\nUnderstanding your data before analyzing it will help you make better decisions and avoid mistakes.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.1 Describing Data"
+    ]
+  },
+  {
+    "objectID": "02.1-describing-data.html#key-takeaways",
+    "href": "02.1-describing-data.html#key-takeaways",
+    "title": "2.1 Describing Data",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nData are organized into rows (observations) and columns (variables)\nVariables are characteristics or outcomes that can vary\nDescribing data involves understanding center, variability, and shape\nDescriptive statistics summarize and simplify data\nDescribing data is the first step in any analysis\n\n\n\n\n\n\n\nTipCheck Your Understanding\n\n\n\nBy the end of this section, you should be able to:\n\nIn a dataset, what does each row represent? What does each column represent?\n\nGive an example of a categorical variable and a continuous variable.\n\nWhy is it important that each cell contains only one value?\n\nWhat are two features of a well-organized dataset?\n\nWhy do data need context to be meaningful?\n\n\n\n\n\n\n\n\n\nTipAnswers\n\n\n\n\n\n\nRows represent observations (e.g., participants), and columns represent variables.\n\nCategorical: major. Continuous: age.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.1 Describing Data"
+    ]
+  },
+  {
+    "objectID": "02.2-types-of-variables-levels-of-measurement.html",
+    "href": "02.2-types-of-variables-levels-of-measurement.html",
+    "title": "2.2 Types of Variables and Levels of Measurement",
+    "section": "",
+    "text": "Categorical Variables: Nominal and Ordinal\nIn Section 2.1, we introduced two broad types of variables: categorical and continuous. We can refine this further into four levels of measurement. These levels help us understand what the values represent and what kinds of summaries and analyses are appropriate.\nUnderstanding the type of variable you are working with will help you decide:\nCategorical variables describe groups or categories. There are two main types of categorical variables: nominal and ordinal variables.\nNominal variables represent categories with no inherent order. There is a special type of nominal variable with only two categories (e.g., yes/no, present/absent), which we call a dichotomous variable.\nExamples:\nWith nominal variables, we can:\nWe cannot meaningfully order or average these values.\nOrdinal variables represent categories with a meaningful order, but the differences between values are not necessarily equal.\nExamples:\nWith ordinal variables, we can:\nHowever, we should be cautious about treating the differences between values as equal. Also, keep in mind that assigning numbers to categories (e.g., 1 = strongly disagree, 5 = strongly agree) does not automatically make a variable continuous. Always consider what the values represent.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.2 Types of Variables and Levels of Measurement"
+    ]
+  },
+  {
+    "objectID": "02.2-types-of-variables-levels-of-measurement.html#categorical-variables-nominal-and-ordinal",
+    "href": "02.2-types-of-variables-levels-of-measurement.html#categorical-variables-nominal-and-ordinal",
+    "title": "2.2 Types of Variables and Levels of Measurement",
+    "section": "",
+    "text": "Major (Psychology, Business, Engineering)\nTreatment group (Control, Experimental)\nEye color\n\n\n\nCount how many observations fall into each category\nCalculate percentages\n\n\n\n\n\nClass rank (1st, 2nd, 3rd)\nSatisfaction ratings (Very dissatisfied → Very satisfied)\nLikert-scale responses (Strongly disagree → Strongly agree)\n\n\n\nOrder values\nIdentify medians or rankings",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.2 Types of Variables and Levels of Measurement"
+    ]
+  },
+  {
+    "objectID": "02.2-types-of-variables-levels-of-measurement.html#continuous-numerical-variables-interval-and-ratio",
+    "href": "02.2-types-of-variables-levels-of-measurement.html#continuous-numerical-variables-interval-and-ratio",
+    "title": "2.2 Types of Variables and Levels of Measurement",
+    "section": "Continuous (Numerical) Variables: Interval and Ratio",
+    "text": "Continuous (Numerical) Variables: Interval and Ratio\nContinuous variables, also called numerical variables, represent quantities or amounts. There are two main types of numerical variables: interval and ratio variables.\nInterval variables have equal spacing between values, but no true zero point.\nThis means that differences between values are meaningful, but zero does not represent the absence of the construct.\nExamples:\n\nTemperature (°C or °F)\nStandardized test scores (e.g., IQ scores)\nSome psychological scale scores where zero is arbitrary\n\nWith interval variables, we can:\n\nCompare differences between values (e.g., the difference between 90 and 100 is the same as between 100 and 110)\nCalculate means and standard deviations\nCreate graphs and use many common statistical analyses\n\nHowever, we should not interpret ratios (e.g., a score of 120 is not “twice as much” as a score of 60).\nRatio variables have equal spacing between values and a true zero point, meaning that zero represents the absence of the measured quantity.\nExamples:\n\nReaction time (milliseconds)\nNumber of correct responses on a task\nTime spent studying (minutes or hours)\nFrequency of a behavior (e.g., number of times a behavior occurs)\n\nWith ratio variables, we can:\n\nCompute means and standard deviations\nCompare differences between values\nMake meaningful ratio statements (e.g., twice as much, half as much)\nUse a full range of statistical analyses\n\nBecause ratio variables include a true zero, they provide the most flexibility for analysis.\n\nDiscrete vs Count Variables\nSome continuous variables are measured on a scale (e.g., height, reaction time), while others are counts (e.g., number of correct responses).\nMore specifically:\n\nDiscrete variables take on countable values (e.g., number of children, number of errors)\nContinuous variables can take on any value within a range (e.g., time, height, weight)\n\nIn practice, statistical software like jamovi typically treats both types as continuous variables, and we will do the same in this course.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.2 Types of Variables and Levels of Measurement"
+    ]
+  },
+  {
+    "objectID": "02.2-types-of-variables-levels-of-measurement.html#how-variable-type-affects-what-you-can-do",
+    "href": "02.2-types-of-variables-levels-of-measurement.html#how-variable-type-affects-what-you-can-do",
+    "title": "2.2 Types of Variables and Levels of Measurement",
+    "section": "How Variable Type Affects What You Can Do",
+    "text": "How Variable Type Affects What You Can Do\nDifferent types of variables allow for different kinds of summaries:\n\nNominal (categorical): counts and percentages\nOrdinal: rankings, medians\nInterval and ratio (numerical): means, standard deviations, and more advanced analyses\n\nThis distinction will become especially important when we begin summarizing data and selecting statistical tests.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.2 Types of Variables and Levels of Measurement"
+    ]
+  },
+  {
+    "objectID": "02.2-types-of-variables-levels-of-measurement.html#a-simple-way-to-identify-variable-type",
+    "href": "02.2-types-of-variables-levels-of-measurement.html#a-simple-way-to-identify-variable-type",
+    "title": "2.2 Types of Variables and Levels of Measurement",
+    "section": "A Simple Way to Identify Variable Type",
+    "text": "A Simple Way to Identify Variable Type\nWhen you encounter a variable, ask:\n\nIs this describing categories or numbers?\nIf categories, is there a meaningful order? If so, then it’s ordinal; if not, then it’s nominal.\nIf numbers, does zero represent “none”? If so, then it’s ratio; if not, then it’s interval.\n\nThese questions can help you quickly determine the type of variable you are working with.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.2 Types of Variables and Levels of Measurement"
+    ]
+  },
+  {
+    "objectID": "02.2-types-of-variables-levels-of-measurement.html#the-same-construct-can-be-measured-in-different-ways",
+    "href": "02.2-types-of-variables-levels-of-measurement.html#the-same-construct-can-be-measured-in-different-ways",
+    "title": "2.2 Types of Variables and Levels of Measurement",
+    "section": "The Same Construct Can Be Measured in Different Ways",
+    "text": "The Same Construct Can Be Measured in Different Ways\nIf levels of measurement still feel confusing, this is one of the most important things to remember:\n\nA variable’s level of measurement depends on how it is measured, not just what it is.\n\nFor example, one semester a student asked, “Isn’t time a continuous variable?” The answer is: it depends.\n\nIf time is measured as pre vs. post, it is a nominal variable with two categories.\nIf time is measured as month of the year, it is ordinal because the categories have a meaningful order.\nIf time is measured as response time, exact date, or time remaining, it is typically continuous.\n\nSo “time” is not automatically one type of variable. Its level of measurement depends on the way the researcher defines and records it.\nHere is another example. The construct studying could also be measured in different ways.\n\n\n\n\n\n\n\n\n\nName\nStudy_Continuous\nStudy_Ordinal\nStudy_Nominal\n\n\n\n\nName (Character)\nHours studied per day\nAmount of studying\nStudies every day?\n\n\nJesus\n5.0\nA great deal\nYes\n\n\nNicky\n4.5\nA great deal\nYes\n\n\nBradford\n3.2\nA moderate amount\nYes\n\n\nSylvia\n1.7\nA small amount\nYes\n\n\nMartha\n0.2\nRarely\nYes\n\n\nLillian\n0.0\nNever\nNo\n\n\nTrayvon\n0.0\nNever\nNo\n\n\n\nNotice that the same general idea—studying—can be measured as:\n\ncontinuous: hours studied per day\nordinal: amount of studying on an ordered scale\nnominal: whether the person studies every day or not\n\nThis matters because different ways of measuring a variable preserve different amounts of information.\nIn general, moving from continuous → ordinal → nominal reduces information. For example, if we turn hours studied into “low,” “medium,” and “high,” we lose the exact differences between people. For that reason, researchers usually want to avoid collapsing variables into categories unless there is a strong reason to do so.\nFor example, a mean split or median split turns a continuous variable into categories such as “above average” and “below average.” This may seem convenient, but it removes information and can make analyses less precise.\nAt the same time, “more information” does not always mean “better.” The best level of measurement depends on your research question and how the construct is most meaningfully measured.\nFinally, just because values are written as numbers does not make a variable continuous. If I code cat = 1, dog = 2, and frog = 3, that is still a nominal variable. The numbers are just labels.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.2 Types of Variables and Levels of Measurement"
+    ]
+  },
+  {
+    "objectID": "02.2-types-of-variables-levels-of-measurement.html#why-this-matters",
+    "href": "02.2-types-of-variables-levels-of-measurement.html#why-this-matters",
+    "title": "2.2 Types of Variables and Levels of Measurement",
+    "section": "Why This Matters",
+    "text": "Why This Matters\nUnderstanding variable types helps you:\n\nChoose appropriate summaries and graphs\nAvoid common mistakes (e.g., averaging categories)\nPrepare for statistical analysis\n\nWe will build on this foundation in later chapters when we learn how to summarize and analyze data.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.2 Types of Variables and Levels of Measurement"
+    ]
+  },
+  {
+    "objectID": "02.2-types-of-variables-levels-of-measurement.html#check-your-understanding",
+    "href": "02.2-types-of-variables-levels-of-measurement.html#check-your-understanding",
+    "title": "2.2 Types of Variables and Levels of Measurement",
+    "section": "Check Your Understanding",
+    "text": "Check Your Understanding\n\nIs “favorite color” a nominal, ordinal, interval, or ratio variable?\nIs a 1–5 satisfaction rating scale nominal or ordinal? Why?\nWhat makes ratio variables different from interval variables?\nWhy can’t we calculate a meaningful average for nominal data?\nGive one example of each type of variable (nominal, ordinal, interval, ratio).\n\n\n\n\n\n\n\nTipAnswers\n\n\n\n\n\n\nNominal\nOrdinal, because the responses are ordered but the spacing between values is not guaranteed to be equal\nRatio variables have a true zero point; interval variables do not\nBecause the categories do not have numerical meaning or order\nAnswers will vary (e.g., nominal: major; ordinal: class rank; interval: temperature °C; ratio: height)",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.2 Types of Variables and Levels of Measurement"
+    ]
+  },
+  {
+    "objectID": "02.3-descriptive-vs-inferential-statistics.html",
+    "href": "02.3-descriptive-vs-inferential-statistics.html",
+    "title": "2.3 Descriptive vs. Inferential Statistics",
+    "section": "",
+    "text": "Descriptive Statistics\nThere are two broad types of statistics that we use when working with data: descriptive statistics and inferential statistics.\nDescriptive statistics are used to summarize, organize, and describe the data we have collected.\nCommon ways we describe data include:\nDescriptive statistics focus only on the sample data in front of us.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.3 Descriptive vs. Inferential Statistics"
+    ]
+  },
+  {
+    "objectID": "02.3-descriptive-vs-inferential-statistics.html#descriptive-statistics",
+    "href": "02.3-descriptive-vs-inferential-statistics.html#descriptive-statistics",
+    "title": "2.3 Descriptive vs. Inferential Statistics",
+    "section": "",
+    "text": "Measures of central tendency (e.g., mean, median, mode)\nMeasures of dispersion (e.g., range, standard deviation, variance)\nShape of the distribution (e.g., skew, kurtosis)\nVisualizations (e.g., tables, graphs)",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.3 Descriptive vs. Inferential Statistics"
+    ]
+  },
+  {
+    "objectID": "02.3-descriptive-vs-inferential-statistics.html#inferential-statistics",
+    "href": "02.3-descriptive-vs-inferential-statistics.html#inferential-statistics",
+    "title": "2.3 Descriptive vs. Inferential Statistics",
+    "section": "Inferential Statistics",
+    "text": "Inferential Statistics\nInferential statistics are used to make conclusions about a population based on data collected from a sample.\nBecause we usually cannot collect data from an entire population (due to time, cost, or access), we collect data from a sample and use statistical methods to make inferences about the larger group.\nA parameter describes a population (e.g., the true average test score of all students), while a statistic describes a sample (e.g., the average score of the students we measured). In research, we use statistics to estimate unknown population parameters.\nCommon inferential statistics include:\n\nt-tests\nANOVA\ncorrelation\nchi-square tests\nregression\n\nThese methods help us answer questions like: “Is this difference meaningful, or could it have occurred by chance?”",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.3 Descriptive vs. Inferential Statistics"
+    ]
+  },
+  {
+    "objectID": "02.3-descriptive-vs-inferential-statistics.html#how-they-work-together",
+    "href": "02.3-descriptive-vs-inferential-statistics.html#how-they-work-together",
+    "title": "2.3 Descriptive vs. Inferential Statistics",
+    "section": "How They Work Together",
+    "text": "How They Work Together\nDescriptive and inferential statistics are closely connected:\n\nWe use descriptive statistics to summarize our sample\nWe use inferential statistics to generalize from the sample to the population\n\nIn practice, we almost always use both, but not all studies involve inference. Some studies are purely descriptive, focusing only on accurately summarizing the data collected. However, even when conducting inferential statistics, we begin by describing our sample.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.3 Descriptive vs. Inferential Statistics"
+    ]
+  },
+  {
+    "objectID": "02.3-descriptive-vs-inferential-statistics.html#an-example",
+    "href": "02.3-descriptive-vs-inferential-statistics.html#an-example",
+    "title": "2.3 Descriptive vs. Inferential Statistics",
+    "section": "An example",
+    "text": "An example\nThis can feel abstract, so let’s walk through a simple example.\nImagine we are conducting a study to examine whether watching Schitt’s Creek (a very good show, but not helpful for studying) versus watching video lessons on studying techniques (useful, but perhaps less exciting) affects test performance in UW–Stout students.\nOur population of interest is all UW–Stout students (approximately 10k students). However, it is not feasible to collect data from every student due to time, access, and logistical constraints.\nInstead, we collect data from a sample. For simplicity, we use students from two sections of an introductory psychology course (about 80 students). This is a convenience sample, not a random sample, but it works for illustrating our concepts.\nWe randomly assign half of the students to watch Schitt’s Creek and the other half to watch study skills videos.\nOne week later, all students take an exam, and we record their test scores.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.3 Descriptive vs. Inferential Statistics"
+    ]
+  },
+  {
+    "objectID": "02.3-descriptive-vs-inferential-statistics.html#step-1-describing-the-sample",
+    "href": "02.3-descriptive-vs-inferential-statistics.html#step-1-describing-the-sample",
+    "title": "2.3 Descriptive vs. Inferential Statistics",
+    "section": "Step 1: Describing the Sample",
+    "text": "Step 1: Describing the Sample\nFirst, we use descriptive statistics to summarize the data.\nWe might:\n\nCreate a histogram of test scores (perhaps separated by group)\nCalculate the mean score for each group\nExamine the standard deviation to understand variability\nCheck the range of scores\n\nThese summaries help us understand what the data look like.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.3 Descriptive vs. Inferential Statistics"
+    ]
+  },
+  {
+    "objectID": "02.3-descriptive-vs-inferential-statistics.html#step-2-making-inferences",
+    "href": "02.3-descriptive-vs-inferential-statistics.html#step-2-making-inferences",
+    "title": "2.3 Descriptive vs. Inferential Statistics",
+    "section": "Step 2: Making Inferences",
+    "text": "Step 2: Making Inferences\nNext, we ask our research question: Which group performed better on the exam? To answer this, we use inferential statistics.\nWe take our descriptive statistics (means, standard deviations, sample sizes) and use a statistical test (in this case, an independent samples t-test) to evaluate whether the difference between groups is meaningful.\nRather than calculating this by hand, we typically use statistical software like jamovi, which provides a test statistic, a p-value, and an effect size.\nThese results help us determine whether the observed difference in our sample likely reflects a real difference in the population.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.3 Descriptive vs. Inferential Statistics"
+    ]
+  },
+  {
+    "objectID": "02.3-descriptive-vs-inferential-statistics.html#why-this-matters",
+    "href": "02.3-descriptive-vs-inferential-statistics.html#why-this-matters",
+    "title": "2.3 Descriptive vs. Inferential Statistics",
+    "section": "Why This Matters",
+    "text": "Why This Matters\nUnderstanding the difference between descriptive and inferential statistics helps you:\n\nClearly describe your data\nAsk meaningful research questions\nMake appropriate conclusions about a population\nAvoid overgeneralizing from limited data\n\nWe will build on these ideas throughout the rest of the course, especially when we begin conducting inferential tests.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.3 Descriptive vs. Inferential Statistics"
+    ]
+  },
+  {
+    "objectID": "02.3-descriptive-vs-inferential-statistics.html#check-your-understanding",
+    "href": "02.3-descriptive-vs-inferential-statistics.html#check-your-understanding",
+    "title": "2.3 Descriptive vs. Inferential Statistics",
+    "section": "Check Your Understanding",
+    "text": "Check Your Understanding\n\nYou collect data from 50 UW–Stout students and calculate the mean GPA. Is this an example of descriptive or inferential statistics? Explain briefly.\nYou use those 50 students to test whether UW–Stout students have a higher GPA than the national average. Is this descriptive or inferential statistics? Explain briefly.\nA researcher reports that 62% of participants preferred online classes. What type of statistic is this?\nWhy do we typically use both descriptive and inferential statistics in the same study?\nA study includes only descriptive statistics and no inferential tests. Give one reason why that might be appropriate.\n\n\n\n\n\n\n\nTipAnswers\n\n\n\n\n\n\nDescriptive. You are summarizing the sample you collected.\nInferential. You are using the sample to make a claim about a larger population.\nDescriptive. It summarizes the sample data.\nDescriptive statistics summarize what the sample looks like, and inferential statistics help us decide what the sample may suggest about the population.\nAnswers will vary. For example, the goal of the study may simply be to describe a group or summarize observations without making broader population claims.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.3 Descriptive vs. Inferential Statistics"
+    ]
+  },
+  {
+    "objectID": "02.4-understanding-distributions-variability.html",
+    "href": "02.4-understanding-distributions-variability.html",
+    "title": "2.4 Understanding Distributions and Variability",
+    "section": "",
+    "text": "What is a Distribution?\nSo far, we have discussed what data are, how variables are measured, and the difference between descriptive and inferential statistics. Before we begin calculating statistics, it is important to understand what data look like as a whole.\nWhen we collect data, we do not just have individual values; we have a distribution.\nA distribution shows how values in a dataset are spread out and how often they occur.\nRather than focusing on a single value, distributions help us see patterns across all observations.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.4 Understanding Distributions and Variability"
+    ]
+  },
+  {
+    "objectID": "02.4-understanding-distributions-variability.html#key-features-of-a-distribution",
+    "href": "02.4-understanding-distributions-variability.html#key-features-of-a-distribution",
+    "title": "2.4 Understanding Distributions and Variability",
+    "section": "Key Features of a Distribution",
+    "text": "Key Features of a Distribution\nWhen we examine a distribution, there are a few key features to consider:\n\nCenter: Where do most values fall?\nVariability: How spread out are the values?\nShape: What pattern do the values form?\nOutliers: Are there unusually high or low values?\n\nThese features (center, variability, shape, and outliers) are what we will later summarize using descriptive statistics such as the mean and standard deviation.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.4 Understanding Distributions and Variability"
+    ]
+  },
+  {
+    "objectID": "02.4-understanding-distributions-variability.html#shape-of-a-distribution",
+    "href": "02.4-understanding-distributions-variability.html#shape-of-a-distribution",
+    "title": "2.4 Understanding Distributions and Variability",
+    "section": "Shape of a Distribution",
+    "text": "Shape of a Distribution\nDistributions can take different shapes, and these shapes help us understand the data.\nOne particular distribution we care a lot about in psychological research is the normal distribution, which is a specific type of symmetrical distribution where:\n\nMost values cluster around the center\nFewer values appear as you move away from the center\nThe left and right sides are approximately equal\n\nMany statistical methods assume that data are approximately normally distributed, which is why this shape is especially important.\n\nSkewed Distributions\nHowever, not all data are normally distributed. In a skewed distribution, one side of the distribution stretches out more than the other.\n\nRight-skewed (positive skew): tail extends to the right\nLeft-skewed (negative skew): tail extends to the left\n\nSkew affects how we interpret the center of the data and which summary statistics are most appropriate.\n\n\nKurtosis (Shape of the Tails)\nAnother aspect of shape is kurtosis, which describes how heavy or light the tails of a distribution are.\n\nSome distributions have more extreme values (heavier tails)\nOthers have fewer extreme values (lighter tails)\n\nFor now, it is enough to recognize that distributions can differ not just in symmetry, but also in how extreme values appear.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.4 Understanding Distributions and Variability"
+    ]
+  },
+  {
+    "objectID": "02.4-understanding-distributions-variability.html#variability-of-a-distribution",
+    "href": "02.4-understanding-distributions-variability.html#variability-of-a-distribution",
+    "title": "2.4 Understanding Distributions and Variability",
+    "section": "Variability of a Distribution",
+    "text": "Variability of a Distribution\nVariability refers to how much the values in a dataset differ from one another.\nTwo datasets can have the same center but very different variability.\nWe will later quantify variability using measures such as:\n\nVariance\nStandard deviation\n\nFor now, focus on the idea that variability tells us how consistent or spread out the data are.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.4 Understanding Distributions and Variability"
+    ]
+  },
+  {
+    "objectID": "02.4-understanding-distributions-variability.html#outliers",
+    "href": "02.4-understanding-distributions-variability.html#outliers",
+    "title": "2.4 Understanding Distributions and Variability",
+    "section": "Outliers",
+    "text": "Outliers\nAn outlier is a value that is unusually far from the rest of the data. Outliers can:\n\nAffect the shape of a distribution (e.g., creating skew)\nIncrease variability\nInfluence summary statistics like the mean (but, notably, not the median)\n\nBecause of their impact, it is important to identify and think carefully about outliers when analyzing data.\nImportant note: Not all outliers are errors. Some may represent meaningful or important observations, so it is important to examine them carefully before deciding how to handle them. This will be discussed later in Chapter 6 (Cleaning data).",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.4 Understanding Distributions and Variability"
+    ]
+  },
+  {
+    "objectID": "02.4-understanding-distributions-variability.html#why-this-matters",
+    "href": "02.4-understanding-distributions-variability.html#why-this-matters",
+    "title": "2.4 Understanding Distributions and Variability",
+    "section": "Why This Matters",
+    "text": "Why This Matters\nUnderstanding distributions helps you:\n\nInterpret summary statistics like the mean and standard deviation\nRecognize patterns and unusual values\nChoose appropriate analyses\nAvoid misleading conclusions\n\nIn the next chapters, we will learn how to:\n\nDescribe distributions numerically (Chapter 4)\nVisualize distributions using graphs (Chapter 5)\nPrepare and clean data for analysis (Chapter 6)",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.4 Understanding Distributions and Variability"
+    ]
+  },
+  {
+    "objectID": "02.4-understanding-distributions-variability.html#a-quick-preview",
+    "href": "02.4-understanding-distributions-variability.html#a-quick-preview",
+    "title": "2.4 Understanding Distributions and Variability",
+    "section": "A Quick Preview",
+    "text": "A Quick Preview\nWhen working with data, you will often ask:\n\nWhere is the center of the data?\nHow spread out are the values?\nWhat shape does the distribution have?\nAre there any unusual values?\n\nThese questions form the foundation of descriptive statistics.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.4 Understanding Distributions and Variability"
+    ]
+  },
+  {
+    "objectID": "02.4-understanding-distributions-variability.html#check-your-understanding",
+    "href": "02.4-understanding-distributions-variability.html#check-your-understanding",
+    "title": "2.4 Understanding Distributions and Variability",
+    "section": "Check Your Understanding",
+    "text": "Check Your Understanding\n\nWhat is a distribution?\nWhat are the four key features of a distribution?\nWhat is a normal distribution?\nHow do outliers affect a dataset?\nWhy can two datasets with the same mean still be very different?\n\n\n\n\n\n\n\nTipAnswers\n\n\n\n\n\n\nA distribution shows how values are spread out and how often they occur\nCenter, variability, shape, and outliers\nA symmetrical distribution where most values cluster around the center\nThey can affect shape, variability, and summary statistics\nBecause they may differ in variability or shape",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.4 Understanding Distributions and Variability"
+    ]
+  },
+  {
+    "objectID": "02.5-putting-it-all-together.html",
+    "href": "02.5-putting-it-all-together.html",
+    "title": "2.5 Putting It All Together",
+    "section": "",
+    "text": "Big Picture Summary\nIn this chapter, we introduced the foundational ideas needed to understand and work with data. These concepts will be used throughout the rest of the course and serve as a reference point as you learn new statistical techniques.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.5 Putting It All Together"
+    ]
+  },
+  {
+    "objectID": "02.5-putting-it-all-together.html#big-picture-summary",
+    "href": "02.5-putting-it-all-together.html#big-picture-summary",
+    "title": "2.5 Putting It All Together",
+    "section": "",
+    "text": "Data are values collected to answer questions\nA dataset is made up of cases (observations) and variables\nVariables can be categorical or continuous, and how a variable is measured affects what we can do with it\nDescriptive statistics summarize the data we observe\nInferential statistics allow us to make conclusions about a population based on a sample\nData form distributions, which can be described by their center, variability, shape, and outliers",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.5 Putting It All Together"
+    ]
+  },
+  {
+    "objectID": "02.5-putting-it-all-together.html#how-these-concepts-connect",
+    "href": "02.5-putting-it-all-together.html#how-these-concepts-connect",
+    "title": "2.5 Putting It All Together",
+    "section": "How These Concepts Connect",
+    "text": "How These Concepts Connect\nThese ideas are not separate—they work together as part of a process. You can think of working with data as a sequence:\n\nWe begin by defining variables and collecting data\nThese data form a dataset\nWhen we examine all values together, we see a distribution\nWe use descriptive statistics to summarize that distribution\nWe use inferential statistics to answer research questions about a population\n\nUnderstanding how these pieces fit together will make the rest of the course much easier.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.5 Putting It All Together"
+    ]
+  },
+  {
+    "objectID": "02.5-putting-it-all-together.html#quick-reference",
+    "href": "02.5-putting-it-all-together.html#quick-reference",
+    "title": "2.5 Putting It All Together",
+    "section": "Quick Reference",
+    "text": "Quick Reference\n\nTypes of Variables\n\n\n\n\n\n\n\n\n\nType\nDescription\nExample\nWhat You Can Do\n\n\n\n\nNominal\nCategories with no order\nMajor\nCounts, frequencies, percentages\n\n\nOrdinal\nOrdered categories\nSatisfaction ratings\nRankings, medians\n\n\nContinuous\nNumerical values\nTest scores, reaction time\nMeans, standard deviation\n\n\n\n\n\n\nFeatures of a Distribution\n\n\n\nFeature\nQuestion\nWhy It Matters\n\n\n\n\nCenter\nWhere are most values?\nDescribes typical value\n\n\nVariability\nHow spread out are values?\nShows consistency\n\n\nShape\nWhat pattern do values form?\nAffects interpretation\n\n\nOutliers\nAre there unusual values?\nCan influence results",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.5 Putting It All Together"
+    ]
+  },
+  {
+    "objectID": "02.5-putting-it-all-together.html#key-ideas-to-remember",
+    "href": "02.5-putting-it-all-together.html#key-ideas-to-remember",
+    "title": "2.5 Putting It All Together",
+    "section": "Key Ideas to Remember",
+    "text": "Key Ideas to Remember\n\nA variable’s level of measurement depends on how it is measured, not just what it represents\nAssigning numbers to categories does not make a variable continuous\nCollapsing variables into categories can reduce information\nDistributions provide a complete picture of the data, not just a single value\nBoth descriptive and inferential statistics are typically used together",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.5 Putting It All Together"
+    ]
+  },
+  {
+    "objectID": "02.5-putting-it-all-together.html#looking-ahead",
+    "href": "02.5-putting-it-all-together.html#looking-ahead",
+    "title": "2.5 Putting It All Together",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nIn the next chapters, you will begin working directly with data:\n\nChapter 3: Getting started with jamovi\nChapter 4: Describing data using statistics\nChapter 5: Visualizing data\nChapter 6: Cleaning and preparing data\n\nEach of these chapters will build directly on the concepts introduced here.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.5 Putting It All Together"
+    ]
+  },
+  {
+    "objectID": "02.5-putting-it-all-together.html#check-your-understanding",
+    "href": "02.5-putting-it-all-together.html#check-your-understanding",
+    "title": "2.5 Putting It All Together",
+    "section": "Check Your Understanding",
+    "text": "Check Your Understanding\n\nA dataset includes the following variables:\n\nMajor\nStress rating on a 1–5 scale\nHours of sleep last night\n\nFor each variable:\n\nIdentify whether it is categorical or continuous\nState one appropriate way to describe it\n\nWhy is it important to correctly identify variable types before running analyses?\nA researcher reports only the mean for a variable. What important information might still be missing?\nExplain the difference between a statistic and a parameter.\nA variable is coded as:\n\n1 = cat\n2 = dog\n3 = frog\n\nWhy is this still not a continuous variable?\n\n\n\n\n\n\n\nTipAnswers\n\n\n\n\n\n\n\nMajor → categorical → frequencies or percentages\n\nStress rating → ordinal (categorical) → median or frequencies\n\nHours of sleep → continuous → mean and standard deviation\n\nVariable type determines what descriptive statistics, graphs, and analyses are appropriate. If a variable is classified incorrectly, the results may be misleading.\nVariability, shape, range, and possibly sample size. The mean alone does not fully describe the data.\nA statistic describes a sample, while a parameter describes a population. We often use statistics to estimate parameters.\nBecause the numbers are only labels for categories; they do not represent meaningful numerical quantities.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.5 Putting It All Together"
+    ]
+  },
+  {
+    "objectID": "02.5-putting-it-all-together.html#reflection",
+    "href": "02.5-putting-it-all-together.html#reflection",
+    "title": "2.5 Putting It All Together",
+    "section": "Reflection",
+    "text": "Reflection\nThink about a dataset you might collect in your own field:\n\nWhat variables would you measure?\nWould they be categorical or continuous?\nWhat might the distribution of your data look like?\nWhat would you want to describe or compare?\n\nTaking a moment to think through these questions can help you connect these concepts to real-world data.",
+    "crumbs": [
+      "2. Statistics Foundations",
+      "2.5 Putting It All Together"
+    ]
+  }
+]
