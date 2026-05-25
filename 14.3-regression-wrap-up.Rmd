@@ -1,6 +1,6 @@
 ## 14.3 General Linear Model
 
-```{r ind-t_setup, echo = FALSE, message=FALSE}
+```{r, echo = FALSE, message=FALSE}
 library(tidyverse)
 library(viridis)
 options(knitr.graphics.auto_pdf = TRUE)

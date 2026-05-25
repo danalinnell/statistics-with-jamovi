@@ -1,6 +1,6 @@
 ## 14.1 Correlation
 
-```{r ind-t_setup, echo = FALSE, message=FALSE}
+```{r, echo = FALSE, message=FALSE}
 library(tidyverse)
 options(knitr.graphics.auto_pdf = TRUE)
 ```

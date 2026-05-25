@@ -1,6 +1,6 @@
 # 2. Statistics foundations
 
-```{r intro-setup, echo = FALSE, message=FALSE}
+```{r, echo = FALSE, message=FALSE}
 library(tidyverse, webshot)
 ```
 
@@ -338,7 +338,7 @@ So “time” is not automatically one type of variable. Its level of measuremen
 Here is another example. The construct **studying** could also be measured in different ways.
 
 | Name | Study_Continuous | Study_Ordinal | Study_Nominal |
-|----|---:|----|----|
+|------------------|-----------------:|------------------|------------------|
 | *Name (Character)* | *Hours studied per day* | *Amount of studying* | *Studies every day?* |
 | Jesus | 5.0 | A great deal | Yes |
 | Nicky | 4.5 | A great deal | Yes |
@@ -694,7 +694,7 @@ Understanding how these pieces fit together will make the rest of the course muc
 #### Types of Variables
 
 | Type | Description | Example | What You Can Do |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Nominal | Categories with no order | Major | Counts, frequencies, percentages |
 | Ordinal | Ordered categories | Satisfaction ratings | Rankings, medians |
 | Continuous | Numerical values | Test scores, reaction time | Means, standard deviation |

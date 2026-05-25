@@ -2,7 +2,7 @@
 
 # 1. How to Use This Book
 
-```{r intro-setup, echo = FALSE, message=FALSE}
+```{r, echo = FALSE, message=FALSE}
 library(tidyverse)
 ```
 
