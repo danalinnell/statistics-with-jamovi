@@ -1,275 +1,737 @@
 # (PART) NHST {.unnumbered}
 
-# 7. Hypothesis testing
+# 7. Hypothesis Testing
 
-Now that we've covered descriptive statistics and are familiar with our statistical software, it's time to turn to inferential statistics. Remember, we conduct inferential statistics because we often cannot collect data from an entire population. Therefore, we collect a sample to draw inferences about the population of interest.
+In previous chapters, we focused on understanding, describing, visualizing, and cleaning our data. These steps are essential—but they are not the end goal.
 
-One of the ways we make inferences is using hypothesis testing. We are going to be learning about **Null Hypothesis Significance Testing (NHST)**, which means we test and make inferences about the null hypothesis (which we'll learn about in more detail soon).
+Often, we want to go one step further:
 
-:::{.info data-latex=""}
+> Can we use our sample data to make conclusions about a larger population?
 
-I have created a 4-page "cheat sheet" of the hypothesis testing 4-step process detailed here, with brief details on how it differs for the various inferential statistics we'll learn in this textbook. 
+This is the goal of **inferential statistics**.
 
-I highly recommend you save this and refer to it often. If possible, print it out and have it by your side as you go through all of your inferential statistics so you know how to go through each step!
+In Chapter 2, we introduced the distinction between:
 
-[Statistics with jamovi - Overarching handout](https://github.com/danalinnell/statistics-with-jamovi/blob/master/Statistics%20with%20jamovi%20-%20Overarching%20handout.pdf)
+-   **Descriptive statistics**: summarize our sample
+-   **Inferential statistics**: make conclusions about a population
 
-Note: It will not preview the file in GitHub. When you click the link, click the download button to download the raw file.
+In this chapter, we introduce the logic of **hypothesis testing**, also known as **null hypothesis significance testing (NHST)**.
+
+------------------------------------------------------------------------
+
+### One process, many tests
+
+Although there are many statistical tests (t-tests, ANOVAs, correlations, etc.), they all follow the same basic process:
+
+1.  **Look at the data**
+2.  **Check assumptions**
+3.  **Perform the test**
+4.  **Interpret the results**
+
+> This 4-step framework will be used in *every inferential statistics chapter moving forward*.
+
+Each test differs in *how* we perform Step 3 and what assumptions we check in Step 2—but the overall logic stays the same.
+
+------------------------------------------------------------------------
+
+### Running example: Bobo doll replication
+
+Let’s walk through this process using a hypothetical example.
+
+Imagine a researcher wants to replicate Albert Bandura’s famous **Bobo doll experiment**. In this replication study, the researcher randomly assigns 30 six-year-old children to one of two conditions:
+
+-   One group watches a video of an adult behaving **aggressively** toward a Bobo doll
+-   The other group watches a video of an adult playing **passively** with the Bobo doll
+
+After watching their assigned video, children are placed in the same room with a Bobo doll. Researchers then observe and record the children’s **aggressive behaviors**.
+
+::: callout-note
+The original study design was more complex than this simplified version. It accounted for factors like baseline aggression and gender. If you are interested, you can read more here: <https://www.simplypsychology.org/bobo-doll.html>
 :::
 
-Regardless of the inferential statistic we are performing, hypothesis testing goes through the same basic set of procedures:
+::: callout-note
+This example is an instance of an **independent samples t-test** (comparing two groups on a continuous outcome).
 
-1.  **Look at the data** by examining the descriptive statistics and describing your hypotheses.
-2.  **Check assumptions** to ensure your data is satisfactory for performing the inferential statistic (or choosing the correct statistic depending on which assumptions are met). Note that this is covered in Chapter 6 so we won't discuss it in this chapter.
-3.  **Perform the test** by running the inferential statistic by hand or in jamovi.
-4.  **Interpret the results** and make a decision about whether you reject or fail to reject the null hypothesis, write-up the results in APA format, and provide a visualization of the results.
-
-
-```{=html}
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/Eqs9L6gDaJg" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-```
-
-
-Let's go through each of these in turn, using a hypothetical example.
-
-## 7.1 Example of hypothesis testing
-
-Imagine a researcher wants to replicate Alburt Bandura's famous Bobo doll experiment. In their replication study, the researcher randomly assigns 30 six-year-old children to one of two conditions: one group watches a video of an adult showing aggressive behavior toward a Bobo doll and the other group watches a video of an adult passively playing with a Bobo doll. After watching their assigned video, children then went to the same room from the videos with the same Bobo doll. Researchers observed for aggressive behaviors[^07-hypothesis-testing-1].
-
-[^07-hypothesis-testing-1]: The study design was actually much more impressive than what I'm describing. They accounted for the children's baseline aggression and the gender of both the child and the person in the video. If you are interested, you can read more here: <https://www.simplypsychology.org/bobo-doll.html>
-
-:::{.info data-latex=""}
-
-The example we are going to go through is an example of an independent samples t-test. There are two groups (children watching aggresive behaviors vs children watching passive behaviors) being measured on their aggressive behaviors. 
-
-Although I do not expect you to understand an independent samples t-test to get through this chapter, you may want to explore that chapter in the textbook as well. Otherwise, we will learn about it in more detail later.
+You are not expected to fully understand this test yet—we will return to it in a later chapter. For now, focus on the overall process of hypothesis testing.
 :::
 
-### Step 1. Look at the data
+------------------------------------------------------------------------
 
-The first step is to look at our data. We need to make sure we understand our study, what research design was used, how data was collected, and what the dataset looks like.
+### What you will learn
+
+By the end of this chapter, you should be able to:
+
+-   Understand the logic of hypothesis testing
+-   Apply the 4-step framework
+-   Interpret p-values and statistical significance
+-   Understand effect size and power at a conceptual level
+
+> This chapter provides the foundation for all inferential statistics you will learn next.
+
+## 7.1 Step 1: Look at the data
+
+The first step in any inferential analysis is to understand your data and your research question.
+
+Before running any statistical test, you should be able to clearly describe what you are studying and how your data are structured.
+
+------------------------------------------------------------------------
+
+### Identify your variables
+
+You should always be able to answer:
+
+-   What is my IV?
+-   What is my DV?
+-   What type of variables are these (categorical vs continuous)?
+-   What is my research design?
+
+These decisions will determine which statistical test you use later.
+
+Using our Bobo doll example:
+
+-   **Independent variable (IV)**: Type of video (either aggressive or passive). This is an example of a categorical variable; more specifically, it is a binary nominal variable.
+-   **Dependent variable (DV)**: Number of aggressive behaviors observed. This is an example of a continuous variable.
+-   **Research design**: This is an example of a between-subjects research design. Children were randomly assigned to one or the other type of video.
+
+------------------------------------------------------------------------
+
+### Describe your data
+
+Before performing any inferential test, you should:
+
+-   Examine **descriptive statistics** (e.g., means, variability)
+-   Look at **visualizations** (e.g., histograms, boxplots)
+
+------------------------------------------------------------------------
+
+#### What might the dataset look like?
+
+In jamovi (or any statistical software), your data are organized in a spreadsheet format:
+
+-   Each **row** represents a participant (in this case, child)
+-   Each **column** represents a variable
+
+Here is a small example of what the dataset might look like for our study:
+
+| Child_ID | Condition        | Aggressive_Behavior_Count |
+|----------|------------------|---------------------------|
+| 1        | Aggressive_Video | 12                        |
+| 2        | Aggressive_Video | 9                         |
+| 3        | Aggressive_Video | 15                        |
+| 4        | Passive_Video    | 4                         |
+| 5        | Passive_Video    | 6                         |
+| 6        | Passive_Video    | 3                         |
+
+-   **Child_ID**: a unique identifier for each participant
+-   **Condition**: the independent variable (which video they watched)
+-   **Aggressive_Behavior_Count**: the dependent variable (number of aggressive behaviors observed)
+
+------------------------------------------------------------------------
 
 #### Describe the data
 
-Although we are working with a hypothetical scenario, we can think about what the data would look like in a spreadsheet. We have two variables:
+Before running any statistical test, we would:
 
-1.  The independent variable is what condition of the study they were randomly assigned to. The variable might be called "condition" which might have two categories or levels, one being "aggressive" and the other being "passive".
-2.  The dependent variable is the observed aggressive behaviors. The variable might be called "aggression" which would be a continuous measure of how many aggressive behaviors were observed for the child.
+-   Check for unusual values or patterns
+-   Compare the **average aggressive behavior** in each group
+-   Look at how much the scores vary within each group
 
-This would result in two columns, one for each variable, and 30 rows, one for each participant in the study.
+Suppose we calculate descriptive statistics for the full dataset (all 30 children):
 
-#### Specify the hypotheses
+| Condition        | Mean Aggression | Standard Deviation | Sample Size |
+|------------------|-----------------|--------------------|-------------|
+| Aggressive_Video | 11.20           | 3.10               | 15          |
+| Passive_Video    | 5.40            | 2.80               | 15          |
 
-As mentioned previously, we are using Null Hypothesis Significance Testing, or NHST. We are therefore *testing hypotheses* in our inferential statistics, and specifically we are testing the *null* hypothesis. We need to first write out our hypotheses, which are our **alternative** and **null** hypotheses.
+What do we notice?
 
-The alternative hypothesis is that there is an effect of the IV on the DV, or a relationship between two variables, or difference between groups. We usually write this out as H~1~ although sometimes you'll see it written as H~a~.
+-   Children in the **aggressive video condition** show higher average aggression
+-   There is some variability in both groups
+-   The groups appear meaningfully different at first glance
 
-:::{.info data-latex=""}
+> In this example, it looks like children in the aggressive condition tend to show higher aggression—but we don’t yet know if that difference is meaningful or just due to chance.
 
-Your hypotheses should very clearly describe both the IV and DV. 
+This connects directly to what you learned in:
+
+-   Chapter 2 (describing data)
+-   Chapter 4 (descriptive statistics in jamovi)
+-   Chapter 6 (cleaning your data)
+
+You are making sure your data make sense and that you understand them before analyzing them.
+
+------------------------------------------------------------------------
+
+### State your hypotheses
+
+As part of understanding your research question, we need to clearly state our hypotheses.
+
+Because we are using **null hypothesis significance testing (NHST)**, we define two hypotheses:
+
+-   the **alternative hypothesis**
+-   the **null hypothesis**
+
+These two hypotheses work together to represent all possible outcomes of our study.
+
+------------------------------------------------------------------------
+
+#### Alternative hypothesis (H₁ or Hₐ)
+
+The **alternative hypothesis** states that there is an effect, difference, or relationship.
+
+In our Bobo doll example:
+
+> Children who watch the aggressive video will exhibit *more* aggressive behaviors than children who watch the passive video.
+
+This reflects what the researcher expects to find based on theory and prior research on observational learning.
+
+------------------------------------------------------------------------
+
+#### Null hypothesis (H₀)
+
+The **null hypothesis** states that there is **no effect, no difference, or no relationship**.
+
+In our example:
+
+> There will be no difference in aggressive behavior between children who watch the aggressive video and those who watch the passive video.
+
+::: callout-note
+A helpful way to remember this: **Null = none (or zero effect)**
 :::
 
-The null hypothesis is that there is no effect, no relationship, or no difference. Most null hypotheses tend to be *nill* hypotheses, and nill means zero. That's hopefully an easy way to remember the difference between null and alternative hypotheses. We usually write the null hypothesis out as H~0~.
+When we use **non-directional (two-tailed)** hypotheses, the null hypothesis is simply “no difference.”
 
-:::{.info data-latex=""}
+However, when we use **directional (one-tailed)** hypotheses, the null hypothesis becomes slightly broader—it includes both "no difference, or the opposite direction of the predicted effect."
 
-Regardless of our research question, our null hypothesis is always that there is no effect. This is what "null" means: none or zero effect.
+We will return to this idea below.
+
+------------------------------------------------------------------------
+
+#### How the hypotheses work together
+
+The null and alternative hypotheses must be:
+
+-   **Mutually exclusive** → a result cannot support both
+-   **Exhaustive** → all possible outcomes are covered
+
+This means:
+
+-   Every possible result must support either the null or the alternative
+-   There is no “in-between” option
+
+::: callout-warning
+A common error is writing hypotheses that are not mutually exclusive or not exhaustive.
+
+-   If a result could support both hypotheses → they are not mutually exclusive
+-   If a result fits neither hypothesis → they are not exhaustive
 :::
 
-The two hypotheses—our alternative and null hypotheses—must be **mutually exclusive** and **exhaustive**. Mutually exclusive means a potential result of the study cannot support both the alternative and null hypothesis; it must exclusively support only one. Exhaustive means the entire possible universe of results must be captured in our two hypotheses; it must exhaust all possible results.
+------------------------------------------------------------------------
 
-:::{.warning data-latex=""}
+#### Directional vs non-directional hypotheses
 
-A common error students make in writing out their hypotheses is that they are not mutually exclusive or exhaustive. If there is any possible value that, if you got it, would not support either hypothesis then your hypotheses are not exhaustive. If there is any possible value that, if you got it, would support both hypotheses then your hypotheses are not mutually exclusive. 
+In this example, the hypothesis is **directional**: We predict that one group will show *more* aggressive behavior than the other. This is also called a **one-tailed hypothesis**.
+
+If we did not predict a direction, we would use a **non-directional (two-tailed)** hypothesis. For example, we might predict there is a difference in aggressive behavior between groups without specifying which group is higher.
+
+When we use a directional hypothesis, the alternative hypothesis specifies one direction of the effect. To ensure the hypotheses remain **exhaustive**, the null hypothesis must include everything else.
+
+In our example:
+
+-   **Alternative (H₁):** Children in the aggressive condition show *more* aggressive behavior
+-   **Null (H₀):** Children in the aggressive condition show *no difference* or *less* aggressive behavior
+
+This ensures that all possible outcomes are covered:
+
+-   More aggression → supports the alternative
+-   No difference → supports the null
+-   Less aggression → also supports the null
+
+> Together, the null and alternative hypotheses must account for every possible result. This ensures the hypotheses are *exhaustive*
+
+::: callout-note
+Directional hypotheses should be used thoughtfully. They require stronger theoretical justification because you are predicting a specific direction of the effect.
+
+At the same time, directional hypotheses can increase **statistical power**, meaning you may be more likely to detect a real effect if it exists. We will return to this idea later in the textbook.
 :::
 
-We might also have **directional** or **non-directional** hypotheses. Directional hypotheses are also called one-tailed hypotheses because only one tail of the distribution would lead us to fail to reject the null hypothesis. Non-directional hypotheses are such that we don't know whether the difference will be greater or less than 0, but we just think there will be a difference; these are also called two-tailed hypotheses because both tails of the distribution would lead us to fail to reject the null hypothesis. This will make a little more sense below and a lot more sense in the next chapter.
+Before we formally test our hypotheses, we need to ensure that our data meet the assumptions required for the statistical test.
 
-Let's go back to our Bobo doll replication study. What might the hypotheses be? There should be theory and research to support alternative hypotheses. There is ample research now that viewing aggression leads to aggression through imitation and observed learning. Therefore, the researcher likely has a hypothesis that watching the aggressive adult will lead to more aggressive behavior than watching the passive adult.
+------------------------------------------------------------------------
 
-Therefore, our hypotheses would be:
+#### Check your understanding
 
-**H~1~**: Children watching the video with the adult aggressively playing with the Bobo doll will exhibit *more* aggressive behaviors than children watching the video with the adult playing passively.
+1.  What is the difference between the null and alternative hypothesis?
+2.  What does the null hypothesis always represent?
+3.  In the Bobo doll example, what is the alternative hypothesis?
+4.  What is the difference between directional and non-directional hypotheses?\
 
-**H~0~**: There will be *no difference* in children's aggressive behaviors between the two groups OR children watching the video with the adult aggressively playing with the Bobo doll will exhibit *fewer* aggressive behaviors than children watching the video with the adult playing passively.
-
-Let's analyze these hypotheses in more detail:
-
-1.  The hypotheses are mutually exclusive because no possible result could be both more aggressive AND no difference in aggression, for example.
-
-2.  The hypotheses are exhaustive because all possible results are that there are fewer, zero, or more aggressive behaviors when comparing the groups. Basically, it encompasses negative infinity to positive infinity!
-
-3.  The hypotheses are one-tailed because we anticipate a direction in the difference between the groups. If we had no prior thought about how one group would compare to another, then we could have had a two-tailed, non-directional hypothesis.
-
-4.  Furthermore, note how I have clearly described the IV (the groups of watching the video with the adult aggressively vs passively playing with the Bobo doll) and the DV (aggressive behaviors).
-
-A common error in a directional hypothesis like this is to forget that the null hypothesis is both no difference *and* the opposite. In other words, we have three possible options for our null and alternative hypotheses based on direction ($\mu$ is the Greek letter "mu" and we often use it to signify the mean):
-
-|                        | Two-tailed         | One-tailed (greater) | One-tailed (less than) |
-|------------------|------------------|------------------|------------------|
-| **Alternative** (H~1~) | $\mu_1$ != $\mu_2$ | $\mu_1$ \> $\mu_2$   | $\mu_1$ \< $\mu_2$     |
-| **Null** (H~0~)        | $\mu_1$ == $\mu_2$ | $\mu_1$ \<= $\mu_2$  | $\mu_1$ \>= $\mu_2$    |
-
-Since we're talking about mean differences, we could also reformulate the above table slightly differently:
-
-|                        | Two-tailed        | One-tailed (greater) | One-tailed (less than) |
-|------------------|------------------|------------------|------------------|
-| **Alternative** (H~1~) | $\mu_{diff}$ != 0 | $\mu_{diff}$ \> 0    | $\mu_{diff}$ \< 0      |
-| **Null** (H~0~)        | $\mu_{diff}$ == 0 | $\mu_{diff}$ \<= 0   | $\mu_{diff}$ \>= 0     |
-
-:::{.info data-latex=""}
-
-Note: != means "not equal" like the ≠ symbol. I write != because that is the notation that R uses for "not equal."
-
-Similarly, you might be wondering why I use == instead of just =. Again, this is the notion R uses for "exactly equal to." In R, a single equal sign is usually equivalent to the assignment operator (e.g., x = 10 means assign 10 to the variable x).
+::: {.callout-answer collapse="true"}
+1.  The null hypothesis states no effect; the alternative states there is an effect
+2.  No effect, no difference, or no relationship
+3.  That children who watch the aggressive video will show more aggressive behavior
+4.  Directional specifies the direction of the effect; non-directional does not
 :::
 
-### Step 2. Check assumptions
+## 7.2 Step 2: Check assumptions
 
-We're going to skip over this for now (read more in the "Parametric Assumptions" chapter later). Just keep in the back of your head that you need to understand whether you met the assumptions to know exactly what statistical test to perform.
+Before performing a statistical test, we need to check whether our data meet certain **assumptions**. Statistical tests are built on certain expectations about the data. These expectations are called **assumptions**.
 
-### Step 3. Perform the test
+> Assumptions are conditions that must be reasonably met for the results of a statistical test to be valid.
 
-:::{.info data-latex=""}
+------------------------------------------------------------------------
 
-For this example chapter, we're going to walk through how we might do these analyses by hand. Back in the day before computers existed, or before they were more widely available, this is how folks would analyze their data! 
+### Why assumptions matter
 
-This helps us both understand the "behind the scenes" processes of our statistical programs, but also gives us a greater appreciation for what our statistical programs provide us.
+If assumptions are not met:
+
+-   The results of the test may be inaccurate or misleading
+-   We may need to use a different version of the test
+-   Our conclusions may not be trustworthy
+
+> Good data analysis is not just about running a test—it is about making sure the test is appropriate for the data.
+
+------------------------------------------------------------------------
+
+### Common assumptions
+
+Most statistical tests rely on a few key assumptions:
+
+------------------------------------------------------------------------
+
+#### Normality
+
+This refers to the **shape of the distribution**.
+
+-   Are the data roughly bell-shaped?
+-   Are there extreme skewed values?
+
+This connects back to **Distribution shape** which you learned about in Chapter 2.
+
+------------------------------------------------------------------------
+
+#### Homogeneity of variance
+
+This refers to **variability across groups**.
+
+-   Do the groups have similar levels of spread?
+-   Is one group much more variable than the other?
+
+This connects back to **Variability and dispersion** which you learned about in Chapter 2.
+
+------------------------------------------------------------------------
+
+#### Independence
+
+This refers to how the data were collected.
+
+-   Are observations independent of each other?
+-   Does one participant’s score influence another’s?
+
+This is determined by the **study design**, not just the data.
+
+------------------------------------------------------------------------
+
+These assumptions connect directly to ideas from earlier chapters, particularly distribution shape and variability (Chapter 2). When assumptions are violated, the results of a statistical test may be misleading, which is why checking assumptions is a critical step before performing any analysis.
+
+------------------------------------------------------------------------
+
+### Connecting to our example
+
+In the Bobo doll study:
+
+-   **Normality** → Are aggressive behavior scores roughly normally distributed?
+-   **Homogeneity** → Is variability similar between the aggressive and passive conditions?
+-   **Independence** → Each child is observed separately, so scores should be independent.
+
+::: callout-note
+In this chapter, we focus on understanding *what* assumptions are and *why they matter*.
+
+We will learn how to formally check assumptions in **Chapter 9**.
 :::
 
-The basic thing we're trying to do with our inferential testing is determine what constitutes "more" aggression versus "no difference" in aggression.
+Once assumptions are reasonably met, we can move forward with formally evaluating our hypotheses.
 
-No difference seems easy. That's a difference of zero, right? Well, not exactly, because it's highly unlikely we would get an *exact* difference of zero. Therefore the question is: which values are close enough to a difference of zero that we'd still say that there is no difference? If our values are within that range, then we would fail to reject the null hypothesis. If our values are *outside* that range, then we would reject the null hypothesis.
+------------------------------------------------------------------------
 
-:::{.warning data-latex=""}
+### Check your understanding
 
-Note my language carefully here: fail to reject the null hypothesis OR reject the null hypothesis. Note how I am not saying support the alternative hypothesis!
+1.  What are statistical assumptions?
+2.  Why is it important to check assumptions before running a test?
+3.  What does normality refer to?
+4.  What does homogeneity of variance refer to?
+5.  What does independence refer to?
 
-Through NHST, we are only ever testing the null hypothesis and therefore can only make conclusions about the null hypothesis. This is why we need replication studies to provide ample support for alternative hypotheses.
+::: {.callout-answer collapse="true"}
+1.  Conditions that must be met for a statistical test to be valid
+2.  Because violations can lead to inaccurate or misleading results
+3.  The shape of the distribution of the data
+4.  Whether groups have similar variability
+5.  Whether observations are independent of each other
 :::
 
-Let's try to visualize this. We are saying that the null hypothesis is there is no difference (or less aggression), but at some point no difference turns into *greater* difference. Furthermore, we have a directional hypothesis in that we do not think the difference will be negative, that children watching the adult play aggressively will exhibit fewer aggressive behaviors. Basically, we need to know what the critical value is in the figure below, which is the point at which we say "Okay, this difference is big enough that I will reject the null hypothesis."
+## 7.3 Step 3: Perform the test
+
+Now that we understand our data, have clearly stated our hypotheses, and checked assumptions, we are ready to perform the statistical test.
+
+This is where we formally evaluate our hypotheses.
+
+The core question in hypothesis testing is:
+
+> How large does a difference need to be before we consider it “real” rather than just due to chance?
+
+In our Bobo doll example, we observed:
+
+-   Mean aggression (Aggressive condition) = 11.20
+-   Mean aggression (Passive condition) = 5.40
+
+That’s a difference of **5.80 aggressive behaviors**.
+
+At first glance, that seems meaningful—but we need to ask:
+
+> Is this difference large enough that we would *not expect it to happen by chance* if there were truly no difference between groups?
+
+------------------------------------------------------------------------
+
+### “Close enough to zero” vs “too far from zero”
+
+If the null hypothesis is true, the true difference between groups is **0**. But in real data, we almost never observe an exact difference of 0. So instead, we ask:
+
+-   Which differences are **close enough to 0** that we treat them as “no difference”?
+-   Which differences are **far enough from 0** that we consider them meaningful?
+
+This creates a boundary between:
+
+-   **Not surprising (consistent with the null)**
+-   **Surprising (unlikely under the null)**
+
+------------------------------------------------------------------------
+
+### Alpha (α): where we draw the line
+
+We define this boundary using **alpha (α)**. Most commonly, we set **α = .05**, although there might be reasons you change your alpha level (see Chapter 8).
+
+Alpha represents our threshold for what we consider “surprising.”
+
+> Values that fall in the most extreme 5% of possible outcomes (assuming the null is true) are considered unlikely enough that we reject the null hypothesis.
+
+We can visualize this idea using a distribution centered at 0 (which represents the null hypothesis of no difference). Most possible differences fall near 0 and are considered **not surprising**. Values farther away from 0 are more unusual.
+
+Alpha (α = .05) defines the boundary between:
+
+-   results that are **likely under the null hypothesis**
+-   results that are **unlikely under the null hypothesis**
+
+The shaded 5% region in the figure represents results that are unlikely if the null hypothesis is true. This boundary corresponds to a \*\*cutoff value\*\*—the point at which a result becomes “surprising enough” that we would reject the null hypothesis. In practice, this cutoff is expressed in terms of the \*\*difference we observe in our data\*\*.
+
+::: callout-note
+This particular figure only has the shaded region on the right side of the distribution because we had a one-tailed hypothesis. If we had a non-directional, two-tailed hypothesis, the shaded region would be 2.5% of the left tail and 2.5% of the right tail.
+:::
+
+If our observed result falls in this region, it is considered unlikely enough that we would reject the null hypothesis.
 
 <div class="figure">
-<img src="07-hypothesis-testing_files/figure-html/unnamed-chunk-2-1.png" alt="Critical area of statistical significance" width="672" />
-<p class="caption">(\#fig:unnamed-chunk-2)Critical area of statistical significance</p>
+<img src="07-hypothesis-testing_files/figure-html/unnamed-chunk-1-1.png" alt="Conceptual illustration of alpha and the critical region" width="672" />
+<p class="caption">(\#fig:unnamed-chunk-1)Conceptual illustration of alpha and the critical region</p>
 </div>
 
-:::{.info data-latex=""}
+::: callout-note
+### A quick note on how this used to be done
 
-This visual is for a one-tailed, directional hypothesis with an alpha of 5%. Therefore, the critical region is only on one side and covers 5% of the area under the curve.
+Before statistical software was widely available, researchers often analyzed data by hand.
 
-If our test had been for a two-tailed, non-directional hypothesis with an alpha of 5% then the critical region would be on both sides of the curve, with 2.5% of the area under the curve on both sides. 
+They would:
 
-If our test had been one-tailed with an alpha of 1%, then the critical region would be further to the right (larger, and in fact would be 2.048, which you can find in the table below) and would only be 1% of the area under the curve.
+-   Determine the **critical region** based on:
+    -   the alpha level (e.g., .05)
+    -   the sample size
+    -   whether the hypothesis was **directional (one-tailed)** or **non-directional (two-tailed)**
+-   This process produced a **cutoff value** (called a *critical value*)
+-   Then they would compare that cutoff to their observed result
+
+------------------------------------------------------------------------
+
+In our example, we observed a mean difference of **5.80 aggressive behaviors**.
+
+Researchers would ask:
+
+> Does this observed difference fall into the “unlikely” (critical) region?
+
+-   If it **does** → the result is statistically significant (**p \< .05**)
+-   If it **does not** → the result is not statistically significant (**p ≥ .05**)
+
+------------------------------------------------------------------------
+
+Today, we no longer need to do this by hand.
+
+Statistical software (like jamovi) calculates the **exact p-value**, which tells us directly:
+
+> How likely our result is under the null hypothesis
+
+This allows us to make more precise decisions without relying on tables or cutoff values.
 :::
 
-We figure out that critical value based on what we set as our level of significance, also known as the **alpha level**. Most studies you read use the arbitrary $\alpha$ = .05 (or 5%), although we really should be thinking critically about what alpha level we use (more on that in the next chapter). In the visualization above, we set the alpha to 5% and so the area shaded in red is exactly 5% of the area under the curve of the normal distribution.
+------------------------------------------------------------------------
 
-Our alpha is the level of which we are saying would be considered "surprising" versus "not surprising." If we got a mean difference that fell in that red area, then we would consider that "surprising" *if we believed the null hypothesis was true*. Basically, if we assume there is a mean difference of 0 (i.e., the null hypothesis), values past the critical value would be considered surprising enough that we would say that we reject the null hypothesis.
+### The p-value: how surprising are our results?
 
-In other words, *the area in red are values that are unlikely to occur if the null hypothesis (in this case, mean difference \<= 0) were true.*
+Once we run the statistical test, we obtain a **p-value**.
 
-#### Set the criteria for obtaining the critical t-value
+> The p-value tells us how likely our results would be if the null hypothesis were true.
 
-Now that we understand that a bit better, how do we find out our critical value, or the values in the red region? Back in the day before computers, some fancy mathematicians and statisticians figured out the exact *t*-values based on things like the direction of our hypothesis, our alpha, and our degrees of freedom. Let's figure these out for our example:
+In our example:
 
-1.  **Direction of our hypothesis**: We have already determined we're using a one-tailed hypothesis because we have a directional hypothesis. We think children in the aggression condition will have more aggressive behaviors than children in the passive condition.
-2.  **Alpha**: Let's stick with the default that most psychological research uses of $\alpha$ = .05
-3.  **Degrees of freedom**: For this test, this is calculated by n~1~ + n~2~ - 2, or N - 2. We have 30 children total, so 30 - 2 is 28
+-   If the p-value is very small → our observed difference is unlikely under the null
+-   If the p-value is large → our observed difference is plausible under the null
 
-:::{.info data-latex=""}
+::: callout-warning
+A p-value is **NOT** the probability that the null hypothesis is true.
 
-In our course, we will always assume that alpha is 5%. However, our next chapter will explain more about when we might change our alpha, typically to something lower like 1% or .5% or .1%. 
+It is the probability of the observed data (or more extreme data) assuming the null hypothesis is true.
 :::
 
-#### Determine the critical t-value
+We compare the p-value to our alpha level:
 
-We then go to a t-table like the one below and find the cell we are looking for to identify our **critical t-value (*t*~crit~)** which we will then compare to our **obtained t-value (*t~obt~*)** in the 4th step.
+-   If **p \< α** → the result is **statistically significant**
+-   If **p ≥ α** → the result is **not statistically significant**
 
-![](images/03-jamovi/t-table.png)
+This comparison is what we will use in Step 4 to make our decision.
 
-First, we have a one-tailed hypothesis and our alpha probability is set at .05 so we're going to look under the sixth column (t~.95~, one-tail = .05). Then we need to find the row for our degrees of freedom (df = 28). That leads us to our critical t-value, a ***t~crit~*** **of** **1.701**.
+------------------------------------------------------------------------
 
-:::{.info data-latex=""}
+### Effect size: how big is the effect?
 
-If our alpha was still .05 but we had a two-tailed test, then we would look under the seventh column (t.975, two-tails = .05). 
+Even if a result is statistically significant, we still need to ask how large is the difference. That’s what **effect size** tells us.
 
-If our alpha was .01 and one-tailed, we'd look at the eighth column, and if it was .01 and two-tailed we'd look at the ninth column. 
+In our example: How much more aggressive are children in the aggressive condition compared to the passive condition?
+
+In this case, we would get a **Cohen's d** effect size, which is the type of effect size used for comparing group differences. There are other effect sizes (e.g., r, eta-squared, phi) that you'll learn throughout the various inferential statistics.
+
+In our study, given the descriptive statistics from earlier, we would calculate a **Cohen's d of about 1.97**. That means the difference between groups is almost **two standard deviations**, which would typically be considered a **large effect**.
+
+This suggests that the difference in aggressive behavior between the two groups is substantial.
+
+It is important to note that effect sizes this large are relatively uncommon in many real-world studies. Often, effects are smaller and more subtle, which makes interpreting both statistical and practical significance especially important.
+
+::: callout-note
+Effect size interpretations (small, medium, large) are only rough guidelines.
+
+What counts as “meaningful” always depends on the context, theory, and application.
+
+We will revisit effect sizes in more detail in Chapter 8.
 :::
 
-#### Calculating the exact t-score and p-value
+Statistical significance tells us whether an effect is unlikely to be due to chance.
 
-We're going to figure out how to get our obtained t-value (*t~obt~*) results based on the data from our study. We had 30 participants, 15 in each condition. Imagine that the researcher performed the experiment and got the following results:
+**Practical significance asks: does this effect actually matter in the real world?**
 
--   Children who watched the video of the adult playing aggressively with the Bobo doll displayed an average of 51.10 aggressive behaviors (*SD* = 3.50).
+In this case:
 
--   Children who watched the video of the adult playing passively with the Bobo doll displayed an average of 27.40 aggressive behaviors (*SD* = 3.30).
+-   A difference of nearly **6 aggressive behaviors** is quite large\
+-   The effect size (d ≈ 1.97) indicates strong separation between the groups
 
-The mean difference is 51.10 - 27.40 = 23.70. We'll learn how to conduct a t-test in jamovi later, but for now you can just input the numbers into [this calculator](https://www.graphpad.com/quickcalcs/ttest1/?format=SD) (note: select to `Enter mean, SD and N` and choose the test `Unpaired t test`). It nicely gives you a lot of the values, but the one we are looking for is the test statistic, which is ***t~obt~*** **= 19.08** (notice we round to two decimals in APA style).
+> This would likely be considered both **statistically significant** and **practically meaningful**
 
-:::{.info data-latex=""}
+> Statistical significance tells us *if* an effect exists.\
+> Effect size tells us *how much it matters*.
 
-The calculator also gives us our exact p-value, which in this case is < .00001 but in APA style we typically report p-values to three decimal places, so we would say p < .001. The probability of getting a t-value as large as we did is less than .1% (less than our alpha of .05, so it is statistically significant). Very surprising!
+Even a **small effect size** can be practically important depending on the context.
 
-This calculator is acting as a statistical software and therefore giving us our exact p-value just like jamovi will provide for you once we move to the software. For now, just appreciate that we can estimate whether we met the p-value threshold when we analyze things by hand below.
+For example:
+
+-   A small improvement in a medical treatment could save lives
+-   A small increase in graduation rates could affect thousands of students
+-   A small reduction in harmful behavior could have meaningful long-term impact
+
+Conversely, even a large effect might not be important if:
+
+-   it has little real-world consequence
+-   it is not meaningful in context
+
+> Effect size helps us move beyond “Is there an effect?” to **“How much does this effect actually matter?”**
+
+------------------------------------------------------------------------
+
+### Power: how likely are we to detect a real effect?
+
+Another important idea is **statistical power**.
+
+> Power is the ability of a test to detect a real effect if one exists.
+
+Power matters because:
+
+-   Low power → we may miss real effects
+-   High power → we are more likely to detect real effects
+
+Power depends on:
+
+-   sample size
+-   effect size
+-   variability in the data
+
+::: callout-note
+Directional (one-tailed) hypotheses can increase power, which is one reason they must be theoretically justified.
+
+We will explore power in more detail in Chapter 8 (BEAN).
 :::
 
-### Step 4. Interpret the results
+Now that we have our statistical results, we can interpret what they mean in relation to our research question.
 
-We then need to compare our **critical t-value (*t*~crit~ = 1.701)** to our **obtained t-value (*t~obt~* = 19.08):**
+------------------------------------------------------------------------
 
--   When *t~obt~ \> t~crit~* then the results are statistically significant (*p* \< α) and we reject the null hypothesis.
+### Check your understanding
 
--   When *t~obt~ \< t~crit~* then the results are not statistically significant (*p* \> α) and we fail to reject the null hypothesis.
+1.  What is the main question hypothesis testing is trying to answer?
+2.  What does alpha (α) represent?
+3.  What does a p-value represent?
+4.  What is the difference between statistical significance and effect size?
+5.  What is statistical power?
 
-Since 19.08 \> 1.701, *we* *reject the null hypothesis that there is no difference in conditions or that children in the passive condition displayed more aggression than children in the aggressive condition.*
-
-:::{.warning data-latex=""}
-
-A common mistake is assuming that p < .05 means that the alternative hypothesis is true. This is inaccurate because the p-value is the probability of our data given the null hypothesis is true. It says nothing about the alternative hypothesis.
-
-Similarly, a common mistake is assuming p > .05 means the alternative hypothesis is false. This is incorrect for the same exact reason; NHST says nothing about the alternative hypothesis.
+::: {.callout-answer collapse="true"}
+1.  Whether the observed results are likely if the null hypothesis is true
+2.  The threshold for what we consider a surprising result
+3.  The likelihood of the observed data (or more extreme data) under the null hypothesis
+4.  Statistical significance tells us if an effect exists; effect size tells us how large it is
+5.  The ability of a test to detect a real effect
 :::
 
-#### Type 1 and 2 errors
+## 7.4 Step 4: Interpret the results
 
-However, this is when **Type 1** (false positive) and **Type 2** (false negative) errors come into play. Just because we get a result *does not automatically mean that result is 100% accurate*. There are many things that could lead us to an inaccurate interpretation! Perhaps it was a fluke, perhaps you didn't do something correct in your study, or perhaps the effect does or does not actually exist.
+After performing the statistical test, the final step is to interpret the results and make a decision about our hypotheses. This is the point where we take the output from the test and turn it into a meaningful conclusion about our research question.
 
-I like to use this table when discussing errors. On the far left column, we have our results: were they statistically significant (*p* \< .05) or not (*p* \> .05)? On the top row, we have whether *in the real world* the null or alternative hypothesis is true. In reality, we can *never* truly know whether the null or alternative hypothesis is true. We can at best approximate our understanding of the real world through replication!
+### Interpret the results
 
-|                                                    | H~0~ is true           | H~1~ is true           |
-|----------------------------------|-------------------|-------------------|
-| ***p*** **\< .05** (statistically significant)     | Type 1 error           | Correct interpretation |
-| ***p*** **\> .05** (statistically non-significant) | Correct interpretation | Type 2 error           |
+To make a decision, we compare the p-value to our alpha level (α = .05). If the p-value is less than .05, we reject the null hypothesis. If the p-value is greater than or equal to .05, we fail to reject the null hypothesis.
 
-Therefore, any time we get a statistically significant result (*p* \< .05), then *either* we made a correct interpretation *or we made a Type 1 (false positive) error!*
+It is important to use this language carefully. We either **reject** the null hypothesis or **fail to reject** the null hypothesis. We do not say that we “accept” the null hypothesis. This is because hypothesis testing is designed to evaluate evidence against the null hypothesis. If we do not have strong enough evidence to reject it, that does not mean the null is true; it simply means we do not have enough evidence against it.
 
-Similarly, any time we get a statistically non-significant results (*p* \> .05) then *either* we made a correct interpretation *or we made a Type 2 (false negative) error*!
+Returning to our Bobo doll example, we observed a mean difference of 5.80 aggressive behaviors between the two conditions. In Step 3, we learned that the test result was **p \< .001**. Because this p-value is smaller than our alpha level of .05, the result is statistically significant and we reject the null hypothesis.
 
-:::{.warning data-latex=""}
+In context, this means that children who watched the aggressive video exhibited more aggressive behavior than children who watched the passive video. In other words, the observed difference is unlikely to have occurred by chance alone if there were truly no difference between the groups.
 
-Another common mistake is to assume statistically significant results mean the null hypothesis is false. However, we can never know beyond a certainty of a doubt whether a significant result is a correct interpretation; we could also be making a Type 1 error.
+Of course, statistical significance is only part of the story. We also found that **Cohen’s *d* ≈ 1.97**, which is a very large effect. This tells us that the difference is not only statistically significant, but also substantial in size. A difference of nearly six aggressive behaviors would likely be considered practically meaningful in this context. More broadly, practical significance asks whether an effect matters in the real world, not just whether it crosses a statistical threshold.
 
-Similarly, a common mistake is to assume non-significant results mean the null hypothesis is true. We never know for sure whether the null or alternative is true, so in this case we could be making a Type 2 error.
+### Type I vs. Type II errors
+
+Because we are making decisions under uncertainty, it is always possible to make the wrong decision.
+
+A **Type I error** occurs when we reject the null hypothesis even though it is actually true. In our example, this would mean concluding that the aggressive video increases aggression when in reality it does not. The probability of making a Type I error is equal to our alpha level, which is typically 5%.
+
+A **Type II error** occurs when we fail to reject the null hypothesis even though it is false. In our example, this would mean concluding that there is no difference in aggression when the aggressive video really does increase aggressive behavior.
+
+These two types of errors help us understand why hypothesis testing involves judgment and uncertainty rather than absolute certainty. They also connect back to **power**, which we introduced in Step 3. Higher power means we are more likely to detect a real effect and less likely to make a Type II error.
+
+### APA write-up
+
+When writing up the results, we want to communicate the research question, the direction of the effect, the statistical significance, and the effect size as clearly as possible.
+
+A complete APA-style write-up for our example is:
+
+> Children who viewed the aggressive video (*M* = 11.20, *SD* = 3.10) exhibited significantly more aggressive behavior than those who viewed the passive video (*M* = 5.40, *SD* = 2.80), *t*(28) = 5.39, *p* \< .001, *d* = 1.97.
+
+At this point, the most important thing is that you understand the structure of the interpretation. Later chapters will show you how to obtain and report the exact test statistic and degrees of freedom for each specific test, and Chapter 10 will show you how to write these results more fully in APA style.
+
+### Visualize the results
+
+Just like in later inferential statistics chapters, we should also visualize the results. For a comparison between two groups on a continuous outcome, a boxplot with the raw data overlaid is often a good choice because it shows the center, spread, and individual observations. However, there are other valid choices, including a bar plot with error bars.
+
+Here is an example visualization of the Bobo doll results:
+
+<div class="figure">
+<img src="07-hypothesis-testing_files/figure-html/unnamed-chunk-2-1.png" alt="Aggressive behaviors by video condition" width="672" />
+<p class="caption">(\#fig:unnamed-chunk-2)Aggressive behaviors by video condition</p>
+</div>
+
+This kind of plot lets us quickly see that the children in the aggressive video condition generally showed more aggressive behavior than those in the passive video condition. It also helps us see the spread of the data within each group, which is one reason visualizations are so useful alongside statistical tests.
+
+------------------------------------------------------------------------
+
+### Check your understanding
+
+What decision do we make when p \< .05? Why do we say “fail to reject the null hypothesis” instead of “accept the null hypothesis”? What is a Type I error? What is a Type II error? Why is it useful to report both the p-value and the effect size?
+
+::: {.callout-answer collapse="true"}
+We reject the null hypothesis. Because not rejecting the null does not prove it is true; it only means we do not have enough evidence against it. A Type I error is rejecting the null hypothesis when it is actually true. A Type II error is failing to reject the null hypothesis when it is actually false. The p-value tells us whether the result is statistically significant, while the effect size tells us how large or meaningful the effect is.
 :::
 
-*If you'd like to read a more in-depth discussion of error control, I recommend also reading [Daniel Lakens' chapter in his textbook "Improving Your Statistical Inferences."](https://lakens.github.io/statistical_inferences/02-errorcontrol.html)*
+## 7.5 Recap, Common Mistakes, and Looking Ahead
 
-Next week we'll learn a lot more about p-values, errors, and more. For now, tuck this piece of information into your brain to remember!
+Throughout this chapter, we introduced the logic of hypothesis testing and worked through the full process using our Bobo doll example. Although there are many different statistical tests, they all follow the same core framework:
 
-#### Write up the results in APA format
+1.  **Look at the data**
+2.  **Check assumptions**
+3.  **Perform the test**
+4.  **Interpret the results**
 
-This is described in more detail in the Writing up results chapter, but when you are done performing a test and interpreting the results then you need to write up the results for your paper or assignment.
+If you understand this process, you understand the foundation of inferential statistics.
 
-## 7.2 Final note about hypothesis testing
+------------------------------------------------------------------------
 
-When you read journal articles, you'll note that they rarely discuss the null or alternative hypothesis. They may explain their research questions or their hypotheses (these hypotheses are their alternative hypotheses), but they rarely discuss the null.
+### Key takeaways
 
-This is not *necessarily* a bad thing. Rather, what may be problematic with it is if researchers apply NHST without critically thinking about what their null hypothesis is or whether they have a one-sided hypothesis, which leads researchers to use defaults when the defaults may not be most appropriate. However, it would probably be a better thing if everyone clearly specified their alternative and null hypotheses if they are doing NHST.
+Hypothesis testing is about making decisions under uncertainty. We use sample data to evaluate whether an observed effect is likely to reflect a real difference in the population or whether it could reasonably be explained by chance.
 
-Also, you may have heard some things about *p*-values not being reliable or desirable. We'll discuss what *p*-values are and how some researchers want to move away from them in the next chapter. In the meantime, just know that *p*-values are often misunderstood and therefore misused, and a lot of the recommendations for moving away from *p*-values are just replacing one potentially problematic approach with another.
+In this chapter, you learned that:
+
+-   The **null hypothesis (H₀)** represents no effect
+-   The **alternative hypothesis (H₁)** represents the presence of an effect
+-   The **p-value** tells us how likely our results are under the null hypothesis
+-   The **alpha level (α)** defines what we consider “unlikely” enough that we care about
+-   **Effect size** tells us how large the effect is
+-   **Power** reflects our ability to detect real effects
+
+Most importantly, you learned that statistical significance and practical significance are not the same thing. A result can be statistically significant but trivial in practice, and a small effect can still matter depending on the context.
+
+------------------------------------------------------------------------
+
+### Common mistakes to avoid
+
+There are several common misunderstandings about hypothesis testing:
+
+-   A p-value is **not** the probability that the null hypothesis is true
+-   Failing to reject the null hypothesis does **not** mean the null is true
+-   Statistical significance does **not** mean the effect is important
+-   A non-significant result does **not** prove there is no effect
+-   Ignoring effect size can lead to misleading conclusions
+-   A statistically significant result does **not** mean the study was well-designed
+
+These mistakes are common because hypothesis testing involves abstract reasoning about probability and uncertainty. As you continue through the course, focus on understanding the logic rather than memorizing rules.
+
+------------------------------------------------------------------------
+
+### Final note about hypothesis testing
+
+When you read journal articles, you will likely notice that researchers rarely explicitly discuss the null hypothesis. They may describe their research questions or their hypotheses (which correspond to the alternative hypothesis), but the null hypothesis is often left implicit.
+
+This is not inherently problematic. However, it can become problematic if researchers apply hypothesis testing without carefully considering what their null hypothesis actually is, or whether a directional (one-tailed) or non-directional (two-tailed) hypothesis is most appropriate. In practice, researchers often rely on default choices, even when those defaults may not be the best fit for their research question.
+
+Ideally, researchers would clearly specify both their alternative and null hypotheses when using hypothesis testing. Doing so encourages more thoughtful and transparent analysis.
+
+You may also have heard that p-values are controversial or that some researchers want to move away from them. We will discuss this in more detail in the next chapter. For now, it is important to understand that p-values are often **misunderstood and misused**, and many proposed alternatives come with their own limitations. The goal is not to abandon statistical tools, but to use them thoughtfully and appropriately.
+
+------------------------------------------------------------------------
+
+### Looking ahead
+
+In the next section of the textbook (chapters 11-14), you will learn specific statistical tests (e.g., t-tests, ANOVA, correlation). Each of these tests is simply a different way of applying the same 4-step process you learned in this chapter.
+
+> The framework stays the same—only the details of the test change.
+
+As you move forward, keep returning to this process. It will help you make sense of new statistical techniques and avoid common pitfalls.
+
+------------------------------------------------------------------------
+
+### Check your understanding
+
+1.  What are the four steps of hypothesis testing?
+2.  What is the difference between statistical significance and practical significance?
+3.  Why is it important to consider effect size?
+4.  Why might relying on default statistical decisions be problematic?
+5.  What is one common misconception about p-values?
+
+::: {.callout-answer collapse="true"}
+1.  Look at the data, check assumptions, perform the test, interpret the results
+2.  Statistical significance tells us whether an effect is unlikely due to chance; practical significance tells us whether the effect matters
+3.  Because it tells us how large or meaningful the effect is
+4.  Because defaults may not match the research question or design
+5.  That a p-value is the probability that the null hypothesis is true
+:::
