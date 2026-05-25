@@ -1,0 +1,29 @@
+# 4.6 Common Mistakes {.unnumbered}
+
+Here are a few common mistakes to avoid:
+
+-   Reporting means for categorical variables
+-   Ignoring variability (only reporting the mean)
+-   Misinterpreting skewed data
+-   Forgetting to report sample size
+-   Not checking your data before analysis
+
+::: {.callout-tip title="Check Your Understanding"}
+1.  What is one problem with reporting only the mean for a continuous variable?
+
+2.  Why is it a mistake to report means for nominal variables?
+
+3.  If a variable is coded incorrectly in jamovi, how might that affect your descriptive statistics?
+
+4.  A researcher finds a very large standard deviation. What are two possible explanations?
+:::
+
+::: {.callout-tip collapse="true" title="Answers"}
+1.  The mean alone does not show variability, skew, or possible outliers.
+
+2.  Nominal variables are categories, not quantities, so a mean is not interpretable.
+
+3.  jamovi may calculate inappropriate statistics or allow the wrong type of analysis.
+
+4.  The data may truly be very spread out, or there may be outliers, errors, or incorrect coding.
+:::

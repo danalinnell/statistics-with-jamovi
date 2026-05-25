@@ -1,0 +1,52 @@
+# 5.1 Why Visualize Data? {.unnumbered}
+
+In Chapter 4, we described data using numbers such as means, standard deviations, and percentages. While these summaries are essential, they do not always tell the full story.
+
+You have likely heard the phrase, *“a picture is worth a thousand words.”* This is especially true in statistics. A well-designed graph can often communicate patterns in data more quickly and clearly than a table of numbers or a written paragraph.
+
+Visualizations can help you:
+
+-   See the **shape** of a distribution (e.g., symmetric or skewed)
+-   Identify **outliers** or unusual values
+-   Understand **variability** and spread
+-   Detect patterns or trends that are not obvious from numerical summaries
+
+For example, two datasets can have the same mean and standard deviation but look very different when graphed. Without a visualization, those differences might go unnoticed.
+
+## Visualizations in practice
+
+Visualizations are not just helpful for your own understanding—they are also essential for communicating results to others.
+
+In research and professional settings:
+
+-   Journal articles often have **word or page limits**
+-   Reports need to be **clear and efficient**
+-   Audiences may not have strong statistical backgrounds
+
+A single well-designed graph can:
+
+-   summarize large amounts of information
+-   highlight key findings
+-   make results more accessible to a broader audience
+
+Because of this, visualizations are commonly used alongside (or sometimes instead of) detailed numerical summaries.
+
+## Key takeaway
+
+Descriptive statistics and visualizations work together:
+
+-   **Statistics** provide precise numerical summaries
+-   **Visualizations** provide an overall picture of the data
+
+Using both allows you to better understand and communicate your results.
+
+::: {.info data-latex=""}
+**Remember: it is incredibly important to always visualize your data!** You never know what descriptive statistics may be hiding.
+:::
+
+Here's a [video](https://www.youtube.com/watch?v=d2wU0kmCJEY) walking through why it's so important to look at your data.
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=d2wU0kmCJEY")
+```

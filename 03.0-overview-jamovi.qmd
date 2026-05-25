@@ -1,0 +1,31 @@
+# 3. Overview of jamovi {.unnumbered}
+
+In this chapter, we begin working with statistical software: **jamovi**.
+
+The goal of this chapter is not to perform statistical analyses yet. Instead, we will focus on becoming familiar with jamovi, understanding how data are organized in the software, and learning some basic tasks that will prepare us for later chapters.
+
+The concepts introduced in Chapter 2—such as variables, datasets, and levels of measurement—are directly applied here. As you work through this chapter, you will start to see how those ideas appear in practice.
+
+## How to Use This Chapter
+
+This chapter is organized into short pages that help you install jamovi, open data, navigate the interface, and check whether variables are set up correctly.
+
+You do not need to memorize every menu option right away. For now, focus on becoming comfortable enough with jamovi that you know where to look and what to check before running an analysis.
+
+## What You’ll Learn
+
+By working through this chapter, you will learn how to:
+
+- Explain why this textbook uses jamovi
+- Install jamovi or identify where to get installation help
+- Open existing datasets, including Excel and SPSS files
+- Enter data manually when needed
+- Navigate the jamovi interface
+- Check variable names, descriptions, measure types, data types, missing values, and levels
+
+## Chapter Sections
+
+- [3.1 What Is jamovi?](03.1-what-is-jamovi.qmd)
+- [3.2 Installing jamovi](03.2-installing-jamovi.qmd)
+- [3.3 Opening Data in jamovi](03.3-opening-data-in-jamovi.qmd)
+- [3.4 Navigating the jamovi Interface](03.4-navigating-the-jamovi-interface.qmd)

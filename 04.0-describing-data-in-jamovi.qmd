@@ -1,0 +1,22 @@
+# 4. Describing Data in jamovi {.unnumbered}
+
+In this chapter, we begin describing our data using statistical summaries.
+
+In Chapter 2, we learned what descriptive statistics are and why they matter. In Chapter 3, we learned how to set up and navigate data in jamovi. Now, we will bring those together and begin using jamovi to describe our data.
+
+By the end of this chapter, you should be able to:
+
+-   Generate descriptive statistics in jamovi
+-   Choose appropriate descriptive statistics based on variable type
+-   Interpret measures of center and variability
+-   Write up descriptive statistics clearly
+
+## Chapter Sections
+
+- [4.1 Describing continuous variables](04.1-describing-continuous-variables.qmd)
+- [4.2 Describing categorical variables](04.2-describing-categorical-variables.qmd)
+- [4.3 Describing a continuous variable by a categorical variable](04.3-describing-a-continuous-variable-by-a-categorical-variable.qmd)
+- [4.4 Choosing the right descriptive statistics](04.4-choosing-the-right-descriptive-statistics.qmd)
+- [4.5 Writing up descriptive statistics](04.5-writing-up-descriptive-statistics.qmd)
+- [4.6 Common mistakes](04.6-common-mistakes.qmd)
+- [4.7 Looking ahead](04.7-looking-ahead.qmd)

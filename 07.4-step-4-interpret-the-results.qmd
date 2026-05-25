@@ -1,0 +1,73 @@
+# 7.4 Step 4: Interpret the Results {.unnumbered}
+
+After performing the statistical test, the final step is to interpret the results and make a decision about our hypotheses. This is the point where we take the output from the test and turn it into a meaningful conclusion about our research question.
+
+## Interpret the results
+
+To make a decision, we compare the p-value to our alpha level (α = .05). If the p-value is less than .05, we reject the null hypothesis. If the p-value is greater than or equal to .05, we fail to reject the null hypothesis.
+
+It is important to use this language carefully. We either **reject** the null hypothesis or **fail to reject** the null hypothesis. We do not say that we “accept” the null hypothesis. This is because hypothesis testing is designed to evaluate evidence against the null hypothesis. If we do not have strong enough evidence to reject it, that does not mean the null is true; it simply means we do not have enough evidence against it.
+
+Returning to our Bobo doll example, we observed a mean difference of 5.80 aggressive behaviors between the two conditions. In Step 3, we learned that the test result was **p \< .001**. Because this p-value is smaller than our alpha level of .05, the result is statistically significant and we reject the null hypothesis.
+
+In context, this means that children who watched the aggressive video exhibited more aggressive behavior than children who watched the passive video. In other words, the observed difference is unlikely to have occurred by chance alone if there were truly no difference between the groups.
+
+Of course, statistical significance is only part of the story. We also found that **Cohen’s *d* ≈ 1.97**, which is a very large effect. This tells us that the difference is not only statistically significant, but also substantial in size. A difference of nearly six aggressive behaviors would likely be considered practically meaningful in this context. More broadly, practical significance asks whether an effect matters in the real world, not just whether it crosses a statistical threshold.
+
+## Type I vs. Type II errors
+
+Because we are making decisions under uncertainty, it is always possible to make the wrong decision.
+
+A **Type I error** occurs when we reject the null hypothesis even though it is actually true. In our example, this would mean concluding that the aggressive video increases aggression when in reality it does not. The probability of making a Type I error is equal to our alpha level, which is typically 5%.
+
+A **Type II error** occurs when we fail to reject the null hypothesis even though it is false. In our example, this would mean concluding that there is no difference in aggression when the aggressive video really does increase aggressive behavior.
+
+These two types of errors help us understand why hypothesis testing involves judgment and uncertainty rather than absolute certainty. They also connect back to **power**, which we introduced in Step 3. Higher power means we are more likely to detect a real effect and less likely to make a Type II error.
+
+## APA write-up
+
+When writing up the results, we want to communicate the research question, the direction of the effect, the statistical significance, and the effect size as clearly as possible.
+
+A complete APA-style write-up for our example is:
+
+> Children who viewed the aggressive video (*M* = 11.20, *SD* = 3.10) exhibited significantly more aggressive behavior than those who viewed the passive video (*M* = 5.40, *SD* = 2.80), *t*(28) = 5.39, *p* \< .001, *d* = 1.97.
+
+At this point, the most important thing is that you understand the structure of the interpretation. Later chapters will show you how to obtain and report the exact test statistic and degrees of freedom for each specific test, and Chapter 10 will show you how to write these results more fully in APA style.
+
+## Visualize the results
+
+Just like in later inferential statistics chapters, we should also visualize the results. For a comparison between two groups on a continuous outcome, a boxplot with the raw data overlaid is often a good choice because it shows the center, spread, and individual observations. However, there are other valid choices, including a bar plot with error bars.
+
+Here is an example visualization of the Bobo doll results:
+
+```{r echo = FALSE, warning = FALSE, message = FALSE, fig.cap="Aggressive behaviors by video condition"}
+library(tidyverse)
+
+bobo_data <- tibble(
+  Condition = c(rep("Aggressive Video", 15), rep("Passive Video", 15)),
+  Aggressive_Behavior_Count = c(
+    12, 10, 14, 11, 9, 13, 8, 15, 11, 10, 12, 14, 9, 13, 8,
+    4, 6, 5, 7, 3, 6, 4, 5, 7, 6, 4, 5, 3, 6, 4
+  )
+)
+
+ggplot(bobo_data, aes(x = Condition, y = Aggressive_Behavior_Count)) +
+  geom_boxplot(width = .5, outlier.shape = NA) +
+  geom_jitter(width = .12, alpha = .7) +
+  labs(
+    x = "Condition",
+    y = "Aggressive Behaviors Observed"
+  ) +
+  theme_minimal()
+```
+
+This kind of plot lets us quickly see that the children in the aggressive video condition generally showed more aggressive behavior than those in the passive video condition. It also helps us see the spread of the data within each group, which is one reason visualizations are so useful alongside statistical tests.
+
+
+::: {.callout-tip title="Check Your Understanding"}
+What decision do we make when p \< .05? Why do we say “fail to reject the null hypothesis” instead of “accept the null hypothesis”? What is a Type I error? What is a Type II error? Why is it useful to report both the p-value and the effect size?
+:::
+
+::: {.callout-tip collapse="true" title="Answers"}
+We reject the null hypothesis. Because not rejecting the null does not prove it is true; it only means we do not have enough evidence against it. A Type I error is rejecting the null hypothesis when it is actually true. A Type II error is failing to reject the null hypothesis when it is actually false. The p-value tells us whether the result is statistically significant, while the effect size tells us how large or meaningful the effect is.
+:::

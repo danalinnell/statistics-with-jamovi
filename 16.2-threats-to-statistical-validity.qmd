@@ -1,0 +1,12 @@
+# 16.2 Threats to Statistical Validity {.unnumbered}
+1.  Low statistical power
+
+2.  Violated statistical assumptions
+
+3.  Not correcting for multiple tests (i.e., p-hacking)
+
+4.  Unreliability of measures
+
+5.  Restriction of range
+
+6.  Unreliability of treatment implementation

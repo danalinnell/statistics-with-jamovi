@@ -1,0 +1,10 @@
+# 16.3 Threats to External Validity {.unnumbered}
+Any factors within a study that reduce the generalizability of the results
+
+1.  **Selection biases**: Whether the sample or selection of participants are representative of the populations they are drawn from.
+
+2.  **Construct biases**: Whether the measurement of the construct can be generalizable or is representative of the behavior itself. See “Threats to Construct Validity” above.
+
+3.  **The ‘real world’ vs the ‘experimental world’**: Whether the study procedures are representative of the real world the study is attempting to mimic.
+
+4.  4**History effects and maturation**: Whether the timing of the study (in history and the length of the study itself) can be generalized to other studies with other timings (e.g., a different year).

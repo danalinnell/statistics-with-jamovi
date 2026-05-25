@@ -1,0 +1,17 @@
+# 10.1 Components of Writing Statistical Results {.unnumbered}
+
+When writing up the results of a statistical test, we should always include the following four components:
+
+1.  **Description of your research question and/or hypotheses**\
+2.  **Description of your data**
+    -   Include descriptive statistics\
+    -   If assumptions were violated, explain what you did\
+3.  **Results of the inferential test**
+    -   Test statistic and degrees of freedom\
+    -   *p*-value\
+    -   Effect size\
+4.  **Interpretation of the results**
+    -   Answer the research question\
+    -   Indicate whether the hypothesis was supported
+
+> These four components mirror the logic of hypothesis testing: question → data → test → interpretation.

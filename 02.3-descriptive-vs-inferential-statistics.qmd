@@ -15,8 +15,6 @@ Common ways we describe data include:
 
 Descriptive statistics focus only on the **sample data in front of us**.
 
-------------------------------------------------------------------------
-
 ## Inferential Statistics
 
 **Inferential statistics** are used to make conclusions about a **population** based on data collected from a **sample**.
@@ -34,8 +32,6 @@ Common inferential statistics include:
 -   regression
 
 These methods help us answer questions like: “Is this difference meaningful, or could it have occurred by chance?”
-
-------------------------------------------------------------------------
 
 ## How They Work Together
 
@@ -62,8 +58,6 @@ We randomly assign half of the students to watch *Schitt’s Creek* and the othe
 
 One week later, all students take an exam, and we record their test scores.
 
-------------------------------------------------------------------------
-
 ## Step 1: Describing the Sample
 
 First, we use **descriptive statistics** to summarize the data.
@@ -77,8 +71,6 @@ We might:
 
 These summaries help us understand what the data look like.
 
-------------------------------------------------------------------------
-
 ## Step 2: Making Inferences
 
 Next, we ask our research question: Which group performed better on the exam? To answer this, we use **inferential statistics**.
@@ -88,8 +80,6 @@ We take our descriptive statistics (means, standard deviations, sample sizes) an
 Rather than calculating this by hand, we typically use statistical software like *jamovi*, which provides a test statistic, a *p*-value, and an effect size.
 
 These results help us determine whether the observed difference in our sample likely reflects a real difference in the population.
-
-------------------------------------------------------------------------
 
 ## Why This Matters
 
@@ -102,17 +92,15 @@ Understanding the difference between descriptive and inferential statistics help
 
 We will build on these ideas throughout the rest of the course, especially when we begin conducting inferential tests.
 
-## Check Your Understanding
-
+::: {callout-tip  title="Check Your Understanding"}
 1.  You collect data from 50 UW–Stout students and calculate the mean GPA. Is this an example of **descriptive** or **inferential** statistics? Explain briefly.
 2.  You use those 50 students to test whether UW–Stout students have a higher GPA than the national average. Is this **descriptive** or **inferential** statistics? Explain briefly.
 3.  A researcher reports that 62% of participants preferred online classes. What type of statistic is this?
 4.  Why do we typically use both descriptive and inferential statistics in the same study?
 5.  A study includes only descriptive statistics and no inferential tests. Give one reason why that might be appropriate.
+:::
 
-::: {.callout-tip collapse="true"}
-### Answers
-
+::: {.callout-tip collapse="true" title="Answers"}
 1.  **Descriptive.** You are summarizing the sample you collected.
 2.  **Inferential.** You are using the sample to make a claim about a larger population.
 3.  **Descriptive.** It summarizes the sample data.

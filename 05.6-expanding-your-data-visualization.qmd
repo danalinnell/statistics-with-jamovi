@@ -1,0 +1,13 @@
+# 5.6 Expanding Your Data Visualization {.unnumbered}
+
+Although these can be useful plots, I often do most of my data visualizations in other platforms. For most of my work, I use Excel because I find it pretty easy to make beautiful graphs. Here's an example of a visualization I made in Excel[^05-visualizing-data-1]:
+
+[^05-visualizing-data-1]: This comes from [Wanzer et al. (2020) Promoting intentions to persist in computing: An examination of six years of the EarSketch program](https://doi.org/10.1080/08993408.2020.1714313)
+
+![](images/02-stats-foundations/example3.png)
+
+For some more complicated figures, I turn to the `ggplot2` package in R. Here's an example of a visualization I made in R[^05-visualizing-data-2]:
+
+[^05-visualizing-data-2]: This comes from [Wanzer (2020) What is evaluation? Perspectives of how evaluation differs (or not) from research](https://journals.sagepub.com/doi/10.1177/1098214020920710)
+
+![](images/02-stats-foundations/example4.png)

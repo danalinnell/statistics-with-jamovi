@@ -1,0 +1,65 @@
+# 8. BEAN {.unnumbered}
+
+In Chapter 7, we introduced the logic of hypothesis testing and walked through the 4-step process for conducting inferential statistics. As part of that process, we encountered several key ideas, including p-values, alpha levels, effect sizes, power, and sample size.
+
+In that chapter, these concepts were introduced individually to help you understand what each one means. However, in practice, these ideas do not operate independently. Instead, they work together as part of a system.
+
+One way to understand how these pieces fit together is through the concept of **BEAN**, which stands for:
+
+- **B**eta (power)  
+- **E**ffect size  
+- **A**lpha  
+- **N** (sample size)  
+
+Although we will not cover these components in that exact order, BEAN provides a useful framework for understanding how these ideas relate to one another.
+
+
+## Why BEAN matters
+
+When conducting or interpreting research, we are constantly making decisions:
+
+- How large of an effect are we trying to detect?  
+- How much error are we willing to tolerate?  
+- How likely do we want to be to detect a real effect?  
+- How much data do we need?  
+
+These are not independent decisions. Changing one of these factors will influence the others.
+
+For example:
+
+- Larger effects are easier to detect than smaller effects  
+- Increasing sample size makes it easier to detect effects  
+- Using a stricter alpha level reduces false positives but makes it harder to detect effects  
+- Low power increases the likelihood of missing real effects  
+
+These relationships are at the heart of BEAN.
+
+
+## A key idea: these pieces work together
+
+Rather than thinking of effect size, alpha, power, and sample size as separate topics, it is more useful to think of them as parts of a system.
+
+In that system:
+
+- **Effect size**, **alpha**, and **sample size** all influence **power**  
+- **Power** reflects how likely we are to detect a real effect if one exists  
+
+In other words:
+
+> BEAN helps us understand what determines our ability to detect effects.
+
+This is why these concepts are often discussed together, especially when researchers are designing studies or evaluating results.
+
+
+## What you will learn in this chapter
+
+In the sections that follow, we will examine each component of BEAN in more detail:
+
+- Effect size  
+- Alpha and p-values  
+- Power  
+- Sample size  
+
+As you read each section, pay attention not only to what each concept means, but also how it connects to the others. The goal is not just to understand each part, but to understand how they work together.
+
+At the end of the chapter, we will bring everything together to see how these components interact in practice.

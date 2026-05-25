@@ -1,0 +1,35 @@
+# 6.3 Missing Values {.unnumbered}
+
+## The problem
+
+Missing data may appear as:
+
+-   blank cells
+-   “NA”
+-   special codes like 999
+
+## Why it matters
+
+-   Missing values may be treated as real data
+-   This can distort results
+
+## How to fix it in jamovi
+
+1.  Click the variable (e.g., Stress)
+2.  In the Data Variable panel, find **Missing values**
+3.  Enter the value (e.g., 999)
+
+## Example with the dataset
+
+1.  Click **Stress**
+2.  Notice:
+    -   One value = 999
+3.  Add **999** as a missing value
+
+::: {.callout-tip title="Check Your Understanding"}
+1.  What would happen if 999 were treated as a real value?
+:::
+
+::: {.callout-tip collapse="true" title="Answers"}
+1.  It would drastically increase the mean and variability. Results would be inaccurate and misleading.
+:::

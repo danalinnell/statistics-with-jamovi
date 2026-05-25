@@ -34,7 +34,7 @@ In research, data are typically organized in a dataset (often a spreadsheet form
 
 Each value in the dataset tells us something about a specific observation on a specific variable.
 
-::: {.info data-latex=""}
+::: {callout-info data-latex=""}
 **Is "data" singular or plural?**
 
 In formal scientific writing, including APA style, \*data\* is usually treated as plural: “The data are consistent with the hypothesis.” In everyday speech, many people use \*data\* as singular: “The data is stored in a spreadsheet.”\
@@ -139,9 +139,7 @@ Understanding your data before analyzing it will help you make better decisions 
 -   Descriptive statistics summarize and simplify data
 -   Describing data is the first step in any analysis
 
-::: callout-tip
-## Check Your Understanding
-
+::: {callout-tip  title="Check Your Understanding"}
 By the end of this section, you should be able to:
 
 1.  In a dataset, what does each **row** represent? What does each **column** represent?\
@@ -151,9 +149,7 @@ By the end of this section, you should be able to:
 5.  Why do data need context to be meaningful?
 :::
 
-::: {.callout-tip collapse="true"}
-## Answers
-
+::: {.callout-tip collapse="true" title="Answers"}
 1.  Rows represent observations (e.g., participants), and columns represent variables.\
 2.  Categorical: major. Continuous: age.
 :::

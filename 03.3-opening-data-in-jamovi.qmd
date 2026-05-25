@@ -1,0 +1,63 @@
+# 3.3 Opening Data in jamovi {.unnumbered}
+
+Before we can analyze data, we need to get it into jamovi and make sure it is set up correctly.
+
+You can open existing datasets in jamovi, including files such as Excel spreadsheets and SPSS files.
+
+When you open a file, take a moment to look through the data and ask:
+
+-   Are the rows and columns organized the way I expect?
+-   Are the variables labeled clearly?
+-   Are the variable types set correctly?
+-   Are there missing values or unusual entries?
+
+That quick first look can save you a lot of problems later.
+
+Alexander Swan has a video on [opening files in jamovi](https://youtu.be/nB85VyskK08).
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://youtu.be/nB85VyskK08")
+```
+
+### Opening SPSS (.sav) files in jamovi
+
+If you are working with SPSS files (with a .sav file extension), jamovi can usually open them directly. This can be especially useful if you are working with older datasets or files shared by others.
+
+Alexander Swan has an additional video on [opening .sav files in jamovi](https://www.youtube.com/watch?v=e-09OfLVs2U).
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=e-09OfLVs2U")
+```
+
+### Entering data manually in jamovi
+
+Sometimes you will need to enter data manually rather than opening an existing file.
+
+If you are entering data manually:
+
+-   make sure your variable names are clear
+-   make sure each row is a case and each column is a variable
+-   make sure variable types are set correctly
+-   enter data consistently
+
+This is also a good time to apply what we learned in Chapter 2 about good datasets and spreadsheets.
+
+Alexander Swan has yet another video on [entering data manually in jamovi](https://youtu.be/g3a2hGwNZ7o).
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://youtu.be/g3a2hGwNZ7o")
+```
+
+## Annotating output in jamovi
+
+Sometimes you may need to submit output files from jamovi with annotations. This can be helpful for showing your work, identifying key results, or explaining how you interpreted an analysis.
+
+If you have not done this before, it is worth reviewing a short tutorial by Alexander Swan on [annotating output in jamovi](https://youtu.be/I6SZtH__ICA).
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://youtu.be/I6SZtH__ICA")
+```

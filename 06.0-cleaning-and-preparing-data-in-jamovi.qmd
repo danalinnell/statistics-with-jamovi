@@ -1,0 +1,54 @@
+# 6. Cleaning and Preparing Data in jamovi {.unnumbered}
+
+In previous chapters, we worked with data as if everything were clean, correctly coded, and ready for analysis. In practice, real datasets are often messier.
+
+Data may include:
+
+-   missing values
+-   incorrect or inconsistent coding
+-   outliers or unusual values
+-   variables set to the wrong type
+
+Before running statistical analyses, it is essential to **clean and prepare your data**.
+
+For example:
+
+-   A single incorrect value (e.g., 999) can drastically change the mean
+-   Inconsistent coding (e.g., “Yes”, “yes”, “Y”) can distort frequencies
+-   Incorrect variable types can lead to inappropriate analyses
+
+> **Good analysis depends on good data.**
+
+Data cleaning is also not a one-time step. It happens:
+
+-   when you first open your dataset
+-   before running analyses
+-   when results look unusual or unexpected
+
+This chapter introduces common data issues and shows how to address them in jamovi.
+
+By the end of this chapter, you should be able to:
+
+-   Identify common data problems
+-   Check and correct variable setup
+-   Handle missing or unusual values
+-   Create and modify variables
+-   Prepare a dataset for analysis
+
+The following [video](https://www.youtube.com/watch?v=BGOZtlHRv6k) walks through some of these data cleaning techniques.
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=BGOZtlHRv6k")
+```
+
+## Chapter Sections
+
+- [6.1 Data cleaning in jamovi](06.1-data-cleaning-in-jamovi.qmd)
+- [6.2 Incorrect variable types](06.2-incorrect-variable-types.qmd)
+- [6.3 Missing values](06.3-missing-values.qmd)
+- [6.4 Data entry errors and outliers](06.4-data-entry-errors-and-outliers.qmd)
+- [6.5 Reverse scoring](06.5-reverse-scoring.qmd)
+- [6.6 Creating scale scores (composite variables)](06.6-creating-scale-scores-composite-variables.qmd)
+- [6.7 Recoding and transforming variables](06.7-recoding-and-transforming-variables.qmd)
+- [6.8 Putting it all together](06.8-putting-it-all-together.qmd)

@@ -1,0 +1,10 @@
+# 10. Writing Results in APA Style {.unnumbered}
+
+In this chapter, we focus on how to write up statistical results in APA style.
+
+This is meant to be a **preview and practical guide**, not a comprehensive overview of APA style. You should have already learned APA style in your research methods course. For additional support, refer to:
+
+-   The APA Publication Manual
+-   The [APA Style website](https://apastyle.apa.org/)
+
+> Refer back to this chapter often as you write up results in this course.

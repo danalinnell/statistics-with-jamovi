@@ -1,0 +1,47 @@
+# 10.2 Examples of APA-Style Results {.unnumbered}
+
+Let's walk through an example using an independent samples t-test.
+
+Here are the four pieces of information we need:
+
+1.  **Research question or hypothesis**: Is there a difference in student grades between Anastasia's and Bernadette's classes?
+
+2.  **Descriptive statistics**:
+
+    -   Anastasia's students (*M* = 74.53, *SD* = 9.00, *n* = 15);
+    -   Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18)
+
+3.  **Inferential statistics**: *t*(31) = 2.12, *p* = .043, *d* = .74
+
+4.  **Interpretation**: Anastasia's students had significantly higher grades than Bernadette's students.
+
+
+## Write-up in APA style
+
+We can write up our results in APA something like this:
+
+> The research question was whether there was a difference in student grades between Anastasia's and Bernadette's classes. Anastasia's students (*M* = 74.53, *SD* = 9.00, *n* = 15) had significantly higher grades than Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18), *t* (31) = 2.12, *p* = .043, *d* = .74.
+
+Let's compare that write-up against the 4 things we need to report:
+
+> **#1:** The research question was whether there was a difference in student grades between Anastasia's and Bernadette's classes. **#4** Anastasia's students **#2** (*M* = 74.53, *SD* = 9.00, *n* = 15) **#4 cont.** had significantly higher grades than Bernadette's students **#2** (*M* = 69.06, *SD* = 5.77, *n* = 18), **#3** *t* (31) = 2.12, *p* = .043, *d* = .74.
+
+
+## Alternative formatting
+
+Sometimes, authors place statistical information in parentheses. In this case, use **brackets for degrees of freedom**.
+
+> **#1** I tested the difference in grades between Anastasia's students **#2** (*M* = 74.53, *SD* = 9.00, *n* = 15) and Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18). **#3** An independent samples t-test showed that the 5.48 mean difference between the tutor's student was statistically significant (*t* [31] = 2.12, *p* = .043, *d* = .74). **#4** Therefore, we reject the null hypothesis that there is no difference in grades between the two classes.
+
+
+## Key takeaway
+
+There is no single “correct” sentence structure for APA results.
+
+What matters is that: - All four components are included\
+- The statistics are reported correctly\
+- The information is presented clearly and logically
+
+::: {.callout-note}
+A helpful tip: read your results **without the parentheses** to check for clarity and grammar.
+:::

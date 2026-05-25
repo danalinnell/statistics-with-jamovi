@@ -1,0 +1,18 @@
+# 5.2 Choosing the Right Graph {.unnumbered}
+
+The type of graph you use depends on the type of variable(s) you are working with.
+
+| Variable Type            | Graph                            |
+|--------------------------|----------------------------------|
+| Continuous               | Histogram, density plot, boxplot |
+| Categorical              | Bar chart                        |
+| Continuous + categorical | Bar chart, line chart, boxplot   |
+| Continuous + continuous  | Scatter plot, line chart         |
+
+Choosing the correct graph is just as important as choosing the correct statistical test.
+
+Want to learn more about choosing the right chart? [Chart Chooser](https://www.highcharts.com/chartchooser/) provides a useful tutorial for choosing charts based on your variable type and objective.
+
+jamovi has some plots built into its platform, both under the `Plots` drop-down menu in the `Descriptives` analysis and as options for many of the inferential statistical analyses.
+
+We'll learn more about how to choose and conduct better data visualizations later, but for now here are some recommended visualizations depending on what you are trying to do. Note that we will do most of our visualizations in jamovi, but we may also learn how to visualize data via Excel. There are also excellent LinkedIn Learning courses on data visualization in Excel and other tools that I strongly recommend; they are free for you if you are a UW-Stout student.

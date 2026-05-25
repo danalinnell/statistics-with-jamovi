@@ -1,0 +1,25 @@
+# 15. Reliability {.unnumbered}
+
+::: {.callout-note}
+This chapter is a work in progress.
+:::
+
+**Reliability** is the consistency of a measure. This is a crude, rough
+definition. More exactly, reliability is the extent to which observed or
+measured scores are consistent with differences in their true scores. We
+can never get a true score for participants, and so reliability helps us
+determine how close we got to a true score with observed scores.
+
+There are three types of consistency:
+
+1.  *Test-retest reliability*: consistency over time (measured with a
+    correlation, usually)
+
+2.  *Internal consistency*: consistency across items (measured with
+    Cronbach’s alpha usually, but there are other methods out there
+    including Omega which may be more appropriate; more info provided
+    soon)
+
+3.  *Inter-rater reliability*: consistency across different researchers
+    (various methods, including percent agreement, interclass or
+    intraclass correlation, Cohen’s Kappa, Fleiss’ Kappa, etc.)

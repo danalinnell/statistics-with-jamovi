@@ -1,0 +1,76 @@
+# 6.7 Recoding and Transforming Variables {.unnumbered}
+
+## The problem
+
+Sometimes variables are not in a format that is useful for analysis.
+
+For example:
+
+-   Categories may need to be simplified
+-   Values may need to be grouped
+-   Variables may need to be adjusted or redefined
+
+## Why it matters
+
+If variables are not coded appropriately:
+
+-   Analyses may not match your research question
+-   Results may be difficult to interpret
+-   You may include unnecessary detail or noise
+
+Recoding allows you to:
+
+-   align your variables with your research question
+-   simplify interpretation
+-   prepare data for specific analyses
+
+## Types of transformations
+
+Common transformations include:
+
+-   **Recoding categories** (e.g., combining categories)
+-   **Changing values** (e.g., standardizing labels)
+-   **Applying rules** (e.g., grouping values into ranges)
+
+## How to recode in jamovi
+
+1.  Click **Data → Transform**
+2.  Select the variable that will be transformed under Source variable
+3.  Under "using transform" select "Create new transform..." and select "Edit..."
+4.  Name the transformation you are performing
+5.  Add multiple recode condition and apply the new rules you are recoding/transforming
+
+## Example with the dataset
+
+Suppose you want to simplify **Group** to combine B and C into one category.
+
+When applying the transformation, you would use the following recode conditions: - if \$source == "A", use "A" - if \$source == "B", use "B" - if \$source == "C", use "B"
+
+Now you have fewer categories for analysis.
+
+## Important consideration
+
+*Recoding can reduce information.*
+
+For example:
+
+-   Turning a continuous variable into categories loses detail
+-   Collapsing categories may hide meaningful differences
+
+Always ask: *Am I simplifying appropriately, or losing important information?*
+
+::: {.callout-tip title="Check Your Understanding"}
+1.  Why might you collapse categories in a variable?
+
+2.  What is one risk of recoding variables?
+
+3.  In our dataset, what happens if you combine Groups B and C?
+:::
+
+::: {.callout-tip collapse="true" title="Answers"}
+1.  To simplify analysis or align with a research question.
+
+2.  You may lose important information or detail in the data.
+
+3.  You reduce the number of groups, which may simplify analysis but may also hide differences between B and C.
+:::

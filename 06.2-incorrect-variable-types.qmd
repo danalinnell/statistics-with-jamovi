@@ -1,0 +1,37 @@
+# 6.2 Incorrect Variable Types {.unnumbered}
+
+## The problem
+
+Sometimes variables are stored incorrectly—for example, as text instead of numeric, or as continuous when they are categorical.
+
+## Why it matters
+
+-   jamovi may not allow you to run analyses
+-   You may run the wrong analysis
+-   Results may be misleading
+
+## How to fix it in jamovi
+
+1.  Click the **column name** (e.g., StudyHours)
+2.  In the left panel:
+    -   Set **Data Type** → Integer or Decimal
+    -   Set **Measure Type** → Continuous, Nominal, or Ordinal
+
+## Fix the messy dataset
+
+1.  Click **StudyHours**
+2.  Notice that it is set to **Text** (because of “five”)
+3.  Replace **"five" → 5** in the dataset. Note that jamovi will grey that cell, indicating it has been manually changed
+4.  Set:
+    -   Data Type → Decimal
+    -   Measure Type → Continuous
+
+::: {.callout-tip title="Check Your Understanding"}
+1.  Why did jamovi treat StudyHours as text?
+2.  What would happen if you did not fix this before analysis?
+:::
+
+::: {.callout-tip collapse="true" title="Answers"}
+1.  jamovi detected a non-numeric value (“five”), so it treated the entire column as text\
+2.  You would not be able to use StudyHours in most statistical analyses
+:::

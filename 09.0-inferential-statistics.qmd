@@ -1,0 +1,57 @@
+# 9. Inferential Statistics {.unnumbered}
+
+In Chapter 7, we introduced the framework for hypothesis testing, and in Chapter 8, we explored the key components that influence our ability to detect effects (BEAN: power, effect size, alpha, and sample size).
+
+At this point, you may be wondering:
+
+> *How do I actually choose which statistical test to use?*
+
+That is the focus of this chapter.
+
+There are many different inferential statistical tests, and each is designed to answer a specific type of research question. Choosing the correct test depends on:
+
+-   the type of variables you are working with\
+-   the structure of your data\
+-   the assumptions of the statistical test
+
+
+## Types of inferential statistics
+
+Broadly, inferential tests can be grouped into two categories:
+
+1.  **Parametric statistics**: Assume certain characteristics about the data (e.g., normality)\
+2.  **Non-parametric statistics**: Make fewer or different assumptions about the data
+
+These distinctions will become important when deciding which test is appropriate and what to do when assumptions are not met.
+
+
+## What this chapter will cover
+
+In this chapter, we focus on three key skills:
+
+1.  **Choosing the correct inferential test**
+    -   Based on your research question and variables
+2.  **Understanding and checking assumptions**
+    -   What assumptions are\
+    -   Why they matter\
+    -   How to evaluate them
+3.  **Responding to violated assumptions**
+    -   What to do when assumptions are not met\
+    -   When to use alternative approaches (e.g., non-parametric tests)
+
+
+## Connecting back to the 4-step framework
+
+This chapter builds directly on the 4-step hypothesis testing framework from Chapter 7:
+
+1.  Look at the data\
+2.  Check assumptions ← *major focus of this chapter*\
+3.  Perform the test\
+4.  Interpret the results
+
+> Choosing the correct test and checking assumptions are critical steps that ensure your results are valid and meaningful.
+
+
+## Looking ahead
+
+In the following chapters, we will apply these ideas to specific statistical tests (e.g., t-tests, ANOVA, correlation). This chapter provides the foundation you need to make informed decisions about which test to use and whether its results can be trusted.

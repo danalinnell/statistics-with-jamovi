@@ -1,0 +1,88 @@
+# 7.2 Step 2: Check Assumptions {.unnumbered}
+
+Before performing a statistical test, we need to check whether our data meet certain **assumptions**. Statistical tests are built on certain expectations about the data. These expectations are called **assumptions**.
+
+> Assumptions are conditions that must be reasonably met for the results of a statistical test to be valid.
+
+
+## Why assumptions matter
+
+If assumptions are not met:
+
+-   The results of the test may be inaccurate or misleading
+-   We may need to use a different version of the test
+-   Our conclusions may not be trustworthy
+
+> Good data analysis is not just about running a test—it is about making sure the test is appropriate for the data.
+
+
+## Common assumptions
+
+Most statistical tests rely on a few key assumptions:
+
+
+### Normality
+
+This refers to the **shape of the distribution**.
+
+-   Are the data roughly bell-shaped?
+-   Are there extreme skewed values?
+
+This connects back to **Distribution shape** which you learned about in Chapter 2.
+
+
+### Homogeneity of variance
+
+This refers to **variability across groups**.
+
+-   Do the groups have similar levels of spread?
+-   Is one group much more variable than the other?
+
+This connects back to **Variability and dispersion** which you learned about in Chapter 2.
+
+
+### Independence
+
+This refers to how the data were collected.
+
+-   Are observations independent of each other?
+-   Does one participant’s score influence another’s?
+
+This is determined by the **study design**, not just the data.
+
+
+These assumptions connect directly to ideas from earlier chapters, particularly distribution shape and variability (Chapter 2). When assumptions are violated, the results of a statistical test may be misleading, which is why checking assumptions is a critical step before performing any analysis.
+
+
+## Connecting to our example
+
+In the Bobo doll study:
+
+-   **Normality** → Are aggressive behavior scores roughly normally distributed?
+-   **Homogeneity** → Is variability similar between the aggressive and passive conditions?
+-   **Independence** → Each child is observed separately, so scores should be independent.
+
+::: {.callout-note}
+In this chapter, we focus on understanding *what* assumptions are and *why they matter*.
+
+We will learn how to formally check assumptions in **Chapter 9**.
+:::
+
+Once assumptions are reasonably met, we can move forward with formally evaluating our hypotheses.
+
+
+::: {.callout-tip title="Check Your Understanding"}
+1.  What are statistical assumptions?
+2.  Why is it important to check assumptions before running a test?
+3.  What does normality refer to?
+4.  What does homogeneity of variance refer to?
+5.  What does independence refer to?
+:::
+
+::: {.callout-tip collapse="true" title="Answers"}
+1.  Conditions that must be met for a statistical test to be valid
+2.  Because violations can lead to inaccurate or misleading results
+3.  The shape of the distribution of the data
+4.  Whether groups have similar variability
+5.  Whether observations are independent of each other
+:::

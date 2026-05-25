@@ -1,0 +1,193 @@
+# 7.1 Step 1: Look at the Data {.unnumbered}
+
+The first step in any inferential analysis is to understand your data and your research question.
+
+Before running any statistical test, you should be able to clearly describe what you are studying and how your data are structured.
+
+
+## Identify your variables
+
+You should always be able to answer:
+
+-   What is my IV?
+-   What is my DV?
+-   What type of variables are these (categorical vs continuous)?
+-   What is my research design?
+
+These decisions will determine which statistical test you use later.
+
+Using our Bobo doll example:
+
+-   **Independent variable (IV)**: Type of video (either aggressive or passive). This is an example of a categorical variable; more specifically, it is a binary nominal variable.
+-   **Dependent variable (DV)**: Number of aggressive behaviors observed. This is an example of a continuous variable.
+-   **Research design**: This is an example of a between-subjects research design. Children were randomly assigned to one or the other type of video.
+
+
+## Describe your data
+
+Before performing any inferential test, you should:
+
+-   Examine **descriptive statistics** (e.g., means, variability)
+-   Look at **visualizations** (e.g., histograms, boxplots)
+
+
+### What might the dataset look like?
+
+In jamovi (or any statistical software), your data are organized in a spreadsheet format:
+
+-   Each **row** represents a participant (in this case, child)
+-   Each **column** represents a variable
+
+Here is a small example of what the dataset might look like for our study:
+
+| Child_ID | Condition        | Aggressive_Behavior_Count |
+|----------|------------------|---------------------------|
+| 1        | Aggressive_Video | 12                        |
+| 2        | Aggressive_Video | 9                         |
+| 3        | Aggressive_Video | 15                        |
+| 4        | Passive_Video    | 4                         |
+| 5        | Passive_Video    | 6                         |
+| 6        | Passive_Video    | 3                         |
+
+-   **Child_ID**: a unique identifier for each participant
+-   **Condition**: the independent variable (which video they watched)
+-   **Aggressive_Behavior_Count**: the dependent variable (number of aggressive behaviors observed)
+
+
+### Describe the data
+
+Before running any statistical test, we would:
+
+-   Check for unusual values or patterns
+-   Compare the **average aggressive behavior** in each group
+-   Look at how much the scores vary within each group
+
+Suppose we calculate descriptive statistics for the full dataset (all 30 children):
+
+| Condition        | Mean Aggression | Standard Deviation | Sample Size |
+|------------------|-----------------|--------------------|-------------|
+| Aggressive_Video | 11.20           | 3.10               | 15          |
+| Passive_Video    | 5.40            | 2.80               | 15          |
+
+What do we notice?
+
+-   Children in the **aggressive video condition** show higher average aggression
+-   There is some variability in both groups
+-   The groups appear meaningfully different at first glance
+
+> In this example, it looks like children in the aggressive condition tend to show higher aggression—but we don’t yet know if that difference is meaningful or just due to chance.
+
+This connects directly to what you learned in:
+
+-   Chapter 2 (describing data)
+-   Chapter 4 (descriptive statistics in jamovi)
+-   Chapter 6 (cleaning your data)
+
+You are making sure your data make sense and that you understand them before analyzing them.
+
+
+## State your hypotheses
+
+As part of understanding your research question, we need to clearly state our hypotheses.
+
+Because we are using **null hypothesis significance testing (NHST)**, we define two hypotheses:
+
+-   the **alternative hypothesis**
+-   the **null hypothesis**
+
+These two hypotheses work together to represent all possible outcomes of our study.
+
+
+### Alternative hypothesis (H₁ or Hₐ)
+
+The **alternative hypothesis** states that there is an effect, difference, or relationship.
+
+In our Bobo doll example:
+
+> Children who watch the aggressive video will exhibit *more* aggressive behaviors than children who watch the passive video.
+
+This reflects what the researcher expects to find based on theory and prior research on observational learning.
+
+
+### Null hypothesis (H₀)
+
+The **null hypothesis** states that there is **no effect, no difference, or no relationship**.
+
+In our example:
+
+> There will be no difference in aggressive behavior between children who watch the aggressive video and those who watch the passive video.
+
+::: {.callout-note}
+A helpful way to remember this: **Null = none (or zero effect)**
+:::
+
+When we use **non-directional (two-tailed)** hypotheses, the null hypothesis is simply “no difference.”
+
+However, when we use **directional (one-tailed)** hypotheses, the null hypothesis becomes slightly broader—it includes both "no difference, or the opposite direction of the predicted effect."
+
+We will return to this idea below.
+
+
+### How the hypotheses work together
+
+The null and alternative hypotheses must be:
+
+-   **Mutually exclusive** → a result cannot support both
+-   **Exhaustive** → all possible outcomes are covered
+
+This means:
+
+-   Every possible result must support either the null or the alternative
+-   There is no “in-between” option
+
+::: {.callout-warning}
+A common error is writing hypotheses that are not mutually exclusive or not exhaustive.
+
+-   If a result could support both hypotheses → they are not mutually exclusive
+-   If a result fits neither hypothesis → they are not exhaustive
+:::
+
+
+### Directional vs non-directional hypotheses
+
+In this example, the hypothesis is **directional**: We predict that one group will show *more* aggressive behavior than the other. This is also called a **one-tailed hypothesis**.
+
+If we did not predict a direction, we would use a **non-directional (two-tailed)** hypothesis. For example, we might predict there is a difference in aggressive behavior between groups without specifying which group is higher.
+
+When we use a directional hypothesis, the alternative hypothesis specifies one direction of the effect. To ensure the hypotheses remain **exhaustive**, the null hypothesis must include everything else.
+
+In our example:
+
+-   **Alternative (H₁):** Children in the aggressive condition show *more* aggressive behavior
+-   **Null (H₀):** Children in the aggressive condition show *no difference* or *less* aggressive behavior
+
+This ensures that all possible outcomes are covered:
+
+-   More aggression → supports the alternative
+-   No difference → supports the null
+-   Less aggression → also supports the null
+
+> Together, the null and alternative hypotheses must account for every possible result. This ensures the hypotheses are *exhaustive*
+
+::: {.callout-note}
+Directional hypotheses should be used thoughtfully. They require stronger theoretical justification because you are predicting a specific direction of the effect.
+
+At the same time, directional hypotheses can increase **statistical power**, meaning you may be more likely to detect a real effect if it exists. We will return to this idea later in the textbook.
+:::
+
+Before we formally test our hypotheses, we need to ensure that our data meet the assumptions required for the statistical test.
+
+
+::: {.callout-tip title="Check Your Understanding"}
+1.  What is the difference between the null and alternative hypothesis?
+2.  What does the null hypothesis always represent?
+3.  In the Bobo doll example, what is the alternative hypothesis?
+4.  What is the difference between directional and non-directional hypotheses?\
+:::
+
+::: {.callout-tip collapse="true" title="Answers"}
+1.  The null hypothesis states no effect; the alternative states there is an effect
+2.  No effect, no difference, or no relationship
+3.  That children who watch the aggressive video will show more aggressive behavior
+4.  Directional specifies the direction of the effect; non-directional does not
+:::

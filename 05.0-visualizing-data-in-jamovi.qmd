@@ -1,0 +1,19 @@
+# 5. Visualizing Data in jamovi {.unnumbered}
+
+In Chapter 4, we described data using numerical summaries such as means and standard deviations. In this chapter, we will describe data using **visualizations**.
+
+Graphs allow us to see patterns in our data that may not be obvious from numbers alone. They are an essential part of understanding and communicating statistical results.
+
+By the end of this chapter, you should be able to: - Choose an appropriate graph based on variable type\
+- Create visualizations in jamovi\
+- Interpret what a graph shows\
+- Identify common issues in graphs
+
+## Chapter Sections
+
+- [5.1 Why Visualize Data?](05.1-why-visualize-data.qmd)
+- [5.2 Choosing the Right Graph](05.2-choosing-the-right-graph.qmd)
+- [5.3 Visualizing a Single Continuous Variable](05.3-visualizing-a-single-continuous-variable.qmd)
+- [5.4 Visualizing a Categorical Variable](05.4-visualizing-a-categorical-variable.qmd)
+- [5.5 Visualizing a Continuous Variable Split by a Categorical Variable](05.5-visualizing-a-continuous-variable-split-by-a-categorical-variable.qmd)
+- [5.6 Expanding Your Data Visualization](05.6-expanding-your-data-visualization.qmd)

@@ -2,8 +2,6 @@
 
 In this chapter, we introduced the foundational ideas needed to understand and work with data. These concepts will be used throughout the rest of the course and serve as a reference point as you learn new statistical techniques.
 
-------------------------------------------------------------------------
-
 ## Big Picture Summary
 
 -   **Data** are values collected to answer questions
@@ -12,8 +10,6 @@ In this chapter, we introduced the foundational ideas needed to understand and w
 -   **Descriptive statistics** summarize the data we observe
 -   **Inferential statistics** allow us to make conclusions about a population based on a sample
 -   Data form **distributions**, which can be described by their center, variability, shape, and outliers
-
-------------------------------------------------------------------------
 
 ## How These Concepts Connect
 
@@ -27,8 +23,6 @@ These ideas are not separate—they work together as part of a process. You can 
 
 Understanding how these pieces fit together will make the rest of the course much easier.
 
-------------------------------------------------------------------------
-
 ## Quick Reference
 
 ### Types of Variables
@@ -39,8 +33,6 @@ Understanding how these pieces fit together will make the rest of the course muc
 | Ordinal | Ordered categories | Satisfaction ratings | Rankings, medians |
 | Continuous | Numerical values | Test scores, reaction time | Means, standard deviation |
 
-------------------------------------------------------------------------
-
 ### Features of a Distribution
 
 | Feature     | Question                     | Why It Matters          |
@@ -50,8 +42,6 @@ Understanding how these pieces fit together will make the rest of the course muc
 | Shape       | What pattern do values form? | Affects interpretation  |
 | Outliers    | Are there unusual values?    | Can influence results   |
 
-------------------------------------------------------------------------
-
 ## Key Ideas to Remember
 
 -   A variable’s level of measurement depends on **how it is measured**, not just what it represents
@@ -59,8 +49,6 @@ Understanding how these pieces fit together will make the rest of the course muc
 -   Collapsing variables into categories can reduce information
 -   Distributions provide a **complete picture** of the data, not just a single value
 -   Both descriptive and inferential statistics are typically used together
-
-------------------------------------------------------------------------
 
 ## Looking Ahead
 
@@ -73,10 +61,7 @@ In the next chapters, you will begin working directly with data:
 
 Each of these chapters will build directly on the concepts introduced here.
 
-------------------------------------------------------------------------
-
-## Check Your Understanding
-
+::: {callout-tip  title="Check Your Understanding"}
 1.  A dataset includes the following variables:
 
     -   Major
@@ -101,10 +86,9 @@ Each of these chapters will build directly on the concepts introduced here.
     -   3 = frog
 
     Why is this still not a continuous variable?
+:::
 
-::: {.callout-tip collapse="true"}
-## Answers
-
+::: {.callout-tip collapse="true" tile="Answers"}
 1.  
 
     -   **Major** → categorical → frequencies or percentages\
@@ -119,8 +103,6 @@ Each of these chapters will build directly on the concepts introduced here.
 
 5.  Because the numbers are only labels for categories; they do not represent meaningful numerical quantities.
 :::
-
-------------------------------------------------------------------------
 
 ## Reflection
 

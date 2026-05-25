@@ -1,0 +1,3 @@
+# 5.4 Visualizing a Categorical Variable {.unnumbered}
+
+For this you would choose the single option under **Bar Plots**: `Bar plot`. It will simply show the frequencies of a categorical variable.

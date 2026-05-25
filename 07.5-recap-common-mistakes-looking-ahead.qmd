@@ -1,0 +1,77 @@
+# 7.5 Recap, Common Mistakes, and Looking Ahead {.unnumbered}
+
+Throughout this chapter, we introduced the logic of hypothesis testing and worked through the full process using our Bobo doll example. Although there are many different statistical tests, they all follow the same core framework:
+
+1.  **Look at the data**
+2.  **Check assumptions**
+3.  **Perform the test**
+4.  **Interpret the results**
+
+If you understand this process, you understand the foundation of inferential statistics.
+
+
+## Key takeaways
+
+Hypothesis testing is about making decisions under uncertainty. We use sample data to evaluate whether an observed effect is likely to reflect a real difference in the population or whether it could reasonably be explained by chance.
+
+In this chapter, you learned that:
+
+-   The **null hypothesis (H₀)** represents no effect
+-   The **alternative hypothesis (H₁)** represents the presence of an effect
+-   The **p-value** tells us how likely our results are under the null hypothesis
+-   The **alpha level (α)** defines what we consider “unlikely” enough that we care about
+-   **Effect size** tells us how large the effect is
+-   **Power** reflects our ability to detect real effects
+
+Most importantly, you learned that statistical significance and practical significance are not the same thing. A result can be statistically significant but trivial in practice, and a small effect can still matter depending on the context.
+
+
+## Common mistakes to avoid
+
+There are several common misunderstandings about hypothesis testing:
+
+-   A p-value is **not** the probability that the null hypothesis is true
+-   Failing to reject the null hypothesis does **not** mean the null is true
+-   Statistical significance does **not** mean the effect is important
+-   A non-significant result does **not** prove there is no effect
+-   Ignoring effect size can lead to misleading conclusions
+-   A statistically significant result does **not** mean the study was well-designed
+
+These mistakes are common because hypothesis testing involves abstract reasoning about probability and uncertainty. As you continue through the course, focus on understanding the logic rather than memorizing rules.
+
+
+## Final note about hypothesis testing
+
+When you read journal articles, you will likely notice that researchers rarely explicitly discuss the null hypothesis. They may describe their research questions or their hypotheses (which correspond to the alternative hypothesis), but the null hypothesis is often left implicit.
+
+This is not inherently problematic. However, it can become problematic if researchers apply hypothesis testing without carefully considering what their null hypothesis actually is, or whether a directional (one-tailed) or non-directional (two-tailed) hypothesis is most appropriate. In practice, researchers often rely on default choices, even when those defaults may not be the best fit for their research question.
+
+Ideally, researchers would clearly specify both their alternative and null hypotheses when using hypothesis testing. Doing so encourages more thoughtful and transparent analysis.
+
+You may also have heard that p-values are controversial or that some researchers want to move away from them. We will discuss this in more detail in the next chapter. For now, it is important to understand that p-values are often **misunderstood and misused**, and many proposed alternatives come with their own limitations. The goal is not to abandon statistical tools, but to use them thoughtfully and appropriately.
+
+
+## Looking ahead
+
+In the next section of the textbook (chapters 11-14), you will learn specific statistical tests (e.g., t-tests, ANOVA, correlation). Each of these tests is simply a different way of applying the same 4-step process you learned in this chapter.
+
+> The framework stays the same—only the details of the test change.
+
+As you move forward, keep returning to this process. It will help you make sense of new statistical techniques and avoid common pitfalls.
+
+
+::: {.callout-tip title="Check Your Understanding"}
+1.  What are the four steps of hypothesis testing?
+2.  What is the difference between statistical significance and practical significance?
+3.  Why is it important to consider effect size?
+4.  Why might relying on default statistical decisions be problematic?
+5.  What is one common misconception about p-values?
+:::
+
+::: {.callout-tip collapse="true" title="Answers"}
+1.  Look at the data, check assumptions, perform the test, interpret the results
+2.  Statistical significance tells us whether an effect is unlikely due to chance; practical significance tells us whether the effect matters
+3.  Because it tells us how large or meaningful the effect is
+4.  Because defaults may not match the research question or design
+5.  That a p-value is the probability that the null hypothesis is true
+:::

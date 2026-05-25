@@ -1,0 +1,64 @@
+# 7. Hypothesis Testing {.unnumbered}
+
+In previous chapters, we focused on understanding, describing, visualizing, and cleaning our data. These steps are essential—but they are not the end goal.
+
+Often, we want to go one step further:
+
+> Can we use our sample data to make conclusions about a larger population?
+
+This is the goal of **inferential statistics**.
+
+In Chapter 2, we introduced the distinction between:
+
+-   **Descriptive statistics**: summarize our sample
+-   **Inferential statistics**: make conclusions about a population
+
+In this chapter, we introduce the logic of **hypothesis testing**, also known as **null hypothesis significance testing (NHST)**.
+
+
+## One process, many tests
+
+Although there are many statistical tests (t-tests, ANOVAs, correlations, etc.), they all follow the same basic process:
+
+1.  **Look at the data**
+2.  **Check assumptions**
+3.  **Perform the test**
+4.  **Interpret the results**
+
+> This 4-step framework will be used in *every inferential statistics chapter moving forward*.
+
+Each test differs in *how* we perform Step 3 and what assumptions we check in Step 2—but the overall logic stays the same.
+
+
+## Running example: Bobo doll replication
+
+Let’s walk through this process using a hypothetical example.
+
+Imagine a researcher wants to replicate Albert Bandura’s famous **Bobo doll experiment**. In this replication study, the researcher randomly assigns 30 six-year-old children to one of two conditions:
+
+-   One group watches a video of an adult behaving **aggressively** toward a Bobo doll
+-   The other group watches a video of an adult playing **passively** with the Bobo doll
+
+After watching their assigned video, children are placed in the same room with a Bobo doll. Researchers then observe and record the children’s **aggressive behaviors**.
+
+::: {.callout-note}
+The original study design was more complex than this simplified version. It accounted for factors like baseline aggression and gender. If you are interested, you can read more here: <https://www.simplypsychology.org/bobo-doll.html>
+:::
+
+::: {.callout-note}
+This example is an instance of an **independent samples t-test** (comparing two groups on a continuous outcome).
+
+You are not expected to fully understand this test yet—we will return to it in a later chapter. For now, focus on the overall process of hypothesis testing.
+:::
+
+
+## What you will learn
+
+By the end of this chapter, you should be able to:
+
+-   Understand the logic of hypothesis testing
+-   Apply the 4-step framework
+-   Interpret p-values and statistical significance
+-   Understand effect size and power at a conceptual level
+
+> This chapter provides the foundation for all inferential statistics you will learn next.

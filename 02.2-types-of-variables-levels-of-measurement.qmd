@@ -9,9 +9,6 @@ Understanding the type of variable you are working with will help you decide:
 -   What statistical analyses are appropriate
 
 ![](images/01-intro/Levels%20of%20measurement.png)
-
-------------------------------------------------------------------------
-
 ## Categorical Variables: Nominal and Ordinal
 
 Categorical variables describe groups or categories. There are two main types of categorical variables: nominal and ordinal variables.
@@ -107,7 +104,6 @@ Different types of variables allow for different kinds of summaries:
 
 This distinction will become especially important when we begin summarizing data and selecting statistical tests.
 
-------------------------------------------------------------------------
 
 ## A Simple Way to Identify Variable Type
 
@@ -118,8 +114,6 @@ When you encounter a variable, ask:
 3.  If numbers, does zero represent “none”? If so, then it's ratio; if not, then it's interval.
 
 These questions can help you quickly determine the type of variable you are working with.
-
-------------------------------------------------------------------------
 
 ## The Same Construct Can Be Measured in Different Ways
 
@@ -164,8 +158,6 @@ At the same time, “more information” does not always mean “better.” The 
 
 Finally, just because values are written as numbers does **not** make a variable continuous. If I code cat = 1, dog = 2, and frog = 3, that is still a **nominal** variable. The numbers are just labels.
 
-------------------------------------------------------------------------
-
 ## Why This Matters
 
 Understanding variable types helps you:
@@ -176,19 +168,15 @@ Understanding variable types helps you:
 
 We will build on this foundation in later chapters when we learn how to summarize and analyze data.
 
-------------------------------------------------------------------------
-
-## Check Your Understanding
-
+::: {callout-tip  title="Check Your Understanding"}
 1.  Is “favorite color” a nominal, ordinal, interval, or ratio variable?
 2.  Is a 1–5 satisfaction rating scale nominal or ordinal? Why?
 3.  What makes ratio variables different from interval variables?
 4.  Why can’t we calculate a meaningful average for nominal data?
 5.  Give one example of each type of variable (nominal, ordinal, interval, ratio).
+:::
 
-::: {.callout-tip collapse="true"}
-## Answers
-
+::: {.callout-tip collapse="true" title="Answers"}
 1.  Nominal
 2.  Ordinal, because the responses are ordered but the spacing between values is not guaranteed to be equal
 3.  Ratio variables have a true zero point; interval variables do not
