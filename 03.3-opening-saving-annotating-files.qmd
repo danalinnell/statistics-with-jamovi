@@ -1,0 +1,95 @@
+# 3.3 Opening, Saving, and Annotating Files {.unnumbered}
+
+Before we can analyze data, we need to get the data into jamovi and make sure the file is organized correctly.
+
+In most datasets you will use in this book, each row represents one {{< glossary observation popup="hover" >}} and each column represents one {{< glossary variable popup="hover" >}}. That spreadsheet-like structure is important because jamovi expects data to be organized in a consistent way.
+
+## Opening Existing Data Files
+
+jamovi can open several kinds of data files, including Excel spreadsheets and SPSS files.
+
+When you open a file, take a moment to look through the data and ask:
+
+- Are the rows and columns organized the way I expect?
+- Are the variables labeled clearly?
+- Are the variable types set correctly?
+- Are there missing values or unusual entries?
+
+That quick first look can save you a lot of problems later.
+
+Alexander Swan has a video on [opening files in jamovi](https://youtu.be/nB85VyskK08).
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://youtu.be/nB85VyskK08")
+```
+
+## Opening SPSS Files
+
+If you are working with SPSS files, which usually have a `.sav` extension, jamovi can usually open them directly. This is useful when you are working with older datasets, shared research files, or data from someone who uses SPSS.
+
+Alexander Swan has an additional video on [opening .sav files in jamovi](https://www.youtube.com/watch?v=e-09OfLVs2U).
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=e-09OfLVs2U")
+```
+
+## Entering Data Manually
+
+Sometimes you may need to enter data manually rather than opening an existing file. This is more common for small practice datasets than for larger research projects.
+
+If you enter data manually:
+
+- make sure each row is one case, participant, response, or observation;
+- make sure each column is one variable;
+- use clear and consistent variable names;
+- enter values consistently; and
+- check the measure type and data type for each variable.
+
+This is another place where Chapter 2 matters. A variable coded with numbers is not automatically continuous, and a dataset that looks like a spreadsheet is not automatically ready for analysis.
+
+Alexander Swan has a video on [entering data manually in jamovi](https://youtu.be/g3a2hGwNZ7o).
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://youtu.be/g3a2hGwNZ7o")
+```
+
+## Saving jamovi Files
+
+After opening or entering data, save your work as a jamovi file (`.omv`). Saving as an `.omv` file preserves more than just the raw data. It can also preserve analyses, settings, output, and notes.
+
+A good habit is to save a new copy before making major changes to a dataset. For example, you might keep one copy of the original dataset and another copy for your analysis work.
+
+::: {.callout-tip title="Good File Habit"}
+Use file names that will still make sense later. A file named `homework.omv` may seem clear today, but `topic-4-descriptives-practice.omv` or `study-data-cleaned.omv` will be much easier to understand later.
+:::
+
+### Before You Start Working
+
+Before you begin an analysis assignment or project, take a minute to set yourself up well:
+
+- Download the dataset and save it somewhere you can find again.
+- Open the dataset in jamovi.
+- Save the file as a `.omv` file before you do much work.
+- Check that your variables have meaningful names.
+- Check the data type and measure type for each variable you plan to use.
+- Save again after major changes, especially after computing or transforming variables.
+
+This sounds simple, but it prevents a lot of frustration. Future you will be grateful.
+
+## Annotating Output
+
+Sometimes you may need to submit output files from jamovi with annotations. Annotations can help you show your work, point out key results, or explain how you interpreted an analysis.
+
+If you have not done this before, it is worth reviewing this short tutorial by Alexander Swan on [annotating output in jamovi](https://youtu.be/I6SZtH__ICA).
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://youtu.be/I6SZtH__ICA")
+```
+
+::: {.callout-note title="For Dana's Students"}
+When an assignment asks you to submit a jamovi file, submit the `.omv` file unless the directions say otherwise. If I ask you to annotate output or upload a screenshot, the assignment directions in Canvas will explain that.
+:::

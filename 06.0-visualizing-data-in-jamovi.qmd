@@ -1,0 +1,18 @@
+# 6. Visualizing Data in jamovi
+
+Visualizations help us see our data. Descriptive statistics are useful, but they can hide important patterns. A graph can reveal skew, outliers, unusual categories, group differences, or data entry problems that might not be obvious from a table of numbers.
+
+Visualizations are not separate from descriptive statistics. They help you understand the patterns behind the numbers. A mean and standard deviation can summarize a variable, but a graph can show whether the distribution is skewed, whether there are outliers, whether groups overlap, or whether something strange is happening in the data.
+
+In other words: descriptive statistics summarize; visualizations help you see.
+
+This chapter focuses on choosing and interpreting common visualizations in jamovi.
+
+By the end of this chapter, you should be able to:
+
+- explain why visualizing data is an important part of analysis
+- choose graphs based on variable type and research question
+- create and interpret graphs for continuous variables
+- create and interpret graphs for categorical variables
+- create and interpret graphs for continuous variables across groups
+- use graphs to identify patterns, outliers, and possible data problems

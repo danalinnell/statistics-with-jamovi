@@ -1,0 +1,80 @@
+# 4.6 Creating Scale Scores and Composite Variables {.unnumbered}
+
+Many psychological measures include multiple items intended to measure the same construct. Instead of analyzing each item separately, researchers often combine the items into a {{< glossary "scale score" popup="hover" >}} or {{< glossary "composite variable" popup="hover" >}}.
+
+For example, a depression measure may have 21 items. A boredom measure may have 8 items. A mind wandering measure may have 4 items. The individual items are important, but the researcher is often interested in the overall construct.
+
+## Total Scores and Mean Scores
+
+There are two common ways to create scale scores:
+
+- a total score, using `SUM()`
+- an average score, using `MEAN()`
+
+A total score adds the items together. This is useful when the scale is designed to be interpreted as a total. For example, some clinical scales use total scores with established cutoff values.
+
+An average score calculates the mean across items. This is useful when you want the final score to stay on the same scale as the original items. For example, if items are rated from 1 to 5, the mean score will also range from 1 to 5.
+
+## Creating a Total Score With `SUM()`
+
+A total score might use a formula like:
+
+```{.text}
+SUM(item1, item2, item3, item4)
+```
+
+In jamovi, you would replace `item1`, `item2`, and so on with the actual variable names.
+
+Use `SUM()` when the scale instructions tell you to add the items or when the total score itself is meaningful.
+
+## Creating a Mean Score With `MEAN()`
+
+A mean score might use a formula like:
+
+```{.text}
+MEAN(item1, item2, item3, item4, ignore_missing = 1, min_valid = 3)
+```
+
+This formula tells jamovi to average the item responses, ignore missing values, and require at least three valid responses.
+
+Use `MEAN()` when you want the scale score to remain on the same metric as the original item responses.
+
+## Why `min_valid` Matters
+
+Imagine a scale has 8 items and a participant answered only 2 of them. You technically could average those 2 responses, but would that be a trustworthy score for the full 8-item scale? Probably not.
+
+The `min_valid` argument lets you decide how many valid item responses are required. For example:
+
+```{.text}
+MEAN(item1, item2, item3, item4, item5, item6, item7, item8, ignore_missing = 1, min_valid = 7)
+```
+
+This requires at least 7 valid responses out of 8.
+
+::: {.callout-tip title="Always Check Your Work"}
+After computing a new variable, do not just trust that it worked. I always like to check a few rows manually.
+
+Ask yourself:
+
+- Does the new variable have values where I expected it to have values?
+- Are missing values handled correctly?
+- Do the minimum and maximum values make sense?
+- If I calculate a few rows by hand, do I get the same answer jamovi gives me?
+
+This is one of those small habits that can save you from big problems later.
+:::
+
+::: {.callout-note title="For Dana's Students"}
+When I ask for screenshots of newly computed variables, I am checking whether the variables were created correctly and whether the values look plausible. Include enough rows and columns in the screenshot that your work can be reviewed.
+:::
+
+::: {.callout-tip title="Check Your Understanding"}
+A researcher has a 21-item scale where the official scoring instructions say to add the item scores together. Should the researcher use `SUM()` or `MEAN()`?
+
+<details>
+<summary>Answer</summary>
+
+The researcher should use `SUM()` because the official scoring instructions say to create a total score by adding the items together.
+
+</details>
+:::

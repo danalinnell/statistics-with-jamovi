@@ -1,0 +1,57 @@
+# 6.7 Putting It All Together {.unnumbered}
+
+This chapter focused on visualizing data in jamovi. Graphs are not separate from statistics. They are part of how we understand our data.
+
+## Chapter Recap
+
+You should now be able to:
+
+- explain why visualizing data matters
+- choose graphs based on variable type
+- use bar plots for categorical variables
+- use histograms, density plots, box plots, violin plots, data points, and mean markers for continuous variables
+- visualize continuous variables across groups
+- use graphs to notice skew, outliers, unexpected categories, and possible data-cleaning problems
+
+## Common Mistakes
+
+Watch for these common mistakes:
+
+- making a graph that does not match the variable type
+- using a bar plot for a continuous variable
+- ignoring individual data points when group sizes are small
+- treating visual differences as statistical significance
+- failing to notice duplicate categories caused by spelling or spacing
+- choosing a graph because it looks nice rather than because it answers a question
+
+## Applied Practice
+
+Imagine you have these variables:
+
+| Variable | Type |
+|---|---|
+| `Gender_Recoded` | Categorical |
+| `Class_Level` | Categorical |
+| `Boredom_Mean` | Continuous |
+| `Mind_Wandering_Mean` | Continuous |
+
+Which graph would you use for each goal?
+
+1. Show the distribution of `Boredom_Mean`.
+2. Show the frequency of each `Class_Level`.
+3. Compare `Mind_Wandering_Mean` across `Gender_Recoded` groups.
+
+<details>
+<summary>Answers</summary>
+
+1. A histogram, density plot, box plot, violin plot, data points, or mean marker could help show the distribution of `Boredom_Mean`.
+2. A bar plot would show the frequency of each class level.
+3. A grouped visualization such as box plot + violin plot + jittered data + mean would help compare mind wandering across gender groups.
+
+</details>
+
+## Looking Ahead
+
+Up to this point, we have focused on understanding the data we have: what variables we measured, how they are set up, whether they need to be cleaned or transformed, how to describe them, and how to visualize them.
+
+That is always the first step. Next, we will begin asking inferential questions: what can these data tell us beyond this sample? That is where hypothesis testing comes in.

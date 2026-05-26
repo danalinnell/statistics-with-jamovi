@@ -1,0 +1,129 @@
+# 2.6 Putting It All Together {.unnumbered}
+
+This chapter introduced the language of data. That language may feel basic, but it is the foundation for nearly everything else in this book.
+
+Before running an analysis, you should be able to explain what your variables are, how they were measured, what your data look like, and whether you are describing a sample or making an inference about a population.
+
+## Chapter Recap
+
+In this chapter, you learned that:
+
+- data are organized into observations and variables
+- variables can be categorical or continuous
+- categorical variables can be nominal or ordinal
+- continuous variables are often described as interval or ratio, but jamovi generally treats them as continuous
+- descriptive statistics summarize the data we have
+- inferential statistics use sample data to make claims about a larger population
+- distributions show the shape and spread of values
+- variability and outliers affect how we interpret data
+- research design terms help us choose appropriate analyses and interpret conclusions carefully
+
+## A Foundational Decision Guide
+
+When you encounter a new dataset or research question, start with these questions.
+
+| Question | Why It Matters |
+|---|---|
+| What is the research question? | Helps you identify the purpose of the analysis |
+| What are the variables? | Helps you know what was measured or manipulated |
+| How was each variable measured? | Helps you identify the level of measurement |
+| Is each variable categorical or continuous? | Helps you choose appropriate descriptive statistics, graphs, and tests |
+| Are you describing a sample or making an inference about a population? | Helps distinguish descriptive from inferential statistics |
+| What does the distribution look like? | Helps identify skew, variability, and outliers |
+| What is the research design? | Helps you choose the right inferential test later |
+
+This decision process will show up repeatedly throughout the textbook.
+
+## Applied Practice
+
+Read each scenario and answer the questions that follow.
+
+### Scenario 1: Study Time and Exam Scores
+
+A researcher asks 100 students how many hours they studied for an exam and records their exam score.
+
+1. What are the variables?
+2. Are the variables categorical or continuous?
+3. Is this primarily a descriptive or inferential question if the researcher only reports the average number of hours studied and average exam score?
+4. What might change if the researcher wants to know whether study time predicts exam scores among college students more broadly?
+
+<details>
+<summary>Suggested Answers</summary>
+
+1. Hours studied and exam score.
+2. Both are continuous variables.
+3. Descriptive, because the researcher is summarizing the sample.
+4. It becomes inferential if the researcher uses the sample to make a claim about a larger population of college students.
+
+</details>
+
+### Scenario 2: Teaching Method and Quiz Performance
+
+A researcher randomly assigns students to one of two teaching methods and then measures quiz performance.
+
+1. What is the independent variable?
+2. What is the dependent variable?
+3. Is the independent variable categorical or continuous?
+4. Is this an experimental, quasi-experimental, or correlational study?
+
+<details>
+<summary>Suggested Answers</summary>
+
+1. Teaching method.
+2. Quiz performance.
+3. Categorical, because students are assigned to one of two methods.
+4. Experimental, because the researcher randomly assigns students to conditions.
+
+</details>
+
+### Scenario 3: Satisfaction Ratings
+
+Students rate their satisfaction with a course using the following options: very dissatisfied, dissatisfied, neutral, satisfied, very satisfied.
+
+1. What level of measurement is this variable?
+2. Why is it not nominal?
+3. Why should we be cautious about treating it as continuous?
+
+<details>
+<summary>Suggested Answers</summary>
+
+1. Ordinal.
+2. It is not nominal because the response options have a meaningful order.
+3. The spacing between response options may not be equal, even if the categories are coded with numbers.
+
+</details>
+
+## Check Your Understanding
+
+::: {.callout-tip title="Check Your Understanding"}
+1. What is the difference between a nominal variable and an ordinal variable?
+2. Why do data need context before they can be interpreted?
+3. What is the difference between descriptive and inferential statistics?
+4. Why should researchers look at distributions before running statistical tests?
+5. Why does research design matter when choosing a statistical test?
+
+<details>
+<summary>Answers</summary>
+
+1. Nominal variables have categories with no meaningful order. Ordinal variables have categories with a meaningful order.
+2. A value only has meaning when we know what variable it belongs to, how it was measured, and what the values represent.
+3. Descriptive statistics summarize the data we have. Inferential statistics use sample data to make claims about a larger population.
+4. Distributions can reveal skew, variability, outliers, and other patterns that affect interpretation and assumptions.
+5. Research design helps determine whether groups are independent or repeated, whether causal claims are appropriate, and which statistical test fits the research question.
+
+</details>
+:::
+
+### Why This Matters When You Use jamovi
+
+These foundations are not just vocabulary. They affect what you do in jamovi.
+
+If a variable is set up incorrectly, jamovi may offer the wrong analyses or hide the analysis you actually need. If a variable is categorical, frequencies and percentages may be more meaningful than a mean. If a variable is continuous, means, standard deviations, histograms, and boxplots may help you understand the data. If a variable needs to be reverse-scored, recoded, or combined with other variables, you need to prepare it before interpreting the results.
+
+That is why the next few chapters focus on the practical workflow of opening data, preparing variables, describing them, and visualizing what you have.
+
+## Looking Ahead
+
+Now that you have refreshed the language of data, the next chapter introduces jamovi, the software we will use to apply these ideas.
+
+As you move forward, keep asking the same basic questions: What are my variables? How were they measured? What am I trying to learn from the data? Those questions will guide nearly every statistical decision you make.

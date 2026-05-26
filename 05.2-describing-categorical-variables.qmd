@@ -1,0 +1,68 @@
+# 5.2 Describing Categorical Variables {.unnumbered}
+
+{{< glossary "categorical variable" display="Categorical variables" popup="hover" >}} describe groups or categories. Examples include gender, class level, major, condition, or whether someone completed a task.
+
+For categorical variables, the main descriptive statistics are:
+
+- counts, often written as `n`
+- percentages, often written as `%`
+- sometimes the mode, or most common category
+
+Means and standard deviations usually do not make sense for categorical variables, especially nominal variables.
+
+## Frequencies and Percentages
+
+A frequency table shows how many observations fall into each category. Percentages show the same information relative to the full sample.
+
+For example, a class-level variable might include:
+
+| Class level | Count | Percentage |
+|---|---:|---:|
+| First-year | 8 | 20% |
+| Sophomore | 10 | 25% |
+| Junior | 12 | 30% |
+| Senior | 10 | 25% |
+
+This tells us both the raw number of students in each category and how much of the sample each category represents.
+
+## Running Categorical Descriptives in jamovi
+
+To describe categorical variables in jamovi:
+
+1. Go to **Analyses**.
+2. Select **Exploration**.
+3. Select **Descriptives**.
+4. Move your categorical variable into the **Variables** box.
+5. Select **Frequency tables**.
+6. Under **Statistics**, keep only options that make sense, such as `N` and `Missing`.
+
+If jamovi leaves a cell blank for a statistic, it may be because the statistic does not make sense for that variable type.
+
+## Interpreting Categorical Descriptives
+
+When interpreting a frequency table, focus on the pattern of categories.
+
+Ask yourself:
+
+- Which category is most common?
+- Which categories are rare?
+- Are there unexpected categories?
+- Are there duplicate categories caused by spelling, capitalization, or extra spaces?
+- Are any categories so small that later group comparisons would be difficult?
+
+This last point is important. If one category has only one or two people, descriptive statistics for that group may be unstable, and inferential comparisons may not be appropriate.
+
+::: {.callout-warning title="Common Mistake"}
+If a category appears more than once because of capitalization or spacing, clean the variable before reporting descriptives. For example, `Female`, `female`, and `Female ` may look similar to us, but jamovi treats them as different categories.
+:::
+
+::: {.callout-tip title="Check Your Understanding"}
+A variable asks participants to choose their class level: first-year, sophomore, junior, or senior. What descriptive statistics should you use?
+
+<details>
+<summary>Answer</summary>
+
+Use counts and percentages. Because the variable is categorical, frequencies are more appropriate than a mean or standard deviation.
+
+</details>
+:::

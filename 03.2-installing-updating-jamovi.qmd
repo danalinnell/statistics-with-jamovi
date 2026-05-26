@@ -1,0 +1,39 @@
+# 3.2 Installing and Updating jamovi {.unnumbered}
+
+To install jamovi, go to the [jamovi download page](https://www.jamovi.org/download.html).
+
+For most students, I recommend downloading the **current** version because it includes the latest features. If you prefer the most stable option and do not need the newest features, the **solid** version is also available.
+
+jamovi also provides [installation documentation](https://docs.jamovi.org/_pages/um_1_installation.html) for different operating systems. Installation on macOS and Windows is usually straightforward, but there are a few things to keep in mind.
+
+## Windows and macOS
+
+On Windows or macOS, you can usually download jamovi, open the installer, and follow the prompts.
+
+If you are on Windows and receive an error that says something like ["The app you're trying to install isn't a Microsoft verified app"](https://answers.microsoft.com/en-us/windows/forum/all/the-app-youre-trying-to-install-isnt-a-microsoft/5379f8e3-72e1-4cf4-8497-7983af281a05), you may need to adjust your Windows app installation settings or ask for technical support.
+
+If you are on macOS, you may need to approve opening an application downloaded from the internet, depending on your security settings.
+
+## Chromebooks
+
+Chromebooks can be trickier. Some Chromebooks can run Linux apps, which may allow you to install jamovi. Others may not support a desktop installation easily.
+
+If you are using a Chromebook, look for Chromebook-specific support, such as this video on [installing jamovi on a Chromebook](https://www.youtube.com/watch?v=h4ECIS57TPw). Your instructor or institution may also have specific recommendations.
+
+## jamovi Cloud
+
+jamovi also has a Cloud version. The desktop version is generally recommended because it is free and works well for most analyses in this book. The free Cloud version may not be sufficient for everything you need to do, and the paid version may not be necessary if you can use the desktop version.
+
+## Updating jamovi
+
+jamovi is updated over time. If your screen looks different from the screenshots or videos in this textbook, that may be because you are using a different version.
+
+Usually, small differences in layout are not a problem. The key ideas stay the same: open your data, check your variables, choose an analysis, select options, and interpret the output.
+
+::: {.callout-note title="For Dana's Students"}
+Use the desktop version of jamovi whenever possible. If you cannot install jamovi, let me know early so we can troubleshoot. Do not wait until an assignment is due to discover that the software is not working on your computer.
+:::
+
+::: {.callout-warning title="Common Installation Issue"}
+If you cannot install jamovi right away, do not panic. Software issues happen. The important thing is to ask for help early and keep track of what you tried, what error message you saw, and what kind of computer you are using.
+:::

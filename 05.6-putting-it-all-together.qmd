@@ -1,0 +1,72 @@
+# 5.6 Putting It All Together {.unnumbered}
+
+This chapter focused on describing data in jamovi. The big idea is simple but important: the descriptive statistics you choose should match the kind of variable you are describing.
+
+## Chapter Recap
+
+You should now be able to:
+
+- check variable setup before running descriptives
+- use frequencies and percentages for categorical variables
+- use means, standard deviations, ranges, skewness, and kurtosis for continuous variables
+- describe continuous variables across groups using **Split by**
+- decide whether a paragraph or table is clearer
+- avoid overclaiming from descriptive statistics
+
+## Quick Guide: Which Descriptive Statistics Should I Use?
+
+| Variable type | Useful descriptive statistics | Usually avoid |
+|---|---|---|
+| Nominal | Frequencies, percentages, mode | Mean, standard deviation |
+| Ordinal | Frequencies, percentages, median, range or IQR | Treating categories as if distances are definitely equal |
+| Continuous, roughly symmetric | Mean, standard deviation, minimum, maximum | Reporting only the range |
+| Continuous, skewed or with outliers | Median, IQR, minimum, maximum; sometimes mean and SD with caution | Relying only on the mean |
+| Continuous variable split by groups | Group-specific mean, SD, median, sample size, and missing values | Claiming group differences are “real” before inferential testing |
+
+The goal is not to report every statistic jamovi can produce. The goal is to choose the statistics that help someone understand the variable.
+
+## Common Mistakes
+
+Watch for these common mistakes:
+
+- reporting a mean for a nominal variable
+- forgetting to check variable setup before running descriptives
+- ignoring missing values
+- reporting every statistic jamovi provides
+- treating descriptive differences as statistical significance
+- failing to describe groups separately when the research question is group-based
+- not checking whether values fall in the expected range
+
+## Applied Practice
+
+Imagine a dataset includes the following variables:
+
+| Variable | Description |
+|---|---|
+| `Condition` | Participants were assigned to control or treatment |
+| `Age` | Participant age in years |
+| `Class_Level` | First-year, sophomore, junior, or senior |
+| `Stress_Mean` | Average score on a 1 to 5 stress scale |
+
+Answer these questions:
+
+1. Which variables are categorical?
+2. Which variables are continuous?
+3. Which variables should be described with frequencies and percentages?
+4. Which variables should be described with means and standard deviations?
+5. If you wanted to describe stress separately by condition, which variable would go in **Split by**?
+
+<details>
+<summary>Answers</summary>
+
+1. `Condition` and `Class_Level` are categorical.
+2. `Age` and `Stress_Mean` are continuous.
+3. `Condition` and `Class_Level` should be described with frequencies and percentages.
+4. `Age` and `Stress_Mean` should usually be described with means and standard deviations, though you should also check the distribution.
+5. `Stress_Mean` would go in the **Variables** box and `Condition` would go in the **Split by** box.
+
+</details>
+
+## Looking Ahead
+
+Descriptive statistics give us useful summaries, but they can also hide important patterns. Two variables can have the same mean and standard deviation but very different shapes, outliers, or group patterns. That is why the next chapter focuses on visualizing data.

@@ -1,7 +1,0 @@
-# 4.7 Looking Ahead {.unnumbered}
-
-In this chapter, we focused on summarizing data numerically.
-
-In the next chapter, we will learn how to **visualize data** using graphs, which can often reveal patterns that numbers alone cannot.
-
-Together, descriptive statistics and visualizations provide a complete picture of your data.

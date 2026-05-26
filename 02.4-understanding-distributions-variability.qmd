@@ -1,119 +1,100 @@
 # 2.4 Understanding Distributions and Variability {.unnumbered}
 
-So far, we have discussed what data are, how variables are measured, and the difference between descriptive and inferential statistics. Before we begin calculating statistics, it is important to understand what data *look like* as a whole.
+Descriptive statistics are useful, but a single number never tells the whole story. A mean, median, or standard deviation becomes much more meaningful when we understand the shape and spread of the data behind it.
 
-When we collect data, we do not just have individual values; we have a **distribution**.
+That is where distributions and variability come in.
 
-## What is a Distribution?
+::: {.callout-tip title="Learning Objectives"}
+By the end of this section, you should be able to:
 
-A **distribution** shows how values in a dataset are spread out and how often they occur.
+- explain what a distribution is
+- describe why variability matters
+- distinguish among range, interquartile range, variance, and standard deviation
+- explain skew and why it affects interpretation
+- recognize why outliers should be examined before analysis
+- explain why visualizing data is an important part of statistical reasoning
+:::
 
-Rather than focusing on a single value, distributions help us see patterns across all observations.
+## What Is a Distribution?
 
-## Key Features of a Distribution
+A {{< glossary distribution popup="hover" >}} shows how values are arranged for a variable. It tells us which values are common, which values are rare, and whether the values are clustered, spread out, symmetric, or lopsided.
 
-When we examine a distribution, there are a few key features to consider:
+For example, imagine two classes both have an average exam score of 80. In one class, almost everyone scored between 78 and 82. In the other class, some students scored near 50 and others scored near 100. The mean is the same, but the distributions are very different.
 
--   **Center**: Where do most values fall?
--   **Variability**: How spread out are the values?
--   **Shape**: What pattern do the values form?
--   **Outliers**: Are there unusually high or low values?
+This is why we do not want to rely only on one summary statistic. We need to understand the pattern of values.
 
-These features (center, variability, shape, and outliers) are what we will later summarize using descriptive statistics such as the mean and standard deviation.
+## Measures of Variability
+
+Variability describes how spread out the values are. There are several common ways to summarize variability.
+
+The range is the difference between the maximum and minimum value. If the minimum score is 17 and the maximum score is 49, the range is 32.
+
+The interquartile range, or IQR, describes the middle 50% of the data. It is the distance between the first quartile (Q1, the 25th percentile) and the third quartile (Q3, the 75th percentile). The IQR is often useful when data are skewed or include outliers because it focuses on the middle of the distribution.
+
+The variance is based on how far values are from the mean. More specifically, it is based on squared deviations from the mean. The standard deviation is the square root of the variance. In practice, students usually find the standard deviation easier to interpret because it is in the original units of the variable.
+
+I sometimes include equations in this book because formulas help some people understand what is happening behind the scenes. However, I rarely expect you to calculate statistics by hand. The more important goal is to understand what the statistic means and how to interpret it.
 
 ## Shape of a Distribution
 
-Distributions can take different shapes, and these shapes help us understand the data.
+The shape of a distribution tells us how the values are arranged.
 
-One particular distribution we care a lot about in psychological research is the **normal distribution**, which is a specific type of symmetrical distribution where:
+A {{< glossary "normal distribution" popup="hover" >}} is symmetric, with values clustered around the center and fewer values farther away from the center. It is sometimes called a bell curve.
 
--   Most values cluster around the center
--   Fewer values appear as you move away from the center
--   The left and right sides are approximately equal
+Many statistical ideas are easier to explain using a normal distribution, but real data are not always perfectly normal. That is okay. The important thing is to learn how to recognize and think about the shape of your data.
 
-Many statistical methods assume that data are approximately normally distributed, which is why this shape is especially important.
+## Skew
 
-### Skewed Distributions
+{{< glossary skew popup="hover" >}} refers to asymmetry in a distribution. A distribution is skewed when one tail is longer than the other.
 
-However, not all data are normally distributed. In a **skewed distribution**, one side of the distribution stretches out more than the other.
+- In a positively skewed distribution, the long tail points toward higher values. Most values are on the lower end.
+- In a negatively skewed distribution, the long tail points toward lower values. Most values are on the higher end.
 
--   **Right-skewed (positive skew):** tail extends to the right
--   **Left-skewed (negative skew):** tail extends to the left
+Skew matters because it can affect which measure of center is most useful. In a strongly skewed distribution, the mean can be pulled toward the long tail. The median may better represent a typical value.
 
-Skew affects how we interpret the center of the data and which summary statistics are most appropriate.
+## Kurtosis
 
-### Kurtosis (Shape of the Tails)
+{{< glossary kurtosis popup="hover" >}} describes the weight of the tails of a distribution relative to a normal distribution. In everyday terms, it is related to how much the distribution has heavier or lighter tails than expected.
 
-Another aspect of shape is **kurtosis**, which describes how heavy or light the tails of a distribution are.
-
--   Some distributions have more extreme values (heavier tails)
--   Others have fewer extreme values (lighter tails)
-
-For now, it is enough to recognize that distributions can differ not just in symmetry, but also in how extreme values appear.
-
-## Variability of a Distribution
-
-**Variability** refers to how much the values in a dataset differ from one another.
-
-Two datasets can have the same center but very different variability.
-
-We will later quantify variability using measures such as:
-
--   **Variance**
--   **Standard deviation**
-
-For now, focus on the idea that variability tells us how consistent or spread out the data are.
+There are some fancy terms related to kurtosis that you may hear, such as leptokurtic and platykurtic. Honestly, I do not hear researchers use those terms very often in applied work. For this book, the main point is that kurtosis can signal unusual tail behavior, including the possibility of more extreme values.
 
 ## Outliers
 
-An **outlier** is a value that is unusually far from the rest of the data. Outliers can:
+An {{< glossary outlier popup="hover" >}} is an unusually extreme value compared with the rest of the data.
 
--   Affect the **shape** of a distribution (e.g., creating skew)
--   Increase **variability**
--   Influence summary statistics like the mean (but, notably, not the median)
+Outliers are not automatically errors. Sometimes they are real and meaningful. For example, if you are studying income, a very high income value may be accurate. If you are studying reaction time, an extremely slow response might mean the participant got distracted.
 
-Because of their impact, it is important to identify and think carefully about outliers when analyzing data.
+But outliers are worth examining because they can affect means, standard deviations, graphs, assumptions, and statistical tests. When you find an outlier, the goal is not to delete it automatically. The goal is to understand it.
 
-Important note: Not all outliers are errors. Some may represent meaningful or important observations, so it is important to examine them carefully before deciding how to handle them. This will be discussed later in Chapter 6 (Cleaning data).
+## Why Visualizing Data Matters
 
-## Why This Matters
+Graphs help us see patterns that descriptive statistics can hide. Histograms, density plots, boxplots, and scatterplots can show us shape, spread, clusters, gaps, and outliers.
 
-Understanding distributions helps you:
+You will learn more about data visualization later, but the habit starts here: **always look at your data.** Numbers are useful, but graphs often reveal what the numbers alone do not.
 
--   Interpret summary statistics like the mean and standard deviation
--   Recognize patterns and unusual values
--   Choose appropriate analyses
--   Avoid misleading conclusions
+## Looking Ahead
 
-In the next chapters, we will learn how to:
+Distributions and variability will come back throughout the book. You will use them when you:
 
--   **Describe distributions numerically** (Chapter 4)
--   **Visualize distributions using graphs** (Chapter 5)
--   **Prepare and clean data for analysis** (Chapter 6)
+- describe continuous variables
+- choose graphs
+- check statistical assumptions
+- interpret standard deviations and effect sizes
+- decide whether results are meaningful in context
 
-## A Quick Preview
+In other words, this is not just background information. It is part of the logic you will use every time you analyze data.
 
-When working with data, you will often ask:
+::: {.callout-tip title="Check Your Understanding"}
+1. Why can two datasets have the same mean but still look very different?
+2. What does skew tell us about a distribution?
+3. Why should outliers be examined rather than automatically deleted?
 
--   Where is the center of the data?
--   How spread out are the values?
--   What shape does the distribution have?
--   Are there any unusual values?
+<details>
+<summary>Answers</summary>
 
-These questions form the foundation of descriptive statistics.
+1. They may have different variability or different shapes. One dataset might be tightly clustered around the mean while another is widely spread out.
+2. Skew tells us that a distribution is asymmetrical, with one tail longer than the other.
+3. Outliers may be errors, but they may also be real and meaningful values. We should understand them before deciding what to do.
 
-::: {callout-tip  title="Check Your Understanding"}
-1.  What is a distribution?
-2.  What are the four key features of a distribution?
-3.  What is a normal distribution?
-4.  How do outliers affect a dataset?
-5.  Why can two datasets with the same mean still be very different?
-:::
-
-::: {.callout-tip collapse="true" title="Answers"}
-1.  A distribution shows how values are spread out and how often they occur
-2.  Center, variability, shape, and outliers
-3.  A symmetrical distribution where most values cluster around the center
-4.  They can affect shape, variability, and summary statistics
-5.  Because they may differ in variability or shape
+</details>
 :::

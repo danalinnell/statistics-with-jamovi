@@ -1,0 +1,46 @@
+# 5.1 Checking Variable Setup Before Describing Data {.unnumbered}
+
+Before running descriptive statistics, pause and check your variable setup. This should now feel familiar.
+
+In jamovi, the same Descriptives analysis can produce different kinds of information depending on the variables you place in the analysis and the options you select. If a variable is set up incorrectly, the output may be confusing or misleading.
+
+## What to Check
+
+Before describing data, check:
+
+- the {{< glossary "variable name" display="variable names" popup="hover" >}}
+- the {{< glossary "data type" display="data types" popup="hover" >}}
+- the {{< glossary "measure type" display="measure types" popup="hover" >}}
+- whether missing values are coded correctly
+- whether computed or transformed variables look plausible
+
+A variable that should be categorical should be set as nominal or ordinal. A variable that should be summarized with a mean and standard deviation should usually be set as continuous.
+
+## Why This Matters
+
+Variable setup affects interpretation. For example, if gender is accidentally treated as a continuous variable, a mean for gender might appear or be requested. That number would not be meaningful.
+
+Similarly, if a scale score is treated as nominal, jamovi may not let you use it in analyses where a continuous outcome variable is needed.
+
+## Where Descriptives Lives in jamovi
+
+To run descriptive statistics in jamovi:
+
+1. Go to the **Analyses** tab.
+2. Select **Exploration**.
+3. Select **Descriptives**.
+4. Move the variable or variables you want to describe into the **Variables** box.
+5. Select the statistics and plots that match the kind of variable you are describing.
+
+The rest of this chapter explains which options make sense for different kinds of variables.
+
+::: {.callout-tip title="Check Your Understanding"}
+A variable contains total scores on a 21-item scale. The values range from 0 to 42. You want to calculate the mean, standard deviation, minimum, and maximum. What measure type should the variable usually use in jamovi?
+
+<details>
+<summary>Answer</summary>
+
+It should usually be set as continuous because the total score is being treated as a quantitative scale score.
+
+</details>
+:::

@@ -1,0 +1,86 @@
+# 4.5 Reverse Scoring Items {.unnumbered}
+
+Sometimes items in a scale are written in opposite directions. Before combining those items into a scale score, you need to make sure all items point in the same direction.
+
+This process is called {{< glossary "reverse scoring" popup="hover" >}}.
+
+## Why Reverse Scoring Matters
+
+Imagine a short happiness scale with four items:
+
+1. I am happy.
+2. I am content.
+3. Life is overall positive.
+4. I am unhappy.
+
+If higher scores are supposed to mean more happiness, the fourth item is a problem. A high score on “I am unhappy” means lower happiness, not higher happiness.
+
+Before creating a happiness scale score, that item needs to be reverse-scored so that higher values consistently mean higher happiness.
+
+## How Reverse Scoring Works
+
+For a 5-point scale, reverse scoring usually looks like this:
+
+| Original value | Reverse-scored value |
+|---:|---:|
+| 1 | 5 |
+| 2 | 4 |
+| 3 | 3 |
+| 4 | 2 |
+| 5 | 1 |
+
+The lowest value becomes the highest value, the highest value becomes the lowest value, and the middle value stays in the middle.
+
+For a 4-point scale from 0 to 3, reverse scoring would look like this:
+
+| Original value | Reverse-scored value |
+|---:|---:|
+| 0 | 3 |
+| 1 | 2 |
+| 2 | 1 |
+| 3 | 0 |
+
+The exact recode depends on the response scale.
+
+## A Shortcut Formula
+
+For numeric items, you can often reverse-score with a formula:
+
+```{.text}
+maximum value + minimum value - original value
+```
+
+For a 1 to 5 scale, this becomes:
+
+```{.text}
+6 - item
+```
+
+For a 0 to 3 scale, this becomes:
+
+```{.text}
+3 - item
+```
+
+The formula works only when the scale is numeric and evenly spaced.
+
+## Always Read the Items
+
+Do not reverse-score an item just because it feels negative. Read the scoring instructions for the scale. Some scales are designed so that all items already point in the same direction. Other scales include reverse-scored items intentionally.
+
+If you are working with an established measure, look for scoring guidance before making decisions.
+
+::: {.callout-warning title="Common Mistake"}
+Students sometimes reverse-score items because the wording sounds negative, even when the scoring instructions say not to. Always check the scale documentation or assignment directions before reverse scoring.
+:::
+
+::: {.callout-tip title="Check Your Understanding"}
+A 1 to 5 item is reverse-scored. What should an original value of 2 become?
+
+<details>
+<summary>Answer</summary>
+
+It should become 4. On a 1 to 5 scale, reverse scoring changes 1 to 5, 2 to 4, 3 to 3, 4 to 2, and 5 to 1.
+
+</details>
+:::

@@ -1,0 +1,21 @@
+# 5. Describing Data in jamovi
+
+Once your data are prepared, the next step is to describe them. Descriptive statistics help us summarize what is in the dataset before making broader claims.
+
+This chapter assumes your variables are already set up correctly. If jamovi is treating a variable as the wrong type, or if you need to recode, transform, reverse-score, or compute a new variable first, return to the previous chapter before interpreting your descriptive statistics.
+
+This chapter focuses on using jamovi to describe different kinds of variables. The most important idea is that the descriptive statistics you choose should match the variable you are describing. A categorical variable usually needs counts and percentages. A continuous variable usually needs measures of center and spread. When you are comparing groups, you may need descriptives split by a grouping variable.
+
+By the end of this chapter, you should be able to:
+
+- check variable setup before running descriptives
+- describe categorical variables using frequencies and percentages
+- describe continuous variables using appropriate measures of center, spread, and shape
+- describe continuous variables across groups
+- choose descriptive statistics based on variable type and research question
+- write descriptive statistics clearly in text or tables
+- avoid common mistakes when describing data
+
+::: {.callout-note title="A Reminder About Workflow"}
+The chapters are separated to make the skills easier to learn, but real data analysis is messier. You may prepare a variable, describe it, notice a problem, return to cleaning, and then describe it again. That is part of the process.
+:::

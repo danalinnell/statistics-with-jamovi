@@ -1,4 +1,4 @@
-# 7. Hypothesis Testing {.unnumbered}
+# 7. Hypothesis Testing
 
 In previous chapters, we focused on understanding, describing, visualizing, and cleaning our data. These steps are essential—but they are not the end goal.
 
@@ -12,7 +12,7 @@ In Chapter 2, we introduced the distinction between:
 
 -   **Descriptive statistics**: summarize our sample
 -   **Inferential statistics**: make conclusions about a population
-
+s
 In this chapter, we introduce the logic of **hypothesis testing**, also known as **null hypothesis significance testing (NHST)**.
 
 

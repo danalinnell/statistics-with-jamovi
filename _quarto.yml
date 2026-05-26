@@ -2,6 +2,11 @@ project:
   type: book
   output-dir: docs-quarto
 
+glossary:
+  path: glossary.yml
+  popup: hover
+  show: true
+
 book:
   title: "Stats with jamovi"
   author: "Dana Linnell"
@@ -11,6 +16,7 @@ book:
     - part: index.qmd
       chapters: 
         - 01.0-intro.qmd
+        - 01.1-about-this-book.qmd
     
     - part: 02.0-statistics-foundations.qmd
       chapters:
@@ -18,44 +24,46 @@ book:
         - 02.2-types-of-variables-levels-of-measurement.qmd
         - 02.3-descriptive-vs-inferential-statistics.qmd
         - 02.4-understanding-distributions-variability.qmd
-        - 02.5-putting-it-all-together.qmd
+        - 02.5-research-design-terms-youll-see-again.qmd
+        - 02.6-putting-it-all-together.qmd
         
     - part: 03.0-overview-jamovi.qmd
       chapters:
         - 03.1-what-is-jamovi.qmd
-        - 03.2-installing-jamovi.qmd
-        - 03.3-opening-data-in-jamovi.qmd
+        - 03.2-installing-updating-jamovi.qmd
+        - 03.3-opening-saving-annotating-files.qmd
         - 03.4-navigating-the-jamovi-interface.qmd
+        - 03.5-checking-variable-setup.qmd
+        - 03.6-putting-it-all-together.qmd
         
-    - part: 04.0-describing-data-in-jamovi.qmd
+    - part: 04.0-cleaning-and-preparing-data-in-jamovi.qmd
       chapters:
-        - 04.1-describing-continuous-variables.qmd
-        - 04.2-describing-categorical-variables.qmd
-        - 04.3-describing-a-continuous-variable-by-a-categorical-variable.qmd
-        - 04.4-choosing-the-right-descriptive-statistics.qmd
-        - 04.5-writing-up-descriptive-statistics.qmd
-        - 04.6-common-mistakes.qmd
-        - 04.7-looking-ahead.qmd
+        - 04.1-checking-your-data-before-analysis.qmd
+        - 04.2-fixing-incorrect-variable-types.qmd
+        - 04.3-working-with-missing-values.qmd
+        - 04.4-recoding-and-transforming-variables.qmd
+        - 04.5-reverse-scoring-items.qmd
+        - 04.6-creating-scale-scores-composite-variables.qmd
+        - 04.7-checking-your-work.qmd
 
-    - part: 05.0-visualizing-data-in-jamovi.qmd
+    - part: 05.0-describing-data-in-jamovi.qmd
       chapters:
-        - 05.1-why-visualize-data.qmd
-        - 05.2-choosing-the-right-graph.qmd
-        - 05.3-visualizing-a-single-continuous-variable.qmd
-        - 05.4-visualizing-a-categorical-variable.qmd
-        - 05.5-visualizing-a-continuous-variable-split-by-a-categorical-variable.qmd
-        - 05.6-expanding-your-data-visualization.qmd
+        - 05.1-checking-variable-setup-before-describing-data.qmd
+        - 05.2-describing-categorical-variables.qmd
+        - 05.3-describing-continuous-variables.qmd
+        - 05.4-describing-continuous-variables-across-groups.qmd
+        - 05.5-choosing-and-writing-descriptive-statistics.qmd
+        - 05.6-putting-it-all-together.qmd
     
-    - part: 06.0-cleaning-and-preparing-data-in-jamovi.qmd
+    - part: 06.0-visualizing-data-in-jamovi.qmd
       chapters:
-        - 06.1-data-cleaning-in-jamovi.qmd
-        - 06.2-incorrect-variable-types.qmd
-        - 06.3-missing-values.qmd
-        - 06.4-data-entry-errors-and-outliers.qmd
-        - 06.5-reverse-scoring.qmd
-        - 06.6-creating-scale-scores-composite-variables.qmd
-        - 06.7-recoding-and-transforming-variables.qmd
-        - 06.8-putting-it-all-together.qmd
+        - 06.1-why-visualize-data.qmd
+        - 06.2-choosing-the-right-graph.qmd
+        - 06.3-visualizing-continuous-variables.qmd
+        - 06.4-visualizing-categorical-variables.qmd
+        - 06.5-visualizing-continuous-variables-across-groups.qmd
+        - 06.6-expanding-your-data-visualization.qmd
+        - 06.7-putting-it-all-together.qmd
 
     - part: 07.0-hypothesis-testing.qmd
       chapters:
@@ -122,6 +130,9 @@ book:
         - 16.3-threats-to-external-validity.qmd
         - 16.4-threats-to-internal-validity.qmd
 
+  appendices:
+    - appendix-glossary.qmd
+
 format:
   html:
     theme: cosmo
@@ -130,3 +141,7 @@ format:
     toc-location: right
     number-sections: true
     css: style.css
+  
+  docx:
+    toc: true
+    number-sections: false

@@ -1,0 +1,82 @@
+# 5.4 Describing Continuous Variables Across Groups {.unnumbered}
+
+Sometimes we want to describe a continuous variable separately for different groups. For example, we might want to know the average test score for each condition, the average scale score by class level, or the average response time by group.
+
+In jamovi, this is often done using **Split by**.
+
+## When to Use Split By
+
+Use **Split by** when you have:
+
+- a continuous variable you want to describe
+- a categorical variable that defines groups
+
+The continuous variable goes in the **Variables** box. The categorical grouping variable goes in the **Split by** box.
+
+For example:
+
+| Continuous variable | Split by variable |
+|---|---|
+| Exam score | Study condition |
+| Depression total score | Clinical group |
+| Boredom mean score | Class level |
+| Mind wandering score | Gender |
+
+## Why Split-By Descriptives Matter
+
+Split-by descriptives are often the first step before group comparisons. Before running an independent t-test or ANOVA, you should understand what the group descriptives look like.
+
+However, descriptive differences are not the same as inferential evidence. If one group has a higher mean than another group, that tells us what happened in the sample. It does not, by itself, tell us whether the difference is statistically meaningful or likely to generalize beyond the sample.
+
+::: {.callout-warning title="Descriptive Differences Are Not the Same as Inferential Evidence"}
+When you split a continuous variable by a categorical variable, you may see that one group has a higher mean than another group. That is useful information, but it does not tell you whether the difference is statistically meaningful or likely to generalize beyond your sample.
+
+For now, describe what you see. Later, inferential tests such as t-tests and ANOVA will help us decide whether group differences are large enough, relative to variability and sample size, to reject a null hypothesis.
+:::
+
+## Running Split-By Descriptives in jamovi
+
+To describe a continuous variable across groups:
+
+1. Go to **Analyses**.
+2. Select **Exploration**.
+3. Select **Descriptives**.
+4. Move the continuous variable into the **Variables** box.
+5. Move the categorical grouping variable into the **Split by** box.
+6. Select the statistics you want for each group.
+
+Useful statistics often include:
+
+- `N`
+- `Missing`
+- `Mean`
+- `Median`
+- `Std. deviation`
+- `Minimum`
+- `Maximum`
+
+## Interpreting Split-By Descriptives
+
+When interpreting split-by descriptives, ask:
+
+- How many observations are in each group?
+- Are any groups very small?
+- Which group has the highest mean or median?
+- How variable is each group?
+- Are the minimum and maximum values plausible?
+- Do the descriptive patterns suggest a question for inferential testing later?
+
+::: {.callout-warning title="Common Mistake"}
+Do not write that one group is “significantly higher” than another group based only on descriptive statistics. Statistical significance requires an inferential test.
+:::
+
+::: {.callout-tip title="Check Your Understanding"}
+You want to describe average boredom scores separately for each class level. Which variable goes in the **Variables** box and which goes in the **Split by** box?
+
+<details>
+<summary>Answer</summary>
+
+The boredom score goes in the **Variables** box because it is the continuous variable being described. Class level goes in the **Split by** box because it defines the groups.
+
+</details>
+:::

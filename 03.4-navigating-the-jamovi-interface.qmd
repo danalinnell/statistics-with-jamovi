@@ -1,183 +1,76 @@
 # 3.4 Navigating the jamovi Interface {.unnumbered}
 
-Once you open jamovi, you will see a spreadsheet-like layout. This is where your data will appear.
+Once you open jamovi, you will see a spreadsheet-like layout. Your data appear in rows and columns, similar to Excel or Google Sheets.
 
-Like we discussed in Chapter 2:
+The main difference is that jamovi is designed for statistical analysis. It does not only store data; it also helps you define variables, run analyses, and view output.
 
--   each **row** represents a **case** or **observation**
--   each **column** represents a **variable**
-
-This structure is important to keep in mind, because many problems in statistical analysis begin with incorrectly structured or incorrectly labeled data.
-
-I recommend watching a short video by Alexander Swan on [navigating the jamovi interface in jamovi](https://youtu.be/t0tQcs-E5Z4) so you can become familiar with the layout and the basic menus. Note that some demonstrations you find online may use a Mac and may include extra modules, so the screen may look a little different from yours.
+I recommend watching this short video by Alexander Swan on [navigating the jamovi interface](https://youtu.be/t0tQcs-E5Z4) so you can become familiar with the layout and basic menus. Some demonstrations online may use a Mac or include extra modules, so the screen may look a little different from yours.
 
 ```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://youtu.be/t0tQcs-E5Z4")
 ```
 
-## Understanding variable setup in jamovi
+## The Data Area
 
-### Variable Name
+The data area is where you see the dataset itself. Remember the basic structure:
 
-First, you should use an informative yet brief variable name. Refer back to Chapter 2 for tips on variable names from [Broman & Woo (2018)](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989).
+- each row is one {{< glossary observation popup="hover" >}}, such as one participant, person, case, or response;
+- each column is one {{< glossary variable popup="hover" >}}, such as age, condition, test score, or group.
 
-### Variable Description
+This structure seems simple, but many analysis problems begin when data are not organized this way.
 
-Second, you should provide a longer description of the variable. You could provide the full text of the item in the survey, more details on how the variable was measured, or anything else that can help you or others better understand the variable.
+## The Data Tab
 
-### Measure type
+The **Data** tab is where you work with the dataset itself. This is where you can do things like:
 
-One of the most important parts of working in jamovi is correctly identifying your variable types. In jamovi, variables are set as one of four measure types:
+- add or rename variables;
+- edit variable information;
+- check measure types and data types;
+- compute new variables;
+- transform variables; and
+- create filters.
 
-1.  ![](images/03-jamovi/variable-nominal.png) **Nominal**: categories with no order
+You do not need to understand all of these tools yet. Later chapters will walk through computing variables, transforming variables, reverse-scoring items, creating scale scores, and using filters.
 
-2.  ![](images/03-jamovi/variable-ordinal.png) **Ordinal**: categories with a meaningful order
+For now, know that the Data tab is where you go when something about the dataset itself needs to be checked or changed.
 
-3.  ![](images/03-jamovi/variable-continuous.png) **Continuous**: numerical variables
+## The Analyses Tab
 
-4.  ![](images/03-jamovi/variable-id.png) **ID**: an identifier variable that you would not usually analyze, such as participant ID
+The **Analyses** tab is where you run statistical analyses. For example, this is where you will eventually find options for descriptives, frequencies, *t*-tests, ANOVA, correlation, regression, and other analyses.
 
-### Data type
+For this chapter, we are not focused on running analyses yet. Still, it is useful to know that jamovi separates data work from analysis work:
 
-Additionally, variables can be one of three data types:
+- **Data tab** → set up, check, clean, and prepare the dataset
+- **Analyses tab** → run analyses and create output
 
-1.  **Integer**, meaning the values are discrete whole numbers
-2.  **Decimal**, meaning the values are numbers with decimals
-3.  **Text**, meaning the values are alphanumeric, not just numeric
+## The Results Panel
 
-These levels of measurement and data types connect directly to the ideas from Chapter 2. A variable may be coded numerically (for example, 0 = no and 1 = yes), but that does not mean it is continuous. You still need to specify the correct variable type.
+When you run an analysis, jamovi displays the results in the output or results panel. One nice thing about jamovi is that the output updates as you change options.
 
-### Missing values
+This can be helpful because you can see immediately how different choices affect the output. It also means you should be careful: if you click an option accidentally, your output may change.
 
-You can specify which values are intended to be missing values. For example, -99 is commonly defined as a missing value in a dataset.
+## Modules
 
-### Levels
+jamovi can be extended with {{< glossary module display="modules" popup="hover" >}}. A module adds analyses or tools that are not included in the base version of jamovi.
 
-For categorical variables, you can specify that text that aligns with numeric values of a variable. For example, if you have a dataset in which pretest is coded as 1 and posttest is coded as 2, you can specify this in the Levels box.
-
-There is a toggle you can select to retain unused levels in analyses if you want any level that has no data to always show up (e.g., in a graph).
-
-::: {.callout-tip title="Check Your Understanding"}
-1. A variable is coded as:
-   - 0 = No
-   - 1 = Yes
-
-   Should this variable be set as continuous, ordinal, or nominal in jamovi? Why?
-
-2. You open a dataset and jamovi labels a variable as continuous, but it represents categories such as:
-   - 1 = Freshman
-   - 2 = Sophomore
-   - 3 = Junior
-   - 4 = Senior
-
-   What should you do?
-
-3. In an independent samples *t*-test:
-   - What type of variable should go in the dependent variable box?
-   - What type of variable should go in the grouping variable box?
-
-4. Why is jamovi’s automatic detection of variable type helpful, but not enough on its own?
-
-5. A student says, “If jamovi lets me run the analysis, it must be the right one.” What is wrong with that reasoning?
-:::
-
-::: {.callout-tip collapse="true" title="Answers"}
-1. **Nominal.** The numbers are labels for categories, not continuous quantities.
-
-2. Change the variable type to **ordinal**, because the categories have a meaningful order.
-
-3. 
-   - Dependent variable → **continuous**
-   - Grouping variable → **categorical** (nominal or ordinal)
-
-4. jamovi’s automatic detection is helpful because it saves time, but it can make mistakes. You still need to confirm that the variable type matches what the variable actually represents.
-
-5. jamovi can help guide you, but it is not a substitute for statistical reasoning. A variable can be set incorrectly, and software cannot always determine whether the analysis truly matches the research question.
-:::
-
-## How jamovi helps you work with variables
-
-Once you understand how variables are defined, it’s important to understand how jamovi helps you work with them.
-
-1.  **jamovi will try to automatically determine variable types.**
-
-When you enter data or open a dataset, jamovi will guess the data type and measure type for you. This is incredibly helpful—*until it’s wrong*.
-
-Always double-check your variables before running any analyses. Incorrect variable types are one of the most common sources of errors in statistical work.
-
-2.  **The icons help guide your analysis choices.**
-
-Those small icons next to variables are not just decorative—they tell you what kind of variable you are working with and where it can be used.
-
-For example:
-
--   A **ruler icon** indicates a continuous variable
-
--   A **Venn icon** indicates a nominal variable
-
--   A **histogram icon** indicates an ordinal variable
-
-These icons also appear in analysis menus to guide you.
-
-3.  **jamovi helps prevent (some) mistakes—but not all.**
-
-When you run analyses, jamovi will often indicate what types of variables belong in each box.
-
-For example, in an **independent samples t-test**:
-
--   The *dependent variable* box shows a ruler icon → you should enter a **continuous variable**
--   The *grouping variable* box shows a Venn diagram or historgram → you should enter a **nominal or ordinal variable**
-
-This is incredibly helpful—but you still need to understand *why* those choices matter. jamovi is a guide, not a substitute for statistical reasoning.
-
-::: {.callout-warning title="Most Common Mistake"}
-Running an analysis with incorrectly specified variables. Always check:
-
--   Variable type (nominal, ordinal, continuous)
--   Data type (numeric vs text)
--   Whether the variable fits the analysis
-:::
-
-## A first look at your data
-
-After loading or entering your data, your next step is to quickly check that your dataset is ready for analysis.
-
-At this stage, that does not mean running formal statistical tests. Instead, it means making sure your data are set up correctly.
-
-As you look through your data, consider:
-
--   Are the variables named clearly?
--   Are the variable types correct?
--   Are there obvious data entry mistakes?
--   Are there missing values that aren't coded as missing?
--   Are there values that seem impossible or unusual?
-
-We will learn more about cleaning and preparing data in Chapter 6, but building this habit now will make your analyses much smoother.
-
-If something goes wrong in your analysis later, the first place to check is your variable setup.
+For this book, we will mostly use tools already available in jamovi or common add-on modules when needed. If a chapter requires a module, I will tell you.
 
 ::: {.callout-tip title="Check Your Understanding"}
-1. You see a value of 999 in a test score variable where scores should range from 0 to 100. What should you do before analyzing the data?
+Which part of jamovi would you use for each task?
 
-2. Why is it important to look through your dataset before running analyses?
+1. Changing a variable from continuous to nominal.
+2. Running descriptive statistics.
+3. Checking the output from an analysis.
+4. Creating a computed variable.
 
-3. You notice that a variable contains the values:
-   - Yes
-   - yes
-   - Y
+<details>
+<summary>Answer</summary>
 
-   Why might this be a problem?
+1. Data tab / variable setup.
+2. Analyses tab.
+3. Results/output panel.
+4. Data tab.
 
-4. If something looks wrong in your analysis output later, what is one of the first things you should check?
-:::
-
-::: {.callout-tip collapse="true" title="Answers"}
-1. Investigate the value before analyzing the data. It may be a data entry error, a missing value code, or some other issue.
-
-2. Looking through the dataset helps you catch mistakes, incorrect variable types, missing values, and unusual or impossible values before they affect your results.
-
-3. jamovi may treat these as different categories, which would distort frequencies and percentages.
-
-4. Check your variable setup and the raw data values first.
+</details>
 :::

@@ -1,139 +1,95 @@
 # 2.2 Types of Variables and Levels of Measurement {.unnumbered}
 
-In Section 2.1, we introduced two broad types of variables: **categorical** and **continuous**. We can refine this further into four levels of measurement. These levels help us understand what the values represent and what kinds of summaries and analyses are appropriate.
+Once we know what our variables are, we need to understand how they were measured. This matters because the type of variable affects which descriptive statistics, graphs, and statistical tests make sense.
 
-Understanding the type of variable you are working with will help you decide:
-
--   How to summarize the data
--   What graphs to use
--   What statistical analyses are appropriate
+This may or may not be refresher material for you, but it is extremely important. A lot of statistics comes back to one basic question: **What kind of variable am I working with?**
 
 ![](images/01-intro/Levels%20of%20measurement.png)
-## Categorical Variables: Nominal and Ordinal
 
-Categorical variables describe groups or categories. There are two main types of categorical variables: nominal and ordinal variables.
+::: {.callout-tip title="Learning Objectives"}
+By the end of this section, you should be able to:
 
-**Nominal variables** represent categories with no inherent order. There is a special type of nominal variable with only two categories (e.g., yes/no, present/absent), which we call a **dichotomous variable**.
+- distinguish between categorical and continuous variables
+- identify nominal, ordinal, interval, and ratio levels of measurement
+- explain why variable type depends on how something is measured
+- recognize why numbers do not automatically make a variable continuous
+- explain why researchers should be cautious about collapsing variables into fewer categories
+:::
 
-Examples:
+## Categorical and Continuous Variables
 
--   Major (Psychology, Business, Engineering)
--   Treatment group (Control, Experimental)
--   Eye color
+A useful first distinction is between categorical and continuous variables.
 
-With nominal variables, we can:
+{{< glossary "categorical variable" display="Categorical variables" popup="hover" >}} describe groups or categories. Examples include major, condition, political affiliation, or whether someone completed a task.
 
--   Count how many observations fall into each category
--   Calculate percentages
+{{< glossary "continuous variable" display="Continuous variables" popup="hover" >}} represent quantities or amounts. Examples include age, height, reaction time, test score, or number of correct responses.
 
-We cannot meaningfully order or average these values.
+This distinction will show up constantly in jamovi. Later, jamovi will ask you to identify variables as nominal, ordinal, continuous, or ID. That choice affects which analyses jamovi will allow you to run.
 
-**Ordinal variables** represent categories with a meaningful order, but the differences between values are not necessarily equal.
+## Nominal Variables
 
-Examples:
+A {{< glossary "nominal variable" popup="hover" >}} is a categorical variable with categories that do not have a meaningful order.
 
--   Class rank (1st, 2nd, 3rd)
--   Satisfaction ratings (Very dissatisfied → Very satisfied)
--   Likert-scale responses (Strongly disagree → Strongly agree)
+Examples include:
 
-With ordinal variables, we can:
+- major
+- treatment group
+- eye color
+- state of residence
+- type of pet
 
--   Order values
--   Identify medians or rankings
+For nominal variables, we can count how many observations fall into each category and calculate percentages. We can also identify the mode, or most frequent category.
 
-However, we should be cautious about treating the differences between values as equal. Also, keep in mind that assigning numbers to categories (e.g., 1 = strongly disagree, 5 = strongly agree) does not automatically make a variable continuous. Always consider what the values represent.
+What we cannot do is calculate a meaningful mean. If we code cat = 1, dog = 2, and frog = 3, the mean of those numbers does not tell us anything meaningful about the animals. The numbers are just labels.
 
-## Continuous (Numerical) Variables: Interval and Ratio
+A special type of nominal variable has only two categories, such as yes/no, present/absent, or control/treatment. These are often called {{< glossary "binary variable" display="binary" popup="hover" >}}, {{< glossary "dichotomous variable" display="dichotomous" popup="hover" >}}, or dummy-coded variables.
 
-Continuous variables, also called numerical variables, represent quantities or amounts. There are two main types of numerical variables: interval and ratio variables.
+## Ordinal Variables
 
-**Interval variables** have equal spacing between values, but no true zero point.
+An {{< glossary "ordinal variable" popup="hover" >}} is a categorical variable with categories that have a meaningful order.
 
-This means that differences between values are meaningful, but zero does not represent the absence of the construct.
+Examples include:
 
-Examples:
+- class rank
+- education level
+- Likert-type responses from strongly disagree to strongly agree
+- satisfaction ratings from very dissatisfied to very satisfied
 
--   Temperature (°C or °F)
--   Standardized test scores (e.g., IQ scores)
--   Some psychological scale scores where zero is arbitrary
+Ordinal variables give us more information than nominal variables because the categories can be ordered. However, the spacing between categories is not necessarily equal.
 
-With interval variables, we can:
+For example, on a five-point satisfaction scale, the difference between “strongly disagree” and “disagree” may not be exactly the same as the difference between “agree” and “strongly agree.” The values are ordered, but the distance between values is not guaranteed to be equal.
 
--   Compare differences between values (e.g., the difference between 90 and 100 is the same as between 100 and 110)
--   Calculate means and standard deviations
--   Create graphs and use many common statistical analyses
+With ordinal variables, we often use frequencies, percentages, medians, ranges, or percentiles. Researchers sometimes treat ordinal scales as continuous, especially when multiple items are combined into a scale score, but we should always think carefully about whether that choice makes sense.
 
-However, we should not interpret ratios (e.g., a score of 120 is not “twice as much” as a score of 60).
+## Interval and Ratio Variables
 
-**Ratio variables** have equal spacing between values and a true zero point, meaning that zero represents the absence of the measured quantity.
+{{< glossary "interval variable" display="Interval variables" popup="hover" >}} and {{< glossary "ratio variable" display="ratio variables" popup="hover" >}} are both types of continuous variables.
 
-Examples:
+An interval variable has equal spacing between values, but no true zero point. Temperature in Celsius or Fahrenheit is a common example. The difference between 20 and 30 degrees is the same size as the difference between 30 and 40 degrees, but 0 degrees does not mean there is no temperature.
 
--   Reaction time (milliseconds)
--   Number of correct responses on a task
--   Time spent studying (minutes or hours)
--   Frequency of a behavior (e.g., number of times a behavior occurs)
+A ratio variable has equal spacing between values and a true zero point. Examples include reaction time, number of correct answers, height, weight, and hours studied. For ratio variables, zero means none of the thing being measured.
 
-With ratio variables, we can:
-
--   Compute means and standard deviations
--   Compare differences between values
--   Make meaningful ratio statements (e.g., twice as much, half as much)
--   Use a full range of statistical analyses
-
-Because ratio variables include a true zero, they provide the most flexibility for analysis.
-
-### Discrete vs Count Variables
-
-Some continuous variables are measured on a scale (e.g., height, reaction time), while others are counts (e.g., number of correct responses).
-
-More specifically:
-
--   **Discrete variables** take on countable values (e.g., number of children, number of errors)
--   **Continuous variables** can take on any value within a range (e.g., time, height, weight)
-
-In practice, statistical software like jamovi typically treats both types as continuous variables, and we will do the same in this course.
-
-## How Variable Type Affects What You Can Do
-
-Different types of variables allow for different kinds of summaries:
-
--   **Nominal (categorical)**: counts and percentages
--   **Ordinal**: rankings, medians
--   **Interval and ratio (numerical)**: means, standard deviations, and more advanced analyses
-
-This distinction will become especially important when we begin summarizing data and selecting statistical tests.
-
-
-## A Simple Way to Identify Variable Type
-
-When you encounter a variable, ask:
-
-1.  Is this describing **categories** or **numbers**?
-2.  If categories, is there a meaningful order? If so, then it's ordinal; if not, then it's nominal.
-3.  If numbers, does zero represent “none”? If so, then it's ratio; if not, then it's interval.
-
-These questions can help you quickly determine the type of variable you are working with.
+For most of this book, you do not need to spend much energy distinguishing between interval and ratio variables. jamovi does not separate them either. Instead, jamovi treats them as continuous variables. The more important distinction for our purposes is whether a variable is nominal, ordinal, or continuous.
 
 ## The Same Construct Can Be Measured in Different Ways
 
-If levels of measurement still feel confusing, this is one of the most important things to remember:
+Here is one of the most important things to remember:
 
-> A variable’s level of measurement depends on **how it is measured**, not just what it is.
+> A variable’s level of measurement depends on how it is measured, not just what it is called.
 
-For example, one semester a student asked, “Isn’t time a continuous variable?” The answer is: **it depends**.
+One semester, a student asked me, “Isn’t time a continuous variable?” My answer was: **it depends on how time is measured.**
 
--   If time is measured as **pre vs. post**, it is a **nominal** variable with two categories.
--   If time is measured as **month of the year**, it is **ordinal** because the categories have a meaningful order.
--   If time is measured as **response time**, **exact date**, or **time remaining**, it is typically **continuous**.
+- If time is measured as pre vs. post, it is a nominal variable with two categories.
+- If time is measured as month of the year, it is ordinal because the months have a meaningful order.
+- If time is measured as response time, exact date, or time remaining, it is typically continuous.
 
-So “time” is not automatically one type of variable. Its level of measurement depends on the way the researcher defines and records it.
+So “time” is not automatically one type of variable. The researcher’s measurement choices determine the level of measurement.
 
-Here is another example. The construct **studying** could also be measured in different ways.
+Here is another example. The construct of studying could be measured in several ways.
 
 | Name | Study_Continuous | Study_Ordinal | Study_Nominal |
-|------------------|-----------------:|------------------|------------------|
-| *Name (Character)* | *Hours studied per day* | *Amount of studying* | *Studies every day?* |
+|---|---:|---|---|
+| *Name* | *Hours studied per day* | *Amount of studying* | *Studies every day?* |
 | Jesus | 5.0 | A great deal | Yes |
 | Nicky | 4.5 | A great deal | Yes |
 | Bradford | 3.2 | A moderate amount | Yes |
@@ -142,46 +98,50 @@ Here is another example. The construct **studying** could also be measured in di
 | Lillian | 0.0 | Never | No |
 | Trayvon | 0.0 | Never | No |
 
-Notice that the same general idea—studying—can be measured as:
+Notice that the same general idea, studying, can be measured as:
 
--   **continuous**: hours studied per day
--   **ordinal**: amount of studying on an ordered scale
--   **nominal**: whether the person studies every day or not
+- continuous: hours studied per day
+- ordinal: amount of studying on an ordered scale
+- nominal: whether the person studies every day
 
-This matters because different ways of measuring a variable preserve different amounts of information.
+This is why variable type is not just a vocabulary issue. It affects the information we have available and what analyses we can reasonably perform.
 
-In general, moving from **continuous → ordinal → nominal** reduces information. For example, if we turn hours studied into “low,” “medium,” and “high,” we lose the exact differences between people. For that reason, researchers usually want to avoid collapsing variables into categories unless there is a strong reason to do so.
+## Be Careful About Losing Information
 
-For example, a **mean split** or **median split** turns a continuous variable into categories such as “above average” and “below average.” This may seem convenient, but it removes information and can make analyses less precise.
+Continuous variables usually contain more information than ordinal variables, and ordinal variables usually contain more information than nominal variables.
 
-At the same time, “more information” does not always mean “better.” The best level of measurement depends on your research question and how the construct is most meaningfully measured.
+We can often move from continuous to ordinal or nominal. For example, we could turn hours studied into low, moderate, and high studying. We could also turn it into yes/no by asking whether someone studied at least one hour.
 
-Finally, just because values are written as numbers does **not** make a variable continuous. If I code cat = 1, dog = 2, and frog = 3, that is still a **nominal** variable. The numbers are just labels.
+But once we do that, we lose information. Someone who studied 1.1 hours and someone who studied 5.0 hours might end up in the same category. That may be useful for some research questions, but it can also make the analysis less precise.
 
-## Why This Matters
+Because of this, researchers should be cautious about {{< glossary "mean split" display="mean splits" popup="hover" >}}, {{< glossary "median split" display="median splits" popup="hover" >}}, and collapsing categories. Sometimes there is a good reason to do it. But “this makes the analysis easier” is usually not a strong enough reason on its own.
 
-Understanding variable types helps you:
+## A Quick Decision Guide
 
--   Choose appropriate summaries and graphs
--   Avoid common mistakes (e.g., averaging categories)
--   Prepare for statistical analysis
+When you encounter a variable, ask yourself:
 
-We will build on this foundation in later chapters when we learn how to summarize and analyze data.
+1. Does this variable describe categories or quantities?
+2. If it describes categories, is there a meaningful order?
+3. If it describes quantities, should jamovi treat it as continuous?
+4. Are the numbers meaningful quantities, or are they just labels?
 
-::: {callout-tip  title="Check Your Understanding"}
-1.  Is “favorite color” a nominal, ordinal, interval, or ratio variable?
-2.  Is a 1–5 satisfaction rating scale nominal or ordinal? Why?
-3.  What makes ratio variables different from interval variables?
-4.  Why can’t we calculate a meaningful average for nominal data?
-5.  Give one example of each type of variable (nominal, ordinal, interval, ratio).
-:::
-
-::: {.callout-tip collapse="true" title="Answers"}
-1.  Nominal
-2.  Ordinal, because the responses are ordered but the spacing between values is not guaranteed to be equal
-3.  Ratio variables have a true zero point; interval variables do not
-4.  Because the categories do not have numerical meaning or order
-5.  Answers will vary (e.g., nominal: major; ordinal: class rank; interval: temperature °C; ratio: height)
-:::
+That last question is especially important. Assigning numbers to categories does not magically make something continuous.
 
 ![](images/02-stats-foundations/assigning_numbers.png)
+
+::: {.callout-tip title="Check Your Understanding"}
+1. Is favorite color nominal, ordinal, or continuous?
+2. Is class rank nominal, ordinal, or continuous?
+3. Why is time not automatically a continuous variable?
+4. Why might a researcher avoid turning a continuous variable into “high” and “low” groups?
+
+<details>
+<summary>Answers</summary>
+
+1. Favorite color is nominal because the categories do not have a meaningful order.
+2. Class rank is ordinal because the categories or ranks have a meaningful order.
+3. Time depends on how it is measured. Pre/post time is categorical, month can be ordinal, and reaction time is continuous.
+4. Turning a continuous variable into categories removes information and can make analyses less precise.
+
+</details>
+:::

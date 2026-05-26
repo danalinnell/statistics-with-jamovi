@@ -1,0 +1,41 @@
+# 6.2 Choosing the Right Graph {.unnumbered}
+
+The right graph depends on the kind of variable you are visualizing and what you want to understand.
+
+| What you want to show | Useful graph | Why |
+|---|---|---|
+| Distribution of one continuous variable | Histogram or density plot | Shows shape, skew, and possible outliers |
+| Summary of one continuous variable | Box plot | Shows median, quartiles, spread, and possible outliers |
+| Frequency of one categorical variable | Bar plot | Shows how many observations are in each category |
+| Continuous variable across groups | Box plot, violin plot, jittered data, and/or mean | Shows group differences, overlap, spread, and individual data points |
+
+A good graph should help you answer a question. Before making a graph, ask: What do I want to see?
+
+## Do Not Overcomplicate the Graph
+
+A graph should make the data easier to understand. If the graph is so complicated that the reader has to work hard to understand it, it may not be doing its job.
+
+A good graph usually has:
+
+- a clear purpose
+- variables that match the graph type
+- readable labels
+- no unnecessary clutter
+- a visual pattern that supports the interpretation
+
+## Graphs and Future Analyses
+
+Visualizations are often part of the early analysis process. Before running inferential statistics, graphs can help you understand distributions, possible outliers, and group patterns.
+
+Graphs do not replace statistical tests, but they help you know what you are working with.
+
+::: {.callout-tip title="Check Your Understanding"}
+You have a categorical variable with four class levels. Which graph would usually make the most sense?
+
+<details>
+<summary>Answer</summary>
+
+A bar plot. Bar plots show the counts or percentages for categories.
+
+</details>
+:::

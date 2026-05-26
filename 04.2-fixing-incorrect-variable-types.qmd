@@ -1,0 +1,72 @@
+# 4.2 Fixing Incorrect Variable Types {.unnumbered}
+
+Sometimes jamovi guesses variable setup correctly. Sometimes it does not.
+
+This is not because jamovi is bad at its job. It is because software cannot always know what a variable means. A column of 1s and 2s might represent a numeric score, but it might also represent categories such as control and treatment. A column of written response options might represent an ordinal scale, but jamovi may initially treat it as text.
+
+## When Variable Setup Goes Wrong
+
+Here are a few common examples:
+
+| Situation | What jamovi might think | What you may need to change |
+|---|---|---|
+| Participant IDs are numbers | Continuous | ID |
+| Gender is coded 0/1 | Continuous or ordinal | Nominal |
+| Class level is text | Nominal | Ordinal, if the order matters |
+| Likert responses are words | Text/nominal | Ordinal, after transforming to numeric values if needed |
+| Scale totals are whole numbers | Integer | Continuous, if used as a scale score |
+
+The key is to ask what the variable represents, not only what it looks like.
+
+## Text Responses and Numeric Responses
+
+A common issue with survey data is that Likert-type responses are stored as text. For example, a variable might contain responses like:
+
+- Strongly disagree
+- Disagree
+- Neither disagree nor agree
+- Agree
+- Strongly agree
+
+These responses are ordered, so conceptually they are ordinal. But if they are stored as text, jamovi cannot compute a total or average score from them. You will need to transform them into numeric values before computing a scale score.
+
+A typical recode might be:
+
+| Original text response | New numeric value |
+|---|---:|
+| Strongly disagree | 1 |
+| Disagree | 2 |
+| Neither disagree nor agree | 3 |
+| Agree | 4 |
+| Strongly agree | 5 |
+
+After creating the transformed numeric version, you would usually set the measure type to ordinal for the item.
+
+::: {.callout-warning title="Common Mistake"}
+Recoding text values is case-sensitive. In many contexts, `Strongly disagree` and `Strongly Disagree` are treated as different values. Extra spaces can also create new categories. When a recode does not work, check capitalization, spelling, and spacing first.
+:::
+
+## Keep the Original Variable
+
+Whenever possible, do not overwrite the original variable. Create a transformed or recoded version instead.
+
+This protects your work. If you make a mistake, you still have the original data. It also makes your analysis more transparent because someone can see both the original variable and the version you created for analysis.
+
+For transformed variables, I often use a suffix to remind myself what changed. For example:
+
+- `SBPS_1_Num` for a numeric version of `SBPS_1`
+- `Gender_Recoded` for a cleaned version of `Gender`
+- `BDI_Total` for a computed total score
+
+The exact names are less important than the principle: make names meaningful enough that you can understand them later.
+
+::: {.callout-tip title="Check Your Understanding"}
+A variable contains the text responses `Agree`, `Disagree`, and `Strongly agree`. You want to create a mean scale score across several items. What needs to happen before computing the mean?
+
+<details>
+<summary>Answer</summary>
+
+The text responses need to be transformed or recoded into numeric values first. jamovi cannot compute an average from words. After transforming the responses, you should check that the new variables have the correct data type and measure type.
+
+</details>
+:::
