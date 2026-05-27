@@ -34,7 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./08.1-effect-sizes.html" rel="next">
-<link href="./07.5-recap-common-mistakes-looking-ahead.html" rel="prev">
+<link href="./07.5-putting-it-all-together.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -45,6 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -416,8 +417,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Recap, Common Mistakes, and Looking Ahead</span></a>
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -434,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.1 Effect Sizes</span></a>
+ <span class="menu-text">8.1 Effect Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -452,7 +453,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.4 Sample Size and Power Analysis</span></a>
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -509,8 +516,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10.3-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10.3 Common APA-Style Errors</span></a>
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -728,9 +747,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#why-bean-matters" id="toc-why-bean-matters" class="nav-link active" data-scroll-target="#why-bean-matters">Why BEAN matters</a></li>
-  <li><a href="#a-key-idea-these-pieces-work-together" id="toc-a-key-idea-these-pieces-work-together" class="nav-link" data-scroll-target="#a-key-idea-these-pieces-work-together">A key idea: these pieces work together</a></li>
-  <li><a href="#what-you-will-learn-in-this-chapter" id="toc-what-you-will-learn-in-this-chapter" class="nav-link" data-scroll-target="#what-you-will-learn-in-this-chapter">What you will learn in this chapter</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#why-bean-matters" id="toc-why-bean-matters" class="nav-link" data-scroll-target="#why-bean-matters">Why BEAN Matters</a></li>
+  <li><a href="#the-core-idea" id="toc-the-core-idea" class="nav-link" data-scroll-target="#the-core-idea">The Core Idea</a></li>
+  <li><a href="#chapter-pathway" id="toc-chapter-pathway" class="nav-link" data-scroll-target="#chapter-pathway">Chapter Pathway</a></li>
   </ul>
 </nav>
     </div>
@@ -756,73 +776,79 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In Chapter 7, we introduced the logic of hypothesis testing and walked through the 4-step process for conducting inferential statistics. As part of that process, we encountered several key ideas, including p-values, alpha levels, effect sizes, power, and sample size.</p>
-<p>In that chapter, these concepts were introduced individually to help you understand what each one means. However, in practice, these ideas do not operate independently. Instead, they work together as part of a system.</p>
-<p>One way to understand how these pieces fit together is through the concept of <strong>BEAN</strong>, which stands for:</p>
+<p>What a random chapter title, right?</p>
+<p>BEAN is not actually about beans. It is an acronym that helps us understand the tradeoffs behind hypothesis testing:</p>
 <ul>
-<li><strong>B</strong>eta (power)<br>
-</li>
-<li><strong>E</strong>ffect size<br>
-</li>
-<li><strong>A</strong>lpha<br>
-</li>
-<li><strong>N</strong> (sample size)</li>
+<li><strong>B</strong>eta, which we usually discuss through <button class="glossary" title="The probability of detecting an effect if the effect really exists.">statistical power</button></li>
+<li><strong>E</strong>ffect size</li>
+<li><strong>A</strong>lpha</li>
+<li><strong>N</strong>, or sample size</li>
 </ul>
-<p>Although we will not cover these components in that exact order, BEAN provides a useful framework for understanding how these ideas relate to one another.</p>
+<p>In Chapter 7, you learned the basic logic of hypothesis testing: state your hypotheses, look at your data, check assumptions, perform the test, and interpret the result. Chapter 8 slows down and asks a deeper question: <strong>What affects whether we detect an effect and how should we think about statistical significance?</strong></p>
+<p>That is where BEAN comes in.</p>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this chapter, you should be able to:</p>
+<ul>
+<li>Explain the difference between statistical significance and practical significance.</li>
+<li>Explain what a <em>p</em>-value does and does not tell us.</li>
+<li>Explain how alpha relates to Type I error.</li>
+<li>Explain how power relates to Type II error.</li>
+<li>Describe how effect size, alpha, power, and sample size work together.</li>
+<li>Complete basic alpha/power table reasoning.</li>
+<li>Use PAMLj in jamovi to conduct basic power analyses.</li>
+<li>Interpret power-analysis output in plain language.</li>
+</ul>
+</section>
 <section id="why-bean-matters" class="level2">
-<h2 class="anchored" data-anchor-id="why-bean-matters">Why BEAN matters</h2>
-<p>When conducting or interpreting research, we are constantly making decisions:</p>
-<ul>
-<li>How large of an effect are we trying to detect?<br>
-</li>
-<li>How much error are we willing to tolerate?<br>
-</li>
-<li>How likely do we want to be to detect a real effect?<br>
-</li>
-<li>How much data do we need?</li>
-</ul>
-<p>These are not independent decisions. Changing one of these factors will influence the others.</p>
+<h2 class="anchored" data-anchor-id="why-bean-matters">Why BEAN Matters</h2>
+<p>Hypothesis testing can sometimes feel like a simple rule:</p>
+<blockquote class="blockquote">
+<p>If <em>p</em> &lt; .05, reject the null hypothesis.</p>
+</blockquote>
+<p>But that decision depends on more than the <em>p</em>-value. It depends on the size of the effect, the alpha level we set, the sample size we collected, and the power of the study to detect the effect in the first place.</p>
+<p>That is the big idea in this chapter: <strong>statistical significance is part of a system</strong>. Changing one piece of BEAN changes the others.</p>
 <p>For example:</p>
 <ul>
-<li>Larger effects are easier to detect than smaller effects<br>
-</li>
-<li>Increasing sample size makes it easier to detect effects<br>
-</li>
-<li>Using a stricter alpha level reduces false positives but makes it harder to detect effects<br>
-</li>
-<li>Low power increases the likelihood of missing real effects</li>
+<li>Larger effects are easier to detect than smaller effects.</li>
+<li>Larger samples make effects easier to detect.</li>
+<li>Lowering alpha reduces false positives, but also makes effects harder to detect.</li>
+<li>Higher power makes us less likely to miss real effects.</li>
 </ul>
-<p>These relationships are at the heart of BEAN.</p>
+<p>BEAN helps us understand those relationships.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="For Dana's Students">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>For Dana’s Students
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In my courses, this chapter matters both conceptually and practically. You will use BEAN to think through Type I and Type II errors, alpha, power, and sample size. You will also use PAMLj in jamovi to complete power analyses.</p>
+<p>The goal is not just to get the right number. The goal is to understand how changing one part of BEAN changes the study you are designing or interpreting.</p>
+</div>
+</div>
 </section>
-<section id="a-key-idea-these-pieces-work-together" class="level2">
-<h2 class="anchored" data-anchor-id="a-key-idea-these-pieces-work-together">A key idea: these pieces work together</h2>
-<p>Rather than thinking of effect size, alpha, power, and sample size as separate topics, it is more useful to think of them as parts of a system.</p>
-<p>In that system:</p>
-<ul>
-<li><strong>Effect size</strong>, <strong>alpha</strong>, and <strong>sample size</strong> all influence <strong>power</strong><br>
-</li>
-<li><strong>Power</strong> reflects how likely we are to detect a real effect if one exists</li>
-</ul>
-<p>In other words:</p>
-<blockquote class="blockquote">
-<p>BEAN helps us understand what determines our ability to detect effects.</p>
-</blockquote>
-<p>This is why these concepts are often discussed together, especially when researchers are designing studies or evaluating results.</p>
+<section id="the-core-idea" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-idea">The Core Idea</h2>
+<p>If you know three parts of BEAN, you can often solve for or reason about the fourth.</p>
+<p>For example, if you know the effect size you care about, the alpha level you plan to use, and the power you want, you can estimate the sample size you need.</p>
+<p>If you know the sample size you already have, the effect size you care about, and your alpha level, you can estimate your statistical power.</p>
+<p>This is why BEAN is so useful. It connects the pieces of hypothesis testing that students often learn separately.</p>
 </section>
-<section id="what-you-will-learn-in-this-chapter" class="level2">
-<h2 class="anchored" data-anchor-id="what-you-will-learn-in-this-chapter">What you will learn in this chapter</h2>
-<p>In the sections that follow, we will examine each component of BEAN in more detail:</p>
-<ul>
-<li>Effect size<br>
-</li>
-<li>Alpha and p-values<br>
-</li>
-<li>Power<br>
-</li>
-<li>Sample size</li>
-</ul>
-<p>As you read each section, pay attention not only to what each concept means, but also how it connects to the others. The goal is not just to understand each part, but to understand how they work together.</p>
-<p>At the end of the chapter, we will bring everything together to see how these components interact in practice.</p>
+<section id="chapter-pathway" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-pathway">Chapter Pathway</h2>
+<p>This chapter has five main parts:</p>
+<ol type="1">
+<li><strong>Effect Size</strong>: How large or meaningful is the effect?</li>
+<li><strong>Alpha and p-values</strong>: How strict is our evidence threshold?</li>
+<li><strong>Power</strong>: How likely are we to detect an effect if it exists?</li>
+<li><strong>Sample Size</strong>: How much data do we need?</li>
+<li><strong>Putting It All Together</strong>: How do the pieces of BEAN interact?</li>
+</ol>
+<p>You do not need to memorize every detail right away. Focus on the relationships among the pieces. That is where the chapter becomes useful.</p>
 
 
 </section>
@@ -1230,13 +1256,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="pagination-link" aria-label="7.5 Recap, Common Mistakes, and Looking Ahead">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">7.5 Recap, Common Mistakes, and Looking Ahead</span>
+      <a href="./07.5-putting-it-all-together.html" class="pagination-link" aria-label="7.5 Putting It All Together">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">7.5 Putting It All Together</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./08.1-effect-sizes.html" class="pagination-link" aria-label="8.1 Effect Sizes">
-        <span class="nav-page-text">8.1 Effect Sizes</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./08.1-effect-sizes.html" class="pagination-link" aria-label="8.1 Effect Size">
+        <span class="nav-page-text">8.1 Effect Size</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

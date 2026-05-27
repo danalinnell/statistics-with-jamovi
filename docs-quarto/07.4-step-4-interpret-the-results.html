@@ -33,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./07.5-recap-common-mistakes-looking-ahead.html" rel="next">
+<link href="./07.5-putting-it-all-together.html" rel="next">
 <link href="./07.3-step-3-perform-the-test.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -45,6 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -416,8 +417,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Recap, Common Mistakes, and Looking Ahead</span></a>
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -434,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.1 Effect Sizes</span></a>
+ <span class="menu-text">8.1 Effect Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -452,7 +453,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.4 Sample Size and Power Analysis</span></a>
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -509,8 +516,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10.3-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10.3 Common APA-Style Errors</span></a>
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -728,10 +747,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#interpret-the-results" id="toc-interpret-the-results" class="nav-link active" data-scroll-target="#interpret-the-results">Interpret the results</a></li>
-  <li><a href="#type-i-vs.-type-ii-errors" id="toc-type-i-vs.-type-ii-errors" class="nav-link" data-scroll-target="#type-i-vs.-type-ii-errors">Type I vs.&nbsp;Type II errors</a></li>
-  <li><a href="#apa-write-up" id="toc-apa-write-up" class="nav-link" data-scroll-target="#apa-write-up">APA write-up</a></li>
-  <li><a href="#visualize-the-results" id="toc-visualize-the-results" class="nav-link" data-scroll-target="#visualize-the-results">Visualize the results</a></li>
+  <li><a href="#reject-or-fail-to-reject-the-null" id="toc-reject-or-fail-to-reject-the-null" class="nav-link active" data-scroll-target="#reject-or-fail-to-reject-the-null">Reject or Fail to Reject the Null</a></li>
+  <li><a href="#interpreting-the-bobo-doll-example" id="toc-interpreting-the-bobo-doll-example" class="nav-link" data-scroll-target="#interpreting-the-bobo-doll-example">Interpreting the Bobo Doll Example</a></li>
+  <li><a href="#statistical-significance-and-practical-significance" id="toc-statistical-significance-and-practical-significance" class="nav-link" data-scroll-target="#statistical-significance-and-practical-significance">Statistical Significance and Practical Significance</a></li>
+  <li><a href="#type-i-and-type-ii-errors" id="toc-type-i-and-type-ii-errors" class="nav-link" data-scroll-target="#type-i-and-type-ii-errors">Type I and Type II Errors</a></li>
+  <li><a href="#a-brief-apa-style-preview" id="toc-a-brief-apa-style-preview" class="nav-link" data-scroll-target="#a-brief-apa-style-preview">A Brief APA-Style Preview</a></li>
+  <li><a href="#visualizing-the-results" id="toc-visualizing-the-results" class="nav-link" data-scroll-target="#visualizing-the-results">Visualizing the Results</a></li>
   </ul>
 </nav>
     </div>
@@ -757,46 +778,117 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>After performing the statistical test, the final step is to interpret the results and make a decision about our hypotheses. This is the point where we take the output from the test and turn it into a meaningful conclusion about our research question.</p>
-<section id="interpret-the-results" class="level2">
-<h2 class="anchored" data-anchor-id="interpret-the-results">Interpret the results</h2>
-<p>To make a decision, we compare the p-value to our alpha level (α = .05). If the p-value is less than .05, we reject the null hypothesis. If the p-value is greater than or equal to .05, we fail to reject the null hypothesis.</p>
-<p>It is important to use this language carefully. We either <strong>reject</strong> the null hypothesis or <strong>fail to reject</strong> the null hypothesis. We do not say that we “accept” the null hypothesis. This is because hypothesis testing is designed to evaluate evidence against the null hypothesis. If we do not have strong enough evidence to reject it, that does not mean the null is true; it simply means we do not have enough evidence against it.</p>
-<p>Returning to our Bobo doll example, we observed a mean difference of 5.80 aggressive behaviors between the two conditions. In Step 3, we learned that the test result was <strong>p &lt; .001</strong>. Because this p-value is smaller than our alpha level of .05, the result is statistically significant and we reject the null hypothesis.</p>
-<p>In context, this means that children who watched the aggressive video exhibited more aggressive behavior than children who watched the passive video. In other words, the observed difference is unlikely to have occurred by chance alone if there were truly no difference between the groups.</p>
-<p>Of course, statistical significance is only part of the story. We also found that <strong>Cohen’s <em>d</em> ≈ 1.97</strong>, which is a very large effect. This tells us that the difference is not only statistically significant, but also substantial in size. A difference of nearly six aggressive behaviors would likely be considered practically meaningful in this context. More broadly, practical significance asks whether an effect matters in the real world, not just whether it crosses a statistical threshold.</p>
+<p>The final step is to interpret the results and connect them back to the research question.</p>
+<p>This is where students often want to write something too strong, such as “the alternative hypothesis was proven” or “there is no effect.” Slow down here. Hypothesis testing gives us a decision about the null hypothesis, not certainty about the real world.</p>
+<section id="reject-or-fail-to-reject-the-null" class="level2">
+<h2 class="anchored" data-anchor-id="reject-or-fail-to-reject-the-null">Reject or Fail to Reject the Null</h2>
+<p>In null hypothesis significance testing, we make one of two decisions:</p>
+<ul>
+<li>reject the null hypothesis; or</li>
+<li>fail to reject the null hypothesis.</li>
+</ul>
+<p>Note my language carefully: <strong>reject</strong> or <strong>fail to reject</strong> the null hypothesis.</p>
+<p>I am not saying that we prove the alternative hypothesis. I am not saying that we accept the null hypothesis. NHST is built around testing the null hypothesis, so our formal decision is about the null.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Result</th>
+<th>Statistical decision</th>
+<th>Plain-language meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>p &lt; α</td>
+<td>Reject the null hypothesis</td>
+<td>The data are surprising enough under the null that we reject it.</td>
+</tr>
+<tr class="even">
+<td>p ≥ α</td>
+<td>Fail to reject the null hypothesis</td>
+<td>The data are not surprising enough under the null, or we do not have enough evidence to reject it.</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="type-i-vs.-type-ii-errors" class="level2">
-<h2 class="anchored" data-anchor-id="type-i-vs.-type-ii-errors">Type I vs.&nbsp;Type II errors</h2>
-<p>Because we are making decisions under uncertainty, it is always possible to make the wrong decision.</p>
-<p>A <strong>Type I error</strong> occurs when we reject the null hypothesis even though it is actually true. In our example, this would mean concluding that the aggressive video increases aggression when in reality it does not. The probability of making a Type I error is equal to our alpha level, which is typically 5%.</p>
-<p>A <strong>Type II error</strong> occurs when we fail to reject the null hypothesis even though it is false. In our example, this would mean concluding that there is no difference in aggression when the aggressive video really does increase aggressive behavior.</p>
-<p>These two types of errors help us understand why hypothesis testing involves judgment and uncertainty rather than absolute certainty. They also connect back to <strong>power</strong>, which we introduced in Step 3. Higher power means we are more likely to detect a real effect and less likely to make a Type II error.</p>
-</section>
-<section id="apa-write-up" class="level2">
-<h2 class="anchored" data-anchor-id="apa-write-up">APA write-up</h2>
-<p>When writing up the results, we want to communicate the research question, the direction of the effect, the statistical significance, and the effect size as clearly as possible.</p>
-<p>A complete APA-style write-up for our example is:</p>
+<section id="interpreting-the-bobo-doll-example" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-the-bobo-doll-example">Interpreting the Bobo Doll Example</h2>
+<p>Suppose we analyze the Bobo doll data and get p &lt; .001.</p>
+<p>If α = .05, then p &lt; α. The result is statistically significant, so we reject the null hypothesis.</p>
+<p>In context, we might say:</p>
 <blockquote class="blockquote">
-<p>Children who viewed the aggressive video (<em>M</em> = 11.20, <em>SD</em> = 3.10) exhibited significantly more aggressive behavior than those who viewed the passive video (<em>M</em> = 5.40, <em>SD</em> = 2.80), <em>t</em>(28) = 5.39, <em>p</em> &lt; .001, <em>d</em> = 1.97.</p>
+<p>Children who watched the aggressive video showed more aggressive behaviors than children who watched the calm video. The difference was statistically significant, so we reject the null hypothesis that children in the aggressive-video condition show the same or fewer aggressive behaviors than children in the calm-video condition.</p>
 </blockquote>
-<p>At this point, the most important thing is that you understand the structure of the interpretation. Later chapters will show you how to obtain and report the exact test statistic and degrees of freedom for each specific test, and Chapter 10 will show you how to write these results more fully in APA style.</p>
+<p>That is a statistical conclusion. We should still interpret it alongside the study design, effect size, measurement quality, sample, and broader research literature.</p>
 </section>
-<section id="visualize-the-results" class="level2">
-<h2 class="anchored" data-anchor-id="visualize-the-results">Visualize the results</h2>
-<p>Just like in later inferential statistics chapters, we should also visualize the results. For a comparison between two groups on a continuous outcome, a boxplot with the raw data overlaid is often a good choice because it shows the center, spread, and individual observations. However, there are other valid choices, including a bar plot with error bars.</p>
-<p>Here is an example visualization of the Bobo doll results:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="07.4-step-4-interpret-the-results_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Aggressive behaviors by video condition</figcaption>
-</figure>
+<section id="statistical-significance-and-practical-significance" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-significance-and-practical-significance">Statistical Significance and Practical Significance</h2>
+<p>Statistical significance tells us whether a result crossed the threshold for rejecting the null hypothesis.</p>
+<p><button class="glossary" title="The real-world or applied importance of an effect, beyond whether it is statistically significant.">practical significance</button> asks whether the result matters in context.</p>
+<p>These are related, but they are not the same.</p>
+<p>A result can be statistically significant but practically trivial. For example, a huge study might find a tiny difference that does not matter much in real life.</p>
+<p>A result can also be practically meaningful but not statistically significant. For example, a small pilot study might show a potentially important pattern but not have enough power to detect it clearly.</p>
+<p>This is why we care about both p-values and effect sizes.</p>
+</section>
+<section id="type-i-and-type-ii-errors" class="level2">
+<h2 class="anchored" data-anchor-id="type-i-and-type-ii-errors">Type I and Type II Errors</h2>
+<p>Hypothesis testing involves uncertainty. We can make the best decision available from the data and still be wrong.</p>
+<p>A <button class="glossary" title="Rejecting the null hypothesis when the null hypothesis is actually true. This is also called a false positive.">Type I error</button> occurs when we reject the null hypothesis even though the null hypothesis is actually true. This is sometimes called a false positive.</p>
+<p>A <button class="glossary" title="Failing to reject the null hypothesis when the alternative hypothesis is actually true. This is also called a false negative.">Type II error</button> occurs when we fail to reject the null hypothesis even though the alternative hypothesis is actually true. This is sometimes called a false negative.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Reality</th>
+<th>We reject H<sub>0</sub></th>
+<th>We fail to reject H<sub>0</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>H<sub>0</sub> is true</td>
+<td>Type I error</td>
+<td>Correct decision</td>
+</tr>
+<tr class="even">
+<td>H<sub>1</sub> is true</td>
+<td>Correct decision</td>
+<td>Type II error</td>
+</tr>
+</tbody>
+</table>
+<p>In real research, we do not know with certainty whether H<sub>0</sub> or H<sub>1</sub> is true. If we knew, we would not need to collect data. This table helps us remember that hypothesis testing is decision-making under uncertainty.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Another Careful Language Moment">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Another Careful Language Moment
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>A statistically significant result does not guarantee that the null hypothesis is false. A non-significant result does not guarantee that the null hypothesis is true. Either decision can be wrong.</p>
 </div>
-<p>This kind of plot lets us quickly see that the children in the aggressive video condition generally showed more aggressive behavior than those in the passive video condition. It also helps us see the spread of the data within each group, which is one reason visualizations are so useful alongside statistical tests.</p>
+</div>
+</section>
+<section id="a-brief-apa-style-preview" class="level2">
+<h2 class="anchored" data-anchor-id="a-brief-apa-style-preview">A Brief APA-Style Preview</h2>
+<p>Later, Chapter 10 will focus on writing results in APA style. For now, it is useful to see what a complete result might look like.</p>
+<p>For our Bobo doll example, a write-up could look something like this:</p>
+<blockquote class="blockquote">
+<p>Children who viewed the aggressive video (M = 11.20, SD = 3.10) exhibited more aggressive behavior than children who viewed the calm video (M = 5.40, SD = 2.80), t(28) = 5.39, p &lt; .001, d = 1.97.</p>
+</blockquote>
+<p>You do not need to understand every symbol in that sentence yet. The later test-specific chapters and the APA results chapter will walk you through the details. For now, notice that the write-up includes descriptive statistics, the inferential test result, the p-value, and the effect size.</p>
+</section>
+<section id="visualizing-the-results" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-the-results">Visualizing the Results</h2>
+<p>A complete analysis should usually include a graph. For this example, a box plot with individual data points would help show the difference between conditions, the spread within each condition, and any possible outliers.</p>
+<p>The graph does not replace the statistical test. It helps readers see the pattern behind the numbers.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -807,23 +899,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What decision do we make when p &lt; .05? Why do we say “fail to reject the null hypothesis” instead of “accept the null hypothesis”? What is a Type I error? What is a Type II error? Why is it useful to report both the p-value and the effect size?</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answers">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answers
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>We reject the null hypothesis. Because not rejecting the null does not prove it is true; it only means we do not have enough evidence against it. A Type I error is rejecting the null hypothesis when it is actually true. A Type II error is failing to reject the null hypothesis when it is actually false. The p-value tells us whether the result is statistically significant, while the effect size tells us how large or meaningful the effect is.</p>
-</div>
+<ol type="1">
+<li>What are the two formal decisions we make in NHST?</li>
+<li>Why should we avoid saying that we “accept” the null hypothesis?</li>
+<li>What is a Type I error?</li>
+<li>What is a Type II error?</li>
+<li>Why is practical significance different from statistical significance?</li>
+</ol>
+<p><strong>Answers</strong></p>
+<ol type="1">
+<li>We reject the null hypothesis or fail to reject the null hypothesis.</li>
+<li>Failing to reject the null does not prove the null is true. It only means we do not have enough evidence to reject it.</li>
+<li>A Type I error occurs when we reject the null hypothesis even though it is true.</li>
+<li>A Type II error occurs when we fail to reject the null hypothesis even though the alternative hypothesis is true.</li>
+<li>Statistical significance tells us whether a result crosses a threshold for rejecting the null. Practical significance asks whether the effect matters in context.</li>
+</ol>
 </div>
 </div>
 
@@ -1238,8 +1328,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="pagination-link" aria-label="7.5 Recap, Common Mistakes, and Looking Ahead">
-        <span class="nav-page-text">7.5 Recap, Common Mistakes, and Looking Ahead</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./07.5-putting-it-all-together.html" class="pagination-link" aria-label="7.5 Putting It All Together">
+        <span class="nav-page-text">7.5 Putting It All Together</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

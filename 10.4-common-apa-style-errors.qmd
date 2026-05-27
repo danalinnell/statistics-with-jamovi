@@ -1,0 +1,170 @@
+# 10.4 Common APA-Style Errors {.unnumbered}
+
+This section focuses on common errors students make when writing statistical results. Some errors are formatting issues. Others are interpretation issues. Both matter.
+
+The following video details seven common errors that people make when reporting statistical results:
+
+If you are reading the Word document version of this textbook, you can [watch the video here](https://www.youtube.com/watch?v=rlZnbQUGhjc).
+
+```{r}
+#| echo: false
+#| eval: !expr knitr::is_html_output()
+#| message: false
+#| warning: false
+
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=rlZnbQUGhjc")
+```
+
+## Formatting Errors
+
+### Error 1: Forgetting Italics
+
+In APA style, many statistical letters are italicized, including *M*, *SD*, *p*, *t*, *F*, *r*, *d*, and *b*.
+
+Greek letters are not italicized. For example, α, β, χ², η², and ω² are not italicized.
+
+| Incorrect            | Correct                  |
+|----------------------|--------------------------|
+| M = 10.25, SD = 2.11 | *M* = 10.25, *SD* = 2.11 |
+| p = .032             | *p* = .032               |
+| t(31) = 2.12         | *t*(31) = 2.12           |
+
+### Error 2: Using the Wrong Number of Decimal Places
+
+A common guideline is to round most statistics to two decimal places and *p*-values to three decimal places.
+
+| Statistic          | Common reporting format |
+|--------------------|-------------------------|
+| Mean               | *M* = 10.25             |
+| Standard deviation | *SD* = 2.11             |
+| t statistic        | *t*(31) = 2.12          |
+| F statistic        | *F*(2, 87) = 5.64       |
+| p-value            | *p* = .043              |
+
+There may be exceptions depending on the statistic, journal, or assignment. When in doubt, check the APA Style website, the APA Manual, or your assignment instructions.
+
+### Error 3: Using Leading Zeros Incorrectly
+
+Use a leading zero when the statistic can be greater than 1. Do not use a leading zero when the statistic cannot be greater than 1.
+
+| Incorrect     | Correct        | Why                                   |
+|---------------|----------------|---------------------------------------|
+| *p* = 0.043   | *p* = .043     | *p*-values cannot be greater than 1   |
+| *r* = 0.42    | *r* = .42      | correlations cannot be greater than 1 |
+| *M* = .75     | *M* = 0.75     | means can be greater than 1           |
+| *t*(31) = .82 | *t*(31) = 0.82 | t values can be greater than 1        |
+
+### Error 4: Reporting p = .000 or p \<= .001
+
+Never report *p* = .000. A *p*-value may be very small, but it is not exactly zero.
+
+| Incorrect    | Correct     |
+|--------------|-------------|
+| *p* = .000   | *p* \< .001 |
+| *p* \<= .001 | *p* \< .001 |
+
+### Error 5: Putting Parentheses Inside Parentheses
+
+Do not place parentheses inside parentheses. If you need to put statistical information inside a parenthetical statement, use brackets for the inner parentheses.
+
+| Incorrect | Correct |
+|------------------------------------|------------------------------------|
+| The result was statistically significant (*t*(31) = 2.12, *p* = .043). | The result was statistically significant (*t*\[31\] = 2.12, *p* = .043). |
+
+You do not need brackets if the statistic is not already inside parentheses:
+
+> The result was statistically significant, *t*(31) = 2.12, *p* = .043.
+
+### Error 6: Mixing Up N and n
+
+Use *N* for the full sample size and *n* for a subgroup or subsample.
+
+| Example | Better reporting |
+|------------------------------------|------------------------------------|
+| This study examined differences in Anastasia's class (*N* = 15) and Bernadette's class (*N* = 15). | This study examined differences in Anastasia's class (*n* = 15) and Bernadette's class (*n* = 15). |
+| This study examined differences in test performance in a sample of college students (*n* = 33). | This study examined differences in test performance in a sample of college students (*N* = 33). |
+
+One way you can avoid this issue is by writing out the sample size in the text outside of parentheses. For example:
+
+> This study examined differences in test performance in 33 college students, 15 students in Anastasia’s class and 18 students in Bernadette’s class.
+
+### Error 7: Adding Spaces in the Wrong Places
+
+There is no space between the statistical test symbol and the degrees of freedom.
+
+| Incorrect          | Correct           |
+|--------------------|-------------------|
+| *t* (31) = 2.12    | *t*(31) = 2.12    |
+| *F* (2, 87) = 5.64 | *F*(2, 87) = 5.64 |
+| *r* (58) = .42     | *r*(58) = .42     |
+
+For an *F* statistic, there is a comma and a space between the two degrees of freedom:
+
+> *F*(2, 87) = 5.64
+
+## Interpretation Errors
+
+Formatting matters, but interpretation matters even more. Watch for these common interpretation problems.
+
+### Error 8: Saying the Hypothesis Was Proven
+
+Statistical tests do not prove hypotheses.
+
+| Weak wording | Stronger wording |
+|------------------------------------|------------------------------------|
+| The hypothesis was proven. | The results supported the hypothesis. |
+| This proves that studying causes higher grades. | Students who studied more tended to have higher grades. |
+
+Use especially careful language for correlational results. Correlation does not establish causation.
+
+### Error 9: Saying You Accepted the Null Hypothesis
+
+In null hypothesis significance testing, we usually say we **reject** or **fail to reject** the null hypothesis.
+
+| Weak wording | Stronger wording |
+|------------------------------------|------------------------------------|
+| We accepted the null hypothesis. | We failed to reject the null hypothesis. |
+| The null hypothesis was true. | The result did not provide sufficient evidence to reject the null hypothesis. |
+
+### Error 10: Saying There Was No Difference When the Result Was Non-Significant
+
+A non-significant result does not prove there is no difference. It means the test did not find sufficient evidence to reject the null hypothesis.
+
+| Weak wording | Stronger wording |
+|------------------------------------|------------------------------------|
+| There was no difference between groups. | The difference between groups was not statistically significant. |
+| The variables were unrelated. | The association between the variables was not statistically significant. |
+
+### Error 11: Reporting Significance Without Direction
+
+Do not just say that a result was significant. Tell the reader what happened.
+
+| Incomplete | Stronger |
+|------------------------------------|------------------------------------|
+| There was a significant difference between groups. | Anastasia's students had significantly higher grades than Bernadette's students. |
+| There was a significant correlation. | Study time was positively correlated with exam scores. |
+
+### Error 12: Reporting Inferential Results Without Descriptives
+
+The inferential test tells the reader whether the result was statistically significant. Descriptive statistics help the reader understand the pattern.
+
+| Incomplete | Stronger |
+|------------------------------------|------------------------------------|
+| The groups differed significantly, *t*(31) = 2.12, *p* = .043. | Anastasia's students (*M* = 74.53, *SD* = 9.00) had significantly higher grades than Bernadette's students (*M* = 69.06, *SD* = 5.77), *t*(31) = 2.12, *p* = .043. |
+
+## Check Your Understanding
+
+::: {.callout-tip title="Check Your Understanding"}
+1.  How should you report a *p*-value that jamovi displays as .000?
+2.  What is the difference between *N* and *n*?
+3.  Why should you avoid saying that a non-significant result means there was "no difference"?
+4.  What is wrong with the phrase "the p-value was significant"?
+:::
+
+::: {.callout-note collapse="true" title="Answers"}
+1.  Report it as *p* \< .001.
+2.  *N* refers to the full sample size; *n* refers to a subgroup or subsample.
+3.  A non-significant result means there was not enough evidence to reject the null hypothesis. It does not prove that the groups are identical or that no effect exists.
+4.  It is usually clearer to say that the result, test, association, or difference was statistically significant. The *p*-value is the evidence used to make that decision.
+:::

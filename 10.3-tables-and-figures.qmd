@@ -1,0 +1,164 @@
+# 10.3 Tables and Figures {.unnumbered}
+
+Results can be communicated in text, tables, figures, or some combination of these. A common student mistake is thinking that tables and figures are just decoration. They are not. A good table or figure helps the reader understand the result more clearly.
+
+The challenge is deciding which format best fits the information.
+
+## Text, Table, or Figure?
+
+Use this as a starting guide:
+
+| If you need to communicate... | Consider using... | Why |
+|------------------------|------------------------|------------------------|
+| One simple result | Text | A full table or figure may be unnecessary |
+| Several descriptive statistics | Table | Tables help organize many values |
+| Many correlations or regression coefficients | Table | Tables reduce clutter in the results paragraph |
+| A pattern across groups | Figure | Figures help readers see differences, overlap, and variability |
+| A distribution, outliers, or shape | Figure | Visuals can reveal patterns descriptive statistics may hide |
+
+A good rule is this: **use the format that helps the reader understand the result with the least unnecessary clutter.**
+
+## Writing Results in Text
+
+Use text when the result is simple enough to explain clearly in a sentence or short paragraph.
+
+For example:
+
+> Anastasia's students (*M* = 74.53, *SD* = 9.00) had higher grades than Bernadette's students (*M* = 69.06, *SD* = 5.77), *t*(31) = 2.12, *p* = .043, *d* = .74.
+
+A table would probably be unnecessary if this were the only result.
+
+## Creating Tables
+
+Tables are useful when there are many values to report. For example, you might use a table to report:
+
+-   demographic information;
+-   descriptive statistics for several variables;
+-   correlations among variables;
+-   regression coefficients;
+-   group means and standard deviations across several conditions.
+
+The APA Style website has useful support in helping you [setup a table](https://apastyle.apa.org/style-grammar-guidelines/tables-figures/tables).
+
+### What makes a good table?
+
+A good table should be understandable without making the reader work too hard. It should have:
+
+-   a table number;
+-   a clear, italicized title;
+-   meaningful row and column labels;
+-   only the statistics needed to understand the result;
+-   notes when abbreviations, symbols, or unusual decisions need explanation.
+
+### Example table structure
+
+Here is a simple example of how descriptive statistics might be organized:
+
+| Group              | *n* |   *M* | *SD* |
+|--------------------|----:|------:|-----:|
+| Anastasia's class  |  15 | 74.53 | 9.00 |
+| Bernadette's class |  18 | 69.06 | 5.77 |
+
+In APA style, the table would also have a table number and title. In a manuscript, that might look like:
+
+**Table 1**\
+*Descriptive Statistics for Student Grades by Class*
+
+### Do not paste raw jamovi output without thinking
+
+jamovi output is useful, but it is not always formatted as a polished APA-style table. Sometimes you may be allowed to include jamovi output in an assignment because the goal is to show your work. But in APA-style writing, you usually need to format the table so it is clean, readable, and focused on the information the reader actually needs.
+
+::: {.callout-warning title="Common Table Mistake"}
+Do not include every statistic just because jamovi provides it. A table with too much information can be harder to understand than no table at all.
+:::
+
+## Creating Figures
+
+Figures are useful when the visual pattern matters. You might use a figure to show:
+
+-   the distribution of a variable;
+-   group differences;
+-   overlap across groups;
+-   outliers;
+-   relationships between continuous variables;
+-   interaction patterns.
+
+A good figure should have:
+
+-   a figure number;
+-   a clear, italicized title;
+-   labeled axes;
+-   readable text;
+-   a caption or note when needed;
+-   a visual form that matches the research question.
+
+For example, if you are comparing exam scores across groups, a box plot or violin plot may be more informative than a bar graph because it can show spread, overlap, and possible outliers.
+
+If you are examining the relationship between study time and exam performance, a scatterplot is usually more useful than a table because the relationship is visual.
+
+::: {.callout-tip title="Connect Back to Data Visualization"}
+For more guidance on choosing graphs, return to [Chapter 6](06.0-visualizing-data-in-jamovi.qmd). A figure should help the reader see something important about the data.
+:::
+
+The APA Style website has useful support in helping you [setup a figure](https://apastyle.apa.org/style-grammar-guidelines/tables-figures/figures).
+
+### Example figure structure
+
+In APA style, the figure would start with a figure number and title. In a manuscript, that might look like:
+
+**Figure 1**\
+*Scatterplot of Study Time and Exam Performance*
+
+## Referring to Tables and Figures in Text
+
+Tables and figures should be discussed in the text. Do not just drop them into a results section and expect the reader to know what to do with them.
+
+Useful phrases include:
+
+-   Descriptive statistics are shown in Table 1.
+-   Correlations among the study variables are shown in Table 2.
+-   Group differences are shown in Figure 1.
+-   As shown in Figure 1, scores were highest in the practice testing group.
+
+Avoid writing:
+
+-   the table below
+-   the figure above
+-   the graph on the next page
+
+APA style prefers referring to tables and figures by number because their location may change during editing.
+
+## Should I Use Both a Table and a Figure?
+
+Sometimes yes, but not always.
+
+A table gives exact values. A figure shows visual patterns. If both are useful, you can include both. But if the table and figure communicate the same simple result, one may be enough.
+
+Ask yourself:
+
+-   Does the table provide exact values the reader needs?
+-   Does the figure reveal a pattern that is hard to see in the table?
+-   Am I repeating the same information too many times?
+-   Would the reader understand the result better with text alone?
+
+## Common Table and Figure Mistakes
+
+Watch for these common issues:
+
+-   pasting raw jamovi output without formatting;
+-   including too many statistics;
+-   forgetting table or figure numbers;
+-   forgetting clear titles;
+-   using vague labels like `Variable 1` or `Group A` when more meaningful labels are available;
+-   making a figure but not explaining what it shows;
+-   repeating every table value in the paragraph;
+-   using both a table and figure when one would be enough.
+
+## A Practical Decision Rule
+
+When writing results, start with text. Then ask whether a table or figure would make the result clearer.
+
+-   If there are only a few values, text may be enough.
+-   If there are many values, use a table.
+-   If the pattern matters visually, use a figure.
+-   If both exact values and visual pattern matter, use both, but avoid unnecessary repetition.

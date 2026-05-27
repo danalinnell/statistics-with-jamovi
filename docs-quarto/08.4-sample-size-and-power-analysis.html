@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8.4 Sample Size and Power Analysis – Stats with jamovi</title>
+<title>8.4 Sample Size – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./09.0-inferential-statistics.html" rel="next">
+<link href="./08.5-putting-it-all-together.html" rel="next">
 <link href="./08.3-power.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -45,6 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -86,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08.0-bean.html">8. BEAN</a></li><li class="breadcrumb-item"><a href="./08.4-sample-size-and-power-analysis.html">8.4 Sample Size and Power Analysis</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08.0-bean.html">8. BEAN</a></li><li class="breadcrumb-item"><a href="./08.4-sample-size-and-power-analysis.html">8.4 Sample Size</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -416,8 +417,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Recap, Common Mistakes, and Looking Ahead</span></a>
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -434,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.1 Effect Sizes</span></a>
+ <span class="menu-text">8.1 Effect Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -452,7 +453,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">8.4 Sample Size and Power Analysis</span></a>
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -509,8 +516,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10.3-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10.3 Common APA-Style Errors</span></a>
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -728,31 +747,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#what-is-sample-size" id="toc-what-is-sample-size" class="nav-link active" data-scroll-target="#what-is-sample-size">What is sample size?</a></li>
-  <li><a href="#how-do-we-determine-what-sample-size-i-need" id="toc-how-do-we-determine-what-sample-size-i-need" class="nav-link" data-scroll-target="#how-do-we-determine-what-sample-size-i-need">How do we determine what sample size I need?</a></li>
-  <li><a href="#bean-power-analysis" id="toc-bean-power-analysis" class="nav-link" data-scroll-target="#bean-power-analysis">BEAN: Power analysis</a></li>
-  <li><a href="#tools-for-power-analysis" id="toc-tools-for-power-analysis" class="nav-link" data-scroll-target="#tools-for-power-analysis">Tools for power analysis</a></li>
-  <li><a href="#using-pamlj-for-power-analysis-in-jamovi" id="toc-using-pamlj-for-power-analysis-in-jamovi" class="nav-link" data-scroll-target="#using-pamlj-for-power-analysis-in-jamovi">Using PAMLj for power analysis in jamovi</a></li>
-  <li><a href="#what-pamlj-can-do" id="toc-what-pamlj-can-do" class="nav-link" data-scroll-target="#what-pamlj-can-do">What PAMLj can do</a></li>
-  <li><a href="#how-to-use-pamlj-in-jamovi" id="toc-how-to-use-pamlj-in-jamovi" class="nav-link" data-scroll-target="#how-to-use-pamlj-in-jamovi">How to use PAMLj in jamovi</a></li>
-  <li><a href="#applying-pamlj-to-bean-questions" id="toc-applying-pamlj-to-bean-questions" class="nav-link" data-scroll-target="#applying-pamlj-to-bean-questions">Applying PAMLj to BEAN questions</a></li>
-  <li><a href="#example-applying-bean-with-pamlj" id="toc-example-applying-bean-with-pamlj" class="nav-link" data-scroll-target="#example-applying-bean-with-pamlj">Example: Applying BEAN with PAMLj</a></li>
-  <li><a href="#try-it-yourself" id="toc-try-it-yourself" class="nav-link" data-scroll-target="#try-it-yourself">Try it yourself</a></li>
-  <li><a href="#bringing-bean-together-making-research-decisions" id="toc-bringing-bean-together-making-research-decisions" class="nav-link" data-scroll-target="#bringing-bean-together-making-research-decisions">Bringing BEAN together: Making research decisions</a></li>
-  <li><a href="#there-is-no-single-correct-choice" id="toc-there-is-no-single-correct-choice" class="nav-link" data-scroll-target="#there-is-no-single-correct-choice">There is no single “correct” choice</a></li>
-  <li><a href="#thinking-in-tradeoffs" id="toc-thinking-in-tradeoffs" class="nav-link" data-scroll-target="#thinking-in-tradeoffs">Thinking in tradeoffs</a></li>
-  <li><a href="#from-statistics-to-research-design" id="toc-from-statistics-to-research-design" class="nav-link" data-scroll-target="#from-statistics-to-research-design">From statistics to research design</a></li>
-  <li><a href="#final-takeaway" id="toc-final-takeaway" class="nav-link" data-scroll-target="#final-takeaway">Final takeaway</a></li>
-  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking ahead</a></li>
+  <li><a href="#how-researchers-justify-sample-size" id="toc-how-researchers-justify-sample-size" class="nav-link active" data-scroll-target="#how-researchers-justify-sample-size">How Researchers Justify Sample Size</a></li>
+  <li><a href="#power-analysis-and-bean" id="toc-power-analysis-and-bean" class="nav-link" data-scroll-target="#power-analysis-and-bean">Power Analysis and BEAN</a></li>
+  <li><a href="#using-pamlj-in-jamovi" id="toc-using-pamlj-in-jamovi" class="nav-link" data-scroll-target="#using-pamlj-in-jamovi">Using PAMLj in jamovi</a></li>
+  <li><a href="#installing-or-opening-pamlj" id="toc-installing-or-opening-pamlj" class="nav-link" data-scroll-target="#installing-or-opening-pamlj">Installing or Opening PAMLj</a></li>
+  <li><a href="#solving-for-sample-size" id="toc-solving-for-sample-size" class="nav-link" data-scroll-target="#solving-for-sample-size">Solving for Sample Size</a></li>
+  <li><a href="#solving-for-power" id="toc-solving-for-power" class="nav-link" data-scroll-target="#solving-for-power">Solving for Power</a></li>
+  <li><a href="#solving-for-detectable-effect-size" id="toc-solving-for-detectable-effect-size" class="nav-link" data-scroll-target="#solving-for-detectable-effect-size">Solving for Detectable Effect Size</a></li>
+  <li><a href="#what-to-look-for-in-the-output" id="toc-what-to-look-for-in-the-output" class="nav-link" data-scroll-target="#what-to-look-for-in-the-output">What to Look For in the Output</a></li>
+  <li><a href="#what-changes-what" id="toc-what-changes-what" class="nav-link" data-scroll-target="#what-changes-what">What Changes What?</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08.0-bean.html">8. BEAN</a></li><li class="breadcrumb-item"><a href="./08.4-sample-size-and-power-analysis.html">8.4 Sample Size and Power Analysis</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08.0-bean.html">8. BEAN</a></li><li class="breadcrumb-item"><a href="./08.4-sample-size-and-power-analysis.html">8.4 Sample Size</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">8.4 Sample Size and Power Analysis</h1>
+<h1 class="title">8.4 Sample Size</h1>
 </div>
 
 
@@ -769,354 +782,246 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In the previous sections, we explored effect sizes, alpha, and power. In this section, we turn to <strong>sample size (N)</strong> and bring everything together through <strong>power analysis</strong>.</p>
-<section id="what-is-sample-size" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-sample-size">What is sample size?</h2>
-<p><strong>Sample size</strong> is the total number of participants in a study (often denoted as <em>n</em>). In between-subjects designs, we also consider how many participants are in each group, especially if group sizes are unequal.</p>
-</section>
-<section id="how-do-we-determine-what-sample-size-i-need" class="level2">
-<h2 class="anchored" data-anchor-id="how-do-we-determine-what-sample-size-i-need">How do we determine what sample size I need?</h2>
-<p>There are several ways researchers determine sample size:</p>
+<p>The final part of BEAN is <strong>N</strong>, or sample size.</p>
+<p><button class="glossary" title="The number of observations or participants in a study.">sample size</button> is the number of observations or participants in a study. In a between-subjects design, we often also care about how many participants are in each group.</p>
+<p>Sample size matters because larger samples usually give us more power to detect an effect. But that does not mean “more is always better” in a simple way. Larger samples can cost more time, money, and effort. They can also make trivially small effects statistically significant.</p>
+<p>The better question is:</p>
+<blockquote class="blockquote">
+<p>What sample size do I need to answer the research question well?</p>
+</blockquote>
+<section id="how-researchers-justify-sample-size" class="level2">
+<h2 class="anchored" data-anchor-id="how-researchers-justify-sample-size">How Researchers Justify Sample Size</h2>
+<p>Researchers can justify sample size in several ways:</p>
 <ol type="1">
-<li><strong>Resource constraints</strong>: Time, budget, and access to participants may limit sample size</li>
-<li><strong>Accuracy or <em>a priori</em> power analysis</strong>: Based on desired power and expected effect size</li>
-<li><strong>Heuristics</strong>: Rules of thumb from prior literature (generally discouraged)</li>
+<li><strong>Resource constraints</strong>: Sometimes time, budget, recruitment access, or other limits determine what is possible.</li>
+<li><strong>A priori power analysis</strong>: Researchers estimate the sample size needed before collecting data.</li>
+<li><strong>Sensitivity power analysis</strong>: Researchers estimate what effect size a given sample can reasonably detect.</li>
+<li><strong>Existing norms or heuristics</strong>: Researchers follow common rules in a field, although this is often weaker than a specific justification.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>For this course, we will focus on power analysis because it connects directly to BEAN.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="More About Sample Size Justification">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>More About Sample Size Justification
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Daniel Lakens has useful resources on sample size justification, including a paper, chapter, and online tool. The main idea is that researchers should justify sample size based on the research question, design, expected effect size, desired precision, desired power, and practical constraints.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="power-analysis-and-bean" class="level2">
+<h2 class="anchored" data-anchor-id="power-analysis-and-bean">Power Analysis and BEAN</h2>
+<p>A <button class="glossary" title="A procedure used to estimate sample size, power, or detectable effect size based on the relationships among effect size, alpha, power, and sample size.">power analysis</button> uses the relationships among BEAN to answer planning questions.</p>
+<p>Typically, we ask one of three questions:</p>
+<ol type="1">
+<li><p><strong>What sample size do I need?</strong><br>
+Given effect size, alpha, and desired power, solve for N.</p></li>
+<li><p><strong>What power do I have?</strong><br>
+Given effect size, alpha, and sample size, solve for power.</p></li>
+<li><p><strong>What effect size can I detect?</strong><br>
+Given alpha, desired power, and sample size, solve for the detectable effect size.</p></li>
+</ol>
+<p>In other words, if you know three parts of BEAN, you can often solve for the fourth.</p>
+</section>
+<section id="using-pamlj-in-jamovi" class="level2">
+<h2 class="anchored" data-anchor-id="using-pamlj-in-jamovi">Using PAMLj in jamovi</h2>
+<p>For this course, we will use the <strong>PAMLj</strong> module in jamovi for power analysis.</p>
+<p>PAMLj can help you estimate sample size, power, or detectable effect size for common statistical tests. The exact options may vary depending on the version of PAMLj you have installed, but the core logic stays the same.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="For Dana's Students">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>For Dana’s Students
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This information comes from <a href="https://psyarxiv.com/9d3yf/">Daniel Lakens’ paper</a> and <a href="https://lakens.github.io/statistical_inferences/08-samplesizejustification.html">chapter</a> out on the topic and his <a href="https://shiny.ieis.tue.nl/sample_size_justification/">sample size justification online tool</a>.</p>
+<p>You will use PAMLj in assignments for this unit. Do not treat the output as a mysterious calculator answer. Your job is to connect the output back to BEAN: effect size, alpha, power, and sample size.</p>
 </div>
 </div>
-<p>The first option is more of a research methods issue and will not be discussed in this statistics textbook. The third option should be avoided whenever possible.</p>
-<p>This leads us to the most important approach:</p>
-<blockquote class="blockquote">
-<p>Conducting an <strong>a priori power analysis</strong></p>
-</blockquote>
-<p>We’ll cover it broadly here, but if you want to learn more about conducting power analyses in jamovi <a href="https://psyarxiv.com/bh8m9/">Bartlett &amp; Charles (2022) have a great preprint on the topic</a>.</p>
 </section>
-<section id="bean-power-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="bean-power-analysis">BEAN: Power analysis</h2>
-<p>We previously saw how alpha and power relate to one another. Through interactive tools, you may have also noticed that <strong>effect size and sample size</strong> relate to alpha and power.</p>
-<p>This is the core idea of BEAN:</p>
-<blockquote class="blockquote">
-<p>If you know three components of BEAN, you can determine the fourth.</p>
-</blockquote>
-<p>Power, effect size, alpha, and sample size all interrelate. Typically, we are trying to answer one of three questions:</p>
+<section id="installing-or-opening-pamlj" class="level2">
+<h2 class="anchored" data-anchor-id="installing-or-opening-pamlj">Installing or Opening PAMLj</h2>
+<p>If you do not already see PAMLj in jamovi:</p>
 <ol type="1">
-<li>What <strong>sample size</strong> do I need given effect size, alpha, and power?</li>
-<li>What <strong>power</strong> do I have given effect size, alpha, and sample size?</li>
-<li>What <strong>effect size</strong> can I detect given alpha, power, and sample size?</li>
+<li>Open jamovi.</li>
+<li>Click the <strong>Modules</strong> icon in the upper-right area of jamovi.</li>
+<li>Open the jamovi library.</li>
+<li>Search for <strong>PAMLj</strong>.</li>
+<li>Install it.</li>
 </ol>
+<p>Once installed, PAMLj should appear as an analysis module in jamovi.</p>
 </section>
-<section id="tools-for-power-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="tools-for-power-analysis">Tools for power analysis</h2>
-<p>There are several tools available for conducting power analyses:</p>
+<section id="solving-for-sample-size" class="level2">
+<h2 class="anchored" data-anchor-id="solving-for-sample-size">Solving for Sample Size</h2>
+<p>Use this when you want to know how many participants you need.</p>
+<p>You provide:</p>
 <ul>
-<li><a href="https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower.html">G*Power</a> is perhaps most widely used; there are various guides on how to use G*Power, including <a href="https://link.springer.com/article/10.3758/BF03203630">Erdfelder et al.&nbsp;(1996)</a> and <a href="https://link.springer.com/article/10.3758/BF03193146">Faul et al., (2007)</a></li>
-<li>Specialized calculators for specific analyses</li>
-<li>Simulation-based approaches (more advanced)</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you’d like to learn more about power analyses in a variety of experimental designs using G*Power or R packages, I recommend this article by <a href="https://www.rips-irsp.com/articles/10.5334/irsp.181/">Perugini et al.&nbsp;(2018) called “A practical primer to power analysis for simple experimental designs.”</a></p>
-</div>
-</div>
-<p>For this course, we will use the <strong>PAMLj module in jamovi</strong>, which simplifies these calculations.</p>
-</section>
-<section id="using-pamlj-for-power-analysis-in-jamovi" class="level2">
-<h2 class="anchored" data-anchor-id="using-pamlj-for-power-analysis-in-jamovi">Using PAMLj for power analysis in jamovi</h2>
-<p>Instead of jpower, we will use the <strong>PAMLj module</strong> in jamovi for power analysis. PAMLj provides a flexible and user-friendly way to conduct power analyses across a range of designs and statistical tests.</p>
-</section>
-<section id="what-pamlj-can-do" class="level2">
-<h2 class="anchored" data-anchor-id="what-pamlj-can-do">What PAMLj can do</h2>
-<p>PAMLj allows you to conduct power analyses by specifying different combinations of BEAN components.</p>
-<p>You can use it to:</p>
-<ul>
-<li>Calculate required <strong>sample size (N)</strong></li>
-<li>Estimate <strong>power</strong> for a given design</li>
-<li>Determine what <strong>effect size</strong> is detectable</li>
-</ul>
-<p>These directly correspond to the three core BEAN questions:</p>
-<ol type="1">
-<li>What sample size do I need?</li>
-<li>What power do I have?</li>
-<li>What effect size can I detect?</li>
-</ol>
-<blockquote class="blockquote">
-<p>PAMLj operationalizes BEAN—it allows you to solve for one component given the others.</p>
-</blockquote>
-</section>
-<section id="how-to-use-pamlj-in-jamovi" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-pamlj-in-jamovi">How to use PAMLj in jamovi</h2>
-<p>To conduct a power analysis:</p>
-<ol type="1">
-<li>Open jamovi</li>
-<li>Install and load the <strong>PAMLj module</strong> (from the Modules library)</li>
-<li>Navigate to the power analysis section</li>
-<li>Choose your statistical test (e.g., independent samples t-test)</li>
-</ol>
-<p>Then, you will:</p>
-<ul>
-<li>Select what you want to <strong>solve for</strong> (N, power, or effect size)</li>
-<li>Enter the remaining BEAN components</li>
-<li>Specify:
-<ul>
-<li>One-tailed vs two-tailed test</li>
-<li>Group sizes (if applicable)</li>
-</ul></li>
-</ul>
-</section>
-<section id="applying-pamlj-to-bean-questions" class="level2">
-<h2 class="anchored" data-anchor-id="applying-pamlj-to-bean-questions">Applying PAMLj to BEAN questions</h2>
-<section id="what-sample-size-do-i-need" class="level3">
-<h3 class="anchored" data-anchor-id="what-sample-size-do-i-need">1. What sample size do I need?</h3>
-<p>This is the most common use of power analysis. To determine required sample size:</p>
-<ul>
-<li>Choose <strong>Solve for N</strong></li>
-<li>Enter:
-<ul>
-<li>Expected effect size (from Section 8.1)</li>
-<li>Desired power (e.g., 80% or higher)</li>
-<li>Alpha (e.g., .05)</li>
-</ul></li>
-</ul>
-<p>PAMLj will return the required sample size per group.</p>
-<p><strong>Interpretation:</strong></p>
-<ul>
-<li>Smaller effect size → larger required sample</li>
-<li>Higher desired power → larger required sample</li>
-<li>Lower alpha → larger required sample</li>
-</ul>
-<blockquote class="blockquote">
-<p>Sample size is the lever we adjust to achieve sufficient power.</p>
-</blockquote>
-</section>
-<section id="what-power-do-i-have" class="level3">
-<h3 class="anchored" data-anchor-id="what-power-do-i-have">2. What power do I have?</h3>
-<p>Sometimes, sample size is fixed due to constraints. To determine power:</p>
-<ul>
-<li>Choose <strong>Solve for power</strong></li>
-<li>Enter:
-<ul>
-<li>Sample size</li>
-<li>Effect size</li>
-<li>Alpha</li>
-</ul></li>
-</ul>
-<p>PAMLj will estimate your power.</p>
-<p><strong>Interpretation:</strong></p>
-<ul>
-<li>Low power → high risk of missing real effects</li>
-<li>High power → greater likelihood of detecting effects</li>
-</ul>
-<blockquote class="blockquote">
-<p>This helps us evaluate whether a study is capable of detecting meaningful effects.</p>
-</blockquote>
-</section>
-<section id="what-effect-size-can-i-detect" class="level3">
-<h3 class="anchored" data-anchor-id="what-effect-size-can-i-detect">3. What effect size can I detect?</h3>
-<p>This question is especially useful when planning studies with limited resources. To determine detectable effect size:</p>
-<ul>
-<li>Choose <strong>Solve for effect size</strong></li>
-<li>Enter:
-<ul>
-<li>Sample size</li>
+<li>Expected or smallest effect size of interest</li>
+<li>Alpha level</li>
 <li>Desired power</li>
-<li>Alpha</li>
-</ul></li>
+<li>Test type</li>
+<li>One-tailed or two-tailed hypothesis</li>
+<li>Group-size information, if relevant</li>
 </ul>
-<p>PAMLj will estimate the smallest effect size you can reliably detect.</p>
-<p><strong>Interpretation:</strong></p>
-<ul>
-<li>Small sample → only large effects detectable</li>
-<li>Large sample → smaller effects detectable</li>
-</ul>
+<p>PAMLj estimates the sample size needed.</p>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>Imagine we are planning an independent-samples <em>t</em>-test. We want to detect an effect of <em>d</em> = .80, use α = .05, and achieve about 80% power.</p>
+<p>If the groups are equal in size, the result should suggest that we need about 25 participants per group to reach roughly 79% to 80% power. The exact value may differ slightly depending on the software settings.</p>
+<p>The important interpretation is:</p>
 <blockquote class="blockquote">
-<p>This connects directly back to Section 8.1: what effect size do we care about?</p>
+<p>With this design, effect size, alpha, and sample size, we would have about an 80% chance of detecting the effect if the effect really exists.</p>
 </blockquote>
 </section>
 </section>
-<section id="example-applying-bean-with-pamlj" class="level2">
-<h2 class="anchored" data-anchor-id="example-applying-bean-with-pamlj">Example: Applying BEAN with PAMLj</h2>
-<p>Let’s revisit our earlier example:</p>
+<section id="solving-for-power" class="level2">
+<h2 class="anchored" data-anchor-id="solving-for-power">Solving for Power</h2>
+<p>Use this when you already know your sample size and want to know how much power you have.</p>
+<p>You provide:</p>
 <ul>
-<li>Effect size: d = .8</li>
-<li>Alpha: .05</li>
-<li>Sample size: 25 per group</li>
-<li>Two-tailed test</li>
+<li>Effect size</li>
+<li>Alpha level</li>
+<li>Sample size</li>
+<li>Test type</li>
+<li>One-tailed or two-tailed hypothesis</li>
 </ul>
-<p>Using PAMLj, we estimate:</p>
-<ul>
-<li><strong>Power ≈ 79%</strong></li>
-</ul>
-<p>This tells us:</p>
-<blockquote class="blockquote">
-<p>We have about a 79% chance of detecting an effect of this size.</p>
-</blockquote>
-</section>
-<section id="try-it-yourself" class="level2">
-<h2 class="anchored" data-anchor-id="try-it-yourself">Try it yourself</h2>
-<p>Use PAMLj to explore:</p>
-<ul>
-<li>What happens to sample size when you increase power?</li>
-<li>What happens to power when you decrease effect size?</li>
-<li>What happens when you lower alpha?</li>
-</ul>
-<p>These explorations help you build intuition about how BEAN works in practice.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<p>PAMLj estimates the study’s power.</p>
+<p>This is useful when the sample size is already fixed. For example, maybe you are using archival data, working with a small program, or studying a hard-to-reach population.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Be Careful">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Check Your Understanding
+<span class="screen-reader-only">Warning</span>Be Careful
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>What are the three main questions PAMLj helps answer?</li>
-<li>What happens to required sample size when desired power increases?</li>
-<li>What happens to detectable effect size when sample size increases?</li>
-<li>Why is power analysis considered the practical application of BEAN?</li>
-</ol>
+<p>Low power does not mean your study is worthless, but it does change how you should interpret the results.</p>
+<p>A non-significant result from a low-powered study is often inconclusive. The study may have missed a real effect.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answers">
+</section>
+<section id="solving-for-detectable-effect-size" class="level2">
+<h2 class="anchored" data-anchor-id="solving-for-detectable-effect-size">Solving for Detectable Effect Size</h2>
+<p>Use this when you want to know what effect size your study can reasonably detect.</p>
+<p>You provide:</p>
+<ul>
+<li>Alpha level</li>
+<li>Desired power</li>
+<li>Sample size</li>
+<li>Test type</li>
+<li>One-tailed or two-tailed hypothesis</li>
+</ul>
+<p>PAMLj estimates the effect size that could be detected with that design.</p>
+<p>This is often called a <strong>sensitivity analysis</strong>. It is useful when you cannot increase your sample size and want to understand what kinds of effects your study is actually capable of detecting.</p>
+</section>
+<section id="what-to-look-for-in-the-output" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-look-for-in-the-output">What to Look For in the Output</h2>
+<p>When you review PAMLj output, do not just copy the number. Ask yourself:</p>
+<ul>
+<li>What did I solve for: sample size, power, or effect size?</li>
+<li>What effect size did I assume or estimate?</li>
+<li>What alpha level did I use?</li>
+<li>What power level did I use or obtain?</li>
+<li>Was the test one-tailed or two-tailed?</li>
+<li>Was the sample size total N or N per group?</li>
+<li>Does the result make sense given the research question?</li>
+</ul>
+<p>These questions matter because power analysis is not just a software procedure. It is a way of making your design decisions explicit.</p>
+</section>
+<section id="what-changes-what" class="level2">
+<h2 class="anchored" data-anchor-id="what-changes-what">What Changes What?</h2>
+<p>Holding everything else constant:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Change</th>
+<th>What usually happens?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Larger effect size</td>
+<td>Power increases</td>
+</tr>
+<tr class="even">
+<td>Smaller effect size</td>
+<td>Power decreases</td>
+</tr>
+<tr class="odd">
+<td>Larger sample size</td>
+<td>Power increases</td>
+</tr>
+<tr class="even">
+<td>Smaller sample size</td>
+<td>Power decreases</td>
+</tr>
+<tr class="odd">
+<td>Lower alpha</td>
+<td>Power decreases, but Type I error risk decreases</td>
+</tr>
+<tr class="even">
+<td>Higher desired power</td>
+<td>Required sample size increases</td>
+</tr>
+<tr class="odd">
+<td>Two-tailed test instead of one-tailed test</td>
+<td>Required sample size usually increases</td>
+</tr>
+</tbody>
+</table>
+<p>That table is BEAN in action.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="What About Post Hoc Power?">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answers
+<span class="screen-reader-only">Note</span>What About Post Hoc Power?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>Sample size, power, and detectable effect size</li>
-<li>It increases</li>
-<li>Smaller effects become detectable</li>
-<li>Because it uses all BEAN components together to guide study design</li>
-</ol>
+<p>You may hear about post hoc or observed power, where researchers calculate power after seeing the results of a study. This is controversial and often not very useful because observed power is closely tied to the observed p-value.</p>
+<p>For this course, focus on a priori power analysis and sensitivity power analysis. Those are more useful for planning and interpreting studies.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="bringing-bean-together-making-research-decisions" class="level2">
-<h2 class="anchored" data-anchor-id="bringing-bean-together-making-research-decisions">Bringing BEAN together: Making research decisions</h2>
-<p>By this point, you have seen each component of BEAN individually:</p>
-<ul>
-<li>Effect size → what we care about<br>
-</li>
-<li>Alpha → how strict we are about evidence<br>
-</li>
-<li>Power → our ability to detect effects<br>
-</li>
-<li>Sample size → how much data we collect</li>
-</ul>
-<p>Power analysis is where all of these come together.</p>
-<blockquote class="blockquote">
-<p>BEAN is not just a set of concepts—it is a system of tradeoffs.</p>
-</blockquote>
-</section>
-<section id="there-is-no-single-correct-choice" class="level2">
-<h2 class="anchored" data-anchor-id="there-is-no-single-correct-choice">There is no single “correct” choice</h2>
-<p>One of the most important takeaways from this chapter is that there is rarely a single correct answer when designing a study.</p>
-<p>Instead, researchers must balance competing priorities:</p>
-<ul>
-<li>Want to detect <strong>small effects</strong>? You need a <strong>larger sample</strong><br>
-</li>
-<li>Want to reduce <strong>false positives</strong>? You may need a <strong>lower alpha</strong>, which reduces power<br>
-</li>
-<li>Have a <strong>limited sample size</strong>? You may only be able to detect <strong>larger effects</strong></li>
-</ul>
-<p>These are not problems—they are the reality of research design.</p>
-</section>
-<section id="thinking-in-tradeoffs" class="level2">
-<h2 class="anchored" data-anchor-id="thinking-in-tradeoffs">Thinking in tradeoffs</h2>
-<p>Let’s make this concrete.</p>
-<p>Imagine you expect a small effect but can only recruit a small sample.</p>
-<p>You now face a decision:</p>
-<ul>
-<li>Increase your sample size (if possible)<br>
-</li>
-<li>Accept lower power (risk missing the effect)<br>
-</li>
-<li>Adjust your expectations about detectable effects</li>
-</ul>
-<p>Similarly, if you lower alpha to be more conservative:</p>
-<ul>
-<li>You reduce false positives<br>
-</li>
-<li>But you also make it harder to detect real effects</li>
-</ul>
-<blockquote class="blockquote">
-<p>Every decision you make in BEAN affects the others.</p>
-</blockquote>
-</section>
-<section id="from-statistics-to-research-design" class="level2">
-<h2 class="anchored" data-anchor-id="from-statistics-to-research-design">From statistics to research design</h2>
-<p>Up to this point, much of statistics may have felt like:</p>
-<ul>
-<li>calculating values<br>
-</li>
-<li>running tests<br>
-</li>
-<li>interpreting outputs</li>
-</ul>
-<p>Power analysis shifts the focus to:</p>
-<blockquote class="blockquote">
-<p>designing studies that are capable of answering your research question.</p>
-</blockquote>
-<p>Instead of asking:</p>
-<blockquote class="blockquote">
-<p>“Is this result significant?”</p>
-</blockquote>
-<p>We start asking:</p>
-<ul>
-<li>Was the study capable of detecting the effect?<br>
-</li>
-<li>Was the sample size sufficient?<br>
-</li>
-<li>Were the design choices justified?</li>
-</ul>
-</section>
-<section id="final-takeaway" class="level2">
-<h2 class="anchored" data-anchor-id="final-takeaway">Final takeaway</h2>
-<p>If you remember one thing from this chapter, let it be this:</p>
-<blockquote class="blockquote">
-<p>Statistical significance is not just about the data you collect—it is about the decisions you make before you collect the data.</p>
-</blockquote>
-<p>BEAN provides a framework for making those decisions thoughtfully.</p>
-</section>
-<section id="looking-ahead" class="level2">
-<h2 class="anchored" data-anchor-id="looking-ahead">Looking ahead</h2>
-<p>In the next chapters, we will return to specific statistical tests. As you learn those tests, keep BEAN in mind:</p>
-<ul>
-<li>What effect size is being tested?<br>
-</li>
-<li>What assumptions are being made?<br>
-</li>
-<li>How much power does the study likely have?</li>
-</ul>
-<p>These questions will help you move beyond simply running analyses to truly understanding and evaluating research.</p>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+<p>A researcher wants to detect a smaller effect size than originally expected. What will usually happen to the required sample size if alpha and desired power stay the same?</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Suggested Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Suggested Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The required sample size will increase. Smaller effects are harder to detect, so we need more data to detect them with the same alpha level and desired power.</p>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -1529,8 +1434,8 @@ Note
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./09.0-inferential-statistics.html" class="pagination-link" aria-label="9. Inferential Statistics">
-        <span class="nav-page-text">9. Inferential Statistics</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./08.5-putting-it-all-together.html" class="pagination-link" aria-label="8.5 Putting It All Together">
+        <span class="nav-page-text">8.5 Putting It All Together</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

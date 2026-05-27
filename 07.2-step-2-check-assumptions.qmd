@@ -1,88 +1,81 @@
 # 7.2 Step 2: Check Assumptions {.unnumbered}
 
-Before performing a statistical test, we need to check whether our data meet certain **assumptions**. Statistical tests are built on certain expectations about the data. These expectations are called **assumptions**.
+After looking at the data, the next step is to check whether the statistical test is appropriate for the data.
 
-> Assumptions are conditions that must be reasonably met for the results of a statistical test to be valid.
+Statistical tests are built on certain expectations about the data. These expectations are called {{< glossary "statistical assumption" popup="hover" >}}s. If assumptions are badly violated, the results may be inaccurate or misleading.
 
-
-## Why assumptions matter
-
-If assumptions are not met:
-
--   The results of the test may be inaccurate or misleading
--   We may need to use a different version of the test
--   Our conclusions may not be trustworthy
-
-> Good data analysis is not just about running a test—it is about making sure the test is appropriate for the data.
-
-
-## Common assumptions
-
-Most statistical tests rely on a few key assumptions:
-
-
-### Normality
-
-This refers to the **shape of the distribution**.
-
--   Are the data roughly bell-shaped?
--   Are there extreme skewed values?
-
-This connects back to **Distribution shape** which you learned about in Chapter 2.
-
-
-### Homogeneity of variance
-
-This refers to **variability across groups**.
-
--   Do the groups have similar levels of spread?
--   Is one group much more variable than the other?
-
-This connects back to **Variability and dispersion** which you learned about in Chapter 2.
-
-
-### Independence
-
-This refers to how the data were collected.
-
--   Are observations independent of each other?
--   Does one participant’s score influence another’s?
-
-This is determined by the **study design**, not just the data.
-
-
-These assumptions connect directly to ideas from earlier chapters, particularly distribution shape and variability (Chapter 2). When assumptions are violated, the results of a statistical test may be misleading, which is why checking assumptions is a critical step before performing any analysis.
-
-
-## Connecting to our example
-
-In the Bobo doll study:
-
--   **Normality** → Are aggressive behavior scores roughly normally distributed?
--   **Homogeneity** → Is variability similar between the aggressive and passive conditions?
--   **Independence** → Each child is observed separately, so scores should be independent.
-
-::: {.callout-note}
-In this chapter, we focus on understanding *what* assumptions are and *why they matter*.
-
-We will learn how to formally check assumptions in **Chapter 9**.
+::: {.callout-note title="Why Assumptions Matter"}
+Checking assumptions is not an annoying hoop to jump through after choosing a test. It is part of deciding whether the test you planned to use actually fits your data.
 :::
 
-Once assumptions are reasonably met, we can move forward with formally evaluating our hypotheses.
+## Assumptions Are Test-Specific
 
+Different tests have different assumptions. That is why later chapters will walk you through assumption checks separately for each inferential statistic.
+
+For now, you only need the general idea: before interpreting a statistical test, you need to know whether the test is reasonable for your variables, design, and data.
+
+Most of the parametric tests in this book involve some combination of the following assumptions.
+
+## Continuous Dependent Variable
+
+Many parametric tests require a continuous dependent variable.
+
+In our Bobo doll example, the dependent variable is the number of aggressive behaviors. We are treating that as a continuous outcome because it is a quantitative score. That makes it appropriate for the kind of test we will eventually use.
+
+If the dependent variable were categorical, such as whether a child showed any aggressive behavior, we would need a different kind of test.
+
+## Independence
+
+Independence means that one observation should not improperly depend on another observation.
+
+In our example, each child is observed separately. One child's score should not determine another child's score. That supports the assumption of independence.
+
+Independence is usually a design issue, not something we can fix by clicking an option in jamovi. For example, students nested in classrooms or employees nested in organizations may be more similar to each other because of the group they belong to. That kind of structure requires more advanced methods than we cover in this book.
+
+## Normality
+
+Normality refers to the shape of the distribution. For many parametric tests, we want the dependent variable, or sometimes a specific version of it, to be approximately normally distributed.
+
+This does not mean real data must be perfectly bell-shaped. Real data are messy. The question is whether the data are close enough for the test to work reasonably well.
+
+Later, Chapter 9 will show you how to examine normality using visualizations, skew and kurtosis, Shapiro-Wilk tests, and Q-Q plots.
+
+## Homogeneity of Variance
+
+Homogeneity of variance means that groups have similar variability on the dependent variable.
+
+In our example, we would ask whether the aggressive-video and calm-video groups have roughly similar variability in aggressive behavior.
+
+This assumption matters for tests that compare groups on a continuous outcome, such as t-tests and ANOVAs. If variability is very different across groups, we may need a different version of the test.
+
+## What If an Assumption Is Violated?
+
+A violated assumption does not automatically ruin everything. It means you need to make a thoughtful decision.
+
+Depending on the test and the assumption, you may need to:
+
+- use a different version of the test;
+- use a non-parametric alternative;
+- transform or adjust the data carefully;
+- report the violation and interpret results cautiously; or
+- choose a different analysis.
+
+Chapter 9 will cover these decisions more carefully. For now, tuck this idea into your brain: the test you run depends not only on the research question, but also on whether your data meet the assumptions for that test.
 
 ::: {.callout-tip title="Check Your Understanding"}
-1.  What are statistical assumptions?
-2.  Why is it important to check assumptions before running a test?
-3.  What does normality refer to?
-4.  What does homogeneity of variance refer to?
-5.  What does independence refer to?
+1. What is a statistical assumption?
+2. Why is independence usually a design issue?
+3. What does normality refer to?
+4. What does homogeneity of variance refer to?
+
+**Answers**
+
+1. A statistical assumption is a condition that should be reasonably met for a statistical test to work as intended.
+2. Independence depends on how the data were collected, such as whether observations are separate or nested within groups.
+3. Normality refers to the shape of a distribution and whether it is approximately bell-shaped.
+4. Homogeneity of variance means that groups have similar variability on the dependent variable.
 :::
 
-::: {.callout-tip collapse="true" title="Answers"}
-1.  Conditions that must be met for a statistical test to be valid
-2.  Because violations can lead to inaccurate or misleading results
-3.  The shape of the distribution of the data
-4.  Whether groups have similar variability
-5.  Whether observations are independent of each other
-:::
+## Looking Ahead
+
+In the next step, we perform the statistical test. For now, remember that “performing the test” is not just pressing buttons. It means using an analysis that fits the research question, variables, design, and assumptions.

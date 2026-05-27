@@ -1,123 +1,125 @@
 # 9.2 Parametric Assumptions {.unnumbered}
 
-Most of the inferential statistics we'll be learning in this class are *parametric statistics*, which means they rely on certain assumptions about the data.
+Once you have a likely statistical test in mind, the next question is whether the assumptions for that test are reasonable.
 
-These assumptions are critical because:
+This is Step 2 in our [4-step hypothesis-testing process](07.0-hypothesis-testing.qmd): check assumptions.
 
-> Violating assumptions can lead to incorrect or misleading conclusions—even if everything else in your analysis looks correct.
+Checking assumptions can feel annoying at first. It can feel like an extra step between you and the analysis you actually want to run. But assumptions matter because they tell us whether the statistical test is likely to work the way it is supposed to work.
 
-This is why **checking assumptions is a key part of Step 2 in our 4-step framework**.
+If assumptions are seriously violated, the *p*-value may be inaccurate, the effect size may be misleading, or the interpretation may not fit the data. That does not mean your study is ruined. It means you need to make a thoughtful decision.
 
-In this class, we will focus on assumptions related to the normal distribution and related properties of the data.
+Most of the inferential statistics we will use are {{< glossary "parametric test" popup="hover" >}}, which means they rely on assumptions about the data. {{< glossary "non-parametric test" popup="hover" >}} generally make fewer assumptions about the shape of the distribution, but they are not assumption-free.
 
+::: {.callout-note title="Where assumption checks happen in jamovi"}
+You may notice that jamovi gives you more than one way to check normality. You can check normality through **Exploration → Descriptives**, but you may also see normality checks built into specific inferential tests.
 
-## Why assumptions matter
+These are related, but they are not always testing the exact same thing. The Descriptives approach is checking the variable you selected. Some inferential tests check normality in a way that is more closely connected to the analysis you are running.
 
-Inferential statistics are built on mathematical models. These models assume that the data behave in certain ways. When those assumptions are met, our statistical tests work as expected.
+Most of the time, you will reach the same overall conclusion either way: normality looks reasonable, questionable, or clearly violated. But the exact values may differ slightly. That is okay.
 
-When assumptions are violated:
+For now, use **Exploration → Descriptives** to learn the basic idea of checking normality. Later, when you are running a specific inferential test, use the assumption checks built into that analysis when they are available.
+:::
 
--   p-values may be inaccurate
--   effect sizes may be misleading
--   conclusions may not be valid
-
-> Checking assumptions helps ensure that your results are trustworthy.
-
-It's important to check assumptions because your data may not always be what they seem. You need to look at your data in all sorts of ways to make sure it's satisfactory for inferential statistics.
-
-
-There are four basic assumptions of most parametric tests:
-
-1.  Interval or ratio (i.e., continuous) dependent variable
-2.  Independent scores on the dependent variable
-3.  Normal distribution
-4.  Homogeneity of variances
-
-[This video](https://www.youtube.com/watch?v=zNbF006Y5x4) recaps the rest of the chapter in another format.
+[This video](https://www.youtube.com/watch?v=zNbF006Y5x4) recaps the main ideas in this section in another format.
 
 ```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://www.youtube.com/watch?v=tNojQp7DQt8")
 ```
 
-Let's discuss these in turn and how to test for them.
+## Two Kinds of Assumptions
 
-## 1. Interval/ratio data
+I find it helpful to separate assumptions into two broad types.
 
-If we are performing a parametric test, then the dependent variable (DV) must be measured at the interval or ratio level (i.e., continuous).
+**Design or data-structure assumptions** are about whether the test matches the way the data were collected or measured. These include assumptions such as having a continuous dependent variable and independent observations. If these are wrong, you usually need a different test or a different analytic approach.
 
-It is important that the data have proportional intervals between values. Ordinal variables often do not meet this assumption.
+**Distributional assumptions** are about the shape or spread of the data. These include normality and homogeneity of variance. If these are violated, you may use a different version of the test, a non-parametric alternative, or another justified approach.
 
-A common issue is treating Likert-scale items as continuous variables. A single Likert item is ordinal, and we technically cannot calculate a mean or difference between ordinal values. However, it is common practice to average or sum multiple Likert items and treat that composite score as continuous (although some argue this is still inappropriate).
+In this chapter, we will focus on four common assumptions:
 
-There is no formal statistical test for this assumption. Instead, you must determine:
+1. The dependent variable is continuous.
+2. Observations are independent when the test assumes independence.
+3. The dependent variable is reasonably normally distributed.
+4. Variances are reasonably similar across groups when the test assumes homogeneity of variance.
 
--   what type of variable you are working with
--   how it was measured
+## Assumption 1: Continuous Dependent Variable
 
-## 2. Independent scores
+Many parametric tests require a continuous dependent variable. This includes *t*-tests, ANOVA, correlation, and regression.
 
-This assumption refers to **independence between participants**, not within participants.
+This means the dependent variable should represent a numerical amount where means and standard deviations are meaningful. Examples include exam scores, reaction time, depression scale scores, GPA, height, and time spent studying.
 
--   In **between-subjects designs**, each participant’s score should be independent of every other participant’s score.
+There is no formal statistical test for this assumption. Instead, you need to know:
 
--   In **within-subjects designs**, scores within a participant are expected to be related—but participants should still be independent of one another.
+- what type of variable you are working with;
+- how the variable was measured;
+- whether a mean, standard deviation, and difference score would be meaningful.
 
-A violation occurs when data are **nested or clustered**, such as:
+This connects directly to [Types of Variables and Levels of Measurement](02.2-types-of-variables-levels-of-measurement.qmd). A single Likert-type item is usually best understood as ordinal, but an average or total scale score created from several related items is often treated as continuous in practice.
 
--   students within the same classroom
--   employees within the same organization
+::: {.callout-warning title="If this assumption is violated"}
+This is not really an assumption you “fix.” If the dependent variable is categorical, you probably chose the wrong test.
 
-In these cases, participants within a group may be more similar than expected, violating independence.
-
-Like the previous assumption, this is not something we formally test. Instead, it depends on:
-
--   how the data were collected
--   the structure of the sample
-
-## 3. Normal distribution
-
-For most parametric tests, the dependent variable should be approximately normally distributed.
-
-A **normal distribution** (or bell-shaped curve) has several key properties:
-
--   Data are symmetrically distributed around the mean
-
--   Skew and kurtosis are approximately 0
-
--   The mean and median are equal
-
--   We know the proportion of data within standard deviations of the mean
-
-We will use **four complementary approaches** to evaluate normality:
-
-a.  Visualize the distribution
-
-b.  Examine skew and kurtosis
-
-c.  Conduct a Shapiro-Wilk test
-
-d.  Examine the Q-Q plot
-
-::: {.callout-note}
-You should use multiple methods when checking normality. These methods do not always agree, so you must make a judgment as a researcher.
-
-Personally, I tend to prioritize visual inspection and err on the side of caution.
+Return to [Choosing the Correct Test](09.1-choosing-the-correct-test.qmd) and choose a test designed for a categorical dependent variable.
 :::
 
-Let's practice using the variable Height from an example dataset.
+## Assumption 2: Independence
 
-### a. Visualize the distribution
+The assumption of independence means that each observation is independent of the others. In plain language, one participant’s score should not determine, cause, or be linked to another participant’s score unless the statistical test is designed for related observations.
 
-In jamovi:
+For example, if you randomly sample 100 students and measure each student’s test score once, those observations are probably independent.
 
--   Go to **Exploration → Descriptives**
--   Under *Plots*, select:
-    -   Histogram and/or density plot
+However, observations may not be independent when:
 
-    -   Boxplot, violin plot, and/or data points
+- the same participants are measured more than once;
+- participants are paired or matched;
+- students are nested within classrooms;
+- employees are nested within work teams;
+- multiple observations come from the same person.
 
-We visually inspect whether the distribution resembles a bell-shaped curve.
+This is why it matters whether you have a between-subjects or within-subjects design. If the same people are measured more than once, you should not use a test that assumes independent groups.
+
+::: {.callout-warning title="If this assumption is violated"}
+Violating independence is usually a design issue, not a data-cleaning issue.
+
+If the same participants are measured more than once, choose a within-subjects or repeated-measures test. If people are nested in classrooms, organizations, teams, or other groups, you may need more advanced methods such as multilevel modeling. We will not cover multilevel modeling in this course, but I want you to recognize why independence matters.
+:::
+
+## Assumption 3: Normality
+
+The assumption of normality means that the dependent variable is reasonably normally distributed for the analysis you are conducting.
+
+A {{< glossary "normal distribution" popup="hover" >}} is often called a bell-shaped curve. In a normal distribution, the data are symmetrically distributed around the mean, the mean and median are equal, skew and kurtosis are approximately 0, and we know the proportion of data that should fall within each standard deviation from the mean.
+
+This is where students often ask, “How normal is normal enough?” Great question. Unfortunately, there is not one perfect answer.
+
+Assumption checking is not a magic checklist where every method gives the same answer. It is a judgment process. You should use more than one piece of information and think about the severity of the violation, the sample size, and the test you plan to use.
+
+### Checking Normality
+
+There are four main ways we will check normality in this course:
+
+1. Visualize the distribution.
+2. Test the skew and kurtosis.
+3. Conduct a Shapiro-Wilk test.
+4. Visualize the Q-Q plot.
+
+You should use multiple methods when checking normality. These methods do not always agree perfectly. Personally, I tend to prioritize visual inspection and err on the side of caution. A statistical test can tell you whether a distribution differs from perfect normality, but real data are almost never perfectly normal.
+
+A general way to check normality is through **Exploration → Descriptives**:
+
+1. Move the dependent variable to the **Variables** box.
+2. If you need to check normality within groups, move the grouping variable to **Split by**.
+3. Under **Statistics**, select skewness and kurtosis if useful.
+4. Under **Plots**, select histogram, density, box plot, and/or Q-Q plot.
+5. Under **Normality**, select Shapiro-Wilk if available.
+
+You learned how to describe continuous variables in [Describing Continuous Variables](05.3-describing-continuous-variables.qmd) and how to visualize continuous variables in [Visualizing Continuous Variables](06.3-visualizing-continuous-variables.qmd). This is one reason those earlier chapters matter: descriptives and plots help you decide whether assumptions are reasonable.
+
+#### Method 1: Visualize the Distribution
+
+The first method is to visualize the distribution. In jamovi, go to **Exploration → Descriptives** and select a histogram, density plot, box plot, violin plot, and/or data points.
+
+We visually inspect whether the distribution resembles a bell-shaped curve. We are not looking for perfection. We are looking for whether the shape seems reasonable enough for the test we plan to use.
 
 In the following example, height appears approximately normally distributed.
 
@@ -125,15 +127,19 @@ In the following example, height appears approximately normally distributed.
 
 ![](images/06-inferential/boxplot.png){width="400"}
 
-### b. Test the skew and kurtosis
+Histograms and density plots help us see the overall shape of the distribution. Box plots, violin plots, and data points can also help us notice skew, spread, and possible outliers.
+
+#### Method 2: Test the Skew and Kurtosis
+
+The second method is to examine skew and kurtosis.
 
 In jamovi:
 
--   Go to **Exploration → Descriptives → Statistics**
+1. Go to **Exploration → Descriptives**.
+2. Move your dependent variable into the **Variables** box.
+3. Under **Statistics**, select skewness and kurtosis.
 
--   Select skew and kurtosis
-
-For our example of height, here is our skew and kurtosis:
+For our example of height, here are the skew and kurtosis values:
 
 |                     |            |
 |---------------------|------------|
@@ -143,198 +149,225 @@ For our example of height, here is our skew and kurtosis:
 | Kurtosis            | .113       |
 | Std. error kurtosis | .241       |
 
-We need to calculate *z*-scores for skew and kurtosis. We do that by dividing the value by its standard error:
+To test skew and kurtosis, we calculate *z*-scores by dividing the value by its standard error:
 
--   Skew: .230 / .121 = 1.90
+- Skew: .230 / .121 = 1.90
+- Kurtosis: .113 / .241 = .47
 
--   Kurtosis: .113 / .241 = .47
+A common guideline is:
 
-Interpretation:
+- If |*z*| < 1.96, the skew or kurtosis value is not statistically significant at alpha = .05.
+- If |*z*| > 1.96, the skew or kurtosis value is statistically significant at alpha = .05.
 
--   If \|z\| \< 1.96 → not significant → approximately normal
-
--   If \|z\| \> 1.96 → significant → not normal
-
-::: {.callout-note}
-Why 1.96? 1.96 is the critical value of z when alpha is .05 and we have a two-tailed test.
+::: {.callout-note title="Why 1.96?"}
+The value 1.96 is the critical value of *z* when alpha is .05 and we have a two-tailed test. You do not need to memorize that for this course, but it explains why 1.96 often shows up when people are checking skew and kurtosis.
 :::
 
-### c. Shapiro-Wilk test
+In this example, both values are less than 1.96 in absolute value, so skew and kurtosis do not suggest a serious violation of normality.
+
+#### Method 3: Conduct a Shapiro-Wilk Test
+
+The third method is to conduct a {{< glossary "Shapiro-Wilk test" popup="hover" >}}. This is a formal statistical test of normality.
 
 In jamovi:
 
--   Go to **Exploration → Descriptives → Statistics**
-
--   Select Shapiro-Wilk
-
-For our example of height, Shapiro-Wilk's for height is 68.03, *p* = .070.
+1. Go to **Exploration → Descriptives**.
+2. Move your dependent variable into the **Variables** box.
+3. Under **Normality**, select Shapiro-Wilk.
 
 Interpretation:
 
--   p \> .05 → normality assumption met
+- If *p* > .05, the test does not provide evidence that the distribution differs from normality.
+- If *p* < .05, the test suggests the distribution differs from normality.
 
--   p \< .05 → violation
+This can feel counterintuitive because we usually look for statistically significant results in inferential tests. For Shapiro-Wilk, we usually want a non-significant result because the null hypothesis is that the data are normally distributed.
 
-::: {.callout-note}
-This may feel counterintuitive: we want non-significant results because the null hypothesis is that the data are normally distributed.
-:::
+Be careful, though. With very small samples, Shapiro-Wilk may miss meaningful non-normality. With very large samples, it may flag tiny deviations that do not matter much in practice. This is why you should not rely on Shapiro-Wilk alone.
 
-### d. Q-Q plot
+#### Method 4: Visualize the Q-Q Plot
+
+The fourth method is to visualize the Q-Q plot.
 
 In jamovi:
 
--   Go to **Exploration → Descriptives → Plots**
--   Select Q-Q plot
+1. Go to **Exploration → Descriptives**.
+2. Move your dependent variable into the **Variables** box.
+3. Under **Plots**, select Q-Q plot.
 
-We look for points falling along the diagonal line.
-
--   Left: approximately normal
--   Right: not normal
+A {{< glossary "Q-Q plot" popup="hover" >}} compares the observed data to what we would expect if the data were normally distributed. We look for the points to fall reasonably close to the diagonal line.
 
 ![](images/06-inferential/qqplot.png){alt=""}
 
-Focus primarily on the center of the distribution; small deviations at the tails are common.
+Focus primarily on the center of the distribution. Small deviations at the tails are common. Large, systematic deviations from the line suggest the data may not be normally distributed.
 
-Here's a video by Alexander Swan on [interpreting a Q-Q plot in jamovi](https://www.youtube.com/watch?v=sLhFc-4qSXE):
+Here is a video by Alexander Swan on [interpreting a Q-Q plot in jamovi](https://www.youtube.com/watch?v=sLhFc-4qSXE):
 
 ```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://www.youtube.com/watch?v=sLhFc-4qSXE")
 ```
 
-## 4. Homogeneity of variance
+### If Normality Is Violated
 
-The third assumption of many parametric statistics is that the variance in the DV needs to be the same at each level of the IV. If we fail to meet the assumption, we say we have heterogeneity. It might help you to remember that the prefix *homo* means same and *hetero* means different.
+First, check whether the violation is caused by data-entry errors, missing-value codes, or extreme outliers. If so, return to [Cleaning and Preparing Data in jamovi](04.0-cleaning-and-preparing-data-in-jamovi.qmd).
 
-::: {.callout-note}
-Normality applies only to the DV overall.
+If the data are genuinely non-normal, you may need to:
 
-Homogeneity of variance applied to the DV *within each group of the IV.*
+- interpret the parametric test cautiously;
+- use a non-parametric alternative;
+- use a robust version of the test if available;
+- consider a transformation in more advanced work.
+
+In this course, the most common move will be choosing the appropriate parametric or non-parametric test and explaining your decision. We will return to this in [Violated Assumptions](09.3-violated-assumptions.qmd).
+
+## Assumption 4: Homogeneity of Variance
+
+{{< glossary "homogeneity of variance" popup="hover" >}} means the dependent variable has similar variability across groups of the independent variable.
+
+This assumption applies when you are comparing groups on a continuous dependent variable, such as with an independent *t*-test or one-way ANOVA.
+
+It might help to remember that *homo* means same and *hetero* means different. When variances are similar across groups, we have homogeneity of variance. When variances are very different across groups, we have heterogeneity of variance.
+
+::: {.callout-note title="Normality vs. Homogeneity of Variance"}
+Normality is about the shape of the dependent variable's distribution.
+
+Homogeneity of variance is about whether the spread of the dependent variable is similar across groups of the independent variable.
 :::
 
-We can evaluate this assumption in three ways:
+### Checking Homogeneity of Variance
 
-a.  Visualize inspection
+There are three main ways we will check homogeneity of variance in this course:
 
-b.  Comapring variance values
+1. Visualize the distribution of the dependent variable across the groups of the independent variable.
+2. Examine the variance values.
+3. Conduct Levene's test.
 
-c.  Levene's test
+As with normality, these methods should be interpreted together. A graph may show that the group spreads look meaningfully different even before you look at a statistical test. Levene's test may also be statistically significant in larger samples when the practical difference in spread is not very concerning. Use your judgment and be transparent about what you checked.
 
-::: {.callout-note}
-As with normality, these methods may not always agree. Use judgment and justify your decision.
-:::
+#### Method 1: Visualize the Distribution Across Groups
 
-### a. Visual inspection
+The first method is to visualize the distribution of the dependent variable across the groups of the independent variable.
 
 In jamovi:
 
--   Go to **Exploration** and select **Descriptives**
--   Move the DV to the *variables* box
--   Move the IV to the *Split by* box
--   Select boxplot, violin, and/or jittered data
+1. Go to **Exploration → Descriptives**.
+2. Move the continuous dependent variable to the **Variables** box.
+3. Move the categorical independent variable to the **Split by** box.
+4. Select box plot, violin plot, and/or data points.
 
-Interpretation: Large differences in the spread of data visually suggest a violation of the assumption of homogeneity of variance
+Large differences in spread across groups may suggest a violation.
 
-For example, here's an example of data that violates the assumption of homogeneity of variance (gender by mile time) because the variance in scores for females (coded as 1) is a lot wider than the variance in scores for males (0). I am looking at the data points and violin plot to see the spread; the 1 looks wider where as the 0 looks skinnier.
+You practiced this kind of graph in [Visualizing Continuous Variables Across Groups](06.5-visualizing-continuous-variables-across-groups.qmd).
+
+For example, here is an example of data that violates the assumption of homogeneity of variance. The dependent variable is mile duration in minutes, split by gender. The spread of scores for females, coded as 1, is much wider than the spread of scores for males, coded as 0. I am looking at the data points and violin plot to see the spread; the 1 looks wider whereas the 0 looks skinnier.
 
 ![](images/06-inferential/homogeneity.png){width="500"}
 
-### b. Compare variance values
+#### Method 2: Examine the Variance Values
+
+The second method is to compare the variance values across groups.
 
 In jamovi:
 
--   Go to **Exploration** and select **Descriptives**
--   Move the DV to the *variables* box
--   Move the IV to the *Split by* box
--   Under Statistics, select variance
+1. Go to **Exploration → Descriptives**.
+2. Move the dependent variable to the **Variables** box.
+3. Move the grouping variable to the **Split by** box.
+4. Under **Statistics**, select variance.
 
-Interpretation: large differences in variance values suggest a violation of the assumption of homogeneity of variance
+Large differences in variance values suggest a possible violation of the assumption of homogeneity of variance.
 
 Example:
 
--   Male variance in mile duration in minutes: 6796.20
-
--   Female variance in mile duration in minutes: 15401.55
+- Male variance in mile duration in minutes: 6796.20
+- Female variance in mile duration in minutes: 15401.55
 
 Females have 2.26 times greater variance compared to males. Clearly, there is much greater variability for females than males for time it takes to run the mile.
 
-### Levene's test
+#### Method 3: Conduct Levene's Test
+
+The third method is to conduct {{< glossary "Levene's test" popup="hover" >}}. Levene's test is a formal statistical test of homogeneity of variance.
+
+You will often find Levene's test inside the inferential test menu. For example, for a one-way ANOVA, you can select the homogeneity test option.
 
 In jamovi:
 
--   Go to **ANOVA → One-way ANOVA**
--   Move your continuous DV to the Dependent Variables box
--   Move your categorical IV to your Grouping Variable box
--   Check *homogeneity test*
--   Only look at the Levene's test; ignore everything else at this moment
+1. Go to **ANOVA → One-way ANOVA**.
+2. Move your continuous dependent variable to the **Dependent Variables** box.
+3. Move your categorical independent variable to the **Grouping Variable** box.
+4. Check **Homogeneity test**.
+5. Only look at Levene's test for now; ignore the ANOVA results at this moment.
 
 Interpretation:
 
--   p \> .05 → assumption met
--   p \< .05 → violation
+- If *p* > .05, the assumption is generally treated as met.
+- If *p* < .05, the assumption may be violated.
 
-Here's our example of gender on mile duration in minutes. In this case, because the p-value is \< .05, it indicates we violated the assumption of homogeneity of variance.
-
-Here's the result of Levene's test for the effect of gender on mile duration:
+Here is the result of Levene's test for the effect of gender on mile duration:
 
 | Levene's   |     F | df1 | df2 |      p |
 |:-----------|------:|----:|----:|-------:|
-| MileMinDur | 41.33 |   1 | 381 | \<.001 |
+| MileMinDur | 41.33 |   1 | 381 | < .001 |
 
-::: {.callout-note}
-Again, we want non-significant results because the null hypothesis is that variances are equal.
+Because the *p*-value is less than .05, this suggests that we violated the assumption of homogeneity of variance.
+
+::: {.callout-note title="Why do we want Levene's test to be non-significant?"}
+Again, we usually want non-significant results here because the null hypothesis is that the variances are equal across groups.
 :::
 
-## Recapping parametric assumptions
+### If Homogeneity of Variance Is Violated
+
+If homogeneity of variance is violated, the solution depends on the test.
+
+For an independent *t*-test, you may use Welch's *t*-test. For a one-way ANOVA, you may use Welch's ANOVA. These versions adjust for unequal variances.
+
+For repeated-measures designs, the assumption issues are different. For example, repeated-measures ANOVA has an assumption called sphericity. We will discuss that later when we get to ANOVA.
+
+We will return to broader decision-making about violations in [Violated Assumptions](09.3-violated-assumptions.qmd).
+
+## Regression Assumptions
+
+Regression has additional assumptions, including linearity, homoscedasticity, independent errors, and normally distributed residuals. I am not going to teach those in depth here because they will make more sense when you learn regression.
+
+For now, just know that regression is not assumption-free. We will return to regression-specific assumptions in [Correlation and Regression](14.0-correlation-regression.qmd).
+
+## Assumption Checking and Reporting
+
+Assumption checking is not only about choosing the correct test. It also affects what you report.
+
+If assumptions are met, you may simply report the planned test. If an assumption is violated and you use a different test, correction, or non-parametric alternative, readers need to know what you checked and what decision you made.
+
+We will focus more on writing results clearly in [Chapter 10](10.0-writing-results-in-apa-style.qmd).
+
+## Recapping Parametric Assumptions
 
 Let's summarize the four assumptions and generally how to test for them:
 
-1.  **Interval or ratio (i.e., continuous) dependent variable**
-    1.  Know your levels of measurement and make sure the dependent variable is continuous.
-2.  **Independent scores on the dependent variable**
-    1.  Know your research design and how the data was collected. Make sure that one participant's data isn't thought to affect another participant's data.
-3.  **Normal distribution of the dependent variable**
-    1.  Visualize the distribution with a histogram and/or density plot of the dependent variable
-
-    2.  Test the skew and kurtosis by calculating the *z*-scores
-
-    3.  Test using the Shapiro-Wilk test
-
-    4.  Examine the Q-Q plot for deviations from the diagonal line
-4.  **Homogeneity of variances**
-    1.  Visualize the distribution by a boxplot, violin plot, and/or data (jittered recommended) with the dependent variable split by the independent variable
-    2.  Examine the variances of the dependent variable split by the independent variable
-    3.  Test using Levene's test
-
+1. **Continuous dependent variable**
+   - Know your levels of measurement and make sure the dependent variable is continuous.
+2. **Independent scores on the dependent variable**
+   - Know your research design and how the data were collected. Make sure that one participant's data is not thought to affect another participant's data.
+3. **Normal distribution of the dependent variable**
+   - Visualize the distribution with a histogram and/or density plot of the dependent variable.
+   - Test the skew and kurtosis by calculating the *z*-scores.
+   - Test using the Shapiro-Wilk test.
+   - Examine the Q-Q plot for deviations from the diagonal line.
+4. **Homogeneity of variance**
+   - Visualize the distribution with a box plot, violin plot, and/or data points, with the dependent variable split by the independent variable.
+   - Examine the variances of the dependent variable split by the independent variable.
+   - Test using Levene's test.
 
 ::: {.callout-tip title="Check Your Understanding"}
-1.  Why is it important to check assumptions before running inferential tests?
-
-2.  Which assumptions are determined conceptually (not tested statistically)?
-
-3.  For normality, do we want statistically significant or non-significant results? Why?
-
-4.  What does Levene’s test evaluate?
-
-5.  What does it mean if data are “nested”?
+1. Which assumptions are determined conceptually rather than tested statistically?
+2. What are the four ways we check normality in this course?
+3. For normality, do we usually want statistically significant or non-significant Shapiro-Wilk results? Why?
+4. What are the three ways we check homogeneity of variance in this course?
+5. What does Levene's test evaluate?
 :::
 
-::: {.callout-tip collapse="true" title="Answers"}
-1.  Because violations can lead to incorrect or misleading conclusions
-
-2.  Continuous DV and independence
-
-3.  Non-significant results, because the null hypothesis is that the data are normally distributed
-
-4.  Whether variances are equal across groups
-
-5.  Data where participants are grouped (e.g., classrooms), making them more similar within groups than expected
+::: {.callout-note collapse="true" title="Suggested Answers"}
+1. Continuous dependent variable and independence are determined conceptually. They depend on the variable type, study design, and data structure.
+2. We visualize the distribution, test skew and kurtosis, conduct a Shapiro-Wilk test, and visualize the Q-Q plot.
+3. We usually want non-significant Shapiro-Wilk results because the null hypothesis is that the data are normally distributed.
+4. We visualize the distribution of the dependent variable across groups, examine the variance values, and conduct Levene's test.
+5. Levene's test evaluates whether variances are equal across groups.
 :::
-
-## Looking ahead
-
-In this section, we focused on identifying and evaluating assumptions.
-
-In the next section, we will answer a critical question:
-
-> What should we do when these assumptions are violated?

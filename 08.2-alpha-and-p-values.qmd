@@ -1,208 +1,90 @@
 # 8.2 Alpha and p-values {.unnumbered}
 
-In Chapter 7, we introduced p-values and alpha as part of hypothesis testing. In that context, p-values helped us determine whether a result was statistically significant.
+Chapter 7 introduced {{< glossary "p-value" popup="hover" >}}s as part of hypothesis testing. In this section, we slow down and talk more carefully about what *p*-values mean, what {{< glossary "alpha level" popup="hover" >}} means, and why both are so easy to misuse.
 
-In this section, we revisit these ideas and place them within the broader BEAN framework.
+## What Is a p-value?
 
+A *p*-value is the probability of observing data as extreme as, or more extreme than, the data you observed, **assuming the null hypothesis is true**.
 
-## What are p-values?
+There are two key pieces of that definition:
 
-Whereas effect sizes tell us about *practical* significance, they do not tell us about *statistical* significance. That is what *p*-values are for: they tell us whether our results are *statistically* significant or how surprising they are.
+1. The *p*-value is about the probability of the **data**, not the probability of the hypothesis.
+2. The *p*-value is calculated assuming the **null hypothesis is true**.
 
-The formal definition of a ***p*-value** is that it is the probability of observing data that is as extreme or more extreme than the data you have observed, **assuming the null hypothesis is true**.
+Another way to say this is:
 
-There are two important things to keep in mind about this definition:
+> If there really were no effect, no difference, or no relationship, how surprising would these data be?
 
-1. The p-value is about the **probability of our data**. It is not about the probability of our hypothesis.  
-2. The p-value is **based on the assumption that the null hypothesis is true**. 
-
-::: {.callout-note}
-In APA style, we report the exact p-values rounded to three decimal places. In your jamovi settings, you can set the statistical significant reporting to "3dp" to satisfy APA requirements.
-:::
-
-Another way we could think of the *p*-value is: assuming there is no difference (i.e., the null hypothesis is true), how surprising is our data?
+The smaller the *p*-value, the more surprising the data are under the null hypothesis.
 
 ![](images/05-bean/notawful_jess_hartnett.jpeg)
 
-## Common misconceptions about p-values
+## What Is Alpha?
 
-You may have heard of *p*-values before, including some bad things. The biggest problem with *p*-values is that they are misunderstood, even by researchers.
+Alpha is the threshold we set for deciding whether a result counts as statistically significant. In many studies, alpha is set at .05.
 
-Common misconceptions about p-values (by Daniel Lakens):
+If *p* < α, we reject the null hypothesis.
 
-- A non-significant *p*-value means the null hypothesis is true ❌  
-- A significant *p*-value means the null hypothesis is false ❌  
-- A significant *p*-value means the effect is practically important ❌  
-- A significant *p*-value means there is only a 5% chance of being wrong ❌  
+If *p* > α, we fail to reject the null hypothesis.
 
-These are misconceptions because *p*-values only tell us about the probability of our data under the null hypothesis—not whether the null or alternative hypothesis is true.
+Alpha is also the Type I error rate we are willing to tolerate **if the null hypothesis is true**. If we set alpha at .05, then we are saying that, in the long run, we are willing to incorrectly reject a true null hypothesis about 5% of the time.
 
-We never truly know whether the null hypothesis is true, and we can always be making a Type I or Type II error.
+That does not mean there is a 5% chance that this specific result is wrong. That is one of the common misunderstandings.
 
-::: {.callout-note}
-These misconceptions come from the great work done by Daniel Lakens. You can read his [blog post](http://daniellakens.blogspot.com/2017/12/understanding-common-misconceptions.html) on the topic or take a great [online course](https://www.coursera.org/learn/statistical-inferences) about improving your statistical inferences. He also has a great article that "[The Practical Alternative to the *p* Value Is the Correctly Used *p* Value](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8114329/#:~:text=Some%20journals%2C%20such%20as%20Basic,Trafimow%20%26%20Marks%2C%202015)."
+## Common Misconceptions About p-values
+
+People talk about *p*-values all the time, and not always carefully. Here are some common misconceptions:
+
+| Misconception | Why it is wrong |
+|---|---|
+| A non-significant *p*-value means the null hypothesis is true. | We failed to find enough evidence against the null; we did not prove the null. |
+| A significant *p*-value means the null hypothesis is false. | We rejected the null, but we could still be making a Type I error. |
+| A significant *p*-value means the effect is practically important. | Practical importance depends on context and effect size. |
+| A significant *p*-value means there is only a 5% chance we are wrong. | Alpha is a long-run error rate, not the probability this specific result is wrong. |
+
+The recurring theme is this: *p*-values tell us about how surprising the data are under the null hypothesis. They do not tell us whether the null or alternative hypothesis is true.
+
+::: {.callout-note collapse="true" title="Where These Misconceptions Come From"}
+This discussion is strongly influenced by Daniel Lakens' work on statistical inference. His resources on p-value misconceptions are helpful if you want a deeper explanation of why these interpretations are wrong and why they persist.
 :::
 
+## Are p-values Bad?
 
-## Are p-values bad?
+You may have heard people say that *p*-values are bad, unreliable, or should be abandoned.
 
-::: {.callout-note}
-Many criticisms of p-values reflect misunderstandings of what they are designed to do. They do not confirm hypotheses—they help evaluate how surprising data are under the null hypothesis.
+I understand where that frustration comes from. *p*-values are misunderstood constantly. People use them as if they prove hypotheses, measure practical importance, or give the probability that a finding is true. They do not do any of those things.
+
+But I do not think the *p*-value itself is the villain.
+
+The problem is often that researchers want *p*-values to do something they were never designed to do. NHST does not confirm hypotheses. It helps us decide whether our data are surprising enough under the null hypothesis to reject the null.
+
+That is useful, but limited.
+
+::: {.callout-note collapse="true" title="Why Do People Argue About p-values?"}
+Some journals and scholars have argued that p-values should be abandoned because they are so often misused. Others argue that the better solution is to use p-values correctly and report them alongside effect sizes, confidence intervals, good design, transparent methods, and replication.
+
+My view is closer to the second position. The p-value can be useful when we are clear about what it does and does not tell us.
 :::
 
-Some researchers have argued that we should abandon *p*-values entirely. For example, the journal *Basic and Applied Social Psychology* banned their use.
+## Why .05?
 
-However, as Lakens argues:
+Why is alpha often set at .05?
 
-> “The practical alternative to the *p*-value is the correctly used *p*-value.”
+Mostly because of tradition. The .05 threshold became common because it was convenient: it corresponds roughly to the most extreme 5% of values under a reference distribution. Over time, that convenience hardened into convention.
 
-There is nothing inherently wrong with *p*-values. The problem is how they are often used and interpreted.
+But .05 is not magic.
 
-::: {.callout-note}
+In this course, unless stated otherwise, we will usually use α = .05. In real research, you should think carefully about whether .05 is appropriate. If false positives would be especially costly, you may want a lower alpha. If missing a real effect would be especially costly, you may want higher power.
 
-The journal Basic and Applied Social Psychology banned the use of p-values, claiming that NHST is invalid. Instead, they want researchers to focus on effect sizes and appropriate power analyses. Although these are laudable attempts--I agree that researchers should have highly powered studies and focus more on practical significance over statistical significance--I agree more with researchers like Daniel Lakens who point out that the problem is researchers want NHST to do what it does not do. They want statistical procedures that can confirm a hypothesis, which NHST cannot do. While larger samples and a focus on effect sizes can help, we should trust NHST to do what it can do, which is to tell us about the probability of the surprisingness of our data if the null hypothesis is true. 
-Read more about the journal's statement here: https://www.tandfonline.com/doi/full/10.1080/01973533.2015.1012991
-:::
+That is another BEAN connection: alpha does not operate alone. It affects power and error rates.
 
+## Alpha as Part of BEAN
 
-## Alpha: What counts as “surprising”?
+Lowering alpha makes it harder to reject the null hypothesis. That reduces the risk of Type I errors, but it can also reduce power if everything else stays the same.
 
-The *p*-value tells us how surprising our data are—but how surprising is *surprising enough*?
+Holding effect size and sample size constant:
 
-That is where **alpha (α)** comes in. Alpha determines the **critical region of significance**—the threshold at which we decide to reject the null hypothesis.
+- Lower alpha → fewer false positives, but lower power
+- Higher alpha → more power, but more false positives
 
-```{r echo = FALSE, warning=FALSE, message=FALSE, fig.cap="Critical area of statistical significance"}
-library(tidyverse)
-library(viridis)
-
-ggplot(data.frame(x = c(-3.3, 3.3)), aes(x = x)) +
-  stat_function(fun = dnorm, args = list(mean = 0, sd = 1)) +
-  stat_function(fun = dnorm, args = list(mean = 0, sd = 1),
-                xlim = c(1.645, 3.2), geom = "area", fill = "darkred") +
-  geom_vline(xintercept = 1.645, colour = "darkred") + 
-  geom_text(aes(x = 1.8, y = .25, label = "Critical value (alpha)"), 
-            angle = 90, color = "darkred") +
-  geom_vline(xintercept = 0, colour = "black") +
-  geom_text(aes(x = .15, y = .25, label = "Mean difference = 0"),
-            angle = 90, color = "black") + 
-  # geom_text(aes(x = 8.8, y = .15, label = "Calculated-value = 8.44"), 
-  #           angle = 90) +
-  # geom_vline(xintercept = 8.44) + 
-  theme_void() +
-  scale_color_viridis(discrete = TRUE) +
-  scale_y_continuous(expand = c(0,0)) +
-  scale_x_continuous(limits = c(-3.5, 3.5)) + 
-  ylab(element_blank()) +
-  xlab(element_blank())
-```
-
-The alpha level represents the point at which we say:
-
-> “This result is so unlikely under the null hypothesis that we will reject it.”
-
-
-## Why is alpha usually .05?
-
-The .05 threshold comes from Fisher (1925), who suggested it as a convenient cutoff (roughly 1 in 20, or about 2 standard deviations from the mean). More specifically, he said:
-
-> A deviation exceeding the standard deviation occurs about once in three trials. Twice the standard deviation is exceeded only about once in 22 trials, thrice the standard deviation only once in 370 trials.... The value for which P = .05, or 1 in 20, is 1.96 or nearly 2 ; it is convenient to take this point as a limit in judging whether a deviation is to be considered significant or not. Deviations exceeding twice the standard deviation are thus formally regarded as significant.
-
-However, this value is largely a **historical convention**, not a universal rule. Basically, .05 was convenient. It was 1/20. It was around 2 standard deviations from the mean in a normal distribution. For some reason, it caught on (maybe the "formally regarded as significant" was why).
-
-Even Fisher later argued that researchers should think critically about alpha and, in some cases, use stricter thresholds (e.g., .01).
-
-::: {.callout-note}
-If you want to read more, this is a short read on the history of the .05 alpha level: <https://www2.psych.ubc.ca/~schaller/528Readings/CowlesDavis1982.pdf>
-:::
-
-
-## Choosing an alpha level
-
-In this course, we typically use α = .05.
-
-In practice, however, choosing alpha involves tradeoffs:
-
-- Lower alpha → fewer false positives (Type I errors)  
-- Higher alpha → greater ability to detect effects (higher power)  
-
-If you are more concerned about false positives, you might lower alpha.  
-If you are more concerned about missing real effects, you might prioritize power.
-
-Researchers should justify their alpha level rather than relying on defaults.
-
-::: {.callout-note}
-What does this look like in practice? In a Psi Chi article by [Kobza and Salter (2016)](https://www.psichi.org/page/212JNSummer2016#.Y7odwOzMI0Q), they stated, "Due to the high number of statistical tests conducted, a lower *p* value (.01) was used to determine significance." (p. 75).
-:::
-
-
-### How do I know what alpha researchers are using?
-
-Ideally, all researchers should be reporting their alpha values in all their publications. For example, in a Psi Chi article by [Campero-Oliart and colleagues (2020)](https://www.psichi.org/page/251JNSpring2020?&hhsearchterms=%22effects+and+conversation#.Y7oeTezMI0Q), they stated, "Alpha levels for all analyses were set to .05." (p. 47).
-
-In reality, we typically don't report anything and assume a default of .05 without explicitly stating so (and yes, I am also guilty of this). However, you should always be thinking critically of your alpha value and, if you are using something other than .05, you should explain what level you choose and why.
-
-
-## Alpha and p-values within BEAN
-
-Within BEAN, alpha and p-values interact with the other components in important ways:
-
-- **Alpha ↔ Power**: Lower alpha makes it harder to detect effects (reduces power)  
-- **Alpha ↔ Effect size**: Smaller effects are harder to detect under stricter alpha levels  
-- **Alpha ↔ Sample size**: Larger samples may be needed when using stricter alpha levels  
-
-Alpha is not just a threshold—it directly affects our ability to detect effects.
-
-
-## A practical takeaway
-
-When interpreting results, it is not enough to ask:
-
-> “Is p < .05?”
-
-We should also ask:
-
-- How large is the effect?  
-- How much data was collected?  
-- Was the study sufficiently powered?  
-
-This is why p-values should always be interpreted alongside the other components of BEAN.
-
-
-## Videos and resources
-
-The following [video](https://www.youtube.com/watch?v=v1GrXJmUkBw) walks through some of the effect sizes, alpha, and power stuff.
-
-```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
-library(vembedr)
-embed_url("https://www.youtube.com/watch?v=v1GrXJmUkBw")
-```
-
-You might also like this [chapter](https://lakens.github.io/statistical_inferences/01-pvalue.html) or [video](https://www.youtube.com/watch?v=RVxHlsIw_Do) on p-values by Daniel Lakens.
-
-```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
-library(vembedr)
-embed_url("https://www.youtube.com/watch?v=RVxHlsIw_Do")
-```
-
-Another video recommended by a student is this one from zedstatistics on [p-values](https://www.youtube.com/watch?v=4XfTpkGe1Kc).
-
-```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
-library(vembedr)
-embed_url("https://www.youtube.com/watch?v=4XfTpkGe1Kc")
-```
-
-::: {.callout-tip title="Check Your Understanding"}
-1. What does a p-value represent?  
-2. Why is it incorrect to say a p-value is the probability that the null hypothesis is true?  
-3. How does lowering alpha affect power?  
-4. Why can a small effect become statistically significant with a large sample size?  
-5. Why should p-values not be interpreted in isolation?
-:::
-
-::: {.callout-tip collapse="true" title="Answers"}
-1. The probability of observing the data (or more extreme) assuming the null hypothesis is true  
-2. Because p-values describe the probability of the data, not the hypothesis  
-3. It decreases power, making effects harder to detect  
-4. Because larger samples increase the ability to detect small effects  
-5. Because they depend on effect size, sample size, and alpha  
-:::
+This is why alpha should be a decision, not just a default we apply without thinking.

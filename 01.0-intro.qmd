@@ -57,9 +57,10 @@ This book is meant to be used as an online resource, not just read straight thro
 
 A few features may help:
 
--   Use the sidebar or table of contents to jump between chapters and sections.
+-   Use the main table of contents on the left to jump between chapters and sub-chapters.
+-   Within each chapter, there is a smaller table of contents on the right that allows you to jump between sections within each chapter or sub-chapter.
 -   Use the search feature when you are trying to find a specific term, test, or *jamovi* step.
--   Use the previous and next buttons when you are working through chapters in order.
+-   Use the previous and next buttons at the bottom when you are working through chapters in order.
 -   Adjust your browser zoom or display settings if that makes the book easier to read.
 
 My recommendation is to keep this book open while you work in *jamovi*. When you get stuck, search the book first, then go back to the relevant section and compare your screen to the example.

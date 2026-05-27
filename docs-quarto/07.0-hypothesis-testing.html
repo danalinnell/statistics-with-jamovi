@@ -45,6 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -416,8 +417,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Recap, Common Mistakes, and Looking Ahead</span></a>
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -434,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.1 Effect Sizes</span></a>
+ <span class="menu-text">8.1 Effect Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -452,7 +453,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.4 Sample Size and Power Analysis</span></a>
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -509,8 +516,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10.3-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10.3 Common APA-Style Errors</span></a>
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -728,9 +747,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#one-process-many-tests" id="toc-one-process-many-tests" class="nav-link active" data-scroll-target="#one-process-many-tests">One process, many tests</a></li>
-  <li><a href="#running-example-bobo-doll-replication" id="toc-running-example-bobo-doll-replication" class="nav-link" data-scroll-target="#running-example-bobo-doll-replication">Running example: Bobo doll replication</a></li>
-  <li><a href="#what-you-will-learn" id="toc-what-you-will-learn" class="nav-link" data-scroll-target="#what-you-will-learn">What you will learn</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#the-four-step-process" id="toc-the-four-step-process" class="nav-link" data-scroll-target="#the-four-step-process">The Four-Step Process</a></li>
+  <li><a href="#our-running-example" id="toc-our-running-example" class="nav-link" data-scroll-target="#our-running-example">Our Running Example</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
@@ -756,80 +776,85 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In previous chapters, we focused on understanding, describing, visualizing, and cleaning our data. These steps are essential—but they are not the end goal.</p>
-<p>Often, we want to go one step further:</p>
+<p>Up to this point, we have focused on understanding the data we have: what variables were measured, how those variables are set up, whether they need to be cleaned, how to describe them, and how to visualize them.</p>
+<p>Those steps are always the starting point. Now we are ready to ask a different kind of question:</p>
 <blockquote class="blockquote">
-<p>Can we use our sample data to make conclusions about a larger population?</p>
+<p>What can these data tell us beyond this sample?</p>
 </blockquote>
-<p>This is the goal of <strong>inferential statistics</strong>.</p>
-<p>In Chapter 2, we introduced the distinction between:</p>
-<ul>
-<li><strong>Descriptive statistics</strong>: summarize our sample</li>
-<li><strong>Inferential statistics</strong>: make conclusions about a population s In this chapter, we introduce the logic of <strong>hypothesis testing</strong>, also known as <strong>null hypothesis significance testing (NHST)</strong>.</li>
-</ul>
-<section id="one-process-many-tests" class="level2">
-<h2 class="anchored" data-anchor-id="one-process-many-tests">One process, many tests</h2>
-<p>Although there are many statistical tests (t-tests, ANOVAs, correlations, etc.), they all follow the same basic process:</p>
-<ol type="1">
-<li><strong>Look at the data</strong></li>
-<li><strong>Check assumptions</strong></li>
-<li><strong>Perform the test</strong></li>
-<li><strong>Interpret the results</strong></li>
-</ol>
-<blockquote class="blockquote">
-<p>This 4-step framework will be used in <em>every inferential statistics chapter moving forward</em>.</p>
-</blockquote>
-<p>Each test differs in <em>how</em> we perform Step 3 and what assumptions we check in Step 2—but the overall logic stays the same.</p>
-</section>
-<section id="running-example-bobo-doll-replication" class="level2">
-<h2 class="anchored" data-anchor-id="running-example-bobo-doll-replication">Running example: Bobo doll replication</h2>
-<p>Let’s walk through this process using a hypothetical example.</p>
-<p>Imagine a researcher wants to replicate Albert Bandura’s famous <strong>Bobo doll experiment</strong>. In this replication study, the researcher randomly assigns 30 six-year-old children to one of two conditions:</p>
-<ul>
-<li>One group watches a video of an adult behaving <strong>aggressively</strong> toward a Bobo doll</li>
-<li>The other group watches a video of an adult playing <strong>passively</strong> with the Bobo doll</li>
-</ul>
-<p>After watching their assigned video, children are placed in the same room with a Bobo doll. Researchers then observe and record the children’s <strong>aggressive behaviors</strong>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>That is where <button class="glossary" title="Statistics used to make inferences from a sample to a larger population.">inferential statistics</button> come in. In this chapter, we will introduce the logic of <button class="glossary" title="A statistical decision-making framework that evaluates how surprising the data are assuming the null hypothesis is true.">null hypothesis significance testing</button>, or NHST. You do not need to master every statistical test yet. Instead, this chapter gives you the decision-making framework that will repeat throughout the rest of the book.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Big Picture">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Big Picture
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The original study design was more complex than this simplified version. It accounted for factors like baseline aggression and gender. If you are interested, you can read more here: <a href="https://www.simplypsychology.org/bobo-doll.html" class="uri">https://www.simplypsychology.org/bobo-doll.html</a></p>
+<p>Hypothesis testing is not about proving that a hypothesis is true. It is about evaluating whether the data are surprising enough, assuming the <button class="glossary" title="A hypothesis usually stating that there is no effect, no difference, or no relationship.">null hypothesis</button> is true, that we are willing to reject the null hypothesis.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This example is an instance of an <strong>independent samples t-test</strong> (comparing two groups on a continuous outcome).</p>
-<p>You are not expected to fully understand this test yet—we will return to it in a later chapter. For now, focus on the overall process of hypothesis testing.</p>
-</div>
-</div>
-</section>
-<section id="what-you-will-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-you-will-learn">What you will learn</h2>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <p>By the end of this chapter, you should be able to:</p>
 <ul>
-<li>Understand the logic of hypothesis testing</li>
-<li>Apply the 4-step framework</li>
-<li>Interpret p-values and statistical significance</li>
-<li>Understand effect size and power at a conceptual level</li>
+<li>describe the purpose of null hypothesis significance testing;</li>
+<li>explain the four-step hypothesis-testing process used throughout this book;</li>
+<li>identify the independent variable, dependent variable, and design in a study;</li>
+<li>write plain-language null and alternative hypotheses;</li>
+<li>distinguish between directional and non-directional hypotheses;</li>
+<li>explain the basic role of assumptions, alpha, p-values, effect sizes, and power;</li>
+<li>interpret hypothesis-testing results using reject or fail-to-reject language; and</li>
+<li>describe what NHST can and cannot tell us.</li>
 </ul>
-<blockquote class="blockquote">
-<p>This chapter provides the foundation for all inferential statistics you will learn next.</p>
-</blockquote>
+</section>
+<section id="the-four-step-process" class="level2">
+<h2 class="anchored" data-anchor-id="the-four-step-process">The Four-Step Process</h2>
+<p>Each inferential statistic we learn in this book follows the same general process:</p>
+<ol type="1">
+<li>Look at the data.</li>
+<li>Check assumptions.</li>
+<li>Perform the test.</li>
+<li>Interpret the results.</li>
+</ol>
+<p>The details change depending on the test. A chi-square test, t-test, ANOVA, correlation, and regression all have different procedures and different output. But the overall process is the same.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="A Handout You Will Use Again">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>A Handout You Will Use Again
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I created a four-page handout that summarizes this process across the inferential statistics covered in this book: <a href="Statistics with jamovi - Overarching handout.pdf">Statistics with jamovi - Overarching handout</a>.</p>
+<p>I recommend saving it and returning to it as you move through the inferential statistics chapters. The handout is the quick reference. This chapter explains the logic behind it.</p>
+</div>
+</div>
+</section>
+<section id="our-running-example" class="level2">
+<h2 class="anchored" data-anchor-id="our-running-example">Our Running Example</h2>
+<p>To make the logic concrete, we will use a simplified example inspired by Bandura’s classic Bobo doll studies.</p>
+<p>Imagine a researcher randomly assigns children to one of two conditions:</p>
+<ul>
+<li>In one condition, children watch a video of an adult behaving aggressively toward a Bobo doll.</li>
+<li>In the other condition, children watch a video of an adult playing calmly with a Bobo doll.</li>
+</ul>
+<p>Afterward, the children are observed while playing in a room with a Bobo doll. The researcher records the number of aggressive behaviors each child shows.</p>
+<p>This is a useful example because it has the pieces we need for hypothesis testing:</p>
+<ul>
+<li>an independent variable: the type of video the child watched;</li>
+<li>a dependent variable: the number of aggressive behaviors observed;</li>
+<li>two independent groups; and</li>
+<li>a research question about whether the groups differ.</li>
+</ul>
+<p>You do not need to understand the specific statistical test yet. Later, we will learn that this kind of design can be analyzed with an independent-samples t-test. For now, we are using the example to understand the logic of hypothesis testing.</p>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next sections walk through the four steps one at a time. As you read, focus less on memorizing vocabulary and more on understanding the process. Every inferential test you learn later will use this same basic structure.</p>
 
 
 </section>

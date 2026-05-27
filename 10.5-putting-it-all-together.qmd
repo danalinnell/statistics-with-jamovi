@@ -1,0 +1,136 @@
+# 10.5 Putting It All Together {.unnumbered}
+
+Writing statistical results takes practice. You are learning both the logic of the analysis and the language used to communicate it.
+
+This section gives you a checklist and some revision practice.
+
+## Results Writing Checklist
+
+Before submitting a results write-up, ask yourself:
+
+- Did I state the research question or hypothesis?
+- Did I describe the relevant data?
+- Did I report the correct inferential test?
+- Did I include the test statistic and degrees of freedom when relevant?
+- Did I report the *p*-value correctly?
+- Did I include an effect size when available?
+- Did I interpret the result in plain language?
+- Did I avoid saying "prove," "accept the null," or "no difference" when that is too strong?
+- Did I report descriptive statistics in text, a table, or a figure when needed?
+- Did I refer to any tables or figures by number?
+- Did I check italics, decimals, leading zeros, and parentheses?
+- Did I read the sentence without the parentheses to make sure it still makes sense?
+
+## Practice: What's Wrong?
+
+For each example below, read the weak write-up and identify what needs revision before opening the suggested answer.
+
+### Practice 1
+
+::: {.callout-tip title="Practice: What Needs Revision?"}
+The p-value was significant, *p* = 0.000, so the hypothesis was proven.
+:::
+
+::: {.callout-note collapse="true" title="Suggested Answer"}
+Several things need revision:
+
+- Do not say the *p*-value was significant; say the result or test was statistically significant.
+- Report *p* < .001, not *p* = 0.000.
+- Do not say the hypothesis was proven.
+- The sentence does not explain the research question, variables, or direction of the result.
+
+A stronger version would depend on the specific analysis, but it might look like this:
+
+> The result was statistically significant, *p* < .001, supporting the hypothesis that students who used practice testing would score higher than students who used rereading.
+:::
+
+### Practice 2
+
+::: {.callout-tip title="Practice: What Needs Revision?"}
+There was no difference between the two groups, *t* (31) = 1.20, *p* = 0.239.
+:::
+
+::: {.callout-note collapse="true" title="Suggested Answer"}
+Several things need revision:
+
+- Use *t*(31), not *t* (31).
+- Report *p* = .239, not *p* = 0.239.
+- Do not say there was "no difference" based only on a non-significant result.
+- Include descriptive statistics if this is a full write-up.
+
+A stronger version would be:
+
+> The difference between the two groups was not statistically significant, *t*(31) = 1.20, *p* = .239. Therefore, we failed to reject the null hypothesis.
+
+If this were a full results paragraph, you would also include the group means and standard deviations.
+:::
+
+### Practice 3
+
+::: {.callout-tip title="Practice: What Needs Revision?"}
+The correlation proved that studying causes better exam scores, *r* = .42, *p* = .001.
+:::
+
+::: {.callout-note collapse="true" title="Suggested Answer"}
+The biggest problem is causal language. A correlation does not prove that one variable causes another.
+
+A stronger version would be:
+
+> Study time was significantly and positively correlated with exam scores, *r*(58) = .42, *p* = .001. Students who studied more tended to have higher exam scores.
+
+This version reports the direction of the relationship and avoids overclaiming causality.
+:::
+
+### Practice 4
+
+::: {.callout-tip title="Practice: What Needs Revision?"}
+There was a significant ANOVA, *F*(2, 87) = 5.64, *p* = .005.
+:::
+
+::: {.callout-note collapse="true" title="Suggested Answer"}
+This is incomplete:
+
+- It does not identify the dependent variable or groups.
+- It does not include descriptive statistics.
+- It does not include an effect size.
+- It does not interpret what the significant ANOVA means.
+- If there are more than two groups, it does not identify which groups differ.
+
+A stronger version might be:
+
+> Exam scores differed significantly across study strategy groups, *F*(2, 87) = 5.64, *p* = .005, η² = .12. Mean exam scores were highest for the practice testing group (*M* = 84.20, *SD* = 7.90), followed by the spacing group (*M* = 80.15, *SD* = 8.35) and the rereading group (*M* = 75.40, *SD* = 9.10). Post hoc comparisons would be needed to determine which groups differed significantly from each other.
+:::
+
+### Practice 5
+
+::: {.callout-tip title="Practice: What Needs Revision?"}
+I made a graph below. It shows the results.
+:::
+
+::: {.callout-note collapse="true" title="Suggested Answer"}
+This does not follow APA-style guidance for referring to figures.
+
+A stronger version would be:
+
+> Group differences in exam scores are shown in Figure 1.
+
+Or, if interpreting the figure:
+
+> As shown in Figure 1, exam scores were highest in the practice testing group and lowest in the rereading group.
+
+Avoid referring to "the graph below" because the location of the figure may change.
+:::
+
+## Final Advice
+
+The best statistical writing is clear, complete, and appropriately cautious. You are not trying to sound fancy. You are trying to help the reader understand what you asked, what you found, and what the result means.
+
+As you move into the test-specific chapters, keep returning to this structure:
+
+1. What was the research question?
+2. What did the data look like?
+3. What test did you run?
+4. What did the result show?
+5. What does that mean in plain language?
+
+That structure will serve you well across the rest of the book.

@@ -34,7 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./09.1-choosing-the-correct-test.html" rel="next">
-<link href="./08.4-sample-size-and-power-analysis.html" rel="prev">
+<link href="./08.5-putting-it-all-together.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -45,6 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -416,8 +417,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Recap, Common Mistakes, and Looking Ahead</span></a>
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -434,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.1 Effect Sizes</span></a>
+ <span class="menu-text">8.1 Effect Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -452,7 +453,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.4 Sample Size and Power Analysis</span></a>
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -509,8 +516,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10.3-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10.3 Common APA-Style Errors</span></a>
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -729,8 +748,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#types-of-inferential-statistics" id="toc-types-of-inferential-statistics" class="nav-link active" data-scroll-target="#types-of-inferential-statistics">Types of inferential statistics</a></li>
+  <li><a href="#how-this-fits-with-the-4-step-process" id="toc-how-this-fits-with-the-4-step-process" class="nav-link" data-scroll-target="#how-this-fits-with-the-4-step-process">How this fits with the 4-step process</a></li>
   <li><a href="#what-this-chapter-will-cover" id="toc-what-this-chapter-will-cover" class="nav-link" data-scroll-target="#what-this-chapter-will-cover">What this chapter will cover</a></li>
-  <li><a href="#connecting-back-to-the-4-step-framework" id="toc-connecting-back-to-the-4-step-framework" class="nav-link" data-scroll-target="#connecting-back-to-the-4-step-framework">Connecting back to the 4-step framework</a></li>
   <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking ahead</a></li>
   </ul>
 </nav>
@@ -757,73 +776,62 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In Chapter 7, we introduced the framework for hypothesis testing, and in Chapter 8, we explored the key components that influence our ability to detect effects (BEAN: power, effect size, alpha, and sample size).</p>
-<p>At this point, you may be wondering:</p>
-<blockquote class="blockquote">
-<p><em>How do I actually choose which statistical test to use?</em></p>
-</blockquote>
-<p>That is the focus of this chapter.</p>
-<p>There are many different inferential statistical tests, and each is designed to answer a specific type of research question. Choosing the correct test depends on:</p>
-<ul>
-<li>the type of variables you are working with<br>
-</li>
-<li>the structure of your data<br>
-</li>
-<li>the assumptions of the statistical test</li>
-</ul>
+<p>In <a href="./07.0-hypothesis-testing.html">Chapter 7</a>, you learned the basic logic of <button class="glossary" title="A statistical decision-making framework that evaluates how surprising the data are assuming the null hypothesis is true.">null hypothesis significance testing</button>. In <a href="./08.0-bean.html">Chapter 8</a>, you learned why beta/power, <button class="glossary" title="A statistic that describes the size or strength of an effect, difference, or relationship.">effect size</button>, <button class="glossary" title="The threshold researchers set for deciding whether a result counts as statistically significant, often .05.">alpha level</button>, and <button class="glossary" title="The number of observations or participants in a study.">sample size</button> all matter.</p>
+<p>Now we need to answer two very practical questions:</p>
+<ol type="1">
+<li>Which inferential statistic should I use?</li>
+<li>Do the data meet the assumptions for that statistic?</li>
+</ol>
+<p>That is the purpose of this chapter. This chapter is less about memorizing a list of tests and more about learning how to make a decision. When you are handed a dataset, you need to be able to slow down, identify the variables, think about the design, check the assumptions, and then choose the statistical test that fits the research question.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="For Dana's Students">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>For Dana’s Students
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In my courses, you will probably use this chapter in two different ways. When we first discuss BEAN and power, you will focus more on the assumption-checking material. Later, when we move into inferential statistics, you will return to this chapter to practice choosing the correct statistical test.</p>
+<p>That is intentional. Choosing a test and checking assumptions are connected, but they are different skills. It is normal if this chapter feels like one you return to more than once.</p>
+</div>
+</div>
 <section id="types-of-inferential-statistics" class="level2">
 <h2 class="anchored" data-anchor-id="types-of-inferential-statistics">Types of inferential statistics</h2>
-<p>Broadly, inferential tests can be grouped into two categories:</p>
+<p>There are many inferential statistical tests, but a helpful starting distinction is between <button class="glossary" title="Statistical tests that make assumptions about the data, such as assumptions about normality, variance, or the scale of the dependent variable.">parametric statistics</button> and <button class="glossary" title="Statistical tests that generally make fewer assumptions about the shape of the distribution than parametric tests.">non-parametric statistics</button>.</p>
+<p><strong>Parametric statistics</strong> make assumptions about the data. For example, many parametric tests assume the dependent variable is continuous, observations are independent, the data are reasonably normal, and variances are similar across groups.</p>
+<p><strong>Non-parametric statistics</strong> generally make fewer assumptions about the shape of the distribution. They are not assumption-free, but they are often useful when parametric assumptions are not reasonable.</p>
+<p>Here is the important thing: non-parametric tests are not the “bad” tests or the “backup” tests in a shameful way. They are tools. Sometimes the parametric tool is appropriate. Sometimes the non-parametric tool is more appropriate. Our job is to understand the data well enough to make a defensible choice.</p>
+</section>
+<section id="how-this-fits-with-the-4-step-process" class="level2">
+<h2 class="anchored" data-anchor-id="how-this-fits-with-the-4-step-process">How this fits with the 4-step process</h2>
+<p>This chapter connects directly to the 4-step hypothesis-testing framework from <a href="./07.0-hypothesis-testing.html">Chapter 7</a>:</p>
 <ol type="1">
-<li><strong>Parametric statistics</strong>: Assume certain characteristics about the data (e.g., normality)<br>
-</li>
-<li><strong>Non-parametric statistics</strong>: Make fewer or different assumptions about the data</li>
+<li><a href="./07.1-step-1-look-at-the-data.html">Look at the data</a>.</li>
+<li><a href="./07.2-step-2-check-assumptions.html">Check assumptions</a>.</li>
+<li><a href="./07.3-step-3-perform-the-test.html">Perform the test</a>.</li>
+<li><a href="./07.4-step-4-interpret-the-results.html">Interpret the results</a>.</li>
 </ol>
-<p>These distinctions will become important when deciding which test is appropriate and what to do when assumptions are not met.</p>
+<p>Choosing the correct test mostly depends on Step 1. You need to know the research question, the variables, and the study design. Checking assumptions is Step 2. If the assumptions are not reasonable, that affects Step 3 because you may need to choose a different version of the test or a different test altogether.</p>
 </section>
 <section id="what-this-chapter-will-cover" class="level2">
 <h2 class="anchored" data-anchor-id="what-this-chapter-will-cover">What this chapter will cover</h2>
-<p>In this chapter, we focus on three key skills:</p>
-<ol type="1">
-<li><strong>Choosing the correct inferential test</strong>
+<p>By the end of this chapter, you should be able to:</p>
 <ul>
-<li>Based on your research question and variables</li>
-</ul></li>
-<li><strong>Understanding and checking assumptions</strong>
-<ul>
-<li>What assumptions are<br>
-</li>
-<li>Why they matter<br>
-</li>
-<li>How to evaluate them</li>
-</ul></li>
-<li><strong>Responding to violated assumptions</strong>
-<ul>
-<li>What to do when assumptions are not met<br>
-</li>
-<li>When to use alternative approaches (e.g., non-parametric tests)</li>
-</ul></li>
-</ol>
-</section>
-<section id="connecting-back-to-the-4-step-framework" class="level2">
-<h2 class="anchored" data-anchor-id="connecting-back-to-the-4-step-framework">Connecting back to the 4-step framework</h2>
-<p>This chapter builds directly on the 4-step hypothesis testing framework from Chapter 7:</p>
-<ol type="1">
-<li>Look at the data<br>
-</li>
-<li>Check assumptions ← <em>major focus of this chapter</em><br>
-</li>
-<li>Perform the test<br>
-</li>
-<li>Interpret the results</li>
-</ol>
-<blockquote class="blockquote">
-<p>Choosing the correct test and checking assumptions are critical steps that ensure your results are valid and meaningful.</p>
-</blockquote>
+<li>identify the dependent variable and independent variable(s) in a research question;</li>
+<li>determine whether variables are categorical or continuous;</li>
+<li>distinguish between between-subjects and within-subjects designs;</li>
+<li>use a decision process to choose an appropriate inferential statistic;</li>
+<li>explain why assumptions matter;</li>
+<li>check basic parametric assumptions in jamovi;</li>
+<li>describe what to do when assumptions are violated;</li>
+<li>explain why assumption decisions should be reported clearly in results.</li>
+</ul>
 </section>
 <section id="looking-ahead" class="level2">
 <h2 class="anchored" data-anchor-id="looking-ahead">Looking ahead</h2>
-<p>In the following chapters, we will apply these ideas to specific statistical tests (e.g., t-tests, ANOVA, correlation). This chapter provides the foundation you need to make informed decisions about which test to use and whether its results can be trusted.</p>
+<p>This chapter prepares you for the test-specific chapters that come later. In those chapters, you will learn exactly how to run chi-square tests, t-tests, ANOVAs, correlations, and regressions in jamovi. Before you can run those tests well, though, you need to know which test fits the data and whether the assumptions are reasonable.</p>
 
 
 </section>
@@ -1231,8 +1239,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./08.4-sample-size-and-power-analysis.html" class="pagination-link" aria-label="8.4 Sample Size and Power Analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8.4 Sample Size and Power Analysis</span>
+      <a href="./08.5-putting-it-all-together.html" class="pagination-link" aria-label="8.5 Putting It All Together">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8.5 Putting It All Together</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

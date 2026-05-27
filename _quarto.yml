@@ -71,7 +71,7 @@ book:
         - 07.2-step-2-check-assumptions.qmd
         - 07.3-step-3-perform-the-test.qmd
         - 07.4-step-4-interpret-the-results.qmd
-        - 07.5-recap-common-mistakes-looking-ahead.qmd
+        - 07.5-putting-it-all-together.qmd
     
     - part: 08.0-bean.qmd
       chapters:
@@ -79,6 +79,7 @@ book:
         - 08.2-alpha-and-p-values.qmd
         - 08.3-power.qmd
         - 08.4-sample-size-and-power-analysis.qmd
+        - 08.5-putting-it-all-together.qmd
     
     - part: 09.0-inferential-statistics.qmd
       chapters:
@@ -90,7 +91,9 @@ book:
       chapters:
         - 10.1-components-of-writing-statistical-results.qmd
         - 10.2-examples-of-apa-style-results.qmd
-        - 10.3-common-apa-style-errors.qmd
+        - 10.3-tables-and-figures.qmd
+        - 10.4-common-apa-style-errors.qmd
+        - 10.5-putting-it-all-together.qmd
 
     - part: 11.0-chi-square.qmd
       chapters:
@@ -141,7 +144,3 @@ format:
     toc-location: right
     number-sections: true
     css: style.css
-  
-  docx:
-    toc: true
-    number-sections: false

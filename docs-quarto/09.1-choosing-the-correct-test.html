@@ -45,6 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -417,8 +418,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Recap, Common Mistakes, and Looking Ahead</span></a>
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -435,7 +436,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.1 Effect Sizes</span></a>
+ <span class="menu-text">8.1 Effect Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -453,7 +454,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.4 Sample Size and Power Analysis</span></a>
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -510,8 +517,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10.3-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10.3 Common APA-Style Errors</span></a>
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -731,10 +750,10 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#a-decision-tool-for-choosing-tests" id="toc-a-decision-tool-for-choosing-tests" class="nav-link active" data-scroll-target="#a-decision-tool-for-choosing-tests">A decision tool for choosing tests</a></li>
   <li><a href="#a-step-by-step-approach" id="toc-a-step-by-step-approach" class="nav-link" data-scroll-target="#a-step-by-step-approach">A step-by-step approach</a></li>
-  <li><a href="#choosing-tests-forward-vs-backward-mapping" id="toc-choosing-tests-forward-vs-backward-mapping" class="nav-link" data-scroll-target="#choosing-tests-forward-vs-backward-mapping">Choosing tests: Forward vs backward mapping</a></li>
+  <li><a href="#forward-and-backward-mapping" id="toc-forward-and-backward-mapping" class="nav-link" data-scroll-target="#forward-and-backward-mapping">Forward and backward mapping</a></li>
   <li><a href="#forward-mapping-choose-the-correct-test" id="toc-forward-mapping-choose-the-correct-test" class="nav-link" data-scroll-target="#forward-mapping-choose-the-correct-test">Forward mapping: Choose the correct test</a></li>
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
-  <li><a href="#backwards-map-determine-the-data-you-need" id="toc-backwards-map-determine-the-data-you-need" class="nav-link" data-scroll-target="#backwards-map-determine-the-data-you-need">Backwards map: Determine the data you need</a></li>
+  <li><a href="#backward-mapping-determine-the-data-you-need" id="toc-backward-mapping-determine-the-data-you-need" class="nav-link" data-scroll-target="#backward-mapping-determine-the-data-you-need">Backward mapping: Determine the data you need</a></li>
+  <li><a href="#common-wrong-turns" id="toc-common-wrong-turns" class="nav-link" data-scroll-target="#common-wrong-turns">Common wrong turns</a></li>
   </ul>
 </nav>
     </div>
@@ -760,132 +779,97 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>It is important that you learn how to identify <em>which</em> inferential statistic you should perform. This chart can help you determine what statistical test to perform. Note that on the right dark red boxes are parametric tests, light red boxes are non-parametric tests, and white boxes will not be covered in this class at all (in fact, there are many others not even shown that we won’t cover!). are indicated in either blue (continuous), green (categorical), or teal (both). Number of variables or levels of the variables are either 1 (light orange), 2/2+ (orange), or 3+ (dark orange). Between-subjects designs, meaning designs with different participants in each group, are in black whereas within-subjects designs, meaning designs with the same participants in each group, are in light grey.</p>
-<p>It is important that you learn how to identify <em>which</em> inferential statistic you should perform. In this course, we will focus on a structured way of making that decision.</p>
-<p>Before looking at specific tests, remember:</p>
-<blockquote class="blockquote">
-<p>Choosing the correct test is part of <strong>Step 2: Check assumptions</strong> and <strong>Step 3: Perform the test</strong> in our 4-step framework.</p>
-</blockquote>
+<p>It is important that you learn how to identify <em>which</em> inferential statistic you should perform. You do not need to memorize every statistical test in existence. That would be a terrible use of your time and, honestly, pretty miserable.</p>
+<p>Instead, I want you to learn how to ask the right questions.</p>
+<p>The test you choose depends mostly on:</p>
+<ul>
+<li>what kind of dependent variable you have;</li>
+<li>what kind of independent variable(s) or predictor(s) you have;</li>
+<li>how many variables, groups, levels, or time points are involved;</li>
+<li>whether the same or different participants are in each condition;</li>
+<li>whether the assumptions for the planned test are reasonable.</li>
+</ul>
+<p>This is where the material from <a href="./02.2-types-of-variables-levels-of-measurement.html">types of variables and levels of measurement</a>, <a href="./05.0-describing-data-in-jamovi.html">describing data</a>, and <a href="./06.0-visualizing-data-in-jamovi.html">visualizing data</a> starts to come together.</p>
 <section id="a-decision-tool-for-choosing-tests" class="level2">
 <h2 class="anchored" data-anchor-id="a-decision-tool-for-choosing-tests">A decision tool for choosing tests</h2>
-<p>The chart below can help you determine which statistical test to perform.</p>
-<ul>
-<li><strong>Dark red boxes</strong> = parametric tests<br>
-</li>
-<li><strong>Light red boxes</strong> = non-parametric tests<br>
-</li>
-<li><strong>White boxes</strong> = not covered in this course</li>
-</ul>
-<p>Data types: - <strong>Blue</strong> = continuous variables<br>
-- <strong>Green</strong> = categorical variables<br>
-- <strong>Teal</strong> = both</p>
-<p>Number of variables or levels of the variables: - <strong>Light orange</strong> = one<br>
-- <strong>Orange</strong> = two<br>
-- <strong>Dark orange</strong> = three or more</p>
-<p>Type of design: - <strong>Black</strong> = between-subjects designs (different participants)<br>
-- <strong>Light grey</strong> = within-subjects designs (same participants)</p>
+<p>The chart below can help you determine what statistical test to perform. It is a map, not something you need to memorize.</p>
 <p><img src="images/Statistical Choices.png" class="img-fluid"></p>
-<p>Another tool that can help you determine the statistical test you want to perform is <a href="https://stathand.net/" class="uri">https://stathand.net/</a></p>
+<p>The chart uses several visual cues:</p>
+<ul>
+<li><p><strong>Dark red boxes</strong> are parametric tests.</p></li>
+<li><p><strong>Light red boxes</strong> are non-parametric tests.</p></li>
+<li><p><strong>White boxes</strong> are tests we will not cover in this course.</p></li>
+<li><p><strong>Blue</strong> indicates continuous variables.</p></li>
+<li><p><strong>Green</strong> indicates categorical variables.</p></li>
+<li><p><strong>Teal</strong> indicates both categorical and continuous variables.</p></li>
+<li><p><strong>Black</strong> indicates between-subjects designs, meaning different participants are in each condition.</p></li>
+<li><p><strong>Dark grey</strong> indicates within-subjects designs, meaning the same participants are measured across conditions or time points.</p></li>
+<li><p><strong>Light grey</strong> indicates the design has at least one between-subject IV and at least one within-subjects IV.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="For Dana's Students">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>For Dana’s Students
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In my courses, you may also have access to a high-resolution version of this chart on Canvas. Use that version when you need to zoom in or print it.</p>
+</div>
+</div>
+<p>Another tool that can help you choose a statistical test is <a href="https://stathand.net/">StatsHand</a>. I still want you to learn the logic yourself, but tools like this can be useful for checking your thinking.</p>
 </section>
 <section id="a-step-by-step-approach" class="level2">
 <h2 class="anchored" data-anchor-id="a-step-by-step-approach">A step-by-step approach</h2>
-<p>Rather than trying to memorize the chart, use the following process:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Instead of following the chart, you may also find it helpful to first think whether you have a between-subjects or a within-subjects design. If you have groups, are participants in the same conditions (within-subjects) or different conditions (between-subjects)? Then that narrows down the possibility of what inferential statistic you would use. For example, if you know you have a repeated measures design with only one IV, then it’s either a dependent t-test or repeated measures ANOVA depending on whether there are 2 or 3+ categories to the IV.</p>
-</div>
-</div>
-<section id="step-1-identify-your-dependent-variable-dv" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-identify-your-dependent-variable-dv">Step 1: Identify your dependent variable (DV)</h3>
-<p>In this textbook, we will only be working with <strong>one dependent variable</strong>.</p>
-<p>Ask: - Is your DV <strong>categorical</strong> (nominal/ordinal)?<br>
-- Or <strong>continuous</strong> (interval/ratio)?</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Go back to Chapter 2 “Levels of Measurement” if you need a refresher. This is one of the most important concepts for choosing the correct test.</p>
-</div>
-</div>
-</section>
-<section id="step-2-identify-your-independent-variables-ivs" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-identify-your-independent-variables-ivs">Step 2: Identify your independent variable(s) (IVs)</h3>
-<p>Ask: - How many IVs do you have?<br>
-- What type are they (categorical or continuous)?</p>
-<p>If you have a categorical IV: - How many <strong>levels</strong> (groups) are there?</p>
-</section>
-<section id="step-3-determine-your-design" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-determine-your-design">Step 3: Determine your design</h3>
-<p>Ask: - Are the <strong>same participants</strong> in each condition? → within-subjects<br>
-- Are <strong>different participants</strong> in each condition? → between-subjects</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A helpful starting point is to ask:<br>
-“Can participants be in more than one condition?”</p>
+<p>Rather than starting by asking “Which test is this?”, start with the variables and design.</p>
+<section id="step-1-identify-the-dependent-variable" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-identify-the-dependent-variable">Step 1: Identify the dependent variable</h3>
+<p>The <button class="glossary" title="The outcome variable in a study. It is the variable measured to see whether it differs, changes, or is related to another variable.">dependent variable</button> is the outcome variable. It is the variable you are trying to explain, predict, compare, or understand.</p>
+<p>Ask yourself:</p>
 <ul>
-<li>Yes → within-subjects<br>
-</li>
-<li>No → between-subjects<br>
-</li>
+<li>What is the main outcome?</li>
+<li>How was it measured?</li>
+<li>Is it <button class="glossary" title="A variable whose values represent categories or groups rather than quantities. Nominal and ordinal variables are categorical variables.">categorical variable</button> or <button class="glossary" title="A variable whose values represent quantities or amounts. Continuous variables are often summarized with means and standard deviations.">continuous variable</button>?</li>
 </ul>
-</div>
-</div>
+<p>In this textbook, we will mostly work with statistical tests that have one dependent variable. If you are unsure whether the dependent variable is categorical or continuous, return to <a href="./02.2-types-of-variables-levels-of-measurement.html">types of variables and levels of measurement</a>. This is one of the most important concepts for choosing the correct test.</p>
 </section>
-<section id="step-4-consider-assumptions" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-consider-assumptions">Step 4: Consider assumptions</h3>
-<p>For now, assume that assumptions are met. Later in this chapter, we will learn how to check them.</p>
-<p>If assumptions are violated, we may need to use a <strong>non-parametric alternative</strong>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We will return to assumption checking in Section 9.2.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="choosing-tests-forward-vs-backward-mapping" class="level2">
-<h2 class="anchored" data-anchor-id="choosing-tests-forward-vs-backward-mapping">Choosing tests: Forward vs backward mapping</h2>
-<p>We can use the chart in two ways:</p>
+<section id="step-2-identify-the-independent-variables-or-predictors" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-identify-the-independent-variables-or-predictors">Step 2: Identify the independent variable(s) or predictor(s)</h3>
+<p>The <button class="glossary" title="A variable expected to explain, predict, influence, or cause differences in another variable. In an experiment, it is the variable manipulated by the researcher.">independent variable</button> is the variable used to explain, predict, or compare the dependent variable.</p>
+<p>Ask yourself:</p>
 <ul>
-<li><strong>Forward mapping</strong>: Start with your data and determine the test<br>
-</li>
-<li><strong>Backward mapping</strong>: Start with a test and determine what data it requires</li>
+<li>How many independent variables or predictors are there?</li>
+<li>Is each one categorical or continuous?</li>
+<li>If categorical, how many levels or groups does it have?</li>
 </ul>
+<p>Some tests involve one independent variable. Others involve two or more. Some tests use categorical predictors, some use continuous predictors, and some can use both.</p>
+</section>
+<section id="step-3-determine-the-design" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-determine-the-design">Step 3: Determine the design</h3>
+<p>If your independent variable is categorical, ask whether the same or different participants are in each condition.</p>
+<ul>
+<li><strong>Between-subjects design</strong>: different participants are in each condition.</li>
+<li><strong>Within-subjects design</strong>: the same participants are measured in each condition or at each time point.</li>
+</ul>
+<p>A helpful question is:</p>
 <blockquote class="blockquote">
-<p>Forward mapping is what you will use most often.</p>
+<p>Can a participant be in more than one condition? Or have the participants had data on the DV collected multiple times?</p>
 </blockquote>
+<p>If yes, you probably have a within-subjects or repeated-measures design. If no, you probably have a between-subjects design.</p>
+</section>
+</section>
+<section id="forward-and-backward-mapping" class="level2">
+<h2 class="anchored" data-anchor-id="forward-and-backward-mapping">Forward and backward mapping</h2>
+<p>We can use the chart in two ways.</p>
+<p><strong>Forward mapping</strong> means starting with your research question, variables, and design, then deciding which statistical test to use. This is what you will do most often in real analyses.</p>
+<p><strong>Backward mapping</strong> means starting with a statistical test and figuring out what kind of data would be needed to run that test. This is not usually how you analyze data, but it can help you understand what each test is designed to do.</p>
 </section>
 <section id="forward-mapping-choose-the-correct-test" class="level2">
 <h2 class="anchored" data-anchor-id="forward-mapping-choose-the-correct-test">Forward mapping: Choose the correct test</h2>
+<p>Let’s practice choosing tests by working forward from the research question.</p>
+<p>This video walks through how to use the statistical choices chart to decide which inferential test fits your research question, variables, and study design. If you are reading the Word document version of this textbook, you can <a href="https://www.youtube.com/watch?v=Q9sbIMCck1Q">watch the video here</a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="vembedr">
@@ -897,55 +881,73 @@ Note
 </div>
 <section id="example-1" class="level3">
 <h3 class="anchored" data-anchor-id="example-1">Example 1</h3>
-<p>A researcher is interested in understanding whether athletes have higher English scores than non-athletes.</p>
+<p>A researcher is interested in understanding whether athletes have higher English scores than non-athletes. In other words, what is the effect of athletic status on English test scores?</p>
 <ol type="1">
-<li><strong>DV</strong>: English test scores → continuous</li>
-<li><strong>IVs</strong>: One → athletic status</li>
-<li><strong>IV type</strong>: Categorical</li>
-<li><strong>Levels</strong>: 2 (athlete vs non-athlete)</li>
-<li><strong>Design</strong>: Between-subjects (participants cannot be both)</li>
-<li><strong>Assumptions</strong>: Assume met</li>
+<li><strong>What is the DV? What is the level of measurement?</strong> English test scores are the DV, and they are continuous.</li>
+<li><strong>How many IVs are there?</strong> There is one IV: athletic status.</li>
+<li><strong>What is the level of measurement of the IV?</strong> Athletic status is categorical.</li>
+<li><strong>How many categories does the IV have?</strong> Athletic status has two levels: athlete and non-athlete.</li>
+<li><strong>Are the same or different participants used in each category?</strong> People can either be an athlete or not an athlete, but they cannot be both in this example. This is a between-subjects design.</li>
+<li><strong>Statistical test?</strong> Independent t-test.</li>
 </ol>
-<p><strong>Statistical test → Independent t-test</strong></p>
+</section>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">Example 2</h3>
+<p>A researcher is interested in whether people perform better on an exam at the start, middle, or end of the semester. The researcher has all participants complete all three exams.</p>
+<ol type="1">
+<li><strong>What is the DV? What is the level of measurement?</strong> Exam score is the DV, and it is continuous.</li>
+<li><strong>How many IVs are there?</strong> There is one IV: time of exam.</li>
+<li><strong>What is the level of measurement of the IV?</strong> Time of exam is categorical.</li>
+<li><strong>How many categories does the IV have?</strong> It has three levels: start, middle, and end of the semester.</li>
+<li><strong>Are the same or different participants used in each category?</strong> The same participants complete all three exams, so this is a within-subjects design.</li>
+<li><strong>Statistical test?</strong> One-way repeated measures ANOVA.</li>
+</ol>
+</section>
+<section id="example-3" class="level3">
+<h3 class="anchored" data-anchor-id="example-3">Example 3</h3>
+<p>A researcher wants to know whether time spent studying is related to exam performance.</p>
+<ol type="1">
+<li><strong>What is the DV? What is the level of measurement?</strong> Exam performance is the outcome, and it is continuous.</li>
+<li><strong>How many predictors are there?</strong> There is one predictor: time spent studying.</li>
+<li><strong>What is the level of measurement of the predictor?</strong> Time spent studying is continuous.</li>
+<li><strong>Are we comparing groups?</strong> No.&nbsp;We are examining an association between two continuous variables.</li>
+<li><strong>Statistical test?</strong> Pearson correlation.</li>
+</ol>
 </section>
 </section>
-<section id="example-2" class="level2">
-<h2 class="anchored" data-anchor-id="example-2">Example 2</h2>
-<p>A researcher is interested in whether people perform better on exams at the start, middle, or end of the semester. All participants complete all three exams.</p>
+<section id="backward-mapping-determine-the-data-you-need" class="level2">
+<h2 class="anchored" data-anchor-id="backward-mapping-determine-the-data-you-need">Backward mapping: Determine the data you need</h2>
+<p>Let me start by saying we do not normally do this. We perform the test based on the data we have and the research question we are asking.</p>
+<p>But for learning, backward mapping can be helpful.</p>
+<p>Imagine I gave you a dataset with these variables:</p>
 <ol type="1">
-<li><strong>DV</strong>: Exam score → continuous</li>
-<li><strong>IVs</strong>: One → time</li>
-<li><strong>IV type</strong>: Categorical</li>
-<li><strong>Levels</strong>: 3 (start, middle, end)</li>
-<li><strong>Design</strong>: Within-subjects (same participants)</li>
-<li><strong>Assumptions</strong>: Assume met</li>
+<li>Mile time, measured in minutes</li>
+<li>BMI group, with categories of underweight, normal, or overweight</li>
+<li>Happiness at the start of the semester, measured from 0 to 10</li>
+<li>Happiness at the end of the semester, measured from 0 to 10</li>
 </ol>
-<p><strong>Statistical test → One-way repeated measures ANOVA</strong></p>
-</section>
-<section id="backwards-map-determine-the-data-you-need" class="level2">
-<h2 class="anchored" data-anchor-id="backwards-map-determine-the-data-you-need">Backwards map: Determine the data you need</h2>
-<p>We don’t typically do this in practice, but it helps you understand the tests.</p>
-<p>Imagine I gave you a dataset and wanted you to perform two different tests that I told you about. Here are the variables in the dataset:</p>
-<ol type="1">
-<li>Mile time (ranging from 5-30 minutes)</li>
-<li>BMI (underweight, normal, or overweight)</li>
-<li>Happiness at the start of the semester (ranging from 0-10 where 0 is not at all happy and 10 is extremely happy)</li>
-<li>Happiness at the end of the semester (ranging from 0-10 where 0 is not at all happy and 10 is extremely happy)</li>
-</ol>
+<section id="backward-mapping-example-1" class="level3">
+<h3 class="anchored" data-anchor-id="backward-mapping-example-1">Backward mapping example 1</h3>
 <p>If I told you I wanted you to perform a dependent t-test, what data would you use?</p>
-<ol type="1">
-<li>Assuming we meet the assumptions for a parametric test, we need to find a situation in which we have 1 continuous variable and 1 categorical variable with 2 levels in which participants are the <em>same</em> within each category (i.e., within-subjects variable).</li>
-<li>We only have three continuous variables: mile time and our two happiness variables.</li>
-<li>If we rethink happiness, we can realize that it’s really a within-subjects variable. We are measuring happiness (our continuous DV) across two time points (start and end of the semester).</li>
-<li>Therefore, we could perform a dependent t-test with our two happiness data points and see whether happiness differs across time in the semester.</li>
-</ol>
+<p>A dependent t-test requires a continuous dependent variable measured across two related conditions or time points. In this dataset, happiness is measured at two time points: start and end of the semester. Therefore, we could perform a dependent t-test to examine whether happiness differs from the start to the end of the semester.</p>
+</section>
+<section id="backward-mapping-example-2" class="level3">
+<h3 class="anchored" data-anchor-id="backward-mapping-example-2">Backward mapping example 2</h3>
 <p>If I told you I wanted you to perform a one-way independent ANOVA, what data would you use?</p>
-<ol type="1">
-<li>Assuming we meet the assumptions for a parametric test, we need to find a continuous DV and a single categorical IV with 3 or more levels in which participants are <em>different</em> across categories (i.e., between-subjects design).</li>
-<li>We only have three continuous variables: mile time and our two happiness variables.</li>
-<li>We only have one categorical variable (BMI), and it has 3 levels: underweight, normal, overweight.</li>
-<li>Now this is where we need to think critically. What would be the most interesting test here? How BMI affects happiness or how BMI affects mile time? Weight and performance on running a mile seem to make most sense here. Therefore, we could look at how BMI affects mile time. Though keep in mind we are not randomizing here and so this is <em>not</em> an experimental design!</li>
-</ol>
+<p>A one-way independent ANOVA requires one continuous dependent variable and one categorical independent variable with three or more levels, using different participants in each group. In this dataset, BMI group has three categories. Mile time is continuous. Therefore, we could examine whether mile time differs by BMI group.</p>
+<p>Keep in mind that this would not be an experimental design. We are not randomly assigning people to BMI groups. So we could describe differences by group, but we would need to be careful about causal language.</p>
+</section>
+</section>
+<section id="common-wrong-turns" class="level2">
+<h2 class="anchored" data-anchor-id="common-wrong-turns">Common wrong turns</h2>
+<p>Choosing the correct test takes practice. Here are some common mistakes to watch for:</p>
+<ul>
+<li>Choosing based on the name of the variable instead of how it was measured.</li>
+<li>Forgetting whether the same participants were measured more than once.</li>
+<li>Treating a categorical dependent variable like a continuous dependent variable.</li>
+<li>Using ANOVA just because there are multiple variables, when the key issue is the number of groups or levels.</li>
+<li>Forgetting that assumptions may change the exact test you interpret.</li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -956,52 +958,34 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>For each scenario, identify the likely statistical test if assumptions are met.</p>
 <ol type="1">
-<li><p>What is the first thing you should identify when choosing an inferential test?</p></li>
-<li><p>Why is it important to determine whether your design is within-subjects or between-subjects?</p></li>
-<li><p>A researcher measures test scores (continuous) for two groups of students (online vs in-person), with different students in each group.<br>
-→ What statistical test would you use?</p></li>
-<li><p>A researcher measures heart rate (continuous) for the same participants before and after exercise.<br>
-→ What statistical test would you use?</p></li>
-<li><p>A researcher measures satisfaction (continuous) across three different teaching methods, with different students in each group.<br>
-→ What statistical test would you use?</p></li>
-<li><p>A researcher measures satisfaction (continuous) across three time points (beginning, middle, end of semester) using the same participants.<br>
-→ What statistical test would you use?</p></li>
+<li>A researcher asks whether anxiety scores differ between students who drink caffeine and students who do not.</li>
+<li>A researcher asks whether stress scores differ before, during, and after finals week for the same students.</li>
+<li>A researcher asks whether hours of sleep are related to reaction time.</li>
+<li>A researcher asks whether political affiliation is related to voting method, where both variables are categorical.</li>
+<li>A researcher asks whether motivation differs by class year (first-year, sophomore, junior, senior).</li>
 </ol>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answers">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-note callout-titled" title="Suggested Answers">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answers
+<span class="screen-reader-only">Note</span>Suggested Answers
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>The dependent variable and its level of measurement</p></li>
-<li><p>Because it determines which statistical tests are appropriate</p></li>
-<li><p>Independent samples t-test</p>
-<ul>
-<li>Continuous DV, 1 categorical IV (2 levels), between-subjects</li>
-</ul></li>
-<li><p>Dependent (paired) t-test</p>
-<ul>
-<li>Continuous DV, 2 levels, within-subjects</li>
-</ul></li>
-<li><p>One-way independent ANOVA</p>
-<ul>
-<li>Continuous DV, 1 categorical IV (3+ levels), between-subjects</li>
-</ul></li>
-<li><p>One-way repeated measures ANOVA</p>
-<ul>
-<li>Continuous DV, 1 categorical IV (3+ levels), within-subjects<br>
-</li>
-</ul></li>
+<li>Independent t-test: continuous DV, one categorical IV with two between-subjects groups.</li>
+<li>One-way repeated measures ANOVA: continuous DV, one categorical within-subjects IV with three time points.</li>
+<li>Pearson correlation: two continuous variables.</li>
+<li>Chi-square test of independence: two categorical variables.</li>
+<li>One-way ANOVA: continuous DV, one categorical between-subjects IV with four groups.</li>
 </ol>
 </div>
 </div>

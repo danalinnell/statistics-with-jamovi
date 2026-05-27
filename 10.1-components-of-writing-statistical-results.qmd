@@ -1,17 +1,113 @@
 # 10.1 Components of Writing Statistical Results {.unnumbered}
 
-When writing up the results of a statistical test, we should always include the following four components:
+When writing up the results of a statistical test, we should usually include four major components:
 
-1.  **Description of your research question and/or hypotheses**\
-2.  **Description of your data**
-    -   Include descriptive statistics\
-    -   If assumptions were violated, explain what you did\
-3.  **Results of the inferential test**
-    -   Test statistic and degrees of freedom\
-    -   *p*-value\
-    -   Effect size\
-4.  **Interpretation of the results**
-    -   Answer the research question\
-    -   Indicate whether the hypothesis was supported
+1. **Description of your research question and/or hypotheses**
+2. **Description of your data**
+3. **Results of the inferential test**
+4. **Interpretation of the results**
 
-> These four components mirror the logic of hypothesis testing: question → data → test → interpretation.
+These four components mirror the logic of hypothesis testing: question → data → test → interpretation.
+
+That does not mean every results paragraph has to follow the exact same sentence structure. There are many ways to write a clear APA-style results section. What matters is that the necessary information is included, the statistics are reported correctly, and the interpretation answers the research question without overclaiming.
+
+## Component 1: Describe the Research Question or Hypothesis
+
+Start by reminding the reader what you were trying to find out. This does not need to be long, but the reader should understand the purpose of the analysis.
+
+Useful sentence starters include:
+
+- To examine whether [research question], I conducted [statistical test].
+- I tested whether [independent variable/predictor] was related to [dependent variable/outcome].
+- I tested whether [groups] differed on [dependent variable/outcome].
+- I examined whether [predictor variables] predicted [outcome variable].
+
+For example:
+
+> To examine whether students in Anastasia's and Bernadette's classes differed in grades, I conducted an independent samples t-test.
+
+This sentence tells the reader the research question and the statistical test.
+
+## Component 2: Describe the Data
+
+Next, describe the data in a way that helps the reader understand the result. This usually means reporting relevant descriptive statistics.
+
+The exact descriptive statistics depend on the analysis:
+
+| Analysis type | Descriptive information to report |
+|---|---|
+| t-test | Group means, standard deviations, and sample sizes |
+| ANOVA | Group means, standard deviations or standard errors, and sample sizes |
+| Correlation | Means and standard deviations for the variables, often with the correlation result |
+| Regression | Descriptives and correlations are often reported in a table, especially when there are multiple predictors |
+| Chi-square | Frequencies and percentages for the categories |
+
+You do not need to report every descriptive statistic jamovi gives you. Report the statistics that help the reader understand the research question and the inferential result.
+
+For example:
+
+> Anastasia's students had higher grades (*M* = 74.53, *SD* = 9.00, *n* = 15) than Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18).
+
+This sentence describes the pattern in the data before reporting the inferential test. That is helpful because it tells the reader the direction of the difference.
+
+::: {.callout-tip title="Connect Back to Descriptives"}
+If you are struggling to write this part, return to [Chapter 5](05.0-describing-data-in-jamovi.qmd). Descriptive statistics are not separate from inferential statistics. They help readers understand what your inferential test is testing.
+:::
+
+## Component 3: Report the Inferential Test Results
+
+The inferential test results are the formal statistical evidence. The exact statistics differ by test, but you will usually report:
+
+- the statistical test used
+- the test statistic
+- degrees of freedom, when relevant
+- the *p*-value
+- the effect size
+- a confidence interval, when relevant or available
+
+For example:
+
+> *t*(31) = 2.12, *p* = .043, *d* = .74
+
+Notice a few formatting details:
+
+- Statistical symbols are usually italicized, such as *t*, *p*, *M*, *SD*, *r*, and *d*.
+- There is no space between the test statistic and the degrees of freedom: *t*(31), not *t* (31).
+- Exact *p*-values are usually reported to three decimal places.
+- Report *p* < .001 when the value rounds to .000.
+
+We will cover more of these details in [Common APA-Style Errors](10.4-common-apa-style-errors.qmd).
+
+## Component 4: Interpret the Results
+
+Finally, explain what the result means in plain language. This is where many students either stop too early or overclaim.
+
+A good interpretation should:
+
+- answer the research question
+- describe the direction of the result, when relevant
+- use reject/fail-to-reject language when discussing the null hypothesis
+- avoid saying that a result proves something
+- avoid saying that a non-significant result proves there is no effect
+
+For a statistically significant result, you might write:
+
+> The result was statistically significant, so we rejected the null hypothesis. Anastasia's students had higher grades than Bernadette's students.
+
+For a statistically non-significant result, you might write:
+
+> The result was not statistically significant, so we failed to reject the null hypothesis. The data did not provide sufficient evidence that grades differed between the two classes.
+
+Notice that the second example does **not** say, "There was no difference." A non-significant result means we did not find enough evidence to reject the null hypothesis. It does not prove that the groups are identical.
+
+::: {.callout-warning title="Do Not Let the p-value Do All the Thinking"}
+The *p*-value is important, but it is not the whole result. Your write-up should also include descriptive statistics, effect size when available, and a plain-language interpretation.
+:::
+
+## A Flexible Template
+
+Here is a general template you can adapt:
+
+> To examine whether [research question], I conducted [statistical test]. [Describe the data using appropriate descriptive statistics]. The result was [statistically significant/not statistically significant], [test statistic and degrees of freedom] = [value], *p* = [value], [effect size] = [value]. [Plain-language interpretation].
+
+This is a scaffold, not a script. Your final write-up should always fit the research question, statistical test, and audience.

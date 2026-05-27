@@ -1,133 +1,83 @@
-# 8.1 Effect Sizes {.unnumbered}
+# 8.1 Effect Size {.unnumbered}
 
-In Chapter 7, we introduced effect sizes as a way to describe the magnitude of an effect. You learned that effect sizes help us move beyond simply asking whether an effect exists (statistical significance) to asking how large or meaningful that effect is.
+An {{< glossary "effect size" popup="hover" >}} is a quantitative description of the size or strength of an effect, difference, or relationship.
 
-In this section, we build on that foundation and place effect sizes within the broader BEAN framework.
+In Chapter 7, we used the *p*-value to decide whether a result was statistically significant. That is useful, but it is not enough. A statistically significant result can be tiny and practically unimportant. A non-significant result can still be interesting, especially if the study had low power or a small sample.
 
+Effect sizes help us ask a different question:
 
-## Effect size as part of BEAN
+> How big is the effect?
 
-Within BEAN, effect size plays a central role because it directly influences our ability to detect an effect—that is, **statistical power**.
+## Statistical vs. Practical Significance
 
-> Larger effects are easier to detect than smaller effects.
+A *p*-value helps us decide whether the result is statistically significant. An effect size helps us think about whether the result is meaningful.
 
-This simple idea has important implications:
+Those are not the same thing.
 
-- Larger effect sizes → higher power (all else equal)  
-- Smaller effect sizes → lower power (all else equal)  
+A very small effect can be statistically significant if the sample size is huge. A larger effect can be non-significant if the sample size is small or the study has low power. This is why we should avoid letting the *p*-value do all the thinking for us.
 
-This means that effect size is not just something we interpret after the analysis—it is something that fundamentally shapes whether we are likely to detect an effect in the first place.
+::: {.callout-tip title="Key Idea"}
+Statistical significance asks whether a result is surprising under the null hypothesis.
 
-
-## Common effect sizes
-
-Different statistical tests use different effect size metrics:
-
-- **Cohen’s d**: differences between two groups. Another similar effect size is Hedge's g, which we often use when we have smaller sample sizes. 
-- **r (correlation)**: strength of relationships
-- **η² (eta-squared)**: proportion of variance explained (ANOVA). Variants of eta-saured include partial eta-squared and omega-squared.
-- **φ (phi)**: associations between categorical variables. Carmer's V is also used. 
-
-In Chapter 7, we used Cohen’s *d* to quantify the difference between two groups. These metrics allow us to standardize effects so that they can be compared across studies and contexts.
-
-::: {.callout-note}
-If you want to learn more, [check out this great journal article by Daniel Lakens](https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863/full) or this [chapter on effect sizes by Daniel Lakens](https://lakens.github.io/statistical_inferences/06-effectsize.html).
+Practical significance asks whether the effect matters in context.
 :::
 
+## Common Effect Sizes
 
-## Interpreting effect sizes (with caution)
+Different statistical tests use different effect-size measures. You do not need to master all of these right now, but you should recognize that effect size is not one single statistic.
 
-You may have learned general guidelines such as:
+| Statistical context | Common effect size | What it describes |
+|---|---|---|
+| Mean differences | Cohen's *d* or Hedges' *g* | Difference between means in standardized units |
+| Correlation | *r* | Strength and direction of a relationship |
+| ANOVA | η², partial η², or ω² | Proportion of variance associated with an effect |
+| Chi-square | φ or Cramer's V | Strength of association between categorical variables |
 
-- Small effect: ~0.20  
-- Medium effect: ~0.50  
-- Large effect: ~0.80  
+We will return to specific effect sizes in the chapters where they are used. For now, the important point is that effect sizes describe magnitude.
 
-These guidelines can be useful starting points, but they are **not universal rules**.
+::: {.callout-note collapse="true" title="More About Effect Size Families"}
+The **d family** of effect sizes describes standardized mean differences. Cohen's *d* is common, but Hedges' *g* is often preferred with smaller samples because it corrects some small-sample bias.
 
-The meaning of an effect size depends on context:
+The **r family** of effect sizes describes associations. A correlation can range from -1 to +1, with 0 indicating no linear relationship. Squaring a correlation gives the proportion of variance explained.
 
-- What is typical in the research area?  
-- What outcomes are being measured?  
-- What would be considered meaningful in practice?  
-
-> Effect sizes should always be interpreted in light of theory, prior research, and practical implications.
-
-::: {.callout-note}
-As an example, [this study in the field of education](https://journals.sagepub.com/stoken/default+domain/U7HVJPIXFWBBWQDKMGXT/full) collected effect sizes of many education interventions to figure out benchmarks for small (\<.05), medium (\<.20), and large (\>= .20) effect sizes based on existing data rather than poor quality heuristics.
+The **eta-squared family** is often used with ANOVA. Eta-squared, partial eta-squared, and omega-squared estimate the amount of variation in the dependent variable associated with one or more predictors. We will keep those distinctions light until the ANOVA chapter.
 :::
 
+## Small, Medium, and Large Effects
 
-## What makes an effect practically significant?
+You may have seen rules of thumb online. For example, Cohen's *d* values of .20, .50, and .80 are often described as small, medium, and large. Correlations of .10, .30, and .50 are also often described that way.
 
-P-values tell us about **statistical significance**, but they do not tell us whether an effect is meaningful. That is the role of effect sizes—but determining what counts as “meaningful” is not always straightforward.
+Those guidelines can be useful as a starting point, but please do not treat them like universal laws.
 
-Lakens provides a useful overview of ways researchers can determine which effect sizes are interesting in practice in his paper on ([Sample Size Justification](https://psyarxiv.com/9d3yf/)). The paper has far more detail, but essentially can be boiled into three important questions we must ask ourselves when thinking about effect sizes: 
+Quite frankly, **it depends**.
 
-- What effect size do we *expect* based on past research?  
-- What effect size do we *care about*?  
-- What effect size can we *realistically detect* given our design?  
+The meaning of an effect size depends on the research area, the outcome, the intervention, the cost of acting on the result, the risk of not acting, and what previous studies have found.
 
-This process is critical when designing studies and interpreting results. It also directly connects to the other components of BEAN.
+For example, a very small effect can matter if the outcome is important, the intervention is cheap, and many people are affected. A small reduction in future heart attacks can matter a lot if the intervention is inexpensive and widely available.
 
+On the other hand, imagine an educational intervention that produces a large effect on GPA but costs $100,000 per student. That might be statistically and practically impressive, but it may not be feasible. The effect is large, but the real-world decision is still complicated.
 
-## Connecting effect size to BEAN
+::: {.callout-warning title="Be Careful With Benchmarks"}
+Small, medium, and large effect-size labels are shortcuts. They are not substitutes for thinking.
 
-Effect size is tightly connected to the other elements of BEAN:
-
-- **Effect size ↔ Power**  
-  Larger effects are easier to detect and increase power  
-
-- **Effect size ↔ Sample size (N)**  
-  Smaller effects require larger samples to detect  
-  Larger effects can be detected with smaller samples  
-
-- **Effect size ↔ Alpha**  
-  Stricter alpha levels make smaller effects harder to detect  
-
-These relationships highlight an important idea:
-
-> The effect size you care about helps determine the sample size you need and the power your study will have.
-
-
-## Small effects can still matter
-
-A common misconception is that small effect sizes are unimportant. This is not necessarily true.
-
-Small effects may still be meaningful when:
-
-- They accumulate over time  
-- They affect large populations  
-- They influence important outcomes  
-
-> What counts as “large” or “important” depends on the context, not just a rule of thumb.
-
-
-## A practical takeaway
-
-When designing or evaluating a study, it is not enough to ask:
-
-> “Is there a statistically significant effect?”
-
-We should also ask:
-
-- How large is the effect?  
-- Is this effect meaningful in context?  
-- Was the study capable of detecting an effect of this size?  
-
-These questions connect directly to the broader BEAN framework and will become especially important when we discuss power more fully in the next section.
-
-
-::: {.callout-tip title="Check Your Understanding"}
-1. How does effect size influence statistical power?  
-2. Why are “small, medium, large” guidelines for effect sizes only rough estimates?  
-3. Give one reason why a small effect size might still be important.  
-4. How does effect size relate to sample size in detecting effects?  
+A better question is: **What is the smallest effect size that would matter in this context?**
 :::
 
-::: {.callout-tip collapse="true" title="Answers"}
-1. Larger effect sizes increase power, while smaller effect sizes decrease power  
-2. Because the meaning of an effect depends on context, theory, and application  
-3. Small effects can accumulate over time or impact many people  
-4. Smaller effects require larger sample sizes to detect, while larger effects can be detected with smaller samples  
+## Effect Size as Part of BEAN
+
+Effect size matters because larger effects are easier to detect.
+
+Holding alpha and sample size constant:
+
+- Larger effect size → higher power
+- Smaller effect size → lower power
+
+This also means smaller effects require larger samples if we want a good chance of detecting them.
+
+That is one of the major reasons researchers conduct power analyses. They are not just asking, "How many people do I need?" They are asking, "How many people do I need to detect an effect of this size with reasonable power?"
+
+::: {.callout-note collapse="true" title="Want More Detail?"}
+Daniel Lakens has a useful [journal article on effect sizes](https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863/full) and a [chapter on effect sizes](https://lakens.github.io/statistical_inferences/06-effectsize.html). He also discusses sample size justification, including ways to identify the smallest effect size of interest.
+
+One helpful approach is to look at the distribution of effect sizes in a research area instead of relying only on generic benchmarks. For example, some education researchers have examined existing intervention effects to develop field-specific expectations for what counts as small, medium, or large.
 :::

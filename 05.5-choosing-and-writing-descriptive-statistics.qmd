@@ -48,7 +48,7 @@ These are templates, not scripts. Your final write-up should always make sense f
 
 If you have many variables or many categories, a table may be clearer than a paragraph.
 
-The old rule I use is this: if the paragraph becomes a wall of numbers, it probably wants to be a table.
+The old rule I use is this:       if the paragraph becomes a wall of numbers, it probably wants to be a table.
 
 Here is an example of descriptive statistics reported in a paragraph from applied research:
 

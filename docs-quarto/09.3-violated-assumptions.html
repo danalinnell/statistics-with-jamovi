@@ -417,8 +417,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Recap, Common Mistakes, and Looking Ahead</span></a>
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -435,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.1 Effect Sizes</span></a>
+ <span class="menu-text">8.1 Effect Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -453,7 +453,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.4 Sample Size and Power Analysis</span></a>
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -510,8 +516,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10.3-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10.3 Common APA-Style Errors</span></a>
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -729,11 +747,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#a-general-approach" id="toc-a-general-approach" class="nav-link active" data-scroll-target="#a-general-approach">A general approach</a></li>
-  <li><a href="#intervalratio-data" id="toc-intervalratio-data" class="nav-link" data-scroll-target="#intervalratio-data">Interval/ratio data</a></li>
-  <li><a href="#independent-data" id="toc-independent-data" class="nav-link" data-scroll-target="#independent-data">Independent data</a></li>
-  <li><a href="#normality-or-homogeneity-of-variance" id="toc-normality-or-homogeneity-of-variance" class="nav-link" data-scroll-target="#normality-or-homogeneity-of-variance">Normality or homogeneity of variance</a></li>
-  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together">Putting it all together</a></li>
+  <li><a href="#first-identify-the-kind-of-problem" id="toc-first-identify-the-kind-of-problem" class="nav-link active" data-scroll-target="#first-identify-the-kind-of-problem">First, identify the kind of problem</a></li>
+  <li><a href="#if-you-chose-the-wrong-test" id="toc-if-you-chose-the-wrong-test" class="nav-link" data-scroll-target="#if-you-chose-the-wrong-test">If you chose the wrong test</a></li>
+  <li><a href="#if-the-issue-is-data-quality" id="toc-if-the-issue-is-data-quality" class="nav-link" data-scroll-target="#if-the-issue-is-data-quality">If the issue is data quality</a></li>
+  <li><a href="#if-the-issue-is-outliers" id="toc-if-the-issue-is-outliers" class="nav-link" data-scroll-target="#if-the-issue-is-outliers">If the issue is outliers</a></li>
+  <li><a href="#if-normality-is-violated" id="toc-if-normality-is-violated" class="nav-link" data-scroll-target="#if-normality-is-violated">If normality is violated</a></li>
+  <li><a href="#if-homogeneity-of-variance-is-violated" id="toc-if-homogeneity-of-variance-is-violated" class="nav-link" data-scroll-target="#if-homogeneity-of-variance-is-violated">If homogeneity of variance is violated</a></li>
+  <li><a href="#more-advanced-options" id="toc-more-advanced-options" class="nav-link" data-scroll-target="#more-advanced-options">More advanced options</a></li>
+  <li><a href="#a-practical-decision-sequence" id="toc-a-practical-decision-sequence" class="nav-link" data-scroll-target="#a-practical-decision-sequence">A practical decision sequence</a></li>
+  <li><a href="#looking-ahead-to-writing-results" id="toc-looking-ahead-to-writing-results" class="nav-link" data-scroll-target="#looking-ahead-to-writing-results">Looking ahead to writing results</a></li>
   </ul>
 </nav>
     </div>
@@ -759,27 +781,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In the previous section, we learned how to identify and evaluate the assumptions of parametric tests.</p>
-<p>But what happens when those assumptions are <strong>not</strong> met?</p>
-<blockquote class="blockquote">
-<p>Violations of assumptions are common—and they do not mean your analysis is “ruined.”</p>
-</blockquote>
-<p>Instead, they require you to make thoughtful decisions about how to proceed.</p>
-<section id="a-general-approach" class="level2">
-<h2 class="anchored" data-anchor-id="a-general-approach">A general approach</h2>
-<p>When an assumption is violated, you have several options depending on:</p>
-<ul>
-<li>the type of violation</li>
-<li>the severity of the violation</li>
-<li>your research goals</li>
-</ul>
-<p>Broadly, your options include:</p>
-<ul>
-<li>choosing a different statistical test</li>
-<li>modifying your data (carefully and transparently)</li>
-<li>using alternative approaches that are more appropriate for your data</li>
-</ul>
-<p>In this section, we will walk through what to do for each assumption. This <a href="https://www.youtube.com/watch?v=ypF1omeM-7g">video</a> also walks through the chapter.</p>
+<p>In the previous section, you learned how to check several assumptions for parametric tests. Now we need to talk about what to do when one of those assumptions is not met.</p>
+<p>Violations of assumptions are common. They do not mean your analysis is ruined. They mean you need to pause and make a thoughtful decision.</p>
+<p>The worst thing to do is blindly click through jamovi, ignore the assumption checks, and report whatever p-value appears at the end. The second worst thing is to panic and assume every minor assumption issue invalidates the whole analysis.</p>
+<p>The goal is not perfection. The goal is a reasonable, transparent decision.</p>
+<p>This video also walks through what to do when assumptions are violated.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="vembedr">
@@ -789,106 +795,236 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<section id="first-identify-the-kind-of-problem" class="level2">
+<h2 class="anchored" data-anchor-id="first-identify-the-kind-of-problem">First, identify the kind of problem</h2>
+<p>When an assumption is violated, start by asking what kind of problem you have.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kind of problem</th>
+<th>Example</th>
+<th>Usual response</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Wrong test for the variable or design</td>
+<td>Categorical DV with a test that requires a continuous DV</td>
+<td>Choose a different test</td>
+</tr>
+<tr class="even">
+<td>Dependence problem</td>
+<td>Same people measured twice but analyzed as independent groups</td>
+<td>Choose a within-subjects/repeated-measures test</td>
+</tr>
+<tr class="odd">
+<td>Data quality problem</td>
+<td>Impossible values, unmarked missing-value codes, data-entry errors</td>
+<td>Return to data cleaning and correct/document the issue</td>
+</tr>
+<tr class="even">
+<td>Distributional problem</td>
+<td>Non-normal data, extreme skew, unequal variances</td>
+<td>Consider robust, corrected, or non-parametric alternatives</td>
+</tr>
+</tbody>
+</table>
+<p>This distinction matters because different problems require different solutions. A non-normal distribution and a categorical dependent variable are not the same kind of issue.</p>
 </section>
-<section id="intervalratio-data" class="level2">
-<h2 class="anchored" data-anchor-id="intervalratio-data">Interval/ratio data</h2>
-<p>If you are trying to perform a statistical test with a categorical DV, the answer is simple:</p>
-<blockquote class="blockquote">
-<p>Use a statistical test that is appropriate for a categorical dependent variable.</p>
-</blockquote>
-<p>Do <strong>not</strong> try to treat a categorical variable as continuous.</p>
-<p>For example:</p>
-<ul>
-<li>Ordinal DV + categorical IV → chi-square<br>
-</li>
-<li>Ordinal DV + continuous IV → logistic regression (not covered in this course)</li>
-</ul>
-<p>Refer back to Section 9.1 to identify appropriate tests for categorical outcomes.</p>
+<section id="if-you-chose-the-wrong-test" class="level2">
+<h2 class="anchored" data-anchor-id="if-you-chose-the-wrong-test">If you chose the wrong test</h2>
+<p>Sometimes an assumption violation is really a test-selection problem.</p>
+<p>For example, if the dependent variable is categorical but the planned test requires a continuous dependent variable, the solution is not to pretend the categorical variable is continuous. The solution is to choose a test that fits a categorical outcome.</p>
+<p>Similarly, if the same participants are measured more than once, do not use a test that assumes different participants in each group.</p>
+<p>In these cases, return to <a href="./09.1-choosing-the-correct-test.html">Choosing the Correct Test</a>.</p>
 </section>
-<section id="independent-data" class="level2">
-<h2 class="anchored" data-anchor-id="independent-data">Independent data</h2>
-<p>If you violate the assumption of independence, this is a <strong>design issue</strong>, not a data issue.</p>
-<p>This typically occurs with <strong>nested or clustered data</strong>, such as:</p>
+<section id="if-the-issue-is-data-quality" class="level2">
+<h2 class="anchored" data-anchor-id="if-the-issue-is-data-quality">If the issue is data quality</h2>
+<p>Before choosing a different test, make sure the issue is not caused by a problem in the dataset.</p>
+<p>Check for:</p>
 <ul>
-<li>students within classrooms<br>
-</li>
-<li>employees within organizations</li>
+<li>missing-value codes that were not marked as missing;</li>
+<li>impossible values, such as an age of 999;</li>
+<li>data-entry errors;</li>
+<li>values that are valid but extreme;</li>
+<li>variables set to the wrong data type or measure type.</li>
 </ul>
-<p>In these cases, you need statistical methods that account for dependence, such as:</p>
-<ul>
-<li>multilevel modeling (hierarchical modeling)</li>
-</ul>
-<p>We will not cover these methods in this course, but it is important to recognize:</p>
-<blockquote class="blockquote">
-<p>Violations of independence cannot be “fixed” with simple data adjustments.</p>
-</blockquote>
-</section>
-<section id="normality-or-homogeneity-of-variance" class="level2">
-<h2 class="anchored" data-anchor-id="normality-or-homogeneity-of-variance">Normality or homogeneity of variance</h2>
-<p>If you violate either normality or homogeneity of variance, you have several options:</p>
-<ol type="A">
-<li>Remove outliers</li>
-<li>Winsorize or trim the data</li>
-<li>Transform the data</li>
-<li>Perform a non-parametric test</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>You worked on these skills in <a href="./04.0-cleaning-and-preparing-data-in-jamovi.html">Cleaning and Preparing Data in jamovi</a>. This is why data cleaning comes before inferential testing.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Do Not Clean Data to Get the Result You Want">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Warning</span>Do Not Clean Data to Get the Result You Want
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A common concern is whether modifying data “invalidates” the analysis.</p>
-<p>Outliers and non-normal data can distort statistical results. Adjusting data is often about making it more appropriate for the assumptions of the test. Any changes should be transparently reported so others can evaluate your decisions.</p>
+<p>Do not remove, transform, trim, winsorize, or recode data just to make a result statistically significant.</p>
+<p>Any decision to change data should be justified by the research question, measurement scale, data quality, and analytic plan. You should also be able to explain what you did.</p>
 </div>
 </div>
-<section id="a-remove-outliers" class="level3">
-<h3 class="anchored" data-anchor-id="a-remove-outliers">A: Remove outliers</h3>
-<p>Before doing anything else, check for outliers.</p>
-<ul>
-<li><strong>Univariate outliers</strong> → examine individual variables<br>
-</li>
-<li><strong>Multivariate outliers</strong> → require more advanced methods (e.g., Mahalanobis distance, Cook’s distance; not covered here)</li>
-</ul>
-<p>What can you do with outliers?</p>
+</section>
+<section id="if-the-issue-is-outliers" class="level2">
+<h2 class="anchored" data-anchor-id="if-the-issue-is-outliers">If the issue is outliers</h2>
+<p>Outliers can distort means, standard deviations, correlations, and test statistics. But not all outliers are errors.</p>
+<p>When you see an outlier, ask:</p>
 <ol type="1">
-<li>Ignore them: not recommended<br>
-</li>
-<li>Delete them: generally not recommended (loss of data)<br>
-</li>
-<li>Winsorize or trim: often appropriate for a few extreme values<br>
-</li>
-<li>Transform the variable: useful when many outliers exist</li>
+<li>Is the value impossible?</li>
+<li>Is the value possible but unlikely?</li>
+<li>Is the value valid and meaningful?</li>
+<li>Does the outlier strongly affect the result?</li>
 </ol>
+<p>If the value is impossible or clearly caused by a data-entry problem, correct it if you know the correct value or mark it as missing if you do not. If the value is valid but extreme, be cautious about deleting it. That data point may be telling you something important.</p>
+<p>In more advanced work, researchers may conduct sensitivity analyses, where they run the analysis with and without influential outliers to see whether the conclusion changes.</p>
 </section>
-<section id="b.-winsorize-or-trim-the-data" class="level3">
-<h3 class="anchored" data-anchor-id="b.-winsorize-or-trim-the-data">B. Winsorize or trim the data</h3>
+<section id="if-normality-is-violated" class="level2">
+<h2 class="anchored" data-anchor-id="if-normality-is-violated">If normality is violated</h2>
+<p>If normality is violated, your options depend on the severity of the violation, the sample size, and the test.</p>
+<p>Possible responses include:</p>
 <ul>
-<li><strong>Winsorizing</strong> → used when both tails have outliers<br>
-</li>
-<li><strong>Trimming</strong> → used when outliers are on one side of the distribution of data (e.g., the high or low end but not both)</li>
+<li>continue with the parametric test if the violation is minor and the test is reasonably robust;</li>
+<li>use a non-parametric alternative;</li>
+<li>use a robust or corrected version of the test when available;</li>
+<li>consider a transformation in more advanced work;</li>
+<li>report the issue transparently.</li>
 </ul>
-<p>In both cases, extreme values are replaced with less extreme values.</p>
-<p>In jamovi, this can be done using the <strong>Transform</strong> feature.</p>
-<p>Example: - Replace values &lt; 60 with 60 (trimming)<br>
-- Replace values &gt; 100 with 100 and values &lt; 20 with 20 (winsorizing)</p>
-<p><img src="images/03-jamovi/winsorize.png" class="img-fluid"></p>
+<p>In this course, you will most often decide between a parametric test and its non-parametric alternative. When we get to the specific inferential tests, we will talk about the most common alternatives for each test.</p>
+<p>Examples:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Planned parametric test</th>
+<th>Possible non-parametric alternative</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Independent t-test</td>
+<td>Mann-Whitney U test</td>
+</tr>
+<tr class="even">
+<td>Dependent t-test</td>
+<td>Wilcoxon matched-pairs test</td>
+</tr>
+<tr class="odd">
+<td>One-way ANOVA</td>
+<td>Kruskal-Wallis test</td>
+</tr>
+<tr class="even">
+<td>Repeated-measures ANOVA</td>
+<td>Friedman test</td>
+</tr>
+<tr class="odd">
+<td>Pearson correlation</td>
+<td>Spearman correlation or Kendall’s tau</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Do Not Overreact to One Normality Check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Do Not Overreact to One Normality Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remember from <a href="./09.2-parametric-assumptions.html">Parametric Assumptions</a> that normality can be checked in multiple ways. A significant Shapiro-Wilk test does not automatically mean you must abandon the parametric test, especially if the plots look reasonable and the sample size is not tiny.</p>
+<p>Use all of the evidence together: the visualization, skew and kurtosis, Shapiro-Wilk test, Q-Q plot, sample size, and the test you plan to run.</p>
+</div>
+</div>
 </section>
-<section id="c.-transforming-data" class="level3">
-<h3 class="anchored" data-anchor-id="c.-transforming-data">C. Transforming data</h3>
-<p>If violations persist, you can transform the entire variable.</p>
-<p>Common transformations:</p>
+<section id="if-homogeneity-of-variance-is-violated" class="level2">
+<h2 class="anchored" data-anchor-id="if-homogeneity-of-variance-is-violated">If homogeneity of variance is violated</h2>
+<p>If homogeneity of variance is violated, you do not always need to switch to a fully non-parametric test.</p>
+<p>For some tests, jamovi provides versions that adjust for unequal variances.</p>
+<p>Examples:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Planned test</th>
+<th>If variances are unequal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Independent t-test</td>
+<td>Use Welch’s t-test</td>
+</tr>
+<tr class="even">
+<td>One-way ANOVA</td>
+<td>Use Welch’s ANOVA</td>
+</tr>
+</tbody>
+</table>
+<p>This is why assumption checking affects which result you interpret. You may run one analysis menu in jamovi, but you need to know which row or version of the test is appropriate.</p>
+</section>
+<section id="more-advanced-options" class="level2">
+<h2 class="anchored" data-anchor-id="more-advanced-options">More advanced options</h2>
+<p>For this course, I mostly want you to know these options exist. I do not expect you to casually transform, trim, or winsorize data in most undergraduate assignments.</p>
+<section id="option-a-remove-outliers" class="level3">
+<h3 class="anchored" data-anchor-id="option-a-remove-outliers">Option A: Remove outliers</h3>
+<p>The first option people often think of is removing outliers. I want you to be careful with that impulse.</p>
+<p>Removing outliers may be appropriate when the value is impossible or clearly caused by a data-entry error. For example, if a scale ranges from 1 to 5 and someone has a value of 55, something went wrong.</p>
+<p>But if the value is possible and valid, deleting it just because it is inconvenient can distort the data. Outliers may be telling us something meaningful about the sample or the phenomenon we are studying.</p>
+</section>
+<section id="option-b-winsorize-or-trim-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="option-b-winsorize-or-trim-the-data">Option B: Winsorize or trim the data</h3>
+<p><strong>Trimming</strong> and <strong>winsorizing</strong> are approaches for dealing with extreme values without necessarily deleting all of the data.</p>
+<ul>
+<li><strong>Trimming</strong> removes or sets aside extreme values based on a rule.</li>
+<li><strong>Winsorizing</strong> replaces extreme values with less extreme values.</li>
+</ul>
+<p>For example, if values below 60 are considered extreme, you might replace values below 60 with 60. If values above 100 and below 20 are considered extreme, you might replace values above 100 with 100 and values below 20 with 20.</p>
+<p>In jamovi, this can be done using the <strong>Transform</strong> feature.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/03-jamovi/winsorize.png" class="img-fluid figure-img"></p>
+<figcaption>Example of winsorizing in jamovi</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="More Detail About Trimming and Winsorizing">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>More Detail About Trimming and Winsorizing
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Trimming and winsorizing are real analytic options, but they should be used carefully and transparently. They should not be used just to make a test statistically significant.</p>
+<p>If you use either approach, you should be able to explain:</p>
+<ul>
+<li>why the extreme values were a problem;</li>
+<li>what rule you used;</li>
+<li>whether the rule was decided before or after looking at the data;</li>
+<li>how the change affected the interpretation of the variable.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="option-c-transform-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="option-c-transform-the-data">Option C: Transform the data</h3>
+<p>If violations persist, you can transform the entire variable. A transformation changes the scale of a variable, often to reduce skew or make variance more similar across groups.</p>
+<p>Common transformations include:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 27%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 21%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -902,69 +1038,81 @@ Note
 <tbody>
 <tr class="odd">
 <td>Log</td>
-<td>log(X)</td>
+<td><code>log(X)</code></td>
 <td>Yes</td>
 <td>No</td>
 <td>Yes</td>
 </tr>
 <tr class="even">
-<td>Square Root</td>
-<td>sqrt(X)</td>
+<td>Square root</td>
+<td><code>sqrt(X)</code></td>
 <td>Yes</td>
 <td>No</td>
 <td>Yes</td>
 </tr>
 <tr class="odd">
 <td>Reciprocal</td>
-<td>1/X</td>
+<td><code>1/X</code></td>
 <td>Yes</td>
 <td>No</td>
 <td>Yes</td>
 </tr>
 <tr class="even">
-<td>Reverse Score</td>
-<td>(1+MAX) - X, then transform</td>
+<td>Reverse score, then transform</td>
+<td><code>(1 + MAX) - X</code>, then transform</td>
 <td>No</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
 </tbody>
 </table>
-<p>After transforming your data:</p>
-<blockquote class="blockquote">
-<p>You must re-check assumptions using your new variable.</p>
-</blockquote>
+<p>After transforming your data, you must re-check assumptions using your new variable.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Transforming Changes Interpretation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Transforming Changes Interpretation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Transformations can be useful, but they also change the meaning of the variable. A log-transformed score is not interpreted the same way as the original score.</p>
+<p>Do not transform data automatically just because one normality test was significant. Transformations should be justified by the research question, the measurement scale, the distribution of the data, and the analysis plan.</p>
+</div>
+</div>
 </section>
-<section id="d.-non-parametric-tests" class="level3">
-<h3 class="anchored" data-anchor-id="d.-non-parametric-tests">D. Non-parametric tests</h3>
-<p>If transformations and adjustments do not resolve the issue, you can use a <strong>non-parametric test</strong>.</p>
+<section id="option-d-use-a-non-parametric-test" class="level3">
+<h3 class="anchored" data-anchor-id="option-d-use-a-non-parametric-test">Option D: Use a non-parametric test</h3>
+<p>If the assumption violation is serious and cannot be addressed in a reasonable way, you may use a non-parametric alternative.</p>
 <p>Non-parametric tests:</p>
 <ul>
-<li>Do not rely on normality<br>
-</li>
-<li>Are more robust to violations<br>
-</li>
-<li>Often have lower statistical power when assumptions <em>are</em> met</li>
+<li>make fewer assumptions about the shape of the distribution;</li>
+<li>are often more robust to violations of normality;</li>
+<li>may have lower statistical power when parametric assumptions are actually met;</li>
+<li>often answer a slightly different version of the research question.</li>
 </ul>
-<blockquote class="blockquote">
-<p>Parametric tests are preferred when assumptions are met, but non-parametric tests are more appropriate when assumptions are violated.</p>
-</blockquote>
-<p>As we move into specific statistical tests, you will learn the non-parametric equivalents (e.g., Mann–Whitney instead of independent t-test).</p>
+<p>Parametric tests are usually preferred when assumptions are reasonable, but non-parametric tests may be more appropriate when assumptions are clearly violated.</p>
+<p>As we move into specific statistical tests, you will learn the non-parametric equivalents when they are relevant.</p>
 </section>
 </section>
-<section id="putting-it-all-together" class="level2">
-<h2 class="anchored" data-anchor-id="putting-it-all-together">Putting it all together</h2>
-<p>When assumptions are violated, think through your options in order:</p>
+<section id="a-practical-decision-sequence" class="level2">
+<h2 class="anchored" data-anchor-id="a-practical-decision-sequence">A practical decision sequence</h2>
+<p>When an assumption appears violated, I would generally think through the problem in this order:</p>
 <ol type="1">
-<li>Check for and address outliers<br>
-</li>
-<li>Consider transformations<br>
-</li>
-<li>If needed, use a non-parametric alternative</li>
+<li><strong>Check whether the planned test matches the variables and design.</strong> If not, choose a different test.</li>
+<li><strong>Check for data quality problems.</strong> Fix errors and document what you did.</li>
+<li><strong>Look at the severity of the violation.</strong> Do the plots show a serious issue, or is the problem minor?</li>
+<li><strong>Choose the appropriate test result.</strong> This might be the original parametric test, a Welch correction, or a non-parametric alternative.</li>
+<li><strong>Report your decision clearly.</strong> Explain what you checked and what result you interpreted.</li>
 </ol>
-<blockquote class="blockquote">
-<p>There is no single “correct” solution—your goal is to make a justified and transparent decision.</p>
-</blockquote>
+<p>There is not always one single correct solution. Your goal is to make a justified and transparent decision.</p>
+</section>
+<section id="looking-ahead-to-writing-results" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead-to-writing-results">Looking ahead to writing results</h2>
+<p>Assumption checking does not end when you choose the test. It also affects how you write about your results.</p>
+<p>If assumptions are met, your write-up may be straightforward. If assumptions are violated, readers need to know what you checked, what decision you made, and which result you interpreted.</p>
+<p>In <a href="./10.0-writing-results-in-apa-style.html">Chapter 10</a>, we will focus on how to communicate statistical results clearly in APA style.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -976,34 +1124,32 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>What should you do if your dependent variable is categorical but you planned to use a parametric test?</p></li>
-<li><p>Why is violating independence different from violating normality?</p></li>
-<li><p>What is one advantage and one disadvantage of removing outliers?</p></li>
-<li><p>When would you use a transformation instead of winsorizing?</p></li>
-<li><p>When should you use a non-parametric test?<br>
-</p></li>
+<li>A student planned to run an independent t-test, but the dependent variable is political affiliation. What is the problem?</li>
+<li>A researcher measured the same participants before and after an intervention but planned to run an independent t-test. What is the problem?</li>
+<li>A dataset has a value of 999 for a scale that ranges from 1 to 5. What should you do first?</li>
+<li>Levene’s test is significant for an independent t-test. What test result might you interpret instead?</li>
+<li>Why should transformations not be used just to make a p-value significant?</li>
 </ol>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answers">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-note callout-titled" title="Suggested Answers">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answers
+<span class="screen-reader-only">Note</span>Suggested Answers
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>Use a statistical test appropriate for a categorical dependent variable</p></li>
-<li><p>Because independence is a design issue and cannot be fixed through simple data adjustments</p></li>
-<li><p>Advantage: removes extreme influence; Disadvantage: reduces sample size</p></li>
-<li><p>When there are many outliers or a skewed distribution across the entire variable</p></li>
-<li><p>When assumptions are violated and cannot be resolved through other methods<br>
-</p></li>
+<li>Political affiliation is categorical, so the planned test does not match the dependent variable. The student should choose a test for categorical data.</li>
+<li>The observations are related because the same people were measured twice. A within-subjects test, such as a dependent t-test, would likely be more appropriate.</li>
+<li>Check whether 999 is a missing-value code or data-entry error. Do not treat it as a real scale score.</li>
+<li>Welch’s t-test, which adjusts for unequal variances.</li>
+<li>Because changing data to produce statistical significance is not a justified analytic decision. Transformations should be based on the research question, measurement, data quality, and assumptions, and they should be reported transparently.</li>
 </ol>
 </div>
 </div>

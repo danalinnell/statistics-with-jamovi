@@ -45,6 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,7 +73,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="style.css">
@@ -417,8 +417,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Recap, Common Mistakes, and Looking Ahead</span></a>
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -435,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.1 Effect Sizes</span></a>
+ <span class="menu-text">8.1 Effect Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -453,7 +453,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.4 Sample Size and Power Analysis</span></a>
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -510,8 +516,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10.3-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10.3 Common APA-Style Errors</span></a>
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -729,14 +747,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#what-is-power" id="toc-what-is-power" class="nav-link active" data-scroll-target="#what-is-power">What is power?</a></li>
-  <li><a href="#power-vs-the-p-value" id="toc-power-vs-the-p-value" class="nav-link" data-scroll-target="#power-vs-the-p-value">Power vs the p-value</a></li>
-  <li><a href="#a-key-idea-power-reflects-detectability" id="toc-a-key-idea-power-reflects-detectability" class="nav-link" data-scroll-target="#a-key-idea-power-reflects-detectability">A key idea: power reflects detectability</a></li>
-  <li><a href="#bean-alpha-and-power" id="toc-bean-alpha-and-power" class="nav-link" data-scroll-target="#bean-alpha-and-power">B(E)A(N): Alpha and power</a></li>
-  <li><a href="#how-alpha-and-power-relate-to-one-another" id="toc-how-alpha-and-power-relate-to-one-another" class="nav-link" data-scroll-target="#how-alpha-and-power-relate-to-one-another">How alpha and power relate to one another</a></li>
-  <li><a href="#connecting-power-to-bean" id="toc-connecting-power-to-bean" class="nav-link" data-scroll-target="#connecting-power-to-bean">Connecting power to BEAN</a></li>
-  <li><a href="#a-practical-takeaway" id="toc-a-practical-takeaway" class="nav-link" data-scroll-target="#a-practical-takeaway">A practical takeaway</a></li>
-  <li><a href="#want-another-explanation-of-power" id="toc-want-another-explanation-of-power" class="nav-link" data-scroll-target="#want-another-explanation-of-power">Want another explanation of power?</a></li>
+  <li><a href="#power-vs.-p-values" id="toc-power-vs.-p-values" class="nav-link active" data-scroll-target="#power-vs.-p-values">Power vs.&nbsp;p-values</a></li>
+  <li><a href="#power-and-error-types" id="toc-power-and-error-types" class="nav-link" data-scroll-target="#power-and-error-types">Power and Error Types</a></li>
+  <li><a href="#assuming-the-null-is-100-true" id="toc-assuming-the-null-is-100-true" class="nav-link" data-scroll-target="#assuming-the-null-is-100-true">Assuming the Null Is 100% True</a></li>
+  <li><a href="#assuming-the-alternative-is-100-true" id="toc-assuming-the-alternative-is-100-true" class="nav-link" data-scroll-target="#assuming-the-alternative-is-100-true">Assuming the Alternative Is 100% True</a></li>
+  <li><a href="#assuming-a-5050-split" id="toc-assuming-a-5050-split" class="nav-link" data-scroll-target="#assuming-a-5050-split">Assuming a 50/50 Split</a></li>
+  <li><a href="#increasing-power" id="toc-increasing-power" class="nav-link" data-scroll-target="#increasing-power">Increasing Power</a></li>
+  <li><a href="#decreasing-alpha" id="toc-decreasing-alpha" class="nav-link" data-scroll-target="#decreasing-alpha">Decreasing Alpha</a></li>
+  <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn">Your Turn</a></li>
+  <li><a href="#how-this-connects-to-bean" id="toc-how-this-connects-to-bean" class="nav-link" data-scroll-target="#how-this-connects-to-bean">How This Connects to BEAN</a></li>
   </ul>
 </nav>
     </div>
@@ -762,85 +781,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In Chapter 7, we introduced power as part of hypothesis testing. In this section, we expand on that idea and connect power more explicitly to the BEAN framework.</p>
-<section id="what-is-power" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-power">What is power?</h2>
-<p><strong>Power</strong> is the probability that you will observe a statistically significant effect if there is a true effect. In other words, power is the probability of a statistically significant result assuming the alternative hypothesis is true.</p>
-<p>Power can range from 0–100%, but typically people set it at 80%. This means that, if we set power at 80% and if the alternative hypothesis is true, then we have an 80% chance of detecting the effect.</p>
-<p>However, in practice, power is often far lower than 80% due to insufficient sample sizes for the effect sizes of interest, something we’ll investigate in the final section of this chapter and in the homework.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<p><button class="glossary" title="The probability of detecting an effect if the effect really exists.">statistical power</button> is the probability of observing a statistically significant result <strong>if the alternative hypothesis is true</strong>.</p>
+<p>In other words, power tells us how likely we are to detect an effect if the effect really exists.</p>
+<p>Power is often set at 80%, meaning that if the effect exists, we have an 80% chance of detecting it. That also means we have a 20% chance of missing it. That 20% is beta.</p>
+<p>This is why beta and power are connected:</p>
+<blockquote class="blockquote">
+<p>Power = 1 - beta</p>
+</blockquote>
+<div class="callout callout-style-default callout-note callout-titled" title="Formula Note">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Formula Note
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Just like with alpha, you have to critically set your power level too. Although we commonly set it to 80%, that still leaves a large likelihood of a false negative if the alternative hypothesis is true. To better detect a statistically significant result (assuming the alternative is true), we should aim for higher power levels.</p>
+<p>If beta is the probability of a Type II error, then power is the probability of avoiding a Type II error.</p>
+<p>For example, if beta = .20, then power = 1 - .20 = .80.</p>
 </div>
 </div>
-<p>Power is based on the assumption that the alternative hypothesis is true whereas the <em>p</em>-value is based on the assumption that the null hypothesis is true. If we want to increase the likelihood of supporting our alternative hypothesis, then we should be doing all we can to increase our power!</p>
-</section>
-<section id="power-vs-the-p-value" class="level2">
-<h2 class="anchored" data-anchor-id="power-vs-the-p-value">Power vs the p-value</h2>
-<p><strong>Power</strong> is the probability that you will observe a statistically significant effect if there is a true effect. In other words, power is the probability of a statistically significant result assuming the alternative hypothesis is true.</p>
-<p>Let’s compare this to our definition of the <em>p</em>-value: the probability of observing data that is as extreme or more extreme than the data you have observed, assuming the null hypothesis is true.</p>
-<p>Although these definitions may sound similar, they are actually answering two very different questions:</p>
-<ul>
-<li>The <em>p</em>-value asks: “If there is no effect (the null hypothesis is true), how surprising are these data?”</li>
-<li>Power asks: “If there is a real effect (the alternative hypothesis is true), how likely are we to detect it?”</li>
-</ul>
-<p>The key difference is the assumption each one makes:</p>
-<ul>
-<li><em>p</em>-values are calculated <strong>assuming the null hypothesis is true</strong><br>
-</li>
-<li>Power is calculated <strong>assuming the alternative hypothesis is true</strong></li>
-</ul>
+</div>
+<section id="power-vs.-p-values" class="level2">
+<h2 class="anchored" data-anchor-id="power-vs.-p-values">Power vs.&nbsp;p-values</h2>
+<p>Power and <em>p</em>-values are related to hypothesis testing, but they assume different things.</p>
+<p>A <em>p</em>-value asks:</p>
 <blockquote class="blockquote">
-<p>In this sense, they are two sides of the same coin—but they are not interchangeable.</p>
+<p>If the null hypothesis is true, how surprising are these data?</p>
 </blockquote>
-<p>Another way to think about it:</p>
-<ul>
-<li>The <em>p</em>-value helps us evaluate evidence <strong>against the null hypothesis</strong><br>
-</li>
-<li>Power tells us how likely we are to find evidence <strong>for the alternative hypothesis when it is true</strong></li>
-</ul>
-<p>This distinction is critical for understanding hypothesis testing. A small <em>p</em>-value tells us that our data are unlikely under the null hypothesis, but it does <strong>not</strong> tell us how likely we were to detect the effect in the first place—that is the role of power.</p>
-</section>
-<section id="a-key-idea-power-reflects-detectability" class="level2">
-<h2 class="anchored" data-anchor-id="a-key-idea-power-reflects-detectability">A key idea: power reflects detectability</h2>
-<p>Power is best understood as our <strong>ability to detect effects</strong>.</p>
-<ul>
-<li>High power → we are likely to detect real effects<br>
-</li>
-<li>Low power → we are likely to miss real effects</li>
-</ul>
-<p>This makes power a central concept in BEAN:</p>
+<p>Power asks:</p>
 <blockquote class="blockquote">
-<p>Effect size, alpha, and sample size all work together to determine power.</p>
+<p>If the alternative hypothesis is true, how likely are we to detect the effect?</p>
 </blockquote>
+<p>That difference matters. A small <em>p</em>-value tells us the data are surprising under the null hypothesis. It does not tell us whether the study had a good chance of detecting the effect in the first place.</p>
 </section>
-<section id="bean-alpha-and-power" class="level2">
-<h2 class="anchored" data-anchor-id="bean-alpha-and-power">B(E)A(N): Alpha and power</h2>
-<p>Let’s start putting all this together. Here’s all our definitions so far (remember, we can never truly know whether the null or alternative hypothesis is true):</p>
-<ol type="1">
-<li>Alpha is the value we set to determine what constitutes a statistically significant result, assuming the null hypothesis is true.<br>
-</li>
-<li>Power is the value we set at for what constitutes a statistically significant result, assuming the alternative hypothesis is true.<br>
-</li>
-<li>A Type I error is when we get a statistically significant result but in fact the null hypothesis is true.<br>
-</li>
-<li>A Type II error is when we do not get a statistically significant result but in fact the alternative hypothesis is true.<br>
-</li>
-<li>A correct inference is when we either
+<section id="power-and-error-types" class="level2">
+<h2 class="anchored" data-anchor-id="power-and-error-types">Power and Error Types</h2>
+<p>Let’s connect alpha, power, Type I error, and Type II error.</p>
+<p>In the table below, the rows represent the result of the study. The columns represent what is true in the real world. Of course, in real life, we never get to know with certainty whether the null or alternative hypothesis is true. That is why replication and good study design matter.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>H₀ is true</th>
+<th>H₁ is true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>p</em> &lt; .05</td>
+<td>Type I error</td>
+<td>Correct inference</td>
+</tr>
+<tr class="even">
+<td><em>p</em> &gt; .05</td>
+<td>Correct inference</td>
+<td>Type II error</td>
+</tr>
+</tbody>
+</table>
+<p>Now let’s add BEAN language:</p>
 <ul>
-<li>get a statistically significant result when the alternative hypothesis is true <em>or</em><br>
-</li>
-<li>do not get a statistically significant result when the null hypothesis is true.</li>
-</ul></li>
-</ol>
+<li><strong>Alpha</strong> is the probability of a Type I error if the null hypothesis is true.</li>
+<li><strong>Power</strong> is the probability of a correct inference if the alternative hypothesis is true.</li>
+<li><strong>Beta</strong> is the probability of a Type II error if the alternative hypothesis is true.</li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -851,492 +859,270 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Consider the following table:</p>
+<p>In the table below, decide where each term belongs: alpha, power, Type I error, Type II error, and correct inference.</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 58%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
 <thead>
 <tr class="header">
 <th></th>
-<th style="text-align: center;">H<sub>0</sub> is true</th>
-<th style="text-align: center;">H<sub>1</sub> is true</th>
+<th>H₀ is true</th>
+<th>H₁ is true</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong><em>p</em></strong> <strong>&lt; .05</strong> (statistically significant)</td>
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">B</td>
+<td><em>p</em> &lt; .05</td>
+<td>A</td>
+<td>B</td>
 </tr>
 <tr class="even">
-<td><strong><em>p</em></strong> <strong>&gt; .05</strong> (statistically non-significant)</td>
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">D</td>
+<td><em>p</em> &gt; .05</td>
+<td>C</td>
+<td>D</td>
 </tr>
 </tbody>
 </table>
-<p>Using what you know about alpha, power, and errors, determine which cell(s) each of the following belong in:</p>
-<ol type="1">
-<li>Alpha<br>
-</li>
-<li>Power<br>
-</li>
-<li>Type I error<br>
-</li>
-<li>Type II error<br>
-</li>
-<li>Correct inference (there are two!)</li>
-</ol>
-<p>Before checking the answers, try to reason through each one carefully.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answers">
+<div class="callout callout-style-default callout-note callout-titled" title="Suggested Answer">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answers
+<span class="screen-reader-only">Note</span>Suggested Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li><p><strong>Alpha → A</strong>: Alpha is the probability of a statistically significant result when the null hypothesis is true (Type I error)</p></li>
-<li><p><strong>Power → B</strong>: Power is the probability of a statistically significant result when the alternative hypothesis is true</p></li>
-<li><p><strong>Type I error → A</strong>: Rejecting the null hypothesis when it is actually true</p></li>
-<li><p><strong>Type II error → D</strong>: Failing to reject the null hypothesis when the alternative hypothesis is true</p></li>
-<li><p><strong>Correct inference → B and C</strong></p>
-<ul>
-<li>B: Detecting a real effect when it exists<br>
-</li>
-<li>C: Correctly concluding no effect when the null hypothesis is true<br>
-</li>
-</ul></li>
-</ol>
+<p>A = alpha / Type I error<br>
+B = power / correct inference<br>
+C = correct inference<br>
+D = beta / Type II error</p>
+<p>The key is to remember that alpha only matters when the null hypothesis is true, and power only matters when the alternative hypothesis is true.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="how-alpha-and-power-relate-to-one-another" class="level2">
-<h2 class="anchored" data-anchor-id="how-alpha-and-power-relate-to-one-another">How alpha and power relate to one another</h2>
-<p>We’ll eventually see how power, alpha, effect sizes, and sample size all interrelate (BEAN!). For now, let’s examine how alpha and power relate to one another in the context of hypothesis testing.</p>
-<p>Note that a lot of this comes from Daniel Lakens’ <a href="https://lakens.github.io/statistical_inferences/errorcontrol.html">Improving your Statistical Inference</a> work.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Remember: we never know for certain if the null or alternative hypotheses are true! These are for illustrative purposes.</p>
-</div>
-</div>
-<section id="assuming-the-null-hypothesis-is-100-true" class="level3">
-<h3 class="anchored" data-anchor-id="assuming-the-null-hypothesis-is-100-true">Assuming the null hypothesis is 100% true</h3>
-<p>If we set alpha at 5%, power at 80%, and assume the null hypothesis is 100% true (meaning the effect definitely does not exist), we could fill in the following table as such:</p>
+<section id="assuming-the-null-is-100-true" class="level2">
+<h2 class="anchored" data-anchor-id="assuming-the-null-is-100-true">Assuming the Null Is 100% True</h2>
+<p>Let’s imagine the null hypothesis is 100% true. We will also use the common defaults of alpha = 5% and power = 80%.</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 58%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
 <thead>
 <tr class="header">
 <th></th>
-<th style="text-align: center;">H<sub>0</sub> is true</th>
-<th style="text-align: center;">H<sub>1</sub> is true</th>
+<th style="text-align: right;">H₀ is true</th>
+<th style="text-align: right;">H₁ is true</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong><em>p</em></strong> <strong>&lt; .05</strong> (statistically significant)</td>
-<td style="text-align: center;">5%</td>
-<td style="text-align: center;">0%</td>
+<td><em>p</em> &lt; .05</td>
+<td style="text-align: right;">5%</td>
+<td style="text-align: right;">0%</td>
 </tr>
 <tr class="even">
-<td><strong><em>p</em></strong> <strong>&gt; .05</strong> (statistically non-significant)</td>
-<td style="text-align: center;">95%</td>
-<td style="text-align: center;">0%</td>
+<td><em>p</em> &gt; .05</td>
+<td style="text-align: right;">95%</td>
+<td style="text-align: right;">0%</td>
 </tr>
 </tbody>
 </table>
-<p>How did I get there? First, we’re assuming the null hypothesis is 100% true. Therefore, that column must add up to 100%. If the null hypothesis is 100%—and we know our hypotheses must be mutually exclusive—then the alternative hypothesis must be 0% true. Therefore, that column must add up to 0%. The whole table must equal to 100% to exhaust all options.</p>
-<p>Therefore, our power doesn’t matter at all in this case. If the null is true, then it doesn’t matter what power we have to detect the alternative effect <em>because the alternative effect does not exist</em>. So we instead use alpha and put it in the upper left cell. Note that our alpha level is the Type I error rate we are setting!</p>
-<p>If the whole table must equal to 100%, and the left column must equal to 100% because the null is 100% true, then 100%-5% = 95% for the correct inference. In other words, if we tested this effect (that doesn’t exist) 100 times, around 95% of the time we would get a non-significant p-value (<em>p</em> &gt; .05) and about 5% of the time we would get a significant p-value and be making a Type I error.</p>
-<p>We can visualize our <em>p</em>-value distribution using this <a href="https://rpsychologist.com/d3/pdist/">handy interactive calculator</a>. We set our effect size (ES) to be <em>d</em> = 0, meaning there is no effect (i.e., the null hypothesis is true). This results in a uniform distribution of p-values. Exactly 5% of p-values would fall between <em>p</em> = 0 and <em>p</em> = .05 (the shaded region to the right of the red dotted line). That aligns with our Type I error rate as well (5%). Go ahead and play around with the interactive calculator and try moving the slider for sample size! Notice that it does absolutely nothing. We’ll understand why when we put everything together.</p>
+<p>How did we get there?</p>
+<p>If the null hypothesis is 100% true, then the H₀ column must add to 100%. Because the hypotheses are mutually exclusive, the H₁ column must add to 0%.</p>
+<p>Alpha is 5%, so 5% goes in the top-left cell. The remaining 95% goes in the bottom-left cell.</p>
+<p>In this situation, power does not matter because the alternative hypothesis is not true. You cannot detect an effect that does not exist.</p>
 <p><img src="images/05-bean/null.png" class="img-fluid"></p>
+<p>If we tested this nonexistent effect 100 times, about 95 of those studies would correctly fail to reject the null hypothesis. About 5 would incorrectly reject the null hypothesis and produce Type I errors.</p>
 </section>
-<section id="assuming-the-alternative-hypothesis-is-100-true" class="level3">
-<h3 class="anchored" data-anchor-id="assuming-the-alternative-hypothesis-is-100-true">Assuming the alternative hypothesis is 100% true</h3>
-<p>Let’s try out the opposite: assume the alternative hypothesis is 100% true, alpha is 5%, and power is 80%. What would you put in the table?</p>
+<section id="assuming-the-alternative-is-100-true" class="level2">
+<h2 class="anchored" data-anchor-id="assuming-the-alternative-is-100-true">Assuming the Alternative Is 100% True</h2>
+<p>Now let’s imagine the alternative hypothesis is 100% true. Again, alpha = 5% and power = 80%.</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 58%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
 <thead>
 <tr class="header">
 <th></th>
-<th style="text-align: center;">H<sub>0</sub> is true</th>
-<th style="text-align: center;">H<sub>1</sub> is true</th>
+<th style="text-align: right;">H₀ is true</th>
+<th style="text-align: right;">H₁ is true</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong><em>p</em></strong> <strong>&lt; .05</strong> (statistically significant)</td>
-<td style="text-align: center;">0%</td>
-<td style="text-align: center;">80%</td>
+<td><em>p</em> &lt; .05</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">80%</td>
 </tr>
 <tr class="even">
-<td><strong><em>p</em></strong> <strong>&gt; .05</strong> (statistically non-significant)</td>
-<td style="text-align: center;">0%</td>
-<td style="text-align: center;">20%</td>
+<td><em>p</em> &gt; .05</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">20%</td>
 </tr>
 </tbody>
 </table>
-<p>How did I get those numbers? First, remember that the table must equal to 100% (hypotheses must be exhaustive). Second, remember that the alternative hypothesis is 100% true so that column must equal to 100% (and because hypotheses must be mutually exclusive, the other column must equal to 0%).</p>
-<p>Therefore, it doesn’t matter what we set alpha to. We cannot get a Type I error if the alternative hypothesis is true! We can only get a correct inference or make a Type II error.</p>
-<p>We set power to 80%, and power is the probability of getting a statistically significant result assuming the alternative hypothesis is true. Therefore it goes in the top right cell. Notice that power is the probability of correctly detecting a statistically significant effect!</p>
-<p>With simple arithmetic, 100%-80% = 20% is our Type II error (aka a false negative). If we were to test for this effect 100 times, about 80 times we would correctly detect the effect and about 20 times we would fail to detect the effect.</p>
-<p>Let’s visualize this. Go back to our <a href="https://rpsychologist.com/d3/pdist/">handy interactive calculator</a> and put <em>d</em> = .8 as our effect size and <em>n</em> = 25 per group to our sample size. Notice now what our distribution of p-values looks like! Rather than a uniform distribution, now we have a steep exponential distribution. I have chosen to highlight all p-values in the range of <em>p</em> &gt; .05, which in that selection is roughly 20% (our Type II error rate from above). The number of <em>p</em>-values &lt; .05 is roughly 80%. Play again with the ES slider and sample size slider. Notice now that it makes a difference to our power! You’re getting a glimpse into how power depends on our alpha, effect size, and sample size. BEAN!</p>
+<p>If the alternative hypothesis is 100% true, then the H₁ column must add to 100%, and the H₀ column must add to 0%.</p>
+<p>Power is 80%, so 80% goes in the top-right cell. The remaining 20% goes in the bottom-right cell. That 20% is beta, or the Type II error rate.</p>
 <p><img src="images/05-bean/alternative.png" class="img-fluid"></p>
+<p>If we tested this real effect 100 times, about 80 studies would correctly detect the effect. About 20 studies would miss it.</p>
 </section>
-<section id="assuming-a-5050-split-on-the-null-and-alternative-hypotheses" class="level3">
-<h3 class="anchored" data-anchor-id="assuming-a-5050-split-on-the-null-and-alternative-hypotheses">Assuming a 50/50 split on the null and alternative hypotheses</h3>
-<p>In reality, we never truly know whether the null or alternative hypotheses are true. Maybe we’re testing a new effect and we are completely 50/50 on whether the null or alternative hypothesis is true. Let’s keep our alpha and power the same (5% and 80%, respectively) and fill out our table now:</p>
+<section id="assuming-a-5050-split" class="level2">
+<h2 class="anchored" data-anchor-id="assuming-a-5050-split">Assuming a 50/50 Split</h2>
+<p>In reality, we do not know whether the null or alternative hypothesis is true. For practice, let’s imagine we are 50/50: half the probability is in the null-hypothesis column, and half is in the alternative-hypothesis column.</p>
+<p>Again, alpha = 5% and power = 80%.</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 58%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
 <thead>
 <tr class="header">
 <th></th>
-<th style="text-align: center;">H<sub>0</sub> is true</th>
-<th style="text-align: center;">H<sub>1</sub> is true</th>
+<th style="text-align: right;">H₀ is true</th>
+<th style="text-align: right;">H₁ is true</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong><em>p</em></strong> <strong>&lt; .05</strong> (statistically significant)</td>
-<td style="text-align: center;">2.5%</td>
-<td style="text-align: center;">40%</td>
+<td><em>p</em> &lt; .05</td>
+<td style="text-align: right;">2.5%</td>
+<td style="text-align: right;">40%</td>
 </tr>
 <tr class="even">
-<td><strong><em>p</em></strong> <strong>&gt; .05</strong> (statistically non-significant)</td>
-<td style="text-align: center;">47.5%</td>
-<td style="text-align: center;">10%</td>
+<td><em>p</em> &gt; .05</td>
+<td style="text-align: right;">47.5%</td>
+<td style="text-align: right;">10%</td>
 </tr>
 </tbody>
 </table>
-<p>How did we get there? Again: the table must equal to 100% and we specified ahead of time that we thought it was about 50% true for each of the hypotheses, so each column must equal to 50%. 50% of 5% (alpha) is 2.5% and 50% of 80% (power) is 40%. We then fill out the bottom row based on arithmetic.</p>
-<p>Imagine this were your study and you got a significant <em>p</em>-value. What could you conclude? Either you reject the null hypothesis or fail to reject the null hypothesis. But which one? In reality, we never know, but there are things we can do to increase the likelihood that our statistically significant result is because the alternative hypothesis is true and not the null hypothesis.</p>
-<p>Right now, based on the values we have set (alpha = 5% and power = 80%), it is <em>16 times more likely</em> that a statistically significant result means the alternative hypothesis is true than the null hypothesis is true. We calculate this with the first row of data: the probability of a statistically significant result if the alternative is true divided by the probability of a statistically significant result if the null is true: 40%/2.5% = 16.</p>
-<p>You might be fine with a statistically significant result being 16 times more likely that the alternative is true compared to the null, but what can we do to increase this likelihood?</p>
-<section id="increasing-power" class="level4">
-<h4 class="anchored" data-anchor-id="increasing-power">Increasing power</h4>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Remember: the researcher sets the alpha and power levels! Let’s find out what happens when we adjust those values.</p>
-</div>
-</div>
-<p>Let’s try it again, but this time let’s increase our power to 95% and keep our alpha at 5% (50/50 on the hypotheses). Fill out the table!</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 58%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th style="text-align: center;">H<sub>0</sub> is true</th>
-<th style="text-align: center;">H<sub>1</sub> is true</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong><em>p</em></strong> <strong>&lt; .05</strong> (statistically significant)</td>
-<td style="text-align: center;">2.5%</td>
-<td style="text-align: center;">47.5%</td>
-</tr>
-<tr class="even">
-<td><strong><em>p</em></strong> <strong>&gt; .05</strong> (statistically non-significant)</td>
-<td style="text-align: center;">47.5%</td>
-<td style="text-align: center;">2.5%</td>
-</tr>
-</tbody>
-</table>
-<p>Now it is <em>19 times more likely</em> (47.5/2.5 = 19) that the alternative hypothesis is true than the null hypothesis is true. Awesome! We have now discovered that increasing power increases the likelihood that a statistically significant result means our our alternative hypothesis is true.</p>
-</section>
-<section id="decreasing-alpha" class="level4">
-<h4 class="anchored" data-anchor-id="decreasing-alpha">Decreasing alpha</h4>
-<p>Let’s do another example in which we still have a 50/50 on the hypotheses but we reduce our alpha to 1% and keep our power at 80%. Fill out the table!</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 58%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th style="text-align: center;">H<sub>0</sub> is true</th>
-<th style="text-align: center;">H<sub>1</sub> is true</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong><em>p</em></strong> <strong>&lt; .05</strong> (statistically significant)</td>
-<td style="text-align: center;">.5%</td>
-<td style="text-align: center;">40%</td>
-</tr>
-<tr class="even">
-<td><strong><em>p</em></strong> <strong>&gt; .05</strong> (statistically non-significant)</td>
-<td style="text-align: center;">49.5%</td>
-<td style="text-align: center;">10%</td>
-</tr>
-</tbody>
-</table>
-<p>Now it is <em>80 times more likely</em> (40/.5 = 80) that the alternative hypothesis is true than the null hypothesis is true. Awesome!</p>
-<p>We have now discovered that <strong>decreasing alpha, not increasing power, is the best way for increasing the likelihood that a statistically significant result means our our alternative hypothesis is true.</strong></p>
-</section>
-<section id="your-turn-increasing-power-and-decreasing-alpha" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn-increasing-power-and-decreasing-alpha">Your turn: Increasing power AND decreasing alpha</h4>
-<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Check Your Understanding
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let’s see what happens when we both increase power <strong>and</strong> decrease alpha.</p>
-<p>Assume: - The null and alternative hypotheses are each 50% likely<br>
-- Alpha (α) = 1%<br>
-- Power = 95%</p>
-<p>Fill out the table below:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 58%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th style="text-align: center;">H<sub>0</sub> is true</th>
-<th style="text-align: center;">H<sub>1</sub> is true</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong><em>p</em></strong> <strong>&lt; .05</strong> (statistically significant)</td>
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="even">
-<td><strong><em>p</em></strong> <strong>&gt; .05</strong> (statistically non-significant)</td>
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">D</td>
-</tr>
-</tbody>
-</table>
-<p>Then answer:</p>
-<ol type="1">
-<li>What value goes in each cell (A, B, C, D)?<br>
-</li>
-<li>How much more likely is it that a statistically significant result reflects the alternative hypothesis rather than the null hypothesis?</li>
-</ol>
-<p>Take a moment to work through this before checking your answer.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answers">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answers
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Step 1: Fill in the table</p>
-<p>Because each hypothesis is 50% likely:</p>
-<ul>
-<li>Alpha = 1% → 50% of 1% = <strong>0.5%</strong> → A<br>
-</li>
-<li>Power = 95% → 50% of 95% = <strong>47.5%</strong> → B</li>
-</ul>
-<p>Now fill in the remaining cells:</p>
-<ul>
-<li>C = 50% − 0.5% = <strong>49.5%</strong><br>
-</li>
-<li>D = 50% − 47.5% = <strong>2.5%</strong></li>
-</ul>
-<p>Final table:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 58%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th style="text-align: center;">H<sub>0</sub> is true</th>
-<th style="text-align: center;">H<sub>1</sub> is true</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong><em>p</em></strong> <strong>&lt; .05</strong></td>
-<td style="text-align: center;">0.5%</td>
-<td style="text-align: center;">47.5%</td>
-</tr>
-<tr class="even">
-<td><strong><em>p</em></strong> <strong>&gt; .05</strong></td>
-<td style="text-align: center;">49.5%</td>
-<td style="text-align: center;">2.5%</td>
-</tr>
-</tbody>
-</table>
-<p>Step 2: Compare likelihoods</p>
-<p>We compare the probability of a significant result under each hypothesis:</p>
-<p>[ = 95 ]</p>
-<p>→ A statistically significant result is <strong>95 times more likely</strong> to reflect the alternative hypothesis than the null hypothesis.</p>
-<p><strong>Interpretation:</strong></p>
-<p>By <strong>increasing power</strong> and <strong>decreasing alpha</strong>, we dramatically improve our confidence that a statistically significant result reflects a true effect rather than a false positive.</p>
-<p>This illustrates how BEAN works:</p>
-<ul>
-<li>Lower alpha → fewer false positives<br>
-</li>
-<li>Higher power → more true positives</li>
-</ul>
-<p>Together, they make our results much more trustworthy.</p>
-</div>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="connecting-power-to-bean" class="level2">
-<h2 class="anchored" data-anchor-id="connecting-power-to-bean">Connecting power to BEAN</h2>
-<p>Power is not an isolated concept—it is determined by:</p>
-<ul>
-<li><strong>Effect size</strong> → larger effects are easier to detect<br>
-</li>
-<li><strong>Sample size (N)</strong> → more data increases power<br>
-</li>
-<li><strong>Alpha</strong> → stricter thresholds reduce power</li>
-</ul>
+<p>How did we get there?</p>
+<p>Each column has to add to 50%. Alpha is 5% of the null column, so 5% of 50% is 2.5%. Power is 80% of the alternative column, so 80% of 50% is 40%.</p>
+<p>Now imagine you got a statistically significant result. In this example, that significant result could fall in either of the top cells. It could be a Type I error (2.5%) or a correct inference (40%).</p>
+<p>The statistically significant result is 16 times more likely to come from the alternative-hypothesis column than the null-hypothesis column:</p>
 <blockquote class="blockquote">
-<p>BEAN determines power, and power determines whether we detect effects.</p>
+<p>40 / 2.5 = 16</p>
 </blockquote>
+<p>That is not a perfect guarantee. It is just a way to reason through how alpha and power shape our decisions.</p>
 </section>
-<section id="a-practical-takeaway" class="level2">
-<h2 class="anchored" data-anchor-id="a-practical-takeaway">A practical takeaway</h2>
-<p>When evaluating or designing a study, we should ask:</p>
-<ul>
-<li>Do we have enough power to detect the effect?<br>
-</li>
-<li>Is the effect size realistic?<br>
-</li>
-<li>Is our alpha appropriate?<br>
-</li>
-<li>Do we have enough data?</li>
-</ul>
-<p>These questions help us understand whether a study is capable of detecting meaningful effects.</p>
+<section id="increasing-power" class="level2">
+<h2 class="anchored" data-anchor-id="increasing-power">Increasing Power</h2>
+<p>Now let’s keep the 50/50 split but increase power to 95%. Alpha stays at 5%.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">H₀ is true</th>
+<th style="text-align: right;">H₁ is true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>p</em> &lt; .05</td>
+<td style="text-align: right;">2.5%</td>
+<td style="text-align: right;">47.5%</td>
+</tr>
+<tr class="even">
+<td><em>p</em> &gt; .05</td>
+<td style="text-align: right;">47.5%</td>
+<td style="text-align: right;">2.5%</td>
+</tr>
+</tbody>
+</table>
+<p>Now a statistically significant result is 19 times more likely to come from the alternative-hypothesis column than the null-hypothesis column:</p>
+<blockquote class="blockquote">
+<p>47.5 / 2.5 = 19</p>
+</blockquote>
+<p>Increasing power helps. It makes us more likely to detect a real effect.</p>
 </section>
-<section id="want-another-explanation-of-power" class="level2">
-<h2 class="anchored" data-anchor-id="want-another-explanation-of-power">Want another explanation of power?</h2>
-<p>If power still feels a bit abstract, the following video provides another walkthrough of the concept and may help reinforce how power relates to hypothesis testing, Type II error, alpha, and sample size.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/_9ImSIP609I" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
-<div class="callout-header d-flex align-content-center">
+<section id="decreasing-alpha" class="level2">
+<h2 class="anchored" data-anchor-id="decreasing-alpha">Decreasing Alpha</h2>
+<p>Now let’s return to 80% power but lower alpha from 5% to 1%. We will keep the 50/50 split.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">H₀ is true</th>
+<th style="text-align: right;">H₁ is true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>p</em> &lt; .01</td>
+<td style="text-align: right;">0.5%</td>
+<td style="text-align: right;">40%</td>
+</tr>
+<tr class="even">
+<td><em>p</em> &gt; .01</td>
+<td style="text-align: right;">49.5%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+</tbody>
+</table>
+<p>Now a statistically significant result is 80 times more likely to come from the alternative-hypothesis column than the null-hypothesis column:</p>
+<blockquote class="blockquote">
+<p>40 / 0.5 = 80</p>
+</blockquote>
+<p>This is why lowering alpha can substantially reduce false positives. But remember the tradeoff: lowering alpha can also reduce power unless you increase sample size, target a larger effect, or make other design changes.</p>
+</section>
+<section id="your-turn" class="level2">
+<h2 class="anchored" data-anchor-id="your-turn">Your Turn</h2>
+<p>Assume the null and alternative hypotheses are equally likely. Set alpha to 1% and power to 95%.</p>
+<p>Fill in the table and calculate how much more likely a statistically significant result is to come from the alternative-hypothesis column than the null-hypothesis column.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">H₀ is true</th>
+<th style="text-align: right;">H₁ is true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>p</em> &lt; .01</td>
+<td style="text-align: right;">A</td>
+<td style="text-align: right;">B</td>
+</tr>
+<tr class="even">
+<td><em>p</em> &gt; .01</td>
+<td style="text-align: right;">C</td>
+<td style="text-align: right;">D</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Suggested Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Check Your Understanding
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>What does statistical power represent?<br>
-</li>
-<li>How is power different from a p-value?<br>
-</li>
-<li>What happens to power when effect size increases?<br>
-</li>
-<li>What happens to power when sample size increases?<br>
-</li>
-<li>Why is power important for interpreting non-significant results?<br>
-</li>
-<li>Which change has the largest impact on confidence in significant results: increasing power or decreasing alpha?<br>
-</li>
-</ol>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answers">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answers
+<span class="screen-reader-only">Note</span>Suggested Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>The probability of detecting a real effect when it exists<br>
-</li>
-<li>Power assumes the alternative is true; p-values assume the null is true<br>
-</li>
-<li>Power increases<br>
-</li>
-<li>Power increases<br>
-</li>
-<li>Because low power may lead to missing real effects<br>
-</li>
-<li>Decreasing alpha<br>
-</li>
-</ol>
+<p>Because H₀ and H₁ are equally likely, each column must add to 50%.</p>
+<p>Alpha is 1%, so 1% of 50% is 0.5%. That means:</p>
+<ul>
+<li>A = 0.5%</li>
+<li>C = 49.5%</li>
+</ul>
+<p>Power is 95%, so 95% of 50% is 47.5%. That means:</p>
+<ul>
+<li>B = 47.5%</li>
+<li>D = 2.5%</li>
+</ul>
+<p>A statistically significant result is 95 times more likely to come from the alternative-hypothesis column than the null-hypothesis column:</p>
+<p>47.5 / 0.5 = 95</p>
 </div>
 </div>
 </div>
+</section>
+<section id="how-this-connects-to-bean" class="level2">
+<h2 class="anchored" data-anchor-id="how-this-connects-to-bean">How This Connects to BEAN</h2>
+<p>So far, we have focused mostly on alpha and power. But power also depends on effect size and sample size.</p>
+<p>Holding everything else constant:</p>
+<ul>
+<li>Larger effect size → higher power</li>
+<li>Larger sample size → higher power</li>
+<li>Lower alpha → lower power</li>
+<li>Higher desired power → larger required sample size</li>
+</ul>
+<p>BEAN!</p>
 
 
 </section>
@@ -1749,8 +1535,8 @@ Note
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./08.4-sample-size-and-power-analysis.html" class="pagination-link" aria-label="8.4 Sample Size and Power Analysis">
-        <span class="nav-page-text">8.4 Sample Size and Power Analysis</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./08.4-sample-size-and-power-analysis.html" class="pagination-link" aria-label="8.4 Sample Size">
+        <span class="nav-page-text">8.4 Sample Size</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

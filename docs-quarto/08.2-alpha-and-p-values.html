@@ -45,6 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,7 +73,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="style.css">
@@ -417,8 +417,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Recap, Common Mistakes, and Looking Ahead</span></a>
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -435,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.1 Effect Sizes</span></a>
+ <span class="menu-text">8.1 Effect Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -453,7 +453,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.4 Sample Size and Power Analysis</span></a>
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -510,8 +516,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10.3-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10.3 Common APA-Style Errors</span></a>
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -729,15 +747,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#what-are-p-values" id="toc-what-are-p-values" class="nav-link active" data-scroll-target="#what-are-p-values">What are p-values?</a></li>
-  <li><a href="#common-misconceptions-about-p-values" id="toc-common-misconceptions-about-p-values" class="nav-link" data-scroll-target="#common-misconceptions-about-p-values">Common misconceptions about p-values</a></li>
-  <li><a href="#are-p-values-bad" id="toc-are-p-values-bad" class="nav-link" data-scroll-target="#are-p-values-bad">Are p-values bad?</a></li>
-  <li><a href="#alpha-what-counts-as-surprising" id="toc-alpha-what-counts-as-surprising" class="nav-link" data-scroll-target="#alpha-what-counts-as-surprising">Alpha: What counts as “surprising”?</a></li>
-  <li><a href="#why-is-alpha-usually-.05" id="toc-why-is-alpha-usually-.05" class="nav-link" data-scroll-target="#why-is-alpha-usually-.05">Why is alpha usually .05?</a></li>
-  <li><a href="#choosing-an-alpha-level" id="toc-choosing-an-alpha-level" class="nav-link" data-scroll-target="#choosing-an-alpha-level">Choosing an alpha level</a></li>
-  <li><a href="#alpha-and-p-values-within-bean" id="toc-alpha-and-p-values-within-bean" class="nav-link" data-scroll-target="#alpha-and-p-values-within-bean">Alpha and p-values within BEAN</a></li>
-  <li><a href="#a-practical-takeaway" id="toc-a-practical-takeaway" class="nav-link" data-scroll-target="#a-practical-takeaway">A practical takeaway</a></li>
-  <li><a href="#videos-and-resources" id="toc-videos-and-resources" class="nav-link" data-scroll-target="#videos-and-resources">Videos and resources</a></li>
+  <li><a href="#what-is-a-p-value" id="toc-what-is-a-p-value" class="nav-link active" data-scroll-target="#what-is-a-p-value">What Is a p-value?</a></li>
+  <li><a href="#what-is-alpha" id="toc-what-is-alpha" class="nav-link" data-scroll-target="#what-is-alpha">What Is Alpha?</a></li>
+  <li><a href="#common-misconceptions-about-p-values" id="toc-common-misconceptions-about-p-values" class="nav-link" data-scroll-target="#common-misconceptions-about-p-values">Common Misconceptions About p-values</a></li>
+  <li><a href="#are-p-values-bad" id="toc-are-p-values-bad" class="nav-link" data-scroll-target="#are-p-values-bad">Are p-values Bad?</a></li>
+  <li><a href="#why-.05" id="toc-why-.05" class="nav-link" data-scroll-target="#why-.05">Why .05?</a></li>
+  <li><a href="#alpha-as-part-of-bean" id="toc-alpha-as-part-of-bean" class="nav-link" data-scroll-target="#alpha-as-part-of-bean">Alpha as Part of BEAN</a></li>
   </ul>
 </nav>
     </div>
@@ -763,280 +778,123 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In Chapter 7, we introduced p-values and alpha as part of hypothesis testing. In that context, p-values helped us determine whether a result was statistically significant.</p>
-<p>In this section, we revisit these ideas and place them within the broader BEAN framework.</p>
-<section id="what-are-p-values" class="level2">
-<h2 class="anchored" data-anchor-id="what-are-p-values">What are p-values?</h2>
-<p>Whereas effect sizes tell us about <em>practical</em> significance, they do not tell us about <em>statistical</em> significance. That is what <em>p</em>-values are for: they tell us whether our results are <em>statistically</em> significant or how surprising they are.</p>
-<p>The formal definition of a <strong><em>p</em>-value</strong> is that it is the probability of observing data that is as extreme or more extreme than the data you have observed, <strong>assuming the null hypothesis is true</strong>.</p>
-<p>There are two important things to keep in mind about this definition:</p>
+<p>Chapter 7 introduced <button class="glossary" title="The probability of observing data as extreme as, or more extreme than, the observed data, assuming the null hypothesis is true.">p-value</button>s as part of hypothesis testing. In this section, we slow down and talk more carefully about what <em>p</em>-values mean, what <button class="glossary" title="The threshold researchers set for deciding whether a result counts as statistically significant, often .05.">alpha level</button> means, and why both are so easy to misuse.</p>
+<section id="what-is-a-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-p-value">What Is a p-value?</h2>
+<p>A <em>p</em>-value is the probability of observing data as extreme as, or more extreme than, the data you observed, <strong>assuming the null hypothesis is true</strong>.</p>
+<p>There are two key pieces of that definition:</p>
 <ol type="1">
-<li>The p-value is about the <strong>probability of our data</strong>. It is not about the probability of our hypothesis.<br>
-</li>
-<li>The p-value is <strong>based on the assumption that the null hypothesis is true</strong>.</li>
+<li>The <em>p</em>-value is about the probability of the <strong>data</strong>, not the probability of the hypothesis.</li>
+<li>The <em>p</em>-value is calculated assuming the <strong>null hypothesis is true</strong>.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In APA style, we report the exact p-values rounded to three decimal places. In your jamovi settings, you can set the statistical significant reporting to “3dp” to satisfy APA requirements.</p>
-</div>
-</div>
-<p>Another way we could think of the <em>p</em>-value is: assuming there is no difference (i.e., the null hypothesis is true), how surprising is our data?</p>
+<p>Another way to say this is:</p>
+<blockquote class="blockquote">
+<p>If there really were no effect, no difference, or no relationship, how surprising would these data be?</p>
+</blockquote>
+<p>The smaller the <em>p</em>-value, the more surprising the data are under the null hypothesis.</p>
 <p><img src="images/05-bean/notawful_jess_hartnett.jpeg" class="img-fluid"></p>
 </section>
+<section id="what-is-alpha" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-alpha">What Is Alpha?</h2>
+<p>Alpha is the threshold we set for deciding whether a result counts as statistically significant. In many studies, alpha is set at .05.</p>
+<p>If <em>p</em> &lt; α, we reject the null hypothesis.</p>
+<p>If <em>p</em> &gt; α, we fail to reject the null hypothesis.</p>
+<p>Alpha is also the Type I error rate we are willing to tolerate <strong>if the null hypothesis is true</strong>. If we set alpha at .05, then we are saying that, in the long run, we are willing to incorrectly reject a true null hypothesis about 5% of the time.</p>
+<p>That does not mean there is a 5% chance that this specific result is wrong. That is one of the common misunderstandings.</p>
+</section>
 <section id="common-misconceptions-about-p-values" class="level2">
-<h2 class="anchored" data-anchor-id="common-misconceptions-about-p-values">Common misconceptions about p-values</h2>
-<p>You may have heard of <em>p</em>-values before, including some bad things. The biggest problem with <em>p</em>-values is that they are misunderstood, even by researchers.</p>
-<p>Common misconceptions about p-values (by Daniel Lakens):</p>
-<ul>
-<li>A non-significant <em>p</em>-value means the null hypothesis is true ❌<br>
-</li>
-<li>A significant <em>p</em>-value means the null hypothesis is false ❌<br>
-</li>
-<li>A significant <em>p</em>-value means the effect is practically important ❌<br>
-</li>
-<li>A significant <em>p</em>-value means there is only a 5% chance of being wrong ❌</li>
-</ul>
-<p>These are misconceptions because <em>p</em>-values only tell us about the probability of our data under the null hypothesis—not whether the null or alternative hypothesis is true.</p>
-<p>We never truly know whether the null hypothesis is true, and we can always be making a Type I or Type II error.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<h2 class="anchored" data-anchor-id="common-misconceptions-about-p-values">Common Misconceptions About p-values</h2>
+<p>People talk about <em>p</em>-values all the time, and not always carefully. Here are some common misconceptions:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Misconception</th>
+<th>Why it is wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A non-significant <em>p</em>-value means the null hypothesis is true.</td>
+<td>We failed to find enough evidence against the null; we did not prove the null.</td>
+</tr>
+<tr class="even">
+<td>A significant <em>p</em>-value means the null hypothesis is false.</td>
+<td>We rejected the null, but we could still be making a Type I error.</td>
+</tr>
+<tr class="odd">
+<td>A significant <em>p</em>-value means the effect is practically important.</td>
+<td>Practical importance depends on context and effect size.</td>
+</tr>
+<tr class="even">
+<td>A significant <em>p</em>-value means there is only a 5% chance we are wrong.</td>
+<td>Alpha is a long-run error rate, not the probability this specific result is wrong.</td>
+</tr>
+</tbody>
+</table>
+<p>The recurring theme is this: <em>p</em>-values tell us about how surprising the data are under the null hypothesis. They do not tell us whether the null or alternative hypothesis is true.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Where These Misconceptions Come From">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Where These Misconceptions Come From
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>These misconceptions come from the great work done by Daniel Lakens. You can read his <a href="http://daniellakens.blogspot.com/2017/12/understanding-common-misconceptions.html">blog post</a> on the topic or take a great <a href="https://www.coursera.org/learn/statistical-inferences">online course</a> about improving your statistical inferences. He also has a great article that “<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8114329/#:~:text=Some%20journals%2C%20such%20as%20Basic,Trafimow%20%26%20Marks%2C%202015">The Practical Alternative to the <em>p</em> Value Is the Correctly Used <em>p</em> Value</a>.”</p>
+<p>This discussion is strongly influenced by Daniel Lakens’ work on statistical inference. His resources on p-value misconceptions are helpful if you want a deeper explanation of why these interpretations are wrong and why they persist.</p>
+</div>
 </div>
 </div>
 </section>
 <section id="are-p-values-bad" class="level2">
-<h2 class="anchored" data-anchor-id="are-p-values-bad">Are p-values bad?</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<h2 class="anchored" data-anchor-id="are-p-values-bad">Are p-values Bad?</h2>
+<p>You may have heard people say that <em>p</em>-values are bad, unreliable, or should be abandoned.</p>
+<p>I understand where that frustration comes from. <em>p</em>-values are misunderstood constantly. People use them as if they prove hypotheses, measure practical importance, or give the probability that a finding is true. They do not do any of those things.</p>
+<p>But I do not think the <em>p</em>-value itself is the villain.</p>
+<p>The problem is often that researchers want <em>p</em>-values to do something they were never designed to do. NHST does not confirm hypotheses. It helps us decide whether our data are surprising enough under the null hypothesis to reject the null.</p>
+<p>That is useful, but limited.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Why Do People Argue About p-values?">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Many criticisms of p-values reflect misunderstandings of what they are designed to do. They do not confirm hypotheses—they help evaluate how surprising data are under the null hypothesis.</p>
-</div>
-</div>
-<p>Some researchers have argued that we should abandon <em>p</em>-values entirely. For example, the journal <em>Basic and Applied Social Psychology</em> banned their use.</p>
-<p>However, as Lakens argues:</p>
-<blockquote class="blockquote">
-<p>“The practical alternative to the <em>p</em>-value is the correctly used <em>p</em>-value.”</p>
-</blockquote>
-<p>There is nothing inherently wrong with <em>p</em>-values. The problem is how they are often used and interpreted.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The journal Basic and Applied Social Psychology banned the use of p-values, claiming that NHST is invalid. Instead, they want researchers to focus on effect sizes and appropriate power analyses. Although these are laudable attempts–I agree that researchers should have highly powered studies and focus more on practical significance over statistical significance–I agree more with researchers like Daniel Lakens who point out that the problem is researchers want NHST to do what it does not do. They want statistical procedures that can confirm a hypothesis, which NHST cannot do. While larger samples and a focus on effect sizes can help, we should trust NHST to do what it can do, which is to tell us about the probability of the surprisingness of our data if the null hypothesis is true. Read more about the journal’s statement here: https://www.tandfonline.com/doi/full/10.1080/01973533.2015.1012991</p>
-</div>
-</div>
-</section>
-<section id="alpha-what-counts-as-surprising" class="level2">
-<h2 class="anchored" data-anchor-id="alpha-what-counts-as-surprising">Alpha: What counts as “surprising”?</h2>
-<p>The <em>p</em>-value tells us how surprising our data are—but how surprising is <em>surprising enough</em>?</p>
-<p>That is where <strong>alpha (α)</strong> comes in. Alpha determines the <strong>critical region of significance</strong>—the threshold at which we decide to reject the null hypothesis.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="08.2-alpha-and-p-values_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Critical area of statistical significance</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>The alpha level represents the point at which we say:</p>
-<blockquote class="blockquote">
-<p>“This result is so unlikely under the null hypothesis that we will reject it.”</p>
-</blockquote>
-</section>
-<section id="why-is-alpha-usually-.05" class="level2">
-<h2 class="anchored" data-anchor-id="why-is-alpha-usually-.05">Why is alpha usually .05?</h2>
-<p>The .05 threshold comes from Fisher (1925), who suggested it as a convenient cutoff (roughly 1 in 20, or about 2 standard deviations from the mean). More specifically, he said:</p>
-<blockquote class="blockquote">
-<p>A deviation exceeding the standard deviation occurs about once in three trials. Twice the standard deviation is exceeded only about once in 22 trials, thrice the standard deviation only once in 370 trials…. The value for which P = .05, or 1 in 20, is 1.96 or nearly 2 ; it is convenient to take this point as a limit in judging whether a deviation is to be considered significant or not. Deviations exceeding twice the standard deviation are thus formally regarded as significant.</p>
-</blockquote>
-<p>However, this value is largely a <strong>historical convention</strong>, not a universal rule. Basically, .05 was convenient. It was 1/20. It was around 2 standard deviations from the mean in a normal distribution. For some reason, it caught on (maybe the “formally regarded as significant” was why).</p>
-<p>Even Fisher later argued that researchers should think critically about alpha and, in some cases, use stricter thresholds (e.g., .01).</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you want to read more, this is a short read on the history of the .05 alpha level: <a href="https://www2.psych.ubc.ca/~schaller/528Readings/CowlesDavis1982.pdf" class="uri">https://www2.psych.ubc.ca/~schaller/528Readings/CowlesDavis1982.pdf</a></p>
-</div>
-</div>
-</section>
-<section id="choosing-an-alpha-level" class="level2">
-<h2 class="anchored" data-anchor-id="choosing-an-alpha-level">Choosing an alpha level</h2>
-<p>In this course, we typically use α = .05.</p>
-<p>In practice, however, choosing alpha involves tradeoffs:</p>
-<ul>
-<li>Lower alpha → fewer false positives (Type I errors)<br>
-</li>
-<li>Higher alpha → greater ability to detect effects (higher power)</li>
-</ul>
-<p>If you are more concerned about false positives, you might lower alpha.<br>
-If you are more concerned about missing real effects, you might prioritize power.</p>
-<p>Researchers should justify their alpha level rather than relying on defaults.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>What does this look like in practice? In a Psi Chi article by <a href="https://www.psichi.org/page/212JNSummer2016#.Y7odwOzMI0Q">Kobza and Salter (2016)</a>, they stated, “Due to the high number of statistical tests conducted, a lower <em>p</em> value (.01) was used to determine significance.” (p.&nbsp;75).</p>
-</div>
-</div>
-<section id="how-do-i-know-what-alpha-researchers-are-using" class="level3">
-<h3 class="anchored" data-anchor-id="how-do-i-know-what-alpha-researchers-are-using">How do I know what alpha researchers are using?</h3>
-<p>Ideally, all researchers should be reporting their alpha values in all their publications. For example, in a Psi Chi article by <a href="https://www.psichi.org/page/251JNSpring2020?&amp;hhsearchterms=%22effects+and+conversation#.Y7oeTezMI0Q">Campero-Oliart and colleagues (2020)</a>, they stated, “Alpha levels for all analyses were set to .05.” (p.&nbsp;47).</p>
-<p>In reality, we typically don’t report anything and assume a default of .05 without explicitly stating so (and yes, I am also guilty of this). However, you should always be thinking critically of your alpha value and, if you are using something other than .05, you should explain what level you choose and why.</p>
-</section>
-</section>
-<section id="alpha-and-p-values-within-bean" class="level2">
-<h2 class="anchored" data-anchor-id="alpha-and-p-values-within-bean">Alpha and p-values within BEAN</h2>
-<p>Within BEAN, alpha and p-values interact with the other components in important ways:</p>
-<ul>
-<li><strong>Alpha ↔︎ Power</strong>: Lower alpha makes it harder to detect effects (reduces power)<br>
-</li>
-<li><strong>Alpha ↔︎ Effect size</strong>: Smaller effects are harder to detect under stricter alpha levels<br>
-</li>
-<li><strong>Alpha ↔︎ Sample size</strong>: Larger samples may be needed when using stricter alpha levels</li>
-</ul>
-<p>Alpha is not just a threshold—it directly affects our ability to detect effects.</p>
-</section>
-<section id="a-practical-takeaway" class="level2">
-<h2 class="anchored" data-anchor-id="a-practical-takeaway">A practical takeaway</h2>
-<p>When interpreting results, it is not enough to ask:</p>
-<blockquote class="blockquote">
-<p>“Is p &lt; .05?”</p>
-</blockquote>
-<p>We should also ask:</p>
-<ul>
-<li>How large is the effect?<br>
-</li>
-<li>How much data was collected?<br>
-</li>
-<li>Was the study sufficiently powered?</li>
-</ul>
-<p>This is why p-values should always be interpreted alongside the other components of BEAN.</p>
-</section>
-<section id="videos-and-resources" class="level2">
-<h2 class="anchored" data-anchor-id="videos-and-resources">Videos and resources</h2>
-<p>The following <a href="https://www.youtube.com/watch?v=v1GrXJmUkBw">video</a> walks through some of the effect sizes, alpha, and power stuff.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/v1GrXJmUkBw" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-</div>
-</div>
-<p>You might also like this <a href="https://lakens.github.io/statistical_inferences/01-pvalue.html">chapter</a> or <a href="https://www.youtube.com/watch?v=RVxHlsIw_Do">video</a> on p-values by Daniel Lakens.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/RVxHlsIw_Do" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-</div>
-</div>
-<p>Another video recommended by a student is this one from zedstatistics on <a href="https://www.youtube.com/watch?v=4XfTpkGe1Kc">p-values</a>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/4XfTpkGe1Kc" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Check Your Understanding
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>What does a p-value represent?<br>
-</li>
-<li>Why is it incorrect to say a p-value is the probability that the null hypothesis is true?<br>
-</li>
-<li>How does lowering alpha affect power?<br>
-</li>
-<li>Why can a small effect become statistically significant with a large sample size?<br>
-</li>
-<li>Why should p-values not be interpreted in isolation?</li>
-</ol>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answers">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answers
+<span class="screen-reader-only">Note</span>Why Do People Argue About p-values?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>The probability of observing the data (or more extreme) assuming the null hypothesis is true<br>
-</li>
-<li>Because p-values describe the probability of the data, not the hypothesis<br>
-</li>
-<li>It decreases power, making effects harder to detect<br>
-</li>
-<li>Because larger samples increase the ability to detect small effects<br>
-</li>
-<li>Because they depend on effect size, sample size, and alpha<br>
-</li>
-</ol>
+<p>Some journals and scholars have argued that p-values should be abandoned because they are so often misused. Others argue that the better solution is to use p-values correctly and report them alongside effect sizes, confidence intervals, good design, transparent methods, and replication.</p>
+<p>My view is closer to the second position. The p-value can be useful when we are clear about what it does and does not tell us.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="why-.05" class="level2">
+<h2 class="anchored" data-anchor-id="why-.05">Why .05?</h2>
+<p>Why is alpha often set at .05?</p>
+<p>Mostly because of tradition. The .05 threshold became common because it was convenient: it corresponds roughly to the most extreme 5% of values under a reference distribution. Over time, that convenience hardened into convention.</p>
+<p>But .05 is not magic.</p>
+<p>In this course, unless stated otherwise, we will usually use α = .05. In real research, you should think carefully about whether .05 is appropriate. If false positives would be especially costly, you may want a lower alpha. If missing a real effect would be especially costly, you may want higher power.</p>
+<p>That is another BEAN connection: alpha does not operate alone. It affects power and error rates.</p>
+</section>
+<section id="alpha-as-part-of-bean" class="level2">
+<h2 class="anchored" data-anchor-id="alpha-as-part-of-bean">Alpha as Part of BEAN</h2>
+<p>Lowering alpha makes it harder to reject the null hypothesis. That reduces the risk of Type I errors, but it can also reduce power if everything else stays the same.</p>
+<p>Holding effect size and sample size constant:</p>
+<ul>
+<li>Lower alpha → fewer false positives, but lower power</li>
+<li>Higher alpha → more power, but more false positives</li>
+</ul>
+<p>This is why alpha should be a decision, not just a default we apply without thinking.</p>
 
 
 </section>
@@ -1444,8 +1302,8 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./08.1-effect-sizes.html" class="pagination-link" aria-label="8.1 Effect Sizes">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8.1 Effect Sizes</span>
+      <a href="./08.1-effect-sizes.html" class="pagination-link" aria-label="8.1 Effect Size">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8.1 Effect Size</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

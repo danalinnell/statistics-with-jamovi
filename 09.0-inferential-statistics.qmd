@@ -1,57 +1,54 @@
 # 9. Inferential Statistics {.unnumbered}
 
-In Chapter 7, we introduced the framework for hypothesis testing, and in Chapter 8, we explored the key components that influence our ability to detect effects (BEAN: power, effect size, alpha, and sample size).
+In [Chapter 7](07.0-hypothesis-testing.qmd), you learned the basic logic of {{< glossary "null hypothesis significance testing" popup="hover" >}}. In [Chapter 8](08.0-bean.qmd), you learned why beta/power, {{< glossary "effect size" popup="hover" >}}, {{< glossary "alpha level" popup="hover" >}}, and {{< glossary "sample size" popup="hover" >}} all matter.
 
-At this point, you may be wondering:
+Now we need to answer two very practical questions:
 
-> *How do I actually choose which statistical test to use?*
+1. Which inferential statistic should I use?
+2. Do the data meet the assumptions for that statistic?
 
-That is the focus of this chapter.
+That is the purpose of this chapter. This chapter is less about memorizing a list of tests and more about learning how to make a decision. When you are handed a dataset, you need to be able to slow down, identify the variables, think about the design, check the assumptions, and then choose the statistical test that fits the research question.
 
-There are many different inferential statistical tests, and each is designed to answer a specific type of research question. Choosing the correct test depends on:
+::: {.callout-note title="For Dana's Students"}
+In my courses, you will probably use this chapter in two different ways. When we first discuss BEAN and power, you will focus more on the assumption-checking material. Later, when we move into inferential statistics, you will return to this chapter to practice choosing the correct statistical test.
 
--   the type of variables you are working with\
--   the structure of your data\
--   the assumptions of the statistical test
-
+That is intentional. Choosing a test and checking assumptions are connected, but they are different skills. It is normal if this chapter feels like one you return to more than once.
+:::
 
 ## Types of inferential statistics
 
-Broadly, inferential tests can be grouped into two categories:
+There are many inferential statistical tests, but a helpful starting distinction is between {{< glossary "parametric statistics" popup="hover" >}} and {{< glossary "non-parametric statistics" popup="hover" >}}.
 
-1.  **Parametric statistics**: Assume certain characteristics about the data (e.g., normality)\
-2.  **Non-parametric statistics**: Make fewer or different assumptions about the data
+**Parametric statistics** make assumptions about the data. For example, many parametric tests assume the dependent variable is continuous, observations are independent, the data are reasonably normal, and variances are similar across groups.
 
-These distinctions will become important when deciding which test is appropriate and what to do when assumptions are not met.
+**Non-parametric statistics** generally make fewer assumptions about the shape of the distribution. They are not assumption-free, but they are often useful when parametric assumptions are not reasonable.
 
+Here is the important thing: non-parametric tests are not the “bad” tests or the “backup” tests in a shameful way. They are tools. Sometimes the parametric tool is appropriate. Sometimes the non-parametric tool is more appropriate. Our job is to understand the data well enough to make a defensible choice.
+
+## How this fits with the 4-step process
+
+This chapter connects directly to the 4-step hypothesis-testing framework from [Chapter 7](07.0-hypothesis-testing.qmd):
+
+1. [Look at the data](07.1-step-1-look-at-the-data.qmd).
+2. [Check assumptions](07.2-step-2-check-assumptions.qmd).
+3. [Perform the test](07.3-step-3-perform-the-test.qmd).
+4. [Interpret the results](07.4-step-4-interpret-the-results.qmd).
+
+Choosing the correct test mostly depends on Step 1. You need to know the research question, the variables, and the study design. Checking assumptions is Step 2. If the assumptions are not reasonable, that affects Step 3 because you may need to choose a different version of the test or a different test altogether.
 
 ## What this chapter will cover
 
-In this chapter, we focus on three key skills:
+By the end of this chapter, you should be able to:
 
-1.  **Choosing the correct inferential test**
-    -   Based on your research question and variables
-2.  **Understanding and checking assumptions**
-    -   What assumptions are\
-    -   Why they matter\
-    -   How to evaluate them
-3.  **Responding to violated assumptions**
-    -   What to do when assumptions are not met\
-    -   When to use alternative approaches (e.g., non-parametric tests)
-
-
-## Connecting back to the 4-step framework
-
-This chapter builds directly on the 4-step hypothesis testing framework from Chapter 7:
-
-1.  Look at the data\
-2.  Check assumptions ← *major focus of this chapter*\
-3.  Perform the test\
-4.  Interpret the results
-
-> Choosing the correct test and checking assumptions are critical steps that ensure your results are valid and meaningful.
-
+- identify the dependent variable and independent variable(s) in a research question;
+- determine whether variables are categorical or continuous;
+- distinguish between between-subjects and within-subjects designs;
+- use a decision process to choose an appropriate inferential statistic;
+- explain why assumptions matter;
+- check basic parametric assumptions in jamovi;
+- describe what to do when assumptions are violated;
+- explain why assumption decisions should be reported clearly in results.
 
 ## Looking ahead
 
-In the following chapters, we will apply these ideas to specific statistical tests (e.g., t-tests, ANOVA, correlation). This chapter provides the foundation you need to make informed decisions about which test to use and whether its results can be trusted.
+This chapter prepares you for the test-specific chapters that come later. In those chapters, you will learn exactly how to run chi-square tests, t-tests, ANOVAs, correlations, and regressions in jamovi. Before you can run those tests well, though, you need to know which test fits the data and whether the assumptions are reasonable.

@@ -45,6 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -416,8 +417,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Recap, Common Mistakes, and Looking Ahead</span></a>
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -434,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.1 Effect Sizes</span></a>
+ <span class="menu-text">8.1 Effect Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -452,7 +453,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.4 Sample Size and Power Analysis</span></a>
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -509,8 +516,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10.3-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10.3 Common APA-Style Errors</span></a>
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -728,9 +747,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#why-assumptions-matter" id="toc-why-assumptions-matter" class="nav-link active" data-scroll-target="#why-assumptions-matter">Why assumptions matter</a></li>
-  <li><a href="#common-assumptions" id="toc-common-assumptions" class="nav-link" data-scroll-target="#common-assumptions">Common assumptions</a></li>
-  <li><a href="#connecting-to-our-example" id="toc-connecting-to-our-example" class="nav-link" data-scroll-target="#connecting-to-our-example">Connecting to our example</a></li>
+  <li><a href="#assumptions-are-test-specific" id="toc-assumptions-are-test-specific" class="nav-link active" data-scroll-target="#assumptions-are-test-specific">Assumptions Are Test-Specific</a></li>
+  <li><a href="#continuous-dependent-variable" id="toc-continuous-dependent-variable" class="nav-link" data-scroll-target="#continuous-dependent-variable">Continuous Dependent Variable</a></li>
+  <li><a href="#independence" id="toc-independence" class="nav-link" data-scroll-target="#independence">Independence</a></li>
+  <li><a href="#normality" id="toc-normality" class="nav-link" data-scroll-target="#normality">Normality</a></li>
+  <li><a href="#homogeneity-of-variance" id="toc-homogeneity-of-variance" class="nav-link" data-scroll-target="#homogeneity-of-variance">Homogeneity of Variance</a></li>
+  <li><a href="#what-if-an-assumption-is-violated" id="toc-what-if-an-assumption-is-violated" class="nav-link" data-scroll-target="#what-if-an-assumption-is-violated">What If an Assumption Is Violated?</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
@@ -756,77 +779,63 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Before performing a statistical test, we need to check whether our data meet certain <strong>assumptions</strong>. Statistical tests are built on certain expectations about the data. These expectations are called <strong>assumptions</strong>.</p>
-<blockquote class="blockquote">
-<p>Assumptions are conditions that must be reasonably met for the results of a statistical test to be valid.</p>
-</blockquote>
-<section id="why-assumptions-matter" class="level2">
-<h2 class="anchored" data-anchor-id="why-assumptions-matter">Why assumptions matter</h2>
-<p>If assumptions are not met:</p>
-<ul>
-<li>The results of the test may be inaccurate or misleading</li>
-<li>We may need to use a different version of the test</li>
-<li>Our conclusions may not be trustworthy</li>
-</ul>
-<blockquote class="blockquote">
-<p>Good data analysis is not just about running a test—it is about making sure the test is appropriate for the data.</p>
-</blockquote>
-</section>
-<section id="common-assumptions" class="level2">
-<h2 class="anchored" data-anchor-id="common-assumptions">Common assumptions</h2>
-<p>Most statistical tests rely on a few key assumptions:</p>
-<section id="normality" class="level3">
-<h3 class="anchored" data-anchor-id="normality">Normality</h3>
-<p>This refers to the <strong>shape of the distribution</strong>.</p>
-<ul>
-<li>Are the data roughly bell-shaped?</li>
-<li>Are there extreme skewed values?</li>
-</ul>
-<p>This connects back to <strong>Distribution shape</strong> which you learned about in Chapter 2.</p>
-</section>
-<section id="homogeneity-of-variance" class="level3">
-<h3 class="anchored" data-anchor-id="homogeneity-of-variance">Homogeneity of variance</h3>
-<p>This refers to <strong>variability across groups</strong>.</p>
-<ul>
-<li>Do the groups have similar levels of spread?</li>
-<li>Is one group much more variable than the other?</li>
-</ul>
-<p>This connects back to <strong>Variability and dispersion</strong> which you learned about in Chapter 2.</p>
-</section>
-<section id="independence" class="level3">
-<h3 class="anchored" data-anchor-id="independence">Independence</h3>
-<p>This refers to how the data were collected.</p>
-<ul>
-<li>Are observations independent of each other?</li>
-<li>Does one participant’s score influence another’s?</li>
-</ul>
-<p>This is determined by the <strong>study design</strong>, not just the data.</p>
-<p>These assumptions connect directly to ideas from earlier chapters, particularly distribution shape and variability (Chapter 2). When assumptions are violated, the results of a statistical test may be misleading, which is why checking assumptions is a critical step before performing any analysis.</p>
-</section>
-</section>
-<section id="connecting-to-our-example" class="level2">
-<h2 class="anchored" data-anchor-id="connecting-to-our-example">Connecting to our example</h2>
-<p>In the Bobo doll study:</p>
-<ul>
-<li><strong>Normality</strong> → Are aggressive behavior scores roughly normally distributed?</li>
-<li><strong>Homogeneity</strong> → Is variability similar between the aggressive and passive conditions?</li>
-<li><strong>Independence</strong> → Each child is observed separately, so scores should be independent.</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>After looking at the data, the next step is to check whether the statistical test is appropriate for the data.</p>
+<p>Statistical tests are built on certain expectations about the data. These expectations are called <button class="glossary" title="A condition that should be reasonably met for a statistical test to work as intended.">statistical assumption</button>s. If assumptions are badly violated, the results may be inaccurate or misleading.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Why Assumptions Matter">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Why Assumptions Matter
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In this chapter, we focus on understanding <em>what</em> assumptions are and <em>why they matter</em>.</p>
-<p>We will learn how to formally check assumptions in <strong>Chapter 9</strong>.</p>
+<p>Checking assumptions is not an annoying hoop to jump through after choosing a test. It is part of deciding whether the test you planned to use actually fits your data.</p>
 </div>
 </div>
-<p>Once assumptions are reasonably met, we can move forward with formally evaluating our hypotheses.</p>
+<section id="assumptions-are-test-specific" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-are-test-specific">Assumptions Are Test-Specific</h2>
+<p>Different tests have different assumptions. That is why later chapters will walk you through assumption checks separately for each inferential statistic.</p>
+<p>For now, you only need the general idea: before interpreting a statistical test, you need to know whether the test is reasonable for your variables, design, and data.</p>
+<p>Most of the parametric tests in this book involve some combination of the following assumptions.</p>
+</section>
+<section id="continuous-dependent-variable" class="level2">
+<h2 class="anchored" data-anchor-id="continuous-dependent-variable">Continuous Dependent Variable</h2>
+<p>Many parametric tests require a continuous dependent variable.</p>
+<p>In our Bobo doll example, the dependent variable is the number of aggressive behaviors. We are treating that as a continuous outcome because it is a quantitative score. That makes it appropriate for the kind of test we will eventually use.</p>
+<p>If the dependent variable were categorical, such as whether a child showed any aggressive behavior, we would need a different kind of test.</p>
+</section>
+<section id="independence" class="level2">
+<h2 class="anchored" data-anchor-id="independence">Independence</h2>
+<p>Independence means that one observation should not improperly depend on another observation.</p>
+<p>In our example, each child is observed separately. One child’s score should not determine another child’s score. That supports the assumption of independence.</p>
+<p>Independence is usually a design issue, not something we can fix by clicking an option in jamovi. For example, students nested in classrooms or employees nested in organizations may be more similar to each other because of the group they belong to. That kind of structure requires more advanced methods than we cover in this book.</p>
+</section>
+<section id="normality" class="level2">
+<h2 class="anchored" data-anchor-id="normality">Normality</h2>
+<p>Normality refers to the shape of the distribution. For many parametric tests, we want the dependent variable, or sometimes a specific version of it, to be approximately normally distributed.</p>
+<p>This does not mean real data must be perfectly bell-shaped. Real data are messy. The question is whether the data are close enough for the test to work reasonably well.</p>
+<p>Later, Chapter 9 will show you how to examine normality using visualizations, skew and kurtosis, Shapiro-Wilk tests, and Q-Q plots.</p>
+</section>
+<section id="homogeneity-of-variance" class="level2">
+<h2 class="anchored" data-anchor-id="homogeneity-of-variance">Homogeneity of Variance</h2>
+<p>Homogeneity of variance means that groups have similar variability on the dependent variable.</p>
+<p>In our example, we would ask whether the aggressive-video and calm-video groups have roughly similar variability in aggressive behavior.</p>
+<p>This assumption matters for tests that compare groups on a continuous outcome, such as t-tests and ANOVAs. If variability is very different across groups, we may need a different version of the test.</p>
+</section>
+<section id="what-if-an-assumption-is-violated" class="level2">
+<h2 class="anchored" data-anchor-id="what-if-an-assumption-is-violated">What If an Assumption Is Violated?</h2>
+<p>A violated assumption does not automatically ruin everything. It means you need to make a thoughtful decision.</p>
+<p>Depending on the test and the assumption, you may need to:</p>
+<ul>
+<li>use a different version of the test;</li>
+<li>use a non-parametric alternative;</li>
+<li>transform or adjust the data carefully;</li>
+<li>report the violation and interpret results cautiously; or</li>
+<li>choose a different analysis.</li>
+</ul>
+<p>Chapter 9 will cover these decisions more carefully. For now, tuck this idea into your brain: the test you run depends not only on the research question, but also on whether your data meet the assumptions for that test.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -838,36 +847,24 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>What are statistical assumptions?</li>
-<li>Why is it important to check assumptions before running a test?</li>
+<li>What is a statistical assumption?</li>
+<li>Why is independence usually a design issue?</li>
 <li>What does normality refer to?</li>
 <li>What does homogeneity of variance refer to?</li>
-<li>What does independence refer to?</li>
 </ol>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answers">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answers
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<p><strong>Answers</strong></p>
 <ol type="1">
-<li>Conditions that must be met for a statistical test to be valid</li>
-<li>Because violations can lead to inaccurate or misleading results</li>
-<li>The shape of the distribution of the data</li>
-<li>Whether groups have similar variability</li>
-<li>Whether observations are independent of each other</li>
+<li>A statistical assumption is a condition that should be reasonably met for a statistical test to work as intended.</li>
+<li>Independence depends on how the data were collected, such as whether observations are separate or nested within groups.</li>
+<li>Normality refers to the shape of a distribution and whether it is approximately bell-shaped.</li>
+<li>Homogeneity of variance means that groups have similar variability on the dependent variable.</li>
 </ol>
 </div>
 </div>
-</div>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>In the next step, we perform the statistical test. For now, remember that “performing the test” is not just pressing buttons. It means using an analysis that fits the research question, variables, design, and assumptions.</p>
 
 
 </section>

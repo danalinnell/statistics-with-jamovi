@@ -61,7 +61,6 @@ interval variable: |
 kurtosis: |
   A description of the tail behavior of a distribution relative to a normal distribution.
 
-
 mean: |
   The arithmetic average, calculated by adding all values and dividing by the number of values.
 
@@ -245,17 +244,107 @@ mean marker: |
 Shapiro-Wilk test: |
   A statistical test used to evaluate whether a variable differs from a normal distribution.
 
-Likert-type item: |
-  An individual survey item with ordered response options, such as strongly disagree to strongly agree.
+alpha level: |
+  The threshold researchers set for deciding whether a result counts as statistically significant, often .05.
 
-recode: |
-  To change values from one coding scheme to another, such as changing text responses into numbers or combining categories.
+directional hypothesis: |
+  A hypothesis that predicts the direction of an effect, difference, or relationship.
 
-transform: |
-  To create a changed version of an existing variable using rules or conditions.
+effect size: |
+  A statistic that describes the size or strength of an effect, difference, or relationship.
 
-compute: |
-  To create a new variable using a formula or function.
+non-directional hypothesis: |
+  A hypothesis that predicts an effect, difference, or relationship but does not predict the direction.
 
-missing value code: |
-  A value used to indicate missing data, such as 99 or -9, rather than a real response.
+null hypothesis significance testing: |
+  A statistical decision-making framework that evaluates how surprising the data are assuming the null hypothesis is true.
+
+p-value: |
+  The probability of observing data as extreme as, or more extreme than, the observed data, assuming the null hypothesis is true.
+
+practical significance: |
+  The real-world or applied importance of an effect, beyond whether it is statistically significant.
+
+statistical assumption: |
+  A condition that should be reasonably met for a statistical test to work as intended.
+
+statistical power: |
+  The probability of detecting an effect if the effect really exists.
+
+statistical significance: |
+  A decision that a result is unlikely enough under the null hypothesis to reject the null hypothesis, based on the alpha level.
+
+Type I error: |
+  Rejecting the null hypothesis when the null hypothesis is actually true. This is also called a false positive.
+
+Type II error: |
+  Failing to reject the null hypothesis when the alternative hypothesis is actually true. This is also called a false negative.
+
+beta: |
+  The probability of making a Type II error, or failing to detect an effect when the alternative hypothesis is true.
+
+sample size: |
+  The number of observations or participants in a study.
+
+power analysis: |
+  A procedure used to estimate sample size, power, or detectable effect size based on the relationships among effect size, alpha, power, and sample size.
+
+a priori power analysis: |
+  A power analysis conducted before data collection to estimate the sample size needed for a planned study.
+
+sensitivity power analysis: |
+  A power analysis used to estimate the effect size that a study can reasonably detect given its sample size, alpha, and desired power.
+
+Type I error rate: |
+  The long-run probability of rejecting the null hypothesis when the null hypothesis is true.
+
+PAMLj: |
+  A jamovi module that includes tools for power analysis and related statistical procedures.
+
+parametric statistics: |
+  Statistical tests that make assumptions about the data, such as assumptions about normality, variance, or the scale of the dependent variable.
+
+non-parametric statistics: |
+  Statistical tests that generally make fewer assumptions about the shape of the distribution than parametric tests.
+
+homogeneity of variance: |
+  The assumption that the dependent variable has similar variability across groups.
+
+Levene's test: |
+  A statistical test used to evaluate whether variances are similar across groups.
+
+Q-Q plot: |
+  A plot that compares observed data to the pattern expected under a theoretical distribution, often used to assess normality.
+
+independence: |
+  The assumption that observations are not dependent on or linked to each other unless the statistical test accounts for that dependency.
+
+Welch's test: |
+  A version of a t-test or ANOVA that adjusts for unequal variances across groups.
+
+winsorizing: |
+  Replacing extreme values with less extreme values based on a rule.
+
+trimming: |
+  Removing or setting aside extreme values based on a rule.
+
+APA style: |
+  A set of writing and formatting guidelines from the American Psychological Association, commonly used in psychology and related fields.
+
+confidence interval: |
+  A range of values that provides an estimate of where a population value may fall, based on sample data and repeated-sampling logic.
+
+degrees of freedom: |
+  Values used in many statistical tests that reflect how much information is free to vary when estimating a statistic.
+
+figure: |
+  A visual display of information, such as a graph, chart, or plot, used to help readers understand a pattern in the data.
+
+omnibus test: |
+  An overall statistical test that indicates whether there is evidence of a difference somewhere among groups, but does not by itself identify exactly which groups differ.
+
+post hoc comparison: |
+  A follow-up comparison used after an overall test, such as ANOVA, to examine which specific groups differ from each other.
+
+table: |
+  A structured display of information in rows and columns, often used to present descriptive statistics, correlations, or model results.

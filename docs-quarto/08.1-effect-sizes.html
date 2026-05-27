@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8.1 Effect Sizes – Stats with jamovi</title>
+<title>8.1 Effect Size – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -45,6 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -86,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08.0-bean.html">8. BEAN</a></li><li class="breadcrumb-item"><a href="./08.1-effect-sizes.html">8.1 Effect Sizes</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08.0-bean.html">8. BEAN</a></li><li class="breadcrumb-item"><a href="./08.1-effect-sizes.html">8.1 Effect Size</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -416,8 +417,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Recap, Common Mistakes, and Looking Ahead</span></a>
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -434,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">8.1 Effect Sizes</span></a>
+ <span class="menu-text">8.1 Effect Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -452,7 +453,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.4 Sample Size and Power Analysis</span></a>
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -509,8 +516,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10.3-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10.3 Common APA-Style Errors</span></a>
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -728,22 +747,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#effect-size-as-part-of-bean" id="toc-effect-size-as-part-of-bean" class="nav-link active" data-scroll-target="#effect-size-as-part-of-bean">Effect size as part of BEAN</a></li>
-  <li><a href="#common-effect-sizes" id="toc-common-effect-sizes" class="nav-link" data-scroll-target="#common-effect-sizes">Common effect sizes</a></li>
-  <li><a href="#interpreting-effect-sizes-with-caution" id="toc-interpreting-effect-sizes-with-caution" class="nav-link" data-scroll-target="#interpreting-effect-sizes-with-caution">Interpreting effect sizes (with caution)</a></li>
-  <li><a href="#what-makes-an-effect-practically-significant" id="toc-what-makes-an-effect-practically-significant" class="nav-link" data-scroll-target="#what-makes-an-effect-practically-significant">What makes an effect practically significant?</a></li>
-  <li><a href="#connecting-effect-size-to-bean" id="toc-connecting-effect-size-to-bean" class="nav-link" data-scroll-target="#connecting-effect-size-to-bean">Connecting effect size to BEAN</a></li>
-  <li><a href="#small-effects-can-still-matter" id="toc-small-effects-can-still-matter" class="nav-link" data-scroll-target="#small-effects-can-still-matter">Small effects can still matter</a></li>
-  <li><a href="#a-practical-takeaway" id="toc-a-practical-takeaway" class="nav-link" data-scroll-target="#a-practical-takeaway">A practical takeaway</a></li>
+  <li><a href="#statistical-vs.-practical-significance" id="toc-statistical-vs.-practical-significance" class="nav-link active" data-scroll-target="#statistical-vs.-practical-significance">Statistical vs.&nbsp;Practical Significance</a></li>
+  <li><a href="#common-effect-sizes" id="toc-common-effect-sizes" class="nav-link" data-scroll-target="#common-effect-sizes">Common Effect Sizes</a></li>
+  <li><a href="#small-medium-and-large-effects" id="toc-small-medium-and-large-effects" class="nav-link" data-scroll-target="#small-medium-and-large-effects">Small, Medium, and Large Effects</a></li>
+  <li><a href="#effect-size-as-part-of-bean" id="toc-effect-size-as-part-of-bean" class="nav-link" data-scroll-target="#effect-size-as-part-of-bean">Effect Size as Part of BEAN</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08.0-bean.html">8. BEAN</a></li><li class="breadcrumb-item"><a href="./08.1-effect-sizes.html">8.1 Effect Sizes</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08.0-bean.html">8. BEAN</a></li><li class="breadcrumb-item"><a href="./08.1-effect-sizes.html">8.1 Effect Size</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">8.1 Effect Sizes</h1>
+<h1 class="title">8.1 Effect Size</h1>
 </div>
 
 
@@ -760,186 +776,138 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In Chapter 7, we introduced effect sizes as a way to describe the magnitude of an effect. You learned that effect sizes help us move beyond simply asking whether an effect exists (statistical significance) to asking how large or meaningful that effect is.</p>
-<p>In this section, we build on that foundation and place effect sizes within the broader BEAN framework.</p>
-<section id="effect-size-as-part-of-bean" class="level2">
-<h2 class="anchored" data-anchor-id="effect-size-as-part-of-bean">Effect size as part of BEAN</h2>
-<p>Within BEAN, effect size plays a central role because it directly influences our ability to detect an effect—that is, <strong>statistical power</strong>.</p>
+<p>An <button class="glossary" title="A statistic that describes the size or strength of an effect, difference, or relationship.">effect size</button> is a quantitative description of the size or strength of an effect, difference, or relationship.</p>
+<p>In Chapter 7, we used the <em>p</em>-value to decide whether a result was statistically significant. That is useful, but it is not enough. A statistically significant result can be tiny and practically unimportant. A non-significant result can still be interesting, especially if the study had low power or a small sample.</p>
+<p>Effect sizes help us ask a different question:</p>
 <blockquote class="blockquote">
-<p>Larger effects are easier to detect than smaller effects.</p>
+<p>How big is the effect?</p>
 </blockquote>
-<p>This simple idea has important implications:</p>
-<ul>
-<li>Larger effect sizes → higher power (all else equal)<br>
-</li>
-<li>Smaller effect sizes → lower power (all else equal)</li>
-</ul>
-<p>This means that effect size is not just something we interpret after the analysis—it is something that fundamentally shapes whether we are likely to detect an effect in the first place.</p>
+<section id="statistical-vs.-practical-significance" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-vs.-practical-significance">Statistical vs.&nbsp;Practical Significance</h2>
+<p>A <em>p</em>-value helps us decide whether the result is statistically significant. An effect size helps us think about whether the result is meaningful.</p>
+<p>Those are not the same thing.</p>
+<p>A very small effect can be statistically significant if the sample size is huge. A larger effect can be non-significant if the sample size is small or the study has low power. This is why we should avoid letting the <em>p</em>-value do all the thinking for us.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Key Idea">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Key Idea
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Statistical significance asks whether a result is surprising under the null hypothesis.</p>
+<p>Practical significance asks whether the effect matters in context.</p>
+</div>
+</div>
 </section>
 <section id="common-effect-sizes" class="level2">
-<h2 class="anchored" data-anchor-id="common-effect-sizes">Common effect sizes</h2>
-<p>Different statistical tests use different effect size metrics:</p>
-<ul>
-<li><strong>Cohen’s d</strong>: differences between two groups. Another similar effect size is Hedge’s g, which we often use when we have smaller sample sizes.</li>
-<li><strong>r (correlation)</strong>: strength of relationships</li>
-<li><strong>η² (eta-squared)</strong>: proportion of variance explained (ANOVA). Variants of eta-saured include partial eta-squared and omega-squared.</li>
-<li><strong>φ (phi)</strong>: associations between categorical variables. Carmer’s V is also used.</li>
-</ul>
-<p>In Chapter 7, we used Cohen’s <em>d</em> to quantify the difference between two groups. These metrics allow us to standardize effects so that they can be compared across studies and contexts.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<h2 class="anchored" data-anchor-id="common-effect-sizes">Common Effect Sizes</h2>
+<p>Different statistical tests use different effect-size measures. You do not need to master all of these right now, but you should recognize that effect size is not one single statistic.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statistical context</th>
+<th>Common effect size</th>
+<th>What it describes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean differences</td>
+<td>Cohen’s <em>d</em> or Hedges’ <em>g</em></td>
+<td>Difference between means in standardized units</td>
+</tr>
+<tr class="even">
+<td>Correlation</td>
+<td><em>r</em></td>
+<td>Strength and direction of a relationship</td>
+</tr>
+<tr class="odd">
+<td>ANOVA</td>
+<td>η², partial η², or ω²</td>
+<td>Proportion of variance associated with an effect</td>
+</tr>
+<tr class="even">
+<td>Chi-square</td>
+<td>φ or Cramer’s V</td>
+<td>Strength of association between categorical variables</td>
+</tr>
+</tbody>
+</table>
+<p>We will return to specific effect sizes in the chapters where they are used. For now, the important point is that effect sizes describe magnitude.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="More About Effect Size Families">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>More About Effect Size Families
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The <strong>d family</strong> of effect sizes describes standardized mean differences. Cohen’s <em>d</em> is common, but Hedges’ <em>g</em> is often preferred with smaller samples because it corrects some small-sample bias.</p>
+<p>The <strong>r family</strong> of effect sizes describes associations. A correlation can range from -1 to +1, with 0 indicating no linear relationship. Squaring a correlation gives the proportion of variance explained.</p>
+<p>The <strong>eta-squared family</strong> is often used with ANOVA. Eta-squared, partial eta-squared, and omega-squared estimate the amount of variation in the dependent variable associated with one or more predictors. We will keep those distinctions light until the ANOVA chapter.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="small-medium-and-large-effects" class="level2">
+<h2 class="anchored" data-anchor-id="small-medium-and-large-effects">Small, Medium, and Large Effects</h2>
+<p>You may have seen rules of thumb online. For example, Cohen’s <em>d</em> values of .20, .50, and .80 are often described as small, medium, and large. Correlations of .10, .30, and .50 are also often described that way.</p>
+<p>Those guidelines can be useful as a starting point, but please do not treat them like universal laws.</p>
+<p>Quite frankly, <strong>it depends</strong>.</p>
+<p>The meaning of an effect size depends on the research area, the outcome, the intervention, the cost of acting on the result, the risk of not acting, and what previous studies have found.</p>
+<p>For example, a very small effect can matter if the outcome is important, the intervention is cheap, and many people are affected. A small reduction in future heart attacks can matter a lot if the intervention is inexpensive and widely available.</p>
+<p>On the other hand, imagine an educational intervention that produces a large effect on GPA but costs $100,000 per student. That might be statistically and practically impressive, but it may not be feasible. The effect is large, but the real-world decision is still complicated.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Be Careful With Benchmarks">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Warning</span>Be Careful With Benchmarks
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you want to learn more, <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863/full">check out this great journal article by Daniel Lakens</a> or this <a href="https://lakens.github.io/statistical_inferences/06-effectsize.html">chapter on effect sizes by Daniel Lakens</a>.</p>
+<p>Small, medium, and large effect-size labels are shortcuts. They are not substitutes for thinking.</p>
+<p>A better question is: <strong>What is the smallest effect size that would matter in this context?</strong></p>
 </div>
 </div>
 </section>
-<section id="interpreting-effect-sizes-with-caution" class="level2">
-<h2 class="anchored" data-anchor-id="interpreting-effect-sizes-with-caution">Interpreting effect sizes (with caution)</h2>
-<p>You may have learned general guidelines such as:</p>
+<section id="effect-size-as-part-of-bean" class="level2">
+<h2 class="anchored" data-anchor-id="effect-size-as-part-of-bean">Effect Size as Part of BEAN</h2>
+<p>Effect size matters because larger effects are easier to detect.</p>
+<p>Holding alpha and sample size constant:</p>
 <ul>
-<li>Small effect: ~0.20<br>
-</li>
-<li>Medium effect: ~0.50<br>
-</li>
-<li>Large effect: ~0.80</li>
+<li>Larger effect size → higher power</li>
+<li>Smaller effect size → lower power</li>
 </ul>
-<p>These guidelines can be useful starting points, but they are <strong>not universal rules</strong>.</p>
-<p>The meaning of an effect size depends on context:</p>
-<ul>
-<li>What is typical in the research area?<br>
-</li>
-<li>What outcomes are being measured?<br>
-</li>
-<li>What would be considered meaningful in practice?</li>
-</ul>
-<blockquote class="blockquote">
-<p>Effect sizes should always be interpreted in light of theory, prior research, and practical implications.</p>
-</blockquote>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>As an example, <a href="https://journals.sagepub.com/stoken/default+domain/U7HVJPIXFWBBWQDKMGXT/full">this study in the field of education</a> collected effect sizes of many education interventions to figure out benchmarks for small (&lt;.05), medium (&lt;.20), and large (&gt;= .20) effect sizes based on existing data rather than poor quality heuristics.</p>
-</div>
-</div>
-</section>
-<section id="what-makes-an-effect-practically-significant" class="level2">
-<h2 class="anchored" data-anchor-id="what-makes-an-effect-practically-significant">What makes an effect practically significant?</h2>
-<p>P-values tell us about <strong>statistical significance</strong>, but they do not tell us whether an effect is meaningful. That is the role of effect sizes—but determining what counts as “meaningful” is not always straightforward.</p>
-<p>Lakens provides a useful overview of ways researchers can determine which effect sizes are interesting in practice in his paper on (<a href="https://psyarxiv.com/9d3yf/">Sample Size Justification</a>). The paper has far more detail, but essentially can be boiled into three important questions we must ask ourselves when thinking about effect sizes:</p>
-<ul>
-<li>What effect size do we <em>expect</em> based on past research?<br>
-</li>
-<li>What effect size do we <em>care about</em>?<br>
-</li>
-<li>What effect size can we <em>realistically detect</em> given our design?</li>
-</ul>
-<p>This process is critical when designing studies and interpreting results. It also directly connects to the other components of BEAN.</p>
-</section>
-<section id="connecting-effect-size-to-bean" class="level2">
-<h2 class="anchored" data-anchor-id="connecting-effect-size-to-bean">Connecting effect size to BEAN</h2>
-<p>Effect size is tightly connected to the other elements of BEAN:</p>
-<ul>
-<li><p><strong>Effect size ↔︎ Power</strong><br>
-Larger effects are easier to detect and increase power</p></li>
-<li><p><strong>Effect size ↔︎ Sample size (N)</strong><br>
-Smaller effects require larger samples to detect<br>
-Larger effects can be detected with smaller samples</p></li>
-<li><p><strong>Effect size ↔︎ Alpha</strong><br>
-Stricter alpha levels make smaller effects harder to detect</p></li>
-</ul>
-<p>These relationships highlight an important idea:</p>
-<blockquote class="blockquote">
-<p>The effect size you care about helps determine the sample size you need and the power your study will have.</p>
-</blockquote>
-</section>
-<section id="small-effects-can-still-matter" class="level2">
-<h2 class="anchored" data-anchor-id="small-effects-can-still-matter">Small effects can still matter</h2>
-<p>A common misconception is that small effect sizes are unimportant. This is not necessarily true.</p>
-<p>Small effects may still be meaningful when:</p>
-<ul>
-<li>They accumulate over time<br>
-</li>
-<li>They affect large populations<br>
-</li>
-<li>They influence important outcomes</li>
-</ul>
-<blockquote class="blockquote">
-<p>What counts as “large” or “important” depends on the context, not just a rule of thumb.</p>
-</blockquote>
-</section>
-<section id="a-practical-takeaway" class="level2">
-<h2 class="anchored" data-anchor-id="a-practical-takeaway">A practical takeaway</h2>
-<p>When designing or evaluating a study, it is not enough to ask:</p>
-<blockquote class="blockquote">
-<p>“Is there a statistically significant effect?”</p>
-</blockquote>
-<p>We should also ask:</p>
-<ul>
-<li>How large is the effect?<br>
-</li>
-<li>Is this effect meaningful in context?<br>
-</li>
-<li>Was the study capable of detecting an effect of this size?</li>
-</ul>
-<p>These questions connect directly to the broader BEAN framework and will become especially important when we discuss power more fully in the next section.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Check Your Understanding
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>How does effect size influence statistical power?<br>
-</li>
-<li>Why are “small, medium, large” guidelines for effect sizes only rough estimates?<br>
-</li>
-<li>Give one reason why a small effect size might still be important.<br>
-</li>
-<li>How does effect size relate to sample size in detecting effects?<br>
-</li>
-</ol>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answers">
+<p>This also means smaller effects require larger samples if we want a good chance of detecting them.</p>
+<p>That is one of the major reasons researchers conduct power analyses. They are not just asking, “How many people do I need?” They are asking, “How many people do I need to detect an effect of this size with reasonable power?”</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Want More Detail?">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answers
+<span class="screen-reader-only">Note</span>Want More Detail?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>Larger effect sizes increase power, while smaller effect sizes decrease power<br>
-</li>
-<li>Because the meaning of an effect depends on context, theory, and application<br>
-</li>
-<li>Small effects can accumulate over time or impact many people<br>
-</li>
-<li>Smaller effects require larger sample sizes to detect, while larger effects can be detected with smaller samples<br>
-</li>
-</ol>
+<p>Daniel Lakens has a useful <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863/full">journal article on effect sizes</a> and a <a href="https://lakens.github.io/statistical_inferences/06-effectsize.html">chapter on effect sizes</a>. He also discusses sample size justification, including ways to identify the smallest effect size of interest.</p>
+<p>One helpful approach is to look at the distribution of effect sizes in a research area instead of relying only on generic benchmarks. For example, some education researchers have examined existing intervention effects to develop field-specific expectations for what counts as small, medium, or large.</p>
 </div>
 </div>
 </div>

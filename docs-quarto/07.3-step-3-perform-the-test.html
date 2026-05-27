@@ -45,6 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -416,8 +417,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Recap, Common Mistakes, and Looking Ahead</span></a>
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -434,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.1 Effect Sizes</span></a>
+ <span class="menu-text">8.1 Effect Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -452,7 +453,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.4 Sample Size and Power Analysis</span></a>
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -509,8 +516,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10.3-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10.3 Common APA-Style Errors</span></a>
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -728,11 +747,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#close-enough-to-zero-vs-too-far-from-zero" id="toc-close-enough-to-zero-vs-too-far-from-zero" class="nav-link active" data-scroll-target="#close-enough-to-zero-vs-too-far-from-zero">“Close enough to zero” vs “too far from zero”</a></li>
-  <li><a href="#alpha-α-where-we-draw-the-line" id="toc-alpha-α-where-we-draw-the-line" class="nav-link" data-scroll-target="#alpha-α-where-we-draw-the-line">Alpha (α): where we draw the line</a></li>
-  <li><a href="#the-p-value-how-surprising-are-our-results" id="toc-the-p-value-how-surprising-are-our-results" class="nav-link" data-scroll-target="#the-p-value-how-surprising-are-our-results">The p-value: how surprising are our results?</a></li>
-  <li><a href="#effect-size-how-big-is-the-effect" id="toc-effect-size-how-big-is-the-effect" class="nav-link" data-scroll-target="#effect-size-how-big-is-the-effect">Effect size: how big is the effect?</a></li>
-  <li><a href="#power-how-likely-are-we-to-detect-a-real-effect" id="toc-power-how-likely-are-we-to-detect-a-real-effect" class="nav-link" data-scroll-target="#power-how-likely-are-we-to-detect-a-real-effect">Power: how likely are we to detect a real effect?</a></li>
+  <li><a href="#the-core-question" id="toc-the-core-question" class="nav-link active" data-scroll-target="#the-core-question">The Core Question</a></li>
+  <li><a href="#alpha-how-surprising-is-surprising-enough" id="toc-alpha-how-surprising-is-surprising-enough" class="nav-link" data-scroll-target="#alpha-how-surprising-is-surprising-enough">Alpha: How Surprising Is Surprising Enough?</a></li>
+  <li><a href="#the-p-value-how-surprising-are-the-data" id="toc-the-p-value-how-surprising-are-the-data" class="nav-link" data-scroll-target="#the-p-value-how-surprising-are-the-data">The p-Value: How Surprising Are the Data?</a></li>
+  <li><a href="#statistical-significance" id="toc-statistical-significance" class="nav-link" data-scroll-target="#statistical-significance">Statistical Significance</a></li>
+  <li><a href="#effect-size-how-large-is-the-effect" id="toc-effect-size-how-large-is-the-effect" class="nav-link" data-scroll-target="#effect-size-how-large-is-the-effect">Effect Size: How Large Is the Effect?</a></li>
+  <li><a href="#power-could-we-detect-an-effect-if-it-exists" id="toc-power-could-we-detect-an-effect-if-it-exists" class="nav-link" data-scroll-target="#power-could-we-detect-an-effect-if-it-exists">Power: Could We Detect an Effect If It Exists?</a></li>
+  <li><a href="#what-the-test-gives-us" id="toc-what-the-test-gives-us" class="nav-link" data-scroll-target="#what-the-test-gives-us">What the Test Gives Us</a></li>
   </ul>
 </nav>
     </div>
@@ -758,231 +779,161 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Now that we understand our data, have clearly stated our hypotheses, and checked assumptions, we are ready to perform the statistical test.</p>
-<p>This is where we formally evaluate our hypotheses.</p>
+<p>Once we understand the data, state the hypotheses, and check assumptions, we are ready to perform the statistical test.</p>
+<p>This chapter does not teach the jamovi steps for a specific inferential statistic. Those instructions belong in the test-specific chapters. Instead, this section explains the logic behind what the test is doing.</p>
+<section id="the-core-question" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-question">The Core Question</h2>
 <p>The core question in hypothesis testing is:</p>
 <blockquote class="blockquote">
-<p>How large does a difference need to be before we consider it “real” rather than just due to chance?</p>
+<p>If the null hypothesis were true, how surprising would our data be?</p>
 </blockquote>
-<p>In our Bobo doll example, we observed:</p>
-<ul>
-<li>Mean aggression (Aggressive condition) = 11.20</li>
-<li>Mean aggression (Passive condition) = 5.40</li>
-</ul>
-<p>That’s a difference of <strong>5.80 aggressive behaviors</strong>.</p>
-<p>At first glance, that seems meaningful—but we need to ask:</p>
-<blockquote class="blockquote">
-<p>Is this difference large enough that we would <em>not expect it to happen by chance</em> if there were truly no difference between groups?</p>
-</blockquote>
-<section id="close-enough-to-zero-vs-too-far-from-zero" class="level2">
-<h2 class="anchored" data-anchor-id="close-enough-to-zero-vs-too-far-from-zero">“Close enough to zero” vs “too far from zero”</h2>
-<p>If the null hypothesis is true, the true difference between groups is <strong>0</strong>. But in real data, we almost never observe an exact difference of 0. So instead, we ask:</p>
-<ul>
-<li>Which differences are <strong>close enough to 0</strong> that we treat them as “no difference”?</li>
-<li>Which differences are <strong>far enough from 0</strong> that we consider them meaningful?</li>
-</ul>
-<p>This creates a boundary between:</p>
-<ul>
-<li><strong>Not surprising (consistent with the null)</strong></li>
-<li><strong>Surprising (unlikely under the null)</strong></li>
-</ul>
+<p>In our Bobo doll example, the null hypothesis says that children in the aggressive-video condition do not show more aggressive behavior than children in the calm-video condition.</p>
+<p>But our sample shows a difference:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th style="text-align: right;">Mean aggressive behaviors</th>
+<th style="text-align: right;">Standard deviation</th>
+<th style="text-align: right;">Sample size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Aggressive video</td>
+<td style="text-align: right;">11.20</td>
+<td style="text-align: right;">3.10</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="even">
+<td>Calm video</td>
+<td style="text-align: right;">5.40</td>
+<td style="text-align: right;">2.80</td>
+<td style="text-align: right;">15</td>
+</tr>
+</tbody>
+</table>
+<p>The aggressive-video group has a higher mean in the sample. Now we need to decide whether that difference is surprising enough, assuming the null hypothesis is true, that we should reject the null hypothesis.</p>
 </section>
-<section id="alpha-α-where-we-draw-the-line" class="level2">
-<h2 class="anchored" data-anchor-id="alpha-α-where-we-draw-the-line">Alpha (α): where we draw the line</h2>
-<p>We define this boundary using <strong>alpha (α)</strong>. Most commonly, we set <strong>α = .05</strong>, although there might be reasons you change your alpha level (see Chapter 8).</p>
-<p>Alpha represents our threshold for what we consider “surprising.”</p>
-<blockquote class="blockquote">
-<p>Values that fall in the most extreme 5% of possible outcomes (assuming the null is true) are considered unlikely enough that we reject the null hypothesis.</p>
-</blockquote>
-<p>We can visualize this idea using a distribution centered at 0 (which represents the null hypothesis of no difference). Most possible differences fall near 0 and are considered <strong>not surprising</strong>. Values farther away from 0 are more unusual.</p>
-<p>Alpha (α = .05) defines the boundary between:</p>
-<ul>
-<li>results that are <strong>likely under the null hypothesis</strong></li>
-<li>results that are <strong>unlikely under the null hypothesis</strong></li>
-</ul>
-<p>The shaded 5% region in the figure represents results that are unlikely if the null hypothesis is true. This boundary corresponds to a **cutoff value**—the point at which a result becomes “surprising enough” that we would reject the null hypothesis. In practice, this cutoff is expressed in terms of the **difference we observe in our data**.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="alpha-how-surprising-is-surprising-enough" class="level2">
+<h2 class="anchored" data-anchor-id="alpha-how-surprising-is-surprising-enough">Alpha: How Surprising Is Surprising Enough?</h2>
+<p>The <button class="glossary" title="The threshold researchers set for deciding whether a result counts as statistically significant, often .05.">alpha level</button>, often written as α, is the threshold we set for deciding whether a result is statistically significant.</p>
+<p>In many psychology studies, alpha is set at .05. This means we are using 5% as our cutoff for what counts as surprising enough under the null hypothesis.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Alpha Is a Decision Threshold">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Alpha Is a Decision Threshold
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This particular figure only has the shaded region on the right side of the distribution because we had a one-tailed hypothesis. If we had a non-directional, two-tailed hypothesis, the shaded region would be 2.5% of the left tail and 2.5% of the right tail.</p>
+<p>Alpha does not come from the data. The researcher sets alpha before interpreting the test. In this book, unless stated otherwise, we will usually use α = .05.</p>
 </div>
 </div>
-<p>If our observed result falls in this region, it is considered unlikely enough that we would reject the null hypothesis.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="07.3-step-3-perform-the-test_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Conceptual illustration of alpha and the critical region</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>A quick note on how this used to be done
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Before statistical software was widely available, researchers often analyzed data by hand.</p>
-<p>They would:</p>
-<ul>
-<li>Determine the <strong>critical region</strong> based on:
-<ul>
-<li>the alpha level (e.g., .05)</li>
-<li>the sample size</li>
-<li>whether the hypothesis was <strong>directional (one-tailed)</strong> or <strong>non-directional (two-tailed)</strong></li>
-</ul></li>
-<li>This process produced a <strong>cutoff value</strong> (called a <em>critical value</em>)</li>
-<li>Then they would compare that cutoff to their observed result</li>
-</ul>
-<p>In our example, we observed a mean difference of <strong>5.80 aggressive behaviors</strong>.</p>
-<p>Researchers would ask:</p>
-<blockquote class="blockquote">
-<p>Does this observed difference fall into the “unlikely” (critical) region?</p>
-</blockquote>
-<ul>
-<li>If it <strong>does</strong> → the result is statistically significant (<strong>p &lt; .05</strong>)</li>
-<li>If it <strong>does not</strong> → the result is not statistically significant (<strong>p ≥ .05</strong>)</li>
-</ul>
-<p>Today, we no longer need to do this by hand.</p>
-<p>Statistical software (like jamovi) calculates the <strong>exact p-value</strong>, which tells us directly:</p>
-<blockquote class="blockquote">
-<p>How likely our result is under the null hypothesis</p>
-</blockquote>
-<p>This allows us to make more precise decisions without relying on tables or cutoff values.</p>
-</div>
-</div>
+<p>The old-school way of teaching hypothesis testing often involves critical values and tables. Some students find that math helpful, and I may eventually include optional hand-calculation material in an appendix. But for the main textbook, we are going to focus on the logic and let jamovi do the calculations.</p>
 </section>
-<section id="the-p-value-how-surprising-are-our-results" class="level2">
-<h2 class="anchored" data-anchor-id="the-p-value-how-surprising-are-our-results">The p-value: how surprising are our results?</h2>
-<p>Once we run the statistical test, we obtain a <strong>p-value</strong>.</p>
+<section id="the-p-value-how-surprising-are-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-p-value-how-surprising-are-the-data">The p-Value: How Surprising Are the Data?</h2>
+<p>A <button class="glossary" title="The probability of observing data as extreme as, or more extreme than, the observed data, assuming the null hypothesis is true.">p-value</button> tells us the probability of observing data as extreme as, or more extreme than, our data, assuming the null hypothesis is true.</p>
+<p>That definition has two important parts:</p>
+<ol type="1">
+<li>The p-value is about the probability of the data.</li>
+<li>The p-value assumes the null hypothesis is true.</li>
+</ol>
+<p>It is not the probability that the null hypothesis is true. This is one of the most common misunderstandings in statistics.</p>
+<p>Another way to say it is:</p>
 <blockquote class="blockquote">
-<p>The p-value tells us how likely our results would be if the null hypothesis were true.</p>
-</blockquote>
-<p>In our example:</p>
-<ul>
-<li>If the p-value is very small → our observed difference is unlikely under the null</li>
-<li>If the p-value is large → our observed difference is plausible under the null</li>
-</ul>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A p-value is <strong>NOT</strong> the probability that the null hypothesis is true.</p>
-<p>It is the probability of the observed data (or more extreme data) assuming the null hypothesis is true.</p>
-</div>
-</div>
-<p>We compare the p-value to our alpha level:</p>
-<ul>
-<li>If <strong>p &lt; α</strong> → the result is <strong>statistically significant</strong></li>
-<li>If <strong>p ≥ α</strong> → the result is <strong>not statistically significant</strong></li>
-</ul>
-<p>This comparison is what we will use in Step 4 to make our decision.</p>
-</section>
-<section id="effect-size-how-big-is-the-effect" class="level2">
-<h2 class="anchored" data-anchor-id="effect-size-how-big-is-the-effect">Effect size: how big is the effect?</h2>
-<p>Even if a result is statistically significant, we still need to ask how large is the difference. That’s what <strong>effect size</strong> tells us.</p>
-<p>In our example: How much more aggressive are children in the aggressive condition compared to the passive condition?</p>
-<p>In this case, we would get a <strong>Cohen’s d</strong> effect size, which is the type of effect size used for comparing group differences. There are other effect sizes (e.g., r, eta-squared, phi) that you’ll learn throughout the various inferential statistics.</p>
-<p>In our study, given the descriptive statistics from earlier, we would calculate a <strong>Cohen’s d of about 1.97</strong>. That means the difference between groups is almost <strong>two standard deviations</strong>, which would typically be considered a <strong>large effect</strong>.</p>
-<p>This suggests that the difference in aggressive behavior between the two groups is substantial.</p>
-<p>It is important to note that effect sizes this large are relatively uncommon in many real-world studies. Often, effects are smaller and more subtle, which makes interpreting both statistical and practical significance especially important.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Effect size interpretations (small, medium, large) are only rough guidelines.</p>
-<p>What counts as “meaningful” always depends on the context, theory, and application.</p>
-<p>We will revisit effect sizes in more detail in Chapter 8.</p>
-</div>
-</div>
-<p>Statistical significance tells us whether an effect is unlikely to be due to chance.</p>
-<p><strong>Practical significance asks: does this effect actually matter in the real world?</strong></p>
-<p>In this case:</p>
-<ul>
-<li>A difference of nearly <strong>6 aggressive behaviors</strong> is quite large<br>
-</li>
-<li>The effect size (d ≈ 1.97) indicates strong separation between the groups</li>
-</ul>
-<blockquote class="blockquote">
-<p>This would likely be considered both <strong>statistically significant</strong> and <strong>practically meaningful</strong></p>
-</blockquote>
-<blockquote class="blockquote">
-<p>Statistical significance tells us <em>if</em> an effect exists.<br>
-Effect size tells us <em>how much it matters</em>.</p>
-</blockquote>
-<p>Even a <strong>small effect size</strong> can be practically important depending on the context.</p>
-<p>For example:</p>
-<ul>
-<li>A small improvement in a medical treatment could save lives</li>
-<li>A small increase in graduation rates could affect thousands of students</li>
-<li>A small reduction in harmful behavior could have meaningful long-term impact</li>
-</ul>
-<p>Conversely, even a large effect might not be important if:</p>
-<ul>
-<li>it has little real-world consequence</li>
-<li>it is not meaningful in context</li>
-</ul>
-<blockquote class="blockquote">
-<p>Effect size helps us move beyond “Is there an effect?” to <strong>“How much does this effect actually matter?”</strong></p>
+<p>If there were really no effect, how surprising would these data be?</p>
 </blockquote>
 </section>
-<section id="power-how-likely-are-we-to-detect-a-real-effect" class="level2">
-<h2 class="anchored" data-anchor-id="power-how-likely-are-we-to-detect-a-real-effect">Power: how likely are we to detect a real effect?</h2>
-<p>Another important idea is <strong>statistical power</strong>.</p>
+<section id="statistical-significance" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-significance">Statistical Significance</h2>
+<p>After we get the p-value, we compare it to alpha.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>If…</th>
+<th>Then…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>p &lt; α</td>
+<td>The result is statistically significant, and we reject the null hypothesis.</td>
+</tr>
+<tr class="even">
+<td>p ≥ α</td>
+<td>The result is not statistically significant, and we fail to reject the null hypothesis.</td>
+</tr>
+</tbody>
+</table>
+<p>If alpha is .05 and p = .003, the result is statistically significant because .003 is less than .05.</p>
+<p>If alpha is .05 and p = .184, the result is not statistically significant because .184 is greater than .05.</p>
+<p>Statistical significance is a decision rule. It tells us whether the result crosses the threshold we set. It does not tell us whether the effect is important, meaningful, or well-designed.</p>
+</section>
+<section id="effect-size-how-large-is-the-effect" class="level2">
+<h2 class="anchored" data-anchor-id="effect-size-how-large-is-the-effect">Effect Size: How Large Is the Effect?</h2>
+<p>A <button class="glossary" title="A statistic that describes the size or strength of an effect, difference, or relationship.">effect size</button> describes the size or strength of an effect.</p>
+<p>In our Bobo doll example, statistical significance would tell us whether the group difference is unlikely under the null hypothesis. Effect size helps us ask a different question:</p>
 <blockquote class="blockquote">
-<p>Power is the ability of a test to detect a real effect if one exists.</p>
+<p>How large is the difference?</p>
 </blockquote>
-<p>Power matters because:</p>
+<p>Those are not the same question. A tiny effect can be statistically significant in a huge sample. A large effect can fail to be statistically significant in a tiny sample. This is why p-values and effect sizes should be interpreted together.</p>
+<p>For our example, the difference between groups is large. Children in the aggressive-video condition showed nearly six more aggressive behaviors on average than children in the calm-video condition. Later, when we learn t-tests, we will learn how to quantify this difference with an effect size such as Cohen’s d.</p>
+</section>
+<section id="power-could-we-detect-an-effect-if-it-exists" class="level2">
+<h2 class="anchored" data-anchor-id="power-could-we-detect-an-effect-if-it-exists">Power: Could We Detect an Effect If It Exists?</h2>
+<p><button class="glossary" title="The probability of detecting an effect if the effect really exists.">statistical power</button> is the probability of detecting an effect if the effect really exists.</p>
+<p>Power depends on several things, including:</p>
 <ul>
-<li>Low power → we may miss real effects</li>
-<li>High power → we are more likely to detect real effects</li>
+<li>effect size;</li>
+<li>sample size;</li>
+<li>alpha; and</li>
+<li>variability in the data.</li>
 </ul>
-<p>Power depends on:</p>
+<p>For now, you only need the basic idea: a study with low power may fail to detect a real effect. This is one reason non-significant results require careful interpretation.</p>
+<p>Chapter 8 will focus on BEAN, which brings together beta/power, effect size, alpha, and sample size.</p>
+</section>
+<section id="what-the-test-gives-us" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-test-gives-us">What the Test Gives Us</h2>
+<p>When we perform the test, we usually get several pieces of information:</p>
 <ul>
-<li>sample size</li>
-<li>effect size</li>
-<li>variability in the data</li>
+<li>a test statistic, such as t, F, r, or χ²;</li>
+<li>degrees of freedom, depending on the test;</li>
+<li>a p-value;</li>
+<li>often an effect size; and</li>
+<li>sometimes confidence intervals or assumption checks.</li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>You do not need to know all of those details yet. The test-specific chapters will show you exactly what output to look at and how to interpret it.</p>
+<p>For now, the main point is this:</p>
+<blockquote class="blockquote">
+<p>The test helps us decide whether the data are surprising enough under the null hypothesis that we reject the null hypothesis.</p>
+</blockquote>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common Mistake">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Warning</span>Common Mistake
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Directional (one-tailed) hypotheses can increase power, which is one reason they must be theoretically justified.</p>
-<p>We will explore power in more detail in Chapter 8 (BEAN).</p>
+<p>Do not let the p-value do all the thinking for you. A p-value helps you make a statistical decision, but it does not replace the research question, the design, the descriptive statistics, the effect size, or your judgment.</p>
 </div>
 </div>
-<p>Now that we have our statistical results, we can interpret what they mean in relation to our research question.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -994,34 +945,20 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>What is the main question hypothesis testing is trying to answer?</li>
-<li>What does alpha (α) represent?</li>
+<li>What does alpha represent?</li>
 <li>What does a p-value represent?</li>
-<li>What is the difference between statistical significance and effect size?</li>
-<li>What is statistical power?</li>
+<li>What decision do we usually make when p &lt; α?</li>
+<li>Why is effect size important?</li>
+<li>Why does power matter?</li>
 </ol>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answers">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answers
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<p><strong>Answers</strong></p>
 <ol type="1">
-<li>Whether the observed results are likely if the null hypothesis is true</li>
-<li>The threshold for what we consider a surprising result</li>
-<li>The likelihood of the observed data (or more extreme data) under the null hypothesis</li>
-<li>Statistical significance tells us if an effect exists; effect size tells us how large it is</li>
-<li>The ability of a test to detect a real effect</li>
+<li>Alpha is the threshold for deciding what counts as statistically significant.</li>
+<li>A p-value is the probability of observing data as extreme as, or more extreme than, the data we observed, assuming the null hypothesis is true.</li>
+<li>We reject the null hypothesis.</li>
+<li>Effect size tells us how large or strong the effect is, not just whether it crosses a statistical threshold.</li>
+<li>Power tells us how likely a study is to detect an effect if the effect really exists.</li>
 </ol>
-</div>
 </div>
 </div>
 

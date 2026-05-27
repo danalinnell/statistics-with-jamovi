@@ -45,6 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -416,8 +417,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Recap, Common Mistakes, and Looking Ahead</span></a>
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -434,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.1 Effect Sizes</span></a>
+ <span class="menu-text">8.1 Effect Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -452,7 +453,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.4 Sample Size and Power Analysis</span></a>
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -509,8 +516,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10.3-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10.3 Common APA-Style Errors</span></a>
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -728,9 +747,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#identify-your-variables" id="toc-identify-your-variables" class="nav-link active" data-scroll-target="#identify-your-variables">Identify your variables</a></li>
-  <li><a href="#describe-your-data" id="toc-describe-your-data" class="nav-link" data-scroll-target="#describe-your-data">Describe your data</a></li>
-  <li><a href="#state-your-hypotheses" id="toc-state-your-hypotheses" class="nav-link" data-scroll-target="#state-your-hypotheses">State your hypotheses</a></li>
+  <li><a href="#identify-the-research-question" id="toc-identify-the-research-question" class="nav-link active" data-scroll-target="#identify-the-research-question">Identify the Research Question</a></li>
+  <li><a href="#identify-the-variables" id="toc-identify-the-variables" class="nav-link" data-scroll-target="#identify-the-variables">Identify the Variables</a></li>
+  <li><a href="#identify-the-design" id="toc-identify-the-design" class="nav-link" data-scroll-target="#identify-the-design">Identify the Design</a></li>
+  <li><a href="#describe-the-data" id="toc-describe-the-data" class="nav-link" data-scroll-target="#describe-the-data">Describe the Data</a></li>
+  <li><a href="#visualize-the-data" id="toc-visualize-the-data" class="nav-link" data-scroll-target="#visualize-the-data">Visualize the Data</a></li>
+  <li><a href="#state-the-hypotheses" id="toc-state-the-hypotheses" class="nav-link" data-scroll-target="#state-the-hypotheses">State the Hypotheses</a></li>
+  <li><a href="#directional-and-non-directional-hypotheses" id="toc-directional-and-non-directional-hypotheses" class="nav-link" data-scroll-target="#directional-and-non-directional-hypotheses">Directional and Non-Directional Hypotheses</a></li>
+  <li><a href="#mutually-exclusive-and-exhaustive" id="toc-mutually-exclusive-and-exhaustive" class="nav-link" data-scroll-target="#mutually-exclusive-and-exhaustive">Mutually Exclusive and Exhaustive</a></li>
   </ul>
 </nav>
     </div>
@@ -756,250 +780,196 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The first step in any inferential analysis is to understand your data and your research question.</p>
-<p>Before running any statistical test, you should be able to clearly describe what you are studying and how your data are structured.</p>
-<section id="identify-your-variables" class="level2">
-<h2 class="anchored" data-anchor-id="identify-your-variables">Identify your variables</h2>
-<p>You should always be able to answer:</p>
-<ul>
-<li>What is my IV?</li>
-<li>What is my DV?</li>
-<li>What type of variables are these (categorical vs continuous)?</li>
-<li>What is my research design?</li>
-</ul>
-<p>These decisions will determine which statistical test you use later.</p>
-<p>Using our Bobo doll example:</p>
-<ul>
-<li><strong>Independent variable (IV)</strong>: Type of video (either aggressive or passive). This is an example of a categorical variable; more specifically, it is a binary nominal variable.</li>
-<li><strong>Dependent variable (DV)</strong>: Number of aggressive behaviors observed. This is an example of a continuous variable.</li>
-<li><strong>Research design</strong>: This is an example of a between-subjects research design. Children were randomly assigned to one or the other type of video.</li>
-</ul>
+<p>The first step in any inferential analysis is to understand your research question, your variables, your design, and your data.</p>
+<p>This is not a warm-up before the “real” analysis. It is part of the analysis. If you do not understand the data, you cannot choose the right statistical test or interpret the results responsibly.</p>
+<section id="identify-the-research-question" class="level2">
+<h2 class="anchored" data-anchor-id="identify-the-research-question">Identify the Research Question</h2>
+<p>Start with the question the study is trying to answer.</p>
+<p>In our simplified Bobo doll example, the research question might be:</p>
+<blockquote class="blockquote">
+<p>Do children who watch an aggressive model show more aggressive behavior than children who watch a calm model?</p>
+</blockquote>
+<p>This question tells us that the researcher is interested in comparing two groups on an outcome variable.</p>
 </section>
-<section id="describe-your-data" class="level2">
-<h2 class="anchored" data-anchor-id="describe-your-data">Describe your data</h2>
-<p>Before performing any inferential test, you should:</p>
-<ul>
-<li>Examine <strong>descriptive statistics</strong> (e.g., means, variability)</li>
-<li>Look at <strong>visualizations</strong> (e.g., histograms, boxplots)</li>
-</ul>
-<section id="what-might-the-dataset-look-like" class="level3">
-<h3 class="anchored" data-anchor-id="what-might-the-dataset-look-like">What might the dataset look like?</h3>
-<p>In jamovi (or any statistical software), your data are organized in a spreadsheet format:</p>
-<ul>
-<li>Each <strong>row</strong> represents a participant (in this case, child)</li>
-<li>Each <strong>column</strong> represents a variable</li>
-</ul>
-<p>Here is a small example of what the dataset might look like for our study:</p>
+<section id="identify-the-variables" class="level2">
+<h2 class="anchored" data-anchor-id="identify-the-variables">Identify the Variables</h2>
+<p>Next, identify the variables.</p>
+<p>The <button class="glossary" title="A variable expected to explain, predict, influence, or cause differences in another variable. In an experiment, it is the variable manipulated by the researcher.">independent variable</button> is the variable used to explain, predict, manipulate, or compare. In an experiment, it is the variable the researcher manipulates.</p>
+<p>The <button class="glossary" title="The outcome variable in a study. It is the variable measured to see whether it differs, changes, or is related to another variable.">dependent variable</button> is the outcome variable. It is the variable the researcher measures.</p>
+<p>In our example:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Child_ID</th>
-<th>Condition</th>
-<th>Aggressive_Behavior_Count</th>
+<th>Role</th>
+<th>Variable</th>
+<th>Type</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
-<td>Aggressive_Video</td>
-<td>12</td>
+<td>Independent variable</td>
+<td>Video condition: aggressive model or calm model</td>
+<td>Categorical, nominal</td>
 </tr>
 <tr class="even">
-<td>2</td>
-<td>Aggressive_Video</td>
-<td>9</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Aggressive_Video</td>
-<td>15</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Passive_Video</td>
-<td>4</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Passive_Video</td>
-<td>6</td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Passive_Video</td>
-<td>3</td>
+<td>Dependent variable</td>
+<td>Number of aggressive behaviors</td>
+<td>Continuous</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><strong>Child_ID</strong>: a unique identifier for each participant</li>
-<li><strong>Condition</strong>: the independent variable (which video they watched)</li>
-<li><strong>Aggressive_Behavior_Count</strong>: the dependent variable (number of aggressive behaviors observed)</li>
-</ul>
+<p>This connects back to Chapter 2. Statistical tests depend heavily on what kinds of variables we have. A test that works for a continuous dependent variable may not work for a categorical dependent variable.</p>
 </section>
-<section id="describe-the-data" class="level3">
-<h3 class="anchored" data-anchor-id="describe-the-data">Describe the data</h3>
-<p>Before running any statistical test, we would:</p>
+<section id="identify-the-design" class="level2">
+<h2 class="anchored" data-anchor-id="identify-the-design">Identify the Design</h2>
+<p>The design also matters.</p>
+<p>In this example, children are randomly assigned to one of two conditions. Each child is in only one condition. That makes this a <button class="glossary" title="A study design in which different people are in different conditions or groups. Each person contributes data to only one condition.">between-subjects design</button>.</p>
+<p>If the same children had watched both videos at different times and were measured after each video, that would be a <button class="glossary" title="A study design in which the same people are measured in more than one condition or at more than one time point.">within-subjects design</button>. That would require a different statistical test.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="A Question Worth Asking">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>A Question Worth Asking
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When you see groups in a study, ask: Can the same person be in more than one group?</p>
 <ul>
-<li>Check for unusual values or patterns</li>
-<li>Compare the <strong>average aggressive behavior</strong> in each group</li>
-<li>Look at how much the scores vary within each group</li>
+<li>If no, you probably have a between-subjects design.</li>
+<li>If yes, you probably have a within-subjects or repeated-measures design.</li>
 </ul>
-<p>Suppose we calculate descriptive statistics for the full dataset (all 30 children):</p>
+</div>
+</div>
+</section>
+<section id="describe-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="describe-the-data">Describe the Data</h2>
+<p>Before testing a hypothesis, describe the data.</p>
+<p>For our example, imagine the researcher has 30 children total, 15 in each condition. The descriptive statistics might look like this:</p>
 <table class="caption-top table">
 <colgroup>
+<col style="width: 20%">
 <col style="width: 26%">
-<col style="width: 25%">
-<col style="width: 29%">
-<col style="width: 19%">
+<col style="width: 26%">
+<col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Condition</th>
-<th>Mean Aggression</th>
-<th>Standard Deviation</th>
-<th>Sample Size</th>
+<th style="text-align: right;">Mean aggressive behaviors</th>
+<th style="text-align: right;">Standard deviation</th>
+<th style="text-align: right;">Sample size</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Aggressive_Video</td>
-<td>11.20</td>
-<td>3.10</td>
-<td>15</td>
+<td>Aggressive video</td>
+<td style="text-align: right;">11.20</td>
+<td style="text-align: right;">3.10</td>
+<td style="text-align: right;">15</td>
 </tr>
 <tr class="even">
-<td>Passive_Video</td>
-<td>5.40</td>
-<td>2.80</td>
-<td>15</td>
+<td>Calm video</td>
+<td style="text-align: right;">5.40</td>
+<td style="text-align: right;">2.80</td>
+<td style="text-align: right;">15</td>
 </tr>
 </tbody>
 </table>
-<p>What do we notice?</p>
-<ul>
-<li>Children in the <strong>aggressive video condition</strong> show higher average aggression</li>
-<li>There is some variability in both groups</li>
-<li>The groups appear meaningfully different at first glance</li>
-</ul>
-<blockquote class="blockquote">
-<p>In this example, it looks like children in the aggressive condition tend to show higher aggression—but we don’t yet know if that difference is meaningful or just due to chance.</p>
-</blockquote>
-<p>This connects directly to what you learned in:</p>
-<ul>
-<li>Chapter 2 (describing data)</li>
-<li>Chapter 4 (descriptive statistics in jamovi)</li>
-<li>Chapter 6 (cleaning your data)</li>
-</ul>
-<p>You are making sure your data make sense and that you understand them before analyzing them.</p>
+<p>At the descriptive level, children in the aggressive video condition showed more aggressive behaviors on average than children in the calm video condition.</p>
+<p>That is useful, but it is not the full inferential conclusion. At this point, we only know what happened in this sample. Hypothesis testing helps us decide whether this sample difference is surprising enough, under the null hypothesis, that we are willing to reject the null hypothesis.</p>
 </section>
-</section>
-<section id="state-your-hypotheses" class="level2">
-<h2 class="anchored" data-anchor-id="state-your-hypotheses">State your hypotheses</h2>
-<p>As part of understanding your research question, we need to clearly state our hypotheses.</p>
-<p>Because we are using <strong>null hypothesis significance testing (NHST)</strong>, we define two hypotheses:</p>
+<section id="visualize-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="visualize-the-data">Visualize the Data</h2>
+<p>Descriptive statistics are useful, but they can hide patterns. Before running a test, you should usually visualize the data.</p>
+<p>For this example, a box plot with individual data points would be useful because it would show:</p>
 <ul>
-<li>the <strong>alternative hypothesis</strong></li>
-<li>the <strong>null hypothesis</strong></li>
+<li>the center of each group;</li>
+<li>the spread within each group;</li>
+<li>possible outliers; and</li>
+<li>whether the two groups overlap.</li>
 </ul>
-<p>These two hypotheses work together to represent all possible outcomes of our study.</p>
-<section id="alternative-hypothesis-h₁-or-hₐ" class="level3">
-<h3 class="anchored" data-anchor-id="alternative-hypothesis-h₁-or-hₐ">Alternative hypothesis (H₁ or Hₐ)</h3>
-<p>The <strong>alternative hypothesis</strong> states that there is an effect, difference, or relationship.</p>
-<p>In our Bobo doll example:</p>
-<blockquote class="blockquote">
-<p>Children who watch the aggressive video will exhibit <em>more</em> aggressive behaviors than children who watch the passive video.</p>
-</blockquote>
-<p>This reflects what the researcher expects to find based on theory and prior research on observational learning.</p>
+<p>This connects directly to the fundamentals chapters: identifying variables and distributions in Chapter 2, preparing data in Chapter 4, describing data in Chapter 5, and visualizing data in Chapter 6.</p>
 </section>
-<section id="null-hypothesis-h₀" class="level3">
-<h3 class="anchored" data-anchor-id="null-hypothesis-h₀">Null hypothesis (H₀)</h3>
-<p>The <strong>null hypothesis</strong> states that there is <strong>no effect, no difference, or no relationship</strong>.</p>
-<p>In our example:</p>
+<section id="state-the-hypotheses" class="level2">
+<h2 class="anchored" data-anchor-id="state-the-hypotheses">State the Hypotheses</h2>
+<p>Because we are using null hypothesis significance testing, we need two hypotheses: the <button class="glossary" title="A hypothesis stating that there is an effect, difference, or relationship. In null hypothesis significance testing, evidence is evaluated against the null hypothesis rather than directly proving the alternative hypothesis.">alternative hypothesis</button> and the <button class="glossary" title="A hypothesis usually stating that there is no effect, no difference, or no relationship.">null hypothesis</button>.</p>
+<p>The alternative hypothesis, usually written as H<sub>1</sub> or H<sub>a</sub>, states that there is an effect, difference, or relationship.</p>
+<p>The null hypothesis, usually written as H<sub>0</sub>, states that there is no effect, no difference, or no relationship. In a directional test, the null also includes the direction opposite of the alternative.</p>
+<p>For our example, the researcher expects children in the aggressive-video condition to show more aggressive behavior. That is a directional hypothesis.</p>
+<p>A plain-language version of the hypotheses might be:</p>
+<ul>
+<li><strong>H<sub>1</sub>:</strong> Children who watch the aggressive video will show more aggressive behaviors than children who watch the calm video.</li>
+<li><strong>H<sub>0</sub>:</strong> Children who watch the aggressive video will show the same number of aggressive behaviors or fewer aggressive behaviors than children who watch the calm video.</li>
+</ul>
+<p>Notice the null hypothesis carefully. Because the alternative predicts “more,” the null includes both “no difference” and “the opposite direction.” That way, the two hypotheses cover every possible result.</p>
+</section>
+<section id="directional-and-non-directional-hypotheses" class="level2">
+<h2 class="anchored" data-anchor-id="directional-and-non-directional-hypotheses">Directional and Non-Directional Hypotheses</h2>
+<p>A <button class="glossary" title="A hypothesis that predicts the direction of an effect, difference, or relationship.">directional hypothesis</button> predicts the direction of the effect. For example:</p>
 <blockquote class="blockquote">
-<p>There will be no difference in aggressive behavior between children who watch the aggressive video and those who watch the passive video.</p>
+<p>Children in the aggressive-video condition will show more aggressive behavior than children in the calm-video condition.</p>
 </blockquote>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>This is also called a one-tailed hypothesis.</p>
+<p>A <button class="glossary" title="A hypothesis that predicts an effect, difference, or relationship but does not predict the direction.">non-directional hypothesis</button> predicts that there will be an effect, difference, or relationship, but does not predict the direction. For example:</p>
+<blockquote class="blockquote">
+<p>Children in the two video conditions will differ in aggressive behavior.</p>
+</blockquote>
+<p>This is also called a two-tailed hypothesis.</p>
+<p>Directional hypotheses should be used thoughtfully. You need a strong theoretical or empirical reason to predict a specific direction. If you do not have that justification, a non-directional hypothesis is usually safer.</p>
+</section>
+<section id="mutually-exclusive-and-exhaustive" class="level2">
+<h2 class="anchored" data-anchor-id="mutually-exclusive-and-exhaustive">Mutually Exclusive and Exhaustive</h2>
+<p>Your null and alternative hypotheses should be mutually exclusive and exhaustive.</p>
+<p><strong>Mutually exclusive</strong> means a result cannot support both hypotheses at the same time.</p>
+<p><strong>Exhaustive</strong> means every possible result is covered by one of the hypotheses.</p>
+<p>In the directional Bobo doll example, there are three possible patterns:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Possible result</th>
+<th>Which hypothesis does it fit?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Aggressive-video group shows more aggression</td>
+<td>Alternative hypothesis</td>
+</tr>
+<tr class="even">
+<td>Groups show no difference</td>
+<td>Null hypothesis</td>
+</tr>
+<tr class="odd">
+<td>Aggressive-video group shows less aggression</td>
+<td>Null hypothesis</td>
+</tr>
+</tbody>
+</table>
+<p>This may feel picky at first, but it matters. Sloppy hypotheses lead to sloppy decisions.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common Mistake">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Warning</span>Common Mistake
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A helpful way to remember this: <strong>Null = none (or zero effect)</strong></p>
+<p>A common error is writing hypotheses that leave out possible results. If your hypotheses do not cover every possible outcome, they are not exhaustive.</p>
 </div>
 </div>
-<p>When we use <strong>non-directional (two-tailed)</strong> hypotheses, the null hypothesis is simply “no difference.”</p>
-<p>However, when we use <strong>directional (one-tailed)</strong> hypotheses, the null hypothesis becomes slightly broader—it includes both “no difference, or the opposite direction of the predicted effect.”</p>
-<p>We will return to this idea below.</p>
-</section>
-<section id="how-the-hypotheses-work-together" class="level3">
-<h3 class="anchored" data-anchor-id="how-the-hypotheses-work-together">How the hypotheses work together</h3>
-<p>The null and alternative hypotheses must be:</p>
-<ul>
-<li><strong>Mutually exclusive</strong> → a result cannot support both</li>
-<li><strong>Exhaustive</strong> → all possible outcomes are covered</li>
-</ul>
-<p>This means:</p>
-<ul>
-<li>Every possible result must support either the null or the alternative</li>
-<li>There is no “in-between” option</li>
-</ul>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A common error is writing hypotheses that are not mutually exclusive or not exhaustive.</p>
-<ul>
-<li>If a result could support both hypotheses → they are not mutually exclusive</li>
-<li>If a result fits neither hypothesis → they are not exhaustive</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="directional-vs-non-directional-hypotheses" class="level3">
-<h3 class="anchored" data-anchor-id="directional-vs-non-directional-hypotheses">Directional vs non-directional hypotheses</h3>
-<p>In this example, the hypothesis is <strong>directional</strong>: We predict that one group will show <em>more</em> aggressive behavior than the other. This is also called a <strong>one-tailed hypothesis</strong>.</p>
-<p>If we did not predict a direction, we would use a <strong>non-directional (two-tailed)</strong> hypothesis. For example, we might predict there is a difference in aggressive behavior between groups without specifying which group is higher.</p>
-<p>When we use a directional hypothesis, the alternative hypothesis specifies one direction of the effect. To ensure the hypotheses remain <strong>exhaustive</strong>, the null hypothesis must include everything else.</p>
-<p>In our example:</p>
-<ul>
-<li><strong>Alternative (H₁):</strong> Children in the aggressive condition show <em>more</em> aggressive behavior</li>
-<li><strong>Null (H₀):</strong> Children in the aggressive condition show <em>no difference</em> or <em>less</em> aggressive behavior</li>
-</ul>
-<p>This ensures that all possible outcomes are covered:</p>
-<ul>
-<li>More aggression → supports the alternative</li>
-<li>No difference → supports the null</li>
-<li>Less aggression → also supports the null</li>
-</ul>
-<blockquote class="blockquote">
-<p>Together, the null and alternative hypotheses must account for every possible result. This ensures the hypotheses are <em>exhaustive</em></p>
-</blockquote>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Directional hypotheses should be used thoughtfully. They require stronger theoretical justification because you are predicting a specific direction of the effect.</p>
-<p>At the same time, directional hypotheses can increase <strong>statistical power</strong>, meaning you may be more likely to detect a real effect if it exists. We will return to this idea later in the textbook.</p>
-</div>
-</div>
-<p>Before we formally test our hypotheses, we need to ensure that our data meet the assumptions required for the statistical test.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1011,38 +981,22 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>What is the difference between the null and alternative hypothesis?</li>
-<li>What does the null hypothesis always represent?</li>
-<li>In the Bobo doll example, what is the alternative hypothesis?</li>
-<li>What is the difference between directional and non-directional hypotheses?<br>
-</li>
+<li>In the Bobo doll example, what is the independent variable?</li>
+<li>What is the dependent variable?</li>
+<li>Is the design between-subjects or within-subjects?</li>
+<li>What is the difference between a directional and non-directional hypothesis?</li>
 </ol>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answers">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answers
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<p><strong>Answers</strong></p>
 <ol type="1">
-<li>The null hypothesis states no effect; the alternative states there is an effect</li>
-<li>No effect, no difference, or no relationship</li>
-<li>That children who watch the aggressive video will show more aggressive behavior</li>
-<li>Directional specifies the direction of the effect; non-directional does not</li>
+<li>The independent variable is video condition: aggressive video or calm video.</li>
+<li>The dependent variable is the number of aggressive behaviors observed.</li>
+<li>The design is between-subjects because each child is assigned to only one condition.</li>
+<li>A directional hypothesis predicts which direction the effect will go. A non-directional hypothesis predicts an effect or difference but not the direction.</li>
 </ol>
 </div>
 </div>
-</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

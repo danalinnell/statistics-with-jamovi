@@ -33,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./10.3-common-apa-style-errors.html" rel="next">
+<link href="./10.3-tables-and-figures.html" rel="next">
 <link href="./10.1-components-of-writing-statistical-results.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -416,8 +416,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.5-recap-common-mistakes-looking-ahead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Recap, Common Mistakes, and Looking Ahead</span></a>
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -434,7 +434,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.1 Effect Sizes</span></a>
+ <span class="menu-text">8.1 Effect Size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -452,7 +452,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.4 Sample Size and Power Analysis</span></a>
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -509,8 +515,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10.3-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10.3 Common APA-Style Errors</span></a>
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
   </div>
 </li>
       </ul>
@@ -728,9 +746,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#write-up-in-apa-style" id="toc-write-up-in-apa-style" class="nav-link active" data-scroll-target="#write-up-in-apa-style">Write-up in APA style</a></li>
-  <li><a href="#alternative-formatting" id="toc-alternative-formatting" class="nav-link" data-scroll-target="#alternative-formatting">Alternative formatting</a></li>
-  <li><a href="#key-takeaway" id="toc-key-takeaway" class="nav-link" data-scroll-target="#key-takeaway">Key takeaway</a></li>
+  <li><a href="#example-independent-samples-t-test" id="toc-example-independent-samples-t-test" class="nav-link active" data-scroll-target="#example-independent-samples-t-test">Example: Independent Samples t-Test</a></li>
+  <li><a href="#example-chi-square-test-of-independence" id="toc-example-chi-square-test-of-independence" class="nav-link" data-scroll-target="#example-chi-square-test-of-independence">Example: Chi-Square Test of Independence</a></li>
+  <li><a href="#example-one-way-anova" id="toc-example-one-way-anova" class="nav-link" data-scroll-target="#example-one-way-anova">Example: One-Way ANOVA</a></li>
+  <li><a href="#example-correlation" id="toc-example-correlation" class="nav-link" data-scroll-target="#example-correlation">Example: Correlation</a></li>
+  <li><a href="#example-multiple-regression" id="toc-example-multiple-regression" class="nav-link" data-scroll-target="#example-multiple-regression">Example: Multiple Regression</a></li>
+  <li><a href="#key-takeaway" id="toc-key-takeaway" class="nav-link" data-scroll-target="#key-takeaway">Key Takeaway</a></li>
   </ul>
 </nav>
     </div>
@@ -756,53 +777,151 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>In this section, we will look at examples of APA-style results for several statistical tests. You may not have learned all of these tests yet, and that is okay. The goal here is to show the writing pattern.</p>
+<p>The test-specific chapters later in the book will give more detailed guidance for each analysis.</p>
+<section id="example-independent-samples-t-test" class="level2">
+<h2 class="anchored" data-anchor-id="example-independent-samples-t-test">Example: Independent Samples t-Test</h2>
 <p>Let’s walk through an example using an independent samples t-test.</p>
 <p>Here are the four pieces of information we need:</p>
 <ol type="1">
-<li><p><strong>Research question or hypothesis</strong>: Is there a difference in student grades between Anastasia’s and Bernadette’s classes?</p></li>
-<li><p><strong>Descriptive statistics</strong>:</p>
-<ul>
-<li>Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15);</li>
-<li>Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18)</li>
-</ul></li>
-<li><p><strong>Inferential statistics</strong>: <em>t</em>(31) = 2.12, <em>p</em> = .043, <em>d</em> = .74</p></li>
-<li><p><strong>Interpretation</strong>: Anastasia’s students had significantly higher grades than Bernadette’s students.</p></li>
+<li><strong>Research question or hypothesis</strong>: Is there a difference in student grades between Anastasia’s and Bernadette’s classes?</li>
+<li><strong>Descriptive statistics</strong>: Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15); Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18)</li>
+<li><strong>Inferential statistics</strong>: <em>t</em>(31) = 2.12, <em>p</em> = .043, <em>d</em> = .74</li>
+<li><strong>Interpretation</strong>: Anastasia’s students had significantly higher grades than Bernadette’s students.</li>
 </ol>
-<section id="write-up-in-apa-style" class="level2">
-<h2 class="anchored" data-anchor-id="write-up-in-apa-style">Write-up in APA style</h2>
-<p>We can write up our results in APA something like this:</p>
+<section id="apa-style-write-up" class="level3">
+<h3 class="anchored" data-anchor-id="apa-style-write-up">APA-style write-up</h3>
 <blockquote class="blockquote">
-<p>The research question was whether there was a difference in student grades between Anastasia’s and Bernadette’s classes. Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) had significantly higher grades than Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18), <em>t</em> (31) = 2.12, <em>p</em> = .043, <em>d</em> = .74.</p>
+<p>The research question was whether there was a difference in student grades between Anastasia’s and Bernadette’s classes. Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) had significantly higher grades than Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18), <em>t</em>(31) = 2.12, <em>p</em> = .043, <em>d</em> = .74.</p>
 </blockquote>
-<p>Let’s compare that write-up against the 4 things we need to report:</p>
+<p>Let’s compare that write-up against the four things we need to report:</p>
 <blockquote class="blockquote">
-<p><strong>#1:</strong> The research question was whether there was a difference in student grades between Anastasia’s and Bernadette’s classes. <strong>#4</strong> Anastasia’s students <strong>#2</strong> (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) <strong>#4 cont.</strong> had significantly higher grades than Bernadette’s students <strong>#2</strong> (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em>&nbsp;= 18), <strong>#3</strong> <em>t</em> (31) = 2.12, <em>p</em> = .043, <em>d</em> = .74.</p>
+<p><strong>#1:</strong> The research question was whether there was a difference in student grades between Anastasia’s and Bernadette’s classes. <strong>#2 and #4:</strong> Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) had significantly higher grades than Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18), <strong>#3:</strong> <em>t</em>(31) = 2.12, <em>p</em> = .043, <em>d</em> = .74.</p>
 </blockquote>
 </section>
-<section id="alternative-formatting" class="level2">
-<h2 class="anchored" data-anchor-id="alternative-formatting">Alternative formatting</h2>
-<p>Sometimes, authors place statistical information in parentheses. In this case, use <strong>brackets for degrees of freedom</strong>.</p>
+<section id="alternative-formatting" class="level3">
+<h3 class="anchored" data-anchor-id="alternative-formatting">Alternative formatting</h3>
+<p>Sometimes, authors place statistical information in parentheses. In this case, use <strong>brackets for degrees of freedom</strong> because we cannot place parentheses inside parentheses.</p>
 <blockquote class="blockquote">
-<p><strong>#1</strong> I tested the difference in grades between Anastasia’s students <strong>#2</strong> (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) and Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18). <strong>#3</strong> An independent samples t-test showed that the 5.48 mean difference between the tutor’s student was statistically significant (<em>t</em> [31] = 2.12, <em>p</em> = .043, <em>d</em> = .74). <strong>#4</strong> Therefore, we reject the null hypothesis that there is no difference in grades between the two classes.</p>
+<p>I tested the difference in grades between Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) and Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18). An independent samples t-test showed that Anastasia’s students had significantly higher grades than Bernadette’s students (<em>t</em>[31] = 2.12, <em>p</em> = .043, <em>d</em> = .74). Therefore, we rejected the null hypothesis that there was no difference in grades between the two classes.</p>
 </blockquote>
+<p>The first version is a little more concise. The second version separates the research question, test result, and decision more clearly. Both can work.</p>
+</section>
+</section>
+<section id="example-chi-square-test-of-independence" class="level2">
+<h2 class="anchored" data-anchor-id="example-chi-square-test-of-independence">Example: Chi-Square Test of Independence</h2>
+<p>A chi-square test of independence is used when we want to know whether two categorical variables are associated.</p>
+<p>Here are the pieces of information we need:</p>
+<ol type="1">
+<li><strong>Research question</strong>: Is tutoring attendance associated with pass/fail status?</li>
+<li><strong>Descriptive statistics</strong>: Frequencies and percentages for pass/fail status by tutoring attendance</li>
+<li><strong>Inferential statistics</strong>: χ²(1, <em>N</em> = 120) = 6.42, <em>p</em> = .011, Cramer’s <em>V</em> = .23</li>
+<li><strong>Interpretation</strong>: Students who attended tutoring were more likely to pass than students who did not attend tutoring.</li>
+</ol>
+<section id="apa-style-write-up-1" class="level3">
+<h3 class="anchored" data-anchor-id="apa-style-write-up-1">APA-style write-up</h3>
+<blockquote class="blockquote">
+<p>I examined whether tutoring attendance was associated with pass/fail status. Students who attended tutoring were more likely to pass (42 of 50, 84.0%) than students who did not attend tutoring (45 of 70, 64.3%). A chi-square test of independence showed that tutoring attendance and pass/fail status were significantly associated, χ²(1, <em>N</em> = 120) = 6.42, <em>p</em> = .011, Cramer’s <em>V</em> = .23.</p>
+</blockquote>
+</section>
+<section id="why-this-works" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-works">Why this works</h3>
+<p>This write-up includes the research question, the frequencies and percentages, the inferential test result, the effect size, and a plain-language interpretation. For chi-square tests, the descriptives are usually counts and percentages rather than means and standard deviations.</p>
+</section>
+</section>
+<section id="example-one-way-anova" class="level2">
+<h2 class="anchored" data-anchor-id="example-one-way-anova">Example: One-Way ANOVA</h2>
+<p>A one-way ANOVA is used when we compare a continuous dependent variable across three or more independent groups.</p>
+<p>Here are the pieces of information we need:</p>
+<ol type="1">
+<li><strong>Research question</strong>: Do exam scores differ across three study strategy groups?</li>
+<li><strong>Descriptive statistics</strong>: Means and standard deviations for each group</li>
+<li><strong>Inferential statistics</strong>: <em>F</em>(2, 87) = 5.64, <em>p</em> = .005, η² = .12</li>
+<li><strong>Interpretation</strong>: At least one group differed from the others, but post hoc tests are needed to determine which groups differ.</li>
+</ol>
+<section id="apa-style-write-up-2" class="level3">
+<h3 class="anchored" data-anchor-id="apa-style-write-up-2">APA-style write-up</h3>
+<blockquote class="blockquote">
+<p>I tested whether exam scores differed across three study strategy groups: rereading, practice testing, and spacing. Mean exam scores were highest for the practice testing group (<em>M</em> = 84.20, <em>SD</em> = 7.90), followed by the spacing group (<em>M</em> = 80.15, <em>SD</em> = 8.35) and the rereading group (<em>M</em> = 75.40, <em>SD</em> = 9.10). A one-way ANOVA showed that exam scores differed significantly across groups, <em>F</em>(2, 87) = 5.64, <em>p</em> = .005, η² = .12.</p>
+</blockquote>
+</section>
+<section id="important-anova-note" class="level3">
+<h3 class="anchored" data-anchor-id="important-anova-note">Important ANOVA note</h3>
+<p>When an ANOVA has more than two groups, a statistically significant omnibus test tells us that <strong>at least one group differs from at least one other group</strong>. It does not tell us which specific groups differ. For that, we usually need post hoc comparisons or planned contrasts.</p>
+<p>So the write-up above is incomplete if the research question requires knowing which specific groups differ. The <a href="./13.0-anova.html">ANOVA chapter</a> will cover this in more detail.</p>
+</section>
+</section>
+<section id="example-correlation" class="level2">
+<h2 class="anchored" data-anchor-id="example-correlation">Example: Correlation</h2>
+<p>A correlation is used when we want to examine the association between two continuous variables.</p>
+<p>Here are the pieces of information we need:</p>
+<ol type="1">
+<li><strong>Research question</strong>: Is time spent studying associated with exam performance?</li>
+<li><strong>Descriptive statistics</strong>: Means and standard deviations for both variables</li>
+<li><strong>Inferential statistics</strong>: <em>r</em>(58) = .42, <em>p</em> = .001</li>
+<li><strong>Interpretation</strong>: Students who studied more tended to have higher exam scores.</li>
+</ol>
+<section id="apa-style-write-up-3" class="level3">
+<h3 class="anchored" data-anchor-id="apa-style-write-up-3">APA-style write-up</h3>
+<blockquote class="blockquote">
+<p>I examined whether time spent studying was associated with exam performance. Students studied an average of 6.40 hours (<em>SD</em> = 2.15) and had an average exam score of 78.30 (<em>SD</em> = 9.85). Time spent studying was significantly and positively associated with exam performance, <em>r</em>(58) = .42, <em>p</em> = .001. Students who studied more tended to have higher exam scores.</p>
+</blockquote>
+</section>
+<section id="why-this-works-1" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-works-1">Why this works</h3>
+<p>This write-up states the research question, describes both variables, reports the correlation, and interprets the direction of the relationship.</p>
+<p>It does <strong>not</strong> say that studying caused higher exam scores. Correlation does not establish causation.</p>
+</section>
+</section>
+<section id="example-multiple-regression" class="level2">
+<h2 class="anchored" data-anchor-id="example-multiple-regression">Example: Multiple Regression</h2>
+<p>Regression is used when we want to predict an outcome from one or more predictor variables.</p>
+<p>Here are the pieces of information we need:</p>
+<ol type="1">
+<li><strong>Research question</strong>: Do study time and prior GPA predict exam performance?</li>
+<li><strong>Descriptive statistics</strong>: Often reported in a table when there are multiple predictors</li>
+<li><strong>Inferential statistics</strong>: Overall model fit and individual predictor results</li>
+<li><strong>Interpretation</strong>: Which predictors were associated with the outcome, controlling for the other predictors?</li>
+</ol>
+<section id="apa-style-write-up-4" class="level3">
+<h3 class="anchored" data-anchor-id="apa-style-write-up-4">APA-style write-up</h3>
+<blockquote class="blockquote">
+<p>I conducted a multiple regression to examine whether study time and prior GPA predicted exam performance. The overall model was statistically significant, <em>F</em>(2, 57) = 18.25, <em>p</em> &lt; .001, <em>R</em>² = .39, indicating that the predictors explained 39% of the variance in exam scores. Study time was a significant positive predictor of exam performance, <em>b</em> = 2.10, <em>SE</em> = 0.62, <em>p</em> = .001, as was prior GPA, <em>b</em> = 8.45, <em>SE</em> = 2.30, <em>p</em> &lt; .001.</p>
+</blockquote>
+</section>
+<section id="why-this-works-2" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-works-2">Why this works</h3>
+<p>This write-up reports the overall model first, then describes the individual predictors. Regression write-ups often need more detail than simpler tests because there are multiple results to communicate.</p>
+<p>The <a href="./14.0-correlation-regression.html">correlation and regression chapter</a> will cover this in more detail.</p>
+</section>
 </section>
 <section id="key-takeaway" class="level2">
-<h2 class="anchored" data-anchor-id="key-takeaway">Key takeaway</h2>
+<h2 class="anchored" data-anchor-id="key-takeaway">Key Takeaway</h2>
 <p>There is no single “correct” sentence structure for APA results.</p>
-<p>What matters is that: - All four components are included<br>
-- The statistics are reported correctly<br>
-- The information is presented clearly and logically</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>What matters is that:</p>
+<ul>
+<li>the research question or hypothesis is clear;</li>
+<li>the relevant descriptive statistics are included;</li>
+<li>the inferential statistics are reported correctly;</li>
+<li>the result is interpreted in plain language;</li>
+<li>the interpretation avoids overclaiming.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="A Helpful Tip">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>A Helpful Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A helpful tip: read your results <strong>without the parentheses</strong> to check for clarity and grammar.</p>
+<p>Read your results <strong>without the parentheses</strong> to check for clarity and grammar.</p>
+<p>For example, this sentence still makes sense if we remove the parenthetical statistics:</p>
+<blockquote class="blockquote">
+<p>Anastasia’s students had significantly higher grades than Bernadette’s students.</p>
+</blockquote>
+<p>If the sentence does not make sense without the parentheses, revise the sentence structure.</p>
 </div>
 </div>
 
@@ -1217,8 +1336,8 @@ Note
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./10.3-common-apa-style-errors.html" class="pagination-link" aria-label="10.3 Common APA-Style Errors">
-        <span class="nav-page-text">10.3 Common APA-Style Errors</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./10.3-tables-and-figures.html" class="pagination-link" aria-label="10.3 Tables and Figures">
+        <span class="nav-page-text">10.3 Tables and Figures</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,73 +1,98 @@
 # 7.4 Step 4: Interpret the Results {.unnumbered}
 
-After performing the statistical test, the final step is to interpret the results and make a decision about our hypotheses. This is the point where we take the output from the test and turn it into a meaningful conclusion about our research question.
+The final step is to interpret the results and connect them back to the research question.
 
-## Interpret the results
+This is where students often want to write something too strong, such as “the alternative hypothesis was proven” or “there is no effect.” Slow down here. Hypothesis testing gives us a decision about the null hypothesis, not certainty about the real world.
 
-To make a decision, we compare the p-value to our alpha level (α = .05). If the p-value is less than .05, we reject the null hypothesis. If the p-value is greater than or equal to .05, we fail to reject the null hypothesis.
+## Reject or Fail to Reject the Null
 
-It is important to use this language carefully. We either **reject** the null hypothesis or **fail to reject** the null hypothesis. We do not say that we “accept” the null hypothesis. This is because hypothesis testing is designed to evaluate evidence against the null hypothesis. If we do not have strong enough evidence to reject it, that does not mean the null is true; it simply means we do not have enough evidence against it.
+In null hypothesis significance testing, we make one of two decisions:
 
-Returning to our Bobo doll example, we observed a mean difference of 5.80 aggressive behaviors between the two conditions. In Step 3, we learned that the test result was **p \< .001**. Because this p-value is smaller than our alpha level of .05, the result is statistically significant and we reject the null hypothesis.
+- reject the null hypothesis; or
+- fail to reject the null hypothesis.
 
-In context, this means that children who watched the aggressive video exhibited more aggressive behavior than children who watched the passive video. In other words, the observed difference is unlikely to have occurred by chance alone if there were truly no difference between the groups.
+Note my language carefully: **reject** or **fail to reject** the null hypothesis.
 
-Of course, statistical significance is only part of the story. We also found that **Cohen’s *d* ≈ 1.97**, which is a very large effect. This tells us that the difference is not only statistically significant, but also substantial in size. A difference of nearly six aggressive behaviors would likely be considered practically meaningful in this context. More broadly, practical significance asks whether an effect matters in the real world, not just whether it crosses a statistical threshold.
+I am not saying that we prove the alternative hypothesis. I am not saying that we accept the null hypothesis. NHST is built around testing the null hypothesis, so our formal decision is about the null.
 
-## Type I vs. Type II errors
+| Result | Statistical decision | Plain-language meaning |
+|---|---|---|
+| p < α | Reject the null hypothesis | The data are surprising enough under the null that we reject it. |
+| p ≥ α | Fail to reject the null hypothesis | The data are not surprising enough under the null, or we do not have enough evidence to reject it. |
 
-Because we are making decisions under uncertainty, it is always possible to make the wrong decision.
+## Interpreting the Bobo Doll Example
 
-A **Type I error** occurs when we reject the null hypothesis even though it is actually true. In our example, this would mean concluding that the aggressive video increases aggression when in reality it does not. The probability of making a Type I error is equal to our alpha level, which is typically 5%.
+Suppose we analyze the Bobo doll data and get p < .001.
 
-A **Type II error** occurs when we fail to reject the null hypothesis even though it is false. In our example, this would mean concluding that there is no difference in aggression when the aggressive video really does increase aggressive behavior.
+If α = .05, then p < α. The result is statistically significant, so we reject the null hypothesis.
 
-These two types of errors help us understand why hypothesis testing involves judgment and uncertainty rather than absolute certainty. They also connect back to **power**, which we introduced in Step 3. Higher power means we are more likely to detect a real effect and less likely to make a Type II error.
+In context, we might say:
 
-## APA write-up
+> Children who watched the aggressive video showed more aggressive behaviors than children who watched the calm video. The difference was statistically significant, so we reject the null hypothesis that children in the aggressive-video condition show the same or fewer aggressive behaviors than children in the calm-video condition.
 
-When writing up the results, we want to communicate the research question, the direction of the effect, the statistical significance, and the effect size as clearly as possible.
+That is a statistical conclusion. We should still interpret it alongside the study design, effect size, measurement quality, sample, and broader research literature.
 
-A complete APA-style write-up for our example is:
+## Statistical Significance and Practical Significance
 
-> Children who viewed the aggressive video (*M* = 11.20, *SD* = 3.10) exhibited significantly more aggressive behavior than those who viewed the passive video (*M* = 5.40, *SD* = 2.80), *t*(28) = 5.39, *p* \< .001, *d* = 1.97.
+Statistical significance tells us whether a result crossed the threshold for rejecting the null hypothesis.
 
-At this point, the most important thing is that you understand the structure of the interpretation. Later chapters will show you how to obtain and report the exact test statistic and degrees of freedom for each specific test, and Chapter 10 will show you how to write these results more fully in APA style.
+{{< glossary "practical significance" popup="hover" >}} asks whether the result matters in context.
 
-## Visualize the results
+These are related, but they are not the same.
 
-Just like in later inferential statistics chapters, we should also visualize the results. For a comparison between two groups on a continuous outcome, a boxplot with the raw data overlaid is often a good choice because it shows the center, spread, and individual observations. However, there are other valid choices, including a bar plot with error bars.
+A result can be statistically significant but practically trivial. For example, a huge study might find a tiny difference that does not matter much in real life.
 
-Here is an example visualization of the Bobo doll results:
+A result can also be practically meaningful but not statistically significant. For example, a small pilot study might show a potentially important pattern but not have enough power to detect it clearly.
 
-```{r echo = FALSE, warning = FALSE, message = FALSE, fig.cap="Aggressive behaviors by video condition"}
-library(tidyverse)
+This is why we care about both p-values and effect sizes.
 
-bobo_data <- tibble(
-  Condition = c(rep("Aggressive Video", 15), rep("Passive Video", 15)),
-  Aggressive_Behavior_Count = c(
-    12, 10, 14, 11, 9, 13, 8, 15, 11, 10, 12, 14, 9, 13, 8,
-    4, 6, 5, 7, 3, 6, 4, 5, 7, 6, 4, 5, 3, 6, 4
-  )
-)
+## Type I and Type II Errors
 
-ggplot(bobo_data, aes(x = Condition, y = Aggressive_Behavior_Count)) +
-  geom_boxplot(width = .5, outlier.shape = NA) +
-  geom_jitter(width = .12, alpha = .7) +
-  labs(
-    x = "Condition",
-    y = "Aggressive Behaviors Observed"
-  ) +
-  theme_minimal()
-```
+Hypothesis testing involves uncertainty. We can make the best decision available from the data and still be wrong.
 
-This kind of plot lets us quickly see that the children in the aggressive video condition generally showed more aggressive behavior than those in the passive video condition. It also helps us see the spread of the data within each group, which is one reason visualizations are so useful alongside statistical tests.
+A {{< glossary "Type I error" popup="hover" >}} occurs when we reject the null hypothesis even though the null hypothesis is actually true. This is sometimes called a false positive.
 
+A {{< glossary "Type II error" popup="hover" >}} occurs when we fail to reject the null hypothesis even though the alternative hypothesis is actually true. This is sometimes called a false negative.
 
-::: {.callout-tip title="Check Your Understanding"}
-What decision do we make when p \< .05? Why do we say “fail to reject the null hypothesis” instead of “accept the null hypothesis”? What is a Type I error? What is a Type II error? Why is it useful to report both the p-value and the effect size?
+| Reality | We reject H~0~ | We fail to reject H~0~ |
+|---|---|---|
+| H~0~ is true | Type I error | Correct decision |
+| H~1~ is true | Correct decision | Type II error |
+
+In real research, we do not know with certainty whether H~0~ or H~1~ is true. If we knew, we would not need to collect data. This table helps us remember that hypothesis testing is decision-making under uncertainty.
+
+::: {.callout-note title="Another Careful Language Moment"}
+A statistically significant result does not guarantee that the null hypothesis is false. A non-significant result does not guarantee that the null hypothesis is true. Either decision can be wrong.
 :::
 
-::: {.callout-tip collapse="true" title="Answers"}
-We reject the null hypothesis. Because not rejecting the null does not prove it is true; it only means we do not have enough evidence against it. A Type I error is rejecting the null hypothesis when it is actually true. A Type II error is failing to reject the null hypothesis when it is actually false. The p-value tells us whether the result is statistically significant, while the effect size tells us how large or meaningful the effect is.
+## A Brief APA-Style Preview
+
+Later, Chapter 10 will focus on writing results in APA style. For now, it is useful to see what a complete result might look like.
+
+For our Bobo doll example, a write-up could look something like this:
+
+> Children who viewed the aggressive video (M = 11.20, SD = 3.10) exhibited more aggressive behavior than children who viewed the calm video (M = 5.40, SD = 2.80), t(28) = 5.39, p < .001, d = 1.97.
+
+You do not need to understand every symbol in that sentence yet. The later test-specific chapters and the APA results chapter will walk you through the details. For now, notice that the write-up includes descriptive statistics, the inferential test result, the p-value, and the effect size.
+
+## Visualizing the Results
+
+A complete analysis should usually include a graph. For this example, a box plot with individual data points would help show the difference between conditions, the spread within each condition, and any possible outliers.
+
+The graph does not replace the statistical test. It helps readers see the pattern behind the numbers.
+
+::: {.callout-tip title="Check Your Understanding"}
+1. What are the two formal decisions we make in NHST?
+2. Why should we avoid saying that we “accept” the null hypothesis?
+3. What is a Type I error?
+4. What is a Type II error?
+5. Why is practical significance different from statistical significance?
+
+**Answers**
+
+1. We reject the null hypothesis or fail to reject the null hypothesis.
+2. Failing to reject the null does not prove the null is true. It only means we do not have enough evidence to reject it.
+3. A Type I error occurs when we reject the null hypothesis even though it is true.
+4. A Type II error occurs when we fail to reject the null hypothesis even though the alternative hypothesis is true.
+5. Statistical significance tells us whether a result crosses a threshold for rejecting the null. Practical significance asks whether the effect matters in context.
 :::
