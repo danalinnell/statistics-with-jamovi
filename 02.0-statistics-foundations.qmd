@@ -1,0 +1,42 @@
+# 2. Statistics Foundations
+
+This chapter introduces the statistical language we will use throughout the book. Some of this may be review from research methods, and that is okay. The goal is not to memorize every term right away. The goal is to build a shared foundation so that later chapters feel less like a wall of new vocabulary.
+
+Statistics starts with data. Before we can choose a graph, run a test in jamovi, or interpret a result, we need to understand what our data represent. What are the variables? How were they measured? Are we describing the data we have, or are we trying to make an inference about a larger population?
+
+These questions come up again and again. If something does not fully click the first time through, do not panic. You will return to these ideas throughout the textbook.
+
+## What You’ll Learn
+
+By the end of this chapter, you should be able to:
+
+- explain how data are organized into observations and variables
+- choose appropriate descriptive statistics based on the type of variable
+- distinguish between {{< glossary "categorical variable" display="categorical variables" popup="hover" >}} and {{< glossary "continuous variable" display="continuous variables" popup="hover" >}}
+- identify nominal, ordinal, interval, and ratio levels of measurement
+- explain the difference between {{< glossary "descriptive statistics" popup="hover" >}} and {{< glossary "inferential statistics" popup="hover" >}}
+- describe the relationship among populations, samples, descriptive statistics, and inferential statistics
+- recognize how distributions, variability, and outliers affect interpretation
+- apply foundational research methods terms to statistical examples
+
+## Chapter Sections
+
+- [2.1 Describing Data](02.1-describing-data.qmd): Introduces how datasets are organized and how descriptive statistics summarize what is in the data.
+
+- [2.2 Types of Variables and Levels of Measurement](02.2-types-of-variables-levels-of-measurement.qmd): Explains how variables are measured and why measurement level affects what statistics make sense.
+
+- [2.3 Descriptive vs. Inferential Statistics](02.3-descriptive-vs-inferential-statistics.qmd): Builds the conceptual foundation for using samples to make claims about populations.
+
+- [2.4 Understanding Distributions and Variability](02.4-understanding-distributions-variability.qmd): Explains how data are shaped and spread out, and why that matters before running analyses.
+
+- [2.5 Research Design Terms You’ll See Again](02.5-research-design-terms-youll-see-again.qmd): Reviews research methods vocabulary that will become important when choosing and interpreting statistical tests.
+
+- [2.6 Putting It All Together](02.6-putting-it-all-together.qmd): Reviews the chapter and gives you practice applying the main ideas.
+
+## Why This Matters
+
+These ideas matter because they help you avoid some of the most common mistakes in statistics.
+
+Before you can run a statistical test, you need to know what kind of variables you have. Before you interpret a result, you need to know whether you are describing your sample or making an inference about a population. Before you report a mean, you need to know whether a mean makes sense for that variable.
+
+These may seem like small details, but they shape almost every decision you make when analyzing data.

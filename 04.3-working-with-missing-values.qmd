@@ -1,0 +1,100 @@
+# 4.3 Working With Missing Values {.unnumbered}
+
+{{< glossary "missing value" display="Missing values" popup="hover" >}} are values that are absent, skipped, unavailable, or invalid. Missing values are common in real datasets, especially survey datasets.
+
+Missing data are not automatically a crisis, but they do require attention. You need to know whether missing values exist, how they are coded, and how your decisions about missing data affect the variables you create.
+
+## Blank Missing Values
+
+Sometimes missing values appear as blank cells. In many cases, jamovi will recognize blank cells as missing.
+
+Even then, you should still check the number of missing values when you run descriptive statistics. If a variable has a lot of missing values, the descriptive statistics may not represent the full sample very well.
+
+## Coded Missing Values
+
+Sometimes missing values are coded with numbers or text. Common codes include:
+
+- `99`
+- `999`
+- `-9`
+- `NA`
+- `Missing`
+- `Prefer not to answer`
+
+A coded missing value is only useful if jamovi knows it is missing. Otherwise, jamovi may analyze it as if it were real data.
+
+::: {.callout-warning title="Common Mistake"}
+Do not use a missing value code that could also be a real response. If a scale ranges from 0 to 10, then `9` would be a terrible missing value code because 9 could be a real score.
+:::
+
+Missing data matters because jamovi needs to know the difference between a real value and a code that means “no response,” “not applicable,” or “missing.”
+
+For example, if a scale ranges from 1 to 5 and a missing response is coded as 9, jamovi will treat 9 as a real score unless you tell it otherwise. That would make the person’s score look much higher than it really is.
+
+When you work with missing values, ask yourself:
+
+- Is this value a real response?
+- Is this value a missing-data code?
+- Should this missing value be ignored when computing a scale score?
+- How many valid responses should a person need before I compute their score?
+
+## Missing Values and Scale Scores
+
+Missing values become especially important when creating {{< glossary "scale score" display="scale scores" popup="hover" >}}.
+
+Imagine a 10-item scale where each item ranges from 1 to 5. If one participant skips one item, what should happen to their scale score?
+
+There is not one universal answer. It depends on the scale, the scoring rules, and your judgment. But you need to make a deliberate choice.
+
+## `SUM()` Versus `MEAN()` With Missing Values
+
+Two common functions for creating scale scores are `SUM()` and `MEAN()`.
+
+`SUM()` adds item values together. This is often used when a scale is scored as a total score.
+
+`MEAN()` averages item values. This is often used when you want the final score to stay on the same response scale as the original items.
+
+### Should I Use `SUM()` or `MEAN()`?
+
+When you create a scale score, you need to know how the scale is supposed to be scored. Some scales use a total score. Others use an average score.
+
+Use `SUM()` when the scale instructions say to add the items together. A total score depends on the number of items completed. If one item is missing, the total score may no longer be comparable unless the scoring instructions explain how to handle missing data.
+
+Use `MEAN()` when the scale instructions say to average the items. An average score stays on the same response scale as the original items. For example, if items are rated from 1 to 5, the average score will also usually range from 1 to 5.
+
+Missing data matters here. If you use `MEAN()` with `ignore_missing = 1`, jamovi can calculate the average using the valid responses that are available. The `min_valid` argument lets you decide how many valid responses a person must have before jamovi calculates the score.
+
+For example, if a scale has 10 items, you might decide that a person needs at least 8 valid responses. In that case, you would use `min_valid = 8`. If the person answered fewer than 8 items, their scale score would be missing.
+
+## Missing data affects `SUM()` or `MEAN()` differently
+
+If a total score is created with `SUM()`, each missing item can reduce the possible total score. For example, if each item ranges from 0 to 3, then every missing item could reduce the possible total by up to 3 points. That may make the total score look lower than it should be.
+
+If a mean score is created with `MEAN()`, the score stays on the same scale as the original items. But that does not mean missing data do not matter. A mean based on 9 valid items is usually more trustworthy than a mean based on only 2 valid items.
+
+This is why `ignore_missing` and `min_valid` matter.
+
+### `ignore_missing` and `min_valid`
+
+In jamovi, you may see formulas like:
+
+```{.text}
+MEAN(item1, item2, item3, item4, ignore_missing = 1, min_valid = 3)
+```
+
+The `ignore_missing = 1` part tells jamovi to ignore missing values when calculating the mean.
+
+The `min_valid = 3` part tells jamovi that at least three valid responses are required to compute the score. If fewer than three items are present, the computed value will be missing.
+
+This helps you avoid creating scores based on too little information.
+
+::: {.callout-tip title="Check Your Understanding"}
+A four-item scale uses `MEAN()` to create an average score. You set `min_valid = 3`. What happens if a participant answered only two of the four items?
+
+<details>
+<summary>Answer</summary>
+
+jamovi should not compute the mean score for that participant because the participant did not have at least three valid item responses.
+
+</details>
+:::

@@ -1,0 +1,74 @@
+# 8. BEAN {.unnumbered}
+
+What a random chapter title, right?
+
+BEAN is not actually about beans. It is an acronym that helps us understand the tradeoffs behind hypothesis testing:
+
+- **B**eta, which we usually discuss through {{< glossary "statistical power" popup="hover" >}}
+- **E**ffect size
+- **A**lpha
+- **N**, or sample size
+
+In Chapter 7, you learned the basic logic of hypothesis testing: state your hypotheses, look at your data, check assumptions, perform the test, and interpret the result. Chapter 8 slows down and asks a deeper question: **What affects whether we detect an effect and how should we think about statistical significance?**
+
+That is where BEAN comes in.
+
+## Learning Objectives
+
+By the end of this chapter, you should be able to:
+
+- Explain the difference between statistical significance and practical significance.
+- Explain what a *p*-value does and does not tell us.
+- Explain how alpha relates to Type I error.
+- Explain how power relates to Type II error.
+- Describe how effect size, alpha, power, and sample size work together.
+- Complete basic alpha/power table reasoning.
+- Use PAMLj in jamovi to conduct basic power analyses.
+- Interpret power-analysis output in plain language.
+
+## Why BEAN Matters
+
+Hypothesis testing can sometimes feel like a simple rule:
+
+> If *p* < .05, reject the null hypothesis.
+
+But that decision depends on more than the *p*-value. It depends on the size of the effect, the alpha level we set, the sample size we collected, and the power of the study to detect the effect in the first place.
+
+That is the big idea in this chapter: **statistical significance is part of a system**. Changing one piece of BEAN changes the others.
+
+For example:
+
+- Larger effects are easier to detect than smaller effects.
+- Larger samples make effects easier to detect.
+- Lowering alpha reduces false positives, but also makes effects harder to detect.
+- Higher power makes us less likely to miss real effects.
+
+BEAN helps us understand those relationships.
+
+::: {.callout-note title="For Dana's Students"}
+In my courses, this chapter matters both conceptually and practically. You will use BEAN to think through Type I and Type II errors, alpha, power, and sample size. You will also use PAMLj in jamovi to complete power analyses.
+
+The goal is not just to get the right number. The goal is to understand how changing one part of BEAN changes the study you are designing or interpreting.
+:::
+
+## The Core Idea
+
+If you know three parts of BEAN, you can often solve for or reason about the fourth.
+
+For example, if you know the effect size you care about, the alpha level you plan to use, and the power you want, you can estimate the sample size you need.
+
+If you know the sample size you already have, the effect size you care about, and your alpha level, you can estimate your statistical power.
+
+This is why BEAN is so useful. It connects the pieces of hypothesis testing that students often learn separately.
+
+## Chapter Pathway
+
+This chapter has five main parts:
+
+1. **Effect Size**: How large or meaningful is the effect?
+2. **Alpha and p-values**: How strict is our evidence threshold?
+3. **Power**: How likely are we to detect an effect if it exists?
+4. **Sample Size**: How much data do we need?
+5. **Putting It All Together**: How do the pieces of BEAN interact?
+
+You do not need to memorize every detail right away. Focus on the relationships among the pieces. That is where the chapter becomes useful.

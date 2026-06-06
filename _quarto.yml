@@ -1,0 +1,146 @@
+project:
+  type: book
+  output-dir: docs-quarto
+
+glossary:
+  path: glossary.yml
+  popup: hover
+  show: true
+
+book:
+  title: "Stats with jamovi"
+  author: "Dana Linnell"
+  sidebar:
+    collapse-level: 1
+  chapters:
+    - part: index.qmd
+      chapters: 
+        - 01.0-intro.qmd
+        - 01.1-about-this-book.qmd
+    
+    - part: 02.0-statistics-foundations.qmd
+      chapters:
+        - 02.1-describing-data.qmd
+        - 02.2-types-of-variables-levels-of-measurement.qmd
+        - 02.3-descriptive-vs-inferential-statistics.qmd
+        - 02.4-understanding-distributions-variability.qmd
+        - 02.5-research-design-terms-youll-see-again.qmd
+        - 02.6-putting-it-all-together.qmd
+        
+    - part: 03.0-overview-jamovi.qmd
+      chapters:
+        - 03.1-what-is-jamovi.qmd
+        - 03.2-installing-updating-jamovi.qmd
+        - 03.3-opening-saving-annotating-files.qmd
+        - 03.4-navigating-the-jamovi-interface.qmd
+        - 03.5-checking-variable-setup.qmd
+        - 03.6-putting-it-all-together.qmd
+        
+    - part: 04.0-cleaning-and-preparing-data-in-jamovi.qmd
+      chapters:
+        - 04.1-checking-your-data-before-analysis.qmd
+        - 04.2-fixing-incorrect-variable-types.qmd
+        - 04.3-working-with-missing-values.qmd
+        - 04.4-recoding-and-transforming-variables.qmd
+        - 04.5-reverse-scoring-items.qmd
+        - 04.6-creating-scale-scores-composite-variables.qmd
+        - 04.7-checking-your-work.qmd
+
+    - part: 05.0-describing-data-in-jamovi.qmd
+      chapters:
+        - 05.1-checking-variable-setup-before-describing-data.qmd
+        - 05.2-describing-categorical-variables.qmd
+        - 05.3-describing-continuous-variables.qmd
+        - 05.4-describing-continuous-variables-across-groups.qmd
+        - 05.5-choosing-and-writing-descriptive-statistics.qmd
+        - 05.6-putting-it-all-together.qmd
+    
+    - part: 06.0-visualizing-data-in-jamovi.qmd
+      chapters:
+        - 06.1-why-visualize-data.qmd
+        - 06.2-choosing-the-right-graph.qmd
+        - 06.3-visualizing-continuous-variables.qmd
+        - 06.4-visualizing-categorical-variables.qmd
+        - 06.5-visualizing-continuous-variables-across-groups.qmd
+        - 06.6-expanding-your-data-visualization.qmd
+        - 06.7-putting-it-all-together.qmd
+
+    - part: 07.0-hypothesis-testing.qmd
+      chapters:
+        - 07.1-step-1-look-at-the-data.qmd
+        - 07.2-step-2-check-assumptions.qmd
+        - 07.3-step-3-perform-the-test.qmd
+        - 07.4-step-4-interpret-the-results.qmd
+        - 07.5-putting-it-all-together.qmd
+    
+    - part: 08.0-bean.qmd
+      chapters:
+        - 08.1-effect-sizes.qmd
+        - 08.2-alpha-and-p-values.qmd
+        - 08.3-power.qmd
+        - 08.4-sample-size-and-power-analysis.qmd
+        - 08.5-putting-it-all-together.qmd
+    
+    - part: 09.0-inferential-statistics.qmd
+      chapters:
+        - 09.1-choosing-the-correct-test.qmd
+        - 09.2-parametric-assumptions.qmd
+        - 09.3-violated-assumptions.qmd
+    
+    - part: 10.0-writing-results-in-apa-style.qmd
+      chapters:
+        - 10.1-components-of-writing-statistical-results.qmd
+        - 10.2-examples-of-apa-style-results.qmd
+        - 10.3-tables-and-figures.qmd
+        - 10.4-common-apa-style-errors.qmd
+        - 10.5-putting-it-all-together.qmd
+
+    - part: 11.0-chi-square.qmd
+      chapters:
+        - 11.1-chi-square-goodness-of-fit.qmd
+        - 11.2-chi-square-test-of-independence.qmd
+        - 11.3-mcnemars-test.qmd
+    
+    - part: 12.0-t-tests.qmd
+      chapters:
+        - 12.1-one-sample-t-test.qmd
+        - 12.2-independent-t-test.qmd
+        - 12.3-dependent-t-test.qmd
+
+    - part: 13.0-anova.qmd
+      chapters:
+        - 13.1-one-way-anova.qmd
+        - 13.2-finding-group-differences.qmd
+        - 13.3-repeated-measures-anova.qmd
+        - 13.4-factorial-anova.qmd
+        - 13.5-ancova.qmd
+    
+    - part: 14.0-correlation-regression.qmd
+      chapters:
+        - 14.1-correlation.qmd
+        - 14.2-regression.qmd
+        - 14.3-general-linear-model.qmd
+    
+    - part: 15.0-reliability.qmd
+      chapters:
+        - 15.1-threats-to-reliability.qmd
+        - 15.2-measuring-reliability.qmd
+    
+    - part: 16.0-validity.qmd
+      chapters:
+        - 16.1-threats-to-construct-validity.qmd
+        - 16.2-threats-to-statistical-validity.qmd
+        - 16.3-threats-to-external-validity.qmd
+        - 16.4-threats-to-internal-validity.qmd
+
+  appendices:
+    - appendix-glossary.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    toc-location: right
+    number-sections: true
+    css: style.css

@@ -1,0 +1,76 @@
+# 3.4 Navigating the jamovi Interface {.unnumbered}
+
+Once you open jamovi, you will see a spreadsheet-like layout. Your data appear in rows and columns, similar to Excel or Google Sheets.
+
+The main difference is that jamovi is designed for statistical analysis. It does not only store data; it also helps you define variables, run analyses, and view output.
+
+I recommend watching this short video by Alexander Swan on [navigating the jamovi interface](https://youtu.be/t0tQcs-E5Z4) so you can become familiar with the layout and basic menus. Some demonstrations online may use a Mac or include extra modules, so the screen may look a little different from yours.
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://youtu.be/t0tQcs-E5Z4")
+```
+
+## The Data Area
+
+The data area is where you see the dataset itself. Remember the basic structure:
+
+- each row is one {{< glossary observation popup="hover" >}}, such as one participant, person, case, or response;
+- each column is one {{< glossary variable popup="hover" >}}, such as age, condition, test score, or group.
+
+This structure seems simple, but many analysis problems begin when data are not organized this way.
+
+## The Data Tab
+
+The **Data** tab is where you work with the dataset itself. This is where you can do things like:
+
+- add or rename variables;
+- edit variable information;
+- check measure types and data types;
+- compute new variables;
+- transform variables; and
+- create filters.
+
+You do not need to understand all of these tools yet. Later chapters will walk through computing variables, transforming variables, reverse-scoring items, creating scale scores, and using filters.
+
+For now, know that the Data tab is where you go when something about the dataset itself needs to be checked or changed.
+
+## The Analyses Tab
+
+The **Analyses** tab is where you run statistical analyses. For example, this is where you will eventually find options for descriptives, frequencies, *t*-tests, ANOVA, correlation, regression, and other analyses.
+
+For this chapter, we are not focused on running analyses yet. Still, it is useful to know that jamovi separates data work from analysis work:
+
+- **Data tab** → set up, check, clean, and prepare the dataset
+- **Analyses tab** → run analyses and create output
+
+## The Results Panel
+
+When you run an analysis, jamovi displays the results in the output or results panel. One nice thing about jamovi is that the output updates as you change options.
+
+This can be helpful because you can see immediately how different choices affect the output. It also means you should be careful: if you click an option accidentally, your output may change.
+
+## Modules
+
+jamovi can be extended with {{< glossary module display="modules" popup="hover" >}}. A module adds analyses or tools that are not included in the base version of jamovi.
+
+For this book, we will mostly use tools already available in jamovi or common add-on modules when needed. If a chapter requires a module, I will tell you.
+
+::: {.callout-tip title="Check Your Understanding"}
+Which part of jamovi would you use for each task?
+
+1. Changing a variable from continuous to nominal.
+2. Running descriptive statistics.
+3. Checking the output from an analysis.
+4. Creating a computed variable.
+
+<details>
+<summary>Answer</summary>
+
+1. Data tab / variable setup.
+2. Analyses tab.
+3. Results/output panel.
+4. Data tab.
+
+</details>
+:::

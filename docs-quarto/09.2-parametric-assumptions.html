@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.35">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9.2 Parametric Assumptions – Stats with jamovi</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./09.3-violated-assumptions.html" rel="next">
+<link href="./09.1-choosing-the-correct-test.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09.0-inferential-statistics.html">9. Inferential Statistics</a></li><li class="breadcrumb-item"><a href="./09.2-parametric-assumptions.html">9.2 Parametric Assumptions</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Stats with jamovi</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Statistics With jamovi</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.1 How to Use This Book</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.1-about-this-book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.2 About This Book</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02.0-statistics-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Statistics Foundations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.1-describing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.1 Describing Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.2-types-of-variables-levels-of-measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.2 Types of Variables and Levels of Measurement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.3-descriptive-vs-inferential-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.3 Descriptive vs.&nbsp;Inferential Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.4-understanding-distributions-variability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.4 Understanding Distributions and Variability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.5-research-design-terms-youll-see-again.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.5 Research Design Terms You’ll See Again</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.6-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.6 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03.0-overview-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Getting Started With jamovi</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.1-what-is-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.1 What Is jamovi?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.2-installing-updating-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.2 Installing and Updating jamovi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.3-opening-saving-annotating-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.3 Opening, Saving, and Annotating Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.4-navigating-the-jamovi-interface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.4 Navigating the jamovi Interface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.5-checking-variable-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.5 Checking Variable Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.6-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.6 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04.0-cleaning-and-preparing-data-in-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Cleaning and Preparing Data in jamovi</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.1-checking-your-data-before-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.1 Checking Your Data Before Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.2-fixing-incorrect-variable-types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.2 Fixing Incorrect Variable Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.3-working-with-missing-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.3 Working With Missing Values</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.4-recoding-and-transforming-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.4 Recoding and Transforming Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.5-reverse-scoring-items.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.5 Reverse Scoring Items</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.6-creating-scale-scores-composite-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.6 Creating Scale Scores and Composite Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.7-checking-your-work.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.7 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./05.0-describing-data-in-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Describing Data in jamovi</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.1-checking-variable-setup-before-describing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.1 Checking Variable Setup Before Describing Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.2-describing-categorical-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.2 Describing Categorical Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.3-describing-continuous-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.3 Describing Continuous Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.4-describing-continuous-variables-across-groups.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.4 Describing Continuous Variables Across Groups</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.5-choosing-and-writing-descriptive-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.5 Choosing and Writing Descriptive Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.6-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.6 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./06.0-visualizing-data-in-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Visualizing Data in jamovi</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.1-why-visualize-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.1 Why Visualize Data?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.2-choosing-the-right-graph.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.2 Choosing the Right Graph</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.3-visualizing-continuous-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Visualizing Continuous Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.4-visualizing-categorical-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.4 Visualizing Categorical Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.5-visualizing-continuous-variables-across-groups.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.5 Visualizing Continuous Variables Across Groups</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.6-expanding-your-data-visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.6 Expanding Your Data Visualization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.7-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.7 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./07.0-hypothesis-testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Hypothesis Testing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.1-step-1-look-at-the-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.1 Step 1: Look at the Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.2-step-2-check-assumptions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.2 Step 2: Check Assumptions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.3-step-3-perform-the-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.3 Step 3: Perform the Test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.4-step-4-interpret-the-results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.4 Step 4: Interpret the Results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./08.0-bean.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. BEAN</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.1 Effect Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.2-alpha-and-p-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.2 Alpha and p-values</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.3-power.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.3 Power</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./09.0-inferential-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Inferential Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09.1-choosing-the-correct-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9.1 Choosing the Correct Test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09.2-parametric-assumptions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">9.2 Parametric Assumptions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09.3-violated-assumptions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9.3 Violated Assumptions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./10.0-writing-results-in-apa-style.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Writing Results in APA Style</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.1-components-of-writing-statistical-results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.1 Components of Writing Statistical Results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.2-examples-of-apa-style-results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.2 Examples of APA-Style Results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./11.0-chi-square.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Chi-Square</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11.1-chi-square-goodness-of-fit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11.1 Chi-Square Goodness-of-Fit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11.2-chi-square-test-of-independence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11.2 Chi-Square Test of Independence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11.3-mcnemars-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11.3 McNemar’s Test</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./12.0-t-tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. t-Tests</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12.1-one-sample-t-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12.1 One-Sample t-Test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12.2-independent-t-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12.2 Independent t-Test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12.3-dependent-t-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12.3 Dependent t-Test</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./13.0-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. ANOVA</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13.1-one-way-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13.1 One-Way ANOVA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13.2 Finding Group Differences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13.3-repeated-measures-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13.3 Repeated Measures ANOVA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13.4-factorial-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13.4 Factorial ANOVA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13.5-ancova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13.5 ANCOVA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./14.0-correlation-regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Correlation and Regression</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.1-correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.1 Correlation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.2-regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.2 Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.3-general-linear-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.3 General Linear Model</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./15.0-reliability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Reliability</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15.1-threats-to-reliability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15.1 Threats to Reliability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15.2-measuring-reliability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15.2 Measuring Reliability</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./16.0-validity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Validity</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16.1-threats-to-construct-validity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16.1 Threats to Construct Validity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16.2-threats-to-statistical-validity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16.2 Threats to Statistical Validity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16.3-threats-to-external-validity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16.3 Threats to External Validity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16.4-threats-to-internal-validity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16.4 Threats to Internal Validity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#two-kinds-of-assumptions" id="toc-two-kinds-of-assumptions" class="nav-link active" data-scroll-target="#two-kinds-of-assumptions">Two Kinds of Assumptions</a></li>
+  <li><a href="#assumption-1-continuous-dependent-variable" id="toc-assumption-1-continuous-dependent-variable" class="nav-link" data-scroll-target="#assumption-1-continuous-dependent-variable">Assumption 1: Continuous Dependent Variable</a></li>
+  <li><a href="#assumption-2-independence" id="toc-assumption-2-independence" class="nav-link" data-scroll-target="#assumption-2-independence">Assumption 2: Independence</a></li>
+  <li><a href="#assumption-3-normality" id="toc-assumption-3-normality" class="nav-link" data-scroll-target="#assumption-3-normality">Assumption 3: Normality</a></li>
+  <li><a href="#assumption-4-homogeneity-of-variance" id="toc-assumption-4-homogeneity-of-variance" class="nav-link" data-scroll-target="#assumption-4-homogeneity-of-variance">Assumption 4: Homogeneity of Variance</a></li>
+  <li><a href="#regression-assumptions" id="toc-regression-assumptions" class="nav-link" data-scroll-target="#regression-assumptions">Regression Assumptions</a></li>
+  <li><a href="#assumption-checking-and-reporting" id="toc-assumption-checking-and-reporting" class="nav-link" data-scroll-target="#assumption-checking-and-reporting">Assumption Checking and Reporting</a></li>
+  <li><a href="#recapping-parametric-assumptions" id="toc-recapping-parametric-assumptions" class="nav-link" data-scroll-target="#recapping-parametric-assumptions">Recapping Parametric Assumptions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09.0-inferential-statistics.html">9. Inferential Statistics</a></li><li class="breadcrumb-item"><a href="./09.2-parametric-assumptions.html">9.2 Parametric Assumptions</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">9.2 Parametric Assumptions</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Once you have a likely statistical test in mind, the next question is whether the assumptions for that test are reasonable.</p>
+<p>This is Step 2 in our <a href="./07.0-hypothesis-testing.html">4-step hypothesis-testing process</a>: check assumptions.</p>
+<p>Checking assumptions can feel annoying at first. It can feel like an extra step between you and the analysis you actually want to run. But assumptions matter because they tell us whether the statistical test is likely to work the way it is supposed to work.</p>
+<p>If assumptions are seriously violated, the <em>p</em>-value may be inaccurate, the effect size may be misleading, or the interpretation may not fit the data. That does not mean your study is ruined. It means you need to make a thoughtful decision.</p>
+<p>Most of the inferential statistics we will use are <button class="glossary" title="">parametric test</button>, which means they rely on assumptions about the data. <button class="glossary" title="">non-parametric test</button> generally make fewer assumptions about the shape of the distribution, but they are not assumption-free.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Where assumption checks happen in jamovi">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Where assumption checks happen in jamovi
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may notice that jamovi gives you more than one way to check normality. You can check normality through <strong>Exploration → Descriptives</strong>, but you may also see normality checks built into specific inferential tests.</p>
+<p>These are related, but they are not always testing the exact same thing. The Descriptives approach is checking the variable you selected. Some inferential tests check normality in a way that is more closely connected to the analysis you are running.</p>
+<p>Most of the time, you will reach the same overall conclusion either way: normality looks reasonable, questionable, or clearly violated. But the exact values may differ slightly. That is okay.</p>
+<p>For now, use <strong>Exploration → Descriptives</strong> to learn the basic idea of checking normality. Later, when you are running a specific inferential test, use the assumption checks built into that analysis when they are available.</p>
+</div>
+</div>
+<p><a href="https://www.youtube.com/watch?v=zNbF006Y5x4">This video</a> recaps the main ideas in this section in another format.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/tNojQp7DQt8" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+<section id="two-kinds-of-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="two-kinds-of-assumptions">Two Kinds of Assumptions</h2>
+<p>I find it helpful to separate assumptions into two broad types.</p>
+<p><strong>Design or data-structure assumptions</strong> are about whether the test matches the way the data were collected or measured. These include assumptions such as having a continuous dependent variable and independent observations. If these are wrong, you usually need a different test or a different analytic approach.</p>
+<p><strong>Distributional assumptions</strong> are about the shape or spread of the data. These include normality and homogeneity of variance. If these are violated, you may use a different version of the test, a non-parametric alternative, or another justified approach.</p>
+<p>In this chapter, we will focus on four common assumptions:</p>
+<ol type="1">
+<li>The dependent variable is continuous.</li>
+<li>Observations are independent when the test assumes independence.</li>
+<li>The dependent variable is reasonably normally distributed.</li>
+<li>Variances are reasonably similar across groups when the test assumes homogeneity of variance.</li>
+</ol>
+</section>
+<section id="assumption-1-continuous-dependent-variable" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-1-continuous-dependent-variable">Assumption 1: Continuous Dependent Variable</h2>
+<p>Many parametric tests require a continuous dependent variable. This includes <em>t</em>-tests, ANOVA, correlation, and regression.</p>
+<p>This means the dependent variable should represent a numerical amount where means and standard deviations are meaningful. Examples include exam scores, reaction time, depression scale scores, GPA, height, and time spent studying.</p>
+<p>There is no formal statistical test for this assumption. Instead, you need to know:</p>
+<ul>
+<li>what type of variable you are working with;</li>
+<li>how the variable was measured;</li>
+<li>whether a mean, standard deviation, and difference score would be meaningful.</li>
+</ul>
+<p>This connects directly to <a href="./02.2-types-of-variables-levels-of-measurement.html">Types of Variables and Levels of Measurement</a>. A single Likert-type item is usually best understood as ordinal, but an average or total scale score created from several related items is often treated as continuous in practice.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="If this assumption is violated">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>If this assumption is violated
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is not really an assumption you “fix.” If the dependent variable is categorical, you probably chose the wrong test.</p>
+<p>Return to <a href="./09.1-choosing-the-correct-test.html">Choosing the Correct Test</a> and choose a test designed for a categorical dependent variable.</p>
+</div>
+</div>
+</section>
+<section id="assumption-2-independence" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-2-independence">Assumption 2: Independence</h2>
+<p>The assumption of independence means that each observation is independent of the others. In plain language, one participant’s score should not determine, cause, or be linked to another participant’s score unless the statistical test is designed for related observations.</p>
+<p>For example, if you randomly sample 100 students and measure each student’s test score once, those observations are probably independent.</p>
+<p>However, observations may not be independent when:</p>
+<ul>
+<li>the same participants are measured more than once;</li>
+<li>participants are paired or matched;</li>
+<li>students are nested within classrooms;</li>
+<li>employees are nested within work teams;</li>
+<li>multiple observations come from the same person.</li>
+</ul>
+<p>This is why it matters whether you have a between-subjects or within-subjects design. If the same people are measured more than once, you should not use a test that assumes independent groups.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="If this assumption is violated">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>If this assumption is violated
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Violating independence is usually a design issue, not a data-cleaning issue.</p>
+<p>If the same participants are measured more than once, choose a within-subjects or repeated-measures test. If people are nested in classrooms, organizations, teams, or other groups, you may need more advanced methods such as multilevel modeling. We will not cover multilevel modeling in this course, but I want you to recognize why independence matters.</p>
+</div>
+</div>
+</section>
+<section id="assumption-3-normality" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-3-normality">Assumption 3: Normality</h2>
+<p>The assumption of normality means that the dependent variable is reasonably normally distributed for the analysis you are conducting.</p>
+<p>A <button class="glossary" title="A symmetric, bell-shaped distribution with values clustered around the center and fewer values farther from the center.">normal distribution</button> is often called a bell-shaped curve. In a normal distribution, the data are symmetrically distributed around the mean, the mean and median are equal, skew and kurtosis are approximately 0, and we know the proportion of data that should fall within each standard deviation from the mean.</p>
+<p>This is where students often ask, “How normal is normal enough?” Great question. Unfortunately, there is not one perfect answer.</p>
+<p>Assumption checking is not a magic checklist where every method gives the same answer. It is a judgment process. You should use more than one piece of information and think about the severity of the violation, the sample size, and the test you plan to use.</p>
+<section id="checking-normality" class="level3">
+<h3 class="anchored" data-anchor-id="checking-normality">Checking Normality</h3>
+<p>There are four main ways we will check normality in this course:</p>
+<ol type="1">
+<li>Visualize the distribution.</li>
+<li>Test the skew and kurtosis.</li>
+<li>Conduct a Shapiro-Wilk test.</li>
+<li>Visualize the Q-Q plot.</li>
+</ol>
+<p>You should use multiple methods when checking normality. These methods do not always agree perfectly. Personally, I tend to prioritize visual inspection and err on the side of caution. A statistical test can tell you whether a distribution differs from perfect normality, but real data are almost never perfectly normal.</p>
+<p>A general way to check normality is through <strong>Exploration → Descriptives</strong>:</p>
+<ol type="1">
+<li>Move the dependent variable to the <strong>Variables</strong> box.</li>
+<li>If you need to check normality within groups, move the grouping variable to <strong>Split by</strong>.</li>
+<li>Under <strong>Statistics</strong>, select skewness and kurtosis if useful.</li>
+<li>Under <strong>Plots</strong>, select histogram, density, box plot, and/or Q-Q plot.</li>
+<li>Under <strong>Normality</strong>, select Shapiro-Wilk if available.</li>
+</ol>
+<p>You learned how to describe continuous variables in <a href="./05.3-describing-continuous-variables.html">Describing Continuous Variables</a> and how to visualize continuous variables in <a href="./06.3-visualizing-continuous-variables.html">Visualizing Continuous Variables</a>. This is one reason those earlier chapters matter: descriptives and plots help you decide whether assumptions are reasonable.</p>
+<section id="method-1-visualize-the-distribution" class="level4">
+<h4 class="anchored" data-anchor-id="method-1-visualize-the-distribution">Method 1: Visualize the Distribution</h4>
+<p>The first method is to visualize the distribution. In jamovi, go to <strong>Exploration → Descriptives</strong> and select a histogram, density plot, box plot, violin plot, and/or data points.</p>
+<p>We visually inspect whether the distribution resembles a bell-shaped curve. We are not looking for perfection. We are looking for whether the shape seems reasonable enough for the test we plan to use.</p>
+<p>In the following example, height appears approximately normally distributed.</p>
+<p><img src="images/06-inferential/histogram.png" class="img-fluid" width="400"></p>
+<p><img src="images/06-inferential/boxplot.png" class="img-fluid" width="400"></p>
+<p>Histograms and density plots help us see the overall shape of the distribution. Box plots, violin plots, and data points can also help us notice skew, spread, and possible outliers.</p>
+</section>
+<section id="method-2-test-the-skew-and-kurtosis" class="level4">
+<h4 class="anchored" data-anchor-id="method-2-test-the-skew-and-kurtosis">Method 2: Test the Skew and Kurtosis</h4>
+<p>The second method is to examine skew and kurtosis.</p>
+<p>In jamovi:</p>
+<ol type="1">
+<li>Go to <strong>Exploration → Descriptives</strong>.</li>
+<li>Move your dependent variable into the <strong>Variables</strong> box.</li>
+<li>Under <strong>Statistics</strong>, select skewness and kurtosis.</li>
+</ol>
+<p>For our example of height, here are the skew and kurtosis values:</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Descriptives</strong></td>
+<td><strong>Height</strong></td>
+</tr>
+<tr class="even">
+<td>Skewness</td>
+<td>.230</td>
+</tr>
+<tr class="odd">
+<td>Std. error skewness</td>
+<td>.121</td>
+</tr>
+<tr class="even">
+<td>Kurtosis</td>
+<td>.113</td>
+</tr>
+<tr class="odd">
+<td>Std. error kurtosis</td>
+<td>.241</td>
+</tr>
+</tbody>
+</table>
+<p>To test skew and kurtosis, we calculate <em>z</em>-scores by dividing the value by its standard error:</p>
+<ul>
+<li>Skew: .230 / .121 = 1.90</li>
+<li>Kurtosis: .113 / .241 = .47</li>
+</ul>
+<p>A common guideline is:</p>
+<ul>
+<li>If |<em>z</em>| &lt; 1.96, the skew or kurtosis value is not statistically significant at alpha = .05.</li>
+<li>If |<em>z</em>| &gt; 1.96, the skew or kurtosis value is statistically significant at alpha = .05.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Why 1.96?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why 1.96?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The value 1.96 is the critical value of <em>z</em> when alpha is .05 and we have a two-tailed test. You do not need to memorize that for this course, but it explains why 1.96 often shows up when people are checking skew and kurtosis.</p>
+</div>
+</div>
+<p>In this example, both values are less than 1.96 in absolute value, so skew and kurtosis do not suggest a serious violation of normality.</p>
+</section>
+<section id="method-3-conduct-a-shapiro-wilk-test" class="level4">
+<h4 class="anchored" data-anchor-id="method-3-conduct-a-shapiro-wilk-test">Method 3: Conduct a Shapiro-Wilk Test</h4>
+<p>The third method is to conduct a <button class="glossary" title="A statistical test used to evaluate whether a variable differs from a normal distribution.">Shapiro-Wilk test</button>. This is a formal statistical test of normality.</p>
+<p>In jamovi:</p>
+<ol type="1">
+<li>Go to <strong>Exploration → Descriptives</strong>.</li>
+<li>Move your dependent variable into the <strong>Variables</strong> box.</li>
+<li>Under <strong>Normality</strong>, select Shapiro-Wilk.</li>
+</ol>
+<p>Interpretation:</p>
+<ul>
+<li>If <em>p</em> &gt; .05, the test does not provide evidence that the distribution differs from normality.</li>
+<li>If <em>p</em> &lt; .05, the test suggests the distribution differs from normality.</li>
+</ul>
+<p>This can feel counterintuitive because we usually look for statistically significant results in inferential tests. For Shapiro-Wilk, we usually want a non-significant result because the null hypothesis is that the data are normally distributed.</p>
+<p>Be careful, though. With very small samples, Shapiro-Wilk may miss meaningful non-normality. With very large samples, it may flag tiny deviations that do not matter much in practice. This is why you should not rely on Shapiro-Wilk alone.</p>
+</section>
+<section id="method-4-visualize-the-q-q-plot" class="level4">
+<h4 class="anchored" data-anchor-id="method-4-visualize-the-q-q-plot">Method 4: Visualize the Q-Q Plot</h4>
+<p>The fourth method is to visualize the Q-Q plot.</p>
+<p>In jamovi:</p>
+<ol type="1">
+<li>Go to <strong>Exploration → Descriptives</strong>.</li>
+<li>Move your dependent variable into the <strong>Variables</strong> box.</li>
+<li>Under <strong>Plots</strong>, select Q-Q plot.</li>
+</ol>
+<p>A <button class="glossary" title="A plot that compares observed data to the pattern expected under a theoretical distribution, often used to assess normality.">Q-Q plot</button> compares the observed data to what we would expect if the data were normally distributed. We look for the points to fall reasonably close to the diagonal line.</p>
+<p><img src="images/06-inferential/qqplot.png" class="img-fluid" alt=""></p>
+<p>Focus primarily on the center of the distribution. Small deviations at the tails are common. Large, systematic deviations from the line suggest the data may not be normally distributed.</p>
+<p>Here is a video by Alexander Swan on <a href="https://www.youtube.com/watch?v=sLhFc-4qSXE">interpreting a Q-Q plot in jamovi</a>:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/sLhFc-4qSXE" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="if-normality-is-violated" class="level3">
+<h3 class="anchored" data-anchor-id="if-normality-is-violated">If Normality Is Violated</h3>
+<p>First, check whether the violation is caused by data-entry errors, missing-value codes, or extreme outliers. If so, return to <a href="./04.0-cleaning-and-preparing-data-in-jamovi.html">Cleaning and Preparing Data in jamovi</a>.</p>
+<p>If the data are genuinely non-normal, you may need to:</p>
+<ul>
+<li>interpret the parametric test cautiously;</li>
+<li>use a non-parametric alternative;</li>
+<li>use a robust version of the test if available;</li>
+<li>consider a transformation in more advanced work.</li>
+</ul>
+<p>In this course, the most common move will be choosing the appropriate parametric or non-parametric test and explaining your decision. We will return to this in <a href="./09.3-violated-assumptions.html">Violated Assumptions</a>.</p>
+</section>
+</section>
+<section id="assumption-4-homogeneity-of-variance" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-4-homogeneity-of-variance">Assumption 4: Homogeneity of Variance</h2>
+<p><button class="glossary" title="The assumption that the dependent variable has similar variability across groups.">homogeneity of variance</button> means the dependent variable has similar variability across groups of the independent variable.</p>
+<p>This assumption applies when you are comparing groups on a continuous dependent variable, such as with an independent <em>t</em>-test or one-way ANOVA.</p>
+<p>It might help to remember that <em>homo</em> means same and <em>hetero</em> means different. When variances are similar across groups, we have homogeneity of variance. When variances are very different across groups, we have heterogeneity of variance.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Normality vs. Homogeneity of Variance">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Normality vs.&nbsp;Homogeneity of Variance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Normality is about the shape of the dependent variable’s distribution.</p>
+<p>Homogeneity of variance is about whether the spread of the dependent variable is similar across groups of the independent variable.</p>
+</div>
+</div>
+<section id="checking-homogeneity-of-variance" class="level3">
+<h3 class="anchored" data-anchor-id="checking-homogeneity-of-variance">Checking Homogeneity of Variance</h3>
+<p>There are three main ways we will check homogeneity of variance in this course:</p>
+<ol type="1">
+<li>Visualize the distribution of the dependent variable across the groups of the independent variable.</li>
+<li>Examine the variance values.</li>
+<li>Conduct Levene’s test.</li>
+</ol>
+<p>As with normality, these methods should be interpreted together. A graph may show that the group spreads look meaningfully different even before you look at a statistical test. Levene’s test may also be statistically significant in larger samples when the practical difference in spread is not very concerning. Use your judgment and be transparent about what you checked.</p>
+<section id="method-1-visualize-the-distribution-across-groups" class="level4">
+<h4 class="anchored" data-anchor-id="method-1-visualize-the-distribution-across-groups">Method 1: Visualize the Distribution Across Groups</h4>
+<p>The first method is to visualize the distribution of the dependent variable across the groups of the independent variable.</p>
+<p>In jamovi:</p>
+<ol type="1">
+<li>Go to <strong>Exploration → Descriptives</strong>.</li>
+<li>Move the continuous dependent variable to the <strong>Variables</strong> box.</li>
+<li>Move the categorical independent variable to the <strong>Split by</strong> box.</li>
+<li>Select box plot, violin plot, and/or data points.</li>
+</ol>
+<p>Large differences in spread across groups may suggest a violation.</p>
+<p>You practiced this kind of graph in <a href="./06.5-visualizing-continuous-variables-across-groups.html">Visualizing Continuous Variables Across Groups</a>.</p>
+<p>For example, here is an example of data that violates the assumption of homogeneity of variance. The dependent variable is mile duration in minutes, split by gender. The spread of scores for females, coded as 1, is much wider than the spread of scores for males, coded as 0. I am looking at the data points and violin plot to see the spread; the 1 looks wider whereas the 0 looks skinnier.</p>
+<p><img src="images/06-inferential/homogeneity.png" class="img-fluid" width="500"></p>
+</section>
+<section id="method-2-examine-the-variance-values" class="level4">
+<h4 class="anchored" data-anchor-id="method-2-examine-the-variance-values">Method 2: Examine the Variance Values</h4>
+<p>The second method is to compare the variance values across groups.</p>
+<p>In jamovi:</p>
+<ol type="1">
+<li>Go to <strong>Exploration → Descriptives</strong>.</li>
+<li>Move the dependent variable to the <strong>Variables</strong> box.</li>
+<li>Move the grouping variable to the <strong>Split by</strong> box.</li>
+<li>Under <strong>Statistics</strong>, select variance.</li>
+</ol>
+<p>Large differences in variance values suggest a possible violation of the assumption of homogeneity of variance.</p>
+<p>Example:</p>
+<ul>
+<li>Male variance in mile duration in minutes: 6796.20</li>
+<li>Female variance in mile duration in minutes: 15401.55</li>
+</ul>
+<p>Females have 2.26 times greater variance compared to males. Clearly, there is much greater variability for females than males for time it takes to run the mile.</p>
+</section>
+<section id="method-3-conduct-levenes-test" class="level4">
+<h4 class="anchored" data-anchor-id="method-3-conduct-levenes-test">Method 3: Conduct Levene’s Test</h4>
+<p>The third method is to conduct <button class="glossary" title="A statistical test used to evaluate whether variances are similar across groups.">Levene's test</button>. Levene’s test is a formal statistical test of homogeneity of variance.</p>
+<p>You will often find Levene’s test inside the inferential test menu. For example, for a one-way ANOVA, you can select the homogeneity test option.</p>
+<p>In jamovi:</p>
+<ol type="1">
+<li>Go to <strong>ANOVA → One-way ANOVA</strong>.</li>
+<li>Move your continuous dependent variable to the <strong>Dependent Variables</strong> box.</li>
+<li>Move your categorical independent variable to the <strong>Grouping Variable</strong> box.</li>
+<li>Check <strong>Homogeneity test</strong>.</li>
+<li>Only look at Levene’s test for now; ignore the ANOVA results at this moment.</li>
+</ol>
+<p>Interpretation:</p>
+<ul>
+<li>If <em>p</em> &gt; .05, the assumption is generally treated as met.</li>
+<li>If <em>p</em> &lt; .05, the assumption may be violated.</li>
+</ul>
+<p>Here is the result of Levene’s test for the effect of gender on mile duration:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Levene’s</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">df1</th>
+<th style="text-align: right;">df2</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MileMinDur</td>
+<td style="text-align: right;">41.33</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">381</td>
+<td style="text-align: right;">&lt; .001</td>
+</tr>
+</tbody>
+</table>
+<p>Because the <em>p</em>-value is less than .05, this suggests that we violated the assumption of homogeneity of variance.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Why do we want Levene's test to be non-significant?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why do we want Levene’s test to be non-significant?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Again, we usually want non-significant results here because the null hypothesis is that the variances are equal across groups.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="if-homogeneity-of-variance-is-violated" class="level3">
+<h3 class="anchored" data-anchor-id="if-homogeneity-of-variance-is-violated">If Homogeneity of Variance Is Violated</h3>
+<p>If homogeneity of variance is violated, the solution depends on the test.</p>
+<p>For an independent <em>t</em>-test, you may use Welch’s <em>t</em>-test. For a one-way ANOVA, you may use Welch’s ANOVA. These versions adjust for unequal variances.</p>
+<p>For repeated-measures designs, the assumption issues are different. For example, repeated-measures ANOVA has an assumption called sphericity. We will discuss that later when we get to ANOVA.</p>
+<p>We will return to broader decision-making about violations in <a href="./09.3-violated-assumptions.html">Violated Assumptions</a>.</p>
+</section>
+</section>
+<section id="regression-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="regression-assumptions">Regression Assumptions</h2>
+<p>Regression has additional assumptions, including linearity, homoscedasticity, independent errors, and normally distributed residuals. I am not going to teach those in depth here because they will make more sense when you learn regression.</p>
+<p>For now, just know that regression is not assumption-free. We will return to regression-specific assumptions in <a href="./14.0-correlation-regression.html">Correlation and Regression</a>.</p>
+</section>
+<section id="assumption-checking-and-reporting" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-checking-and-reporting">Assumption Checking and Reporting</h2>
+<p>Assumption checking is not only about choosing the correct test. It also affects what you report.</p>
+<p>If assumptions are met, you may simply report the planned test. If an assumption is violated and you use a different test, correction, or non-parametric alternative, readers need to know what you checked and what decision you made.</p>
+<p>We will focus more on writing results clearly in <a href="./10.0-writing-results-in-apa-style.html">Chapter 10</a>.</p>
+</section>
+<section id="recapping-parametric-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="recapping-parametric-assumptions">Recapping Parametric Assumptions</h2>
+<p>Let’s summarize the four assumptions and generally how to test for them:</p>
+<ol type="1">
+<li><strong>Continuous dependent variable</strong>
+<ul>
+<li>Know your levels of measurement and make sure the dependent variable is continuous.</li>
+</ul></li>
+<li><strong>Independent scores on the dependent variable</strong>
+<ul>
+<li>Know your research design and how the data were collected. Make sure that one participant’s data is not thought to affect another participant’s data.</li>
+</ul></li>
+<li><strong>Normal distribution of the dependent variable</strong>
+<ul>
+<li>Visualize the distribution with a histogram and/or density plot of the dependent variable.</li>
+<li>Test the skew and kurtosis by calculating the <em>z</em>-scores.</li>
+<li>Test using the Shapiro-Wilk test.</li>
+<li>Examine the Q-Q plot for deviations from the diagonal line.</li>
+</ul></li>
+<li><strong>Homogeneity of variance</strong>
+<ul>
+<li>Visualize the distribution with a box plot, violin plot, and/or data points, with the dependent variable split by the independent variable.</li>
+<li>Examine the variances of the dependent variable split by the independent variable.</li>
+<li>Test using Levene’s test.</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Which assumptions are determined conceptually rather than tested statistically?</li>
+<li>What are the four ways we check normality in this course?</li>
+<li>For normality, do we usually want statistically significant or non-significant Shapiro-Wilk results? Why?</li>
+<li>What are the three ways we check homogeneity of variance in this course?</li>
+<li>What does Levene’s test evaluate?</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Suggested Answers">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Suggested Answers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Continuous dependent variable and independence are determined conceptually. They depend on the variable type, study design, and data structure.</li>
+<li>We visualize the distribution, test skew and kurtosis, conduct a Shapiro-Wilk test, and visualize the Q-Q plot.</li>
+<li>We usually want non-significant Shapiro-Wilk results because the null hypothesis is that the data are normally distributed.</li>
+<li>We visualize the distribution of the dependent variable across groups, examine the variance values, and conduct Levene’s test.</li>
+<li>Levene’s test evaluates whether variances are equal across groups.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./09.1-choosing-the-correct-test.html" class="pagination-link" aria-label="9.1 Choosing the Correct Test">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">9.1 Choosing the Correct Test</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./09.3-violated-assumptions.html" class="pagination-link" aria-label="9.3 Violated Assumptions">
+        <span class="nav-page-text">9.3 Violated Assumptions</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

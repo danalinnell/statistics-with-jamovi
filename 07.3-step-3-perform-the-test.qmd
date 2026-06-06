@@ -1,0 +1,127 @@
+# 7.3 Step 3: Perform the Test {.unnumbered}
+
+Once we understand the data, state the hypotheses, and check assumptions, we are ready to perform the statistical test.
+
+This chapter does not teach the jamovi steps for a specific inferential statistic. Those instructions belong in the test-specific chapters. Instead, this section explains the logic behind what the test is doing.
+
+## The Core Question
+
+The core question in hypothesis testing is:
+
+> If the null hypothesis were true, how surprising would our data be?
+
+In our Bobo doll example, the null hypothesis says that children in the aggressive-video condition do not show more aggressive behavior than children in the calm-video condition.
+
+But our sample shows a difference:
+
+| Condition | Mean aggressive behaviors | Standard deviation | Sample size |
+|---|---:|---:|---:|
+| Aggressive video | 11.20 | 3.10 | 15 |
+| Calm video | 5.40 | 2.80 | 15 |
+
+The aggressive-video group has a higher mean in the sample. Now we need to decide whether that difference is surprising enough, assuming the null hypothesis is true, that we should reject the null hypothesis.
+
+## Alpha: How Surprising Is Surprising Enough?
+
+The {{< glossary "alpha level" popup="hover" >}}, often written as α, is the threshold we set for deciding whether a result is statistically significant.
+
+In many psychology studies, alpha is set at .05. This means we are using 5% as our cutoff for what counts as surprising enough under the null hypothesis.
+
+::: {.callout-note title="Alpha Is a Decision Threshold"}
+Alpha does not come from the data. The researcher sets alpha before interpreting the test. In this book, unless stated otherwise, we will usually use α = .05.
+:::
+
+The old-school way of teaching hypothesis testing often involves critical values and tables. Some students find that math helpful, and I may eventually include optional hand-calculation material in an appendix. But for the main textbook, we are going to focus on the logic and let jamovi do the calculations.
+
+## The p-Value: How Surprising Are the Data?
+
+A {{< glossary "p-value" popup="hover" >}} tells us the probability of observing data as extreme as, or more extreme than, our data, assuming the null hypothesis is true.
+
+That definition has two important parts:
+
+1. The p-value is about the probability of the data.
+2. The p-value assumes the null hypothesis is true.
+
+It is not the probability that the null hypothesis is true. This is one of the most common misunderstandings in statistics.
+
+Another way to say it is:
+
+> If there were really no effect, how surprising would these data be?
+
+## Statistical Significance
+
+After we get the p-value, we compare it to alpha.
+
+| If... | Then... |
+|---|---|
+| p < α | The result is statistically significant, and we reject the null hypothesis. |
+| p ≥ α | The result is not statistically significant, and we fail to reject the null hypothesis. |
+
+If alpha is .05 and p = .003, the result is statistically significant because .003 is less than .05.
+
+If alpha is .05 and p = .184, the result is not statistically significant because .184 is greater than .05.
+
+Statistical significance is a decision rule. It tells us whether the result crosses the threshold we set. It does not tell us whether the effect is important, meaningful, or well-designed.
+
+## Effect Size: How Large Is the Effect?
+
+A {{< glossary "effect size" popup="hover" >}} describes the size or strength of an effect.
+
+In our Bobo doll example, statistical significance would tell us whether the group difference is unlikely under the null hypothesis. Effect size helps us ask a different question:
+
+> How large is the difference?
+
+Those are not the same question. A tiny effect can be statistically significant in a huge sample. A large effect can fail to be statistically significant in a tiny sample. This is why p-values and effect sizes should be interpreted together.
+
+For our example, the difference between groups is large. Children in the aggressive-video condition showed nearly six more aggressive behaviors on average than children in the calm-video condition. Later, when we learn t-tests, we will learn how to quantify this difference with an effect size such as Cohen's d.
+
+## Power: Could We Detect an Effect If It Exists?
+
+{{< glossary "statistical power" popup="hover" >}} is the probability of detecting an effect if the effect really exists.
+
+Power depends on several things, including:
+
+- effect size;
+- sample size;
+- alpha; and
+- variability in the data.
+
+For now, you only need the basic idea: a study with low power may fail to detect a real effect. This is one reason non-significant results require careful interpretation.
+
+Chapter 8 will focus on BEAN, which brings together beta/power, effect size, alpha, and sample size.
+
+## What the Test Gives Us
+
+When we perform the test, we usually get several pieces of information:
+
+- a test statistic, such as t, F, r, or χ²;
+- degrees of freedom, depending on the test;
+- a p-value;
+- often an effect size; and
+- sometimes confidence intervals or assumption checks.
+
+You do not need to know all of those details yet. The test-specific chapters will show you exactly what output to look at and how to interpret it.
+
+For now, the main point is this:
+
+> The test helps us decide whether the data are surprising enough under the null hypothesis that we reject the null hypothesis.
+
+::: {.callout-warning title="Common Mistake"}
+Do not let the p-value do all the thinking for you. A p-value helps you make a statistical decision, but it does not replace the research question, the design, the descriptive statistics, the effect size, or your judgment.
+:::
+
+::: {.callout-tip title="Check Your Understanding"}
+1. What does alpha represent?
+2. What does a p-value represent?
+3. What decision do we usually make when p < α?
+4. Why is effect size important?
+5. Why does power matter?
+
+**Answers**
+
+1. Alpha is the threshold for deciding what counts as statistically significant.
+2. A p-value is the probability of observing data as extreme as, or more extreme than, the data we observed, assuming the null hypothesis is true.
+3. We reject the null hypothesis.
+4. Effect size tells us how large or strong the effect is, not just whether it crosses a statistical threshold.
+5. Power tells us how likely a study is to detect an effect if the effect really exists.
+:::

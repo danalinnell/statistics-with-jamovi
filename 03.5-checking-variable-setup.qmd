@@ -1,0 +1,126 @@
+# 3.5 Checking Variable Setup {.unnumbered}
+
+Before running analyses in jamovi, you should check that your variables are set up correctly.
+
+This step is easy to skip, especially when you are eager to get to the analysis. But variable setup matters. If jamovi thinks a variable is continuous when it is actually categorical, or if a missing value code is treated as a real score, your output can be wrong or misleading.
+
+## Variable Names
+
+A {{< glossary "variable name" popup="hover" >}} should be brief, meaningful, and easy to recognize.
+
+For example, `Q35` might technically identify a column, but `depression_score`, `condition`, or `reaction_time` tells you much more about what the variable represents.
+
+A few good habits:
+
+- Use names that are short but informative.
+- Avoid spaces in variable names.
+- Avoid special characters when possible.
+- Use consistent naming patterns across related variables.
+
+If you want more detailed guidance, Broman and Woo's article on [data organization in spreadsheets](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989) is a useful resource.
+
+## Variable Descriptions
+
+A {{< glossary "variable description" popup="hover" >}} gives more context about the variable. This might include the full survey item, a note about how the variable was measured, or an explanation of what higher scores mean.
+
+For example, a variable named `stress_mean` might have a description such as:
+
+> Mean score across the 10 perceived stress items; higher scores indicate greater perceived stress.
+
+Descriptions are especially useful when you return to a dataset later or share it with someone else.
+
+## Measure Types
+
+One of the most important parts of working in jamovi is correctly identifying the {{< glossary "measure type" popup="hover" >}} for each variable.
+
+In jamovi, variables are set as one of four measure types:
+
+1. ![](images/03-jamovi/variable-nominal.png) **Nominal**: categories with no meaningful order
+
+2. ![](images/03-jamovi/variable-ordinal.png) **Ordinal**: categories with a meaningful order
+
+3. ![](images/03-jamovi/variable-continuous.png) **Continuous**: numerical values representing amounts or quantities
+
+4. ![](images/03-jamovi/variable-id.png) **ID**: an identifier variable you usually would not analyze, such as participant ID
+
+This connects directly to Chapter 2. A variable may be coded with numbers, such as 0 = no and 1 = yes, but that does not make it continuous. You still need to set the measure type based on what the variable represents.
+
+## Data Types
+
+A {{< glossary "data type" popup="hover" >}} describes the kind of values stored in the variable.
+
+In jamovi, variables can be one of three data types:
+
+1. **Integer**: whole numbers
+2. **Decimal**: numbers that can include decimal places
+3. **Text**: letters, words, or other alphanumeric entries
+
+Measure type and data type are related, but they are not the same thing. For example, a variable can use integer values like 1, 2, 3, and 4 but still be ordinal if those numbers represent ordered categories such as first-year, sophomore, junior, and senior.
+
+## Missing Values
+
+A {{< glossary "missing value" popup="hover" >}} is a value that represents missing, skipped, unavailable, or invalid data.
+
+Sometimes missing data are blank. Other times, datasets use a specific code such as `-99`, `999`, or `NA`. If a missing value code is not defined correctly, jamovi may treat it as real data.
+
+For example, if test scores should range from 0 to 100 and one person has a value of 999, you should not analyze that value as if it were an actual test score. You need to determine whether it is a data entry error, a missing value code, or something else.
+
+## Levels
+
+For categorical variables, {{< glossary level display="levels" popup="hover" >}} are the categories or values of the variable.
+
+For example, if a variable called `condition` is coded as 1 and 2, you might define the levels as:
+
+- 1 = Control
+- 2 = Treatment
+
+Adding clear levels makes your output easier to read. It is much easier to interpret a table that says `Control` and `Treatment` than one that only says `1` and `2`.
+
+There is also an option to retain unused levels in analyses. You may not need this often, but it can be helpful if you want a level to appear in output or graphs even when no current cases have that value.
+
+## How jamovi Helps
+
+jamovi will try to automatically detect measure types and data types when you open or enter data. This is fabulous until it is wrong.
+
+The icons next to variables are useful because they remind you how jamovi currently understands each variable:
+
+- a ruler icon indicates a continuous variable;
+- a Venn-style icon indicates a nominal variable;
+- a ranked-bars icon indicates an ordinal variable; and
+- an ID icon indicates an identifier variable.
+
+These icons also appear in some analysis menus. For example, in an independent samples *t*-test, the dependent variable box expects a continuous variable, whereas the grouping variable box expects a categorical variable.
+
+jamovi is trying to help you make good choices, which is one of the reasons I like it. But it is not a substitute for statistical reasoning. You still need to understand what your variables represent.
+
+::: {.callout-warning title="Common Mistake"}
+Do not assume that jamovi guessed the variable setup correctly. Always check:
+
+- variable name;
+- variable description;
+- measure type;
+- data type;
+- missing values; and
+- levels for categorical variables.
+:::
+
+::: {.callout-tip title="Check Your Understanding"}
+1. A variable is coded as 0 = No and 1 = Yes. Should it be nominal, ordinal, or continuous in jamovi? Why?
+
+2. A variable contains the values 1 = first-year, 2 = sophomore, 3 = junior, and 4 = senior. jamovi labels it as continuous. What should you do?
+
+3. A test score variable should range from 0 to 100, but one value is 999. What should you check before analyzing the data?
+
+<details>
+<summary>Answer</summary>
+
+1. It should be nominal because the numbers are labels for categories, not meaningful quantities.
+
+2. Change the measure type to ordinal because the categories have a meaningful order.
+
+3. Check whether 999 is a data entry error, a missing value code, or something else. Do not analyze it as a real test score unless you confirm it is valid.
+
+</details>
+:::
+
+Checking variable setup is the first step. Sometimes everything will already be correct, which is lovely. Other times, jamovi’s automatic guess will be close but not quite right. In the next chapter, we will focus on what to do when your variables need to be cleaned, recoded, transformed, or combined before analysis.

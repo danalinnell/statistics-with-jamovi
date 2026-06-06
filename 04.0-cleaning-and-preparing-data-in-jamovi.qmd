@@ -1,0 +1,38 @@
+# 4. Cleaning and Preparing Data in jamovi
+
+Before we describe, visualize, or analyze data, we need to make sure the data are ready to use. Real datasets are rarely perfect. Variables might be set up incorrectly, response options might be stored as text, missing values might need attention, or scale items might need to be combined into a total or average score.
+
+This chapter focuses on the practical work of preparing data in {{< glossary jamovi popup="hover" >}}. You will learn how to check your data, fix common setup problems, transform and recode variables, reverse-score items, and create scale scores. These steps may feel small, but they matter. If the data are not prepared correctly, everything that comes after this point can be affected.
+
+By the end of this chapter, you should be able to:
+
+- check whether variables are set up correctly in jamovi
+- identify common data preparation problems
+- work with {{< glossary "missing value" display="missing values" popup="hover" >}}
+- transform text responses into numeric or ordered variables
+- recode variables while preserving the original data
+- reverse-score items when needed
+- create total and average scale scores using `SUM()` and `MEAN()`
+- check your work before moving on to descriptive or inferential analyses
+
+Cleaning data does not mean changing the data to get the results you want. It means preparing the data so the values are accurate, meaningful, and ready for analysis.
+
+In this chapter, you will learn how to check whether variables are set up correctly, handle missing values, identify possible data-entry errors, reverse-score items, recode or transform variables, and create scale scores. These steps matter because every descriptive statistic, graph, and inferential test depends on the quality of the variables you are analyzing.
+
+::: {.callout-note title="For Dana's Students"}
+In my courses, you will usually submit your `.omv` file or screenshots showing parts of your work. That is not just busywork. It helps me see your process, not only your final answer. Save your file early, save it often, and use meaningful variable names so that your work is easier to check later.
+:::
+
+### Which jamovi Tool Do I Need?
+
+| What you need to do | Tool or feature in jamovi | Example |
+|---|---|---|
+| Change how jamovi understands a variable | Setup | Change a variable from continuous to ordinal |
+| Mark a value as missing | Setup | Tell jamovi that 99 means missing |
+| Create a new score from existing variables | Compute | Create a total score or average scale score |
+| Change values based on rules | Transform | Convert text responses into numeric values |
+| Reverse-score an item | Transform or Compute | Change 1 → 5, 2 → 4, 3 → 3, 4 → 2, 5 → 1 |
+| Combine or simplify categories | Transform/recode | Combine several gender responses into fewer categories |
+| Temporarily analyze only some rows | Filter | Analyze only participants in one group |
+
+You do not need to memorize this table. Use it as a decision guide when you know what you want to accomplish but are not sure where to start.

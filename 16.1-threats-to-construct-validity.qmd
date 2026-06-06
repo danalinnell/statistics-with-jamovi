@@ -1,0 +1,10 @@
+# 16.1 Threats to Construct Validity {.unnumbered}
+1.  **Inexact definitions of constructs**: Poorly defined constructs such that (a) its essential or important components have not been clearly thought out, (b) the various levels of the construct have not been determine such that no exact operational definition can be provided, and (c) insufficient arguments have been provided to explain its content and boundaries. For instance, aggression is intent to harm others and a harmful results. Thinking about aggression, or harming another person, alone are not sufficient for aggression. Our measurements must capture this.
+
+2.  **Reducing levels of measurement**: Taking a continuous variable and making it ordinal or nominal
+
+3.  **Mono-method bias**: Using a single method to measure something. Some methods may introduce bias.
+
+4.  **Mono-operation bias**: Using only a single operationalization of the construct which underrepresents the overall construct. For instance, examining the effect of background music on task performance. Could test for presence/absence of music on task performance, but different types of music and loudness of music would probably have differential effects.
+
+5.  **Construct confounding**: Jingle Jangle fallacy: Two constructs can be called the same thing but operationally different, but also two construct can be called two separate things but be operationally the same.

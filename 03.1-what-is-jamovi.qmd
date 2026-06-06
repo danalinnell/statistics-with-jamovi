@@ -1,0 +1,62 @@
+# 3.1 What Is jamovi? {.unnumbered}
+
+[jamovi](https://www.jamovi.org/) is a free, open-source statistical software program that helps us organize data, run analyses, and view results in a clear, point-and-click interface.
+
+In this book, jamovi is the main tool we will use to apply statistical concepts. It lets us focus less on doing calculations by hand and more on understanding research questions, choosing appropriate analyses, interpreting results, and communicating findings clearly.
+
+## Why Are We Using jamovi?
+
+There are several reasons I use jamovi in this textbook and in my own teaching.
+
+1. **It is free.** You do not need to pay for an expensive software license to use jamovi. That matters during a course, but it also matters later. If you need to analyze data in a future class, research project, internship, job, thesis, or evaluation project, you can still use the same software.
+
+2. **It is {{< glossary "open-source software" display="open source" popup="hover" >}}.** jamovi is developed and maintained by the statistical community. As the developers describe it, *"jamovi is made by the scientific community, for the scientific community."* Open-source software can continue to improve as people contribute to it, test it, and build extensions for it.
+
+3. **It is built on R.** {{< glossary "R" popup="hover" >}} is a powerful statistical programming language used by many researchers and data analysts. jamovi gives you a point-and-click way to use analyses that are built on R. If you eventually want to learn coding, jamovi can be a gentle entry point. Many researchers, including me, use R through environments like {{< glossary "RStudio" popup="hover" >}} for more advanced work. This textbook was also created using RStudio and Quarto.
+
+4. **It is approachable.** I have taught statistics with other software, including SPSS, and students usually find jamovi easier to learn. The interface is more intuitive, and the output updates as you choose options.
+
+5. **It supports {{< glossary reproducibility popup="hover" >}}.** jamovi saves your data, analyses, options, and results in one file. That makes it easier to return to your work later, check what you did, revise an analysis, or show your process.
+
+::: {.callout-note title="For Dana's Students"}
+I use jamovi because I want you to learn skills you can keep using after the course ends. You may not need jamovi every day, but I want you to leave the course knowing that you can open a dataset, make sense of it, run common analyses, and interpret the output without needing access to expensive software.
+:::
+
+## What jamovi Is Good For
+
+jamovi is especially useful for introductory and applied statistics because it allows you to:
+
+- organize and inspect datasets;
+- calculate descriptive statistics;
+- create basic graphs;
+- run common inferential tests, such as chi-square tests, *t*-tests, ANOVA, correlation, and regression;
+- save your work in one reproducible file; and
+- export results for assignments, reports, or manuscripts.
+
+That does not mean jamovi can do everything. No software can. But it is an excellent tool for learning the statistical analyses covered in this book.
+
+## jamovi Files
+
+jamovi files usually use the `.omv` file extension. An `.omv` file can contain the dataset, analyses, selected options, output, and notes. This is one reason I like jamovi so much for teaching. Your file can show not only your answer, but also the process you used to get there.
+
+::: {.callout-tip title="Check Your Understanding"}
+Why might it be useful for jamovi to save the data, analyses, options, and output in one file?
+
+<details>
+<summary>Answer</summary>
+
+It makes your work easier to check, revise, and reproduce later. You can reopen the file and see the dataset, the analyses you ran, the options you selected, and the output you produced.
+
+</details>
+:::
+
+## Additional jamovi Resources
+
+Although this textbook is designed to walk you through the basics, it is helpful to know where else you can look for support. I recommend bookmarking these resources:
+
+- [jamovi documentation](https://docs.jamovi.org/), which includes support for using jamovi and transitioning from SPSS or to R;
+- [jamovi 2022 tutorials](https://www.youtube.com/playlist?list=PLvYqRUmlLZUMJ0EUxuTAA1f407wmBQ1QX) by Alexander Swan on YouTube;
+- [Introduction to jamovi LinkedIn Learning course](https://www.linkedin.com/learning/introduction-to-jamovi/) by Barton Poulson, founder of [datalab.cc](https://datalab.cc/jamovi/); and
+- practice resources and datasets from [Neumann, Hood, & Neumann](https://jamovipractice.edublogs.org/).
+
+Some tutorials use older versions of jamovi, so the menus or layout may look slightly different from what you see on your screen. That is okay. Focus on the larger logic of what the person is doing.

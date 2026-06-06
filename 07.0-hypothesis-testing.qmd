@@ -1,0 +1,67 @@
+# 7. Hypothesis Testing {.unnumbered}
+
+Up to this point, we have focused on understanding the data we have: what variables were measured, how those variables are set up, whether they need to be cleaned, how to describe them, and how to visualize them.
+
+Those steps are always the starting point. Now we are ready to ask a different kind of question:
+
+> What can these data tell us beyond this sample?
+
+That is where {{< glossary "inferential statistics" popup="hover" >}} come in. In this chapter, we will introduce the logic of {{< glossary "null hypothesis significance testing" popup="hover" >}}, or NHST. You do not need to master every statistical test yet. Instead, this chapter gives you the decision-making framework that will repeat throughout the rest of the book.
+
+::: {.callout-note title="Big Picture"}
+Hypothesis testing is not about proving that a hypothesis is true. It is about evaluating whether the data are surprising enough, assuming the {{< glossary "null hypothesis" popup="hover" >}} is true, that we are willing to reject the null hypothesis.
+:::
+
+## Learning Objectives
+
+By the end of this chapter, you should be able to:
+
+- describe the purpose of null hypothesis significance testing;
+- explain the four-step hypothesis-testing process used throughout this book;
+- identify the independent variable, dependent variable, and design in a study;
+- write plain-language null and alternative hypotheses;
+- distinguish between directional and non-directional hypotheses;
+- explain the basic role of assumptions, alpha, p-values, effect sizes, and power;
+- interpret hypothesis-testing results using reject or fail-to-reject language; and
+- describe what NHST can and cannot tell us.
+
+## The Four-Step Process
+
+Each inferential statistic we learn in this book follows the same general process:
+
+1. Look at the data.
+2. Check assumptions.
+3. Perform the test.
+4. Interpret the results.
+
+The details change depending on the test. A chi-square test, t-test, ANOVA, correlation, and regression all have different procedures and different output. But the overall process is the same.
+
+::: {.callout-tip title="A Handout You Will Use Again"}
+I created a four-page handout that summarizes this process across the inferential statistics covered in this book: [Statistics with jamovi - Overarching handout](Statistics%20with%20jamovi%20-%20Overarching%20handout.pdf).
+
+I recommend saving it and returning to it as you move through the inferential statistics chapters. The handout is the quick reference. This chapter explains the logic behind it.
+:::
+
+## Our Running Example
+
+To make the logic concrete, we will use a simplified example inspired by Bandura's classic Bobo doll studies.
+
+Imagine a researcher randomly assigns children to one of two conditions:
+
+- In one condition, children watch a video of an adult behaving aggressively toward a Bobo doll.
+- In the other condition, children watch a video of an adult playing calmly with a Bobo doll.
+
+Afterward, the children are observed while playing in a room with a Bobo doll. The researcher records the number of aggressive behaviors each child shows.
+
+This is a useful example because it has the pieces we need for hypothesis testing:
+
+- an independent variable: the type of video the child watched;
+- a dependent variable: the number of aggressive behaviors observed;
+- two independent groups; and
+- a research question about whether the groups differ.
+
+You do not need to understand the specific statistical test yet. Later, we will learn that this kind of design can be analyzed with an independent-samples t-test. For now, we are using the example to understand the logic of hypothesis testing.
+
+## Looking Ahead
+
+The next sections walk through the four steps one at a time. As you read, focus less on memorizing vocabulary and more on understanding the process. Every inferential test you learn later will use this same basic structure.

@@ -1,0 +1,102 @@
+# 4.4 Recoding and Transforming Variables {.unnumbered}
+
+Recoding and transforming are two of the most common data preparation tasks in jamovi. They are also places where small mistakes can create big problems, so it is worth moving carefully.
+
+Broadly, you transform or recode a variable when the current version is not the version you need for analysis.
+
+You might do this because:
+
+- text responses need to become numeric values
+- categories need to be cleaned or combined
+- a scale item needs to be reverse-scored
+- a continuous score needs to be grouped into categories
+- a variable needs a more analysis-friendly version
+
+## Transforming Text Responses Into Numeric Values
+
+A common survey issue is that response options are stored as text. For example, an item might use responses such as `Strongly disagree`, `Disagree`, `Neither disagree nor agree`, `Agree`, and `Strongly agree`.
+
+If those responses need to be part of a scale score, you need numeric versions of them. In jamovi, you can use the Transform feature to create new variables with numeric values.
+
+A typical transformation might be:
+
+| If the source value is... | Use... |
+|---|---:|
+| `Strongly disagree` | 1 |
+| `Disagree` | 2 |
+| `Neither disagree nor agree` | 3 |
+| `Agree` | 4 |
+| `Strongly agree` | 5 |
+| else | `NA` |
+
+After transforming, check the new variables. You should make sure the values look right, the data type is numeric, and the measure type matches the variable.
+
+## Recoding Categories
+
+Sometimes a categorical variable has categories that need to be cleaned before analysis.
+
+For example, imagine a gender variable with these categories:
+
+- `Female`
+- `female`
+- `Female `
+- `woman`
+- `Male`
+- `Male `
+- `Non-Binary`
+
+Some of these categories may represent the same group, but jamovi treats them as different categories because they are spelled or spaced differently. Recoding can create a cleaner version of the variable.
+
+A cleaned version might use categories such as:
+
+- Woman
+- Man
+- Non-binary
+
+This kind of cleaning is not only technical. It also requires thoughtful decisions. For example, open-ended demographic responses can be more inclusive, but they may require more care when preparing the data for analysis.
+
+## Recoding Continuous Scores Into Categories
+
+Sometimes researchers recode a continuous or total score into categories. For example, a total depression score might be classified into categories such as normal, mild, moderate, severe, or extreme.
+
+This can be useful when the categories are meaningful, established, and used carefully. But categorizing a score also removes information. Someone with a score of 10 and someone with a score of 0 might end up in the same category even though their scores are quite different.
+
+::: {.callout-warning title="Common Mistake"}
+Do not recode a detailed variable into broad categories just because it seems easier to analyze. Categorizing can be useful, but it reduces information and can hide important differences.
+:::
+
+## Quotation Marks Matter
+
+When recoding into text categories, use quotation marks around the text values. For example:
+
+```{.text}
+"1. Normal"
+"2. Mild"
+"3. Moderate"
+```
+
+Quotation marks tell jamovi that the result is text. Without quotation marks, jamovi may try to treat the value as something else.
+
+## Check Your Transformed Variables
+
+After creating transformed variables, look at the new columns. Do not assume the transformation worked just because jamovi created a variable.
+
+Check a few rows manually:
+
+- Did the correct original values become the correct new values?
+- Are any values unexpectedly missing?
+- Did capitalization or spacing create a recoding problem?
+- Is the measure type correct?
+
+A quick check can prevent a lot of problems later.
+
+::: {.callout-tip title="Check Your Understanding"}
+Why is it usually better to create a recoded version of a variable instead of replacing the original variable?
+
+<details>
+<summary>Answer</summary>
+
+Keeping the original variable protects the raw data. If the recode has an error, you can compare the new variable to the original and fix the transformation. It also makes the analysis more transparent.
+
+</details>
+:::

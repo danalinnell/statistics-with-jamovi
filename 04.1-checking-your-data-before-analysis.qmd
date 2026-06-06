@@ -1,0 +1,72 @@
+# 4.1 Checking Your Data Before Analysis {.unnumbered}
+
+The first step in data analysis is not running a statistical test. The first step is making sure your dataset is set up correctly.
+
+This is true even when someone else gives you a dataset. It is tempting to assume that the file is ready to use, especially if it opens without an error. But opening a file successfully does not mean that jamovi understands every variable correctly.
+
+Before analyzing a dataset, I recommend checking at least four things:
+
+1. Are the variable names meaningful?
+2. Are the {{< glossary "data type" display="data types" popup="hover" >}} correct?
+3. Are the {{< glossary "measure type" display="measure types" popup="hover" >}} correct?
+4. Are missing values coded correctly?
+
+## Check Variable Names
+
+Variable names should help you understand what each column represents. A variable named `Q35` might technically work, but it is not very helpful when you are trying to remember what the item measured. A name like `BDI_Total`, `Gender`, or `Study_Hours` gives you more information.
+
+That said, variable names should still be short enough to use easily. In jamovi, I usually use short variable names and then add a longer variable description when I need more context.
+
+## Check Data Types
+
+A {{< glossary "data type" popup="hover" >}} tells jamovi what kind of values are stored in the variable. Common data types include:
+
+- {{< glossary integer popup="hover" >}}: whole numbers, such as 0, 1, 2, 3
+- {{< glossary decimal popup="hover" >}}: numbers that can include decimals, such as 2.75 or 4.63
+- {{< glossary text popup="hover" >}}: words, labels, or other nonnumeric values
+
+Data type is about how the data are stored. It is not exactly the same as measurement level. For example, a Likert-type item might be stored as text if the response options are written as “Strongly disagree,” “Disagree,” and so on. If you want to compute a scale score, you may need to transform those text responses into numeric values first.
+
+## Check Measure Types
+
+A {{< glossary "measure type" popup="hover" >}} tells jamovi how the variable should be treated analytically. In jamovi, variables are usually set as one of the following:
+
+- {{< glossary "nominal variable" display="Nominal" popup="hover" >}}
+- {{< glossary "ordinal variable" display="Ordinal" popup="hover" >}}
+- {{< glossary "continuous variable" display="Continuous" popup="hover" >}}
+- {{< glossary "ID variable" display="ID" popup="hover" >}}
+
+This matters because the measure type affects which analyses jamovi will allow you to run and which variables can go in which boxes.
+
+For example, a participant ID number may look numeric, but it is not a continuous variable. Participant 200 is not “twice as much participant” as participant 100. That variable should usually be set as an ID variable.
+
+## Check Missing Values
+
+Sometimes missing data are blank. Other times, missing data are coded with a specific number such as `99`, `999`, or `-9`. If those codes are not identified as missing, jamovi may treat them as real values.
+
+That can create serious problems. Imagine a depression scale ranging from 0 to 3 where a missing response is coded as 99. If jamovi treats 99 as a real score, the descriptive statistics will be wildly wrong.
+
+::: {.callout-tip title="Check Your Understanding"}
+A dataset has a variable called `Participant_ID` with values 101, 102, 103, and so on. What measure type should this variable use in jamovi?
+
+<details>
+<summary>Answer</summary>
+
+It should usually be set as an ID variable. Even though the values are numbers, they are labels used to identify participants, not quantities that should be analyzed with means or standard deviations.
+
+</details>
+:::
+
+## Save Before You Go Further
+
+Once you have opened the dataset and checked the setup, save the file as a jamovi file (`.omv`). This saves the data, analyses, output, and settings together. If you later transform variables, compute scale scores, or run descriptives, those steps will stay with the file.
+
+I recommend saving after every major step. It is much easier to recover from a mistake if you have saved your work along the way.
+
+::: {.callout-warning title="Keep Your Original Data"}
+Whenever possible, keep your original variables and create new cleaned, transformed, or computed variables.
+
+For example, if you need to recode a text variable into numbers, do not simply replace the original text variable. Create a new variable with a clear name. That way, you can always go back and check what you did.
+
+A good rule: your cleaned dataset should make your work easier to understand, not harder to retrace.
+:::

@@ -1,0 +1,73 @@
+# 8.5 Putting It All Together {.unnumbered}
+
+BEAN helps us understand that hypothesis testing is not just about whether *p* is less than .05.
+
+The four pieces work together:
+
+- **B**eta/power: How likely are we to detect an effect if it exists?
+- **E**ffect size: How large or meaningful is the effect?
+- **A**lpha: How strict is our threshold for rejecting the null hypothesis?
+- **N**: How much data do we have or need?
+
+## Quick Reference
+
+| BEAN component | Main question | Key idea |
+|---|---|---|
+| Beta / Power | How likely are we to detect an effect? | Higher power reduces Type II errors. |
+| Effect size | How large is the effect? | Larger effects are easier to detect. |
+| Alpha | How strict is our decision threshold? | Lower alpha reduces Type I errors but can reduce power. |
+| N | How much data do we have? | Larger samples usually increase power. |
+
+## Common Tradeoffs
+
+| If this changes... | What usually happens? |
+|---|---|
+| Effect size increases | Power increases |
+| Effect size decreases | Power decreases |
+| Sample size increases | Power increases |
+| Sample size decreases | Power decreases |
+| Alpha decreases | Type I error risk decreases, but power also decreases |
+| Desired power increases | Required sample size increases |
+| Smallest effect size of interest decreases | Required sample size increases |
+
+These relationships are the reason power analysis matters. It helps us think through whether a study is designed well enough to answer the research question.
+
+## Common Mistakes
+
+### Mistake 1: Treating statistical significance as practical importance
+
+A statistically significant result is not automatically meaningful. Always ask how large the effect is and whether it matters in context.
+
+### Mistake 2: Treating non-significance as proof of no effect
+
+A non-significant result does not prove the null hypothesis. The study may have had low power, a small sample, noisy measurement, or an effect smaller than the study could detect.
+
+### Mistake 3: Using .05 without thinking
+
+In this course, we often use α = .05 for consistency. In real research, alpha should be considered in relation to the consequences of Type I and Type II errors.
+
+### Mistake 4: Copying power-analysis output without interpreting it
+
+Power analysis is not only a number-generating exercise. You need to understand what was entered, what was solved for, and what the result means for the research question.
+
+## Applied Practice
+
+A researcher is planning a study with an independent-samples *t*-test. They expect a small effect, want 90% power, and plan to use α = .01.
+
+1. Will the required sample size likely be larger or smaller than if they expected a large effect?
+2. Will the required sample size likely be larger or smaller than if they wanted 80% power?
+3. Will the required sample size likely be larger or smaller than if they used α = .05?
+4. Why might the researcher still choose 90% power and α = .01?
+
+::: {.callout-note collapse="true" title="Suggested Answers"}
+1. Larger. Small effects are harder to detect, so they require larger samples.
+2. Larger. Higher desired power requires a larger sample.
+3. Larger. A stricter alpha level makes it harder to reject the null hypothesis, so more data are usually needed to maintain power.
+4. The researcher may be especially concerned about false positives and false negatives. For example, if the study has important policy, clinical, educational, or financial consequences, the researcher may want stronger evidence and a better chance of detecting an effect if it exists.
+:::
+
+## Looking Ahead
+
+Chapter 7 introduced the logic of hypothesis testing. Chapter 8 helped us understand the tradeoffs behind that logic.
+
+Next, we will focus on choosing the correct inferential test and checking assumptions. That is where the general logic of hypothesis testing starts becoming more test-specific.

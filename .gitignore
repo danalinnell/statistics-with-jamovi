@@ -4,3 +4,10 @@
 .httr-oauth
 .DS_Store
 .quarto
+.RData
+.Rhistory
+.Rproj.user
+.DS_Store
+.quarto
+/.quarto/
+**/*.quarto_ipynb

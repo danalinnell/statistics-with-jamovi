@@ -1,0 +1,44 @@
+# 10. Writing Results in APA Style {.unnumbered}
+
+In this chapter, we focus on how to write up statistical results clearly in APA style.
+
+Writing statistical results can feel awkward at first because you are doing two things at the same time. You are reporting very specific statistical information, and you are also telling the reader what the results mean. Both matter. A technically correct sentence that no one can understand is not very helpful, but a clear sentence that leaves out important statistical information is also incomplete.
+
+This chapter is meant to be a **practical starting point**, not a complete replacement for the APA Publication Manual or the APA Style website. We will focus on the kinds of writing decisions you will make most often in this course: how to describe your research question, report descriptive statistics, report inferential statistics, interpret the result, and decide whether a table or figure would help.
+
+For additional support, use:
+
+- The [APA Style website](https://apastyle.apa.org/)
+- The [APA Style guidance for numbers and statistics](https://apastyle.apa.org/style-grammar-guidelines/numbers-statistics)
+- The [APA Style guidance for tables and figures](https://apastyle.apa.org/style-grammar-guidelines/tables-figures)
+- The APA Publication Manual, especially the sections on results, tables, figures, numbers, and statistics
+
+::: {.callout-note title="Use This Chapter as a Starting Point"}
+This chapter gives you a practical framework for writing statistical results. It does not replace the APA Style website, the APA Manual, your instructor's feedback, or journal-specific reporting expectations.
+
+In other words: use this chapter to get started, then use APA resources and feedback to refine your writing.
+:::
+
+::: {.callout-note title="For Dana's Students"}
+In my courses, you will get repeated practice writing statistical results. I do not expect the first write-up to be perfect. I do expect you to use feedback, revise carefully, and keep improving.
+
+A good goal is not to memorize one perfect sentence. A better goal is to understand what information needs to be included and how to communicate it clearly.
+:::
+
+## What This Chapter Will Help You Do
+
+By the end of this chapter, you should be able to:
+
+1. Identify the four major components of a statistical results write-up.
+2. Use templates to draft APA-style results for common statistical tests.
+3. Decide when results should be written in text, presented in a table, shown in a figure, or some combination of those.
+4. Recognize common formatting and interpretation errors.
+5. Revise weak results write-ups into clearer, more complete APA-style writing.
+
+## Where This Fits in the Textbook
+
+This chapter builds directly on the previous inferential statistics chapters. In [Chapter 7](07.0-hypothesis-testing.qmd), you learned the logic of hypothesis testing. In [Chapter 8](08.0-bean.qmd), you learned about effect size, alpha, p-values, power, and sample size. In [Chapter 9](09.0-inferential-statistics.qmd), you learned how to choose the correct test and check assumptions.
+
+Now we are asking: once you have done all that work, how do you explain what you found?
+
+That is what this chapter is about.

@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.35">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>14.2 Regression – Stats with jamovi</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./14.3-general-linear-model.html" rel="next">
+<link href="./14.1-correlation.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14.0-correlation-regression.html">14. Correlation and Regression</a></li><li class="breadcrumb-item"><a href="./14.2-regression.html">14.2 Regression</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Stats with jamovi</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Statistics With jamovi</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.1 How to Use This Book</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.1-about-this-book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.2 About This Book</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02.0-statistics-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Statistics Foundations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.1-describing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.1 Describing Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.2-types-of-variables-levels-of-measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.2 Types of Variables and Levels of Measurement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.3-descriptive-vs-inferential-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.3 Descriptive vs.&nbsp;Inferential Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.4-understanding-distributions-variability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.4 Understanding Distributions and Variability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.5-research-design-terms-youll-see-again.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.5 Research Design Terms You’ll See Again</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.6-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.6 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03.0-overview-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Getting Started With jamovi</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.1-what-is-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.1 What Is jamovi?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.2-installing-updating-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.2 Installing and Updating jamovi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.3-opening-saving-annotating-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.3 Opening, Saving, and Annotating Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.4-navigating-the-jamovi-interface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.4 Navigating the jamovi Interface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.5-checking-variable-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.5 Checking Variable Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.6-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.6 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04.0-cleaning-and-preparing-data-in-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Cleaning and Preparing Data in jamovi</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.1-checking-your-data-before-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.1 Checking Your Data Before Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.2-fixing-incorrect-variable-types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.2 Fixing Incorrect Variable Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.3-working-with-missing-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.3 Working With Missing Values</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.4-recoding-and-transforming-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.4 Recoding and Transforming Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.5-reverse-scoring-items.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.5 Reverse Scoring Items</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.6-creating-scale-scores-composite-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.6 Creating Scale Scores and Composite Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.7-checking-your-work.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.7 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./05.0-describing-data-in-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Describing Data in jamovi</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.1-checking-variable-setup-before-describing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.1 Checking Variable Setup Before Describing Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.2-describing-categorical-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.2 Describing Categorical Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.3-describing-continuous-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.3 Describing Continuous Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.4-describing-continuous-variables-across-groups.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.4 Describing Continuous Variables Across Groups</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.5-choosing-and-writing-descriptive-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.5 Choosing and Writing Descriptive Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.6-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.6 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./06.0-visualizing-data-in-jamovi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Visualizing Data in jamovi</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.1-why-visualize-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.1 Why Visualize Data?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.2-choosing-the-right-graph.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.2 Choosing the Right Graph</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.3-visualizing-continuous-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Visualizing Continuous Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.4-visualizing-categorical-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.4 Visualizing Categorical Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.5-visualizing-continuous-variables-across-groups.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.5 Visualizing Continuous Variables Across Groups</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.6-expanding-your-data-visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.6 Expanding Your Data Visualization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.7-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.7 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./07.0-hypothesis-testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Hypothesis Testing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.1-step-1-look-at-the-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.1 Step 1: Look at the Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.2-step-2-check-assumptions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.2 Step 2: Check Assumptions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.3-step-3-perform-the-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.3 Step 3: Perform the Test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.4-step-4-interpret-the-results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.4 Step 4: Interpret the Results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./08.0-bean.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. BEAN</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.1 Effect Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.2-alpha-and-p-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.2 Alpha and p-values</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.3-power.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.3 Power</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.4-sample-size-and-power-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.4 Sample Size</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./09.0-inferential-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Inferential Statistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09.1-choosing-the-correct-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9.1 Choosing the Correct Test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09.2-parametric-assumptions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9.2 Parametric Assumptions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09.3-violated-assumptions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9.3 Violated Assumptions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./10.0-writing-results-in-apa-style.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Writing Results in APA Style</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.1-components-of-writing-statistical-results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.1 Components of Writing Statistical Results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.2-examples-of-apa-style-results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.2 Examples of APA-Style Results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.3-tables-and-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.3 Tables and Figures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.4-common-apa-style-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.4 Common APA-Style Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10.5 Putting It All Together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./11.0-chi-square.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Chi-Square</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11.1-chi-square-goodness-of-fit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11.1 Chi-Square Goodness-of-Fit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11.2-chi-square-test-of-independence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11.2 Chi-Square Test of Independence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11.3-mcnemars-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11.3 McNemar’s Test</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./12.0-t-tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. t-Tests</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12.1-one-sample-t-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12.1 One-Sample t-Test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12.2-independent-t-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12.2 Independent t-Test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12.3-dependent-t-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12.3 Dependent t-Test</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./13.0-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. ANOVA</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13.1-one-way-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13.1 One-Way ANOVA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13.2 Finding Group Differences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13.3-repeated-measures-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13.3 Repeated Measures ANOVA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13.4-factorial-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13.4 Factorial ANOVA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13.5-ancova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13.5 ANCOVA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./14.0-correlation-regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Correlation and Regression</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.1-correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.1 Correlation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.2-regression.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">14.2 Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.3-general-linear-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.3 General Linear Model</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./15.0-reliability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Reliability</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15.1-threats-to-reliability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15.1 Threats to Reliability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15.2-measuring-reliability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15.2 Measuring Reliability</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./16.0-validity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Validity</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16.1-threats-to-construct-validity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16.1 Threats to Construct Validity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16.2-threats-to-statistical-validity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16.2 Threats to Statistical Validity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16.3-threats-to-external-validity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16.3 Threats to External Validity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16.4-threats-to-internal-validity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16.4 Threats to Internal Validity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#understanding-regression" id="toc-understanding-regression" class="nav-link active" data-scroll-target="#understanding-regression">Understanding Regression</a></li>
+  <li><a href="#step-1-look-at-the-data" id="toc-step-1-look-at-the-data" class="nav-link" data-scroll-target="#step-1-look-at-the-data">Step 1: Look at the Data</a></li>
+  <li><a href="#step-2-check-assumptions" id="toc-step-2-check-assumptions" class="nav-link" data-scroll-target="#step-2-check-assumptions">Step 2: Check Assumptions</a></li>
+  <li><a href="#step-3-perform-the-test" id="toc-step-3-perform-the-test" class="nav-link" data-scroll-target="#step-3-perform-the-test">Step 3: Perform the Test</a></li>
+  <li><a href="#step-4-interpret-results" id="toc-step-4-interpret-results" class="nav-link" data-scroll-target="#step-4-interpret-results">Step 4: Interpret Results</a></li>
+  <li><a href="#categorical-predictors" id="toc-categorical-predictors" class="nav-link" data-scroll-target="#categorical-predictors">Categorical Predictors</a></li>
+  <li><a href="#hierarchical-regression" id="toc-hierarchical-regression" class="nav-link" data-scroll-target="#hierarchical-regression">Hierarchical Regression</a></li>
+  <li><a href="#additional-practice" id="toc-additional-practice" class="nav-link" data-scroll-target="#additional-practice">Additional Practice</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14.0-correlation-regression.html">14. Correlation and Regression</a></li><li class="breadcrumb-item"><a href="./14.2-regression.html">14.2 Regression</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">14.2 Regression</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Regression can examine multiple predictor variables simultaneously. Whereas the factorial ANOVA can only handle categorical variables (i.e., nominal or ordinal), regression can handle all types of predictor variables including both categorical and continuous IVs. However, for the purpose of what we are learning, the outcome variable must be continuous (a logistic, multinomial, or ordinal regression can be used for categorical DVs).</p>
+<p>There are three types of regression in general:</p>
+<ol type="1">
+<li><p><u>Linear regression</u>: this looks at the effect of a single predictor (IV) on a single outcome (DV). This is equivalent to a t-test (dichotomous predictor), one-way ANOVA (ordinal predictor), or correlation (scale predictor).</p></li>
+<li><p><u>Multiple regression</u>: this looks at the effect of multiple predictors (IVs) on a single outcome (DV).</p></li>
+<li><p><u>Hierarchical regression</u>: this looks at the effect of multiple predictors (IVs) on a single outcome (DV), but there are multiple “blocks” or “steps” so that you can check the added predictability of new variables.</p></li>
+</ol>
+<p>Note that the linear regression is actually equivalent to a lot of the statistics we’ve learned. For example, the linear regression will produce the same results as a t-test when we have a dichotomous predictor, a one-way ANOVA when we have an ordinal predictor, and a correlation when we have a continuous predictor. We’ll learn more about this at the end of the textbook when we wrap everything up.</p>
+<section id="understanding-regression" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-regression">Understanding Regression</h2>
+<p>A linear regression model is basically a linear line, which many of us learned as y = mx + b, where y is our predicted outcome score, x is the IV, b is the intercept (the score in y when x = 0), and m is the slope (when you increase x-value by 1 unit, the y-value goes up by m units).</p>
+<p>Let’s imagine we have a dataset of dragons with a categorical predictor (whether they are spotted or striped) and a continuous predictor (height) and a continuous dependent variable (weight). We want to use this dataset to be able to predict the weight of future dragons. First, let’s learn how to interpret the coefficients for our two predictor variables (images from <a href="https://github.com/allisonhorst/stats-illustrations#multiple-linear-regression-dragons-thread">Allison Horst</a>).</p>
+<p>A bunch of dragons’ data were collected, and found the following linear regression equation: <code>weight = 2.4 + .6(spotted) + .3(height)</code> based on all the data. This is very similar to the algebraic equations you’ve learned in math classes: 2.4 is the constant (i.e., the average weight, in tons, for dragons that are not spotted and have a height of 0). .6 is the coefficient for spotted such that spotted dragons tend to be, on average, .6 times heavier than non-spotted dragons. On the other hand, .3 is the coefficient for height such that the taller dragons are, the heavier they tend to weigh.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/13-regression/dragon_categorical.png" class="img-fluid figure-img" style="width:49.0%"></p>
+<figcaption>Regression lines and residuals</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/13-regression/dragons_continuous.png" class="img-fluid figure-img" style="width:49.0%"></p>
+<figcaption>Regression lines and residuals</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We determine our line equation from the scatterplot of scores by figuring out the line that fits closest to all data points. The regression line is the line with the <em>smallest</em> residuals between the line and data points.</p>
+<p>Let’s visualize the regression line for how Dan’s sleepiness affects Dan’s grumpiness. On the left, we see the regression line (in purple) is very close to the data points and the residuals (the grey lines between the purple line and the data points) are smaller. On the right, we see the regression line is far from a lot of the data points and the residuals are larger.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/13-regression/good-regression-line.jpg" class="img-fluid figure-img" style="width:49.0%"></p>
+<figcaption>Regression lines and residuals</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/13-regression/bad-regression-line.jpg" class="img-fluid figure-img" style="width:49.0%"></p>
+<figcaption>Regression lines and residuals</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Let’s go back to our dragon example and input one of our dragons into the model to find out how residuals work. On the left, based on our dataset and the fact that our dragon is striped (spotted = 0) and has a height of 5.1 feet, we would expect our dragon to weigh 3.9 tons. However, when we actually weigh him, he weighs 4.2 tons! Therefore, the residual in this case would be .3 tons.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/13-regression/dragon_predict_mlr.png" class="img-fluid figure-img" style="width:49.0%"></p>
+<figcaption>Regression lines and residuals</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/13-regression/dragon_residual.png" class="img-fluid figure-img" style="width:49.0%"></p>
+<figcaption>Regression lines and residuals</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>One of our assumption checks is that our residuals are normally distributed, so we would take all our residuals and examine those for normality.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/13-regression/dragon_residual_distribution.png" class="img-fluid figure-img" style="width:49.0%"></p>
+<figcaption>Regression lines and residuals</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>There is more math to regression, which is needed to calculate the <em>F</em>-test you get for the overall model test and the t-tests you get for your model coefficients, but we won’t get into that detail.</p>
+</section>
+<section id="step-1-look-at-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-look-at-the-data">Step 1: Look at the Data</h2>
+<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open <code>parenthood</code>. This dataset includes the sleep quality of both Dan and Dan’s baby, Dan’s grumpiness, and the day of the data collection from 1-100.</p>
+<p>We’ll be testing how both Dan’s and Dan’s baby’s quality of sleep affect Dan’s grumpiness.</p>
+<p>Here’s a video walking through the regression.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/SfubvsatkdA" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+<section id="data-set-up" class="level3">
+<h3 class="anchored" data-anchor-id="data-set-up">Data Set-Up</h3>
+<p>Our data set-up for regression depends on the type of regression and type of data, but in general we’ll have one column of our continuous DV and one or more columns of our IV(s).</p>
+<p>For this chapter, we’re going to return to the <code>parenthood</code> dataset from lsj-data. Remember that this dataset includes the sleep quality of both Dan and Dan’s baby, Dan’s grumpiness, and the day of the data collection from 1-100.</p>
+<p><img src="images/08-correlation/correlation-data.png" class="img-fluid"></p>
+</section>
+<section id="describe-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="describe-the-data">Describe the Data</h3>
+<p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. We can see first that we have 100 cases and no missing data. The means, medians, standard deviations, and variances are then shown, followed by the minimum and maximum values.</p>
+<p>We also see skew and kurtosis. Calculating the <em>z</em>-score for all the skew and kurtosis (remember: skew or kurtosis divided by its standard error) suggests we do not violate the assumption of normality much except for <code>day</code>. However, notice what the variable <code>day</code> is! It’s just the day of the study, from 1-100. If you look at the graph, it has a <em>uniform distribution</em> (completely flat and uniform) not a normal distribution (bell curve)!</p>
+<p><img src="images/08-correlation/correlation-descriptives.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="step-2-check-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-check-assumptions">Step 2: Check Assumptions</h2>
+<p>The regression has a lot of assumptions.</p>
+<p>Some require no testing and are a function of understanding your data and research design:</p>
+<ol type="1">
+<li><p><strong>Variable types</strong>: The DV is continuous and the IVs are either continuous, dichotomous, or ordinal.</p></li>
+<li><p><strong>Independence</strong>: All the outcome variable values are independent (e.g., come from a separate entity).</p></li>
+</ol>
+<p>Other assumptions require testing. We’ll go through each of these one at a time.</p>
+<section id="no-outliers" class="level3">
+<h3 class="anchored" data-anchor-id="no-outliers">No Outliers</h3>
+<p>There shouldn’t be any data in the dataset that is an outlier which would strongly influence your results.</p>
+<p>Under Data Summary, you should have a table with Cook’s distance. This is one way we can check for <em>multivariate outliers</em>. This examines whether any one <em>line</em> of data is an outlier, not just one data <em>point</em>. In general, Cook’s distances greater than 1 indicate a multivariate outlier. Our Cook’s distances are very small, so we do not have a problem with outliers.</p>
+<p><img src="images/13-regression/regression-cooks.png" class="img-fluid"></p>
+<p>If you violate this assumption and have one or more multivariate outliers, then go to the Save tab in your regression setup and select the box for Cook’s distance. That will create a new variable in your dataset with the Cook’s distance. Create a filter and remove any data that has a Cook’s distance greater than 1.</p>
+</section>
+<section id="normality-of-the-residuals" class="level3">
+<h3 class="anchored" data-anchor-id="normality-of-the-residuals">Normality of the Residuals</h3>
+<p>Up to this point, we’ve examined the normality of the outcome variables. With regression, our variables can be non-normal as long as the residuals (i.e., error) are normally distributed.</p>
+<p>The regression analysis in jamovi allows us to check multivariate normality with the Shapiro-Wilk’s test and the Q-Q plot of our residuals. We’ve seen this multiple times, so by now it should be well-ingrained that because Shapiro-Wilk’s is not statistically significant and our data points fall along the diagonal line that we satisfy the assumption of normally distributed residuals.</p>
+<p>Note that in large datasets, your Q-Q plot may look fine but your Shapiro-Wilk’s test may be statistically significant. In that case, you can likely assume your data is normally distributed. The Shapiro-Wilk’s test tends to say things are not normal with very small deviations from large datasets.</p>
+<p>If you violate the assumption of normality, you can try transformating one or more variables. For the purposes of our assignments, if you violate this assumption then just mention that it is violated and that you will proceed anyways.</p>
+<p><img src="images/13-regression/regression-normality.png" class="img-fluid"></p>
+</section>
+<section id="linearity-homoscedasticity" class="level3">
+<h3 class="anchored" data-anchor-id="linearity-homoscedasticity">Linearity &amp; Homoscedasticity</h3>
+<p><strong>Linearity</strong>: The assumption of linearity means relationship between each IV and DV is linear. Sometimes you may expect a curvilinear relationship between an IV and DV, in which case we square or cube the IV and use that variable as our predictor variable in the regression.</p>
+<p><strong>Homogeneity of variance (homoscedasticity)</strong>: The assumption of homoscedasticity means at each level of the predictor variables, the variance of the residual terms should be constant.</p>
+<p>To examine linearity and homoscedasticity we examine the Residuals Plots. You will get one plot of the overall model (Fitted) and one for each of your variables (DV and IV[s]). We only focus on the Fitted residuals, shown below. In these plots, we want our data to look like a random scattering of dots even dispersed around zero on the y-axis.</p>
+<p>We will not be learning non-normal or weighted least squares regression in this course, so if you violate one or both of these assumptions then mention which are violated and that you will proceed anyways.</p>
+<p><img src="images/13-regression/regression-residuals.png" class="img-fluid"></p>
+<p><strong>Linearity</strong>: If the data points seem to have a curve in the graph, then that suggests you have failed the assumption of linearity. Our data doesn’t seem to have any curve to it, so we satisfy the assumption of linearity.</p>
+<p>This image by <a href="https://statistics.laerd.com/spss-tutorials/pearsons-product-moment-correlation-using-spss-statistics.php">Laerd Statistics</a> shows what non-linear relationships might look like.</p>
+<p><img src="images/08-correlation/linear-non-linear.png" class="img-fluid"></p>
+<p><strong>Homoscedasticity</strong>: If the graph seems to funnel (e.g., widely dispersed on one end of the x-axis and narrowly dispersed on the other end), then that suggests you fail the assumption of homoscedasticity. Our data doesn’t seem to be wider at any point, so we satisfy the assumption of homoscedasticity.</p>
+<p>This image by <a href="https://clevertap.com/blog/a-brief-primer-on-linear-regression-part-ii/">CleverTap</a> shows what heteroscedasticity might look like.</p>
+<p><img src="images/08-correlation/homoscedasticity.png" class="img-fluid"></p>
+</section>
+<section id="independence-of-residuals" class="level3">
+<h3 class="anchored" data-anchor-id="independence-of-residuals">Independence of Residuals</h3>
+<p>This assumption means that for any two observations, the residual terms should be uncorrelated (or independent). Our errors must be normally distributed and uncorrelated.</p>
+<p>The Durbin-Watson test for autocorrelation tests for independence of residuals. We want the Durbin-Watson value to be as close to 2 as possible. Values less than 1 or greater than 3 are problematic and indicate we are violating this assumption. In our case, the DW test statistic is 2.12 and so very close to 2. Furthermore, they provide a p-value and the p-value is greater than .05 so the test statistic is not statistically significant, further supporting that we meet the assumption that our residuals are independent.</p>
+<p>If you violate this assumption, it’s likely a function of how your data was collected (e.g., a time effect or you have nested data). We won’t be covering what to do in these cases, but if you have nested data you may be interested in multilevel or hierarchical modeling (MLM/HLM).</p>
+<p><img src="images/13-regression/regression-durbinwatson.png" class="img-fluid"></p>
+</section>
+<section id="no-multicollinearity" class="level3">
+<h3 class="anchored" data-anchor-id="no-multicollinearity">No Multicollinearity</h3>
+<p>This assumption means there should be no perfect or near-perfect linear relationship between two or more of the predictors in your regression model. For example, you would not include “heigh_cm” and “heigh_in” in your model because they would be perfectly related to one another.</p>
+<p>Multicollinearity is a problem for three reasons:</p>
+<ol type="1">
+<li><strong>Untrustworthy <em>B</em>s</strong>: As multicollinearity increases, so do the standard errors of the <em>B</em> coefficient. We want smaller standard errors, so this is problematic.</li>
+<li><strong>Limits the size of R</strong>, and therefore the size of R<sup>2</sup>, and we want to have the largest R or R<sup>2</sup> possible, given our data.</li>
+<li><strong>Importance of predictors</strong>: When two predictors are highly correlated, it is very hard to determine which variable is more important than the other.</li>
+</ol>
+<p>Multicollinearity is simply that multiple variables are correlated. We can first just look for general <em>collinearity</em>, or the correlations between all our predictors, using the correlation matrix in jamovi. Any correlations greater than .8 or .9 are problematic. You would either need to drop one variable or combine them into a mean composite variable.</p>
+<p>However, to test for <em>multicollinearity</em>, we examine the VIF and Tolerance values. VIF is actually a transformation of Tolerance (Tolerance = 1/VIF and VIF = 1/Tolerance). In general, we want values 10 or lower, which corresponds to Tolerance values greater than .2.</p>
+<p>In our data, our VIF is 1.65 and Tolerance is .61, so we satisfy the assumption of no multicollinearity.</p>
+<p><img src="images/13-regression/regression-multicollinearity.png" class="img-fluid"></p>
+<p>Now that we met all the assumptions, we can interpret our results!</p>
+</section>
+</section>
+<section id="step-3-perform-the-test" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-perform-the-test">Step 3: Perform the Test</h2>
+<ol type="1">
+<li><p>From the ‘Analyses’ toolbar select ‘Regression’ - ‘Linear regression’. Note that we select this option regardless of whether we are performing a linear regression, multiple regression, or hierarchical regression.</p></li>
+<li><p>Move your dependent variable <code>dan.grump</code> into the Dependent Variable box and all your independent variables into either Covariates (if they are continuous variables) or Factors (if they are categorical variables). In this case, all our variables are continuous so move both <code>dan.sleep</code> and <code>baby.sleep</code> to the Covariates box.</p></li>
+<li><p>If you are performing a hierarchical regression, you will use the Model Builder drop-down menu. More information on hierarchical regression will be discussed later.</p></li>
+<li><p>If you have categorical predictors with more than two levels, you will use the Reference Levels drop-down menu to specify what you want your reference level to be and whether you want the intercept to be the reference level or the grand man. More information on categorical predictors will be discussed later.</p></li>
+<li><p>Under Assumption Checks, check <em>all</em> the boxes!</p></li>
+<li><p>Under Model Fit, select <code>R</code>, <code>R-squared</code>, <code>Adjusted R-squared</code>, and <code>F test</code>. The other options (AIC, BIC, RMSE) are more useful when we are comparing models and will be discussed later in the Hierarchical regression section.</p></li>
+<li><p>Under Model Coefficients, select <code>Standardized estimate</code>.</p></li>
+<li><p>Optionally, you can ask for plots and tables of the estimated marginal means.</p></li>
+</ol>
+<p>I’m not going to show the set-up figure here because there’s just too much to show.</p>
+</section>
+<section id="step-4-interpret-results" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-interpret-results">Step 4: Interpret Results</h2>
+<p><img src="images/13-regression/regression-results.png" class="img-fluid"></p>
+<p>The first table shows us our overall model results.</p>
+<p><strong>R, R-squared, and adjusted R-squared</strong>: We get our R and R-squared values (R-squared literally being R squared). Remember back to correlation: R-squared is the <em>proportion</em> of variance in the dependent variable that can be accounted for by the predictor(s). In this case, Dan and the baby’s sleep quality predict 82% of the variance in Dan’s grumpiness.</p>
+<p>However, more commonly we report the adjusted R-squared value, which adjusts the R-squared value based on the number of predictors in the model. Adding more predictors to the model will <em>always</em> cause R-squared to increase (or at least not decrease) so it’s important that we control for that using an adjustment. It’s interpreted basically the same, just adjusted for biases. I encourage you to use the adjusted R-squared, <em>especially</em> if you have lots of predictors in your model.</p>
+<p><strong>Overall Model Test</strong>: We also get an <em>F</em>-test for the overall model. If you want, you can get the full ANOVA test by selecting ANOVA test under Model Coefficients. This is how we know if the overall model is statistically significant. In our case, our <em>F</em>-test is statistically significant so we know that the set of predictors significantly predicts our dependent variable.</p>
+<p><strong>Model coefficients</strong>: Just like in ANOVA, we first examine if the model is significant (overall model test) and then look at individual factors, in this case being individual variables in our regression model. Each variable–our intercept and both independent variables–have an associated <em>t</em>-test. In this case, Dan’s sleep significantly predicts Dan’s grumpiness, but the baby’s sleep does not.</p>
+<p><strong>Standardized coefficients</strong>: We also asked for standardized estimates (Stand. Estimate), which we get in the last column of our model coefficients table. These are <em>standardized</em> so that we can compare them to other variables. They give us an idea of the <em>strength</em> of the relationship between that IV on the DV. Larger values = bigger effects. The standardized estimate is called Beta (<span class="math inline">\(\beta\)</span>) whereas the unstandardized estimate is just called that or B (the letter B, not Beta). We use the standardized estimates to compare the strength of the estimate to other IVs and we use unstandardized estimates to write our linear equations and predict the DV given values of the IV.</p>
+<p><strong><em>What about the intercept?</em></strong> You might be wondering what we do with the intercept. Typically, nothing. We only use it to create our equation so that we can predict Dan’s grumpiness based on Dan’s sleep and the baby’s sleep. For example, our equation from our data is such:</p>
+<p><span class="math inline">\(y = 125.97 - 8.95(dan.sleep) + .01(baby.sleep)\)</span></p>
+<p>If Dan’s sleep was 5 and baby’s sleep was 8, then we’d expect Dan’s grumpiness to be:</p>
+<p><span class="math inline">\(y = 125.97 - 8.95(5) + .01(8) = 125.97 - 44.75 + .08 = 81.3\)</span></p>
+<section id="write-up-the-results-in-apa-style" class="level3">
+<h3 class="anchored" data-anchor-id="write-up-the-results-in-apa-style">Write Up the Results in APA Style</h3>
+<p>We can write up our results in APA something like this:</p>
+<blockquote class="blockquote">
+<p>Dan collected data on how many hours of sleep Dan and Dan’s baby got, as well as Dan’s grumpiness, for 100 days. Dan tested how the hours of sleep both Dan and the baby got affected Dan’s grumpiness using a multiple regression. The combination of predictors were significantly related to Dan’s grumpiness, <em>F</em> (2, 97) = 215.24, <em>p</em> &lt; .001, adjusted <span class="math inline">\(R^2\)</span> = .81. The number of hours of sleep Dan got significantly predicted Dan’s grumpiness, <span class="math inline">\(\beta\)</span> = -.90, <em>t</em> (97)= -16.17, <em>SE</em> = .55, <em>p</em> &lt; .001. However, the number of hours of sleep the baby got did not significantly relate to Dan’s grumpiness, <span class="math inline">\(\beta\)</span> = 0.00, <em>t</em> (97)= .04, <em>SE</em> = .27, <em>p</em> = .969.</p>
+</blockquote>
+<p>Note that in many of these write-ups I did not include anything about assumption checking. I normally write up that information as part of my analytic plan in my methods section (e.g., “I checked for multivariate outliers using Cook’s distance.”). Included in this section, I explain what I will do if I do not meet various assumptions. Then, if I don’t meet the assumption in the results section I explain that I did not meet the assumption, explain the results if necessary, explain what I did, and then give the results. In this case, we met all the assumptions (that presumably I described in my methods section) and therefore went straight to the results.</p>
+</section>
+</section>
+<section id="categorical-predictors" class="level2">
+<h2 class="anchored" data-anchor-id="categorical-predictors">Categorical Predictors</h2>
+<p>Dummy coded variables (with values 0 or 1) are pretty easy to interpret in regression. If the Beta is positive, then the value of 1 would have a higher mean on the DV than the value of 0. If the Beta is negative, then the value of 0 would have a higher mean on the DV than the value of 1.</p>
+<p>However, if we have a nominal variable with more than two categories, then we need to dummy code the data to analyze in a regression. Fortunately, jamovi can do this automatically for us!</p>
+<p>The dataset we’re using doesn’t currently have a categorical variable, so I’m going to manually create one for demonstration purposes. I’m going to transform the <code>day</code> variable, which is the day of the data collection from 1 to 100, into a new variable that indicates whether the day is 1-32, 33-65, or 66-100, which is roughly 3 equal groups. You can see the transformation here:</p>
+<p><img src="images/13-regression/transform.png" class="img-fluid"></p>
+<p>Let’s add that to our regression model and just make it a simple multiple regression model. Three independent variables (<code>dan.sleep</code>, <code>baby.sleep</code>, and our new <code>day_3groups</code> variable) all in one block.</p>
+<p>Now we need to go to the Reference Levels drop-down menu. We have two options:</p>
+<ol type="1">
+<li><strong>Reference level (dummy coding)</strong>: We can have our intercept be the mean of our reference level group, meaning that if all other variables were set to 0 this is the mean of our dependent variable for that group. For example, if we set day = 1 to be our reference level, then the intercept is the value of Dan’s grumpiness when Dan’s sleep is 0 and baby’s sleep is 0 for the first 32 days. <em>This is the option I normally choose.</em></li>
+<li><strong>Grand mean (simple coding)</strong>: Alternatively, we can have our intercept be the grand mean, or the overall mean when all other variables were set to 0 and we ignored day. <em>I am not sure when I would use this option, to be honest</em>.</li>
+</ol>
+<p>The other option you have is what is considered your reference level. It will default to your first level in your dataset (in this case, day_3Groups = 1) but you can change to any other level in your variable. I set my reference level to be 1, the default, and I know that because the day variable compares both levels 2 and 3 to 1. Our intercept (126.02) then is the value of grumpiness if Dan and the baby slept 0 hours in the first 32 days of our data collection.</p>
+<p><img src="images/13-regression/regression-categorical.png" class="img-fluid"></p>
+<p>The first line of day - 3_Groups (2 – 1) is then the difference in Dan’s grumpiness between the second 1/3 of days (days 33-65) and the first 1/3 of days (days 1-32). It is not statistically significant, so there is no difference in Dan’s grumpiness between the first and second 1/3 of days. Because the estimate is negative, that indicates that the first 1/3 of days have a higher estimated mean of Dan’s grumpiness, but again it’s not statistically significant.</p>
+<p>The second line of day - 3_Groups (3 – 1) is the difference in Dan’s grumpiness between the third 1/3 of days (days 66-100) and the first 1/3 of days (days 1-32). It is not statistically significant, so there is no difference in Dan’s grumpiness between the first and third 1/3 of days, either.</p>
+<p>In this case, the Estimated Marginal Means can be very helpful for us to interpret the model coefficients. We can get the estimated marginal means of each group on the DV at the average levels of the other two variables.</p>
+<p><img src="images/13-regression/regression-categorical-EMM.png" class="img-fluid"></p>
+</section>
+<section id="hierarchical-regression" class="level2">
+<h2 class="anchored" data-anchor-id="hierarchical-regression">Hierarchical Regression</h2>
+<p>Hierarchical regression is exactly the same as multiple regression but now we have multiple models or blocks. You can specify hierarchical regression using the Model Builder drop-down menu in jamovi. Let’s try an example where we have <code>baby.sleep</code> as Block 1 and <code>dan.sleep</code> as Block 2. In addition, using the Model Fit drop-down menu you should check <code>AIC</code> and <code>BIC</code> in addition to the previously selected options. Your setup should look something like this:</p>
+<p><img src="images/13-regression/hierarchical-setup.png" class="img-fluid"></p>
+<p>Our model results now change. We now have two lines for the Model Fit Measures and a Model Comparisons table. In addition, under Model Specific Results, we have a drop-down menu to specify which model we want to examine.</p>
+<p><img src="images/13-regression/hierarchical-results.png" class="img-fluid"></p>
+<p>Let’s interpret. Our first model (with just <code>baby.sleep</code> is significant), <em>F</em> (1, 98) = 46.18, <em>p</em> &lt; .001, <em>adjusted</em> <span class="math inline">\(R^2\)</span> = .31. So is our second model (that has both <code>baby.sleep</code> and <code>dan.sleep</code>),&nbsp;<em>F</em> (2, 97) = 215.24, <em>p</em> &lt; .001, <em>adjusted</em> <span class="math inline">\(R^2\)</span> = .81. There was a significant improvement between model 1 and model 2, <span class="math inline">\(F_{change}\)</span> (1, 97) = 261.52, <em>p</em> &lt; .001, <span class="math inline">\(\Delta R^2\)</span> = .50. The significant improvement means that the predictors added to model 2 significantly predict our DV <em>above and beyond</em> the predictors in model 1.</p>
+<p>We might write-up these results as such:</p>
+<blockquote class="blockquote">
+<p>Dan collected data on how many hours of sleep Dan and Dan’s baby got, as well as Dan’s grumpiness, for 100 days. Dan tested how the hours of sleep both Dan and the baby got affected Dan’s grumpiness using hierarchical regression to find out how Dan’s sleep predicted Dan’s grumpiness above and beyond the baby’s sleep.</p>
+<p>First, the baby’s sleep significantly predicted Dan’s grumpiness<em>, F</em> (1, 98) = 46.18, <em>p</em> &lt; .001, <em>adjusted</em> <span class="math inline">\(R^2\)</span> = .31. As the baby’s hours of sleep increased, Dan’s grumpiness decreased, <em>t</em> (98) = -6.80, <em>SE</em> = .40, <em>p</em> &lt; .001, <span class="math inline">\(\beta\)</span> = -.57.</p>
+<p>A second model was tested that added Dan’s sleep. This model–comprised of both baby’s sleep and Dan’s sleep–significantly predicted Dan’s grumpiness, <em>F</em> (2, 97) = 215.24, <em>p</em> &lt; .001, <em>adjusted</em> <span class="math inline">\(R^2\)</span> = .81. There was a significant improvement between model 1 and model 2, <span class="math inline">\(F_{change}\)</span> (1, 97) = 261.52, <em>p</em> &lt; .001, <span class="math inline">\(\Delta R^2\)</span> = .50. In the second model, as Dan’s sleep increased, Dan’s grumpiness decreased, <em>t</em> (97) = -16.17, <em>SE</em> = .55, <em>p</em> &lt; .001, <span class="math inline">\(\beta\)</span> = -.90. However, the baby’s sleep did not significantly relate to Dan’s grumpiness when controlling for Dan’s sleep, <em>t</em> (97) = .04, <em>SE</em> = .27, <em>p</em> = .969, <span class="math inline">\(\beta\)</span> = .00.</p>
+</blockquote>
+</section>
+<section id="additional-practice" class="level2">
+<h2 class="anchored" data-anchor-id="additional-practice">Additional Practice</h2>
+<p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
+<p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
+<ol type="1">
+<li><p><strong>Perform a multiple regression examining how <code>English</code></strong>, <strong><code>Reading</code> and <code>Writing</code>, as well as <code>Gender</code> relate to the dependent variable <code>Math</code>.</strong></p>
+<ul>
+<li><p>Do you have any significant outliers?</p></li>
+<li><p>Are your residuals normally distributed?</p></li>
+<li><p>Do you satisfy the assumption of linearity and homoscedasticity of your residuals (just check the Fitted residual plot)?</p></li>
+<li><p>Do you meet the assumption of independent residuals?</p></li>
+<li><p>Do you meet the assumption of no multicollinearity?</p></li>
+<li><p>Can you perform a regression with this data?</p></li>
+<li><p>What is your adjusted R-squared, rounded to two decimal places?</p></li>
+<li><p>Is the overall model statistically significant?</p></li>
+<li><p>Is <code>English</code> statistically significant?</p></li>
+<li><p>Is <code>Reading</code> statistically significant?</p></li>
+<li><p>Is <code>Writing</code> statistically significant?</p></li>
+<li><p>Is <code>Gender</code> statistically significant?</p></li>
+<li><p>For <code>Gender</code>, do male (Gender = 0) or female (Gender = 1) students have higher math scores?</p></li>
+</ul></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./14.1-correlation.html" class="pagination-link" aria-label="14.1 Correlation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">14.1 Correlation</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./14.3-general-linear-model.html" class="pagination-link" aria-label="14.3 General Linear Model">
+        <span class="nav-page-text">14.3 General Linear Model</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

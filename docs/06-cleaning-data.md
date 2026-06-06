@@ -1,6 +1,39 @@
-# 6. Cleaning data
+# 6. Cleaning and preparing data in jamovi
 
-There are four basic types of cleaning we will be learning about: checking your data is setup correctly, computing new variables, transforming variables, and using filters.
+In previous chapters, we worked with data as if everything were clean, correctly coded, and ready for analysis. In practice, real datasets are often messier.
+
+Data may include:
+
+-   missing values
+-   incorrect or inconsistent coding
+-   outliers or unusual values
+-   variables set to the wrong type
+
+Before running statistical analyses, it is essential to **clean and prepare your data**.
+
+For example:
+
+-   A single incorrect value (e.g., 999) can drastically change the mean
+-   Inconsistent coding (e.g., “Yes”, “yes”, “Y”) can distort frequencies
+-   Incorrect variable types can lead to inappropriate analyses
+
+> **Good analysis depends on good data.**
+
+Data cleaning is also not a one-time step. It happens:
+
+-   when you first open your dataset
+-   before running analyses
+-   when results look unusual or unexpected
+
+This chapter introduces common data issues and shows how to address them in jamovi.
+
+By the end of this chapter, you should be able to:
+
+-   Identify common data problems
+-   Check and correct variable setup
+-   Handle missing or unusual values
+-   Create and modify variables
+-   Prepare a dataset for analysis
 
 The following [video](https://www.youtube.com/watch?v=BGOZtlHRv6k) walks through some of these data cleaning techniques.
 
@@ -14,181 +47,605 @@ The following [video](https://www.youtube.com/watch?v=BGOZtlHRv6k) walks through
 ```
 
 
-## 6.1 Data setup
+## 6.1 Data cleaning in jamovi
 
-As previously mentioned, it's really important to check that the data types and measurement types of your variables are correct. You should open the Setup (![](images/03-jamovi/menu-variable-edit.png){width="15"}) option under the Data tab to check.
+In jamovi, most data cleaning tasks rely on four key features:
 
-When you're in Setup, here's the things you should be doing for all variables:
+-   **Variable setup**: used when something is wrong with how a variable is defined
+-   **Transform**: used when changing existing values
+-   **Compute**: used when creating new variables
+-   **Filter**: used when selecting a subset of data
 
-1.  Make sure the variable name is meaningful to you. You may also want to change it to something that will appear nicely in your data visualizations or tables (e.g., don't write `Q35` but rather `BDI_Score`).
+Throughout this chapter, we will use these tools to address common data problems.
 
-2.  Add a description to your variable so you have more context. Maybe you write `Average score of all BDI items` for the description of your `BDI_Score` variable.
+Additionally, when working with a dataset, it can be helpful to follow a general process:
 
-3.  Check your measurement level (i.e., nominal, ordinal, continuous, ID) and data type (i.e., integer, decimal, text) are correct.
+1.  Check variable setup
+2.  Look for missing or unusual values
+3.  Check for inconsistent coding
+4.  Create or modify variables as needed
+5.  Filter data if necessary
 
-4.  Specify if there is a code for missing values. Make sure the code *does not* match the code you use for actual variables! For example, if I have a variable that ranges from 0-10, then I wouldn't use 9 as a code for missing values; instead, I might use 99 or -9.
-
-5.  Add labels to the categories in categorical variables. For example, the variable `Athlete` codes 0 for non-athlete and 1 for athlete. Rather than keeping just the 0 and 1, you can specify under Levels that 0 is non-athlete and 1 is athlete.
-
-## 6.2 Compute
-
-Sometimes you need to create new variables from your raw (meaning uncleaned) data. I recommend you watch this video by Alexander Swan on [computing variables in jamovi](https://youtu.be/_CqfI3eFqD4).
-
-Perhaps you collected data on a scale that has five items. Normally, we create an average score of all the five items and that new *computed* average score is what we use in our analyses.
-
-Let's open the Big 5 dataset built into jamovi. You can open this dataset by clicking the three horizontal lines on the top left of jamovi (the menu), choose Open, then select Data Library. In the main Data Library folder is a dataset called Big 5.
-
-This dataset has the scores on all five subscales of the Big Five personality test. Let's imagine we want the average score of the entire Big Five test.
-
-1.  Go to the Data tab in jamovi.
-
-2.  Click `Compute`. Note that jamovi will create a new variable directly after the column you have selected. If you want this variable to be at the end of your dataset, you should select the last column of the dataset and then click Compute.
-
-3.  Rename the computed variable to something meaningful (e.g., `Big5_Avg`)
-
-4.  Add in an informative description for your computed variable (e.g., `Mean score of the Big 5 personality traits`)
-
-5.  Click the $f_x$ (formula) button.
-
-    1.  Under Functions, find the function we are computing. In this case it is `Mean` but sometimes scales want us to use `Sum`. These are the two functions we will primarily use in this course.
-
-    2.  jamovi tells us more information about the particular formula function. In this case, it says `MEAN(*number1, number2, ..., ignore_missing=0, min_valid=0)`. Therefore, we need to specify the numbers we are calculating the mean for. The `ignore_missing` argument is defaulted to 0 (do not ignore missing values) but you could set it to 1 (ignore missing values). The `min_valid` argument is defaulted to 0 variables, but you could specify the minimum number of valid responses we want in order to calculate the function.
-
-    3.  Double click on the function `Mean` to enter it into the formula box. You should see `=MEAN()` now.
-
-    4.  Click inside the parentheses and double click the first variable of the Big 5. Then add a comma. Double click the second variable and add a comma. Repeat until you have all variables in the formula box.
-
-6.  When you are complete, click outside of the function box and it will automatically create your computed variable.
+You may revisit these steps multiple times as you work with your data. Data cleaning is not separate from analysis—it is part of the analysis process.
 
 ::: {.info data-latex=""}
-jamovi will often tell you if there is an error in your formula. For example, if you get the warning "Column `NAME` does not exist in the dataset" that means you entered something incorrect; typically, you either mispelled a variable or forgot to separate variables with commas.
+There is often no single “correct” way to clean data.\
+Instead, you must make decisions and justify them. This chapter will help you understand the rationale behind different decisions you may need to make.
 :::
 
-You can see what we need to do with this dataset below. There's actually no missing data, so the two additional arguments aren't necessary for us to worry about.
+### A messy dataset example
 
-![](images/03-jamovi/compute.png)
+To understand data cleaning, we will work with a dataset that contains several common issues. You can download the dataset here: student_study_data_messy.csv
 
-Note that this was creating an average score using the `MEAN()` function. Sometimes, psychological scales want you to create a total score using the `SUM()` function. jamovi also has a lot of other functions you may need to use in the future.
+Here's a preview of the dataset:
+
+| ID  | Age | Gender | StudyHours | Stress | Q1  | Q2  | Q3  | Group | Score |
+|-----|-----|--------|------------|--------|-----|-----|-----|-------|-------|
+| 1   | 19  | Female | 3.5        | 4      | 5   | 2   | 4   | A     | 85    |
+| 2   | 20  | male   | 4          | 3      | 4   | 1   | 5   | A     | 90    |
+| 3   | 200 | F      | 2          | 999    | 3   | 2   | 3   | B     | 70    |
+| 4   | 21  | Female | five       | 2      | 4   | 2   | 4   | B     | 88    |
+| 5   | 19  | Male   | 3          | NA     | 5   | 1   | 5   | A     | 92    |
+| 6   | 20  | female | 100        | 5      | 1   | 5   | 1   | A     | 60    |
+| 7   | 22  | Male   | 2.5        | 3      | 4   | 2   | 4   | C     | 75    |
+| 7   | 22  | Male   | 2.5        | 3      | 4   | 2   | 4   | C     | 75    |
+
+This dataset includes:
+
+-   inconsistent coding
+-   missing values
+-   incorrect values
+-   outliers
+-   variables stored incorrectly
+-   items that need to be combined into a scale
+
+As we move through this chapter, we will identify and fix these issues step by step.
+
+Our goal is to transform this dataset into one that is ready for analysis.
+
+## 6.2 Incorrect variable types
+
+### The problem
+
+Sometimes variables are stored incorrectly—for example, as text instead of numeric, or as continuous when they are categorical.
+
+### Why it matters
+
+-   jamovi may not allow you to run analyses
+-   You may run the wrong analysis
+-   Results may be misleading
+
+------------------------------------------------------------------------
+
+### How to fix it in jamovi
+
+1.  Click the **column name** (e.g., StudyHours)
+2.  In the left panel:
+    -   Set **Data Type** → Integer or Decimal
+    -   Set **Measure Type** → Continuous, Nominal, or Ordinal
+
+------------------------------------------------------------------------
+
+### Fix the messy dataset
+
+1.  Click **StudyHours**
+2.  Notice that it is set to **Text** (because of “five”)
+3.  Replace **"five" → 5** in the dataset. Note that jamovi will grey that cell, indicating it has been manually changed
+4.  Set:
+    -   Data Type → Decimal
+    -   Measure Type → Continuous
+
+------------------------------------------------------------------------
+
+### Check your understanding
+
+1.  Why did jamovi treat StudyHours as text?
+2.  What would happen if you did not fix this before analysis?
+
+::: {.callout-answer collapse="true"}
+1.  jamovi detected a non-numeric value (“five”), so it treated the entire column as text\
+2.  You would not be able to use StudyHours in most statistical analyses
+:::
+
+## 6.3 Missing values
+
+### The problem
+
+Missing data may appear as:
+
+-   blank cells
+-   “NA”
+-   special codes like 999
+
+### Why it matters
+
+-   Missing values may be treated as real data
+-   This can distort results
+
+------------------------------------------------------------------------
+
+### How to fix it in jamovi
+
+1.  Click the variable (e.g., Stress)
+2.  In the Data Variable panel, find **Missing values**
+3.  Enter the value (e.g., 999)
+
+------------------------------------------------------------------------
+
+### Example with the dataset
+
+1.  Click **Stress**
+2.  Notice:
+    -   One value = 999
+3.  Add **999** as a missing value
+
+------------------------------------------------------------------------
+
+### Check your understanding
+
+1.  What would happen if 999 were treated as a real value?
+
+::: {.callout-answer collapse="true"}
+1.  It would drastically increase the mean and variability. Results would be inaccurate and misleading.
+:::
+
+## 6.4 Data entry errors and outliers
+
+### The problem
+
+Datasets often contain unusual values. These can fall into two important categories:
+
+-   **Data entry errors** → values that are not possible (e.g., Age = 200)
+-   **Outliers** → values that are extreme but still possible (e.g., very high study hours)
+
+------------------------------------------------------------------------
+
+### Why it matters
+
+These two types of values should be handled differently:
+
+-   **Data entry errors**
+    -   are mistakes
+    -   should be corrected or treated as missing
+-   **Outliers**
+    -   may represent real observations
+    -   can strongly affect statistics like the mean and standard deviation
+
+If you treat these the same way, you risk either:
+
+-   keeping incorrect data, or
+-   removing meaningful data
+
+------------------------------------------------------------------------
+
+### A key principle
+
+> **Always investigate unusual values before deciding what to do with them.**
+
+If possible, go back to the **original data source** (e.g., survey, spreadsheet, or participant record):
+
+-   If it was a mistake → **correct it**
+-   If it cannot be verified → consider setting it as missing
+
+------------------------------------------------------------------------
+
+### How to identify unusual values in jamovi
+
+Sorting the data in ascending and descending order is perhaps the easiest way to identify unusual values; however, at this time, jamovi is not able to sort. As a workaround, you could open the dataset in Excel to sort data.
+
+Otherwise, you can use **descriptives** and **visualizations** to identify unusual values.
+
+1.  Go to **Analyses → Exploration → Descriptives**
+2.  Add the variable (e.g., StudyHours)
+3.  Under **Statistics** select:
+    -   Minimum
+    -   Maximum
+    -   Most extreme \_\_ values (e.g., 5)
+4.  Under **Plots**, select:
+    -   Boxplot (and select "Label outliers")
+    -   Histogram
+
+------------------------------------------------------------------------
+
+### How to handle data entry errors
+
+1.  Identify the incorrect value
+2.  If possible, verify the correct value
+3.  Fix it OR delete it (to make it missing)
+
+------------------------------------------------------------------------
+
+### How to handle outliers
+
+After identifying an outlier, you have several options:
+
+-   **Keep it** (if it is valid)
+-   **Remove it** (set to missing)
+-   **Winsorize the value** (see next section)
+
+------------------------------------------------------------------------
+
+### How to Winsorize in jamovi
+
+**Winsorizing** means replacing an extreme value with a less extreme value. This reduces the impact of outliers **without removing data entirely**.
+
+jamovi does not have a single “winsorize” button, but you can do this using **Transform**:
+
+1.  Click **Data → Transform**
+2.  Select the variable that will be transformed under Source variable (e.g., StudyHours)
+3.  Under "using transform" select "Create new transform..." and select "Edit..."
+4.  Name the transformation (e.g., "Winsorize StudyHours")
+5.  Add a recode condition:
+    -   if \$source \> 10, use 10
+    -   else use \$source
+
+This means:
+
+-   If StudyHours \> 10 → replace with 10
+-   Otherwise → keep original value
+
+------------------------------------------------------------------------
+
+### Example with the dataset
+
+-   **Age = 200**
+    -   This is a **data entry error**
+    -   Fix: delete or set to missing
+-   **StudyHours = 100**
+    -   This is likely an **outlier**
+    -   Options:
+        -   keep it
+        -   set to missing
+        -   winsorize (e.g., cap at 10 hours)
+
+------------------------------------------------------------------------
+
+### Check your understanding
+
+1.  Are age and StudyHours data entry errors or outliers, and what would you do next?
+
+2.  Why is it important to check the original data source before deleting a value?
+
+3.  What is one advantage of winsorizing compared to deleting outliers?
+
+::: {.callout-answer collapse="true"}
+1.  Age = 200 is Data entry error. Fix or set to missing. StudyHours = 100 is an Outlier. Investigate, then decide (keep, remove, or winsorize)
+
+2.  Because the value may be a correct observation that was entered incorrectly. If verified, it can be corrected instead of removed.
+
+3.  Winsorizing reduces the impact of extreme values while keeping the data in the dataset, preserving sample size.
+:::
+
+## 6.5 Reverse scoring
+
+### The problem
+
+In many surveys or psychological scales, some items are intentionally written in the opposite direction of the construct being measured.
+
+For example, imagine we are measuring stress:
+
+-   “I feel overwhelmed by my responsibilities” → higher scores = more stress
+-   “I feel calm and relaxed” → higher scores = less stress
+
+If both items are scored in the same direction (e.g., 1–5), they are not aligned:
+
+-   One item increases with stress
+-   The other decreases with stress
+
+**Reverse scoring** fixes this by flipping the scale so that all items point in the same direction.
+
+### Why it matters
+
+If you do not reverse-score items:
+
+-   Your scale scores will be incorrect
+-   Items will cancel each other out
+-   Your results will be misleading
+
+> Before combining items into a score, all items must be aligned in the same direction.
+
+------------------------------------------------------------------------
+
+### How do you know if an item needs to be reverse scored?
+
+There are a few ways to identify reverse-coded items:
+
+-   The survey or scale documentation explicitly tells you
+-   The wording of the item is opposite in meaning
+    -   e.g., “I feel stressed” vs. “I feel relaxed”
+-   The response pattern looks inconsistent with other items
+
+In practice, **you should always check your measure carefully before analysis**.
+
+------------------------------------------------------------------------
+
+### How reverse scoring works
+
+Reverse scoring flips the scale.
+
+For a 1–5 scale:
+
+| Original | Reversed |
+|----------|----------|
+| 1        | 5        |
+| 2        | 4        |
+| 3        | 3        |
+| 4        | 2        |
+| 5        | 1        |
+
+You can recode using the Transform feature in jamovi, specifying all original values and recoded values (e.g., if \$source == 1, use 5).
+
+You can also recode using the Compute feature in jamovi, specifying the formula:
+
+**New value = (max + min) − original value**
+
+For a 1–5 scale: - New = 6 − original
+
+I prefer to use the Transform feature, which I describe how to use in the next section.
+
+### How to fix it in jamovi
+
+1.  Click **Data → Transform**
+2.  Select the variable that will be transformed under Source variable (e.g., Q2)
+3.  Under "using transform" select "Create new transform..." and select "Edit..."
+4.  Name the transformation (e.g., "Reverse code Q2")
+5.  Add multiple recode condition:
+    -   if \$source == 1, use 5
+    -   if \$source == 2, use 4
+    -   if \$source == 3, use 3
+    -   if \$source == 4, use 2
+    -   if \$source == 5, use 1
+    -   else use \$source
+
+Note that you could have ignored the line "if 3, use 3" because the "else use" line would also suffice. I just liked to do it so I can see vertically on both lines that I have captured all possible values.
+
+------------------------------------------------------------------------
+
+### Example with the dataset
+
+In our dataset:
+
+-   Q1 and Q3 measure stress directly
+-   Q2 is worded in the opposite direction
+
+This means Q2 must be reversed before creating a scale score.
+
+Using the directions above, fix Q2 to be in the same direction as the other items.
+
+------------------------------------------------------------------------
+
+### Check your understanding
+
+1.  Why is reverse scoring necessary before creating a composite score?
+
+2.  How can you identify a reverse-coded item when working with a new dataset?
+
+::: {.callout-answer collapse="true"}
+1.  Because it measures the construct in the opposite direction, which would distort the overall score
+2.  By checking the wording of items and the scale documentation, and noticing if an item measures the opposite direction of the construct.
+:::
+
+## 6.6 Creating scale scores (composite variables)
+
+### The problem
+
+In many datasets, a single concept (like stress, motivation, or satisfaction) is measured using **multiple items** rather than a single question.
+
+For example:
+
+-   Q1, Q2, and Q3 may all measure stress
+-   Each item captures part of the construct
+
+However, most statistical analyses often require **one variable per construct**, not multiple separate items.
+
+------------------------------------------------------------------------
+
+### Why it matters
+
+If you analyze items separately:
+
+-   You are not fully representing the construct
+-   Your analysis becomes more complicated
+-   Your results are harder to interpret
+
+Creating a **composite score** allows you to:
+
+-   represent the construct more accurately
+-   simplify your analysis
+-   align with how psychological variables are typically measured
+
+> Most psychological constructs are measured using multiple items and analyzed as a single score.
+
+------------------------------------------------------------------------
+
+### Important: Before creating a score
+
+Before combining items, you must:
+
+-   Ensure all items are in the **same direction** (reverse-score if needed)
+-   Check for missing values
+-   Confirm items belong to the same construct
+
+------------------------------------------------------------------------
+
+### How to create a score in jamovi
+
+1.  Click **Data → Compute**
+2.  Enter the name of the new variable (e.g., StressScore)
+3.  In the formula box, type: MEAN(Q1, Q2, Q3)
+4.  Press Enter
+
+------------------------------------------------------------------------
+
+### Why use the mean (vs. sum)?
+
+Both the **mean** and the **sum** are commonly used to create composite scores, but the mean is often preferred for two key reasons:
+
+1.  The **mean keeps the scale consistent**
+
+-   For example, if items are on a 1–5 scale, the mean will also range from 1–5
+-   This makes interpretation more intuitive
+
+2.  The **mean handles missing data better**
+
+-   If a participant is missing one item, the mean can still be calculated using the available items, and it retains the same original scale
+-   With a sum, the total possible score decreases with each missing value, which can make participants with missing data appear artificially lower
+
+Because of this, the mean is often the better choice when working with real datasets that may include missing values.
+
+> In this textbook, we will typically use the **mean** when creating composite scores unless there is a specific reason to use the sum.
+
+------------------------------------------------------------------------
+
+### Example with the dataset
+
+In our dataset:
+
+-   Q1, Q2, Q3 measure stress
+-   Q2 has already been reverse-scored (see section 6.5)
+
+Now:
+
+1.  Click **Data → Compute**
+2.  Create **StressScore = MEAN(Q1, Q2, Q3)**
+
+You now have a single variable representing stress.
 
 ::: {.info data-latex=""}
-After computing a new variable, I always like to double check the work to make sure it's okay. I review to make sure if there is any missing data that it's appropriate (e.g., I specified min_valid=9 for a 10-item scale, so only people with at least 9 valid responses should have a mean calculated). If I'm doing other basic math, I also like to make sure that I specified it correctly by manually calculating a few rows myself. 
+If you select the formula button (fx), jamovi can give you more information about the particular formula function.
+
+In this case, it says `MEAN(*number1, number2, ..., ignore_missing=0, min_valid=0)`. Therefore, we need to specify the variables we are using to calculate the mean.
+
+The `ignore_missing` argument is defaulted to 0 (do not ignore missing values) but you could set it to 1 (ignore missing values).
+
+The `min_valid` argument is defaulted to 0 variables, but you could specify the minimum number of valid responses we want in order to calculate the function.
+
+You might set `ignore_missing` to 1 if you have missing values but still want to compute the mean for those observations, but specify `min_valid` to only compute means for observations with a certain number of non-missing data. I like to only compute means for cases with 80% or more data; for example, if there are 5 variables, then I would set `min_valid` to 4 since 4/5 is 80%. If an observation had missing values for 2 or more variables, they would not have a mean computed.
 :::
 
-If you'd like to learn more about computed variables in jamovi, [check out this jamovi blog post on the topic](https://blog.jamovi.org/2017/11/28/jamovi-formulas.html).
+------------------------------------------------------------------------
 
-## 6.3 Transform
+### Check your understanding
 
-Sometimes we want to take an existing variable and transform it in some way or we want to do a computation across multiple variables (e.g., reverse-score multiple items in a dataset).
+1.  Why is it better to analyze a composite score instead of individual items?
 
-I recommend you watch this video by Alexander Swan on [transforming variables in jamovi](https://youtu.be/-duFdGa11kw).
+2.  What would happen if you forgot to reverse-score Q2 before creating the score?
 
-If you want to learn more about transforming variables, [the jamovi blog has a great blog post on the topic](https://blog.jamovi.org/2018/10/23/transforming-variables.html).
+3.  When might you prefer using a sum instead of a mean?
 
-### Recoding
+::: {.callout-answer collapse="true"}
+1.  Because a composite score better represents the full construct and simplifies analysis.
 
-Sometimes variables need to be recoded. As one example, if you have a text variable with many options, sometimes you want to recode things into a new variable with fewer options. This might mean taking something with 9 categories and collapsing them down to 3 overarching categories. The benefit of transforming through recoding is that you retain the original variable with the 9 categories but you also now have the new variable with 3 categories.
+2.  The items would be misaligned, and the resulting score would be inaccurate or misleading.
 
-Let's return to the Big5 dataset and recode the Neuroticism scale into low, moderate, and high neuroticism. The scale ranges from 1-5, so I'm going to say that scores between 1-2.333 are low, 2.334 to 3.666 is moderate, and 3.667 to 5 is high.
-
-1.  Go to the Data tab in jamovi and select the variable that you want to be transformed in the dataset. In this case, ensure `Neuroticism` is selected.
-
-2.  Click `Transform`.
-
-3.  Rename the transformed variable to something meaningful. I typically try to write it in such a way that it retains the old variable name. For example, we can transform the `Neuroticism` variable into the newly transformed variable `Neuroticism_cat` where "cat" stands for category.
-
-4.  Ensure the correct Source variable is being used. The source variable is the variable that is being transformed; in this case it is `Neuroticism`.
-
-5.  Under using transform, select `Create New Transform...` from the drop-down menu. If you have already created the transformation (e.g., you are applying the same transformation to multiple variables) then you can select the transformation from the drop-down menu instead.
-
-Here's what it should look like prior to creating a new transformation:
-
-![](images/03-jamovi/transform1.png)
-
-6.  Rename the transformation to something meaningful. In this case we are categorizing into three categories so I might rename it `Categorize into 3 categories`
-
-7.  Add a description if you desire.
-
-8.  Specify the `Variable suffix`. This is what renames your transformed variable from something really annoying (e.g., Neuroticism - Categorize into 3 categories) into something succinct (e.g., Neuroticism_cat). In this case, the suffix would be `_cat`. This is particularly helpful if you are transforming multiple variables at once so they don't all have really long names.
-
-9.  Select `Add recode condition` for n-1 recodings you are doing. In this case, we have 3 categories so we only need to specify 2 (3-1=2).
-
-Your view should look something like this now:
-
-![](images/03-jamovi/transform3.png)
-
-10. We now need to specify the recode formulas. First, after the `if $source` statement we enter `< 2.334` and then in the `use` box we enter `'low'`. Note the usage of apostrophes (you can also use quotation marks) which tells jamovi this will be text data. If you don't wrap things in apostrophes and quotation marks, it will assume it is numeric information (of which you should be putting numbers containing 0-9)
-
-11. For the second `if $source` statement we enter `<3.667` and then specify to use `'mod'`.
-
-12. For the `else use` statement at the end, we enter `'high'` because we don't need to specify anything further. If it's not \<2.334 and not \<3.667 then its \>=3.667 which is all that's left in this particular data.
-
-13. Specify the correct `Measure type`. jamovi automatically guessed that the data was ordinal, but I like to specify it just to be sure. Enter `ordinal` for our particular data since low \< mod \< high.
-
-Your data should now look like this:
-
-![](images/03-jamovi/transform4.png)
-
-::: {.info data-latex=""}
-Just like with computing new variables, when transforming new variables I like to peruse the newly transformed variable to make sure it did what I expected. In this case I see that participant 35 has a Neuroticism score of 1.917 which was correctly coded as low whereas participant 40 has a Neuroticism score of 3.688 which was correctly coded as high. A quick perusall makes me feel confident that I did my transformation correctly!
+3.  When the total score itself is meaningful or required by a specific scale or measure.
 :::
 
-### Reverse-scoring
+## 6.7 Recoding and transforming variables
 
-Sometimes items need to be reverse-scored because the items are in the opposite direction of the rest of the items in the particular scale or subscale.
+### The problem
 
-Let's imagine we have a Happiness Scale with the following four items:
+Sometimes variables are not in a format that is useful for analysis.
 
-1.  I am happy.
-2.  I am content.
-3.  Life is overall positive.
-4.  I am unhappy.
+For example:
 
-The happiness scale suggests that higher scores is higher happiness. However, the fourth item is opposite such that a person scoring higher on that item actually indicate lower happiness. Therefore, we would need to transform that item to reverse-score it such that it's in the same direction of all the items.
+-   Categories may need to be simplified
+-   Values may need to be grouped
+-   Variables may need to be adjusted or redefined
 
-The way we do this is by recoding the levels so the highest score is the lowest score and so on. For example, if it were rated on a 5-point scale then you would need to recode so a 1 = 5, 2 = 4, 3 = 3, 4 = 2, and 5 = 1.
+------------------------------------------------------------------------
 
-::: {.info data-latex=""}
-Alternatively, instead of transforming you could use compute where the formula is the maximum value + 1 minus the value. For example, if you have a 5-point scale then you would do "6-variablename" in the computation box.
+### Why it matters
+
+If variables are not coded appropriately:
+
+-   Analyses may not match your research question
+-   Results may be difficult to interpret
+-   You may include unnecessary detail or noise
+
+Recoding allows you to:
+
+-   align your variables with your research question
+-   simplify interpretation
+-   prepare data for specific analyses
+
+------------------------------------------------------------------------
+
+### Types of transformations
+
+Common transformations include:
+
+-   **Recoding categories** (e.g., combining categories)
+-   **Changing values** (e.g., standardizing labels)
+-   **Applying rules** (e.g., grouping values into ranges)
+
+------------------------------------------------------------------------
+
+### How to recode in jamovi
+
+1.  Click **Data → Transform**
+2.  Select the variable that will be transformed under Source variable
+3.  Under "using transform" select "Create new transform..." and select "Edit..."
+4.  Name the transformation you are performing
+5.  Add multiple recode condition and apply the new rules you are recoding/transforming
+
+------------------------------------------------------------------------
+
+### Example with the dataset
+
+Suppose you want to simplify **Group** to combine B and C into one category.
+
+When applying the transformation, you would use the following recode conditions: - if \$source == "A", use "A" - if \$source == "B", use "B" - if \$source == "C", use "B"
+
+Now you have fewer categories for analysis.
+
+------------------------------------------------------------------------
+
+### Important consideration
+
+*Recoding can reduce information.*
+
+For example:
+
+-   Turning a continuous variable into categories loses detail
+-   Collapsing categories may hide meaningful differences
+
+Always ask: *Am I simplifying appropriately, or losing important information?*
+
+------------------------------------------------------------------------
+
+### Check your understanding
+
+1.  Why might you collapse categories in a variable?
+
+2.  What is one risk of recoding variables?
+
+3.  In our dataset, what happens if you combine Groups B and C?
+
+::: {.callout-answer collapse="true"}
+1.  To simplify analysis or align with a research question.
+
+2.  You may lose important information or detail in the data.
+
+3.  You reduce the number of groups, which may simplify analysis but may also hide differences between B and C.
 :::
 
-We can use the same recoding feature as before to do this. The only difference is that we are going to use the double equal sign `==` (R is a bit weird in that we use `==` to mean `=`). See the screenshot below to see how we are specifying that if the source variable equals the value, then use the reverse-scored value. We should add 4 recode conditions in this case and then have the final else use value for the 5th category.
+## 6.8 Putting it all together
 
-![](images/02-stats-foundations/reverse-score.png)
+In this chapter, you learned how to clean data:
 
-### Multiple transformations
+-   Fixed variable types
+-   Handled missing values
+-   Identified errors and outliers
+-   Reverse-scored items
+-   Created a composite score
+-   Removed duplicates
 
-Sometimes we want to do a transformation across multiple variables. Perhaps we have multiple items that need to be reverse-scored. Or maybe like in our first example above we want to use our previous `Low_mod_high` transformation to perform on *all* the subscales of the Big 5.
+These are not just steps—they are **data decisions**. These decisions will directly affect your results in later analyses (e.g., t-tests, correlations, regression).
 
-We can click a new variable (e.g., Openness), select Transform, rename the variable, and select the `Categorize into 3 categories` transformation we already used. Voila! The work we did previously can easily be used again in this analysis.
+Before moving forward, reflect:
 
-Alternatively, you can select all the variables at once that you want to transform and then specify the same transformation to be used across all four variables.
-
-## 6.4 Filter
-
-Sometimes we only want to analyze certain pieces of our data. We can filter by rows and by columns. [Check out this blog post by jamovi on more details of filters](https://blog.jamovi.org/2018/04/25/jamovi-filters.html).
-
-### Row filters
-
-Let's imagine we only want to analyze data from people who are low in neuroticism. We would create the following filter:
-
-![](images/03-jamovi/filter-row.png)
-
-You'll notice in the dataset it will add a new column named `Filter 1` (the name of the filter) and there will either be an X or a green check mark indicating whether it's removed (X) or kept (check) in the analyses.
-
-If you want to take off the filter, but keep it available, click on the filter column and toggle the green button on the top right from `active` to `inactive`. It will then grey out the column, meaning it's not being used.
-
-A couple things to note:
-
--   Commonly, we want to specify the variable equals something. You would use the double equal sign: `==`
-
--   Another common thing you may want to specify is that the variable is *not* equal to something. You would use the following: `!=`
-
--   Otherwise you should be familiar with the other operations from previous math courses: `<`, `>`, `<=`, `>=`
-
-### Column filters
-
-Column filters are useful when you want to use a filter for *some* but not all of your analyses. Rather than creating a filter, we need to compute a new variable using the `FILTER()` function.
-
-For example, we learned how to reverse score our hypothetical happiness item above. We could then say we only want people who are high in that variable for another analysis. We could apply a column filter that is `FILTER(Scale1_Reverse_Scored, Scale1_Reverse_Scored > 3)` .
-
-![](images/02-stats-foundations/column-filter.png)
+-   What changes did you make?
+-   Why did you make them?
+-   How might different decisions affect your results?
+-   How are you transparently communicating these changes and decisions in your reports to your audience?

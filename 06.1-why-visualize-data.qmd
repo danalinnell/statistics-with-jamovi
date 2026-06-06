@@ -1,0 +1,30 @@
+# 6.1 Why Visualize Data? {.unnumbered}
+
+“A picture is worth a thousand words,” and in research, figures and graphs can be incredibly useful. They help us see patterns that might be difficult to notice in a table.
+
+Visualizations can help you answer questions like:
+
+- What does the distribution look like?
+- Are values clustered or spread out?
+- Are there outliers?
+- Are there unexpected categories?
+- Do groups look similar or different?
+- Does something look wrong with the data?
+
+Remember: it is incredibly important to visualize your data. You never know what descriptive statistics may be hiding.
+
+## Graphs Can Reveal Problems
+
+Imagine two variables have the same mean and standard deviation. You might assume they look similar. But one could be normally distributed, another could be skewed, and another could have a few extreme outliers.
+
+The numbers are important, but they are not enough by themselves.
+
+## Graphs Support Interpretation
+
+Visualizations are also useful for communication. A well-chosen graph can help readers understand your data quickly. A poorly chosen graph can confuse readers or imply something the data do not support.
+
+The goal is not to make a graph because a graph is required. The goal is to choose a graph that helps you understand or communicate something meaningful about the data.
+
+::: {.callout-warning title="Common Mistake"}
+Do not choose a graph only because it looks nice. Choose a graph because it matches the variable type and helps answer the question you are asking.
+:::

@@ -1,0 +1,54 @@
+# 4.7 Putting It All Together {.unnumbered}
+
+Data preparation is one of the easiest places to make small mistakes. It is also one of the easiest places to catch mistakes if you slow down and check your work.
+
+Before moving on to descriptive statistics, take a few minutes to review the variables you created or changed.
+
+## A Data Preparation Checklist
+
+Use this checklist whenever you prepare data in jamovi.
+
+| Question | Why it matters |
+|---|---|
+| Did I save the file as an `.omv` file? | This preserves the data, analyses, output, and settings. |
+| Are variable names meaningful? | Clear names make later analyses easier to follow. |
+| Are data types correct? | Text, integer, and decimal variables behave differently. |
+| Are measure types correct? | Nominal, ordinal, continuous, and ID variables are used differently. |
+| Did I preserve the original variables? | Keeping originals makes it easier to check and fix mistakes. |
+| Did transformed variables recode correctly? | Recoding errors can affect every later analysis. |
+| Did computed variables fall in the expected range? | Out-of-range values usually mean the formula is wrong. |
+| Did I handle missing values intentionally? | Missing data can affect total and mean scores differently. |
+
+## Common Mistakes
+
+Here are some of the most common data preparation mistakes:
+
+- treating ID numbers as continuous variables
+- forgetting that text recoding is case-sensitive
+- computing a scale score before reverse-scoring needed items
+- using `MEAN()` when the scoring instructions require `SUM()`
+- using `SUM()` without thinking about missing data
+- overwriting original variables instead of creating new ones
+- forgetting to set the measure type of a transformed variable
+- assuming a new variable is correct without checking a few rows
+
+## Putting It All Together
+
+At this point, your data should be ready for description and visualization. In practice, though, data analysis is not perfectly linear. You might describe a variable, notice something strange, return to data cleaning, and then describe it again.
+
+That is normal. Good data analysis often involves moving back and forth between preparation, description, and visualization.
+
+::: {.callout-tip title="Check Your Understanding"}
+You compute a mean score from eight items rated from 1 to 5. The new mean score has values as high as 8.2. What does this tell you?
+
+<details>
+<summary>Answer</summary>
+
+Something is wrong. A mean score based on items ranging from 1 to 5 should also fall between 1 and 5. You should check the formula, the variables included, and whether the original item values were coded correctly.
+
+</details>
+:::
+
+## Looking Ahead
+
+Once your variables are set up correctly, cleaned, transformed, recoded, or computed, you are ready to describe them. That means checking sample size, missing values, frequencies, percentages, means, standard deviations, and other summaries that help you understand what is in the data.

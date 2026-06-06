@@ -1,0 +1,31 @@
+# 6.6 Expanding Your Data Visualization {.unnumbered}
+
+jamovi is useful for quick and clear exploratory graphs. For many assignments and early analyses, jamovi graphs are exactly what you need.
+
+As you continue working with data, you may eventually want more control over design, labels, colors, or layout. Many researchers create final publication or presentation figures using other tools, such as Excel, R, or specialized visualization software.
+
+Here is an example of a visualization created in Excel:
+
+![](images/02-stats-foundations/example3.png)
+
+Here is an example of a visualization created in R:
+
+![](images/02-stats-foundations/example4.png)
+
+The goal is not to learn every possible visualization tool right away. The goal is to understand what makes a graph useful:
+
+- it matches the data
+- it supports the research question
+- it is readable
+- it does not mislead
+- it helps the reader see something important
+
+## Keep Building Your Visualization Judgment
+
+At this point, focus on choosing graphs that match your variables. Later, you can worry more about aesthetics, publication-quality figures, and advanced customization.
+
+For now, ask yourself:
+
+> What do I want the graph to help me understand?
+
+That question will usually guide you toward a better visualization.

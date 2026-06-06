@@ -1,0 +1,350 @@
+alternative hypothesis: |
+  A hypothesis stating that there is an effect, difference, or relationship. In null hypothesis significance testing, evidence is evaluated against the null hypothesis rather than directly proving the alternative hypothesis.
+
+between-subjects design: |
+  A study design in which different people are in different conditions or groups. Each person contributes data to only one condition.
+
+binary variable: |
+  A nominal variable with two categories, such as yes/no, present/absent, or control/treatment.
+
+categorical variable: |
+  A variable whose values represent categories or groups rather than quantities. Nominal and ordinal variables are categorical variables.
+
+confounding variable: |
+  A variable that is related to both the independent variable and the dependent variable, creating an alternative explanation for a result.
+
+continuous variable: |
+  A variable whose values represent quantities or amounts. Continuous variables are often summarized with means and standard deviations.
+
+correlational research: |
+  Research that examines whether variables are related without manipulating variables or randomly assigning participants to conditions.
+
+covariate: |
+  A variable included in an analysis to help account for differences related to the outcome variable.
+
+dataset: |
+  A structured collection of data, often organized in rows and columns.
+
+dependent variable: |
+  The outcome variable in a study. It is the variable measured to see whether it differs, changes, or is related to another variable.
+
+descriptive statistics: |
+  Statistics used to summarize, organize, and describe the data in a sample.
+
+dichotomous variable: |
+  A variable with two categories. Dichotomous variables are also often called binary variables.
+
+distribution: |
+  The pattern of values for a variable, including which values are common, which are rare, and how values are spread out.
+
+experimental research: |
+  Research in which the researcher manipulates an independent variable and uses random assignment to place participants into conditions.
+
+grouping variable: |
+  A categorical variable that separates observations into groups for comparison.
+
+hypothesis: |
+  A prediction about the answer to a research question.
+
+independent variable: |
+  A variable expected to explain, predict, influence, or cause differences in another variable. In an experiment, it is the variable manipulated by the researcher.
+
+inferential statistics: |
+  Statistics used to make inferences from a sample to a larger population.
+
+interquartile range: |
+  The range of the middle 50% of values in a distribution, calculated as the distance between the first quartile and third quartile.
+
+interval variable: |
+  A continuous variable with equal spacing between values but no true zero point.
+
+kurtosis: |
+  A description of the tail behavior of a distribution relative to a normal distribution.
+
+mean: |
+  The arithmetic average, calculated by adding all values and dividing by the number of values.
+
+mean split: |
+  A way of turning a continuous variable into categories by splitting values above and below the mean. This removes information from the original variable.
+
+median: |
+  The middle value when values are ordered from lowest to highest.
+
+median split: |
+  A way of turning a continuous variable into categories by splitting values above and below the median. This removes information from the original variable.
+
+mode: |
+  The most frequently occurring value or category.
+
+nominal variable: |
+  A categorical variable with categories that do not have a meaningful order.
+
+normal distribution: |
+  A symmetric, bell-shaped distribution with values clustered around the center and fewer values farther from the center.
+
+null hypothesis: |
+  A hypothesis usually stating that there is no effect, no difference, or no relationship.
+
+observation: |
+  One unit in a dataset, such as one participant, case, trial, or response. Observations are usually represented by rows.
+
+ordinal variable: |
+  A categorical variable with categories that have a meaningful order, but not necessarily equal spacing between categories.
+
+outcome variable: |
+  The variable being predicted, explained, or measured as the outcome in a study.
+
+outlier: |
+  An unusually extreme value compared with the rest of the data.
+
+population: |
+  The larger group, set of people, cases, or observations that a researcher wants to understand.
+
+predictor variable: |
+  A variable used to predict or explain another variable.
+
+quasi-experimental research: |
+  Research that compares groups or conditions without random assignment.
+
+random assignment: |
+  A procedure in which participants are assigned to conditions by chance.
+
+range: |
+  The difference between the maximum and minimum value.
+
+ratio variable: |
+  A continuous variable with equal spacing between values and a true zero point.
+
+reliability: |
+  The consistency of a measure, such as consistency over time, across items, or across raters.
+
+repeated-measures design: |
+  A design in which the same people are measured multiple times, such as across conditions or time points.
+
+sample: |
+  The smaller group, set of people, cases, or observations from which data are collected.
+
+skew: |
+  Asymmetry in a distribution, where one tail is longer than the other.
+
+standard deviation: |
+  A measure of variability that describes how spread out values are around the mean, expressed in the original units of the variable.
+
+validity: |
+  The extent to which evidence supports the interpretation or use of a measure, result, or conclusion.
+
+variable: |
+  Anything measured, observed, manipulated, or recorded that can vary across observations.
+
+variance: |
+  A measure of variability based on squared deviations from the mean.
+
+within-subjects design: |
+  A study design in which the same people are measured in more than one condition or at more than one time point.
+
+R: |
+  A free programming language and software environment often used for statistical computing, data analysis, and data visualization.
+
+RStudio: |
+  An integrated development environment commonly used to write and run R code. RStudio is also often used to create Quarto documents and websites.
+
+analysis: |
+  A statistical procedure or set of steps used to summarize, compare, model, or interpret data.
+
+data type: |
+  The kind of values stored in a variable, such as integer, decimal, or text.
+
+integer: |
+  A whole number with no decimal places.
+
+decimal: |
+  A numeric value that can include decimal places.
+
+level: |
+  One category or value of a categorical variable, such as control and treatment.
+
+measure type: |
+  How jamovi understands a variable for analysis purposes, such as nominal, ordinal, continuous, or ID.
+
+missing value: |
+  A blank, code, or value indicating that data are missing, unavailable, skipped, or invalid.
+
+module: |
+  An add-on in jamovi that provides additional analyses, tools, or features.
+
+open-source software: |
+  Software whose source code is openly available and can be inspected, modified, and improved by a community of users and developers.
+
+output: |
+  The tables, statistics, graphs, or other results produced by an analysis.
+
+reproducibility: |
+  The ability to check, repeat, or recreate an analysis using the same data, steps, and settings.
+
+variable description: |
+  A longer note explaining what a variable represents, how it was measured, or how it should be interpreted.
+
+variable name: |
+  The short label used to identify a variable in a dataset.
+
+ID variable: |
+  A variable used to identify cases or observations, such as participant ID, rather than a variable usually analyzed statistically.
+
+jamovi: |
+  A free, open-source statistical software program that uses menus and output tables to help users analyze data.
+
+text: |
+  A data type containing words, labels, or other nonnumeric values.
+
+scale score: |
+  A score created by combining multiple items that are intended to measure the same construct, often using a total or average.
+
+composite variable: |
+  A new variable created by combining two or more variables, often to represent an overall scale or construct.
+
+reverse scoring: |
+  Recoding an item so that high values become low values and low values become high values, usually so all items in a scale point in the same direction.
+
+frequency: |
+  The number of observations in a category or value.
+
+percentage: |
+  A proportion expressed out of 100, often used to describe how much of a sample falls in a category.
+
+percentile: |
+  A value below which a certain percentage of observations fall.
+
+quartile: |
+  One of the values that divides ordered data into four equal parts.
+
+split by: |
+  A jamovi option that displays descriptives separately for each category of a grouping variable.
+
+bar plot: |
+  A graph that displays counts or percentages for categories.
+
+histogram: |
+  A graph that displays the distribution of a continuous variable by grouping values into intervals.
+
+density plot: |
+  A smoothed graph showing the shape of a continuous variable's distribution.
+
+box plot: |
+  A graph that summarizes a distribution using the median, quartiles, and possible outliers.
+
+violin plot: |
+  A graph that displays the shape or density of a continuous variable's distribution, often shown by group.
+
+jittered data: |
+  Individual data points displayed with slight horizontal or vertical movement so overlapping points are easier to see.
+
+mean marker: |
+  A visual indicator showing the mean value on a graph.
+
+Shapiro-Wilk test: |
+  A statistical test used to evaluate whether a variable differs from a normal distribution.
+
+alpha level: |
+  The threshold researchers set for deciding whether a result counts as statistically significant, often .05.
+
+directional hypothesis: |
+  A hypothesis that predicts the direction of an effect, difference, or relationship.
+
+effect size: |
+  A statistic that describes the size or strength of an effect, difference, or relationship.
+
+non-directional hypothesis: |
+  A hypothesis that predicts an effect, difference, or relationship but does not predict the direction.
+
+null hypothesis significance testing: |
+  A statistical decision-making framework that evaluates how surprising the data are assuming the null hypothesis is true.
+
+p-value: |
+  The probability of observing data as extreme as, or more extreme than, the observed data, assuming the null hypothesis is true.
+
+practical significance: |
+  The real-world or applied importance of an effect, beyond whether it is statistically significant.
+
+statistical assumption: |
+  A condition that should be reasonably met for a statistical test to work as intended.
+
+statistical power: |
+  The probability of detecting an effect if the effect really exists.
+
+statistical significance: |
+  A decision that a result is unlikely enough under the null hypothesis to reject the null hypothesis, based on the alpha level.
+
+Type I error: |
+  Rejecting the null hypothesis when the null hypothesis is actually true. This is also called a false positive.
+
+Type II error: |
+  Failing to reject the null hypothesis when the alternative hypothesis is actually true. This is also called a false negative.
+
+beta: |
+  The probability of making a Type II error, or failing to detect an effect when the alternative hypothesis is true.
+
+sample size: |
+  The number of observations or participants in a study.
+
+power analysis: |
+  A procedure used to estimate sample size, power, or detectable effect size based on the relationships among effect size, alpha, power, and sample size.
+
+a priori power analysis: |
+  A power analysis conducted before data collection to estimate the sample size needed for a planned study.
+
+sensitivity power analysis: |
+  A power analysis used to estimate the effect size that a study can reasonably detect given its sample size, alpha, and desired power.
+
+Type I error rate: |
+  The long-run probability of rejecting the null hypothesis when the null hypothesis is true.
+
+PAMLj: |
+  A jamovi module that includes tools for power analysis and related statistical procedures.
+
+parametric statistics: |
+  Statistical tests that make assumptions about the data, such as assumptions about normality, variance, or the scale of the dependent variable.
+
+non-parametric statistics: |
+  Statistical tests that generally make fewer assumptions about the shape of the distribution than parametric tests.
+
+homogeneity of variance: |
+  The assumption that the dependent variable has similar variability across groups.
+
+Levene's test: |
+  A statistical test used to evaluate whether variances are similar across groups.
+
+Q-Q plot: |
+  A plot that compares observed data to the pattern expected under a theoretical distribution, often used to assess normality.
+
+independence: |
+  The assumption that observations are not dependent on or linked to each other unless the statistical test accounts for that dependency.
+
+Welch's test: |
+  A version of a t-test or ANOVA that adjusts for unequal variances across groups.
+
+winsorizing: |
+  Replacing extreme values with less extreme values based on a rule.
+
+trimming: |
+  Removing or setting aside extreme values based on a rule.
+
+APA style: |
+  A set of writing and formatting guidelines from the American Psychological Association, commonly used in psychology and related fields.
+
+confidence interval: |
+  A range of values that provides an estimate of where a population value may fall, based on sample data and repeated-sampling logic.
+
+degrees of freedom: |
+  Values used in many statistical tests that reflect how much information is free to vary when estimating a statistic.
+
+figure: |
+  A visual display of information, such as a graph, chart, or plot, used to help readers understand a pattern in the data.
+
+omnibus test: |
+  An overall statistical test that indicates whether there is evidence of a difference somewhere among groups, but does not by itself identify exactly which groups differ.
+
+post hoc comparison: |
+  A follow-up comparison used after an overall test, such as ANOVA, to examine which specific groups differ from each other.
+
+table: |
+  A structured display of information in rows and columns, often used to present descriptive statistics, correlations, or model results.

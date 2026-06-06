@@ -1,0 +1,109 @@
+# 2.5 Research Design Terms You’ll See Again {.unnumbered}
+
+This section is a research methods refresher. You do not need to master every term here right now, but you should recognize them because they will come back when we choose and interpret statistical analyses.
+
+The main idea is that research design and statistics are connected. The statistical test you choose depends partly on the research question, the variables, and the design of the study.
+
+::: {.callout-tip title="Learning Objectives"}
+By the end of this section, you should be able to:
+
+- identify independent and dependent variables in a study
+- distinguish between predictors, outcomes, grouping variables, and covariates
+- distinguish between between-subjects and within-subjects designs
+- explain why correlational and experimental studies support different kinds of conclusions
+- recognize several design terms that will return in later statistical chapters
+:::
+
+## Independent and Dependent Variables
+
+An {{< glossary "independent variable" display="independent variable" popup="hover" >}}, or IV, is the variable that is expected to explain, predict, or influence another variable. In an experiment, it is the variable the researcher manipulates.
+
+A {{< glossary "dependent variable" display="dependent variable" popup="hover" >}}, or DV, is the outcome variable. It is the variable the researcher measures to see whether it differs across groups, changes over time, or relates to another variable.
+
+For example, imagine a researcher randomly assigns students to either a practice quiz condition or a no-practice condition and then measures exam performance.
+
+- The independent variable is condition: practice quiz or no practice.
+- The dependent variable is exam performance.
+
+You will also see other terms for these same ideas. A {{< glossary "predictor variable" popup="hover" >}} is a variable used to predict or explain another variable. An {{< glossary "outcome variable" popup="hover" >}} is the variable being predicted or explained. A {{< glossary "grouping variable" popup="hover" >}} is a categorical variable that separates observations into groups.
+
+The terminology shifts depending on the analysis, but the underlying logic is similar: what are we using to explain or compare, and what outcome are we trying to understand?
+
+## Confounding Variables and Covariates
+
+A {{< glossary "confounding variable" popup="hover" >}} is a variable that is related to both the independent variable and the dependent variable. Confounding variables are a problem because they create alternative explanations for a result.
+
+For example, suppose students in a practice quiz group score higher on an exam than students in a no-practice group. If students chose their own condition, motivation could be a confounding variable. More motivated students may be more likely to choose the practice quiz and more likely to perform well on the exam.
+
+A {{< glossary covariate popup="hover" >}} is a variable that is related to the dependent variable and is included in an analysis to help account for individual differences. For example, prior GPA might be used as a covariate when predicting exam performance.
+
+You do not need to fully understand covariates yet. Later, this idea will come back when we discuss analyses such as ANCOVA and regression.
+
+## Between-Subjects and Within-Subjects Designs
+
+In a {{< glossary "between-subjects design" popup="hover" >}}, different people are in different conditions or groups. Each person contributes data to only one condition.
+
+Example: One group receives an intervention and another group receives a comparison condition.
+
+In a {{< glossary "within-subjects design" popup="hover" >}}, the same people are measured in more than one condition or at more than one time point. A {{< glossary "repeated-measures design" popup="hover" >}} is a common type of within-subjects design.
+
+Example: The same students take a pretest at the beginning of the semester and a posttest at the end of the semester.
+
+This distinction matters because different designs often require different statistical tests. For example, independent t-tests are used for two separate groups, while dependent t-tests are used for paired or repeated measurements.
+
+## Correlational, Experimental, and Quasi-Experimental Designs
+
+In {{< glossary "correlational research" popup="hover" >}}, researchers measure variables and examine whether they are related. The researcher does not manipulate an independent variable or randomly assign participants to conditions.
+
+Correlational studies can show that variables are associated, but they cannot by themselves establish causation. You have probably heard the phrase “correlation does not imply causation.” That phrase is overused, but it is still important.
+
+In {{< glossary "experimental research" popup="hover" >}}, the researcher manipulates the independent variable and uses {{< glossary "random assignment" popup="hover" >}} to place participants into conditions. Experiments provide stronger evidence for causal claims because the researcher has more control over alternative explanations.
+
+In {{< glossary "quasi-experimental research" popup="hover" >}}, the researcher examines groups or conditions but does not use random assignment. For example, a researcher might compare two existing classrooms, one that uses a new teaching method and one that does not. This can be useful, but causal claims require more caution.
+
+## Hypotheses
+
+A {{< glossary hypothesis popup="hover" >}} is a prediction about the answer to a research question. In statistics, hypotheses become especially important when we begin null hypothesis significance testing.
+
+For now, you only need the basic idea:
+
+- The alternative hypothesis usually states that there is an effect, difference, or relationship.
+- The null hypothesis usually states that there is no effect, difference, or relationship.
+
+We will cover this more carefully in Chapter 7.
+
+## Reliability and Validity
+
+{{< glossary reliability popup="hover" >}} refers to the consistency of a measure. {{< glossary validity popup="hover" >}} refers to whether the evidence supports the interpretation or use of a measure or result.
+
+These concepts matter a lot, but we will not do a full review here because later chapters focus on reliability and validity more directly. For now, remember that statistics cannot rescue poorly measured variables. If the measurement is not reliable or valid for the intended purpose, the analysis will be limited no matter how carefully we run it.
+
+## Why This Matters
+
+Research design terms are not separate from statistics. They help us decide what analysis fits the question.
+
+Before choosing a statistical test, ask:
+
+- What is the research question?
+- What are the variables?
+- Which variable is the outcome?
+- Are the groups independent or repeated?
+- Was the study experimental, quasi-experimental, or correlational?
+- What conclusions are actually supported by the design?
+
+These questions will become more important when we start choosing inferential tests later in the book.
+
+::: {.callout-tip title="Check Your Understanding"}
+1. What is the difference between an independent variable and a dependent variable?
+2. What is the difference between a between-subjects design and a within-subjects design?
+3. Why should researchers be cautious about making causal claims from correlational research?
+
+<details>
+<summary>Answers</summary>
+
+1. The independent variable is used to explain, predict, manipulate, or compare. The dependent variable is the outcome being measured.
+2. In a between-subjects design, different people are in different conditions. In a within-subjects design, the same people are measured in multiple conditions or time points.
+3. Correlational research does not manipulate variables or randomly assign participants, so alternative explanations may exist.
+
+</details>
+:::

@@ -1,0 +1,57 @@
+# 3. Getting Started With jamovi
+
+In this chapter, we begin working with statistical software: **jamovi**.
+
+The goal of this chapter is not to perform statistical analyses yet. Instead, we will focus on getting oriented: what jamovi is, why we are using it, how to install it, how to open data, and how to check that your dataset is set up correctly before you analyze anything.
+
+The concepts from Chapter 2 show up right away in jamovi. When jamovi asks whether a variable is {{< glossary "nominal variable" display="nominal" popup="hover" >}}, {{< glossary "ordinal variable" display="ordinal" popup="hover" >}}, {{< glossary "continuous variable" display="continuous" popup="hover" >}}, or an ID variable, it is asking you to apply what you already learned about variables and levels of measurement.
+
+::: {.callout-note title="For Dana's Students"}
+If you are taking one of my courses, make sure you also follow the course-specific instructions in Canvas. Canvas will tell you which files to use, what to submit, and whether I want a jamovi file, screenshot, written response, or something else.
+:::
+
+## What You'll Learn
+
+By the end of this chapter, you should be able to:
+
+- explain what jamovi is and why it is useful for learning statistics;
+- install jamovi or know where to get installation support;
+- open data files in jamovi, including Excel and SPSS files;
+- enter simple data manually when needed;
+- navigate the main areas of the jamovi interface;
+- distinguish between {{< glossary "measure type" display="measure types" popup="hover" >}} and {{< glossary "data type" display="data types" popup="hover" >}} in jamovi;
+- check variable names, descriptions, missing values, and levels; and
+- recognize common setup problems before running an analysis.
+
+::: {.callout-tip title="The Workflow You Are Learning"}
+Across the next few chapters, you are learning a basic data-analysis workflow:
+
+1. Open and save your data file.
+2. Check whether jamovi understands your variables correctly.
+3. Clean, recode, transform, or compute variables when needed.
+4. Describe your variables with appropriate descriptive statistics.
+5. Visualize your variables so you can see patterns the numbers may hide.
+
+Real data analysis is not always perfectly linear. You may describe a variable, notice something strange, go back to check or clean it, and then describe it again. That is normal. These chapters separate the steps so they are easier to learn, but in practice you will move back and forth among them.
+:::
+
+## How to Use This Chapter
+
+If you are brand new to jamovi, read this chapter in order and open jamovi as you go. You do not need to memorize every menu or setting right away. The main goal is to become comfortable enough that jamovi feels like a tool you can explore rather than something mysterious.
+
+If you are returning to this book as a reference, you can jump to the section you need:
+
+- Need to know why this book uses jamovi? Start with [3.1 What Is jamovi?](03.1-what-is-jamovi.qmd)
+- Need to install or update the software? Go to [3.2 Installing and Updating jamovi](03.2-installing-updating-jamovi.qmd)
+- Need to open, save, or annotate a file? Go to [3.3 Opening, Saving, and Annotating Files](03.3-opening-saving-annotating-files.qmd)
+- Need to understand the layout? Go to [3.4 Navigating the jamovi Interface](03.4-navigating-the-jamovi-interface.qmd)
+- Need to check variable setup? Go to [3.5 Checking Variable Setup](03.5-checking-variable-setup.qmd)
+- Want a quick review? Go to [3.6 Putting It All Together](03.6-putting-it-all-together.qmd)
+
+## A Note Before We Start
+
+Learning software takes practice. It is completely normal to click the wrong thing, open the wrong menu, or feel unsure where to look at first. One nice thing about jamovi is that it is fairly forgiving: you can usually undo, change options, rerun analyses, or reopen a file if needed.
+
+The important habit to build now is not memorizing every button. The important habit is learning to pause and ask: *Does my dataset look right? Are my variables set up correctly? Do I understand what jamovi is asking me to choose?*
+
+That habit will matter throughout the rest of the book.

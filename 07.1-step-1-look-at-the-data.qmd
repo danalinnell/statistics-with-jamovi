@@ -1,0 +1,144 @@
+# 7.1 Step 1: Look at the Data {.unnumbered}
+
+The first step in any inferential analysis is to understand your research question, your variables, your design, and your data.
+
+This is not a warm-up before the “real” analysis. It is part of the analysis. If you do not understand the data, you cannot choose the right statistical test or interpret the results responsibly.
+
+## Identify the Research Question
+
+Start with the question the study is trying to answer.
+
+In our simplified Bobo doll example, the research question might be:
+
+> Do children who watch an aggressive model show more aggressive behavior than children who watch a calm model?
+
+This question tells us that the researcher is interested in comparing two groups on an outcome variable.
+
+## Identify the Variables
+
+Next, identify the variables.
+
+The {{< glossary "independent variable" popup="hover" >}} is the variable used to explain, predict, manipulate, or compare. In an experiment, it is the variable the researcher manipulates.
+
+The {{< glossary "dependent variable" popup="hover" >}} is the outcome variable. It is the variable the researcher measures.
+
+In our example:
+
+| Role | Variable | Type |
+|---|---|---|
+| Independent variable | Video condition: aggressive model or calm model | Categorical, nominal |
+| Dependent variable | Number of aggressive behaviors | Continuous |
+
+This connects back to Chapter 2. Statistical tests depend heavily on what kinds of variables we have. A test that works for a continuous dependent variable may not work for a categorical dependent variable.
+
+## Identify the Design
+
+The design also matters.
+
+In this example, children are randomly assigned to one of two conditions. Each child is in only one condition. That makes this a {{< glossary "between-subjects design" popup="hover" >}}.
+
+If the same children had watched both videos at different times and were measured after each video, that would be a {{< glossary "within-subjects design" popup="hover" >}}. That would require a different statistical test.
+
+::: {.callout-tip title="A Question Worth Asking"}
+When you see groups in a study, ask: Can the same person be in more than one group?
+
+- If no, you probably have a between-subjects design.
+- If yes, you probably have a within-subjects or repeated-measures design.
+:::
+
+## Describe the Data
+
+Before testing a hypothesis, describe the data.
+
+For our example, imagine the researcher has 30 children total, 15 in each condition. The descriptive statistics might look like this:
+
+| Condition | Mean aggressive behaviors | Standard deviation | Sample size |
+|---|---:|---:|---:|
+| Aggressive video | 11.20 | 3.10 | 15 |
+| Calm video | 5.40 | 2.80 | 15 |
+
+At the descriptive level, children in the aggressive video condition showed more aggressive behaviors on average than children in the calm video condition.
+
+That is useful, but it is not the full inferential conclusion. At this point, we only know what happened in this sample. Hypothesis testing helps us decide whether this sample difference is surprising enough, under the null hypothesis, that we are willing to reject the null hypothesis.
+
+## Visualize the Data
+
+Descriptive statistics are useful, but they can hide patterns. Before running a test, you should usually visualize the data.
+
+For this example, a box plot with individual data points would be useful because it would show:
+
+- the center of each group;
+- the spread within each group;
+- possible outliers; and
+- whether the two groups overlap.
+
+This connects directly to the fundamentals chapters: identifying variables and distributions in Chapter 2, preparing data in Chapter 4, describing data in Chapter 5, and visualizing data in Chapter 6.
+
+## State the Hypotheses
+
+Because we are using null hypothesis significance testing, we need two hypotheses: the {{< glossary "alternative hypothesis" popup="hover" >}} and the {{< glossary "null hypothesis" popup="hover" >}}.
+
+The alternative hypothesis, usually written as H~1~ or H~a~, states that there is an effect, difference, or relationship.
+
+The null hypothesis, usually written as H~0~, states that there is no effect, no difference, or no relationship. In a directional test, the null also includes the direction opposite of the alternative.
+
+For our example, the researcher expects children in the aggressive-video condition to show more aggressive behavior. That is a directional hypothesis.
+
+A plain-language version of the hypotheses might be:
+
+- **H~1~:** Children who watch the aggressive video will show more aggressive behaviors than children who watch the calm video.
+- **H~0~:** Children who watch the aggressive video will show the same number of aggressive behaviors or fewer aggressive behaviors than children who watch the calm video.
+
+Notice the null hypothesis carefully. Because the alternative predicts “more,” the null includes both “no difference” and “the opposite direction.” That way, the two hypotheses cover every possible result.
+
+## Directional and Non-Directional Hypotheses
+
+A {{< glossary "directional hypothesis" popup="hover" >}} predicts the direction of the effect. For example:
+
+> Children in the aggressive-video condition will show more aggressive behavior than children in the calm-video condition.
+
+This is also called a one-tailed hypothesis.
+
+A {{< glossary "non-directional hypothesis" popup="hover" >}} predicts that there will be an effect, difference, or relationship, but does not predict the direction. For example:
+
+> Children in the two video conditions will differ in aggressive behavior.
+
+This is also called a two-tailed hypothesis.
+
+Directional hypotheses should be used thoughtfully. You need a strong theoretical or empirical reason to predict a specific direction. If you do not have that justification, a non-directional hypothesis is usually safer.
+
+## Mutually Exclusive and Exhaustive
+
+Your null and alternative hypotheses should be mutually exclusive and exhaustive.
+
+**Mutually exclusive** means a result cannot support both hypotheses at the same time.
+
+**Exhaustive** means every possible result is covered by one of the hypotheses.
+
+In the directional Bobo doll example, there are three possible patterns:
+
+| Possible result | Which hypothesis does it fit? |
+|---|---|
+| Aggressive-video group shows more aggression | Alternative hypothesis |
+| Groups show no difference | Null hypothesis |
+| Aggressive-video group shows less aggression | Null hypothesis |
+
+This may feel picky at first, but it matters. Sloppy hypotheses lead to sloppy decisions.
+
+::: {.callout-warning title="Common Mistake"}
+A common error is writing hypotheses that leave out possible results. If your hypotheses do not cover every possible outcome, they are not exhaustive.
+:::
+
+::: {.callout-tip title="Check Your Understanding"}
+1. In the Bobo doll example, what is the independent variable?
+2. What is the dependent variable?
+3. Is the design between-subjects or within-subjects?
+4. What is the difference between a directional and non-directional hypothesis?
+
+**Answers**
+
+1. The independent variable is video condition: aggressive video or calm video.
+2. The dependent variable is the number of aggressive behaviors observed.
+3. The design is between-subjects because each child is assigned to only one condition.
+4. A directional hypothesis predicts which direction the effect will go. A non-directional hypothesis predicts an effect or difference but not the direction.
+:::

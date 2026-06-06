@@ -1,0 +1,19 @@
+# 15.1 Threats to Reliability {.unnumbered}
+Error is what takes us away from a participant's true score. In other
+words, error can produce threats to the reliability scores that we
+produce. There are three areas that can introduce error to our
+reliability scores:
+
+1.  *The researcher or measurement instrument:* For example, if you’re
+    measuring time to do a task, when do you start and stop the
+    stopwatch? How quickly can you react to starting and stopping the
+    stopwatch? What if multiple researchers are using a stopwatch?
+
+2.  *The participant*: For instance, a participant’s mood may affect how
+    they respond to a survey or the time of day may affect their weight
+    on a scale (note that their weight fluctuates throughout the day but
+    that affects the reliability of their weight, not the reliability of
+    the scale!)
+
+3.  *The environment*: For example, baking at different altitudes
+    requires different oven temperatures and baking times.

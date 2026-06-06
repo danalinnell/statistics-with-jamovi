@@ -1,0 +1,86 @@
+# 3.6 Putting It All Together {.unnumbered}
+
+This chapter introduced jamovi as the software we will use throughout the rest of the book. You do not need to feel like an expert yet. At this point, success means you can open jamovi, find your way around the interface, open or enter data, and check whether variables are set up correctly.
+
+## Chapter Recap
+
+In this chapter, you learned that:
+
+- jamovi is free, open-source statistical software built on R;
+- jamovi is useful for learning statistics because it is approachable, transparent, and saves analyses with your data;
+- jamovi files usually use the `.omv` extension;
+- data should usually be organized with one observation per row and one variable per column;
+- the Data tab is where you check and edit the dataset;
+- the Analyses tab is where you run statistical analyses;
+- measure type and data type are both important, but they are not the same thing; and
+- you should always check variable setup before running analyses.
+
+## First jamovi Checklist
+
+When you open a dataset in jamovi, start with this checklist:
+
+1. **Look at the structure.** Are rows observations and columns variables?
+2. **Check variable names.** Are they brief, clear, and meaningful?
+3. **Check measure types.** Are variables set as nominal, ordinal, continuous, or ID appropriately?
+4. **Check data types.** Are values stored as integer, decimal, or text as expected?
+5. **Check missing values.** Are missing value codes defined correctly?
+6. **Check categorical levels.** Are the categories labeled clearly?
+7. **Look for obvious problems.** Are there impossible values, inconsistent labels, or unexpected blanks?
+
+This checklist may feel slow at first. That is okay. The more you practice, the faster it becomes.
+
+## Applied Practice
+
+Imagine you open a dataset with the following variables:
+
+| Variable Name | What It Represents | Values in the Dataset |
+|---|---|---|
+| `id` | Participant ID number | 101, 102, 103, 104 |
+| `condition` | Experimental condition | 1 = control, 2 = treatment |
+| `year` | Year in school | 1 = first-year, 2 = sophomore, 3 = junior, 4 = senior |
+| `stress` | Average stress scale score | 1.20, 2.80, 4.10, 3.50 |
+| `completed` | Whether the participant completed the study | 0 = no, 1 = yes |
+
+::: {.callout-tip title="Check Your Understanding"}
+For each variable, identify the most appropriate jamovi measure type: nominal, ordinal, continuous, or ID.
+
+<details>
+<summary>Answer</summary>
+
+- `id`: ID
+- `condition`: nominal
+- `year`: ordinal
+- `stress`: continuous
+- `completed`: nominal
+
+</details>
+:::
+
+::: {.callout-tip title="Check Your Understanding"}
+A student says, "If jamovi lets me run the analysis, it must be the right analysis." What is wrong with that reasoning?
+
+<details>
+<summary>Answer</summary>
+
+jamovi can guide you, but it cannot fully determine whether the analysis matches your research question, design, and variables. If the data are set up incorrectly, or if the wrong analysis is chosen, jamovi may still produce output. The researcher is responsible for checking whether the analysis makes sense.
+
+</details>
+:::
+
+## Common Mistakes
+
+Common mistakes at this stage include:
+
+- assuming jamovi guessed the measure type correctly;
+- treating numeric category labels as continuous data;
+- forgetting to define missing value codes;
+- using unclear variable names;
+- entering data inconsistently, such as `Yes`, `yes`, and `Y` for the same category;
+- submitting the wrong file type; and
+- trying to run analyses before checking the dataset.
+
+## Looking Ahead
+
+Now that you know how to open jamovi and check the basic setup of a dataset, we can start preparing data for analysis. In the next chapter, you will learn how to clean data, fix variable setup problems, work with missing values, recode or transform variables, reverse-score items, and create scale scores.
+
+After that, we will describe and visualize the prepared data.

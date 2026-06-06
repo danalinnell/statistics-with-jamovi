@@ -1,0 +1,127 @@
+# 2.1 Describing Data {.unnumbered}
+
+Before we can analyze data, we need to understand what our data represent.
+
+At its core, statistics is about using data to answer questions. In most research settings, data are organized in a {{< glossary dataset popup="hover" >}}, often in a spreadsheet format. Each row usually represents one {{< glossary observation popup="hover" >}}, such as one participant, and each column represents one {{< glossary variable popup="hover" >}}, such as age, condition, or test score.
+
+This structure matters because statistical software, including jamovi, expects data to be organized in a clear and consistent way.
+
+::: {.callout-tip title="Learning Objectives"}
+By the end of this section, you should be able to:
+
+- explain how data are organized in a dataset
+- distinguish between observations and variables
+- explain why data need context to be meaningful
+- describe the purpose of descriptive statistics
+- identify center, variability, and shape as three major features we use to describe data
+:::
+
+## What Are Data?
+
+Data are pieces of information we collect, record, or observe. In research, data might come from surveys, experiments, interviews, observations, tests, records, or existing datasets.
+
+A value by itself does not usually tell us much. Imagine seeing the number 75 in a dataset. Is that a test score? A heart rate? A temperature? A percentile rank? A participant ID number? The number only becomes meaningful when we know what it represents.
+
+That is why context matters. To interpret data correctly, we need to know:
+
+- what each variable represents
+- how each variable was measured
+- what the values mean
+- whether any values are missing, miscoded, or unusual
+
+::: {.callout-note title="A Note About the Word Data"}
+In formal scientific writing, including APA style, *data* is usually treated as plural: “The data are consistent with the hypothesis.” In everyday speech, many people use *data* as singular: “The data is stored in a spreadsheet.” You will see both. In formal research writing, use the plural form unless your instructor or style guide says otherwise.
+:::
+
+## How Datasets Are Organized
+
+Most datasets are organized in a rectangular format. This means:
+
+- rows represent observations, such as participants, cases, trials, or responses
+- columns represent variables, such as age, test score, condition, or group membership
+- each cell contains one value for one observation on one variable
+
+For example, imagine a study with 40 students. Each student completes a study skills intervention and then takes a quiz. In the dataset, each row would represent one student. Columns might include the student’s assigned group, quiz score, year in school, and number of hours studied.
+
+This structure may seem obvious, but it is one of the first places data problems show up. If two variables are accidentally combined in one column, if one person has data spread across multiple rows without a clear reason, or if missing values are handled inconsistently, the analysis becomes harder and more error-prone.
+
+## What Is a Variable?
+
+A variable is anything we measure, observe, manipulate, or record that can vary across observations.
+
+Examples of variables include:
+
+- age
+- major
+- treatment condition
+- test score
+- reaction time
+- number of symptoms
+- whether someone completed an assignment
+
+Some variables describe characteristics of participants. Others describe the outcome we care about. Still others describe the condition someone was assigned to or the context in which data were collected.
+
+You will learn more about different types of variables in the next section. For now, the key idea is that variables are the building blocks of statistical analysis.
+
+## Why Do We Describe Data?
+
+Once we collect data, the first step is to describe what we have. Raw data can be difficult to interpret on their own. Descriptive statistics help us summarize, organize, and make sense of data.
+
+Descriptive statistics help us answer questions such as:
+
+- What value is typical?
+- How spread out are the values?
+- Are there unusual values?
+- How many people are in each category?
+- What does the overall pattern look like?
+
+This is not just busywork before the “real” statistics begin. Describing data is part of analysis. It helps us understand what happened in the sample and helps us catch problems before we make larger claims.
+
+## Three Big Features of Data
+
+When we describe data, we often focus on three major features.
+
+### Center: What Is Typical?
+
+The center of a variable tells us what a typical value looks like. Common measures of center include the {{< glossary mean popup="hover" >}}, {{< glossary median popup="hover" >}}, and {{< glossary mode popup="hover" >}}.
+
+These are all sometimes called “averages,” but that word can be vague. If you say “the average was 10,” be clear about which average you mean.
+
+### Variability: How Spread Out Are the Values?
+
+Variability describes how much the values differ from one another. Some datasets are tightly clustered, while others are more spread out. Common measures of variability include the {{< glossary range popup="hover" >}}, {{< glossary "interquartile range" popup="hover" >}}, {{< glossary variance popup="hover" >}}, and {{< glossary "standard deviation" popup="hover" >}}.
+
+Variability matters because two groups can have the same mean but look very different if one group has scores clustered closely together and the other has scores spread all over the place.
+
+### Shape: What Does the Pattern Look Like?
+
+The shape of the data tells us how values are distributed. Are most values near the center? Is the distribution lopsided? Are there outliers? Is the shape roughly normal?
+
+We will return to shape in [2.4 Understanding Distributions and Variability](02.4-understanding-distributions-variability.qmd), and later you will learn how to examine shape using graphs in jamovi.
+
+## Looking Ahead
+
+Describing data is always one of the first steps in statistical analysis. You will use these ideas when you:
+
+- summarize your data in jamovi
+- choose graphs
+- check assumptions
+- interpret statistical tests
+- write results in APA style
+
+The point is not just to produce numbers. The point is to understand what the numbers are telling you.
+
+::: {.callout-tip title="Check Your Understanding"}
+1. In a dataset, what does each row usually represent? What does each column usually represent?
+2. Why does the number 75 not mean much without context?
+3. What are the three major features we often use to describe data?
+
+<details>
+<summary>Answers</summary>
+
+1. Each row usually represents one observation, such as one participant or case. Each column usually represents one variable.
+2. The number 75 could represent many different things, such as a test score, heart rate, temperature, or ID number. We need to know what variable it belongs to and how it was measured.
+3. Center, variability, and shape.
+
+</details>
+:::

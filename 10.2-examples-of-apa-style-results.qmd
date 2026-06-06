@@ -1,0 +1,94 @@
+# 10.2 Examples of APA-Style Results {.unnumbered}
+
+In this section, we will look at examples of APA-style results for several statistical tests. You may not have learned all of these tests yet, and that is okay. The goal here is to show the writing pattern.
+
+The test-specific chapters later in the book will give more detailed guidance for each analysis.
+
+## Example: Independent Samples t-Test
+
+Let's walk through an example using an independent samples t-test.
+
+Here are the four pieces of information we need:
+
+1. **Research question or hypothesis**: Is there a difference in student grades between Anastasia's and Bernadette's classes?
+2. **Descriptive statistics**: Anastasia's students (*M* = 74.53, *SD* = 9.00, *n* = 15); Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18)
+3. **Inferential statistics**: *t*(31) = 2.12, *p* = .043, *d* = .74
+4. **Interpretation**: Anastasia's students had significantly higher grades than Bernadette's students.
+
+### APA-style write-up
+
+> The research question was whether there was a difference in student grades between Anastasia's and Bernadette's classes. Anastasia's students (*M* = 74.53, *SD* = 9.00, *n* = 15) had significantly higher grades than Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18), *t*(31) = 2.12, *p* = .043, *d* = .74.
+
+Let's compare that write-up against the four things we need to report:
+
+> **#1:** The research question was whether there was a difference in student grades between Anastasia's and Bernadette's classes. **#2 and #4:** Anastasia's students (*M* = 74.53, *SD* = 9.00, *n* = 15) had significantly higher grades than Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18), **#3:** *t*(31) = 2.12, *p* = .043, *d* = .74.
+
+### Alternative formatting
+
+Sometimes, authors place statistical information in parentheses. In this case, use **brackets for degrees of freedom** because we cannot place parentheses inside parentheses.
+
+> I tested the difference in grades between Anastasia's students (*M* = 74.53, *SD* = 9.00, *n* = 15) and Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18). An independent samples t-test showed that Anastasia's students had significantly higher grades than Bernadette's students (*t*[31] = 2.12, *p* = .043, *d* = .74). Therefore, we rejected the null hypothesis that there was no difference in grades between the two classes.
+
+The first version is a little more concise. The second version separates the research question, test result, and decision more clearly. Both can work.
+
+## Example: Chi-Square Test of Independence
+
+A chi-square test of independence is used when we want to know whether two categorical variables are associated.
+
+Here are the pieces of information we need:
+
+1. **Research question**: Is tutoring attendance associated with pass/fail status?
+2. **Descriptive statistics**: Frequencies and percentages for pass/fail status by tutoring attendance
+3. **Inferential statistics**: χ²(1, *N* = 120) = 6.42, *p* = .011, Cramer's *V* = .23
+4. **Interpretation**: Students who attended tutoring were more likely to pass than students who did not attend tutoring.
+
+### APA-style write-up
+
+> I examined whether tutoring attendance was associated with pass/fail status. Students who attended tutoring were more likely to pass (42 of 50, 84.0%) than students who did not attend tutoring (45 of 70, 64.3%). A chi-square test of independence showed that tutoring attendance and pass/fail status were significantly associated, χ²(1, *N* = 120) = 6.42, *p* = .011, Cramer's *V* = .23.
+
+### Why this works
+
+This write-up includes the research question, the frequencies and percentages, the inferential test result, the effect size, and a plain-language interpretation. For chi-square tests, the descriptives are usually counts and percentages rather than means and standard deviations.
+
+## Example: Correlation
+
+A correlation is used when we want to examine the association between two continuous variables.
+
+Here are the pieces of information we need:
+
+1. **Research question**: Is time spent studying associated with exam performance?
+2. **Descriptive statistics**: Means and standard deviations for both variables
+3. **Inferential statistics**: *r*(58) = .42, *p* = .001
+4. **Interpretation**: Students who studied more tended to have higher exam scores.
+
+### APA-style write-up
+
+> I examined whether time spent studying was associated with exam performance. Students studied an average of 6.40 hours (*SD* = 2.15) and had an average exam score of 78.30 (*SD* = 9.85). Time spent studying was significantly and positively associated with exam performance, *r*(58) = .42, *p* = .001. Students who studied more tended to have higher exam scores.
+
+### Why this works
+
+This write-up states the research question, describes both variables, reports the correlation, and interprets the direction of the relationship.
+
+It does **not** say that studying caused higher exam scores. Correlation does not establish causation.
+
+## Key Takeaway
+
+There is no single "correct" sentence structure for APA results.
+
+What matters is that:
+
+- the research question or hypothesis is clear;
+- the relevant descriptive statistics are included;
+- the inferential statistics are reported correctly;
+- the result is interpreted in plain language;
+- the interpretation avoids overclaiming.
+
+::: {.callout-note title="A Helpful Tip"}
+Read your results **without the parentheses** to check for clarity and grammar.
+
+For example, this sentence still makes sense if we remove the parenthetical statistics:
+
+> Anastasia's students had significantly higher grades than Bernadette's students.
+
+If the sentence does not make sense without the parentheses, revise the sentence structure.
+:::

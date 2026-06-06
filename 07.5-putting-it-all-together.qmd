@@ -1,0 +1,107 @@
+# 7.5 Putting It All Together {.unnumbered}
+
+This chapter introduced the logic of hypothesis testing. That logic will come back again and again as you learn specific inferential statistics.
+
+The specific test will change. The output will change. The assumptions will change. But the overall process will stay familiar:
+
+1. Look at the data.
+2. Check assumptions.
+3. Perform the test.
+4. Interpret the results.
+
+## Chapter Recap
+
+In this chapter, you learned that:
+
+- inferential statistics help us use sample data to make claims beyond the sample;
+- null hypothesis significance testing evaluates data under the assumption that the null hypothesis is true;
+- the alternative hypothesis states that there is an effect, difference, or relationship;
+- the null hypothesis states that there is no effect, no difference, or no relationship, and in directional tests it also includes the opposite direction;
+- hypotheses should be mutually exclusive and exhaustive;
+- assumptions help us decide whether a statistical test is appropriate;
+- alpha is the threshold for deciding statistical significance;
+- p-values tell us how surprising the data are under the null hypothesis;
+- effect sizes help us understand the size or strength of an effect;
+- power helps us understand whether a study can detect an effect if one exists; and
+- hypothesis testing decisions are always made under uncertainty.
+
+## What NHST Can and Cannot Tell Us
+
+Null hypothesis significance testing is useful, but it is often misunderstood.
+
+NHST can help us:
+
+- evaluate whether data are surprising under the null hypothesis;
+- make a decision to reject or fail to reject the null hypothesis;
+- use a consistent decision framework across statistical tests; and
+- communicate statistical evidence in a structured way.
+
+NHST cannot, by itself:
+
+- prove that the alternative hypothesis is true;
+- prove that the null hypothesis is true;
+- tell us whether an effect is practically important;
+- fix poor measurement or poor research design;
+- guarantee that a statistically significant result is real; or
+- replace theory, replication, and judgment.
+
+That last point matters. Statistics can help us reason with data, but they cannot do all the reasoning for us.
+
+## Common Mistakes
+
+Watch for these common hypothesis-testing mistakes:
+
+- saying “accept the null hypothesis” instead of “fail to reject the null hypothesis”;
+- interpreting a p-value as the probability that the null hypothesis is true;
+- treating p < .05 as proof that the alternative hypothesis is true;
+- treating p ≥ .05 as proof that there is no effect;
+- ignoring effect size;
+- ignoring assumptions;
+- writing hypotheses that do not include the variables being tested;
+- writing directional hypotheses without a strong reason; and
+- jumping to inferential conclusions before describing and visualizing the data.
+
+## Applied Practice
+
+Read the scenario and answer the questions that follow.
+
+A researcher wants to know whether students who complete practice quizzes perform better on an exam than students who do not complete practice quizzes. The researcher randomly assigns 60 students to one of two conditions: practice quizzes or no practice quizzes. At the end of the unit, all students take the same exam.
+
+1. What is the independent variable?
+2. What is the dependent variable?
+3. Is the design between-subjects or within-subjects?
+4. Write a directional alternative hypothesis.
+5. Write the matching null hypothesis.
+6. If the p-value is .012 and alpha is .05, what decision should the researcher make?
+7. What should the researcher consider beyond the p-value?
+
+**Suggested Answers**
+
+1. The independent variable is condition: practice quizzes or no practice quizzes.
+2. The dependent variable is exam performance.
+3. The design is between-subjects because different students are in each condition.
+4. Students who complete practice quizzes will perform better on the exam than students who do not complete practice quizzes.
+5. Students who complete practice quizzes will perform the same as or worse than students who do not complete practice quizzes.
+6. Because .012 < .05, the researcher rejects the null hypothesis.
+7. The researcher should also consider descriptive statistics, visualizations, assumptions, effect size, practical significance, measurement quality, and study design.
+
+## Final Check
+
+Before moving on, make sure you can explain these ideas in your own words:
+
+- What is the null hypothesis?
+- What is the alternative hypothesis?
+- What does a p-value mean?
+- What does it mean to reject the null hypothesis?
+- What does it mean to fail to reject the null hypothesis?
+- Why is statistical significance not the same as practical significance?
+
+If you can answer those questions, you are ready for the next layer.
+
+## Looking Ahead
+
+Before we move into specific statistical tests, the next few chapters build the remaining pieces you need.
+
+Chapter 8 introduces BEAN: beta/power, effect size, alpha, and sample size. Chapter 9 focuses on choosing the correct inferential test and checking assumptions. Chapter 10 focuses on writing statistical results clearly in APA style.
+
+After that, Chapters 11 through 14 apply the same four-step process to specific inferential statistics.

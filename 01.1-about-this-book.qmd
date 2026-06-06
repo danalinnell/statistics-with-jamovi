@@ -1,0 +1,41 @@
+# 1.2 About This Book {.unnumbered}
+
+This book is an open educational resource for students, instructors, and anyone else who wants to learn applied statistics with *jamovi*. It is primarily used in my own statistics courses, but I also know that students and instructors at other universities use it. I have tried to write it so that it feels like I am guiding you through the material while still making it useful beyond a single course.
+
+## Open Educational Resource
+
+This book is free to use and is licensed under a Creative Commons BY-SA (CC-BY-SA) license version 4.0. This means you are free to share, copy, and redistribute the material in any medium or format. You are also free to adapt, remix, transform, and build upon the material for any purpose, even commercially, provided that you attribute the original resource, indicate if changes were made, and share your adaptations under the same license.
+
+Many of the data examples come from *Learning Statistics with jamovi: A Tutorial for Psychology Students and Other Beginners* by Danielle J. Navarro and David R. Foxcroft. I am grateful for their work and for the broader open education community that makes resources like this possible.
+
+## How This Book Is Updated
+
+This book is a living resource. I revise it when *jamovi* changes, when students ask good questions, when instructors offer feedback, and when I find better ways to explain something.
+
+Because this book is updated over time, some screenshots or instructions may occasionally look slightly different from the version of *jamovi* you are using. When that happens, focus on the larger process: what analysis you are trying to run, what variables you need, which options matter, and how to interpret the results.
+
+## Errors, Mistakes, and Suggestions
+
+I am human, therefore I err.
+
+If you find an error in this book, something that seems unclear, or something that does not match what you are seeing in *jamovi*, please let me know. It is especially helpful if you tell me the chapter or section, what seems wrong or confusing, and what you think might need to be updated.
+
+I also welcome suggestions. This book is meant to be useful to students in my courses, students in other courses, instructors adapting the material, and people returning to statistics later when they need a reference. If something would make the book clearer, more accessible, or easier to use, I would genuinely like to know.
+
+You can contact me directly at linnellda@uwstout.edu 
+
+## About the Author
+
+My name is Dana Linnell, and I am a faculty member at the University of Wisconsin–Stout. I teach statistics, research methods, interpersonal effectiveness, and evaluation in the Department of Psychology.
+
+I love statistics because it gives us a way to answer research questions, test ideas, and make better decisions from data. I also know not everyone comes into statistics feeling that way. Some students are excited, some are skeptical, and some are anxious before they even start. I wrote this book with all of those students in mind.
+
+My hope is that this book helps you see statistics as something you can learn, use, question, and explain.
+
+## Dedication
+
+This book is dedicated to my graduate statistics professor, Dr. Dale Berger, who gave us a similar set of resources when he taught statistics at Claremont Graduate University. I still have my binder of handouts, homework assignments, and notes, which have been instrumental throughout my career.
+
+Thank you for showing me the joy of statistics.
+
+![Image of Dale Berger and Dana Linnell at her master's graduation ceremony](images/Dale.jpg)

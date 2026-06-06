@@ -1,0 +1,172 @@
+# 8.4 Sample Size {.unnumbered}
+
+The final part of BEAN is **N**, or sample size.
+
+{{< glossary "sample size" popup="hover" >}} is the number of observations or participants in a study. In a between-subjects design, we often also care about how many participants are in each group.
+
+Sample size matters because larger samples usually give us more power to detect an effect. But that does not mean "more is always better" in a simple way. Larger samples can cost more time, money, and effort. They can also make trivially small effects statistically significant.
+
+The better question is:
+
+> What sample size do I need to answer the research question well?
+
+## How Researchers Justify Sample Size
+
+Researchers can justify sample size in several ways:
+
+1. **Resource constraints**: Sometimes time, budget, recruitment access, or other limits determine what is possible.
+2. **A priori power analysis**: Researchers estimate the sample size needed before collecting data.
+3. **Sensitivity power analysis**: Researchers estimate what effect size a given sample can reasonably detect.
+4. **Existing norms or heuristics**: Researchers follow common rules in a field, although this is often weaker than a specific justification.
+
+For this course, we will focus on power analysis because it connects directly to BEAN.
+
+::: {.callout-note collapse="true" title="More About Sample Size Justification"}
+Daniel Lakens has useful resources on sample size justification, including a paper, chapter, and online tool. The main idea is that researchers should justify sample size based on the research question, design, expected effect size, desired precision, desired power, and practical constraints.
+:::
+
+## Power Analysis and BEAN
+
+A {{< glossary "power analysis" popup="hover" >}} uses the relationships among BEAN to answer planning questions.
+
+Typically, we ask one of three questions:
+
+1. **What sample size do I need?**  
+   Given effect size, alpha, and desired power, solve for N.
+
+2. **What power do I have?**  
+   Given effect size, alpha, and sample size, solve for power.
+
+3. **What effect size can I detect?**  
+   Given alpha, desired power, and sample size, solve for the detectable effect size.
+
+In other words, if you know three parts of BEAN, you can often solve for the fourth.
+
+## Using PAMLj in jamovi
+
+For this course, we will use the **PAMLj** module in jamovi for power analysis.
+
+PAMLj can help you estimate sample size, power, or detectable effect size for common statistical tests. The exact options may vary depending on the version of PAMLj you have installed, but the core logic stays the same.
+
+::: {.callout-note title="For Dana's Students"}
+You will use PAMLj in assignments for this unit. Do not treat the output as a mysterious calculator answer. Your job is to connect the output back to BEAN: effect size, alpha, power, and sample size.
+:::
+
+## Installing or Opening PAMLj
+
+If you do not already see PAMLj in jamovi:
+
+1. Open jamovi.
+2. Click the **Modules** icon in the upper-right area of jamovi.
+3. Open the jamovi library.
+4. Search for **PAMLj**.
+5. Install it.
+
+Once installed, PAMLj should appear as an analysis module in jamovi.
+
+## Solving for Sample Size
+
+Use this when you want to know how many participants you need.
+
+You provide:
+
+- Expected or smallest effect size of interest
+- Alpha level
+- Desired power
+- Test type
+- One-tailed or two-tailed hypothesis
+- Group-size information, if relevant
+
+PAMLj estimates the sample size needed.
+
+### Example
+
+Imagine we are planning an independent-samples *t*-test. We want to detect an effect of *d* = .80, use α = .05, and achieve about 80% power.
+
+If the groups are equal in size, the result should suggest that we need about 25 participants per group to reach roughly 79% to 80% power. The exact value may differ slightly depending on the software settings.
+
+The important interpretation is:
+
+> With this design, effect size, alpha, and sample size, we would have about an 80% chance of detecting the effect if the effect really exists.
+
+## Solving for Power
+
+Use this when you already know your sample size and want to know how much power you have.
+
+You provide:
+
+- Effect size
+- Alpha level
+- Sample size
+- Test type
+- One-tailed or two-tailed hypothesis
+
+PAMLj estimates the study's power.
+
+This is useful when the sample size is already fixed. For example, maybe you are using archival data, working with a small program, or studying a hard-to-reach population.
+
+::: {.callout-warning title="Be Careful"}
+Low power does not mean your study is worthless, but it does change how you should interpret the results.
+
+A non-significant result from a low-powered study is often inconclusive. The study may have missed a real effect.
+:::
+
+## Solving for Detectable Effect Size
+
+Use this when you want to know what effect size your study can reasonably detect.
+
+You provide:
+
+- Alpha level
+- Desired power
+- Sample size
+- Test type
+- One-tailed or two-tailed hypothesis
+
+PAMLj estimates the effect size that could be detected with that design.
+
+This is often called a **sensitivity analysis**. It is useful when you cannot increase your sample size and want to understand what kinds of effects your study is actually capable of detecting.
+
+## What to Look For in the Output
+
+When you review PAMLj output, do not just copy the number. Ask yourself:
+
+- What did I solve for: sample size, power, or effect size?
+- What effect size did I assume or estimate?
+- What alpha level did I use?
+- What power level did I use or obtain?
+- Was the test one-tailed or two-tailed?
+- Was the sample size total N or N per group?
+- Does the result make sense given the research question?
+
+These questions matter because power analysis is not just a software procedure. It is a way of making your design decisions explicit.
+
+## What Changes What?
+
+Holding everything else constant:
+
+| Change | What usually happens? |
+|---|---|
+| Larger effect size | Power increases |
+| Smaller effect size | Power decreases |
+| Larger sample size | Power increases |
+| Smaller sample size | Power decreases |
+| Lower alpha | Power decreases, but Type I error risk decreases |
+| Higher desired power | Required sample size increases |
+| Two-tailed test instead of one-tailed test | Required sample size usually increases |
+
+That table is BEAN in action.
+
+::: {.callout-note collapse="true" title="What About Post Hoc Power?"}
+You may hear about post hoc or observed power, where researchers calculate power after seeing the results of a study. This is controversial and often not very useful because observed power is closely tied to the observed p-value.
+
+For this course, focus on a priori power analysis and sensitivity power analysis. Those are more useful for planning and interpreting studies.
+:::
+
+## Practice
+
+A researcher wants to detect a smaller effect size than originally expected. What will usually happen to the required sample size if alpha and desired power stay the same?
+
+::: {.callout-note collapse="true" title="Suggested Answer"}
+The required sample size will increase. Smaller effects are harder to detect, so we need more data to detect them with the same alpha level and desired power.
+:::

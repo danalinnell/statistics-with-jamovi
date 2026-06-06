@@ -1,0 +1,23 @@
+# 16. Validity {.unnumbered}
+
+::: {.callout-note}
+This chapter is a work in progress.
+:::
+
+There are four general types of validity:
+
+1.  **Construct**: validity of inferences about the higher-order constructs that represent sampling particulars. There are various types of construct validity, and ways to measure them, which include but are not limited to:
+
+    -   **Content validity**: experts using their judgment that something measures what it is supposed to measure
+
+    -   **Convergent validity**: correlations among two theoretically related constructs are strong and positive
+
+    -   **Divergent validity**: correlations among two theoretically not-related constructs are zero/null
+
+    -   **Criterion validity**: content on one test (predictor) correlates with performance on relevant criterion measures (outcome)
+
+2.  **Statistical**: validity of inferences about the correlation between treatment and outcome
+
+3.  **Internal**: validity about whether the observed relationship between A and B reflects a *causal* relationship between A and B
+
+4.  **External**: validity of inferences about whether the cause-effect relationship holds over variation in units/persons, treatment variations, outcomes, and settings (UTOS)
