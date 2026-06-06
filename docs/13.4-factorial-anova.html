@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>13.4 Factorial ANOVA – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./13.5-ancova.html" rel="next">
+<link href="./13.3-repeated-measures-anova.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,7 +72,37 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -88,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13.0-anova.html">13. ANOVA</a></li><li class="breadcrumb-item"><a href="./13.4-factorial-anova.html">13.4 Factorial ANOVA</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +143,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -597,11 +625,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./13.0-anova.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">13. ANOVA</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13.1-one-way-anova.html" class="sidebar-item-text sidebar-link">
@@ -622,7 +650,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13.4-factorial-anova.html" class="sidebar-item-text sidebar-link">
+  <a href="./13.4-factorial-anova.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">13.4 Factorial ANOVA</span></a>
   </div>
 </li>
@@ -748,60 +776,156 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#independent-factorial-anova" id="toc-independent-factorial-anova" class="nav-link active" data-scroll-target="#independent-factorial-anova">Independent Factorial ANOVA</a></li>
+  <li><a href="#repeated-measures-factorial-anova" id="toc-repeated-measures-factorial-anova" class="nav-link" data-scroll-target="#repeated-measures-factorial-anova">Repeated Measures Factorial ANOVA</a></li>
+  <li><a href="#mixed-factorial-anova" id="toc-mixed-factorial-anova" class="nav-link" data-scroll-target="#mixed-factorial-anova">Mixed Factorial ANOVA</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13.0-anova.html">13. ANOVA</a></li><li class="breadcrumb-item"><a href="./13.4-factorial-anova.html">13.4 Factorial ANOVA</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">13.4 Factorial ANOVA</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>Factorial ANOVA allows us to examine two or more independent variables (IVs) simultaneously against a continuous dependent variable (DV). There are several types of factorial designs:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li><strong>Independent factorial design</strong>: several between-group (independent) IVs</li>
+<li><strong>Repeated measures factorial design</strong>: several within-group (repeated-measures) IVs</li>
+<li><strong>Mixed factorial design</strong>: some between-group and some within-group IVs</li>
 </ul>
+<p>Furthermore, you may read about ANOVAs referred to as “one-way”, “two-way”, “three-way” or greater. This simply refers to how many independent variables there are. Factorial ANOVAs are sometimes also referenced by how many groups per IV there are; for example, a 2 x 3 ANOVA is a factorial ANOVA in which the first IV has two conditions and the second IV has three conditions. You would also specify which IVs are between-group and which are within-group. For example, you might write that your design is a 2 (between-subjects: gender) x3 (within-subjects: task) mixed factorial.</p>
+<p>We won’t be going into too much detail on the different factorial ANOVA designs. Instead, I will walk through illustrative cases so that if you want to apply them in the future you can mimic the procedures below. Note that the assumptions are essentially the same as the one-way ANOVA and/or repeated measures ANOVA depending on whether you are using between- or within-group IVs, respectively.</p>
+<section id="independent-factorial-anova" class="level2">
+<h2 class="anchored" data-anchor-id="independent-factorial-anova">Independent Factorial ANOVA</h2>
+<p>The independent factorial ANOVA has multiple between-group IVs. Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “rtfm”. This data has two IVs: attend (whether or not the student turned up to lectures) and reading (whether or not the student actually read the textbook). 1 = they did and 0 = they did not.</p>
+<p>Here’s a video walking through the independent factorial ANOVA.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/EynjbSDW56I" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+<p>Because we do not have a within-group IV, we will select the ANOVA analysis. Move grade to your Dependent Variable box and both attend and reading to your Fixed Factors. Select all the same options as you did for the one-way ANOVA (i.e., <span class="math inline">\(\omega^2\)</span>, assumption checks, Tukey’s post hoc tests for the two variables attend and reading, estimated marginal means).</p>
+<p>Let’s go through the output (check that your output matches!) and then discuss how to write up the results in APA format. First, we need to check assumptions. The Levene’s test and Shapiro-Wilk’s test are shown below. We can see that we meet the assumption of normality but fail to meet the assumption of homogeneity of variance. Unfortunately, we cannot perform a Welch’s F-test with more than one independent factorial so we will note this failed assumption and move on.</p>
+<p><img src="images/06-factorial-anova/independent-factorial_assumptions.png" class="img-fluid"></p>
+<p>Let’s look at the main results next. We got three lines of results in addition to the typical residuals (error). The first two lines are our main effects of <code>attend</code> and <code>reading</code> on grades. The p-values for both are statistically significant indicating attend affects grades and reading affects grades. However, it also added an interaction term of <code>attend * reading</code>, which is not statistically significant. This means we do not have an interaction between attend and reading on grades. Interactions will be discussed in more detail in the next section.</p>
+<p><img src="images/06-factorial-anova/independent-factorial_results.png" class="img-fluid"></p>
+<p>Although we could simply look at the means to know whether attending or reading had higher grades than not attending or not reading because there are only two conditions, we can also look at the post hoc tests and definitely need to look at them if we have three or more conditions per IV. These are shown below. Because the mean differences are negative, we can determine that the second group had higher means than the first group. We can confirm that with the estimated marginal means (not shown here).</p>
+<p><img src="images/06-factorial-anova/independent-factorial_posthoc.png" class="img-fluid"></p>
+<p>Last, we can write-up our results!</p>
+<blockquote class="blockquote">
+<p>We were interested in knowing how attendance and reading affected student grades. An independent factorial ANOVA showed that both attendance (<em>F</em> [1, 4] = 18.25, <em>p</em> = .013, <span class="math inline">\(\omega^2\)</span> = .26) and reading (<em>F</em> [1, 4] = 44.17, <em>p</em> = .003, <span class="math inline">\(\omega^2\)</span> = .64) affected student grades; there was no significant interaction between attendance and reading (<em>F</em> [1, 4] = 8.00, <em>p</em> = .660, <span class="math inline">\(\omega^2\)</span> = -.01). Tukey’s post hoc comparisons show that students who attended lectures (<em>M</em> = 75.50, <em>SE</em> = 2.98) had higher grades than students who did not (<em>M</em>&nbsp;= 57.50, <em>SE</em> = 2.98; <em>p</em> = .003, <em>d</em> = 4.70); furthermore, students who read (<em>M</em> = 80.50, <em>SE</em> = 2.98) had higher grades than students who did not (<em>M</em> = 52.50, <em>SE</em> = 2.98; <em>p</em> = .013; <em>d</em> = 3.02).</p>
+</blockquote>
+<section id="interactions" class="level3">
+<h3 class="anchored" data-anchor-id="interactions">Interactions</h3>
+<p>Interactions occur when the effect of one IV on the DV depends on the level of the other IV. If you did not want to test for interaction effects, you could remove them from the Model Terms in the Model drop-down menu.</p>
+<p>However, by default they will include them. If you have 2-3 IVs, it may be reasonable to look at these interactions. However, 3-variable interactions (e.g., IV1 * IV2 * IV3) are pushing it and 4-variable interactions are highly implausible. Be critical in which interaction terms you include!</p>
+<p>jamovi can provide a plot of your interaction, which can be helpful to help interpret your results. Below is the plot for our interaction of attendance on reading.</p>
+<p><img src="images/06-factorial-anova/independent-factorial_plot.png" class="img-fluid"></p>
+<p>The parallel lines that are sloping upward tell me there is a significant main effect for both IVs but no interaction. How do I know that? With two variables, there are only so many interaction shapes possible. You can <a href="https://statisticsbyjim.com/regression/interaction-effects/">read more about interaction effects</a> from Statistics by Jim. <a href="https://courses.washington.edu/smartpsy/interactions.htm">This website</a> does a fantastic time showing you all 8 combinations of the three effects (2 main effects and 1 interaction effect). Spend some time looking through it and familiarizing yourself with the plots!</p>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="repeated-measures-factorial-anova" class="level2">
+<h2 class="anchored" data-anchor-id="repeated-measures-factorial-anova">Repeated Measures Factorial ANOVA</h2>
+<p>This is also sometimes called the two-way (or three-way or n-way, depending on the <em>n</em> of IVs you have) repeated measures ANOVA. Let’s go through an example repeated measures factorial ANOVA. The dataset is courtesy of <a href="https://www.real-statistics.com/anova-repeated-measures/two-within-subjects-factors/">Real Statistics Using Excel</a>.</p>
+<blockquote class="blockquote">
+<p>A company has created a new training program for their customer service staff. To test the effectiveness of the program they took a sample of 10 employees and assessed their performance in three areas: &nbsp;Product (knowledge of the company’s products and services), Client (their ability to relate to the customer with politeness and empathy) and Action (their ability to take action to help the customer). They then had the same 10 employees take the training course and rated their performance after the program in the same three areas.</p>
+</blockquote>
+<p>You can find the dataset here to follow along: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Repeated-measures-factorial-ANOVA.xlsx">Repeated-measures-factorial-ANOVA.xlsx Download</a></p>
+<p>Here’s a video walking through the repeated measures factorial ANOVA.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/BQAFjSzoFHU" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+<p>In jamovi, select Repeated Measures ANOVA under the ANOVA analysis option. Here are the general steps:</p>
+<ol type="1">
+<li><p>In Repeated Measures Factors, you’ll need to name both factors. Rename <code>RM Factor 1</code> to Time and <code>RM Factor 2</code> to Area. Under Time, specify two levels: Pre and Post. Under Area, specify three levels: Product, Client, and Action.</p></li>
+<li><p>In Repeated Measures Cells, you’ll now have six cells with the combinations of the 6 columns you have. Drag the variable from the left into the correct cell on the right. Be careful here! For example, you need to put the Pre-Product variable into the cell “Pre, Product”.</p></li>
+<li><p>Name your dependent variable label “Performance” and select `Generalised <span class="math inline">\(\eta^2\)</span>.</p></li>
+<li><p>Under Assumption Checks, select Sphericity tests</p></li>
+<li><p>Under Post Hoc Tests, move Area and Time over and select Tukey.</p></li>
+<li><p>Under Estimated Marginal Means, move Time over into Term 1, Area into Term 2, and both Time and Area into Term 3. Select plots and tables, Observed scores, and Equal cell weights.</p></li>
+</ol>
+<p>Now let’s go over selected output. Not shown here is the Q-Q plot, which we use to test normality. First, we need to check our assumption of sphericity. All the Mauchly’s W’s are not statistically significant so we satisfy the assumption of sphericity and do not need to apply any sphericity corrections.</p>
+<p><img src="images/06-factorial-anova/rm-factorial_assumption.png" class="img-fluid"></p>
+<p>Next let’s look at the within subjects effects table. Remember, we do not need to worry about the between subjects effects table because we do not have one; it will be used in the mixed factorial design below. Overall, we see a significant main effect of area, a significant main effect of time, and a significant interaction effect of both area and time. Neat!</p>
+<p><img src="images/06-factorial-anova/rm-factorial_results.png" class="img-fluid"></p>
+<p>Next, we can look at post hoc comparisons because the main effects were all statistically significant. For area, we can see that client and action had significantly higher means than product, but there was no difference between client and action. Furthermore, post-intervention performance was significantly higher than pre-intervention.</p>
+<p><img src="images/06-factorial-anova/rm-factorial_tukey.png" class="img-fluid"></p>
+<p>Last, let’s look at the interaction to get a sense of what the interaction looks like. It appears that although there are no differences between pre- and post-intervention for product, there are significant differences from pre- to post-intervention for both client and action. To be more specific on where the statistically significant differences are, you can also ask for post hoc tests for the interaction term. This is where including a plot can be very helpful for your audience!</p>
+<p><img src="images/06-factorial-anova/rm-factorial_interaction.png" class="img-fluid"></p>
+<p>Now we have everything we need (in addition to the estimated marginal means) and can write-up our results.</p>
+<blockquote class="blockquote">
+<p>We tested a 2 (time: pre- and post-intervention) x 3 (area: product, client, action) repeated measures factorial design to examine how both time and area affected performance. We satisfied the assumption of sphericity for all effects. There was a significant main effect of time (<em>F</em> [1, 9] = 33.85, <em>p</em> &lt; .001, <span class="math inline">\(\eta^2_G\)</span> = .25) such that performance at post-intervention (<em>M</em> = 26.80, <em>SE</em> = 1.84) was higher than at pre-intervention (<em>M</em> = 19.37, <em>SE</em> = 1.84). There was also a significant main effect of area (<em>F</em> [2, 18] = 26.96, <em>p</em> &lt; .001, <span class="math inline">\(\eta^2_G\)</span> = .36) such that both client (<em>M</em> = 25.10, <em>SE</em> = 1.95) and action (<em>M</em> = 27.65, <em>SE</em>&nbsp;= 19.5) performance was higher than product performance (<em>M</em> = 16.50, <em>SE</em> = 1.95), but there was no difference between client and action performance. Lastly, there was a significant interaction between time and area such that there were no differences in product performance from pre- to post-intervention but there was for client and action performance (see Figure 1).</p>
+</blockquote>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="mixed-factorial-anova" class="level2">
+<h2 class="anchored" data-anchor-id="mixed-factorial-anova">Mixed Factorial ANOVA</h2>
+<p>You can find the dataset here to follow along: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/mixed-factorial.sav">mixed-factorial.sav Download</a></p>
+<p>This dataset comes from a larger studying examining the effect of a delayed reward preference of three commodities (food, money, and music) on food cravings (as rated by the Food Craving Questionnaire [FCQ]) for each participant. Participants were in one of two conditions: the control condition did not do anything and the experimental condition had participants do the tasks while fasting.</p>
+<p>Therefore, this study is a 2 (between-subjects: condition [control or fasting]) x 3 (within-subjects: reward [food, money, and music]) mixed factorial design.</p>
+<p>Here’s a video walking through the mixed factorial ANOVA.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/lbZK_FoZKW4" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+<p>To perform a mixed factorial ANOVA, we use the same procedures as the repeated measures ANOVA but we also need to add a between-subjects factor.</p>
+<ol type="1">
+<li><p>To perform a mixed factorial ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose “Repeated Measures ANOVA”.</p></li>
+<li><p>Under “Repeated Measures Factors” name your independent variable. In this case you can name it “Reward”. Rename the three levels of Task: Food, Money, and Music.</p></li>
+<li><p>Under “Repeated Measures Cells” move the given variable into the correct level. For example, you’ll move FQ_1 to Food, FQ_2 to Money, and FQ_3 to Music.</p></li>
+<li><p>Under “Between Subject Factors” add your between-subjects variable “condition.</p></li>
+<li><p>Select Generalised <span class="math inline">\(\eta^2\)</span> as your measure of effect size.</p></li>
+<li><p>In the Assumption Checks drop-down menu, select <code>Sphericity tests</code>.</p></li>
+<li><p>In the Post Hoc Tests drop-down menu, move your two independent variables over and select <code>Tukey</code>. Remember that we only interpret these if the overall <em>F</em> is statistically significant.</p></li>
+<li><p>In the Estimated Marginal Means drop-down menu, move Reward, Condition, and both reward and condition into the terms under Marginal Means. Select tables and plots, and select <code>Observed scores</code>. Uncheck <code>Equal cell weights</code>.</p></li>
+</ol>
+<p>Now let’s go through the output!</p>
+<p>First, as always we check our assumption of sphericity. Mauchly’s W is not statistically significant (<em>p</em> = .073) so we satisfy the assumption of sphericity. We do not need to apply a sphericity correction.</p>
+<p><img src="images/06-factorial-anova/mixed_assumptions.png" class="img-fluid"></p>
+<p>Next, we interpret out output! This time we interpret both our within subjects effects and between subjects effects tables. In the within subjects effects table, our main effect of reward is statistically significant. In the between subjects effects table, our main effect of condition is statistically significant. However, in the within subjects effects table, there is no statistically significant interaction effect of reward on condition.</p>
+<p><img src="images/06-factorial-anova/mixed_results.png" class="img-fluid"></p>
+<p>To understand where the differences lie between conditions or reward preferences, we look to our post hoc tests. For reward, it looks like there is only a significant difference between food and music (<em>p</em> = .009). For condition, it looks like cravings were higher in the fasting group than in the control group. We can look at the estimated marginal means tables to find the actual Means of the conditions and see the plots.</p>
+<p><img src="images/06-factorial-anova/mixed_posthoc.png" class="img-fluid"></p>
+<p>We can look at the interaction plot, but notice that the lines are parallel which is a good indication that there is no significant interaction.</p>
+<p><img src="images/06-factorial-anova/mixed_interaction.png" class="img-fluid"></p>
+<p>Lastly, we can write up the results in APA style!</p>
+<blockquote class="blockquote">
+<p>To test how both condition (control or fasting) and reward preference (food, money, and music) affected food cravings, we performed a mixed factorial ANOVA. There was a significant main effect of condition (<em>F</em> [1, 98] = 82.44, <em>p</em> &lt; .001, <span class="math inline">\(\eta^2_G\)</span> = .43) and a significant main effect of reward (<em>F</em> [2, 196] = 4.45, <em>p</em> = .013, <span class="math inline">\(\eta^2_G\)</span> = .00). However, there was no statistically significant interaction effect of reward on condition (<em>F</em> [2, 196] = .66, <em>p</em> = .519, <span class="math inline">\(\eta^2_G\)</span> = .00).</p>
+<p>For condition, participants who fasted (<em>M</em> = 3.81, <em>SE</em> = .11) reported significantly more food cravings than participants in the control condition (<em>M</em> = 2.33, <em>SE</em> = .11; <span class="math inline">\(p_{Tukey}\)</span> &lt; .001). For reward, the food reward (<em>M</em> = 3.14, <em>SE</em> = .09) led to significantly higher food cravings than the music reward (<em>M</em> = 3.00, <em>SE</em> = .09; <span class="math inline">\(p_{Tukey}\)</span> = .009), but there was no differences between the money reward (<em>M</em> = 3.07, <em>SE</em> = .09) and both food (<span class="math inline">\(p_{Tukey}\)</span> = .340) or music (<span class="math inline">\(p_{Tukey}\)</span> = .258).</p>
+</blockquote>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1331,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./13.3-repeated-measures-anova.html" class="pagination-link" aria-label="13.3 Repeated Measures ANOVA">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">13.3 Repeated Measures ANOVA</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./13.5-ancova.html" class="pagination-link" aria-label="13.5 ANCOVA">
+        <span class="nav-page-text">13.5 ANCOVA</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

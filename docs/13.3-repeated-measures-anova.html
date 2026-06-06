@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>13.3 Repeated Measures ANOVA – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./13.4-factorial-anova.html" rel="next">
+<link href="./13.2-finding-group-differences.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,7 +72,37 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -88,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13.0-anova.html">13. ANOVA</a></li><li class="breadcrumb-item"><a href="./13.3-repeated-measures-anova.html">13.3 Repeated Measures ANOVA</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +143,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -597,11 +625,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./13.0-anova.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">13. ANOVA</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13.1-one-way-anova.html" class="sidebar-item-text sidebar-link">
@@ -616,7 +644,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13.3-repeated-measures-anova.html" class="sidebar-item-text sidebar-link">
+  <a href="./13.3-repeated-measures-anova.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">13.3 Repeated Measures ANOVA</span></a>
   </div>
 </li>
@@ -748,60 +776,209 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#step-1-look-at-the-data" id="toc-step-1-look-at-the-data" class="nav-link active" data-scroll-target="#step-1-look-at-the-data">Step 1: Look at the Data</a></li>
+  <li><a href="#step-2-check-assumptions" id="toc-step-2-check-assumptions" class="nav-link" data-scroll-target="#step-2-check-assumptions">Step 2: Check Assumptions</a></li>
+  <li><a href="#step-3-perform-the-test" id="toc-step-3-perform-the-test" class="nav-link" data-scroll-target="#step-3-perform-the-test">Step 3: Perform the Test</a></li>
+  <li><a href="#step-4-interpret-results" id="toc-step-4-interpret-results" class="nav-link" data-scroll-target="#step-4-interpret-results">Step 4: Interpret Results</a></li>
+  <li><a href="#friedmans-test" id="toc-friedmans-test" class="nav-link" data-scroll-target="#friedmans-test">Friedman’s Test</a></li>
+  <li><a href="#additional-practice" id="toc-additional-practice" class="nav-link" data-scroll-target="#additional-practice">Additional Practice</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13.0-anova.html">13. ANOVA</a></li><li class="breadcrumb-item"><a href="./13.3-repeated-measures-anova.html">13.3 Repeated Measures ANOVA</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">13.3 Repeated Measures ANOVA</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>The repeated measures analysis of variance (ANOVA) is used to test the difference in our dependent variable between <u>three or more</u> groups of observations in which all participants participate in all groups or levels. Our grouping variable is our independent variable. In other words, we use the repeated measures ANOVA when we have a research question with a <strong>continuous dependent variable</strong> and a <strong>categorical independent variable with three or more categories in which the <u>same</u> participants are in each category</strong>.</p>
+<p>The repeated measures ANOVA is also sometimes called the one-way related ANOVA.</p>
+<p>There are two ways we could have the repeated measures ANOVA. Perhaps the same group of participants are measured in the same dependent variable at three or more time points. In this case, our independent variable is time and our dependent variable is whatever is measured at each time point.</p>
+<p><img src="images/05-repeated-measures-anova/Laerd1.png" class="img-fluid"></p>
+<p>The other way we might have the repeated measures ANOVA is if all our participants participate in all conditions of our study. In this case, our independent variable is the treatment or condition and the dependent variable is whatever is measured in each treatment or condition.</p>
+<p><img src="images/05-repeated-measures-anova/Laerd2.png" class="img-fluid"></p>
+<section id="step-1-look-at-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-look-at-the-data">Step 1: Look at the Data</h2>
+<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “broca”.</p>
+<p>This dataset is hypothetical data in which six patients suffering from Broca’s Aphasia (a language deficit commonly experienced following a stroke) complete three word recognition tasks. On the first (speech production) task, patients were required to repeat single words read aloud by the researcher. On the second (conceptual) task, designed to test word comprehension, patients were required to match a series of pictures with their correct name. On the third (syntax) task, designed to test knowledge of correct word order, patients were asked to reorder syntactically incorrect sentences. Each patient completed all three tasks. The order in which patients attempted the tasks was counterbalanced between participants. Each task consisted of a series of 10 attempts. The number of attempts successfully completed by each patient are provided in the dataset.</p>
+<p>Here’s a video walking through the repeated measures ANOVA test.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/Fl6S9IBC1q0" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+<section id="data-set-up" class="level3">
+<h3 class="anchored" data-anchor-id="data-set-up">Data Set-Up</h3>
+<p>To conduct the repeated measures ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires multiple columns, one for each condition or time measurement, with the values indicating the measurement of the DV for that condition or time. Each row is a unique participant or unit of analysis.</p>
+<p>So for our broca dataset, we have our Participant column indicating their participant number and then one column for each of the three word recognition tasks (speech, conceptual, syntax), with their scores on the knowledge test indicating the dependent variable for each condition.</p>
+<p><img src="images/05-repeated-measures-anova/rm_data.png" class="img-fluid"></p>
+<p>In the data above, what is your <strong>independent variable</strong>? What is your <strong>dependent variable</strong>?</p>
+</section>
+<section id="describe-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="describe-the-data">Describe the Data</h3>
+<p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. We see that there are only six cases total (oof, really small data set!) and the average test score on each of the three conditions. It appears participants did best on the speech condition, but we’ll need to run our repeated measures ANOVA to know for sure. Note that I am describing the continuous DV split by the categorical IV here because of how our data is set up in jamovi.</p>
+<p><img src="images/05-repeated-measures-anova/rm_descriptives.png" class="img-fluid"></p>
+</section>
+<section id="specify-your-hypotheses" class="level3">
+<h3 class="anchored" data-anchor-id="specify-your-hypotheses">Specify Your Hypotheses</h3>
+<p>In this scenario, we want to see if there is a difference in word recognition across the three tasks. Just like the one-way ANOVA, we have fairly simple hypotheses for the basic repeated measures ANOVA:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li><span class="math inline">\(H_0\)</span>: There is <strong>no difference</strong> in word recognition across the three tasks.</li>
+<li><span class="math inline">\(H_1\)</span>: There is <strong>a difference</strong> in word recognition across the three tasks.</li>
 </ul>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="step-2-check-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-check-assumptions">Step 2: Check Assumptions</h2>
+<p>As a parametric test, the repeated measures ANOVA has the same assumptions as other parametric tests:</p>
+<ol type="1">
+<li><p>The dependent variable is <strong>normally distributed</strong></p></li>
+<li><p>Variances in the two groups are roughly equal (i.e., <strong>homogeneity of variances</strong>); in repeated measures ANOVA this is called the assumption of <strong>sphericity</strong></p></li>
+<li><p>The dependent variable is <strong>interval or ratio</strong> (i.e., continuous)</p></li>
+<li><p><del>Scores are <strong>independent</strong> between groups</del> (this assumption is not relevant because all participants participate in all conditions)</p></li>
+</ol>
+<p>We cannot <em>test</em> the third and fourth assumptions; rather, those are based on knowing your data.</p>
+<p>However, we can and should test for the first two assumptions. Fortunately, the repated measures ANOVA in jamovi has check boxes under “Assumption Checks” that lets us test for both assumptions.</p>
+<section id="testing-normality" class="level3">
+<h3 class="anchored" data-anchor-id="testing-normality">Testing Normality</h3>
+<div class="info">
+<p>Note how the way we test normality for the repeated measures ANOVA is different than what we’ve learned before!</p>
+</div>
+<p>We cannot test normality using all four methods we previously learned about because in this case we are checking normality of the residuals. You don’t need to know what that means yet (we’ll discuss it more when we go over regression).</p>
+<p>To check normality for the repeated measures ANOVA, we have to go run the repeated measures ANOVA in jamovi. To test normality, under ‘Assumption Checks’ we select Q-Q plot. It is currently the only option we have available for testing normality in the repeated measures ANOVA.</p>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="testing-sphericity" class="level3">
+<h3 class="anchored" data-anchor-id="testing-sphericity">Testing Sphericity</h3>
+<p>The sphericity assumption is essentially the repeated measures ANOVA equivalent of homogeneity of variances. Sphericity means there is equality of variances of the <em>differences</em> between treatment levels. For example, if there are three groups, then the difference in all three pairs of differences (1-2, 1-3, 2-3) need to have approximately equal variances. You only need to care about sphericity when there are at least three conditions, which is why we did not talk about this with the dependent t-test.</p>
+<p>Fortunately, like the other assumption checks, testing for sphericity is as simple as a checkbox in jamovi. Check the box <code>Sphericity tests</code> under the Assumption Checks drop-down menu. That produces the following output:</p>
+<p><img src="images/05-repeated-measures-anova/rm-anova_sphericity.png" class="img-fluid"></p>
+<p>Mauchly’s test of sphericity tests the null hypothesis that the variances of the differences between the conditions are equal. Therefore, just like with our previous assumption checks, if Mauchly’s test is non-significant (i.e., <em>p</em> &gt; .05, as is the case in this analysis) then it is reasonable to conclude that the variances of the differences are not significantly different. This means we satisfy the assumption of sphericity and can conclude that the variances of the differences are roughly equal.</p>
+<p>If Mauchly’s test had been statistically significant (<em>p</em> &lt; .05), then we would conclude that the assumption had <em>not</em> been met. In that case, we would apply a correction to the <em>F</em>-value obtained in the repeated measures ANOVA:</p>
+<ul>
+<li>If sphericity is not violated, then only select the None option.</li>
+<li>If sphericity is violated and if the Greenhouse-Geisser value in the “Tests of Sphericity” table is &gt; .75 then you should select the Huynh-Feldt correction and de-select the None option.</li>
+<li>If sphericity is violated and if the Greenhouse-Geisser value is &lt; .75, then you should select the Greenhouse-Geisser correction and de-select the None option.</li>
+</ul>
+<p>You can select these corrections in the Assumption Checks drop-down menu.</p>
+</section>
+</section>
+<section id="step-3-perform-the-test" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-perform-the-test">Step 3: Perform the Test</h2>
+<section id="decide-which-statistical-test-you-should-be-using" class="level3">
+<h3 class="anchored" data-anchor-id="decide-which-statistical-test-you-should-be-using">Decide Which Statistical Test You Should Be Using</h3>
+<p>Here’s what statistic you should choose based on satisfying assumptions:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Normality: satisfied</strong></th>
+<th><strong>Normality: not satisfied</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Sphericity: satisfied</strong></td>
+<td>Repeated measures ANOVA</td>
+<td><a href="#friedmans-test">Friedman’s test</a></td>
+</tr>
+<tr class="even">
+<td><strong>Sphericity: not satisfied</strong></td>
+<td>Repeated measures ANOVA with one of the sphericity corrections</td>
+<td><a href="#friedmans-test">Friedman’s test</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="perform-the-test" class="level3">
+<h3 class="anchored" data-anchor-id="perform-the-test">Perform the Test</h3>
+<p>We have already discussed what to do if you violate the assumption of sphericity above; you select one of the two sphericity corrections based on the values of the sphericity tests.</p>
+<p>If you violate the assumption of normality or if the dependent variable is ordinal, then you can use the Friedman test. You can select this using the Repeated Measures ANOVA - Friedman option under the ANOVA analysis.</p>
+<ol type="1">
+<li><p>To perform a repeated measures ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose “Repeated Measures ANOVA”.</p></li>
+<li><p>Under “Repeated Measures Factors” name your independent variable where it says <code>RM Factor 1</code> and rename the levels to match the repeated measurements. In this case you can name the factor “Task”. Rename the three levels of Task: Speech, Conceptual, and Syntax.</p></li>
+<li><p>Under “Repeated Measures Cells” move the given variable into the correct level. For example, you’ll move Speech to the Speech cell.</p></li>
+<li><p>Select Generalised <span class="math inline">\(\eta^2\)</span> as your measure of effect size.</p></li>
+<li><p>Rename your Dependent Variable Label to match what is being measured across all conditions or time points. In this case, in the three conditions we are measuring their scores on the word recognition task. I will just call this “Word recognition score.”</p></li>
+<li><p>In the Assumption Checks drop-down menu, select <code>Sphericity tests</code> and <code>Q-Q Plots</code>. You’ll note that if you violate the assumption of sphericity, there are two corrections provided (see <a href="#testing-sphericity">testing sphericity</a>). Uncheck “none” if you fail to meet the assumption so you only perform one test.</p></li>
+<li><p>In the Post Hoc Tests drop-down menu, select <code>Tukey</code>. Remember that we only interpret these if the overall <em>F</em> is statistically significant.</p></li>
+<li><p>In the Estimated Marginal Means drop-down menu, move Task to the Marginal Means box, select <code>Marginal means tables</code>, and select <code>Observed scores</code> . Uncheck <code>Equal cell weights</code>.</p></li>
+</ol>
+<p>When you are done, your setup should look like this:</p>
+<p><img src="images/05-repeated-measures-anova/rm-anova_setup1.png" class="img-fluid"></p>
+<p><img src="images/05-repeated-measures-anova/rm-anova_setup2.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="step-4-interpret-results" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-interpret-results">Step 4: Interpret Results</h2>
+<p>Once we are satisfied we have satisfied the assumptions for the repeated measures, we can interpret our results.</p>
+<p><img src="images/05-repeated-measures-anova/rm-anova_results.png" class="img-fluid"></p>
+<p>You’ll notice that jamovi provides you both a Within Subjects Effects table and Between Subjects Effects table. However, we only have a within-subjects effect (Task). Why did it give us a between-subjects table? With the repeated-measures ANOVA (which only has within-subjects IVs), this is just our <span class="math inline">\(SS_{BG}\)</span>. However, because we don’t have one, it’s not calculating anything. We can ignore it. It is only useful if we are conducting a mixed factorial ANOVA with both between-subjects and within-subjects effects (see chapter 9.4 on the factorial ANOVA).</p>
+<p>Therefore, the Within Subjects Effects table is of most use to us. We can see that the overall effect of Task is statistically significant (<em>p</em> = .013). Furthermore, the degrees of freedom are similar to the one-way ANOVA in which the within-subjects df is the number of conditions minus one (k-1); however, the residual df is (n-1)(k-1) or in this case (6-1)(3-1) = 5*2 = 10.</p>
+<p>Since the overall effect is significant, we can look at our Post Hoc Tests results:</p>
+<p><img src="images/05-repeated-measures-anova/rm-anova_tukey.png" class="img-fluid"></p>
+<p>The Tukey post hoc differences show that there was a significant difference between speech and syntax (<em>p</em> = .011), but not between conceptual and both speech and syntax. Last, we can look at the Estimated Marginal Means - Task table to see the group means for reporting purposes. This shows us that participants recognized significantly more words in the speech task than in the syntax task.</p>
+<section id="write-up-the-results-in-apa-style" class="level3">
+<h3 class="anchored" data-anchor-id="write-up-the-results-in-apa-style">Write Up the Results in APA Style</h3>
+<p>We can write this up in APA style similar to the one-way ANOVA.</p>
+<blockquote class="blockquote">
+<p>A repeated measures ANOVA was performed examining how three tasks affected word recognition in patients suffering from Broca’s Aphasia. Task significantly affected word recall, <em>F</em> (2, 10) = 6.93, <em>p</em> = .013, <span class="math inline">\(\eta^2_G\)</span> = .41. Tukey’s post hoc difference tests indicated that participants recognized significantly more words in the speech task (<em>M</em> = 7.17, <em>SE</em> = .62) than participants in the syntax task (<em>M</em> = 4.33, <em>SE</em> = .62; <em>p</em>&nbsp;= .011). There were no differences between the conceptual task (<em>M</em> = 6.17, <em>SE</em> = .62) and both the speech and syntax tasks.</p>
+</blockquote>
+<p>Note that the post hoc tests give the pooled standard error (SE) instead of the standard deviation (SD). The SE is the SD of the overall effect of condition (which is why we call it pooled) divided by the square root of the sample size.</p>
+</section>
+<section id="visualize-the-results" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-the-results">Visualize the Results</h3>
+<p>Under ’Estimated Marginal Means” move your repeated measures factor to the Term 1 box. Select <code>Marginal means plots</code> under Output and check the box for <code>Observed scores</code>. Here’s the resulting output from our scenario.</p>
+<p><img src="images/05-repeated-measures-anova/RM ANOVA visual.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="friedmans-test" class="level2">
+<h2 class="anchored" data-anchor-id="friedmans-test">Friedman’s Test</h2>
+<p>Friedman’s test can only examine one within-subjects variable (i.e., we can’t have a non-parametric repeated measures factorial ANOVA), so you will move all three conditions (Speech, Conceptual, and Syntax) to the Measures box. Select <code>Pairwise comparisons (Durbin-Conover</code> for post hoc comparisons and <code>Descriptives</code> for the Means and Medians. Optionally, you can select to plot either the Means or Medians. The setup is shown below.</p>
+<p><img src="images/05-repeated-measures-anova/rm-anova_friedman_setup.png" class="img-fluid"></p>
+<p>Once you’ve set-up the analysis, you can interpret the results. Overall, we continue to see a statistically significant result and that there is only a significant difference between speech and syntax.</p>
+<p><img src="images/05-repeated-measures-anova/rm-anova_friedman.png" class="img-fluid"></p>
+<p>We can write up the results similarly as before except using the median because as a non-parametric test it is analyzing the median and not the mean:</p>
+<blockquote class="blockquote">
+<p>Friedman’s test was performed examining how three tasks affected word recognition in patients suffering from Broca’s Aphasia. Task significantly affected word recall, <span class="math inline">\(\chi^2\)</span> (2) = 6.64, <em>p</em> = .036. Pairwise comparisons using Durbin-Conover indicated that participants recognized significantly more words in the speech task (<em>M</em> = 7.17, <em>Mdn</em> = 7.50) than participants in the syntax task (<em>M</em> = 4.33, <em>Mdn</em> = 6.50; <em>p</em> = .006). There were no differences between the conceptual task (<em>M</em> = 6.17, <em>Mdn</em> = 6.50) and both the speech and syntax tasks.</p>
+</blockquote>
+</section>
+<section id="additional-practice" class="level2">
+<h2 class="anchored" data-anchor-id="additional-practice">Additional Practice</h2>
+<p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
+<p>Perform a repeated measures ANOVA based on the following research questions. Check your assumptions and ensure you are using the correct tests.</p>
+<p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
+<ol type="1">
+<li><p><strong>Do students differ on their test scores (English, Reading, Math, Writing)?</strong></p>
+<ul>
+<li><p>Based on your understanding of the nature of the test scores, which statistic should you use?</p></li>
+<li><p>Should you apply a sphericity correction? If so, which one?</p></li>
+<li><p>Do students differ on their test scores?</p></li>
+<li><p>Should you perform a planned contrast or post hoc comparison?</p></li>
+<li><p>What are the results of the post hoc comparison?</p></li>
+</ul></li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1384,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./13.2-finding-group-differences.html" class="pagination-link" aria-label="13.2 Finding Group Differences">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">13.2 Finding Group Differences</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./13.4-factorial-anova.html" class="pagination-link" aria-label="13.4 Factorial ANOVA">
+        <span class="nav-page-text">13.4 Factorial ANOVA</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

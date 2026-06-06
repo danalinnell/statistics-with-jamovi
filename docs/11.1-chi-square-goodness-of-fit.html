@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>11.1 Chi-Square Goodness-of-Fit – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./11.2-chi-square-test-of-independence.html" rel="next">
+<link href="./11.0-chi-square.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,7 +72,37 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -88,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11.0-chi-square.html">11. Chi-Square</a></li><li class="breadcrumb-item"><a href="./11.1-chi-square-goodness-of-fit.html">11.1 Chi-Square Goodness-of-Fit</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +143,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -539,14 +567,14 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./11.0-chi-square.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">11. Chi-Square</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11.1-chi-square-goodness-of-fit.html" class="sidebar-item-text sidebar-link">
+  <a href="./11.1-chi-square-goodness-of-fit.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">11.1 Chi-Square Goodness-of-Fit</span></a>
   </div>
 </li>
@@ -748,60 +776,152 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#step-1-look-at-the-data" id="toc-step-1-look-at-the-data" class="nav-link active" data-scroll-target="#step-1-look-at-the-data">Step 1: Look at the Data</a></li>
+  <li><a href="#step-2-check-assumptions" id="toc-step-2-check-assumptions" class="nav-link" data-scroll-target="#step-2-check-assumptions">Step 2: Check Assumptions</a></li>
+  <li><a href="#step-3-perform-the-test" id="toc-step-3-perform-the-test" class="nav-link" data-scroll-target="#step-3-perform-the-test">Step 3: Perform the Test</a></li>
+  <li><a href="#step-4-interpret-results" id="toc-step-4-interpret-results" class="nav-link" data-scroll-target="#step-4-interpret-results">Step 4: Interpret Results</a></li>
+  <li><a href="#additional-practice" id="toc-additional-practice" class="nav-link" data-scroll-target="#additional-practice">Additional Practice</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11.0-chi-square.html">11. Chi-Square</a></li><li class="breadcrumb-item"><a href="./11.1-chi-square-goodness-of-fit.html">11.1 Chi-Square Goodness-of-Fit</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">11.1 Chi-Square Goodness-of-Fit</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>The <span class="math inline">\(\chi^2\)</span> (chi-square) goodness-of-fit tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution.</p>
+<p>Our general hypotheses for the chi-square goodness-of-fit test is as follows:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li><p><span class="math inline">\(H_0\)</span>: The observed frequencies match the expected frequencies. In other words, the frequencies of the categories of the independent variable are what we would expect.</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: At least one observed frequency doesn’t match the expected frequency. In other words, the frequencies of at least one category of the independent variable are not what we would expect.</p></li>
+</ul>
+<div class="danger">
+<p>Note that these are not how you should report your hypotheses! You should specify your hypotheses in relation to the nature of your data. For example, if we have a deck of cards and want to see if people don’t choose cards randomly, the null hypothesis would be that there is a 25% probability of getting each hearts, clubs, spades, and diamonds.</p>
+</div>
+<p>There is no directionality for a chi-square test, so there is no such thing as a one-tailed or two-tailed hypothesis.</p>
+<section id="step-1-look-at-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-look-at-the-data">Step 1: Look at the Data</h2>
+<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “randomness”. This dataset has participants pull two cards from a deck. For now, we’re just going to work with <code>choice_1</code>. We’re interested in finding out if participants pull cards randomly from the deck.</p>
+<p>Here’s a video walking through the chi-square goodness of fit test example for this chapter.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/Pg1EA0eh2p0" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+<section id="data-set-up" class="level3">
+<h3 class="anchored" data-anchor-id="data-set-up">Data Set-Up</h3>
+<p>Our data set-up for a chi-square goodness-of-fit test is pretty simple, We just need a single column with the nominal categories of the independent variable that each participant is in.</p>
+<p><img src="images/09-chi-square/chi-square_data.png" class="img-fluid"></p>
+</section>
+<section id="describe-your-data" class="level3">
+<h3 class="anchored" data-anchor-id="describe-your-data">Describe Your Data</h3>
+<p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. With nominal variables like <code>choice_1</code>, we should request Frequency tables, not descriptive statistics like the mean and median. The mean for <code>choice_1</code> would be, quite frankly, meaningless. What’s the average card type? It can’t exist. So we do frequencies instead.</p>
+<p>Notice how jamovi is pretty smart here and knows not to give us the mean, median, minimum, and maximum. Check the box for Frequency tables to receive those. From our data, we see that most participants pulled a hearts card first (<em>n</em> = 64, 32%) followed by diamonds (<em>n</em> = 51, 26%), spades (<em>n</em> = 50, 25%), and finally clubs (<em>n</em> = 35, 18%).</p>
+<p><img src="images/09-chi-square/chi-square_descriptives.png" class="img-fluid"></p>
+<p>A bar plot can visualize these descriptive statistics nicely.</p>
+<p><img src="images/09-chi-square/chi-square_bar.png" class="img-fluid" width="300"></p>
+</section>
+<section id="specify-the-hypotheses" class="level3">
+<h3 class="anchored" data-anchor-id="specify-the-hypotheses">Specify the Hypotheses</h3>
+<p>We’re interested in finding out if participants pull cards randomly from a deck of cards. A typical deck of cards has 52 cards, 13 for each of the four suits (clubs, spades, hearts, diamonds). Because there are 4 suits, then 1/4 is 25% which is our expected frequency of pulling cards randomly from the deck.</p>
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>: Participants pull cards randomly from the deck. In other words, there is a 25% probability of pulling each hearts, clubs, spades, and diamonds.</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: Participants pull cards not at random from the deck. In other words, participants have a different probability than 25% of pulling at least one of the types of cards.</p></li>
 </ul>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="step-2-check-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-check-assumptions">Step 2: Check Assumptions</h2>
+<p>The chi-square goodness-of-fit test has just one assumption: <strong>Expected frequencies are sufficiently large</strong>, which is usually greater than 5.</p>
+<p>You test for this assumption by checking the “Expected counts” box. You will then see rows of expected counts in your contingency table. Look at the “expected” numbers and check that they are all 5 or greater.</p>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="step-3-perform-the-test" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-perform-the-test">Step 3: Perform the Test</h2>
+<p>To perform the chi-square goodness of fit test, do the following steps:</p>
+<ol type="1">
+<li><p>Go to the Analyses tab, click the Frequencies button, and choose “One sample proportion tests - N outcomes”.</p></li>
+<li><p>Move your variable into the Variable box. In this case, move <code>choice_1</code> into the Variable box.</p></li>
+<li><p>Select <code>Expected counts</code> so you can check for your assumption of expected frequencies.</p></li>
+</ol>
+<p>When you are done, your setup should look like this:</p>
+<p><img src="images/09-chi-square/chi-square_setup.png" class="img-fluid"></p>
+<section id="expected-proportions-different-expected-frequencies" class="level3">
+<h3 class="anchored" data-anchor-id="expected-proportions-different-expected-frequencies">Expected Proportions: Different Expected Frequencies</h3>
+<p>As you will see in the output, jamovi automatically assumed equal proportions of frequencies (in this case 1/4 or 25% chance of pulling each card). However, there might be times when you want to test a different null hypothesis. Maybe we’re testing the whether our sample frequencies match the population frequencies and those are uneven (e.g., whether our 40/60 gender split matches the 36/64 gender split in the population).</p>
+<p>We can use the <code>Expected Proportions</code> in the setup to specify different expected frequencies. Note that this is not us checking the assumption of expected frequencies!</p>
+<p>For example, in our current scenario maybe we think our deck is a little stacked in favor of red cards–or we think our participants are more likely to choose red cards than black cards. We can specify our expected proportions and then interpret the results, such as the example shown in the figure below. In this case, assuming a null distribution of a stacked deck for red cards, participants do not seem more likely to choose red cards based on the expected frequencies we provided.</p>
+<p><img src="images/09-chi-square/chi-square_results3.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="step-4-interpret-results" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-interpret-results">Step 4: Interpret Results</h2>
+<p><img src="images/09-chi-square/chi-square_results.png" class="img-fluid"></p>
+<p>The first table shows us our observed frequencies (our data) and expected frequencies (N/k = 200/4 = 50 which is 25% for each one, like we previously calculated).</p>
+<p>The second table gives us our results. Our p-value is less than our alpha of .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. The degrees of freedom (df) is the number of categories minus one (in this case, 4-1 = 3).</p>
+<p>Note that the chi-square goodness of fit test does not provide us with any measures of effect size.</p>
+<section id="write-up-the-results-in-apa-style" class="level3">
+<h3 class="anchored" data-anchor-id="write-up-the-results-in-apa-style">Write Up the Results in APA Style</h3>
+<p>We can write up our results in APA something like this:</p>
+<blockquote class="blockquote">
+<p>Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51 selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant (<span class="math inline">\(\chi^2\)</span> [3] = 8.44; <em>p</em> = .038), suggesting that people did not select suits purely at random. Participants chose the hearts (32%) more frequently than expected and the clubs (17%) less frequently than expected.</p>
+</blockquote>
+<p>Note that I described the data in the first sentence, but I could have also described it in more detail in the last sentence as part of my interpretation or I could have even written up the results in a table! There are many ways to write up results in APA style, and what’s important is you have the four pieces of information as described in the Writing Results chapter of this textbook.</p>
+</section>
+<section id="visualize-the-results" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-the-results">Visualize the Results</h3>
+<p>The bar plot we can get using Exploration - Descriptives (as shown above in <a href="#describe-your-data">Describe your data</a>) does a decent job of visualizing the results. You can use the default bar plot in jamovi for your assignments.</p>
+<p>If you want to take your visualizations up a notch, we can also do this fairly simply in Excel. Instead of counts, perhaps we care more about percentages, and adding a line for the expected frequency (25%). Here’s an example, using instructions from <a href="https://exceljet.net/chart/column-chart-with-target-line">this tutorial</a>:</p>
+<p><img src="images/09-chi-square/chi-square_excel.png" class="img-fluid" width="500"></p>
+</section>
+</section>
+<section id="additional-practice" class="level2">
+<h2 class="anchored" data-anchor-id="additional-practice">Additional Practice</h2>
+<p>One additional practice you can conduct is performing the same analysis as above but with <code>choice_2</code>! However, if you want to see how <code>choice_1</code> relates to <code>choice_2</code> then we need to perform the chi-square test of independence, which is in the next chapter.</p>
+<p>Another additional practice is in our Sample Dataset. Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
+<p>To get the most out of these exercises, try to first find out the answer on your own and then go to the appendix to check your answer.</p>
+<ol type="1">
+<li><p><strong>Are there equal numbers of athletes and non-athletes?</strong> (<code>Athlete</code> variable)</p>
+<ul>
+<li><p>Do you meet the assumptions?</p></li>
+<li><p>Are the observed frequencies similar to the expected frequencies?</p></li>
+<li><p>What is your chi-square value, rounded to two decimal places?</p></li>
+</ul></li>
+<li><p><strong>I happen to know the school this data comes from has 40% athletes and 60% non-athletes. Does our data match the school population?</strong></p>
+<ul>
+<li><p>Change your Expected Proportions ratio to .6 for non-athletes and .4 for athletes.</p></li>
+<li><p>Are the observed frequencies similar to the expected frequencies?</p></li>
+<li><p>What is your chi-square value, rounded to two decimal places?</p></li>
+</ul></li>
+<li><p><strong>Are there equal numbers of freshmen, sophomores, juniors, and seniors?</strong> (<code>Rank</code> variable)</p>
+<ul>
+<li><p>Do you meet the assumptions?</p></li>
+<li><p>Are the observed frequencies similar to the expected frequencies?</p></li>
+<li><p>What is your chi-square value, rounded to two decimal places?</p></li>
+</ul></li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1327,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./11.0-chi-square.html" class="pagination-link" aria-label="11. Chi-Square">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">11. Chi-Square</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./11.2-chi-square-test-of-independence.html" class="pagination-link" aria-label="11.2 Chi-Square Test of Independence">
+        <span class="nav-page-text">11.2 Chi-Square Test of Independence</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

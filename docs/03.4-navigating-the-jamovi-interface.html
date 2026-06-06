@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>3.4 Navigating the jamovi Interface – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./03.5-checking-variable-setup.html" rel="next">
+<link href="./03.3-opening-saving-annotating-files.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,6 +73,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="style.css">
@@ -88,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03.0-overview-jamovi.html">3. Getting Started With jamovi</a></li><li class="breadcrumb-item"><a href="./03.4-navigating-the-jamovi-interface.html">3.4 Navigating the jamovi Interface</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +115,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -187,11 +187,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./03.0-overview-jamovi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3. Getting Started With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03.1-what-is-jamovi.html" class="sidebar-item-text sidebar-link">
@@ -212,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03.4-navigating-the-jamovi-interface.html" class="sidebar-item-text sidebar-link">
+  <a href="./03.4-navigating-the-jamovi-interface.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">3.4 Navigating the jamovi Interface</span></a>
   </div>
 </li>
@@ -748,60 +748,121 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#the-data-area" id="toc-the-data-area" class="nav-link active" data-scroll-target="#the-data-area">The Data Area</a></li>
+  <li><a href="#the-data-tab" id="toc-the-data-tab" class="nav-link" data-scroll-target="#the-data-tab">The Data Tab</a></li>
+  <li><a href="#the-analyses-tab" id="toc-the-analyses-tab" class="nav-link" data-scroll-target="#the-analyses-tab">The Analyses Tab</a></li>
+  <li><a href="#the-results-panel" id="toc-the-results-panel" class="nav-link" data-scroll-target="#the-results-panel">The Results Panel</a></li>
+  <li><a href="#modules" id="toc-modules" class="nav-link" data-scroll-target="#modules">Modules</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03.0-overview-jamovi.html">3. Getting Started With jamovi</a></li><li class="breadcrumb-item"><a href="./03.4-navigating-the-jamovi-interface.html">3.4 Navigating the jamovi Interface</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">3.4 Navigating the jamovi Interface</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>Once you open jamovi, you will see a spreadsheet-like layout. Your data appear in rows and columns, similar to Excel or Google Sheets.</p>
+<p>The main difference is that jamovi is designed for statistical analysis. It does not only store data; it also helps you define variables, run analyses, and view output.</p>
+<p>I recommend watching this short video by Alexander Swan on <a href="https://youtu.be/t0tQcs-E5Z4">navigating the jamovi interface</a> so you can become familiar with the layout and basic menus. Some demonstrations online may use a Mac or include extra modules, so the screen may look a little different from yours.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/t0tQcs-E5Z4" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+<section id="the-data-area" class="level2">
+<h2 class="anchored" data-anchor-id="the-data-area">The Data Area</h2>
+<p>The data area is where you see the dataset itself. Remember the basic structure:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li>each row is one <button class="glossary" title="One unit in a dataset, such as one participant, case, trial, or response. Observations are usually represented by rows.">observation</button>, such as one participant, person, case, or response;</li>
+<li>each column is one <button class="glossary" title="Anything measured, observed, manipulated, or recorded that can vary across observations.">variable</button>, such as age, condition, test score, or group.</li>
+</ul>
+<p>This structure seems simple, but many analysis problems begin when data are not organized this way.</p>
+</section>
+<section id="the-data-tab" class="level2">
+<h2 class="anchored" data-anchor-id="the-data-tab">The Data Tab</h2>
+<p>The <strong>Data</strong> tab is where you work with the dataset itself. This is where you can do things like:</p>
+<ul>
+<li>add or rename variables;</li>
+<li>edit variable information;</li>
+<li>check measure types and data types;</li>
+<li>compute new variables;</li>
+<li>transform variables; and</li>
+<li>create filters.</li>
+</ul>
+<p>You do not need to understand all of these tools yet. Later chapters will walk through computing variables, transforming variables, reverse-scoring items, creating scale scores, and using filters.</p>
+<p>For now, know that the Data tab is where you go when something about the dataset itself needs to be checked or changed.</p>
+</section>
+<section id="the-analyses-tab" class="level2">
+<h2 class="anchored" data-anchor-id="the-analyses-tab">The Analyses Tab</h2>
+<p>The <strong>Analyses</strong> tab is where you run statistical analyses. For example, this is where you will eventually find options for descriptives, frequencies, <em>t</em>-tests, ANOVA, correlation, regression, and other analyses.</p>
+<p>For this chapter, we are not focused on running analyses yet. Still, it is useful to know that jamovi separates data work from analysis work:</p>
+<ul>
+<li><strong>Data tab</strong> → set up, check, clean, and prepare the dataset</li>
+<li><strong>Analyses tab</strong> → run analyses and create output</li>
 </ul>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
+<section id="the-results-panel" class="level2">
+<h2 class="anchored" data-anchor-id="the-results-panel">The Results Panel</h2>
+<p>When you run an analysis, jamovi displays the results in the output or results panel. One nice thing about jamovi is that the output updates as you change options.</p>
+<p>This can be helpful because you can see immediately how different choices affect the output. It also means you should be careful: if you click an option accidentally, your output may change.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
-</section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="modules" class="level2">
+<h2 class="anchored" data-anchor-id="modules">Modules</h2>
+<p>jamovi can be extended with <button class="glossary" title="An add-on in jamovi that provides additional analyses, tools, or features.">modules</button>. A module adds analyses or tools that are not included in the base version of jamovi.</p>
+<p>For this book, we will mostly use tools already available in jamovi or common add-on modules when needed. If a chapter requires a module, I will tell you.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Which part of jamovi would you use for each task?</p>
+<ol type="1">
+<li>Changing a variable from continuous to nominal.</li>
+<li>Running descriptive statistics.</li>
+<li>Checking the output from an analysis.</li>
+<li>Creating a computed variable.</li>
+</ol>
+<details>
+<summary>
+Answer
+</summary>
+<ol type="1">
+<li>Data tab / variable setup.</li>
+<li>Analyses tab.</li>
+<li>Results/output panel.</li>
+<li>Data tab.</li>
+</ol>
+</details>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1268,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./03.3-opening-saving-annotating-files.html" class="pagination-link" aria-label="3.3 Opening, Saving, and Annotating Files">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">3.3 Opening, Saving, and Annotating Files</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03.5-checking-variable-setup.html" class="pagination-link" aria-label="3.5 Checking Variable Setup">
+        <span class="nav-page-text">3.5 Checking Variable Setup</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

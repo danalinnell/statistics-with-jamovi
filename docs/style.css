@@ -95,3 +95,7 @@ pre:not(.sourceCode) code {
     border-color: green;
 }
 
+/* Expand nested right-side table of contents items */
+#TOC ul.collapse {
+  display: block !important;
+}

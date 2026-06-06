@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>12.2 Independent t-Test – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./12.3-dependent-t-test.html" rel="next">
+<link href="./12.1-one-sample-t-test.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,7 +72,37 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -88,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12.0-t-tests.html">12. t-Tests</a></li><li class="breadcrumb-item"><a href="./12.2-independent-t-test.html">12.2 Independent t-Test</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +143,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -568,11 +596,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./12.0-t-tests.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">12. t-Tests</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12.1-one-sample-t-test.html" class="sidebar-item-text sidebar-link">
@@ -581,7 +609,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12.2-independent-t-test.html" class="sidebar-item-text sidebar-link">
+  <a href="./12.2-independent-t-test.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">12.2 Independent t-Test</span></a>
   </div>
 </li>
@@ -748,60 +776,291 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#step-1-look-at-the-data" id="toc-step-1-look-at-the-data" class="nav-link active" data-scroll-target="#step-1-look-at-the-data">Step 1: Look at the Data</a></li>
+  <li><a href="#step-2-check-assumptions" id="toc-step-2-check-assumptions" class="nav-link" data-scroll-target="#step-2-check-assumptions">Step 2: Check Assumptions</a></li>
+  <li><a href="#step-3-perform-the-test" id="toc-step-3-perform-the-test" class="nav-link" data-scroll-target="#step-3-perform-the-test">Step 3: Perform the Test</a></li>
+  <li><a href="#step-4-interpret-results" id="toc-step-4-interpret-results" class="nav-link" data-scroll-target="#step-4-interpret-results">Step 4: Interpret Results</a></li>
+  <li><a href="#welchs-t-test" id="toc-welchs-t-test" class="nav-link" data-scroll-target="#welchs-t-test">Welch’s t-Test</a></li>
+  <li><a href="#mann-whitney-u-test" id="toc-mann-whitney-u-test" class="nav-link" data-scroll-target="#mann-whitney-u-test">Mann-Whitney U Test</a></li>
+  <li><a href="#additional-practice" id="toc-additional-practice" class="nav-link" data-scroll-target="#additional-practice">Additional Practice</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12.0-t-tests.html">12. t-Tests</a></li><li class="breadcrumb-item"><a href="./12.2-independent-t-test.html">12.2 Independent t-Test</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">12.2 Independent t-Test</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>The independent t-test is used to test the difference in our dependent variable between two different groups of observations. Our grouping variable is our independent variable. In other words, we use the independent t-test when we have a research question with a <strong>continuous dependent variable</strong> and a <strong>categorical independent variable with two categories in which <u>different</u> participants are in each category</strong>.</p>
+<p>The independent t-test is also called the independent samples t-test and the Student’s t-test.</p>
+<p>There are three different types of alternative hypotheses we could have for the independent t-test:</p>
+<ol type="1">
+<li><p><strong>Two-tailed</strong></p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li><span class="math inline">\(H_1\)</span>: Group 1 has a different mean than Group 2.</li>
+<li><span class="math inline">\(H_0\)</span>: There is no difference in means between the two groups.</li>
+</ul></li>
+<li><p><strong>One-tailed</strong></p>
+<ul>
+<li><span class="math inline">\(H_1\)</span>: Group 1 has a greater mean than Group 2.</li>
+<li><span class="math inline">\(H_0\)</span>: The mean for Group 1 is less than or equal to the mean for Group 2.</li>
+</ul></li>
+<li><p><strong>One-tailed</strong></p>
+<ul>
+<li><span class="math inline">\(H_1\)</span>: Group 1 has a smaller mean than Group 2.</li>
+<li><span class="math inline">\(H_0\)</span>: The mean for Group 1 is greater than or equal to the mean for Group 2.</li>
+</ul></li>
+</ol>
+<p>We’ll use an independent samples t-test whenever we are comparing two separate groups on a single continuous variable. For example, we might use an independent samples t-test when we have an experimental design comparing the treatment and control group on the outcome of interest. We might also use an independent samples t-test if we wanted to compare two intact groups (not experimentally manipulated) like pregnant vs non-pregnant people on some continuous outcome.</p>
+<section id="step-1-look-at-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-look-at-the-data">Step 1: Look at the Data</h2>
+<p>For this chapter, we’re going to work with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “Harpo”.This dataset is hypothetical data of 33 students taking Dr.&nbsp;Harpo’s statistics lectures. We have two tutors for the class, Anastasia (<em>n</em> = 15) and Bernadette (<em>n</em> = 18). Our research question is “Which tutor results in better student grades?”</p>
+<p>Here’s a video walking through the independent t-test.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/64dkiHIC7uY" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+<section id="data-set-up" class="level3">
+<h3 class="anchored" data-anchor-id="data-set-up">Data Set-Up</h3>
+<p>To conduct the independent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis.</p>
+<p>Below is the first ten rows of our data from the Harpo dataset.</p>
+<p><img src="images/02-independent_t-test/independent_t-test_data.png" class="img-fluid"></p>
+<p>In the data above, what is your <strong>independent variable</strong>? What is your <strong>dependent variable</strong>?</p>
+</section>
+<section id="describe-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="describe-the-data">Describe the Data</h3>
+<p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Our overall data consists of 33 cases and the students in our dataset have a mean grade of 71.55 (SD = 7.80). The minimum and maximum values look accurate; theoretically, student grades should range from 0-100. Lastly, the distribution of data looks nice and normally distributed. Although we have a pretty small sample size, especially within each group, we can proceed with our analyses. First, though, we need to check our assumptions.</p>
+<p><img src="images/02-independent_t-test/independent_t-test_descriptives_all.png" class="img-fluid"></p>
+<p><img src="images/02-independent_t-test/independent_t-test_plot_all.png" class="img-fluid" width="528"></p>
+</section>
+<section id="specify-the-hypotheses" class="level3">
+<h3 class="anchored" data-anchor-id="specify-the-hypotheses">Specify the Hypotheses</h3>
+<p>Our research question is “Which tutor results in better student grades?” This isn’t directional. We don’t have a hypothesis that one group does better than the other. Therefore our hypotheses can be written up as such:</p>
+<ul>
+<li><span class="math inline">\(H_1\)</span>: There is a difference in student grades between Anastasia’s and Bernadette’s classes.</li>
+<li><span class="math inline">\(H_0\)</span>: There is no difference in student grades between Anastasia’s and Bernadette’s classes.</li>
 </ul>
+<p>From now on, we’ll assume our <span class="math inline">\(\alpha\)</span> is .05 as default; however, remember that we should think critically about our alpha value when hypothesis testing!</p>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="step-2-check-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-check-assumptions">Step 2: Check Assumptions</h2>
+<p>As a parametric test, the independent t-test has the same assumptions as other parametric tests:</p>
+<ol type="1">
+<li><p>The dependent variable is <strong>normally distributed</strong></p></li>
+<li><p>Variances in the two groups are roughly equal (i.e., <strong>homogeneity of variances</strong>)</p></li>
+<li><p>The dependent variable is <strong>interval or ratio</strong> (i.e., continuous)</p></li>
+<li><p>Scores are <strong>independent</strong> between groups</p></li>
+</ol>
+<p>We cannot test the third and fourth assumptions; rather, those are based on knowing your data.</p>
+<p>However, we can and should test for the first two assumptions. Fortunately, the independent samples t-test in jamovi has two check boxes under “Assumption Checks” that lets us test for both assumptions.</p>
+<p>One thing to keep in mind in all statistical software is that we often check assumptions simultaneously while performing the statistical test. However, we should always check assumptions first before looking at and interpreting our results. Therefore, whereas the instructions for performing the test are below, we discuss checking assumptions here first to help ingrain the importance of always checking assumptions for interpreting results.</p>
+<section id="testing-normality" class="level3">
+<h3 class="anchored" data-anchor-id="testing-normality">Testing Normality</h3>
+<p>jamovi easily allows us to check for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .98, <em>p</em> = .827); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We should also examine the z-scores of skew and kurtosis, as well as the histogram of the data. Overall, we can conclude that we satisfy the assumption of normality.</p>
+<p><img src="images/02-independent_t-test/independent_t-test_normality.png" class="img-fluid"></p>
+<p>Remember that we can also test for normality by <strong>looking at our data</strong> (e.g., a histogram or density plot, which you can see above) and by examining <strong>skew and kurtosis</strong>. However, you will need to view them using Exploration –&gt; Descriptives, not in the t-tests menu. Here is our skew and kurtosis:</p>
+<ul>
+<li><p><strong>Skew</strong>: <span class="math inline">\(.06/.41 = .15\)</span></p></li>
+<li><p><strong>Kurtosis</strong>: <span class="math inline">\(.33/.80 = .41\)</span></p></li>
+</ul>
+<p>Remember that we divide the value by its standard error to determine the z-score. If the absolute value of it is below 1.96 then we assume it is normally distributed. Both skew and kurtosis meet the assumption of normality. In addition, so did all our other pieces of evidence of normality: Shapiro-Wilk’s, visual examination of the distribution, and the Q-Q plot. Therefore we can assume we met the assumption of normality.</p>
+<p><img src="images/02-independent_t-test/independent_t-test_skewkurtosis.png" class="img-fluid"></p>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="testing-homogeneity-of-variance" class="level3">
+<h3 class="anchored" data-anchor-id="testing-homogeneity-of-variance">Testing Homogeneity of Variance</h3>
+<p>We test for homogeneity of variance using the Levene’s test, as well as examining the variances and the histogram of the continuous DV split by the categorical IV. The Levene’s test was not statistically significant (<em>F</em> [1, 31] = 2.49, <em>p</em> = .125); therefore, this indicates our data satisfies the assumption of homogeneity of variance.</p>
+<p><img src="images/02-independent_t-test/independent_t-test_homogeneity.png" class="img-fluid"></p>
+<p>However, I would add a caveat that we have a small sample of data (<em>n</em> = 15 for Anastasia and <em>n</em> = 18 for Bernadette) and the variances are quite different from one another (SD = 80.98 vs 33.35, respectively, which we also see in the visual distribution of the variances between groups). We should have tried to collect more data.</p>
+<div class="info">
+<p>In fact, we’ve read in the BEAN chapters how to calculate for power! We could use our knowledge to identify what size effect size we could reliably detect (e.g., with 80% power at an alpha of .05) given our sample sizes. Try it out!</p>
+</div>
+</section>
+</section>
+<section id="step-3-perform-the-test" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-perform-the-test">Step 3: Perform the Test</h2>
+<section id="decide-which-statistical-test-you-should-be-using" class="level3">
+<h3 class="anchored" data-anchor-id="decide-which-statistical-test-you-should-be-using">Decide Which Statistical Test You Should Be Using</h3>
+<p>If you fail to meet one or both of the assumptions of normality (and no transformations fixed your data) and homogeneity of variances, jamovi has the alternative statistics easily built in. Here’s what statistic you should choose based on satisfying assumptions:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Normality: satisfied</strong></th>
+<th><strong>Normality: not satisfied</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Homogeneity of Variance: satisfied</strong></td>
+<td>Student’s t-test</td>
+<td><a href="#mann-whitney-u-test">Mann-Whitney U test</a></td>
+</tr>
+<tr class="even">
+<td><strong>Homogeneity of Variance: not satisfied</strong></td>
+<td><a href="#welchs-t-test">Welch’s t-test</a></td>
+<td><a href="#mann-whitney-u-test">Mann-Whitney U test</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="decide-which-hypothesis-you-should-be-using" class="level3">
+<h3 class="anchored" data-anchor-id="decide-which-hypothesis-you-should-be-using">Decide Which Hypothesis You Should Be Using</h3>
+<p>When you specified the hypotheses you should understand whether you had a directional (one-tailed) or non-directional (two-tailed) alternative hypothesis based on the research question.</p>
+<p>If the alternative hypothesis is non-directional (two-tailed) then you choose <code>Group 1 ≠ Group 2</code>.</p>
+<p>If the alternative hypothesis directional (one-tailed) then you choose <code>Group 1 &gt; Group 2</code> or <code>Group 1 &lt; Group 2</code> depending on which group you think has the higher average.</p>
+<div class="warning">
+<p>Remember that the hypothesis you use is based on your alternative hypothesis and research question! This is not based on what the data looks like. It’s a function of the research question you have prior to looking at the data.</p>
+<p>You may want to play around in jamovi and see what happens when you change from a non-directional to directional hypothesis. It will halve your p-value if the direction of the effect is correct; otherwise, if you choose the hypothesis in the opposite direction it will give a p-value that is practically 1.00!</p>
+</div>
+</section>
+<section id="perform-the-test" class="level3">
+<h3 class="anchored" data-anchor-id="perform-the-test">Perform the Test</h3>
+<p>Now that we’ve checked the assumptions, we can perform the independent t-test. Here are the steps for doing so in jamovi:</p>
+<ol type="1">
+<li><p>Go to the Analyses tab, click the T-Tests button, and choose “Independent Samples T-Test”.</p></li>
+<li><p>Move your dependent variable <code>grade</code> to the Dependent Variables box and your independent variable <code>tutor</code> to the Grouping Variable box.</p></li>
+<li><p>Under Tests, select the appropriate statistical test depending on which assumptions were met. In this case, we met both assumptions so we perform <code>Student's</code>.</p></li>
+<li><p>Under Hypothesis, select the hypothesis that matches your research question and alternative hypothesis. In this case, select <code>Group 1 ≠ Group 2</code> because we have a two-sided hypothesis.</p></li>
+<li><p>Under Additional Statistics, select <code>Mean difference</code>, <code>Effect size</code>, <code>Descriptives</code>, and (optionally) <code>Descriptives plots</code>.</p></li>
+<li><p>Under Assumption Checks, select all three options: <code>Homogeneity test</code>, <code>Normality test</code>, and <code>Q-Q plot</code>.</p></li>
+</ol>
+<p>When you are done, your setup should look like this:</p>
+<p><img src="images/02-independent_t-test/independent_t-test_setup.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="step-4-interpret-results" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-interpret-results">Step 4: Interpret Results</h2>
+<p>Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.</p>
+<p><img src="images/02-independent_t-test/independent_t-test_ind-results.png" class="img-fluid"></p>
+<p>Our p-value is less than our alpha value of .05, so our results are statistically significant. Like most of the statistics we’ll come across, the larger the t-statistic (or F-statistic, or chi-square statistic…), the smaller the p-value will be. That’s because given the distribution of the statistic we’re looking at, larger values will be at the further extremes from the middle null values and therefore more likely to be statistically significant.</p>
+<p>Therefore, we reject our null hypothesis (i.e., that there is no difference between the two groups) and this suggests that there is a significant difference between the two groups.</p>
+<div class="info">
+<p>What is “df”? That stands for degrees of freedom. The “key terms” chapter covers them in more detail, but in the case of the independent samples t-test they are calculated by the number of participants in the first group minus one plus the participants in the second group minus one (n1 - 1) + (n2 - 2) = (15-1) + (18-1) = 31.</p>
+</div>
+<section id="a-note-about-positive-and-negative-t-values" class="level3">
+<h3 class="anchored" data-anchor-id="a-note-about-positive-and-negative-t-values">A Note About Positive and Negative t Values</h3>
+<p>Students often worry about positive or negative t-statistic values and are unsure how to interpret it. Positive or negative t-statistic values simply occur based on which group is listed first. Our t-statistic above is positive because we tested the difference between Anastasia’s class (<em>M</em> = 74.53) versus Bernadette’s class (<em>M</em> = 69.06) and so Anastasia - Bernadette is a mean difference of 5.48.</p>
+<p>However, if our classes were reversed, our mean difference would -5.48 and our t-statistic would be -2.12.</p>
+<p>All that is to say, <em>your positive or negative t-statistic is arbitrary and is just a function of which group is listed first, which is also arbitrary</em>. So do not fret!</p>
+<p>One last note: this positive or negative t-statistic is only relevant for the t-test. You will not get negative values for the F-statistic or chi-square tests! You’ll learn more about those tests in subsequent chapters.</p>
+</section>
+<section id="write-up-the-results-in-apa-style" class="level3">
+<h3 class="anchored" data-anchor-id="write-up-the-results-in-apa-style">Write Up the Results in APA Style</h3>
+<p>When writing up the results of a statistical test, we should always include the following information:</p>
+<ol type="1">
+<li>Description of your research question and/or hypotheses.</li>
+<li>Description of your data. If you fail to meet assumptions, you should specify that and describe what test you chose to perform as a result.</li>
+<li>The results of the inferential test, including what test was performed, the test value and degrees of freedom, p-value, and effect size.</li>
+<li>Interpretation of the results, including any other information as needed.</li>
+</ol>
+<p>We can write up our results in APA something like this:</p>
+<blockquote class="blockquote">
+<p>The research question was whether there was a difference in student grades between Anastasia’s and Bernadette’s classes. Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) had significantly higher grades than Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em>&nbsp;= 18), <em>t</em> (31) = 2.12, <em>p</em> = .043, <em>d</em> = .74.</p>
+</blockquote>
+<p>Let’s analyze that against the 4 things we need to report:</p>
+<blockquote class="blockquote">
+<p><strong>#1:</strong> The research question was whether there was a difference in student grades between Anastasia’s and Bernadette’s classes. <strong>#4</strong> Anastasia’s students <strong>#2</strong> (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) <strong>#4 cont.</strong> had significantly higher grades than Bernadette’s students <strong>#2</strong> (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em>&nbsp;= 18), <strong>#3</strong> <em>t</em> (31) = 2.12, <em>p</em> = .043, <em>d</em> = .74.</p>
+</blockquote>
+<p>Sometimes, people like to put the statistics inside a parentheses. In that case, you need to change the parentheses around the degrees of freedom as brackets. Here’s another example write-up of the results in APA style:</p>
+<blockquote class="blockquote">
+<p><strong>#1</strong> I tested the difference in grades between Anastasia’s students <strong>#2</strong> (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) and Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em>&nbsp;= 18). <strong>#3</strong> An independent samples t-test showed that the 5.48 mean difference between the tutor’s student was statistically significant (<em>t</em> [31] = 2.12, <em>p</em> = .043, <em>d</em> = .74). <strong>#4</strong> Therefore, we reject the null hypothesis that there is no difference in grades between the two classes.</p>
+</blockquote>
+<p>Note that these are not the only way we can write up the results in APA format. The key is that we include all four pieces of information as specified above.</p>
+<p>You can also better see where we are getting all the information from with the following image:</p>
+<p><img src="images/02-independent_t-test/t-test results and write-up comparison/independent.png" class="img-fluid" width="965"></p>
+</section>
+<section id="visualize-the-results" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-the-results">Visualize the Results</h3>
+<p>By selecting <code>Descriptives plots</code> in the setup, you get the figure below. Personally, I don’t think this is a very good plot. It’s not very informative. It just provides the mean (circle), 95% confidence interval (blue bars), and the median.</p>
+<p><img src="images/02-independent_t-test/independent_t-test_plot2.png" class="img-fluid"></p>
+<p>Another option in jamovi is via the Descriptives analysis. You can ask for the boxplot, violin plot, and data of your dependent variable split by your independent variable. This is a much better option. Not only does it show us our mean (black bars) and interquartile range (via the boxplot), but it also shows our distribution (violin plot) and data points (grey dots). This is much more informative.</p>
+<p><img src="images/02-independent_t-test/independent_t-test_plot.png" class="img-fluid"></p>
+<p>Oftentimes, people display results in a simple bar chart, often adding error bars (either 95% CI or SE error bars). But this is also not a great chart because it lacks information about the underlying distribution of data. Therefore, for the independent t-test I recommend the visualization shown above.</p>
+</section>
+</section>
+<section id="welchs-t-test" class="level2">
+<h2 class="anchored" data-anchor-id="welchs-t-test">Welch’s t-Test</h2>
+<p>The Welch’s t-test has three main differences from the independent samples t-test: (a) the standard error (SE) is not a pooled estimate, (b) the degrees of freedom are calculated differently (not <em>N</em> - 2), and (c) it does not have an assumption of homogeneity of variance. Keep in mind that Welch’s t-test is <em>not</em> a non-parametric test because it still has the assumption of a normal distribution.</p>
+<p><img src="images/02-independent_t-test/independent_t-test_full-results.png" class="img-fluid"></p>
+<div class="danger">
+<p>You will never perform all three tests like I’m showing here! You should only select the single correct test depending on which assumptions were met. However, I’m showing all three here so you can see the comparisons of all three tests.</p>
+</div>
+<p>To conduct this in jamovi, under Tests select <code>Welch's</code>. You will interpret the results similarly to the independent t-test:</p>
+<blockquote class="blockquote">
+<p>Using a Welch’s t-test, there was not a statistically significant difference in grades between Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) and Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18), <em>t</em> (23.02) = 2.03, <em>p</em> = .054, <em>d</em> = .72.</p>
+</blockquote>
+<p>Why is it no longer statistically significant? Which result should you trust? In reality, the difference in <em>p</em>-values is likely due to chance. However, the independent t-test and Welch’s test have different strengths and weaknesses. If the two populations really do have equal variances, then the independent t-test is slightly more powerful (lower Type II error rate) than the Welch’s test. However, if they <em>don’t</em> have the same variances, then the assumptions of the independent t-test are violated and you may not be able to trust the results; you may end up with a higher Type I error rate. So it’s a trade-off.</p>
+<p>Which should you use? I tend to prefer always using Welch’s t-test because if the variances are equal, then there will be practically no difference between the independent and Welch’s t-test. But if the variances are not equal, then Welch’s t-test will outperform the independent t-test. For that reason, defaulting to the Welch’s t-test makes most sense to me.</p>
+</section>
+<section id="mann-whitney-u-test" class="level2">
+<h2 class="anchored" data-anchor-id="mann-whitney-u-test">Mann-Whitney U Test</h2>
+<p>The Mann-Whitney U is not calculated based on the mean but rather the median and compares ranks of values across the two groups: it has no assumptions about the distribution of data or homogeneity of variances. Therefore, it is a non-parametric test.</p>
+<p>If you do not satisfy the assumption of normality (regardless of whether you satisfy the assumption of homogeneity of variance), you should either try to transform your data to be normally distributed or you will need to use a non-parametric test. In this case, if you originally wanted to perform an independent t-test, the non-parametric equivalent test is the Mann-Whitney U test.</p>
+<p><img src="images/02-independent_t-test/independent_t-test_full-results.png" class="img-fluid"></p>
+<div class="danger">
+<p>Note that you never perform all three tests like I’m showing here! You only select the correct test depending on which assumptions were met. However, I’m showing all three here so you can see the comparisons of all three tests.</p>
+</div>
+<p>I will not go into specifics, but the idea behind the Mann-Whitney U test is that you take all the values (regardless of group) and rank them. You then sum the ranks across groups and calculate your U statistic and p-value. You interpret the p-value like you normally would, but there are differences in how we report the results because this statistic is based on the <em>median</em> not the <em>mean</em>.</p>
+<blockquote class="blockquote">
+<p>Using the Mann-Whitney U test, there was a statistically significant difference in grades between Anastasia’s students (<em>Mdn</em> = 76, <em>n</em> = 15) and Bernadette’s students (<em>Mdn</em> = 69, <em>n</em>&nbsp;= 18), <em>U</em> = 79.50, <em>p</em> = .046, <span class="math inline">\(r_{pb}\)</span> = .41.</p>
+</blockquote>
+</section>
+<section id="additional-practice" class="level2">
+<h2 class="anchored" data-anchor-id="additional-practice">Additional Practice</h2>
+<p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
+<p>Perform independent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!</p>
+<p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
+<ol type="1">
+<li><p><strong>Does height differ by gender (Gender: male = 0, female = 1)?</strong></p>
+<ul>
+<li><p>Should you use a one-tailed or two-tailed hypothesis?</p></li>
+<li><p>Which statistic should you use based on your assumptions?</p></li>
+<li><p>Does height differ by gender?</p></li>
+</ul></li>
+<li><p><strong>Do athletes (Athlete: athletes = 1, non-athlete = 0) have faster sprint times than non-athletes?</strong></p>
+<ul>
+<li><p>Should you use a one-tailed or two-tailed hypothesis?</p></li>
+<li><p>Which statistic should you use based on your assumptions?</p></li>
+<li><p>Do athletes have faster sprint times than non-athletes?</p></li>
+</ul></li>
+<li><p><strong>Do students who live on campus (LiveOnCampus: on campus = 1, off campus = 0) have higher English scores than students who live off campus?</strong></p>
+<ul>
+<li><p>Should you use a one-tailed or two-tailed hypothesis?</p></li>
+<li><p>Which statistic should you use based on your assumptions?</p></li>
+<li><p>Do students who live on campus have higher English scores?</p></li>
+</ul></li>
+<li><p><strong>Does athletic status relate to math scores?</strong></p>
+<ul>
+<li><p>Should you use a one-tailed or two-tailed hypothesis?</p></li>
+<li><p>Which statistic should you use based on your assumptions?</p></li>
+<li><p>Does athletic status relate to math scores?</p></li>
+</ul></li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1466,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./12.1-one-sample-t-test.html" class="pagination-link" aria-label="12.1 One-Sample t-Test">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">12.1 One-Sample t-Test</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./12.3-dependent-t-test.html" class="pagination-link" aria-label="12.3 Dependent t-Test">
+        <span class="nav-page-text">12.3 Dependent t-Test</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

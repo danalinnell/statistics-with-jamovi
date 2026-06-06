@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>7.1 Step 1: Look at the Data – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./07.2-step-2-check-assumptions.html" rel="next">
+<link href="./07.0-hypothesis-testing.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07.0-hypothesis-testing.html">7. Hypothesis Testing</a></li><li class="breadcrumb-item"><a href="./07.1-step-1-look-at-the-data.html">7.1 Step 1: Look at the Data</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -387,14 +386,14 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./07.0-hypothesis-testing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">7. Hypothesis Testing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.1-step-1-look-at-the-data.html" class="sidebar-item-text sidebar-link">
+  <a href="./07.1-step-1-look-at-the-data.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">7.1 Step 1: Look at the Data</span></a>
   </div>
 </li>
@@ -748,60 +747,256 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#identify-the-research-question" id="toc-identify-the-research-question" class="nav-link active" data-scroll-target="#identify-the-research-question">Identify the Research Question</a></li>
+  <li><a href="#identify-the-variables" id="toc-identify-the-variables" class="nav-link" data-scroll-target="#identify-the-variables">Identify the Variables</a></li>
+  <li><a href="#identify-the-design" id="toc-identify-the-design" class="nav-link" data-scroll-target="#identify-the-design">Identify the Design</a></li>
+  <li><a href="#describe-the-data" id="toc-describe-the-data" class="nav-link" data-scroll-target="#describe-the-data">Describe the Data</a></li>
+  <li><a href="#visualize-the-data" id="toc-visualize-the-data" class="nav-link" data-scroll-target="#visualize-the-data">Visualize the Data</a></li>
+  <li><a href="#state-the-hypotheses" id="toc-state-the-hypotheses" class="nav-link" data-scroll-target="#state-the-hypotheses">State the Hypotheses</a></li>
+  <li><a href="#directional-and-non-directional-hypotheses" id="toc-directional-and-non-directional-hypotheses" class="nav-link" data-scroll-target="#directional-and-non-directional-hypotheses">Directional and Non-Directional Hypotheses</a></li>
+  <li><a href="#mutually-exclusive-and-exhaustive" id="toc-mutually-exclusive-and-exhaustive" class="nav-link" data-scroll-target="#mutually-exclusive-and-exhaustive">Mutually Exclusive and Exhaustive</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07.0-hypothesis-testing.html">7. Hypothesis Testing</a></li><li class="breadcrumb-item"><a href="./07.1-step-1-look-at-the-data.html">7.1 Step 1: Look at the Data</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">7.1 Step 1: Look at the Data</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>The first step in any inferential analysis is to understand your research question, your variables, your design, and your data.</p>
+<p>This is not a warm-up before the “real” analysis. It is part of the analysis. If you do not understand the data, you cannot choose the right statistical test or interpret the results responsibly.</p>
+<section id="identify-the-research-question" class="level2">
+<h2 class="anchored" data-anchor-id="identify-the-research-question">Identify the Research Question</h2>
+<p>Start with the question the study is trying to answer.</p>
+<p>In our simplified Bobo doll example, the research question might be:</p>
+<blockquote class="blockquote">
+<p>Do children who watch an aggressive model show more aggressive behavior than children who watch a calm model?</p>
+</blockquote>
+<p>This question tells us that the researcher is interested in comparing two groups on an outcome variable.</p>
+</section>
+<section id="identify-the-variables" class="level2">
+<h2 class="anchored" data-anchor-id="identify-the-variables">Identify the Variables</h2>
+<p>Next, identify the variables.</p>
+<p>The <button class="glossary" title="A variable expected to explain, predict, influence, or cause differences in another variable. In an experiment, it is the variable manipulated by the researcher.">independent variable</button> is the variable used to explain, predict, manipulate, or compare. In an experiment, it is the variable the researcher manipulates.</p>
+<p>The <button class="glossary" title="The outcome variable in a study. It is the variable measured to see whether it differs, changes, or is related to another variable.">dependent variable</button> is the outcome variable. It is the variable the researcher measures.</p>
+<p>In our example:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Role</th>
+<th>Variable</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Independent variable</td>
+<td>Video condition: aggressive model or calm model</td>
+<td>Categorical, nominal</td>
+</tr>
+<tr class="even">
+<td>Dependent variable</td>
+<td>Number of aggressive behaviors</td>
+<td>Continuous</td>
+</tr>
+</tbody>
+</table>
+<p>This connects back to Chapter 2. Statistical tests depend heavily on what kinds of variables we have. A test that works for a continuous dependent variable may not work for a categorical dependent variable.</p>
+</section>
+<section id="identify-the-design" class="level2">
+<h2 class="anchored" data-anchor-id="identify-the-design">Identify the Design</h2>
+<p>The design also matters.</p>
+<p>In this example, children are randomly assigned to one of two conditions. Each child is in only one condition. That makes this a <button class="glossary" title="A study design in which different people are in different conditions or groups. Each person contributes data to only one condition.">between-subjects design</button>.</p>
+<p>If the same children had watched both videos at different times and were measured after each video, that would be a <button class="glossary" title="A study design in which the same people are measured in more than one condition or at more than one time point.">within-subjects design</button>. That would require a different statistical test.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="A Question Worth Asking">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>A Question Worth Asking
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When you see groups in a study, ask: Can the same person be in more than one group?</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li>If no, you probably have a between-subjects design.</li>
+<li>If yes, you probably have a within-subjects or repeated-measures design.</li>
 </ul>
+</div>
+</div>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
+<section id="describe-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="describe-the-data">Describe the Data</h2>
+<p>Before testing a hypothesis, describe the data.</p>
+<p>For our example, imagine the researcher has 30 children total, 15 in each condition. The descriptive statistics might look like this:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th style="text-align: right;">Mean aggressive behaviors</th>
+<th style="text-align: right;">Standard deviation</th>
+<th style="text-align: right;">Sample size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Aggressive video</td>
+<td style="text-align: right;">11.20</td>
+<td style="text-align: right;">3.10</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="even">
+<td>Calm video</td>
+<td style="text-align: right;">5.40</td>
+<td style="text-align: right;">2.80</td>
+<td style="text-align: right;">15</td>
+</tr>
+</tbody>
+</table>
+<p>At the descriptive level, children in the aggressive video condition showed more aggressive behaviors on average than children in the calm video condition.</p>
+<p>That is useful, but it is not the full inferential conclusion. At this point, we only know what happened in this sample. Hypothesis testing helps us decide whether this sample difference is surprising enough, under the null hypothesis, that we are willing to reject the null hypothesis.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="visualize-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="visualize-the-data">Visualize the Data</h2>
+<p>Descriptive statistics are useful, but they can hide patterns. Before running a test, you should usually visualize the data.</p>
+<p>For this example, a box plot with individual data points would be useful because it would show:</p>
+<ul>
+<li>the center of each group;</li>
+<li>the spread within each group;</li>
+<li>possible outliers; and</li>
+<li>whether the two groups overlap.</li>
+</ul>
+<p>This connects directly to the fundamentals chapters: identifying variables and distributions in Chapter 2, preparing data in Chapter 4, describing data in Chapter 5, and visualizing data in Chapter 6.</p>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="state-the-hypotheses" class="level2">
+<h2 class="anchored" data-anchor-id="state-the-hypotheses">State the Hypotheses</h2>
+<p>Because we are using null hypothesis significance testing, we need two hypotheses: the <button class="glossary" title="A hypothesis stating that there is an effect, difference, or relationship. In null hypothesis significance testing, evidence is evaluated against the null hypothesis rather than directly proving the alternative hypothesis.">alternative hypothesis</button> and the <button class="glossary" title="A hypothesis usually stating that there is no effect, no difference, or no relationship.">null hypothesis</button>.</p>
+<p>The alternative hypothesis, usually written as H<sub>1</sub> or H<sub>a</sub>, states that there is an effect, difference, or relationship.</p>
+<p>The null hypothesis, usually written as H<sub>0</sub>, states that there is no effect, no difference, or no relationship. In a directional test, the null also includes the direction opposite of the alternative.</p>
+<p>For our example, the researcher expects children in the aggressive-video condition to show more aggressive behavior. That is a directional hypothesis.</p>
+<p>A plain-language version of the hypotheses might be:</p>
+<ul>
+<li><strong>H<sub>1</sub>:</strong> Children who watch the aggressive video will show more aggressive behaviors than children who watch the calm video.</li>
+<li><strong>H<sub>0</sub>:</strong> Children who watch the aggressive video will show the same number of aggressive behaviors or fewer aggressive behaviors than children who watch the calm video.</li>
+</ul>
+<p>Notice the null hypothesis carefully. Because the alternative predicts “more,” the null includes both “no difference” and “the opposite direction.” That way, the two hypotheses cover every possible result.</p>
+</section>
+<section id="directional-and-non-directional-hypotheses" class="level2">
+<h2 class="anchored" data-anchor-id="directional-and-non-directional-hypotheses">Directional and Non-Directional Hypotheses</h2>
+<p>A <button class="glossary" title="A hypothesis that predicts the direction of an effect, difference, or relationship.">directional hypothesis</button> predicts the direction of the effect. For example:</p>
+<blockquote class="blockquote">
+<p>Children in the aggressive-video condition will show more aggressive behavior than children in the calm-video condition.</p>
+</blockquote>
+<p>This is also called a one-tailed hypothesis.</p>
+<p>A <button class="glossary" title="A hypothesis that predicts an effect, difference, or relationship but does not predict the direction.">non-directional hypothesis</button> predicts that there will be an effect, difference, or relationship, but does not predict the direction. For example:</p>
+<blockquote class="blockquote">
+<p>Children in the two video conditions will differ in aggressive behavior.</p>
+</blockquote>
+<p>This is also called a two-tailed hypothesis.</p>
+<p>Directional hypotheses should be used thoughtfully. You need a strong theoretical or empirical reason to predict a specific direction. If you do not have that justification, a non-directional hypothesis is usually safer.</p>
+</section>
+<section id="mutually-exclusive-and-exhaustive" class="level2">
+<h2 class="anchored" data-anchor-id="mutually-exclusive-and-exhaustive">Mutually Exclusive and Exhaustive</h2>
+<p>Your null and alternative hypotheses should be mutually exclusive and exhaustive.</p>
+<p><strong>Mutually exclusive</strong> means a result cannot support both hypotheses at the same time.</p>
+<p><strong>Exhaustive</strong> means every possible result is covered by one of the hypotheses.</p>
+<p>In the directional Bobo doll example, there are three possible patterns:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Possible result</th>
+<th>Which hypothesis does it fit?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Aggressive-video group shows more aggression</td>
+<td>Alternative hypothesis</td>
+</tr>
+<tr class="even">
+<td>Groups show no difference</td>
+<td>Null hypothesis</td>
+</tr>
+<tr class="odd">
+<td>Aggressive-video group shows less aggression</td>
+<td>Null hypothesis</td>
+</tr>
+</tbody>
+</table>
+<p>This may feel picky at first, but it matters. Sloppy hypotheses lead to sloppy decisions.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common Mistake">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common Mistake
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A common error is writing hypotheses that leave out possible results. If your hypotheses do not cover every possible outcome, they are not exhaustive.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>In the Bobo doll example, what is the independent variable?</li>
+<li>What is the dependent variable?</li>
+<li>Is the design between-subjects or within-subjects?</li>
+<li>What is the difference between a directional and non-directional hypothesis?</li>
+</ol>
+<p><strong>Answers</strong></p>
+<ol type="1">
+<li>The independent variable is video condition: aggressive video or calm video.</li>
+<li>The dependent variable is the number of aggressive behaviors observed.</li>
+<li>The design is between-subjects because each child is assigned to only one condition.</li>
+<li>A directional hypothesis predicts which direction the effect will go. A non-directional hypothesis predicts an effect or difference but not the direction.</li>
+</ol>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1402,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./07.0-hypothesis-testing.html" class="pagination-link" aria-label="7. Hypothesis Testing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">7. Hypothesis Testing</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./07.2-step-2-check-assumptions.html" class="pagination-link" aria-label="7.2 Step 2: Check Assumptions">
+        <span class="nav-page-text">7.2 Step 2: Check Assumptions</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

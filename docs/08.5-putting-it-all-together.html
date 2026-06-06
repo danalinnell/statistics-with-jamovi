@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>8.5 Putting It All Together – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./09.0-inferential-statistics.html" rel="next">
+<link href="./08.4-sample-size-and-power-analysis.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08.0-bean.html">8. BEAN</a></li><li class="breadcrumb-item"><a href="./08.5-putting-it-all-together.html">8.5 Putting It All Together</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +113,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -428,11 +426,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./08.0-bean.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8. BEAN</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
@@ -459,7 +457,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link">
+  <a href="./08.5-putting-it-all-together.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">8.5 Putting It All Together</span></a>
   </div>
 </li>
@@ -748,60 +746,185 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link active" data-scroll-target="#quick-reference">Quick Reference</a></li>
+  <li><a href="#common-tradeoffs" id="toc-common-tradeoffs" class="nav-link" data-scroll-target="#common-tradeoffs">Common Tradeoffs</a></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes">Common Mistakes</a></li>
+  <li><a href="#applied-practice" id="toc-applied-practice" class="nav-link" data-scroll-target="#applied-practice">Applied Practice</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08.0-bean.html">8. BEAN</a></li><li class="breadcrumb-item"><a href="./08.5-putting-it-all-together.html">8.5 Putting It All Together</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">8.5 Putting It All Together</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>BEAN helps us understand that hypothesis testing is not just about whether <em>p</em> is less than .05.</p>
+<p>The four pieces work together:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li><strong>B</strong>eta/power: How likely are we to detect an effect if it exists?</li>
+<li><strong>E</strong>ffect size: How large or meaningful is the effect?</li>
+<li><strong>A</strong>lpha: How strict is our threshold for rejecting the null hypothesis?</li>
+<li><strong>N</strong>: How much data do we have or need?</li>
 </ul>
+<section id="quick-reference" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>BEAN component</th>
+<th>Main question</th>
+<th>Key idea</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Beta / Power</td>
+<td>How likely are we to detect an effect?</td>
+<td>Higher power reduces Type II errors.</td>
+</tr>
+<tr class="even">
+<td>Effect size</td>
+<td>How large is the effect?</td>
+<td>Larger effects are easier to detect.</td>
+</tr>
+<tr class="odd">
+<td>Alpha</td>
+<td>How strict is our decision threshold?</td>
+<td>Lower alpha reduces Type I errors but can reduce power.</td>
+</tr>
+<tr class="even">
+<td>N</td>
+<td>How much data do we have?</td>
+<td>Larger samples usually increase power.</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
+<section id="common-tradeoffs" class="level2">
+<h2 class="anchored" data-anchor-id="common-tradeoffs">Common Tradeoffs</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>If this changes…</th>
+<th>What usually happens?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Effect size increases</td>
+<td>Power increases</td>
+</tr>
+<tr class="even">
+<td>Effect size decreases</td>
+<td>Power decreases</td>
+</tr>
+<tr class="odd">
+<td>Sample size increases</td>
+<td>Power increases</td>
+</tr>
+<tr class="even">
+<td>Sample size decreases</td>
+<td>Power decreases</td>
+</tr>
+<tr class="odd">
+<td>Alpha decreases</td>
+<td>Type I error risk decreases, but power also decreases</td>
+</tr>
+<tr class="even">
+<td>Desired power increases</td>
+<td>Required sample size increases</td>
+</tr>
+<tr class="odd">
+<td>Smallest effect size of interest decreases</td>
+<td>Required sample size increases</td>
+</tr>
+</tbody>
+</table>
+<p>These relationships are the reason power analysis matters. It helps us think through whether a study is designed well enough to answer the research question.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="common-mistakes" class="level2">
+<h2 class="anchored" data-anchor-id="common-mistakes">Common Mistakes</h2>
+<section id="mistake-1-treating-statistical-significance-as-practical-importance" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-1-treating-statistical-significance-as-practical-importance">Mistake 1: Treating statistical significance as practical importance</h3>
+<p>A statistically significant result is not automatically meaningful. Always ask how large the effect is and whether it matters in context.</p>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="mistake-2-treating-non-significance-as-proof-of-no-effect" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-2-treating-non-significance-as-proof-of-no-effect">Mistake 2: Treating non-significance as proof of no effect</h3>
+<p>A non-significant result does not prove the null hypothesis. The study may have had low power, a small sample, noisy measurement, or an effect smaller than the study could detect.</p>
+</section>
+<section id="mistake-3-using-.05-without-thinking" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-3-using-.05-without-thinking">Mistake 3: Using .05 without thinking</h3>
+<p>In this course, we often use α = .05 for consistency. In real research, alpha should be considered in relation to the consequences of Type I and Type II errors.</p>
+</section>
+<section id="mistake-4-copying-power-analysis-output-without-interpreting-it" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-4-copying-power-analysis-output-without-interpreting-it">Mistake 4: Copying power-analysis output without interpreting it</h3>
+<p>Power analysis is not only a number-generating exercise. You need to understand what was entered, what was solved for, and what the result means for the research question.</p>
+</section>
+</section>
+<section id="applied-practice" class="level2">
+<h2 class="anchored" data-anchor-id="applied-practice">Applied Practice</h2>
+<p>A researcher is planning a study with an independent-samples <em>t</em>-test. They expect a small effect, want 90% power, and plan to use α = .01.</p>
+<ol type="1">
+<li>Will the required sample size likely be larger or smaller than if they expected a large effect?</li>
+<li>Will the required sample size likely be larger or smaller than if they wanted 80% power?</li>
+<li>Will the required sample size likely be larger or smaller than if they used α = .05?</li>
+<li>Why might the researcher still choose 90% power and α = .01?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Suggested Answers">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Suggested Answers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Larger. Small effects are harder to detect, so they require larger samples.</li>
+<li>Larger. Higher desired power requires a larger sample.</li>
+<li>Larger. A stricter alpha level makes it harder to reject the null hypothesis, so more data are usually needed to maintain power.</li>
+<li>The researcher may be especially concerned about false positives and false negatives. For example, if the study has important policy, clinical, educational, or financial consequences, the researcher may want stronger evidence and a better chance of detecting an effect if it exists.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>Chapter 7 introduced the logic of hypothesis testing. Chapter 8 helped us understand the tradeoffs behind that logic.</p>
+<p>Next, we will focus on choosing the correct inferential test and checking assumptions. That is where the general logic of hypothesis testing starts becoming more test-specific.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1330,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./08.4-sample-size-and-power-analysis.html" class="pagination-link" aria-label="8.4 Sample Size">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8.4 Sample Size</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./09.0-inferential-statistics.html" class="pagination-link" aria-label="9. Inferential Statistics">
+        <span class="nav-page-text">9. Inferential Statistics</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

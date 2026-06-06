@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>2.2 Types of Variables and Levels of Measurement – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./02.3-descriptive-vs-inferential-statistics.html" rel="next">
+<link href="./02.1-describing-data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02.0-statistics-foundations.html">2. Statistics Foundations</a></li><li class="breadcrumb-item"><a href="./02.2-types-of-variables-levels-of-measurement.html">2.2 Types of Variables and Levels of Measurement</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -140,11 +139,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./02.0-statistics-foundations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2. Statistics Foundations</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02.1-describing-data.html" class="sidebar-item-text sidebar-link">
@@ -153,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.2-types-of-variables-levels-of-measurement.html" class="sidebar-item-text sidebar-link">
+  <a href="./02.2-types-of-variables-levels-of-measurement.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">2.2 Types of Variables and Levels of Measurement</span></a>
   </div>
 </li>
@@ -748,60 +747,241 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#categorical-and-continuous-variables" id="toc-categorical-and-continuous-variables" class="nav-link active" data-scroll-target="#categorical-and-continuous-variables">Categorical and Continuous Variables</a></li>
+  <li><a href="#nominal-variables" id="toc-nominal-variables" class="nav-link" data-scroll-target="#nominal-variables">Nominal Variables</a></li>
+  <li><a href="#ordinal-variables" id="toc-ordinal-variables" class="nav-link" data-scroll-target="#ordinal-variables">Ordinal Variables</a></li>
+  <li><a href="#interval-and-ratio-variables" id="toc-interval-and-ratio-variables" class="nav-link" data-scroll-target="#interval-and-ratio-variables">Interval and Ratio Variables</a></li>
+  <li><a href="#the-same-construct-can-be-measured-in-different-ways" id="toc-the-same-construct-can-be-measured-in-different-ways" class="nav-link" data-scroll-target="#the-same-construct-can-be-measured-in-different-ways">The Same Construct Can Be Measured in Different Ways</a></li>
+  <li><a href="#be-careful-about-losing-information" id="toc-be-careful-about-losing-information" class="nav-link" data-scroll-target="#be-careful-about-losing-information">Be Careful About Losing Information</a></li>
+  <li><a href="#a-quick-decision-guide" id="toc-a-quick-decision-guide" class="nav-link" data-scroll-target="#a-quick-decision-guide">A Quick Decision Guide</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02.0-statistics-foundations.html">2. Statistics Foundations</a></li><li class="breadcrumb-item"><a href="./02.2-types-of-variables-levels-of-measurement.html">2.2 Types of Variables and Levels of Measurement</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">2.2 Types of Variables and Levels of Measurement</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>Once we know what our variables are, we need to understand how they were measured. This matters because the type of variable affects which descriptive statistics, graphs, and statistical tests make sense.</p>
+<p>This may or may not be refresher material for you, but it is extremely important. A lot of statistics comes back to one basic question: <strong>What kind of variable am I working with?</strong></p>
+<p><img src="images/01-intro/Levels of measurement.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Learning Objectives">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this section, you should be able to:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li>distinguish between categorical and continuous variables</li>
+<li>identify nominal, ordinal, interval, and ratio levels of measurement</li>
+<li>explain why variable type depends on how something is measured</li>
+<li>recognize why numbers do not automatically make a variable continuous</li>
+<li>explain why researchers should be cautious about collapsing variables into fewer categories</li>
 </ul>
+</div>
+</div>
+<section id="categorical-and-continuous-variables" class="level2">
+<h2 class="anchored" data-anchor-id="categorical-and-continuous-variables">Categorical and Continuous Variables</h2>
+<p>A useful first distinction is between categorical and continuous variables.</p>
+<p><button class="glossary" title="A variable whose values represent categories or groups rather than quantities. Nominal and ordinal variables are categorical variables.">Categorical variables</button> describe groups or categories. Examples include major, condition, political affiliation, or whether someone completed a task.</p>
+<p><button class="glossary" title="A variable whose values represent quantities or amounts. Continuous variables are often summarized with means and standard deviations.">Continuous variables</button> represent quantities or amounts. Examples include age, height, reaction time, test score, or number of correct responses.</p>
+<p>This distinction will show up constantly in jamovi. Later, jamovi will ask you to identify variables as nominal, ordinal, continuous, or ID. That choice affects which analyses jamovi will allow you to run.</p>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
+<section id="nominal-variables" class="level2">
+<h2 class="anchored" data-anchor-id="nominal-variables">Nominal Variables</h2>
+<p>A <button class="glossary" title="A categorical variable with categories that do not have a meaningful order.">nominal variable</button> is a categorical variable with categories that do not have a meaningful order.</p>
+<p>Examples include:</p>
+<ul>
+<li>major</li>
+<li>treatment group</li>
+<li>eye color</li>
+<li>state of residence</li>
+<li>type of pet</li>
+</ul>
+<p>For nominal variables, we can count how many observations fall into each category and calculate percentages. We can also identify the mode, or most frequent category.</p>
+<p>What we cannot do is calculate a meaningful mean. If we code cat = 1, dog = 2, and frog = 3, the mean of those numbers does not tell us anything meaningful about the animals. The numbers are just labels.</p>
+<p>A special type of nominal variable has only two categories, such as yes/no, present/absent, or control/treatment. These are often called <button class="glossary" title="A nominal variable with two categories, such as yes/no, present/absent, or control/treatment.">binary</button>, <button class="glossary" title="A variable with two categories. Dichotomous variables are also often called binary variables.">dichotomous</button>, or dummy-coded variables.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="ordinal-variables" class="level2">
+<h2 class="anchored" data-anchor-id="ordinal-variables">Ordinal Variables</h2>
+<p>An <button class="glossary" title="A categorical variable with categories that have a meaningful order, but not necessarily equal spacing between categories.">ordinal variable</button> is a categorical variable with categories that have a meaningful order.</p>
+<p>Examples include:</p>
+<ul>
+<li>class rank</li>
+<li>education level</li>
+<li>Likert-type responses from strongly disagree to strongly agree</li>
+<li>satisfaction ratings from very dissatisfied to very satisfied</li>
+</ul>
+<p>Ordinal variables give us more information than nominal variables because the categories can be ordered. However, the spacing between categories is not necessarily equal.</p>
+<p>For example, on a five-point satisfaction scale, the difference between “strongly disagree” and “disagree” may not be exactly the same as the difference between “agree” and “strongly agree.” The values are ordered, but the distance between values is not guaranteed to be equal.</p>
+<p>With ordinal variables, we often use frequencies, percentages, medians, ranges, or percentiles. Researchers sometimes treat ordinal scales as continuous, especially when multiple items are combined into a scale score, but we should always think carefully about whether that choice makes sense.</p>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="interval-and-ratio-variables" class="level2">
+<h2 class="anchored" data-anchor-id="interval-and-ratio-variables">Interval and Ratio Variables</h2>
+<p><button class="glossary" title="A continuous variable with equal spacing between values but no true zero point.">Interval variables</button> and <button class="glossary" title="A continuous variable with equal spacing between values and a true zero point.">ratio variables</button> are both types of continuous variables.</p>
+<p>An interval variable has equal spacing between values, but no true zero point. Temperature in Celsius or Fahrenheit is a common example. The difference between 20 and 30 degrees is the same size as the difference between 30 and 40 degrees, but 0 degrees does not mean there is no temperature.</p>
+<p>A ratio variable has equal spacing between values and a true zero point. Examples include reaction time, number of correct answers, height, weight, and hours studied. For ratio variables, zero means none of the thing being measured.</p>
+<p>For most of this book, you do not need to spend much energy distinguishing between interval and ratio variables. jamovi does not separate them either. Instead, jamovi treats them as continuous variables. The more important distinction for our purposes is whether a variable is nominal, ordinal, or continuous.</p>
+</section>
+<section id="the-same-construct-can-be-measured-in-different-ways" class="level2">
+<h2 class="anchored" data-anchor-id="the-same-construct-can-be-measured-in-different-ways">The Same Construct Can Be Measured in Different Ways</h2>
+<p>Here is one of the most important things to remember:</p>
+<blockquote class="blockquote">
+<p>A variable’s level of measurement depends on how it is measured, not just what it is called.</p>
+</blockquote>
+<p>One semester, a student asked me, “Isn’t time a continuous variable?” My answer was: <strong>it depends on how time is measured.</strong></p>
+<ul>
+<li>If time is measured as pre vs.&nbsp;post, it is a nominal variable with two categories.</li>
+<li>If time is measured as month of the year, it is ordinal because the months have a meaningful order.</li>
+<li>If time is measured as response time, exact date, or time remaining, it is typically continuous.</li>
+</ul>
+<p>So “time” is not automatically one type of variable. The researcher’s measurement choices determine the level of measurement.</p>
+<p>Here is another example. The construct of studying could be measured in several ways.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th style="text-align: right;">Study_Continuous</th>
+<th>Study_Ordinal</th>
+<th>Study_Nominal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Name</em></td>
+<td style="text-align: right;"><em>Hours studied per day</em></td>
+<td><em>Amount of studying</em></td>
+<td><em>Studies every day?</em></td>
+</tr>
+<tr class="even">
+<td>Jesus</td>
+<td style="text-align: right;">5.0</td>
+<td>A great deal</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Nicky</td>
+<td style="text-align: right;">4.5</td>
+<td>A great deal</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Bradford</td>
+<td style="text-align: right;">3.2</td>
+<td>A moderate amount</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Sylvia</td>
+<td style="text-align: right;">1.7</td>
+<td>A small amount</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Martha</td>
+<td style="text-align: right;">0.2</td>
+<td>Rarely</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Lillian</td>
+<td style="text-align: right;">0.0</td>
+<td>Never</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Trayvon</td>
+<td style="text-align: right;">0.0</td>
+<td>Never</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Notice that the same general idea, studying, can be measured as:</p>
+<ul>
+<li>continuous: hours studied per day</li>
+<li>ordinal: amount of studying on an ordered scale</li>
+<li>nominal: whether the person studies every day</li>
+</ul>
+<p>This is why variable type is not just a vocabulary issue. It affects the information we have available and what analyses we can reasonably perform.</p>
+</section>
+<section id="be-careful-about-losing-information" class="level2">
+<h2 class="anchored" data-anchor-id="be-careful-about-losing-information">Be Careful About Losing Information</h2>
+<p>Continuous variables usually contain more information than ordinal variables, and ordinal variables usually contain more information than nominal variables.</p>
+<p>We can often move from continuous to ordinal or nominal. For example, we could turn hours studied into low, moderate, and high studying. We could also turn it into yes/no by asking whether someone studied at least one hour.</p>
+<p>But once we do that, we lose information. Someone who studied 1.1 hours and someone who studied 5.0 hours might end up in the same category. That may be useful for some research questions, but it can also make the analysis less precise.</p>
+<p>Because of this, researchers should be cautious about <button class="glossary" title="A way of turning a continuous variable into categories by splitting values above and below the mean. This removes information from the original variable.">mean splits</button>, <button class="glossary" title="A way of turning a continuous variable into categories by splitting values above and below the median. This removes information from the original variable.">median splits</button>, and collapsing categories. Sometimes there is a good reason to do it. But “this makes the analysis easier” is usually not a strong enough reason on its own.</p>
+</section>
+<section id="a-quick-decision-guide" class="level2">
+<h2 class="anchored" data-anchor-id="a-quick-decision-guide">A Quick Decision Guide</h2>
+<p>When you encounter a variable, ask yourself:</p>
+<ol type="1">
+<li>Does this variable describe categories or quantities?</li>
+<li>If it describes categories, is there a meaningful order?</li>
+<li>If it describes quantities, should jamovi treat it as continuous?</li>
+<li>Are the numbers meaningful quantities, or are they just labels?</li>
+</ol>
+<p>That last question is especially important. Assigning numbers to categories does not magically make something continuous.</p>
+<p><img src="images/02-stats-foundations/assigning_numbers.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Is favorite color nominal, ordinal, or continuous?</li>
+<li>Is class rank nominal, ordinal, or continuous?</li>
+<li>Why is time not automatically a continuous variable?</li>
+<li>Why might a researcher avoid turning a continuous variable into “high” and “low” groups?</li>
+</ol>
+<details>
+<summary>
+Answers
+</summary>
+<ol type="1">
+<li>Favorite color is nominal because the categories do not have a meaningful order.</li>
+<li>Class rank is ordinal because the categories or ranks have a meaningful order.</li>
+<li>Time depends on how it is measured. Pre/post time is categorical, month can be ordinal, and reaction time is continuous.</li>
+<li>Turning a continuous variable into categories removes information and can make analyses less precise.</li>
+</ol>
+</details>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1387,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./02.1-describing-data.html" class="pagination-link" aria-label="2.1 Describing Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2.1 Describing Data</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02.3-descriptive-vs-inferential-statistics.html" class="pagination-link" aria-label="2.3 Descriptive vs. Inferential Statistics">
+        <span class="nav-page-text">2.3 Descriptive vs.&nbsp;Inferential Statistics</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

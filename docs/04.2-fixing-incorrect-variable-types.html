@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>4.2 Fixing Incorrect Variable Types – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./04.3-working-with-missing-values.html" rel="next">
+<link href="./04.1-checking-your-data-before-analysis.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04.0-cleaning-and-preparing-data-in-jamovi.html">4. Cleaning and Preparing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./04.2-fixing-incorrect-variable-types.html">4.2 Fixing Incorrect Variable Types</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +113,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -234,11 +232,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./04.0-cleaning-and-preparing-data-in-jamovi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">4. Cleaning and Preparing Data in jamovi</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04.1-checking-your-data-before-analysis.html" class="sidebar-item-text sidebar-link">
@@ -247,7 +245,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.2-fixing-incorrect-variable-types.html" class="sidebar-item-text sidebar-link">
+  <a href="./04.2-fixing-incorrect-variable-types.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">4.2 Fixing Incorrect Variable Types</span></a>
   </div>
 </li>
@@ -748,60 +746,171 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#when-variable-setup-goes-wrong" id="toc-when-variable-setup-goes-wrong" class="nav-link active" data-scroll-target="#when-variable-setup-goes-wrong">When Variable Setup Goes Wrong</a></li>
+  <li><a href="#text-responses-and-numeric-responses" id="toc-text-responses-and-numeric-responses" class="nav-link" data-scroll-target="#text-responses-and-numeric-responses">Text Responses and Numeric Responses</a></li>
+  <li><a href="#keep-the-original-variable" id="toc-keep-the-original-variable" class="nav-link" data-scroll-target="#keep-the-original-variable">Keep the Original Variable</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04.0-cleaning-and-preparing-data-in-jamovi.html">4. Cleaning and Preparing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./04.2-fixing-incorrect-variable-types.html">4.2 Fixing Incorrect Variable Types</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">4.2 Fixing Incorrect Variable Types</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>Sometimes jamovi guesses variable setup correctly. Sometimes it does not.</p>
+<p>This is not because jamovi is bad at its job. It is because software cannot always know what a variable means. A column of 1s and 2s might represent a numeric score, but it might also represent categories such as control and treatment. A column of written response options might represent an ordinal scale, but jamovi may initially treat it as text.</p>
+<section id="when-variable-setup-goes-wrong" class="level2">
+<h2 class="anchored" data-anchor-id="when-variable-setup-goes-wrong">When Variable Setup Goes Wrong</h2>
+<p>Here are a few common examples:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Situation</th>
+<th>What jamovi might think</th>
+<th>What you may need to change</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Participant IDs are numbers</td>
+<td>Continuous</td>
+<td>ID</td>
+</tr>
+<tr class="even">
+<td>Gender is coded 0/1</td>
+<td>Continuous or ordinal</td>
+<td>Nominal</td>
+</tr>
+<tr class="odd">
+<td>Class level is text</td>
+<td>Nominal</td>
+<td>Ordinal, if the order matters</td>
+</tr>
+<tr class="even">
+<td>Likert responses are words</td>
+<td>Text/nominal</td>
+<td>Ordinal, after transforming to numeric values if needed</td>
+</tr>
+<tr class="odd">
+<td>Scale totals are whole numbers</td>
+<td>Integer</td>
+<td>Continuous, if used as a scale score</td>
+</tr>
+</tbody>
+</table>
+<p>The key is to ask what the variable represents, not only what it looks like.</p>
+</section>
+<section id="text-responses-and-numeric-responses" class="level2">
+<h2 class="anchored" data-anchor-id="text-responses-and-numeric-responses">Text Responses and Numeric Responses</h2>
+<p>A common issue with survey data is that Likert-type responses are stored as text. For example, a variable might contain responses like:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neither disagree nor agree</li>
+<li>Agree</li>
+<li>Strongly agree</li>
 </ul>
+<p>These responses are ordered, so conceptually they are ordinal. But if they are stored as text, jamovi cannot compute a total or average score from them. You will need to transform them into numeric values before computing a scale score.</p>
+<p>A typical recode might be:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Original text response</th>
+<th style="text-align: right;">New numeric value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Strongly disagree</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>Disagree</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td>Neither disagree nor agree</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td>Agree</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td>Strongly agree</td>
+<td style="text-align: right;">5</td>
+</tr>
+</tbody>
+</table>
+<p>After creating the transformed numeric version, you would usually set the measure type to ordinal for the item.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common Mistake">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common Mistake
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recoding text values is case-sensitive. In many contexts, <code>Strongly disagree</code> and <code>Strongly Disagree</code> are treated as different values. Extra spaces can also create new categories. When a recode does not work, check capitalization, spelling, and spacing first.</p>
+</div>
+</div>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
-</section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
-</section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="keep-the-original-variable" class="level2">
+<h2 class="anchored" data-anchor-id="keep-the-original-variable">Keep the Original Variable</h2>
+<p>Whenever possible, do not overwrite the original variable. Create a transformed or recoded version instead.</p>
+<p>This protects your work. If you make a mistake, you still have the original data. It also makes your analysis more transparent because someone can see both the original variable and the version you created for analysis.</p>
+<p>For transformed variables, I often use a suffix to remind myself what changed. For example:</p>
+<ul>
+<li><code>SBPS_1_Num</code> for a numeric version of <code>SBPS_1</code></li>
+<li><code>Gender_Recoded</code> for a cleaned version of <code>Gender</code></li>
+<li><code>BDI_Total</code> for a computed total score</li>
+</ul>
+<p>The exact names are less important than the principle: make names meaningful enough that you can understand them later.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A variable contains the text responses <code>Agree</code>, <code>Disagree</code>, and <code>Strongly agree</code>. You want to create a mean scale score across several items. What needs to happen before computing the mean?</p>
+<details>
+<summary>
+Answer
+</summary>
+<p>The text responses need to be transformed or recoded into numeric values first. jamovi cannot compute an average from words. After transforming the responses, you should check that the new variables have the correct data type and measure type.</p>
+</details>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1316,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./04.1-checking-your-data-before-analysis.html" class="pagination-link" aria-label="4.1 Checking Your Data Before Analysis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">4.1 Checking Your Data Before Analysis</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./04.3-working-with-missing-values.html" class="pagination-link" aria-label="4.3 Working With Missing Values">
+        <span class="nav-page-text">4.3 Working With Missing Values</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

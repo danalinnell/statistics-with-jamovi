@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>13.2 Finding Group Differences – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./13.3-repeated-measures-anova.html" rel="next">
+<link href="./13.1-one-way-anova.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13.0-anova.html">13. ANOVA</a></li><li class="breadcrumb-item"><a href="./13.2-finding-group-differences.html">13.2 Finding Group Differences</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +113,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -597,11 +595,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./13.0-anova.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">13. ANOVA</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13.1-one-way-anova.html" class="sidebar-item-text sidebar-link">
@@ -610,7 +608,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link">
+  <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">13.2 Finding Group Differences</span></a>
   </div>
 </li>
@@ -748,60 +746,136 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#post-hoc-comparisons" id="toc-post-hoc-comparisons" class="nav-link active" data-scroll-target="#post-hoc-comparisons">Post Hoc Comparisons</a></li>
+  <li><a href="#welchs-f-test-post-hoc-tests" id="toc-welchs-f-test-post-hoc-tests" class="nav-link" data-scroll-target="#welchs-f-test-post-hoc-tests">Welch’s F-Test Post Hoc Tests</a></li>
+  <li><a href="#kruskal-wallis-post-hoc-tests" id="toc-kruskal-wallis-post-hoc-tests" class="nav-link" data-scroll-target="#kruskal-wallis-post-hoc-tests">Kruskal-Wallis Post Hoc Tests</a></li>
+  <li><a href="#planned-contrasts" id="toc-planned-contrasts" class="nav-link" data-scroll-target="#planned-contrasts">Planned Contrasts</a></li>
+  <li><a href="#additional-practice" id="toc-additional-practice" class="nav-link" data-scroll-target="#additional-practice">Additional Practice</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13.0-anova.html">13. ANOVA</a></li><li class="breadcrumb-item"><a href="./13.2-finding-group-differences.html">13.2 Finding Group Differences</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">13.2 Finding Group Differences</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>Often, we’re not interested in just <em>whether</em> there is a difference (which the F-statistic can tell us), but <em>where</em> the differences are between groups (which the F-statistic cannot tell us). For that, we use either <u>planned contrasts</u> (when you have specific hypotheses you want to test) or <u>post-hoc comparisons</u> (when you have no specific hypotheses).</p>
+<div class="warning">
+<p>You do not perform contrasts or post hoc comparisons if your overall F statistic is not statistically significant. You do not interpret group differences if you fail to reject the null hypothesis that there are no group differences!</p>
+</div>
+<p>Below I provide descriptive statistics for these results. You can get this information in jamovi either by asking for descriptives from the exploration tab, or by asking for the estimated marginal means tables in the ANOVA analysis.</p>
+<section id="post-hoc-comparisons" class="level2">
+<h2 class="anchored" data-anchor-id="post-hoc-comparisons">Post Hoc Comparisons</h2>
+<p>Sometimes, we do not have any <em>a priori</em> (or planned) predictions or hypotheses about our group differences. In this case, we use post hoc procedures. These procedures do <u>pairwise comparisons</u> among all of our groups, like t-tests across each of our groups. As we noted on the first page of this handout, this can be highly problematic for our Type I error rate! Therefore, we must perform corrections to control our familywise error rate.</p>
+<p>jamovi currently supports five types of post-hoc tests for the ANOVA test; I generally only use Tukey or Bonferonni:</p>
+<ol type="1">
+<li><strong>No correction</strong>: This doesn’t correct for a Type I error at all. This is just like if you were performing 3 separate t-tests, which we’ve learned we shouldn’t do! So I do not recommend this option.</li>
+<li><strong>Tukey</strong>: This is the post hoc test I use most often. It controls the Type I error rate well, but isn’t as conservative of a control as the Bonferonni. I won’t get into the math for how this one works, but note how the p-values are not nearly as big as Bonferroni, but they are bigger than the unadjusted (no correction) p-values.</li>
+<li><strong>Scheffe</strong>: This has a complicated formula for calculating it, and quite frankly, I never use it so we won’t get into it here.</li>
+<li><strong>Bonferroni</strong>: This is the most conservative correction to the p-value. It’s good if you only have a small number of comparisons to make or if you <em>really</em> want to control your Type I error rate. If you have a lot of comparisons to test, then you may want to use something else. The way it works is it multiplies your p-value by the number of post-hoc comparisons being made. For example, in the example below, we are performing 3 t-tests so it is multiplying each p-value by 3 (e.g., .0006*3=.0017, .1502*3=.4506, etc.).</li>
+<li><strong>Holm</strong>: This is similar to the Bonferroni correction except that it corrects p-values sequentially such that the smallest p-value is multiplied by the number of post-hoc comparisons, the second smallest p-value is multiplied by the number of post-hoc comparisons minus 1, and so on until the biggest p-value is only multiplied by 1. For example, in the example below, the smallest p-value is for joyzepam - placebo (p &lt; .0001) and times by 3 is still p &lt; .0001; the second smallest p-value is for anxifree – joyzepam (p = .0006) and times by 3-1=2 is p=.0011, and the largest p-value for anxifree - placebo stays the same at p = .1502.</li>
+</ol>
+<p>To request post hoc tests from ANOVA, open the collapsed menu <code>Post Hoc Tests</code> in the setup menu. Select the single correction that you want, as well as the Cohen’s d effect size.</p>
+<p>Below shows the post hoc test results for our one-way ANOVA. Notice the differences in p-values across the four post hoc tests! Notice how the Bonferroni is most conservative (i.e., has the largest p-values) and the no correction (just p column) is the least conservative (i.e., has the smallest p-values).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/04_one-way-anova/posthoc.png" class="img-fluid figure-img"></p>
+<figcaption>Note that I rounded p-values to 4 dp to better demonstrate how the corrections work.</figcaption>
+</figure>
+</div>
+<p>When you are performing Welch’s F-test (due to unequal variances), you use the Games-Howell correction. When you are performing Kruskal-Wallis test (due to non-normal distribution), you use the DSCF pairwise comparisons.</p>
+<div class="info">
+<p>Keep in mind you do not normally ask for multiple post hoc comparisons.</p>
+<p>If you’re not sure, I suggest just using Tukey’s. In your homework assignments for PSYC 290 or PSYC 790 you will perform Tukey’s unless you don’t meet the assumptions of the parametric test, in which case you use the appropriate alternative.</p>
+</div>
+<section id="write-up-post-hoc-results-in-apa-style" class="level3">
+<h3 class="anchored" data-anchor-id="write-up-post-hoc-results-in-apa-style">Write Up Post Hoc Results in APA Style</h3>
+<p>The way we would write up each of the post hoc comparisons is very similar. Given that I usually use Tukey, here is a write-up for those results. Note that the first sentence is from the previous chapter on the one-way ANOVA! The statistical information is from the table above, and the descriptive statistics can be found when requesting descriptives in the one-way ANOVA.</p>
+<blockquote class="blockquote">
+<p>There is a significant difference in mood gain across the three drug conditions, <em>F</em> (2, 15) = 18.61, <em>p</em> &lt; .001. Post hoc comparisons using Tukey’s HSD revealed that our drug <em>Joyzepam</em> (<em>M</em> = 1.48, <em>SD</em> = .21) outperformed both <em>Anxifree</em> (<em>M</em> = .72, <em>SD</em> = .39; <em>t</em> (15) = 4.36, <em>p</em> = .002) and the placebo condition (<em>M</em> = .45, <em>SD</em> = .28; <em>t</em> (15) = 5.88, <em>p</em> &lt; .001); there were no differences between <em>Anxifree</em> and the placebo condition (<em>t</em> (15) = 1.52, <em>p</em> = .312).</p>
+</blockquote>
+<p>Writing up results in APA style is both a science and an art. There’s a science to what you need to report. For example, you should aim to report as much as possible of the statistical information for the post hoc comparisons, such as the t-test, p-value, and Cohen’s d.&nbsp;You also report the group means (<em>M</em>) and standard deviations (<em>SD</em>), although you can report them in-text like I did above or in a descriptives table (made in APA style).</p>
+<p>However, there’s also an art to it. Notice how I wrote that up in a way to summarize the findings as succinctly as possible. I could have said there was a difference between <em>anxifree</em> and <em>joyzepam</em> and a difference between <em>joyzepam</em> and the placebo, but that’s a lot more words and isn’t written in a way to focus on what I’m hoping to see: that my drug <em>joyzepam</em> performed better than the competitor <em>anxifree</em> and a placebo condition.</p>
+<p>This is where you need to think creatively and be very critical in checking that what you say makes sense. Read your write-ups carefully! Have someone else read it. Can they understand what you mean?</p>
+<div class="warning">
+<p>A common issue I see in student write-ups is that they provide a p-value but only discuss it in relation to one group. Note that these are post hoc comparisons, so the p-values are for comparisons between two groups! So you should be describing the p-value for group1 vs group2, for example. It makes no sense to provide a p-value for a single group.</p>
+</div>
+</section>
+</section>
+<section id="welchs-f-test-post-hoc-tests" class="level2">
+<h2 class="anchored" data-anchor-id="welchs-f-test-post-hoc-tests">Welch’s F-Test Post Hoc Tests</h2>
+<p>If you are using Welch’s F-test using the One-Way ANOVA in jamovi, you should select under Post-Hoc Tests <code>Games-Howell (unequal variances)</code>. These will be interpreted similarly to the post hoc comparisons above.</p>
+</section>
+<section id="kruskal-wallis-post-hoc-tests" class="level2">
+<h2 class="anchored" data-anchor-id="kruskal-wallis-post-hoc-tests">Kruskal-Wallis Post Hoc Tests</h2>
+<p>If you are using the Kruskal-Wallis test, you will select the check-box for <code>DSCF pairwise comparisons</code>. This stands for the Dwass-Steel-Critchlow-Fligner (DSCF) test. All you need to know is that they, too, are interpreted similarly to the post hoc comparisons above.</p>
+</section>
+<section id="planned-contrasts" class="level2">
+<h2 class="anchored" data-anchor-id="planned-contrasts">Planned Contrasts</h2>
+<p>If you have before-analysis hypotheses of group differences in your data, you will use planned contrasts. You can find the planned contrasts in the ANOVA (but not the one-way ANOVA) setup as a drop-down menu. Unfortunately, you cannot perform contrasts with either the Welch’s F-test or Kruskal-Wallis test.</p>
+<p>Note that while I show all six contrasts that jamovi provides, you normally would only perform one contrast. These are just shown for illustrative purposes:</p>
+<ol type="1">
+<li><p><strong>Deviation</strong>: compares the effect of each category (except the first category) to the overall experimental effect. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.</p>
+<p><img src="images/04_one-way-anova/contrasts_deviation.png" class="img-fluid"></p></li>
+<li><p><strong>Simple</strong>: Each category is compared to the first category. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.</p>
+<p><img src="images/04_one-way-anova/contrasts_simple.png" class="img-fluid"></p></li>
+<li><p><strong>Difference</strong>: Each category (except the first) is compared to the mean effect of all previous categories.</p>
+<p><img src="images/04_one-way-anova/contrasts_difference.png" class="img-fluid"></p></li>
+<li><p><strong>Helmert</strong>: Each category (except the last) is compared to the mean effect of all subsequent categories.</p>
+<p><img src="images/04_one-way-anova/contrasts_helmert.png" class="img-fluid"></p></li>
+<li><p><strong>Repeated</strong>: Each category is compared to the last category.</p>
+<p><img src="images/04_one-way-anova/contrasts_repeated.png" class="img-fluid"></p></li>
+<li><p><strong>Polynomial</strong>: Tests trends in the data. It will examine the <em>n-1</em><sup>th</sup> degree based on the number of groups. In this case, because we have 3 groups it is testing both a linear (<sup>1</sup>) and quadratic (<sup>2</sup>) trend. If we had 5 groups, it would test a linear (<sup>1</sup>), quadratic (<sup>2</sup>), cubic (<sup>3</sup>), and quartic (<sup>4</sup>) trend. Note that your factor levels must be ordinal for a polynomial contrast to make sense.</p>
+<p><img src="images/04_one-way-anova/contrasts_polynomial.png" class="img-fluid"></p></li>
+</ol>
+<p><strong>Test yourself!</strong> Which contrast do you think would make <u>most sense</u> to test given that we want to know how our drug compares to each of the other two drugs?</p>
+<section id="write-up-planned-contrasts-in-apa-style" class="level3">
+<h3 class="anchored" data-anchor-id="write-up-planned-contrasts-in-apa-style">Write Up Planned Contrasts in APA Style</h3>
+<p>Here’s some example write-ups of the above results.</p>
+<blockquote class="blockquote">
+<p>There is a significant difference in mood gain across the three drug conditions, <em>F</em> (2, 15) = 18.61, <em>p</em> &lt; .001. Repeated contrasts showed that <em>Joyzepam</em> (<em>M</em> = 1.48, <em>SD</em> = .21) outperformed both <em>Anxifree</em> (<em>M</em> = .72, <em>SD</em> = .39; <em>t</em> = 4.36, <em>p</em> &lt; .001) and the placebo condition (<em>M</em> = .45, <em>SD</em> = .28; <em>t</em> = 5.88, <em>p</em> &lt; .001).</p>
+</blockquote>
+<p>Note how this next example makes no sense because our data is not ordinal, but here’s an example polynomial write-up:</p>
+<blockquote class="blockquote">
+<p>There is a significant difference in mood gain across the three drug conditions, <em>F</em> (2, 15) = 18.61, <em>p</em> &lt; .001. There was not a significant linear trend across the drug conditions (<em>p</em> = .150).</p>
+</blockquote>
+</section>
+</section>
+<section id="additional-practice" class="level2">
+<h2 class="anchored" data-anchor-id="additional-practice">Additional Practice</h2>
+<p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
+<p>Perform one-way ANOVAs based on the following research questions. Check your assumptions and ensure you are using the correct tests.</p>
+<p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
+<p><strong>Note</strong>: These are the same questions as in the one-way ANOVA chapter, but now you focus on the group differences.</p>
+<ol type="1">
+<li><p><strong>Do students differ on English scores by rank (i.e., freshmen, sophomore, junior, senior)?</strong></p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
-</ul>
-</section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
-</section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
-</section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<li>Perform Tukey’s post hoc tests. What are the results of the post hoc comparison?</li>
+</ul></li>
+<li><p><strong>Does smoking status (Smoking: Nonsmoker = 0, Past smoker = 1, Current smoker = 2) relate to sprint time?</strong></p>
+<ul>
+<li>Perform Tukey’s post hoc tests. What are the results of the post hoc comparison?</li>
+</ul></li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1281,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./13.1-one-way-anova.html" class="pagination-link" aria-label="13.1 One-Way ANOVA">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">13.1 One-Way ANOVA</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./13.3-repeated-measures-anova.html" class="pagination-link" aria-label="13.3 Repeated Measures ANOVA">
+        <span class="nav-page-text">13.3 Repeated Measures ANOVA</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

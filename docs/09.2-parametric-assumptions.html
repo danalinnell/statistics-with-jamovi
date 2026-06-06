@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>9.2 Parametric Assumptions – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./09.3-violated-assumptions.html" rel="next">
+<link href="./09.1-choosing-the-correct-test.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,6 +73,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="style.css">
@@ -88,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09.0-inferential-statistics.html">9. Inferential Statistics</a></li><li class="breadcrumb-item"><a href="./09.2-parametric-assumptions.html">9.2 Parametric Assumptions</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +115,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -469,11 +469,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./09.0-inferential-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">9. Inferential Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09.1-choosing-the-correct-test.html" class="sidebar-item-text sidebar-link">
@@ -482,7 +482,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09.2-parametric-assumptions.html" class="sidebar-item-text sidebar-link">
+  <a href="./09.2-parametric-assumptions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">9.2 Parametric Assumptions</span></a>
   </div>
 </li>
@@ -748,60 +748,487 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#two-kinds-of-assumptions" id="toc-two-kinds-of-assumptions" class="nav-link active" data-scroll-target="#two-kinds-of-assumptions">Two Kinds of Assumptions</a></li>
+  <li><a href="#assumption-1-continuous-dependent-variable" id="toc-assumption-1-continuous-dependent-variable" class="nav-link" data-scroll-target="#assumption-1-continuous-dependent-variable">Assumption 1: Continuous Dependent Variable</a></li>
+  <li><a href="#assumption-2-independence" id="toc-assumption-2-independence" class="nav-link" data-scroll-target="#assumption-2-independence">Assumption 2: Independence</a></li>
+  <li><a href="#assumption-3-normality" id="toc-assumption-3-normality" class="nav-link" data-scroll-target="#assumption-3-normality">Assumption 3: Normality</a></li>
+  <li><a href="#assumption-4-homogeneity-of-variance" id="toc-assumption-4-homogeneity-of-variance" class="nav-link" data-scroll-target="#assumption-4-homogeneity-of-variance">Assumption 4: Homogeneity of Variance</a></li>
+  <li><a href="#regression-assumptions" id="toc-regression-assumptions" class="nav-link" data-scroll-target="#regression-assumptions">Regression Assumptions</a></li>
+  <li><a href="#assumption-checking-and-reporting" id="toc-assumption-checking-and-reporting" class="nav-link" data-scroll-target="#assumption-checking-and-reporting">Assumption Checking and Reporting</a></li>
+  <li><a href="#recapping-parametric-assumptions" id="toc-recapping-parametric-assumptions" class="nav-link" data-scroll-target="#recapping-parametric-assumptions">Recapping Parametric Assumptions</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09.0-inferential-statistics.html">9. Inferential Statistics</a></li><li class="breadcrumb-item"><a href="./09.2-parametric-assumptions.html">9.2 Parametric Assumptions</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">9.2 Parametric Assumptions</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>Once you have a likely statistical test in mind, the next question is whether the assumptions for that test are reasonable.</p>
+<p>This is Step 2 in our <a href="./07.0-hypothesis-testing.html">4-step hypothesis-testing process</a>: check assumptions.</p>
+<p>Checking assumptions can feel annoying at first. It can feel like an extra step between you and the analysis you actually want to run. But assumptions matter because they tell us whether the statistical test is likely to work the way it is supposed to work.</p>
+<p>If assumptions are seriously violated, the <em>p</em>-value may be inaccurate, the effect size may be misleading, or the interpretation may not fit the data. That does not mean your study is ruined. It means you need to make a thoughtful decision.</p>
+<p>Most of the inferential statistics we will use are <button class="glossary" title="">parametric test</button>, which means they rely on assumptions about the data. <button class="glossary" title="">non-parametric test</button> generally make fewer assumptions about the shape of the distribution, but they are not assumption-free.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Where assumption checks happen in jamovi">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Where assumption checks happen in jamovi
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may notice that jamovi gives you more than one way to check normality. You can check normality through <strong>Exploration → Descriptives</strong>, but you may also see normality checks built into specific inferential tests.</p>
+<p>These are related, but they are not always testing the exact same thing. The Descriptives approach is checking the variable you selected. Some inferential tests check normality in a way that is more closely connected to the analysis you are running.</p>
+<p>Most of the time, you will reach the same overall conclusion either way: normality looks reasonable, questionable, or clearly violated. But the exact values may differ slightly. That is okay.</p>
+<p>For now, use <strong>Exploration → Descriptives</strong> to learn the basic idea of checking normality. Later, when you are running a specific inferential test, use the assumption checks built into that analysis when they are available.</p>
+</div>
+</div>
+<p><a href="https://www.youtube.com/watch?v=zNbF006Y5x4">This video</a> recaps the main ideas in this section in another format.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/tNojQp7DQt8" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+<section id="two-kinds-of-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="two-kinds-of-assumptions">Two Kinds of Assumptions</h2>
+<p>I find it helpful to separate assumptions into two broad types.</p>
+<p><strong>Design or data-structure assumptions</strong> are about whether the test matches the way the data were collected or measured. These include assumptions such as having a continuous dependent variable and independent observations. If these are wrong, you usually need a different test or a different analytic approach.</p>
+<p><strong>Distributional assumptions</strong> are about the shape or spread of the data. These include normality and homogeneity of variance. If these are violated, you may use a different version of the test, a non-parametric alternative, or another justified approach.</p>
+<p>In this chapter, we will focus on four common assumptions:</p>
+<ol type="1">
+<li>The dependent variable is continuous.</li>
+<li>Observations are independent when the test assumes independence.</li>
+<li>The dependent variable is reasonably normally distributed.</li>
+<li>Variances are reasonably similar across groups when the test assumes homogeneity of variance.</li>
+</ol>
+</section>
+<section id="assumption-1-continuous-dependent-variable" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-1-continuous-dependent-variable">Assumption 1: Continuous Dependent Variable</h2>
+<p>Many parametric tests require a continuous dependent variable. This includes <em>t</em>-tests, ANOVA, correlation, and regression.</p>
+<p>This means the dependent variable should represent a numerical amount where means and standard deviations are meaningful. Examples include exam scores, reaction time, depression scale scores, GPA, height, and time spent studying.</p>
+<p>There is no formal statistical test for this assumption. Instead, you need to know:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li>what type of variable you are working with;</li>
+<li>how the variable was measured;</li>
+<li>whether a mean, standard deviation, and difference score would be meaningful.</li>
 </ul>
+<p>This connects directly to <a href="./02.2-types-of-variables-levels-of-measurement.html">Types of Variables and Levels of Measurement</a>. A single Likert-type item is usually best understood as ordinal, but an average or total scale score created from several related items is often treated as continuous in practice.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="If this assumption is violated">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>If this assumption is violated
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is not really an assumption you “fix.” If the dependent variable is categorical, you probably chose the wrong test.</p>
+<p>Return to <a href="./09.1-choosing-the-correct-test.html">Choosing the Correct Test</a> and choose a test designed for a categorical dependent variable.</p>
+</div>
+</div>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
+<section id="assumption-2-independence" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-2-independence">Assumption 2: Independence</h2>
+<p>The assumption of independence means that each observation is independent of the others. In plain language, one participant’s score should not determine, cause, or be linked to another participant’s score unless the statistical test is designed for related observations.</p>
+<p>For example, if you randomly sample 100 students and measure each student’s test score once, those observations are probably independent.</p>
+<p>However, observations may not be independent when:</p>
+<ul>
+<li>the same participants are measured more than once;</li>
+<li>participants are paired or matched;</li>
+<li>students are nested within classrooms;</li>
+<li>employees are nested within work teams;</li>
+<li>multiple observations come from the same person.</li>
+</ul>
+<p>This is why it matters whether you have a between-subjects or within-subjects design. If the same people are measured more than once, you should not use a test that assumes independent groups.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="If this assumption is violated">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>If this assumption is violated
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Violating independence is usually a design issue, not a data-cleaning issue.</p>
+<p>If the same participants are measured more than once, choose a within-subjects or repeated-measures test. If people are nested in classrooms, organizations, teams, or other groups, you may need more advanced methods such as multilevel modeling. We will not cover multilevel modeling in this course, but I want you to recognize why independence matters.</p>
+</div>
+</div>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="assumption-3-normality" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-3-normality">Assumption 3: Normality</h2>
+<p>The assumption of normality means that the dependent variable is reasonably normally distributed for the analysis you are conducting.</p>
+<p>A <button class="glossary" title="A symmetric, bell-shaped distribution with values clustered around the center and fewer values farther from the center.">normal distribution</button> is often called a bell-shaped curve. In a normal distribution, the data are symmetrically distributed around the mean, the mean and median are equal, skew and kurtosis are approximately 0, and we know the proportion of data that should fall within each standard deviation from the mean.</p>
+<p>This is where students often ask, “How normal is normal enough?” Great question. Unfortunately, there is not one perfect answer.</p>
+<p>Assumption checking is not a magic checklist where every method gives the same answer. It is a judgment process. You should use more than one piece of information and think about the severity of the violation, the sample size, and the test you plan to use.</p>
+<section id="checking-normality" class="level3">
+<h3 class="anchored" data-anchor-id="checking-normality">Checking Normality</h3>
+<p>There are four main ways we will check normality in this course:</p>
+<ol type="1">
+<li>Visualize the distribution.</li>
+<li>Test the skew and kurtosis.</li>
+<li>Conduct a Shapiro-Wilk test.</li>
+<li>Visualize the Q-Q plot.</li>
+</ol>
+<p>You should use multiple methods when checking normality. These methods do not always agree perfectly. Personally, I tend to prioritize visual inspection and err on the side of caution. A statistical test can tell you whether a distribution differs from perfect normality, but real data are almost never perfectly normal.</p>
+<p>A general way to check normality is through <strong>Exploration → Descriptives</strong>:</p>
+<ol type="1">
+<li>Move the dependent variable to the <strong>Variables</strong> box.</li>
+<li>If you need to check normality within groups, move the grouping variable to <strong>Split by</strong>.</li>
+<li>Under <strong>Statistics</strong>, select skewness and kurtosis if useful.</li>
+<li>Under <strong>Plots</strong>, select histogram, density, box plot, and/or Q-Q plot.</li>
+<li>Under <strong>Normality</strong>, select Shapiro-Wilk if available.</li>
+</ol>
+<p>You learned how to describe continuous variables in <a href="./05.3-describing-continuous-variables.html">Describing Continuous Variables</a> and how to visualize continuous variables in <a href="./06.3-visualizing-continuous-variables.html">Visualizing Continuous Variables</a>. This is one reason those earlier chapters matter: descriptives and plots help you decide whether assumptions are reasonable.</p>
+<section id="method-1-visualize-the-distribution" class="level4">
+<h4 class="anchored" data-anchor-id="method-1-visualize-the-distribution">Method 1: Visualize the Distribution</h4>
+<p>The first method is to visualize the distribution. In jamovi, go to <strong>Exploration → Descriptives</strong> and select a histogram, density plot, box plot, violin plot, and/or data points.</p>
+<p>We visually inspect whether the distribution resembles a bell-shaped curve. We are not looking for perfection. We are looking for whether the shape seems reasonable enough for the test we plan to use.</p>
+<p>In the following example, height appears approximately normally distributed.</p>
+<p><img src="images/06-inferential/histogram.png" class="img-fluid" width="400"></p>
+<p><img src="images/06-inferential/boxplot.png" class="img-fluid" width="400"></p>
+<p>Histograms and density plots help us see the overall shape of the distribution. Box plots, violin plots, and data points can also help us notice skew, spread, and possible outliers.</p>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="method-2-test-the-skew-and-kurtosis" class="level4">
+<h4 class="anchored" data-anchor-id="method-2-test-the-skew-and-kurtosis">Method 2: Test the Skew and Kurtosis</h4>
+<p>The second method is to examine skew and kurtosis.</p>
+<p>In jamovi:</p>
+<ol type="1">
+<li>Go to <strong>Exploration → Descriptives</strong>.</li>
+<li>Move your dependent variable into the <strong>Variables</strong> box.</li>
+<li>Under <strong>Statistics</strong>, select skewness and kurtosis.</li>
+</ol>
+<p>For our example of height, here are the skew and kurtosis values:</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Descriptives</strong></td>
+<td><strong>Height</strong></td>
+</tr>
+<tr class="even">
+<td>Skewness</td>
+<td>.230</td>
+</tr>
+<tr class="odd">
+<td>Std. error skewness</td>
+<td>.121</td>
+</tr>
+<tr class="even">
+<td>Kurtosis</td>
+<td>.113</td>
+</tr>
+<tr class="odd">
+<td>Std. error kurtosis</td>
+<td>.241</td>
+</tr>
+</tbody>
+</table>
+<p>To test skew and kurtosis, we calculate <em>z</em>-scores by dividing the value by its standard error:</p>
+<ul>
+<li>Skew: .230 / .121 = 1.90</li>
+<li>Kurtosis: .113 / .241 = .47</li>
+</ul>
+<p>A common guideline is:</p>
+<ul>
+<li>If |<em>z</em>| &lt; 1.96, the skew or kurtosis value is not statistically significant at alpha = .05.</li>
+<li>If |<em>z</em>| &gt; 1.96, the skew or kurtosis value is statistically significant at alpha = .05.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Why 1.96?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why 1.96?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The value 1.96 is the critical value of <em>z</em> when alpha is .05 and we have a two-tailed test. You do not need to memorize that for this course, but it explains why 1.96 often shows up when people are checking skew and kurtosis.</p>
+</div>
+</div>
+<p>In this example, both values are less than 1.96 in absolute value, so skew and kurtosis do not suggest a serious violation of normality.</p>
+</section>
+<section id="method-3-conduct-a-shapiro-wilk-test" class="level4">
+<h4 class="anchored" data-anchor-id="method-3-conduct-a-shapiro-wilk-test">Method 3: Conduct a Shapiro-Wilk Test</h4>
+<p>The third method is to conduct a <button class="glossary" title="A statistical test used to evaluate whether a variable differs from a normal distribution.">Shapiro-Wilk test</button>. This is a formal statistical test of normality.</p>
+<p>In jamovi:</p>
+<ol type="1">
+<li>Go to <strong>Exploration → Descriptives</strong>.</li>
+<li>Move your dependent variable into the <strong>Variables</strong> box.</li>
+<li>Under <strong>Normality</strong>, select Shapiro-Wilk.</li>
+</ol>
+<p>Interpretation:</p>
+<ul>
+<li>If <em>p</em> &gt; .05, the test does not provide evidence that the distribution differs from normality.</li>
+<li>If <em>p</em> &lt; .05, the test suggests the distribution differs from normality.</li>
+</ul>
+<p>This can feel counterintuitive because we usually look for statistically significant results in inferential tests. For Shapiro-Wilk, we usually want a non-significant result because the null hypothesis is that the data are normally distributed.</p>
+<p>Be careful, though. With very small samples, Shapiro-Wilk may miss meaningful non-normality. With very large samples, it may flag tiny deviations that do not matter much in practice. This is why you should not rely on Shapiro-Wilk alone.</p>
+</section>
+<section id="method-4-visualize-the-q-q-plot" class="level4">
+<h4 class="anchored" data-anchor-id="method-4-visualize-the-q-q-plot">Method 4: Visualize the Q-Q Plot</h4>
+<p>The fourth method is to visualize the Q-Q plot.</p>
+<p>In jamovi:</p>
+<ol type="1">
+<li>Go to <strong>Exploration → Descriptives</strong>.</li>
+<li>Move your dependent variable into the <strong>Variables</strong> box.</li>
+<li>Under <strong>Plots</strong>, select Q-Q plot.</li>
+</ol>
+<p>A <button class="glossary" title="A plot that compares observed data to the pattern expected under a theoretical distribution, often used to assess normality.">Q-Q plot</button> compares the observed data to what we would expect if the data were normally distributed. We look for the points to fall reasonably close to the diagonal line.</p>
+<p><img src="images/06-inferential/qqplot.png" class="img-fluid" alt=""></p>
+<p>Focus primarily on the center of the distribution. Small deviations at the tails are common. Large, systematic deviations from the line suggest the data may not be normally distributed.</p>
+<p>Here is a video by Alexander Swan on <a href="https://www.youtube.com/watch?v=sLhFc-4qSXE">interpreting a Q-Q plot in jamovi</a>:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/sLhFc-4qSXE" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="if-normality-is-violated" class="level3">
+<h3 class="anchored" data-anchor-id="if-normality-is-violated">If Normality Is Violated</h3>
+<p>First, check whether the violation is caused by data-entry errors, missing-value codes, or extreme outliers. If so, return to <a href="./04.0-cleaning-and-preparing-data-in-jamovi.html">Cleaning and Preparing Data in jamovi</a>.</p>
+<p>If the data are genuinely non-normal, you may need to:</p>
+<ul>
+<li>interpret the parametric test cautiously;</li>
+<li>use a non-parametric alternative;</li>
+<li>use a robust version of the test if available;</li>
+<li>consider a transformation in more advanced work.</li>
+</ul>
+<p>In this course, the most common move will be choosing the appropriate parametric or non-parametric test and explaining your decision. We will return to this in <a href="./09.3-violated-assumptions.html">Violated Assumptions</a>.</p>
+</section>
+</section>
+<section id="assumption-4-homogeneity-of-variance" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-4-homogeneity-of-variance">Assumption 4: Homogeneity of Variance</h2>
+<p><button class="glossary" title="The assumption that the dependent variable has similar variability across groups.">homogeneity of variance</button> means the dependent variable has similar variability across groups of the independent variable.</p>
+<p>This assumption applies when you are comparing groups on a continuous dependent variable, such as with an independent <em>t</em>-test or one-way ANOVA.</p>
+<p>It might help to remember that <em>homo</em> means same and <em>hetero</em> means different. When variances are similar across groups, we have homogeneity of variance. When variances are very different across groups, we have heterogeneity of variance.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Normality vs. Homogeneity of Variance">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Normality vs.&nbsp;Homogeneity of Variance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Normality is about the shape of the dependent variable’s distribution.</p>
+<p>Homogeneity of variance is about whether the spread of the dependent variable is similar across groups of the independent variable.</p>
+</div>
+</div>
+<section id="checking-homogeneity-of-variance" class="level3">
+<h3 class="anchored" data-anchor-id="checking-homogeneity-of-variance">Checking Homogeneity of Variance</h3>
+<p>There are three main ways we will check homogeneity of variance in this course:</p>
+<ol type="1">
+<li>Visualize the distribution of the dependent variable across the groups of the independent variable.</li>
+<li>Examine the variance values.</li>
+<li>Conduct Levene’s test.</li>
+</ol>
+<p>As with normality, these methods should be interpreted together. A graph may show that the group spreads look meaningfully different even before you look at a statistical test. Levene’s test may also be statistically significant in larger samples when the practical difference in spread is not very concerning. Use your judgment and be transparent about what you checked.</p>
+<section id="method-1-visualize-the-distribution-across-groups" class="level4">
+<h4 class="anchored" data-anchor-id="method-1-visualize-the-distribution-across-groups">Method 1: Visualize the Distribution Across Groups</h4>
+<p>The first method is to visualize the distribution of the dependent variable across the groups of the independent variable.</p>
+<p>In jamovi:</p>
+<ol type="1">
+<li>Go to <strong>Exploration → Descriptives</strong>.</li>
+<li>Move the continuous dependent variable to the <strong>Variables</strong> box.</li>
+<li>Move the categorical independent variable to the <strong>Split by</strong> box.</li>
+<li>Select box plot, violin plot, and/or data points.</li>
+</ol>
+<p>Large differences in spread across groups may suggest a violation.</p>
+<p>You practiced this kind of graph in <a href="./06.5-visualizing-continuous-variables-across-groups.html">Visualizing Continuous Variables Across Groups</a>.</p>
+<p>For example, here is an example of data that violates the assumption of homogeneity of variance. The dependent variable is mile duration in minutes, split by gender. The spread of scores for females, coded as 1, is much wider than the spread of scores for males, coded as 0. I am looking at the data points and violin plot to see the spread; the 1 looks wider whereas the 0 looks skinnier.</p>
+<p><img src="images/06-inferential/homogeneity.png" class="img-fluid" width="500"></p>
+</section>
+<section id="method-2-examine-the-variance-values" class="level4">
+<h4 class="anchored" data-anchor-id="method-2-examine-the-variance-values">Method 2: Examine the Variance Values</h4>
+<p>The second method is to compare the variance values across groups.</p>
+<p>In jamovi:</p>
+<ol type="1">
+<li>Go to <strong>Exploration → Descriptives</strong>.</li>
+<li>Move the dependent variable to the <strong>Variables</strong> box.</li>
+<li>Move the grouping variable to the <strong>Split by</strong> box.</li>
+<li>Under <strong>Statistics</strong>, select variance.</li>
+</ol>
+<p>Large differences in variance values suggest a possible violation of the assumption of homogeneity of variance.</p>
+<p>Example:</p>
+<ul>
+<li>Male variance in mile duration in minutes: 6796.20</li>
+<li>Female variance in mile duration in minutes: 15401.55</li>
+</ul>
+<p>Females have 2.26 times greater variance compared to males. Clearly, there is much greater variability for females than males for time it takes to run the mile.</p>
+</section>
+<section id="method-3-conduct-levenes-test" class="level4">
+<h4 class="anchored" data-anchor-id="method-3-conduct-levenes-test">Method 3: Conduct Levene’s Test</h4>
+<p>The third method is to conduct <button class="glossary" title="">Levene's test</button>. Levene’s test is a formal statistical test of homogeneity of variance.</p>
+<p>You will often find Levene’s test inside the inferential test menu. For example, for a one-way ANOVA, you can select the homogeneity test option.</p>
+<p>In jamovi:</p>
+<ol type="1">
+<li>Go to <strong>ANOVA → One-way ANOVA</strong>.</li>
+<li>Move your continuous dependent variable to the <strong>Dependent Variables</strong> box.</li>
+<li>Move your categorical independent variable to the <strong>Grouping Variable</strong> box.</li>
+<li>Check <strong>Homogeneity test</strong>.</li>
+<li>Only look at Levene’s test for now; ignore the ANOVA results at this moment.</li>
+</ol>
+<p>Interpretation:</p>
+<ul>
+<li>If <em>p</em> &gt; .05, the assumption is generally treated as met.</li>
+<li>If <em>p</em> &lt; .05, the assumption may be violated.</li>
+</ul>
+<p>Here is the result of Levene’s test for the effect of gender on mile duration:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Levene’s</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">df1</th>
+<th style="text-align: right;">df2</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MileMinDur</td>
+<td style="text-align: right;">41.33</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">381</td>
+<td style="text-align: right;">&lt; .001</td>
+</tr>
+</tbody>
+</table>
+<p>Because the <em>p</em>-value is less than .05, this suggests that we violated the assumption of homogeneity of variance.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Why do we want Levene's test to be non-significant?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why do we want Levene’s test to be non-significant?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Again, we usually want non-significant results here because the null hypothesis is that the variances are equal across groups.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="if-homogeneity-of-variance-is-violated" class="level3">
+<h3 class="anchored" data-anchor-id="if-homogeneity-of-variance-is-violated">If Homogeneity of Variance Is Violated</h3>
+<p>If homogeneity of variance is violated, the solution depends on the test.</p>
+<p>For an independent <em>t</em>-test, you may use Welch’s <em>t</em>-test. For a one-way ANOVA, you may use Welch’s ANOVA. These versions adjust for unequal variances.</p>
+<p>For repeated-measures designs, the assumption issues are different. For example, repeated-measures ANOVA has an assumption called sphericity. We will discuss that later when we get to ANOVA.</p>
+<p>We will return to broader decision-making about violations in <a href="./09.3-violated-assumptions.html">Violated Assumptions</a>.</p>
+</section>
+</section>
+<section id="regression-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="regression-assumptions">Regression Assumptions</h2>
+<p>Regression has additional assumptions, including linearity, homoscedasticity, independent errors, and normally distributed residuals. I am not going to teach those in depth here because they will make more sense when you learn regression.</p>
+<p>For now, just know that regression is not assumption-free. We will return to regression-specific assumptions in <a href="./14.0-correlation-regression.html">Correlation and Regression</a>.</p>
+</section>
+<section id="assumption-checking-and-reporting" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-checking-and-reporting">Assumption Checking and Reporting</h2>
+<p>Assumption checking is not only about choosing the correct test. It also affects what you report.</p>
+<p>If assumptions are met, you may simply report the planned test. If an assumption is violated and you use a different test, correction, or non-parametric alternative, readers need to know what you checked and what decision you made.</p>
+<p>We will focus more on writing results clearly in <a href="./10.0-writing-results-in-apa-style.html">Chapter 10</a>.</p>
+</section>
+<section id="recapping-parametric-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="recapping-parametric-assumptions">Recapping Parametric Assumptions</h2>
+<p>Let’s summarize the four assumptions and generally how to test for them:</p>
+<ol type="1">
+<li><strong>Continuous dependent variable</strong>
+<ul>
+<li>Know your levels of measurement and make sure the dependent variable is continuous.</li>
+</ul></li>
+<li><strong>Independent scores on the dependent variable</strong>
+<ul>
+<li>Know your research design and how the data were collected. Make sure that one participant’s data is not thought to affect another participant’s data.</li>
+</ul></li>
+<li><strong>Normal distribution of the dependent variable</strong>
+<ul>
+<li>Visualize the distribution with a histogram and/or density plot of the dependent variable.</li>
+<li>Test the skew and kurtosis by calculating the <em>z</em>-scores.</li>
+<li>Test using the Shapiro-Wilk test.</li>
+<li>Examine the Q-Q plot for deviations from the diagonal line.</li>
+</ul></li>
+<li><strong>Homogeneity of variance</strong>
+<ul>
+<li>Visualize the distribution with a box plot, violin plot, and/or data points, with the dependent variable split by the independent variable.</li>
+<li>Examine the variances of the dependent variable split by the independent variable.</li>
+<li>Test using Levene’s test.</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Which assumptions are determined conceptually rather than tested statistically?</li>
+<li>What are the four ways we check normality in this course?</li>
+<li>For normality, do we usually want statistically significant or non-significant Shapiro-Wilk results? Why?</li>
+<li>What are the three ways we check homogeneity of variance in this course?</li>
+<li>What does Levene’s test evaluate?</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Suggested Answers">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Suggested Answers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Continuous dependent variable and independence are determined conceptually. They depend on the variable type, study design, and data structure.</li>
+<li>We visualize the distribution, test skew and kurtosis, conduct a Shapiro-Wilk test, and visualize the Q-Q plot.</li>
+<li>We usually want non-significant Shapiro-Wilk results because the null hypothesis is that the data are normally distributed.</li>
+<li>We visualize the distribution of the dependent variable across groups, examine the variance values, and conduct Levene’s test.</li>
+<li>Levene’s test evaluates whether variances are equal across groups.</li>
+</ol>
+</div>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1634,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./09.1-choosing-the-correct-test.html" class="pagination-link" aria-label="9.1 Choosing the Correct Test">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">9.1 Choosing the Correct Test</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./09.3-violated-assumptions.html" class="pagination-link" aria-label="9.3 Violated Assumptions">
+        <span class="nav-page-text">9.3 Violated Assumptions</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

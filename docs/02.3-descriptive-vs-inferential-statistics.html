@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>2.3 Descriptive vs.&nbsp;Inferential Statistics – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./02.4-understanding-distributions-variability.html" rel="next">
+<link href="./02.2-types-of-variables-levels-of-measurement.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02.0-statistics-foundations.html">2. Statistics Foundations</a></li><li class="breadcrumb-item"><a href="./02.3-descriptive-vs-inferential-statistics.html">2.3 Descriptive vs.&nbsp;Inferential Statistics</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -140,11 +139,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./02.0-statistics-foundations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2. Statistics Foundations</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02.1-describing-data.html" class="sidebar-item-text sidebar-link">
@@ -159,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.3-descriptive-vs-inferential-statistics.html" class="sidebar-item-text sidebar-link">
+  <a href="./02.3-descriptive-vs-inferential-statistics.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">2.3 Descriptive vs.&nbsp;Inferential Statistics</span></a>
   </div>
 </li>
@@ -748,60 +747,164 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link active" data-scroll-target="#descriptive-statistics">Descriptive Statistics</a></li>
+  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics">Inferential Statistics</a></li>
+  <li><a href="#population-sample-and-inference" id="toc-population-sample-and-inference" class="nav-link" data-scroll-target="#population-sample-and-inference">Population, Sample, and Inference</a></li>
+  <li><a href="#a-research-example" id="toc-a-research-example" class="nav-link" data-scroll-target="#a-research-example">A Research Example</a></li>
+  <li><a href="#we-usually-need-both" id="toc-we-usually-need-both" class="nav-link" data-scroll-target="#we-usually-need-both">We Usually Need Both</a></li>
+  <li><a href="#descriptive-or-inferential" id="toc-descriptive-or-inferential" class="nav-link" data-scroll-target="#descriptive-or-inferential">Descriptive or Inferential?</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02.0-statistics-foundations.html">2. Statistics Foundations</a></li><li class="breadcrumb-item"><a href="./02.3-descriptive-vs-inferential-statistics.html">2.3 Descriptive vs.&nbsp;Inferential Statistics</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">2.3 Descriptive vs.&nbsp;Inferential Statistics</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>Once we understand what kind of variables we have, the next big distinction is whether we are describing the data we collected or using those data to make a larger claim.</p>
+<p>That is the difference between descriptive and inferential statistics.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Learning Objectives">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this section, you should be able to:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li>define descriptive statistics and inferential statistics</li>
+<li>distinguish between a sample and a population</li>
+<li>explain why researchers often use samples to make inferences about populations</li>
+<li>identify when a research question is descriptive versus inferential</li>
+<li>explain why we usually need both descriptive and inferential statistics</li>
 </ul>
+</div>
+</div>
+<section id="descriptive-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h2>
+<p><button class="glossary" title="Statistics used to summarize, organize, and describe the data in a sample.">Descriptive statistics</button> summarize, organize, and describe the data we have.</p>
+<p>For example, if I collect data from 80 students, descriptive statistics help me describe those 80 students. I might report:</p>
+<ul>
+<li>the average quiz score</li>
+<li>the standard deviation of quiz scores</li>
+<li>the percentage of students in each major</li>
+<li>the number of students in each condition</li>
+<li>a graph showing the distribution of scores</li>
+</ul>
+<p>Descriptive statistics do not, by themselves, tell us whether the same pattern would appear in a larger population. They describe what happened in the sample.</p>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
+<section id="inferential-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="inferential-statistics">Inferential Statistics</h2>
+<p><button class="glossary" title="Statistics used to make inferences from a sample to a larger population.">Inferential statistics</button> help us use data from a <button class="glossary" title="The smaller group, set of people, cases, or observations from which data are collected.">sample</button> to make inferences about a larger <button class="glossary" title="The larger group, set of people, cases, or observations that a researcher wants to understand.">population</button>.</p>
+<p>A population is the larger group we want to understand. A sample is the smaller group we actually collect data from.</p>
+<p>In research, we often cannot collect data from an entire population. We may not have enough time, money, access, or permission. Instead, we collect data from a sample and use inferential statistics to ask how much confidence we should have that the pattern in the sample reflects something about the population.</p>
+<p>This is why inferential statistics are so important. They help us move from “what happened in these data?” to “what might this tell us about the larger group we care about?”</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="population-sample-and-inference" class="level2">
+<h2 class="anchored" data-anchor-id="population-sample-and-inference">Population, Sample, and Inference</h2>
+<p>Imagine I want to know whether a new study strategy improves quiz performance for college students.</p>
+<p>The population might be all college students. That is much too large for me to study directly. So I collect data from a sample, perhaps students in several introductory psychology classes.</p>
+<p>I can use descriptive statistics to describe the students I actually studied. I can use inferential statistics to ask whether the results from that sample provide evidence about the larger population of students I care about.</p>
+<p>The quality of that inference depends on many things, including how the sample was selected, how the study was designed, how the variables were measured, and how much variability exists in the data. We will return to these ideas throughout the book.</p>
+<p><img src="images/02-stats-foundations/descriptive-vs-inferential.png" class="img-fluid"></p>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="a-research-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-research-example">A Research Example</h2>
+<p>Let’s make this more concrete.</p>
+<p>Imagine we are conducting a study examining whether watching video lessons on effective studying improves test performance compared with watching a funny television show. I will use <em>Schitt’s Creek</em> as the funny show because it is excellent, but I will reluctantly admit that it is probably not the best way to study for an exam.</p>
+<p>The population of interest might be college students. Because we cannot include all college students, we collect data from a sample of students. We randomly assign some students to watch study-skills videos and others to watch <em>Schitt’s Creek</em>. A week later, everyone takes the same quiz.</p>
+<p>First, we describe the sample. We might report the average quiz score in each group, the standard deviation in each group, and a graph showing the score distributions. That is descriptive statistics.</p>
+<p>Then, if we want to know whether the difference between groups is large enough to suggest that the study-skills videos would help students beyond this specific sample, we need inferential statistics. Later in the book, we will learn that this kind of question could be tested with an independent-samples t-test.</p>
+</section>
+<section id="we-usually-need-both" class="level2">
+<h2 class="anchored" data-anchor-id="we-usually-need-both">We Usually Need Both</h2>
+<p>Descriptive and inferential statistics are not competing options. We typically need both.</p>
+<p>Descriptive statistics help us understand what is in our data. Inferential statistics help us evaluate what we can reasonably conclude beyond our data.</p>
+<p>A good statistical analysis rarely jumps straight to the p-value. We first describe the data, look for patterns, examine variability, and make sure the analysis makes sense.</p>
+</section>
+<section id="descriptive-or-inferential" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-or-inferential">Descriptive or Inferential?</h2>
+<p>Here is a quick way to think about the difference:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Type of Statistics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>What was the average quiz score in this sample?</td>
+<td>Descriptive</td>
+</tr>
+<tr class="even">
+<td>What percentage of participants selected each response option?</td>
+<td>Descriptive</td>
+</tr>
+<tr class="odd">
+<td>Is there evidence that the intervention improved scores in the larger population?</td>
+<td>Inferential</td>
+</tr>
+<tr class="even">
+<td>Is the relationship between stress and sleep likely to exist beyond this sample?</td>
+<td>Inferential</td>
+</tr>
+</tbody>
+</table>
+<p>The key question is whether you are only describing the data you have or trying to make a claim beyond those data.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>What is the difference between a sample and a population?</li>
+<li>A researcher reports that 62% of participants in their sample selected “yes.” Is that descriptive or inferential?</li>
+<li>A researcher asks whether a difference found in a sample likely reflects a difference in the larger population. Is that descriptive or inferential?</li>
+</ol>
+<details>
+<summary>
+Answers
+</summary>
+<ol type="1">
+<li>A population is the larger group we want to understand. A sample is the smaller group we actually collect data from.</li>
+<li>Descriptive. It summarizes the data in the sample.</li>
+<li>Inferential. It uses sample data to make a claim about a larger population.</li>
+</ol>
+</details>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1310,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./02.2-types-of-variables-levels-of-measurement.html" class="pagination-link" aria-label="2.2 Types of Variables and Levels of Measurement">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2.2 Types of Variables and Levels of Measurement</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02.4-understanding-distributions-variability.html" class="pagination-link" aria-label="2.4 Understanding Distributions and Variability">
+        <span class="nav-page-text">2.4 Understanding Distributions and Variability</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

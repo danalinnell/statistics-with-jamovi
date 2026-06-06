@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>4.4 Recoding and Transforming Variables – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./04.5-reverse-scoring-items.html" rel="next">
+<link href="./04.3-working-with-missing-values.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04.0-cleaning-and-preparing-data-in-jamovi.html">4. Cleaning and Preparing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./04.4-recoding-and-transforming-variables.html">4.4 Recoding and Transforming Variables</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +113,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -234,11 +232,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./04.0-cleaning-and-preparing-data-in-jamovi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">4. Cleaning and Preparing Data in jamovi</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04.1-checking-your-data-before-analysis.html" class="sidebar-item-text sidebar-link">
@@ -259,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.4-recoding-and-transforming-variables.html" class="sidebar-item-text sidebar-link">
+  <a href="./04.4-recoding-and-transforming-variables.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">4.4 Recoding and Transforming Variables</span></a>
   </div>
 </li>
@@ -748,60 +746,167 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#transforming-text-responses-into-numeric-values" id="toc-transforming-text-responses-into-numeric-values" class="nav-link active" data-scroll-target="#transforming-text-responses-into-numeric-values">Transforming Text Responses Into Numeric Values</a></li>
+  <li><a href="#recoding-categories" id="toc-recoding-categories" class="nav-link" data-scroll-target="#recoding-categories">Recoding Categories</a></li>
+  <li><a href="#recoding-continuous-scores-into-categories" id="toc-recoding-continuous-scores-into-categories" class="nav-link" data-scroll-target="#recoding-continuous-scores-into-categories">Recoding Continuous Scores Into Categories</a></li>
+  <li><a href="#quotation-marks-matter" id="toc-quotation-marks-matter" class="nav-link" data-scroll-target="#quotation-marks-matter">Quotation Marks Matter</a></li>
+  <li><a href="#check-your-transformed-variables" id="toc-check-your-transformed-variables" class="nav-link" data-scroll-target="#check-your-transformed-variables">Check Your Transformed Variables</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04.0-cleaning-and-preparing-data-in-jamovi.html">4. Cleaning and Preparing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./04.4-recoding-and-transforming-variables.html">4.4 Recoding and Transforming Variables</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">4.4 Recoding and Transforming Variables</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>Recoding and transforming are two of the most common data preparation tasks in jamovi. They are also places where small mistakes can create big problems, so it is worth moving carefully.</p>
+<p>Broadly, you transform or recode a variable when the current version is not the version you need for analysis.</p>
+<p>You might do this because:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li>text responses need to become numeric values</li>
+<li>categories need to be cleaned or combined</li>
+<li>a scale item needs to be reverse-scored</li>
+<li>a continuous score needs to be grouped into categories</li>
+<li>a variable needs a more analysis-friendly version</li>
 </ul>
+<section id="transforming-text-responses-into-numeric-values" class="level2">
+<h2 class="anchored" data-anchor-id="transforming-text-responses-into-numeric-values">Transforming Text Responses Into Numeric Values</h2>
+<p>A common survey issue is that response options are stored as text. For example, an item might use responses such as <code>Strongly disagree</code>, <code>Disagree</code>, <code>Neither disagree nor agree</code>, <code>Agree</code>, and <code>Strongly agree</code>.</p>
+<p>If those responses need to be part of a scale score, you need numeric versions of them. In jamovi, you can use the Transform feature to create new variables with numeric values.</p>
+<p>A typical transformation might be:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>If the source value is…</th>
+<th style="text-align: right;">Use…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Strongly disagree</code></td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td><code>Disagree</code></td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td><code>Neither disagree nor agree</code></td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td><code>Agree</code></td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td><code>Strongly agree</code></td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td>else</td>
+<td style="text-align: right;"><code>NA</code></td>
+</tr>
+</tbody>
+</table>
+<p>After transforming, check the new variables. You should make sure the values look right, the data type is numeric, and the measure type matches the variable.</p>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
+<section id="recoding-categories" class="level2">
+<h2 class="anchored" data-anchor-id="recoding-categories">Recoding Categories</h2>
+<p>Sometimes a categorical variable has categories that need to be cleaned before analysis.</p>
+<p>For example, imagine a gender variable with these categories:</p>
+<ul>
+<li><code>Female</code></li>
+<li><code>female</code></li>
+<li><code>Female</code></li>
+<li><code>woman</code></li>
+<li><code>Male</code></li>
+<li><code>Male</code></li>
+<li><code>Non-Binary</code></li>
+</ul>
+<p>Some of these categories may represent the same group, but jamovi treats them as different categories because they are spelled or spaced differently. Recoding can create a cleaner version of the variable.</p>
+<p>A cleaned version might use categories such as:</p>
+<ul>
+<li>Woman</li>
+<li>Man</li>
+<li>Non-binary</li>
+</ul>
+<p>This kind of cleaning is not only technical. It also requires thoughtful decisions. For example, open-ended demographic responses can be more inclusive, but they may require more care when preparing the data for analysis.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="recoding-continuous-scores-into-categories" class="level2">
+<h2 class="anchored" data-anchor-id="recoding-continuous-scores-into-categories">Recoding Continuous Scores Into Categories</h2>
+<p>Sometimes researchers recode a continuous or total score into categories. For example, a total depression score might be classified into categories such as normal, mild, moderate, severe, or extreme.</p>
+<p>This can be useful when the categories are meaningful, established, and used carefully. But categorizing a score also removes information. Someone with a score of 10 and someone with a score of 0 might end up in the same category even though their scores are quite different.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common Mistake">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common Mistake
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not recode a detailed variable into broad categories just because it seems easier to analyze. Categorizing can be useful, but it reduces information and can hide important differences.</p>
+</div>
+</div>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="quotation-marks-matter" class="level2">
+<h2 class="anchored" data-anchor-id="quotation-marks-matter">Quotation Marks Matter</h2>
+<p>When recoding into text categories, use quotation marks around the text values. For example:</p>
+<pre class="text"><code>"1. Normal"
+"2. Mild"
+"3. Moderate"</code></pre>
+<p>Quotation marks tell jamovi that the result is text. Without quotation marks, jamovi may try to treat the value as something else.</p>
+</section>
+<section id="check-your-transformed-variables" class="level2">
+<h2 class="anchored" data-anchor-id="check-your-transformed-variables">Check Your Transformed Variables</h2>
+<p>After creating transformed variables, look at the new columns. Do not assume the transformation worked just because jamovi created a variable.</p>
+<p>Check a few rows manually:</p>
+<ul>
+<li>Did the correct original values become the correct new values?</li>
+<li>Are any values unexpectedly missing?</li>
+<li>Did capitalization or spacing create a recoding problem?</li>
+<li>Is the measure type correct?</li>
+</ul>
+<p>A quick check can prevent a lot of problems later.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Why is it usually better to create a recoded version of a variable instead of replacing the original variable?</p>
+<details>
+<summary>
+Answer
+</summary>
+<p>Keeping the original variable protects the raw data. If the recode has an error, you can compare the new variable to the original and fix the transformation. It also makes the analysis more transparent.</p>
+</details>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1312,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./04.3-working-with-missing-values.html" class="pagination-link" aria-label="4.3 Working With Missing Values">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">4.3 Working With Missing Values</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./04.5-reverse-scoring-items.html" class="pagination-link" aria-label="4.5 Reverse Scoring Items">
+        <span class="nav-page-text">4.5 Reverse Scoring Items</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

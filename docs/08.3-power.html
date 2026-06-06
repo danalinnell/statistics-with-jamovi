@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>8.3 Power – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./08.4-sample-size-and-power-analysis.html" rel="next">
+<link href="./08.2-alpha-and-p-values.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08.0-bean.html">8. BEAN</a></li><li class="breadcrumb-item"><a href="./08.3-power.html">8.3 Power</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -428,11 +427,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./08.0-bean.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8. BEAN</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08.1-effect-sizes.html" class="sidebar-item-text sidebar-link">
@@ -447,7 +446,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08.3-power.html" class="sidebar-item-text sidebar-link">
+  <a href="./08.3-power.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">8.3 Power</span></a>
   </div>
 </li>
@@ -748,60 +747,384 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#power-vs.-p-values" id="toc-power-vs.-p-values" class="nav-link active" data-scroll-target="#power-vs.-p-values">Power vs.&nbsp;p-values</a></li>
+  <li><a href="#power-and-error-types" id="toc-power-and-error-types" class="nav-link" data-scroll-target="#power-and-error-types">Power and Error Types</a></li>
+  <li><a href="#assuming-the-null-is-100-true" id="toc-assuming-the-null-is-100-true" class="nav-link" data-scroll-target="#assuming-the-null-is-100-true">Assuming the Null Is 100% True</a></li>
+  <li><a href="#assuming-the-alternative-is-100-true" id="toc-assuming-the-alternative-is-100-true" class="nav-link" data-scroll-target="#assuming-the-alternative-is-100-true">Assuming the Alternative Is 100% True</a></li>
+  <li><a href="#assuming-a-5050-split" id="toc-assuming-a-5050-split" class="nav-link" data-scroll-target="#assuming-a-5050-split">Assuming a 50/50 Split</a></li>
+  <li><a href="#increasing-power" id="toc-increasing-power" class="nav-link" data-scroll-target="#increasing-power">Increasing Power</a></li>
+  <li><a href="#decreasing-alpha" id="toc-decreasing-alpha" class="nav-link" data-scroll-target="#decreasing-alpha">Decreasing Alpha</a></li>
+  <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn">Your Turn</a></li>
+  <li><a href="#how-this-connects-to-bean" id="toc-how-this-connects-to-bean" class="nav-link" data-scroll-target="#how-this-connects-to-bean">How This Connects to BEAN</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08.0-bean.html">8. BEAN</a></li><li class="breadcrumb-item"><a href="./08.3-power.html">8.3 Power</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">8.3 Power</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p><button class="glossary" title="The probability of detecting an effect if the effect really exists.">statistical power</button> is the probability of observing a statistically significant result <strong>if the alternative hypothesis is true</strong>.</p>
+<p>In other words, power tells us how likely we are to detect an effect if the effect really exists.</p>
+<p>Power is often set at 80%, meaning that if the effect exists, we have an 80% chance of detecting it. That also means we have a 20% chance of missing it. That 20% is beta.</p>
+<p>This is why beta and power are connected:</p>
+<blockquote class="blockquote">
+<p>Power = 1 - beta</p>
+</blockquote>
+<div class="callout callout-style-default callout-note callout-titled" title="Formula Note">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Formula Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If beta is the probability of a Type II error, then power is the probability of avoiding a Type II error.</p>
+<p>For example, if beta = .20, then power = 1 - .20 = .80.</p>
+</div>
+</div>
+</div>
+<section id="power-vs.-p-values" class="level2">
+<h2 class="anchored" data-anchor-id="power-vs.-p-values">Power vs.&nbsp;p-values</h2>
+<p>Power and <em>p</em>-values are related to hypothesis testing, but they assume different things.</p>
+<p>A <em>p</em>-value asks:</p>
+<blockquote class="blockquote">
+<p>If the null hypothesis is true, how surprising are these data?</p>
+</blockquote>
+<p>Power asks:</p>
+<blockquote class="blockquote">
+<p>If the alternative hypothesis is true, how likely are we to detect the effect?</p>
+</blockquote>
+<p>That difference matters. A small <em>p</em>-value tells us the data are surprising under the null hypothesis. It does not tell us whether the study had a good chance of detecting the effect in the first place.</p>
+</section>
+<section id="power-and-error-types" class="level2">
+<h2 class="anchored" data-anchor-id="power-and-error-types">Power and Error Types</h2>
+<p>Let’s connect alpha, power, Type I error, and Type II error.</p>
+<p>In the table below, the rows represent the result of the study. The columns represent what is true in the real world. Of course, in real life, we never get to know with certainty whether the null or alternative hypothesis is true. That is why replication and good study design matter.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>H₀ is true</th>
+<th>H₁ is true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>p</em> &lt; .05</td>
+<td>Type I error</td>
+<td>Correct inference</td>
+</tr>
+<tr class="even">
+<td><em>p</em> &gt; .05</td>
+<td>Correct inference</td>
+<td>Type II error</td>
+</tr>
+</tbody>
+</table>
+<p>Now let’s add BEAN language:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li><strong>Alpha</strong> is the probability of a Type I error if the null hypothesis is true.</li>
+<li><strong>Power</strong> is the probability of a correct inference if the alternative hypothesis is true.</li>
+<li><strong>Beta</strong> is the probability of a Type II error if the alternative hypothesis is true.</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the table below, decide where each term belongs: alpha, power, Type I error, Type II error, and correct inference.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>H₀ is true</th>
+<th>H₁ is true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>p</em> &lt; .05</td>
+<td>A</td>
+<td>B</td>
+</tr>
+<tr class="even">
+<td><em>p</em> &gt; .05</td>
+<td>C</td>
+<td>D</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Suggested Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Suggested Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A = alpha / Type I error<br>
+B = power / correct inference<br>
+C = correct inference<br>
+D = beta / Type II error</p>
+<p>The key is to remember that alpha only matters when the null hypothesis is true, and power only matters when the alternative hypothesis is true.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
+<section id="assuming-the-null-is-100-true" class="level2">
+<h2 class="anchored" data-anchor-id="assuming-the-null-is-100-true">Assuming the Null Is 100% True</h2>
+<p>Let’s imagine the null hypothesis is 100% true. We will also use the common defaults of alpha = 5% and power = 80%.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">H₀ is true</th>
+<th style="text-align: right;">H₁ is true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>p</em> &lt; .05</td>
+<td style="text-align: right;">5%</td>
+<td style="text-align: right;">0%</td>
+</tr>
+<tr class="even">
+<td><em>p</em> &gt; .05</td>
+<td style="text-align: right;">95%</td>
+<td style="text-align: right;">0%</td>
+</tr>
+</tbody>
+</table>
+<p>How did we get there?</p>
+<p>If the null hypothesis is 100% true, then the H₀ column must add to 100%. Because the hypotheses are mutually exclusive, the H₁ column must add to 0%.</p>
+<p>Alpha is 5%, so 5% goes in the top-left cell. The remaining 95% goes in the bottom-left cell.</p>
+<p>In this situation, power does not matter because the alternative hypothesis is not true. You cannot detect an effect that does not exist.</p>
+<p><img src="images/05-bean/null.png" class="img-fluid"></p>
+<p>If we tested this nonexistent effect 100 times, about 95 of those studies would correctly fail to reject the null hypothesis. About 5 would incorrectly reject the null hypothesis and produce Type I errors.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="assuming-the-alternative-is-100-true" class="level2">
+<h2 class="anchored" data-anchor-id="assuming-the-alternative-is-100-true">Assuming the Alternative Is 100% True</h2>
+<p>Now let’s imagine the alternative hypothesis is 100% true. Again, alpha = 5% and power = 80%.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">H₀ is true</th>
+<th style="text-align: right;">H₁ is true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>p</em> &lt; .05</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">80%</td>
+</tr>
+<tr class="even">
+<td><em>p</em> &gt; .05</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">20%</td>
+</tr>
+</tbody>
+</table>
+<p>If the alternative hypothesis is 100% true, then the H₁ column must add to 100%, and the H₀ column must add to 0%.</p>
+<p>Power is 80%, so 80% goes in the top-right cell. The remaining 20% goes in the bottom-right cell. That 20% is beta, or the Type II error rate.</p>
+<p><img src="images/05-bean/alternative.png" class="img-fluid"></p>
+<p>If we tested this real effect 100 times, about 80 studies would correctly detect the effect. About 20 studies would miss it.</p>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="assuming-a-5050-split" class="level2">
+<h2 class="anchored" data-anchor-id="assuming-a-5050-split">Assuming a 50/50 Split</h2>
+<p>In reality, we do not know whether the null or alternative hypothesis is true. For practice, let’s imagine we are 50/50: half the probability is in the null-hypothesis column, and half is in the alternative-hypothesis column.</p>
+<p>Again, alpha = 5% and power = 80%.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">H₀ is true</th>
+<th style="text-align: right;">H₁ is true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>p</em> &lt; .05</td>
+<td style="text-align: right;">2.5%</td>
+<td style="text-align: right;">40%</td>
+</tr>
+<tr class="even">
+<td><em>p</em> &gt; .05</td>
+<td style="text-align: right;">47.5%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+</tbody>
+</table>
+<p>How did we get there?</p>
+<p>Each column has to add to 50%. Alpha is 5% of the null column, so 5% of 50% is 2.5%. Power is 80% of the alternative column, so 80% of 50% is 40%.</p>
+<p>Now imagine you got a statistically significant result. In this example, that significant result could fall in either of the top cells. It could be a Type I error (2.5%) or a correct inference (40%).</p>
+<p>The statistically significant result is 16 times more likely to come from the alternative-hypothesis column than the null-hypothesis column:</p>
+<blockquote class="blockquote">
+<p>40 / 2.5 = 16</p>
+</blockquote>
+<p>That is not a perfect guarantee. It is just a way to reason through how alpha and power shape our decisions.</p>
+</section>
+<section id="increasing-power" class="level2">
+<h2 class="anchored" data-anchor-id="increasing-power">Increasing Power</h2>
+<p>Now let’s keep the 50/50 split but increase power to 95%. Alpha stays at 5%.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">H₀ is true</th>
+<th style="text-align: right;">H₁ is true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>p</em> &lt; .05</td>
+<td style="text-align: right;">2.5%</td>
+<td style="text-align: right;">47.5%</td>
+</tr>
+<tr class="even">
+<td><em>p</em> &gt; .05</td>
+<td style="text-align: right;">47.5%</td>
+<td style="text-align: right;">2.5%</td>
+</tr>
+</tbody>
+</table>
+<p>Now a statistically significant result is 19 times more likely to come from the alternative-hypothesis column than the null-hypothesis column:</p>
+<blockquote class="blockquote">
+<p>47.5 / 2.5 = 19</p>
+</blockquote>
+<p>Increasing power helps. It makes us more likely to detect a real effect.</p>
+</section>
+<section id="decreasing-alpha" class="level2">
+<h2 class="anchored" data-anchor-id="decreasing-alpha">Decreasing Alpha</h2>
+<p>Now let’s return to 80% power but lower alpha from 5% to 1%. We will keep the 50/50 split.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">H₀ is true</th>
+<th style="text-align: right;">H₁ is true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>p</em> &lt; .01</td>
+<td style="text-align: right;">0.5%</td>
+<td style="text-align: right;">40%</td>
+</tr>
+<tr class="even">
+<td><em>p</em> &gt; .01</td>
+<td style="text-align: right;">49.5%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+</tbody>
+</table>
+<p>Now a statistically significant result is 80 times more likely to come from the alternative-hypothesis column than the null-hypothesis column:</p>
+<blockquote class="blockquote">
+<p>40 / 0.5 = 80</p>
+</blockquote>
+<p>This is why lowering alpha can substantially reduce false positives. But remember the tradeoff: lowering alpha can also reduce power unless you increase sample size, target a larger effect, or make other design changes.</p>
+</section>
+<section id="your-turn" class="level2">
+<h2 class="anchored" data-anchor-id="your-turn">Your Turn</h2>
+<p>Assume the null and alternative hypotheses are equally likely. Set alpha to 1% and power to 95%.</p>
+<p>Fill in the table and calculate how much more likely a statistically significant result is to come from the alternative-hypothesis column than the null-hypothesis column.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">H₀ is true</th>
+<th style="text-align: right;">H₁ is true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>p</em> &lt; .01</td>
+<td style="text-align: right;">A</td>
+<td style="text-align: right;">B</td>
+</tr>
+<tr class="even">
+<td><em>p</em> &gt; .01</td>
+<td style="text-align: right;">C</td>
+<td style="text-align: right;">D</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Suggested Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Suggested Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Because H₀ and H₁ are equally likely, each column must add to 50%.</p>
+<p>Alpha is 1%, so 1% of 50% is 0.5%. That means:</p>
+<ul>
+<li>A = 0.5%</li>
+<li>C = 49.5%</li>
+</ul>
+<p>Power is 95%, so 95% of 50% is 47.5%. That means:</p>
+<ul>
+<li>B = 47.5%</li>
+<li>D = 2.5%</li>
+</ul>
+<p>A statistically significant result is 95 times more likely to come from the alternative-hypothesis column than the null-hypothesis column:</p>
+<p>47.5 / 0.5 = 95</p>
+</div>
+</div>
+</div>
+</section>
+<section id="how-this-connects-to-bean" class="level2">
+<h2 class="anchored" data-anchor-id="how-this-connects-to-bean">How This Connects to BEAN</h2>
+<p>So far, we have focused mostly on alpha and power. But power also depends on effect size and sample size.</p>
+<p>Holding everything else constant:</p>
+<ul>
+<li>Larger effect size → higher power</li>
+<li>Larger sample size → higher power</li>
+<li>Lower alpha → lower power</li>
+<li>Higher desired power → larger required sample size</li>
+</ul>
+<p>BEAN!</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1530,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./08.2-alpha-and-p-values.html" class="pagination-link" aria-label="8.2 Alpha and p-values">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8.2 Alpha and p-values</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./08.4-sample-size-and-power-analysis.html" class="pagination-link" aria-label="8.4 Sample Size">
+        <span class="nav-page-text">8.4 Sample Size</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

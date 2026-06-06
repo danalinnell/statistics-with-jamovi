@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>5.2 Describing Categorical Variables – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./05.3-describing-continuous-variables.html" rel="next">
+<link href="./05.1-checking-variable-setup-before-describing-data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05.0-describing-data-in-jamovi.html">5. Describing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./05.2-describing-categorical-variables.html">5.2 Describing Categorical Variables</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -287,11 +286,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./05.0-describing-data-in-jamovi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5. Describing Data in jamovi</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05.1-checking-variable-setup-before-describing-data.html" class="sidebar-item-text sidebar-link">
@@ -300,7 +299,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05.2-describing-categorical-variables.html" class="sidebar-item-text sidebar-link">
+  <a href="./05.2-describing-categorical-variables.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">5.2 Describing Categorical Variables</span></a>
   </div>
 </li>
@@ -748,60 +747,138 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#frequencies-and-percentages" id="toc-frequencies-and-percentages" class="nav-link active" data-scroll-target="#frequencies-and-percentages">Frequencies and Percentages</a></li>
+  <li><a href="#running-categorical-descriptives-in-jamovi" id="toc-running-categorical-descriptives-in-jamovi" class="nav-link" data-scroll-target="#running-categorical-descriptives-in-jamovi">Running Categorical Descriptives in jamovi</a></li>
+  <li><a href="#interpreting-categorical-descriptives" id="toc-interpreting-categorical-descriptives" class="nav-link" data-scroll-target="#interpreting-categorical-descriptives">Interpreting Categorical Descriptives</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05.0-describing-data-in-jamovi.html">5. Describing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./05.2-describing-categorical-variables.html">5.2 Describing Categorical Variables</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">5.2 Describing Categorical Variables</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p><button class="glossary" title="A variable whose values represent categories or groups rather than quantities. Nominal and ordinal variables are categorical variables.">Categorical variables</button> describe groups or categories. Examples include gender, class level, major, condition, or whether someone completed a task.</p>
+<p>For categorical variables, the main descriptive statistics are:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li>counts, often written as <code>n</code></li>
+<li>percentages, often written as <code>%</code></li>
+<li>sometimes the mode, or most common category</li>
 </ul>
+<p>Means and standard deviations usually do not make sense for categorical variables, especially nominal variables.</p>
+<section id="frequencies-and-percentages" class="level2">
+<h2 class="anchored" data-anchor-id="frequencies-and-percentages">Frequencies and Percentages</h2>
+<p>A frequency table shows how many observations fall into each category. Percentages show the same information relative to the full sample.</p>
+<p>For example, a class-level variable might include:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Class level</th>
+<th style="text-align: right;">Count</th>
+<th style="text-align: right;">Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>First-year</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">20%</td>
+</tr>
+<tr class="even">
+<td>Sophomore</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">25%</td>
+</tr>
+<tr class="odd">
+<td>Junior</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">30%</td>
+</tr>
+<tr class="even">
+<td>Senior</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">25%</td>
+</tr>
+</tbody>
+</table>
+<p>This tells us both the raw number of students in each category and how much of the sample each category represents.</p>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
+<section id="running-categorical-descriptives-in-jamovi" class="level2">
+<h2 class="anchored" data-anchor-id="running-categorical-descriptives-in-jamovi">Running Categorical Descriptives in jamovi</h2>
+<p>To describe categorical variables in jamovi:</p>
+<ol type="1">
+<li>Go to <strong>Analyses</strong>.</li>
+<li>Select <strong>Exploration</strong>.</li>
+<li>Select <strong>Descriptives</strong>.</li>
+<li>Move your categorical variable into the <strong>Variables</strong> box.</li>
+<li>Select <strong>Frequency tables</strong>.</li>
+<li>Under <strong>Statistics</strong>, keep only options that make sense, such as <code>N</code> and <code>Missing</code>.</li>
+</ol>
+<p>If jamovi leaves a cell blank for a statistic, it may be because the statistic does not make sense for that variable type.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
-</section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="interpreting-categorical-descriptives" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-categorical-descriptives">Interpreting Categorical Descriptives</h2>
+<p>When interpreting a frequency table, focus on the pattern of categories.</p>
+<p>Ask yourself:</p>
+<ul>
+<li>Which category is most common?</li>
+<li>Which categories are rare?</li>
+<li>Are there unexpected categories?</li>
+<li>Are there duplicate categories caused by spelling, capitalization, or extra spaces?</li>
+<li>Are any categories so small that later group comparisons would be difficult?</li>
+</ul>
+<p>This last point is important. If one category has only one or two people, descriptive statistics for that group may be unstable, and inferential comparisons may not be appropriate.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common Mistake">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common Mistake
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If a category appears more than once because of capitalization or spacing, clean the variable before reporting descriptives. For example, <code>Female</code>, <code>female</code>, and <code>Female</code> may look similar to us, but jamovi treats them as different categories.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A variable asks participants to choose their class level: first-year, sophomore, junior, or senior. What descriptive statistics should you use?</p>
+<details>
+<summary>
+Answer
+</summary>
+<p>Use counts and percentages. Because the variable is categorical, frequencies are more appropriate than a mean or standard deviation.</p>
+</details>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1284,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./05.1-checking-variable-setup-before-describing-data.html" class="pagination-link" aria-label="5.1 Checking Variable Setup Before Describing Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">5.1 Checking Variable Setup Before Describing Data</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05.3-describing-continuous-variables.html" class="pagination-link" aria-label="5.3 Describing Continuous Variables">
+        <span class="nav-page-text">5.3 Describing Continuous Variables</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

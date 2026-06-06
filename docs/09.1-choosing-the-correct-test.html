@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>9.1 Choosing the Correct Test – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./09.2-parametric-assumptions.html" rel="next">
+<link href="./09.0-inferential-statistics.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,6 +73,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="style.css">
@@ -88,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09.0-inferential-statistics.html">9. Inferential Statistics</a></li><li class="breadcrumb-item"><a href="./09.1-choosing-the-correct-test.html">9.1 Choosing the Correct Test</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +115,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -469,14 +469,14 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./09.0-inferential-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">9. Inferential Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09.1-choosing-the-correct-test.html" class="sidebar-item-text sidebar-link">
+  <a href="./09.1-choosing-the-correct-test.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">9.1 Choosing the Correct Test</span></a>
   </div>
 </li>
@@ -748,60 +748,250 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#a-decision-tool-for-choosing-tests" id="toc-a-decision-tool-for-choosing-tests" class="nav-link active" data-scroll-target="#a-decision-tool-for-choosing-tests">A decision tool for choosing tests</a></li>
+  <li><a href="#a-step-by-step-approach" id="toc-a-step-by-step-approach" class="nav-link" data-scroll-target="#a-step-by-step-approach">A step-by-step approach</a></li>
+  <li><a href="#forward-and-backward-mapping" id="toc-forward-and-backward-mapping" class="nav-link" data-scroll-target="#forward-and-backward-mapping">Forward and backward mapping</a></li>
+  <li><a href="#forward-mapping-choose-the-correct-test" id="toc-forward-mapping-choose-the-correct-test" class="nav-link" data-scroll-target="#forward-mapping-choose-the-correct-test">Forward mapping: Choose the correct test</a></li>
+  <li><a href="#backward-mapping-determine-the-data-you-need" id="toc-backward-mapping-determine-the-data-you-need" class="nav-link" data-scroll-target="#backward-mapping-determine-the-data-you-need">Backward mapping: Determine the data you need</a></li>
+  <li><a href="#common-wrong-turns" id="toc-common-wrong-turns" class="nav-link" data-scroll-target="#common-wrong-turns">Common wrong turns</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09.0-inferential-statistics.html">9. Inferential Statistics</a></li><li class="breadcrumb-item"><a href="./09.1-choosing-the-correct-test.html">9.1 Choosing the Correct Test</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">9.1 Choosing the Correct Test</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>It is important that you learn how to identify <em>which</em> inferential statistic you should perform. You do not need to memorize every statistical test in existence. That would be a terrible use of your time and, honestly, pretty miserable.</p>
+<p>Instead, I want you to learn how to ask the right questions.</p>
+<p>The test you choose depends mostly on:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li>what kind of dependent variable you have;</li>
+<li>what kind of independent variable(s) or predictor(s) you have;</li>
+<li>how many variables, groups, levels, or time points are involved;</li>
+<li>whether the same or different participants are in each condition;</li>
+<li>whether the assumptions for the planned test are reasonable.</li>
 </ul>
+<p>This is where the material from <a href="./02.2-types-of-variables-levels-of-measurement.html">types of variables and levels of measurement</a>, <a href="./05.0-describing-data-in-jamovi.html">describing data</a>, and <a href="./06.0-visualizing-data-in-jamovi.html">visualizing data</a> starts to come together.</p>
+<section id="a-decision-tool-for-choosing-tests" class="level2">
+<h2 class="anchored" data-anchor-id="a-decision-tool-for-choosing-tests">A decision tool for choosing tests</h2>
+<p>The chart below can help you determine what statistical test to perform. It is a map, not something you need to memorize.</p>
+<p><img src="images/Statistical Choices.png" class="img-fluid"></p>
+<p>The chart uses several visual cues:</p>
+<ul>
+<li><p><strong>Dark red boxes</strong> are parametric tests.</p></li>
+<li><p><strong>Light red boxes</strong> are non-parametric tests.</p></li>
+<li><p><strong>White boxes</strong> are tests we will not cover in this course.</p></li>
+<li><p><strong>Blue</strong> indicates continuous variables.</p></li>
+<li><p><strong>Green</strong> indicates categorical variables.</p></li>
+<li><p><strong>Teal</strong> indicates both categorical and continuous variables.</p></li>
+<li><p><strong>Black</strong> indicates between-subjects designs, meaning different participants are in each condition.</p></li>
+<li><p><strong>Dark grey</strong> indicates within-subjects designs, meaning the same participants are measured across conditions or time points.</p></li>
+<li><p><strong>Light grey</strong> indicates the design has at least one between-subject IV and at least one within-subjects IV.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="For Dana's Students">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>For Dana’s Students
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In my courses, you may also have access to a high-resolution version of this chart on Canvas. Use that version when you need to zoom in or print it.</p>
+</div>
+</div>
+<p>Another tool that can help you choose a statistical test is <a href="https://stathand.net/">StatsHand</a>. I still want you to learn the logic yourself, but tools like this can be useful for checking your thinking.</p>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
+<section id="a-step-by-step-approach" class="level2">
+<h2 class="anchored" data-anchor-id="a-step-by-step-approach">A step-by-step approach</h2>
+<p>Rather than starting by asking “Which test is this?”, start with the variables and design.</p>
+<section id="step-1-identify-the-dependent-variable" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-identify-the-dependent-variable">Step 1: Identify the dependent variable</h3>
+<p>The <button class="glossary" title="The outcome variable in a study. It is the variable measured to see whether it differs, changes, or is related to another variable.">dependent variable</button> is the outcome variable. It is the variable you are trying to explain, predict, compare, or understand.</p>
+<p>Ask yourself:</p>
+<ul>
+<li>What is the main outcome?</li>
+<li>How was it measured?</li>
+<li>Is it <button class="glossary" title="A variable whose values represent categories or groups rather than quantities. Nominal and ordinal variables are categorical variables.">categorical variable</button> or <button class="glossary" title="A variable whose values represent quantities or amounts. Continuous variables are often summarized with means and standard deviations.">continuous variable</button>?</li>
+</ul>
+<p>In this textbook, we will mostly work with statistical tests that have one dependent variable. If you are unsure whether the dependent variable is categorical or continuous, return to <a href="./02.2-types-of-variables-levels-of-measurement.html">types of variables and levels of measurement</a>. This is one of the most important concepts for choosing the correct test.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="step-2-identify-the-independent-variables-or-predictors" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-identify-the-independent-variables-or-predictors">Step 2: Identify the independent variable(s) or predictor(s)</h3>
+<p>The <button class="glossary" title="A variable expected to explain, predict, influence, or cause differences in another variable. In an experiment, it is the variable manipulated by the researcher.">independent variable</button> is the variable used to explain, predict, or compare the dependent variable.</p>
+<p>Ask yourself:</p>
+<ul>
+<li>How many independent variables or predictors are there?</li>
+<li>Is each one categorical or continuous?</li>
+<li>If categorical, how many levels or groups does it have?</li>
+</ul>
+<p>Some tests involve one independent variable. Others involve two or more. Some tests use categorical predictors, some use continuous predictors, and some can use both.</p>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="step-3-determine-the-design" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-determine-the-design">Step 3: Determine the design</h3>
+<p>If your independent variable is categorical, ask whether the same or different participants are in each condition.</p>
+<ul>
+<li><strong>Between-subjects design</strong>: different participants are in each condition.</li>
+<li><strong>Within-subjects design</strong>: the same participants are measured in each condition or at each time point.</li>
+</ul>
+<p>A helpful question is:</p>
+<blockquote class="blockquote">
+<p>Can a participant be in more than one condition? Or have the participants had data on the DV collected multiple times?</p>
+</blockquote>
+<p>If yes, you probably have a within-subjects or repeated-measures design. If no, you probably have a between-subjects design.</p>
+</section>
+</section>
+<section id="forward-and-backward-mapping" class="level2">
+<h2 class="anchored" data-anchor-id="forward-and-backward-mapping">Forward and backward mapping</h2>
+<p>We can use the chart in two ways.</p>
+<p><strong>Forward mapping</strong> means starting with your research question, variables, and design, then deciding which statistical test to use. This is what you will do most often in real analyses.</p>
+<p><strong>Backward mapping</strong> means starting with a statistical test and figuring out what kind of data would be needed to run that test. This is not usually how you analyze data, but it can help you understand what each test is designed to do.</p>
+</section>
+<section id="forward-mapping-choose-the-correct-test" class="level2">
+<h2 class="anchored" data-anchor-id="forward-mapping-choose-the-correct-test">Forward mapping: Choose the correct test</h2>
+<p>Let’s practice choosing tests by working forward from the research question.</p>
+<p>This video walks through how to use the statistical choices chart to decide which inferential test fits your research question, variables, and study design. If you are reading the Word document version of this textbook, you can <a href="https://www.youtube.com/watch?v=Q9sbIMCck1Q">watch the video here</a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/Q9sbIMCck1Q" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+<section id="example-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1">Example 1</h3>
+<p>A researcher is interested in understanding whether athletes have higher English scores than non-athletes. In other words, what is the effect of athletic status on English test scores?</p>
+<ol type="1">
+<li><strong>What is the DV? What is the level of measurement?</strong> English test scores are the DV, and they are continuous.</li>
+<li><strong>How many IVs are there?</strong> There is one IV: athletic status.</li>
+<li><strong>What is the level of measurement of the IV?</strong> Athletic status is categorical.</li>
+<li><strong>How many categories does the IV have?</strong> Athletic status has two levels: athlete and non-athlete.</li>
+<li><strong>Are the same or different participants used in each category?</strong> People can either be an athlete or not an athlete, but they cannot be both in this example. This is a between-subjects design.</li>
+<li><strong>Statistical test?</strong> Independent t-test.</li>
+</ol>
+</section>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">Example 2</h3>
+<p>A researcher is interested in whether people perform better on an exam at the start, middle, or end of the semester. The researcher has all participants complete all three exams.</p>
+<ol type="1">
+<li><strong>What is the DV? What is the level of measurement?</strong> Exam score is the DV, and it is continuous.</li>
+<li><strong>How many IVs are there?</strong> There is one IV: time of exam.</li>
+<li><strong>What is the level of measurement of the IV?</strong> Time of exam is categorical.</li>
+<li><strong>How many categories does the IV have?</strong> It has three levels: start, middle, and end of the semester.</li>
+<li><strong>Are the same or different participants used in each category?</strong> The same participants complete all three exams, so this is a within-subjects design.</li>
+<li><strong>Statistical test?</strong> One-way repeated measures ANOVA.</li>
+</ol>
+</section>
+<section id="example-3" class="level3">
+<h3 class="anchored" data-anchor-id="example-3">Example 3</h3>
+<p>A researcher wants to know whether time spent studying is related to exam performance.</p>
+<ol type="1">
+<li><strong>What is the DV? What is the level of measurement?</strong> Exam performance is the outcome, and it is continuous.</li>
+<li><strong>How many predictors are there?</strong> There is one predictor: time spent studying.</li>
+<li><strong>What is the level of measurement of the predictor?</strong> Time spent studying is continuous.</li>
+<li><strong>Are we comparing groups?</strong> No.&nbsp;We are examining an association between two continuous variables.</li>
+<li><strong>Statistical test?</strong> Pearson correlation.</li>
+</ol>
+</section>
+</section>
+<section id="backward-mapping-determine-the-data-you-need" class="level2">
+<h2 class="anchored" data-anchor-id="backward-mapping-determine-the-data-you-need">Backward mapping: Determine the data you need</h2>
+<p>Let me start by saying we do not normally do this. We perform the test based on the data we have and the research question we are asking.</p>
+<p>But for learning, backward mapping can be helpful.</p>
+<p>Imagine I gave you a dataset with these variables:</p>
+<ol type="1">
+<li>Mile time, measured in minutes</li>
+<li>BMI group, with categories of underweight, normal, or overweight</li>
+<li>Happiness at the start of the semester, measured from 0 to 10</li>
+<li>Happiness at the end of the semester, measured from 0 to 10</li>
+</ol>
+<section id="backward-mapping-example-1" class="level3">
+<h3 class="anchored" data-anchor-id="backward-mapping-example-1">Backward mapping example 1</h3>
+<p>If I told you I wanted you to perform a dependent t-test, what data would you use?</p>
+<p>A dependent t-test requires a continuous dependent variable measured across two related conditions or time points. In this dataset, happiness is measured at two time points: start and end of the semester. Therefore, we could perform a dependent t-test to examine whether happiness differs from the start to the end of the semester.</p>
+</section>
+<section id="backward-mapping-example-2" class="level3">
+<h3 class="anchored" data-anchor-id="backward-mapping-example-2">Backward mapping example 2</h3>
+<p>If I told you I wanted you to perform a one-way independent ANOVA, what data would you use?</p>
+<p>A one-way independent ANOVA requires one continuous dependent variable and one categorical independent variable with three or more levels, using different participants in each group. In this dataset, BMI group has three categories. Mile time is continuous. Therefore, we could examine whether mile time differs by BMI group.</p>
+<p>Keep in mind that this would not be an experimental design. We are not randomly assigning people to BMI groups. So we could describe differences by group, but we would need to be careful about causal language.</p>
+</section>
+</section>
+<section id="common-wrong-turns" class="level2">
+<h2 class="anchored" data-anchor-id="common-wrong-turns">Common wrong turns</h2>
+<p>Choosing the correct test takes practice. Here are some common mistakes to watch for:</p>
+<ul>
+<li>Choosing based on the name of the variable instead of how it was measured.</li>
+<li>Forgetting whether the same participants were measured more than once.</li>
+<li>Treating a categorical dependent variable like a continuous dependent variable.</li>
+<li>Using ANOVA just because there are multiple variables, when the key issue is the number of groups or levels.</li>
+<li>Forgetting that assumptions may change the exact test you interpret.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For each scenario, identify the likely statistical test if assumptions are met.</p>
+<ol type="1">
+<li>A researcher asks whether anxiety scores differ between students who drink caffeine and students who do not.</li>
+<li>A researcher asks whether stress scores differ before, during, and after finals week for the same students.</li>
+<li>A researcher asks whether hours of sleep are related to reaction time.</li>
+<li>A researcher asks whether political affiliation is related to voting method, where both variables are categorical.</li>
+<li>A researcher asks whether motivation differs by class year (first-year, sophomore, junior, senior).</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Suggested Answers">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Suggested Answers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Independent t-test: continuous DV, one categorical IV with two between-subjects groups.</li>
+<li>One-way repeated measures ANOVA: continuous DV, one categorical within-subjects IV with three time points.</li>
+<li>Pearson correlation: two continuous variables.</li>
+<li>Chi-square test of independence: two categorical variables.</li>
+<li>One-way ANOVA: continuous DV, one categorical between-subjects IV with four groups.</li>
+</ol>
+</div>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1397,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./09.0-inferential-statistics.html" class="pagination-link" aria-label="9. Inferential Statistics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">9. Inferential Statistics</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./09.2-parametric-assumptions.html" class="pagination-link" aria-label="9.2 Parametric Assumptions">
+        <span class="nav-page-text">9.2 Parametric Assumptions</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

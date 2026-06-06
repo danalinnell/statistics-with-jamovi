@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>11.2 Chi-Square Test of Independence – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./11.3-mcnemars-test.html" rel="next">
+<link href="./11.1-chi-square-goodness-of-fit.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,7 +72,37 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -88,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11.0-chi-square.html">11. Chi-Square</a></li><li class="breadcrumb-item"><a href="./11.2-chi-square-test-of-independence.html">11.2 Chi-Square Test of Independence</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +143,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -539,11 +567,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./11.0-chi-square.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">11. Chi-Square</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11.1-chi-square-goodness-of-fit.html" class="sidebar-item-text sidebar-link">
@@ -552,7 +580,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11.2-chi-square-test-of-independence.html" class="sidebar-item-text sidebar-link">
+  <a href="./11.2-chi-square-test-of-independence.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">11.2 Chi-Square Test of Independence</span></a>
   </div>
 </li>
@@ -748,60 +776,259 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#step-1-look-at-the-data" id="toc-step-1-look-at-the-data" class="nav-link active" data-scroll-target="#step-1-look-at-the-data">Step 1: Look at the Data</a></li>
+  <li><a href="#step-2-check-assumptions" id="toc-step-2-check-assumptions" class="nav-link" data-scroll-target="#step-2-check-assumptions">Step 2: Check Assumptions</a></li>
+  <li><a href="#step-3-perform-the-test" id="toc-step-3-perform-the-test" class="nav-link" data-scroll-target="#step-3-perform-the-test">Step 3: Perform the Test</a></li>
+  <li><a href="#step-4-interpret-results" id="toc-step-4-interpret-results" class="nav-link" data-scroll-target="#step-4-interpret-results">Step 4: Interpret Results</a></li>
+  <li><a href="#fishers-exact-test" id="toc-fishers-exact-test" class="nav-link" data-scroll-target="#fishers-exact-test">Fisher’s Exact Test</a></li>
+  <li><a href="#additional-practice" id="toc-additional-practice" class="nav-link" data-scroll-target="#additional-practice">Additional Practice</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11.0-chi-square.html">11. Chi-Square</a></li><li class="breadcrumb-item"><a href="./11.2-chi-square-test-of-independence.html">11.2 Chi-Square Test of Independence</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">11.2 Chi-Square Test of Independence</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>The <span class="math inline">\(\chi^2\)</span> (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness-of-fit test we are looking at the relationship, independence, or association between <em>two</em> variables.</p>
+<p>Our basic hypotheses for the chi-square test of indepdendence is as follows:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li><p><span class="math inline">\(H_0\)</span>: There are no differences in frequencies of how the categories in one variable relate to the levels in another variable.</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: At least one category in one variable has significantly different frequencies in another variable than we would expect.</p></li>
+</ul>
+<div class="warning">
+<p>Note that these are not how you should report your hypotheses! You should specify your hypotheses in relation to the nature of your two variables. It should be clear what your two variables are.</p>
+</div>
+<p>There is no directionality for a chi-square test, so there is no such thing as a one-tailed or two-tailed hypothesis.</p>
+<p>We often communicate what kind of chi-square test we are performing by using language like “We performed a 2x3 chi-square test of independence.” This means that there are two variables, the first of which has 2 categories to the categorical variable and the second of which has 3 categories to the categorical variable. We might describe it in even more detail, such as “We performed a 2 (condition: experimental vs control) x 3 (mood: happy, sad, or neutral) chi-square test of independence.”</p>
+<section id="step-1-look-at-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-look-at-the-data">Step 1: Look at the Data</h2>
+<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “chapek9”. This dataset indicates the ID number of the participant, the species (robot or human), and their preference of the three things (puppy, flower, or data).</p>
+<p>For this example, imagine we are watching a show about the planet <em>Chapek 9</em>. On this planet, for someone to gain access to their capital city they must prove they’re a robot, not a human. In order to determine whether or not a visitor is human, the natives ask whether the visitor prefers puppies, flowers, or large, properly formatted data files.</p>
+<p>This is what we would call a 2x3 chi-square test because the first variable species has two categories (robot or human) and the second variable choice has three categories (puppies, flowers, data).</p>
+<p>Here’s a video walking through the chi-square test of independence example in this chapter.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/6a5soxXTfkw" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+<section id="data-set-up" class="level3">
+<h3 class="anchored" data-anchor-id="data-set-up">Data Set-Up</h3>
+<p>Our data set-up for a chi-square test of independence is pretty simple. We just need two columns of nominal data, with one row per participant. Here’s our data for our example we’ll be working with, which you can find in the lsj-data called <code>chapek9</code>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>species</th>
+<th>choice</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>robot</td>
+<td>flower</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>human</td>
+<td>data</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>human</td>
+<td>data</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>human</td>
+<td>data</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>robot</td>
+<td>data</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>human</td>
+<td>flower</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>human</td>
+<td>data</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>robot</td>
+<td>data</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>human</td>
+<td>puppy</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>robot</td>
+<td>flower</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="describe-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="describe-the-data">Describe the Data</h3>
+<p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Remember that for nominal variables we should report frequency statistics, not means and medians and such. Bar plots continue to be a good way of visualizing the data.</p>
+<p><img src="images/11-independence/independence_data.png" class="img-fluid"></p>
+</section>
+<section id="specify-the-hypotheses" class="level3">
+<h3 class="anchored" data-anchor-id="specify-the-hypotheses">Specify the Hypotheses</h3>
+<p>The question here is whether humans and robots differ in preferring puppies, flowers, or data so we can determine who is a robot so only robots are let into the city. Therefore, our hypotheses might be something like this:</p>
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>: Humans and robots have similar preferences.</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: Humans and robots have different preferences.</p></li>
 </ul>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="step-2-check-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-check-assumptions">Step 2: Check Assumptions</h2>
+<p>The chi-square test of independence has the following assumptions:</p>
+<ol type="1">
+<li><p><strong>Expected frequencies are sufficiently large</strong>, which is usually greater than 5. If you violate this assumption, you can use <a href="#fishers-exact-test">Fisher’s exact test</a>.</p>
+<ul>
+<li>You test for this assumption by selecting “Expected counts” in the Cells tab for the test of independence. You will then see rows of expected counts in your contingency table. Look at the numbers and check that they are all 5 or greater.</li>
+</ul></li>
+<li><p>Data are <strong>independent</strong> of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test (next chapter).</p>
+<ul>
+<li>This requires knowing how your data was collected. If it’s a within-subjects design (i.e., all participants are in all conditions of one variable), then most likely you want to use McNemar’s test. If it’s a between-subjects design (i.e., some participants are in one condition of a variable), then you most likely meet this assumption and can perform the chi-square test of independence.</li>
+</ul></li>
+</ol>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="step-3-perform-the-test" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-perform-the-test">Step 3: Perform the Test</h2>
+<ol type="1">
+<li><p>Go to the Analyses tab, click the Frequencies button, and choose “Independent Samples - <span class="math inline">\(\chi^2\)</span> test of association”.</p></li>
+<li><p>Move your two variables into the rows and columns boxes. In this case, move <code>choice</code> into rows and <code>species</code> into columns. Note that the placement in rows or columns doesn’t really matter, but because we typically work with portrait pages I tend to prefer putting in rows whatever variable has more categories. In this case, choice has 3 categories and species only 2 so I like to put choice in rows and species in columns.</p></li>
+<li><p>Under the Statistics tab, select <span class="math inline">\(\chi^2\)</span> under Tests and <code>Phi and Cramer's V</code> under Nominal to get your effect size.</p></li>
+<li><p>Select <code>Expected counts</code> under Cells to test your assumption of expected frequencies. You can also request the row, column, and total percentages. I often find these easier to report and interpret.</p></li>
+<li><p>Select <code>Standardized residuals (adjusted Pearson)</code> under Post Hoc Tests and highlight values above 1.96 (the statistically significant z-score). You can also just leave it at 2 which is close enough.</p></li>
+<li><p>Select <code>Bar Plot</code> under plots. You may want to tinker with the settings here of determining whether you should use a side by side or stacked bar type, counts or percentages, and rows or columns.</p></li>
+</ol>
+<section id="ordinal-variables" class="level3">
+<h3 class="anchored" data-anchor-id="ordinal-variables">Ordinal Variable(s)</h3>
+<p>If either of your variables are ordinal, instead of selecting <code>Phi and Cramer's V</code> you should select <code>Gamma</code> or <code>Kendall's tau-b</code>. Which do you choose? <code>Kendall's tau-b</code> should only be chosen if you have a square table (e.g., 3x3, 4x4, 5x5) whereas <code>Gamma</code> can be done with any size table. <code>Kendall's tau-b</code> will be a slightly more conservative estimate compared to <code>Gamma</code>.</p>
+</section>
+</section>
+<section id="step-4-interpret-results" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-interpret-results">Step 4: Interpret Results</h2>
+<p>Below, I show the output for the Chi-Square test of independence, with the row % expected frequencies also shown to help in my interpretation of the results.</p>
+<p><img src="images/09-chi-square/chi-square_results1.png" class="img-fluid"></p>
+<p>The first table shows us our observed and expected frequencies. We use the expected frequencies to test our assumption that expected frequencies are greater than 5. Our smallest expected frequncy is 13.53 so we meet this assumption.</p>
+<p><img src="images/09-chi-square/chi-square_results2.png" class="img-fluid"></p>
+<p>The second table gives us our results. Our p-value (<em>p</em> = .005) is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. The degrees of freedom (df) is the number of categories of one variable minus one times the number of categories in the second variable minus one which is (<em>r</em> - 1)(<em>c</em> - 1) or in this case (2-1)(3-1) = 2. Note that N = 180, meaning we have 180 rows of data.</p>
+<p>jamovi also gives us our Cramer’s V value. Note that it does not provide Phi because we don’t have a perfect square table (e.g., 2x2 or 3x3). These are measures of effect size for the chi-square. Cramer’s V can be interpreted similar to a correlation (ranges from 0 to 1, with higher scores meaning stronger relationships between the variables).</p>
+<p>Lastly, newer versions of jamovi finally have post hoc tests! This allows us to find out <em>where</em> the significant differences are. We should compare to the <em>z</em>-score of 1.96 to see which are statistically significant. In this case, we can see there is no difference between robots and humans in whether they selected puppies but robots were significantly more likely to select flowers whereas humans were significantly more likely to select data.</p>
+<p><img src="images/11-independence/independence_posthoc.png" class="img-fluid" width="350"></p>
+<section id="write-up-the-results-in-apa-style" class="level3">
+<h3 class="anchored" data-anchor-id="write-up-the-results-in-apa-style">Write Up the Results in APA Style</h3>
+<p>We can write up our results in APA something like this:</p>
+<blockquote class="blockquote">
+<p>Pearson’s <span class="math inline">\(\chi^2\)</span> test of independence showed a significant association between species and choice, <span class="math inline">\(\chi^2\)</span> (2) = 10.72, <em>p</em> = .005, Cramer’s V = .24. Robots were more likely to say they prefer flowers (70%) compared to humans (30%; <em>z</em> = 3.22) and humans were more likely to say they prefer data (60%) compared to robots (40%; <em>z</em> = 2.65). Robots (46%) and humans (54%; <em>z</em> = 0.22) were equally likely to prefer puppies.</p>
+</blockquote>
+<p>We can also use the observed frequencies to either visualize (see the next table) or write-up in a table. Here’s an example write-up with a table.</p>
+<blockquote class="blockquote">
+<p>Pearson’s <span class="math inline">\(\chi^2\)</span> test of independence showed a significant association between species and choice, <span class="math inline">\(\chi^2\)</span> (2) = 10.72, <em>p</em> = .005, Cramer’s V = .24. Robots were more likely to say they prefer flowers whereas humans were more likely to say they prefer data (see table below).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Robots</th>
+<th>Humans</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>puppy</td>
+<td>13 (46%)</td>
+<td>15 (54%)</td>
+</tr>
+<tr class="even">
+<td>flower</td>
+<td>30 (70%)</td>
+<td>13 (30%)</td>
+</tr>
+<tr class="odd">
+<td>data</td>
+<td>44 (40%)</td>
+<td>65 (60%)</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</section>
+<section id="visualize-the-results" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-the-results">Visualize the Results</h3>
+<p>jamovi has some decent plots with some of the latest updates. Here’s one I created after tinkering with the settings under Plots on the chi-square setup. These are sufficient for your homework assignments in this class, but note that sometimes when there are many bars or long labels for the categories of your variable it will scrunch up. Hopefully jamovi will fix it in the future.</p>
+<p><img src="images/09-chi-square/chi-square_results4.png" class="img-fluid"></p>
+<p>However, you can also create these pretty easily in Excel. There are two that I think work well for this dataset and our research questions. The first is a clustered column chart:</p>
+<p><img src="images/11-independence/independence_excel1.png" class="img-fluid" width="500"></p>
+<p>The second is a stacked bar chart with connected lines:</p>
+<p><img src="images/11-independence/independence_excel2.png" class="img-fluid" width="500"></p>
+<p>Which do you choose? Whichever you think better communicates the message of the results of the analysis! This takes skill and practice, and probably an entirely separate course on effective data visualization.</p>
+</section>
+</section>
+<section id="fishers-exact-test" class="level2">
+<h2 class="anchored" data-anchor-id="fishers-exact-test">Fisher’s Exact Test</h2>
+<p>If you violate the assumption that your expected frequencies are sufficiently large and you have a 2x2 table, you can still perform the <span class="math inline">\(\chi^2\)</span> test of independence but instead of selecting <span class="math inline">\(\chi^2\)</span>you’ll select <code>Fisher's exact test</code>. You’ll interpret your results exactly the same but specify you used Fisher’s exact test. Here’s an example write-up from the results above:</p>
+<blockquote class="blockquote">
+<p>Fisher’s exact test of independence showed a significant association between species and choice, <span class="math inline">\(\chi^2\)</span> (2) = 10.72, <em>p</em> = .004, Cramer’s V = .24. Robots were more likely to say they prefer flowers (70%) compared to humans (30%) and humans were more likely to say they prefer data (60%) compared to robots (40%). Robots (46%) and humans (54%) were equally likely to prefer puppies.</p>
+</blockquote>
+<p>Note that what changes is only the p-value from the chi-square test and Fisher’s exact test.</p>
+</section>
+<section id="additional-practice" class="level2">
+<h2 class="anchored" data-anchor-id="additional-practice">Additional Practice</h2>
+<p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
+<p>To get the most out of these exercises, try to first find out the answer on your own and then go to the appendix to check your answer.</p>
+<ol type="1">
+<li><p><strong>Is Athlete related to Gender?</strong></p>
+<ul>
+<li><p>Do you meet the assumptions?</p></li>
+<li><p>Which test should you perform?</p></li>
+<li><p>Are the observed frequencies similar to the expected frequencies?</p></li>
+<li><p>What is your chi-square value, rounded to two decimal places?</p></li>
+</ul></li>
+<li><p><strong>Is Gender related to Rank?</strong></p>
+<ul>
+<li><p>Do you meet the assumptions?</p></li>
+<li><p>Which test should you perform?</p></li>
+<li><p>Are the observed frequencies similar to the expected frequencies?</p></li>
+<li><p>What is your chi-square value, rounded to two decimal places?</p></li>
+</ul></li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1434,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./11.1-chi-square-goodness-of-fit.html" class="pagination-link" aria-label="11.1 Chi-Square Goodness-of-Fit">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">11.1 Chi-Square Goodness-of-Fit</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./11.3-mcnemars-test.html" class="pagination-link" aria-label="11.3 McNemar's Test">
+        <span class="nav-page-text">11.3 McNemar’s Test</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

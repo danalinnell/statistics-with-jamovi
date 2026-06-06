@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>13.1 One-Way ANOVA – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./13.2-finding-group-differences.html" rel="next">
+<link href="./13.0-anova.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,7 +72,37 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -88,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13.0-anova.html">13. ANOVA</a></li><li class="breadcrumb-item"><a href="./13.1-one-way-anova.html">13.1 One-Way ANOVA</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +143,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -597,14 +625,14 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./13.0-anova.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">13. ANOVA</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13.1-one-way-anova.html" class="sidebar-item-text sidebar-link">
+  <a href="./13.1-one-way-anova.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">13.1 One-Way ANOVA</span></a>
   </div>
 </li>
@@ -748,60 +776,258 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#why-not-multiple-t-tests" id="toc-why-not-multiple-t-tests" class="nav-link active" data-scroll-target="#why-not-multiple-t-tests">Why Not Multiple t-Tests?</a></li>
+  <li><a href="#relationship-between-anova-and-t-test" id="toc-relationship-between-anova-and-t-test" class="nav-link" data-scroll-target="#relationship-between-anova-and-t-test">Relationship Between ANOVA and t-Test</a></li>
+  <li><a href="#step-1-look-at-the-data" id="toc-step-1-look-at-the-data" class="nav-link" data-scroll-target="#step-1-look-at-the-data">Step 1: Look at the Data</a></li>
+  <li><a href="#anova-assumptions" id="toc-anova-assumptions" class="nav-link" data-scroll-target="#anova-assumptions">Step 2: Check Assumptions</a></li>
+  <li><a href="#step-3-perform-the-test" id="toc-step-3-perform-the-test" class="nav-link" data-scroll-target="#step-3-perform-the-test">Step 3: Perform the Test</a></li>
+  <li><a href="#step-4-interpret-results" id="toc-step-4-interpret-results" class="nav-link" data-scroll-target="#step-4-interpret-results">Step 4: Interpret Results</a></li>
+  <li><a href="#welchs-f-test" id="toc-welchs-f-test" class="nav-link" data-scroll-target="#welchs-f-test">Welch’s F-Test</a></li>
+  <li><a href="#kruskal-wallis-test" id="toc-kruskal-wallis-test" class="nav-link" data-scroll-target="#kruskal-wallis-test">Kruskal-Wallis Test</a></li>
+  <li><a href="#additional-practice" id="toc-additional-practice" class="nav-link" data-scroll-target="#additional-practice">Additional Practice</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13.0-anova.html">13. ANOVA</a></li><li class="breadcrumb-item"><a href="./13.1-one-way-anova.html">13.1 One-Way ANOVA</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">13.1 One-Way ANOVA</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>The one-way analysis of variance (ANOVA) is used to test the difference in our dependent variable between <u>three or more</u> different groups of observations. Our grouping variable is our independent variable. In other words, we use the one-way ANOVA when we have a research question with a <strong>continuous dependent variable</strong> and a <strong>categorical independent variable with three or more categories in which different participants are in each category</strong>.</p>
+<p>The one-way ANOVA is also known as an independent factor ANOVA (note that it is NOT the same as a factorial ANOVA, which means there are two or more IVs!).</p>
+<p>One thing to keep in mind is the one-way ANOVA is an omnibus statistic that tests against the null hypothesis that the three or more means are the same. It does not tell us where the mean differences are (e.g., that 1 &gt; 2); for that, we need planned contrasts or post-hoc procedures, which you’ll learn about in the next chapter. Therefore, the null and alternative hypotheses for the one-way ANOVA are as follows:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li><span class="math inline">\(H_0\)</span>: There is <strong>no difference</strong> in means between the groups. In other words, the means for the three or more groups are the <strong>same</strong>.</li>
+<li><span class="math inline">\(H_1\)</span>: There is <strong>a difference</strong> in means between the groups. In other words, at least one group has a significantly different mean compared to the other groups.</li>
+</ul>
+<p>In this chapter, we’re going to test this overall hypothesis of whether there is a difference. However, to find the difference, you need to conduct planned contrasts or use post-hoc procedures. This is covered in the next chapter.</p>
+<section id="why-not-multiple-t-tests" class="level2">
+<h2 class="anchored" data-anchor-id="why-not-multiple-t-tests">Why Not Multiple t-Tests?</h2>
+<p>Imagine we have three groups: fall, spring, and summer. We could just perform three separate t-tests: fall vs.&nbsp;spring, fall vs.&nbsp;summer, and spring vs.&nbsp;summer.</p>
+<p>However, the reason we do not perform multiple t-tests is because multiple t-tests means an increased Type I error rate. If I had performed three separate t-tests, set my alpha (Type I error rate) at 5% for each test, and knew for a fact the effects do not actually exist, then each test has a probability of a Type I error rate of 5%. Because we are running three tests, our alpha rate actually becomes 1 - (.95<sup>3</sup>)= 1 - .857 = 14.3%! So now our <em>familywise</em> or <em>experimentwise</em> error rate is 14.3%, not the 5% we originally set alpha at.</p>
+<p>With three groups, that’s not so bad, but let’s see what happens with more tests we perform:</p>
+<ul>
+<li><strong>1 test</strong>: 1 - (.95<sup>1</sup>)= 1 - .95 = <strong>5%</strong></li>
+<li><strong>2 tests</strong>: 1 - (.95<sup>2</sup>)= 1 - .9025 = <strong>9.8%</strong></li>
+<li><strong>3 tests</strong>: 1 - (.95<sup>3</sup>)= 1 - .857 = <strong>14.3%</strong></li>
+<li><strong>4 tests</strong>: 1 - (.95<sup>4</sup>)= 1 - .814 = <strong>18.6%</strong></li>
+<li><strong>5 tests</strong>: 1 - (.95<sup>5</sup>)= 1 - .774 = <strong>22.6%</strong></li>
+<li><strong>10 tests</strong>: 1 - (.95<sup>10</sup>)= 1 - .598 = <strong>40.1%</strong></li>
+<li><strong>20 tests</strong>: 1 - (.95<sup>20</sup>)= 1 - .358 = <strong>64.1%</strong></li>
+</ul>
+<p>Ouch! 10 tests would have a Type I error rate of 40%! That means that if we performed 10 statistical tests (assuming the effect does not exist), then 40% of the results could be statistically significant by chance alone and would be a false positive. That’s not good!</p>
+<p>Therefore, we use the one-way ANOVA as <u>one test</u> to see if there is a difference overall. We can also do things to control or limit our familywise error rate, which I’ll get into later.</p>
+<p><a href="https://xkcd.com/882/">This comic by xkcd</a> provides a great visualization and description for why we need to be super careful about making multiple comparisons.</p>
+</section>
+<section id="relationship-between-anova-and-t-test" class="level2">
+<h2 class="anchored" data-anchor-id="relationship-between-anova-and-t-test">Relationship Between ANOVA and t-Test</h2>
+<p>A fun little fact is that an ANOVA with two groups is identical to the t-test. That means the F and t statistics are directly related, and you will get the same p-value. For example, imagine you run a t-test and get a t-statistic of <em>t</em> (16) = -1.31, <em>p</em> = .210. If you ran it as a one-way ANOVA, you would get an F-statistic of <em>F</em> (1, 16) = 1.71, <em>p</em> = .210.</p>
+<p><span class="math inline">\(F = t^2\)</span></p>
+<p><span class="math inline">\(t = \sqrt{F}\)</span></p>
+<p>Just a fun little bit of trivia! So if you accidentally do an F-test with two groups, no need to go back and redo the analyses (although you should if you are sharing your code for reproducibility). You can just convert your F to a t statistic easily!</p>
+</section>
+<section id="step-1-look-at-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-look-at-the-data">Step 1: Look at the Data</h2>
+<p>For this chapter, we’re going to work with example data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “clinicaltrial” (not Clinical Trial 2). This dataset is hypothetical data of a clinical trial in which you are testing a new antidepressant drug called <em>Joyzepam</em>. In order to construct a fair test of the drug’s effectiveness, the study involves three separate drugs to be administered. One is a placebo, and the other is an existing antidepressant / anti-anxiety drug called <em>Anxifree</em>. A collection of 18 participants with moderate to severe depression are recruited for your initial testing. Because the drugs are sometimes administered in conjunction with psychological therapy, your study includes 9 people undergoing cognitive behavioral therapy (CBT) and 9 who are not. Participants are randomly assigned (doubly blinded, of course) a treatment, such that there are 3 CBT people and 3 no-therapy people assigned to each of the 3 drugs. A psychologist assesses the mood of each person after a 3-month run with each drug, and the overall improvement in each person’s mood is assessed on a scale ranging from -5 to +5.</p>
+<p>Here’s a video walking through the one-way ANOVA test.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/NBxLBXtvp8E" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+<section id="data-set-up" class="level3">
+<h3 class="anchored" data-anchor-id="data-set-up">Data Set-Up</h3>
+<p>To conduct the one-way ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis.</p>
+<p>Note that in this dataset we actually have two independent variables: <code>drug</code> and <code>therapy</code>. If we were looking at the effect of <code>therapy</code> on <code>mood.gain</code> (our DV) then we would only need to perform an independent samples t-test because there are only two groups (no.therapy and CBT). However, if we were looking at the effect of <code>drug</code> on <code>mood.gain</code>, which is our goal in this chapter, then we would perform a one-way ANOVA because there are three groups (placebo, anxifree, and joyzepam).</p>
+<p><img src="images/04_one-way-anova/anova_data.png" class="img-fluid"></p>
+</section>
+<section id="describe-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="describe-the-data">Describe the Data</h3>
+<p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. We see that there are 18 cases in our dataset (a bit small, but let’s ignore that for now) with no missing data. The mean mood gain was .88 (<em>SD</em> = .53) with a minimum mood gain of .10 and maximum of 1.80. Furthermore, there are 6 people in each of our three conditions in the study so we have a <em>balanced</em> research design. It is typically ideal to have roughly equal participants in each group, which we have here in this balanced research design.</p>
+<p><img src="images/04_one-way-anova/anova_descriptives.png" class="img-fluid"></p>
+<p>In addition, we may want to look at the distribution of mood gain across our three conditions. In the Descriptives analysis, we can choose to “split by” <code>drug</code> and then ask for both the descriptive statistics as shown above and a box plot with violin and data points like below. Visually, it seems like joyzepam might be leading to greater mood gain than the other two conditions, but we need to analyze it statistically to know for sure!</p>
+<p><img src="images/04_one-way-anova/anova_graph.png" class="img-fluid"></p>
+</section>
+<section id="specify-the-hypotheses" class="level3">
+<h3 class="anchored" data-anchor-id="specify-the-hypotheses">Specify the Hypotheses</h3>
+<p>Our basic research question for the one-way ANOVA is whether there is a difference in mood between the three drugs. Therefore, our hypotheses for the one-way ANOVA could be written as such:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: There is <strong>no difference</strong> in mood between the three drugs.</li>
+<li><span class="math inline">\(H_1\)</span>: There is <strong>a difference</strong> in mood between the three drugs. <em>However, we’ll need the next chapter to figure out where those differences might be.</em></li>
 </ul>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="anova-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="anova-assumptions">Step 2: Check Assumptions</h2>
+<p>As a parametric test, the one-way ANOVA has the same assumptions as other parametric tests:</p>
+<ol type="1">
+<li><p>The dependent variable is <strong>normally distributed</strong></p></li>
+<li><p>Variances in the two groups are roughly equal (i.e., <strong>homogeneity of variances</strong>)</p></li>
+<li><p>The dependent variable is <strong>interval or ratio</strong> (i.e., continuous)</p></li>
+<li><p>Scores are <strong>independent</strong> between groups</p></li>
+</ol>
+<p>We cannot <em>test</em> the third and fourth assumptions; rather, those are based on knowing your data.</p>
+<p>However, we can and should test for the first two assumptions. Fortunately, the one-way ANOVA in jamovi has three check boxes under “Assumption Checks” that lets us test for both assumptions.</p>
+<section id="anova-is-somewhat-robust-to-violations" class="level3">
+<h3 class="anchored" data-anchor-id="anova-is-somewhat-robust-to-violations">ANOVA Is (Somewhat) Robust to Violations</h3>
+<p>Although we should meet the assumptions as much as possible, in general the F-statistic is <em>robust</em> to violations of normality and homogeneity of variance. This means that you can still run the one-way ANOVA if you violate the assumptions, but <em>only when group sizes and variances are equal or nearly equal</em>. If you have vastly different variances (such as 2:1 ratio or greater) or vastly different group sizes (such as a 2:1 ratio or greater), and especially if one group is really small (such as 10 or fewer cases), then your F-statistic is likely to be very wrong. For example, if your larger group has the larger variance, then your F-statistic is likely to be non-significant or smaller than it should be; however, if your larger group has smaller variance, then your F-statistic is likely to be significant or bigger than it should be!</p>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="testing-normality" class="level3">
+<h3 class="anchored" data-anchor-id="testing-normality">Testing Normality</h3>
+<p>We test for normality using the four methods we’ve learned: Shapiro-Wilk test, Q-Q plot, skew/kurtosis, and looking at the distribution of data. The Shapiro-Wilk test was not statistically significant (<em>W</em> = .96, <em>p</em> = .605); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. I haven’t shown skew/kurtosis and the distribution here, but they also look normal. We can conclude that we satisfy the assumption of normality.</p>
+<p><img src="images/04_one-way-anova/one-way_assumptions1.png" class="img-fluid"></p>
+<p><img src="images/04_one-way-anova/one-way_assumptions2.png" class="img-fluid"></p>
+</section>
+<section id="testing-homogeneity-of-variance" class="level3">
+<h3 class="anchored" data-anchor-id="testing-homogeneity-of-variance">Testing Homogeneity of Variance</h3>
+<p>We test for homogeneity of variance using the Levene’s test, looking at the group variances, and looking at the plots of the DV split by the IV (the latter two are not shown here). The Levene’s test was not statistically significant (<em>F</em> [2, 15] = 1.45, <em>p</em> = .266); therefore, this indicates our data satisfies the assumption of homogeneity of variance. However, I would add a caveat that we have a small sample of data (<em>N</em> = 18); we should have tried to collect more data.</p>
+</section>
+</section>
+<section id="step-3-perform-the-test" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-perform-the-test">Step 3: Perform the Test</h2>
+<section id="decide-which-statistical-test-you-should-be-using" class="level3">
+<h3 class="anchored" data-anchor-id="decide-which-statistical-test-you-should-be-using">Decide Which Statistical Test You Should Be Using</h3>
+<p>If you fail to meet one or both of the assumptions of normality (and no transformations fixed your data; refer back to the Cleaning Data chapter to recall how to transform data) and homogeneity of variances, jamovi has the alternative statistics easily built in. Here’s what statistic you should choose based on satisfying assumptions:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Normality: satisfied</strong></th>
+<th><strong>Normality: not satisfied</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Homogeneity of Variance: satisfied</strong></td>
+<td>one-way ANOVA (but using the ANOVA function)</td>
+<td><a href="#kruskal-wallis-test">Kruskal-Wallis test</a> (using the one-way ANOVA function)</td>
+</tr>
+<tr class="even">
+<td><strong>Homogeneity of Variance: not satisfied</strong></td>
+<td><a href="#welchs-f-test">Welch’s F-test</a> (using the one-way ANOVA function)</td>
+<td><a href="#kruskal-wallis-test">Kruskal-Wallis test</a> (using the one-way ANOVA function)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a-note-on-one-tailed-vs.-two-tailed-tests-in-the-anova" class="level3">
+<h3 class="anchored" data-anchor-id="a-note-on-one-tailed-vs.-two-tailed-tests-in-the-anova">A Note on One-Tailed vs.&nbsp;Two-Tailed Tests in the ANOVA</h3>
+<p>Unlike a t-test, we can’t have a one-tailed test with an ANOVA. Our planned contrasts or post-hoc tests can tell us where differences are, and we can provide directional hypotheses there if we so choose.</p>
+</section>
+<section id="perform-the-test" class="level3">
+<h3 class="anchored" data-anchor-id="perform-the-test">Perform the Test</h3>
+<div class="danger">
+<p>Do not use the <code>One-Way ANOVA</code> analysis in jamovi! The options there are too limited for our use. Instead, be sure you use the <code>ANOVA</code> analysis!!!</p>
+</div>
+<ol type="1">
+<li><p>To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the <strong>ANOVA</strong> button, and choose “ANOVA”.</p></li>
+<li><p>Move your dependent variable to the Dependent Variable box and your independent variable to the Fixed Factors box. In this case, move <code>mood.gain</code> to the Dependent Variable box and <code>drug</code> to the Fixed Factors box.</p></li>
+<li><p>Select <span class="math inline">\(\omega^2\)</span> (omega-squared) for your effect size.</p></li>
+<li><p>Ignore the Model drop-down menu. If you are doing more complicated ANOVAs you will need this. We will ignore it.</p></li>
+<li><p>In the Assumption Checks drop-down menu, select all three options: <code>Homogeneity test</code>, <code>Normality test</code>, and <code>Q-Q plot</code>.</p></li>
+<li><p>Ignore the Contrasts and Post Hoc Tests drop-down menus <em>for now</em>. See the next chapter for more information.</p></li>
+<li><p>In the Estimated Marginal Means drop-down menu, move your IV <code>drug</code> to the Marginal Means box and select <code>Marginal means plots</code>, <code>Marginal means tables</code>, and <code>Observed scores</code>, in addition to the pre-selected <code>Equal cell weights</code>.</p></li>
+</ol>
+<p>When you are done, your setup should look like this:</p>
+<p><img src="images/04_one-way-anova/one-way_setup.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="step-4-interpret-results" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-interpret-results">Step 4: Interpret Results</h2>
+<p>Once we are satisfied we have satisfied the assumptions for the one-way ANOVA, we can interpret our results.</p>
+<p><img src="images/04_one-way-anova/one-way_results.png" class="img-fluid"></p>
+<p>Our p-value is less than our alpha value of .05, so our results are statistically significant.</p>
+<p>Note that the F statistic comes with two separate values for degrees of freedom:</p>
+<ol type="1">
+<li><p>The first df is for the IV itself, or the between-group variance. This is calculated by the number of groups minus one (k-1=3-1=2).</p></li>
+<li><p>The second df is for the residuals, or the within-group variance. This is calculated by the number of participants minus the number of groups (n-k=18-3=15).</p></li>
+</ol>
+<p>The F value is calculated by the two mean square values: MSdrug/MSresiduals. The mean square values are calculated from the sum of square values divided by their respective df (e.g., 3.45/2 = 1.73).</p>
+<p>You might try to calculate the F-value from above and say, “Hey Dana, it doesn’t equal 18.61!” That’s because there is rounding error here. If you perform this in jamovi and change your settings (with the three dots on the top right) to set the number format to 5 decimal places (5 dp) then you will get 1.72667/.09278 which you’ll find rounds to 18.61.</p>
+<p>Lastly, we have our effect size, which we prefer to use omega-squared (<span class="math inline">\(\omega^2\)</span>) because it is less biased from the other options, especially when sample sizes are small, although you may see papers use eta-squared (<span class="math inline">\(\eta^2\)</span>) or partial eta-squared (<span class="math inline">\(\eta^2_p\)</span>). The larger the value, the bigger the effect size; furthermore, they are like a correlation in that they range from 0 to 1 where 1 means a perfect relationship and 0 means no relationship. Field (2013) suggests values between .01 and .06 are small, between .06 and .14 are medium, and greater than .15 are large, but remember what we learned about effect sizes from earlier in the textbook!</p>
+<section id="write-up-the-results-in-apa-style" class="level3">
+<h3 class="anchored" data-anchor-id="write-up-the-results-in-apa-style">Write Up the Results in APA Style</h3>
+<div class="danger">
+<p>This write-up is only sufficient if your results are not statistically significant.</p>
+<p>If your F-test is statistically significant, then you also need to report the group differences as described in the next chapter!</p>
+</div>
+<p>We can write up the results of the overall F-test in APA something like this (again, go to the next chapter to go over the group differences because our significant F-test means this write-up is not sufficient):</p>
+<blockquote class="blockquote">
+<p>There is a significant difference in mood gain across the three drug conditions, <em>F</em> (2, 15) = 18.61, <em>p</em> &lt; .001, <span class="math inline">\(\omega^2\)</span> = .66.</p>
+</blockquote>
+<p>Sometimes, people like to put the statistics inside a parentheses. In that case, you need to change the parentheses around the degrees of freedom as brackets. Here’s another example write-up of the results in APA style:</p>
+<blockquote class="blockquote">
+<p>There is a significant difference in mood gain across the three drug conditions (<em>F</em> [2, 15] = 18.61, <em>p</em> &lt; .001, <span class="math inline">\(\omega^2\)</span> = .66).</p>
+</blockquote>
+</section>
+<section id="visualize-the-results" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-the-results">Visualize the Results</h3>
+<p>You should visualize the results similarly to how you visualize the results for the independent samples t-test. The default graph in the estimated marginal means output for the ANOVA is not great in my opinion. Presenting the graph of the data in this case (see the graph under Look at the Data) is probably a better option.</p>
+<p><img src="images/04_one-way-anova/anova_graph.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="welchs-f-test" class="level2">
+<h2 class="anchored" data-anchor-id="welchs-f-test">Welch’s F-Test</h2>
+<p>To conduct this in jamovi, you will need to use the “One-Way ANOVA” test, not the “ANOVA” test. The unfortunate thing about this test is that it strangely does not provide effect sizes.</p>
+<p>In jamovi under Variances, select <code>Don't assume equal (Welch's)</code>. Move <code>mood.gain</code> to the Dependent Variable box and <code>drug</code> to your Grouping Variable box. You will interpret the results similarly to the one-way ANOVA:</p>
+<p><img src="images/04_one-way-anova/one-way_results_Welch.png" class="img-fluid"></p>
+<blockquote class="blockquote">
+<p>Using a Welch’s F-test, there is a significant difference in mood gain across the three drug conditions, <em>F</em> (2, 9.49) = 26.32, <em>p</em> &lt; .001.</p>
+</blockquote>
+</section>
+<section id="kruskal-wallis-test" class="level2">
+<h2 class="anchored" data-anchor-id="kruskal-wallis-test">Kruskal-Wallis Test</h2>
+<p>To perform the Kruskal-Wallis test in jamovi, you will need to select under the ANOVA button “One-Way ANOVA, Kruskal Wallis” towards the bottom of the list of options. Move <code>mood.gain</code> to the Dependent Variables box and <code>drug</code> to the Grouping Variable box. Select Effect size; if you need post hoc comparisons select DSCF pairwise comparisons (see next chapter on finding group differences). You will interpret the results similarly to the one-way ANOVA:</p>
+<p><img src="images/04_one-way-anova/one-way_results_Kruskal.png" class="img-fluid"></p>
+<blockquote class="blockquote">
+<p>Using a Kruskal-Wallis test, there is a significant difference in mood gain across the three drug conditions, <span class="math inline">\(\chi^2\)</span> (2) = 12.08, <em>p</em> = .002, <span class="math inline">\(\epsilon^2\)</span> = .71.</p>
+</blockquote>
+<p>Notice how in this case all three results converge and show there is a statistically significant difference in the results! The problem is… differences in which groups? See the next chapter!</p>
+</section>
+<section id="additional-practice" class="level2">
+<h2 class="anchored" data-anchor-id="additional-practice">Additional Practice</h2>
+<p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
+<p>Perform one-way ANOVAs based on the following research questions. Check your assumptions and ensure you are using the correct tests.</p>
+<p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
+<ol type="1">
+<li><p><strong>Do students differ on English scores by rank (i.e., freshmen, sophomore, junior, senior)?</strong></p>
+<ul>
+<li><p>Do you satisfy the assumption of normality?</p></li>
+<li><p>Do you satisfy the assumption of homogeneity of variance?</p></li>
+<li><p>Which statistic should you use?</p></li>
+<li><p>Do students differ on English scores by rank?</p></li>
+</ul></li>
+<li><p><strong>Does smoking status (Smoking: Nonsmoker = 0, Past smoker = 1, Current smoker = 2) relate to sprint time?</strong></p>
+<ul>
+<li><p>Do you satisfy the assumption of normality?</p></li>
+<li><p>Do you satisfy the assumption of homogeneity of variance?</p></li>
+<li><p>Which statistic should you use?</p></li>
+<li><p>Does smoking status relate to sprint time?</p></li>
+</ul></li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1433,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./13.0-anova.html" class="pagination-link" aria-label="13. ANOVA">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">13. ANOVA</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./13.2-finding-group-differences.html" class="pagination-link" aria-label="13.2 Finding Group Differences">
+        <span class="nav-page-text">13.2 Finding Group Differences</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

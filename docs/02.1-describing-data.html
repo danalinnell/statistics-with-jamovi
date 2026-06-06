@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>2.1 Describing Data – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./02.2-types-of-variables-levels-of-measurement.html" rel="next">
+<link href="./02.0-statistics-foundations.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02.0-statistics-foundations.html">2. Statistics Foundations</a></li><li class="breadcrumb-item"><a href="./02.1-describing-data.html">2.1 Describing Data</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -140,14 +139,14 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./02.0-statistics-foundations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2. Statistics Foundations</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.1-describing-data.html" class="sidebar-item-text sidebar-link">
+  <a href="./02.1-describing-data.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">2.1 Describing Data</span></a>
   </div>
 </li>
@@ -748,60 +747,184 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#what-are-data" id="toc-what-are-data" class="nav-link active" data-scroll-target="#what-are-data">What Are Data?</a></li>
+  <li><a href="#how-datasets-are-organized" id="toc-how-datasets-are-organized" class="nav-link" data-scroll-target="#how-datasets-are-organized">How Datasets Are Organized</a></li>
+  <li><a href="#what-is-a-variable" id="toc-what-is-a-variable" class="nav-link" data-scroll-target="#what-is-a-variable">What Is a Variable?</a></li>
+  <li><a href="#why-do-we-describe-data" id="toc-why-do-we-describe-data" class="nav-link" data-scroll-target="#why-do-we-describe-data">Why Do We Describe Data?</a></li>
+  <li><a href="#three-big-features-of-data" id="toc-three-big-features-of-data" class="nav-link" data-scroll-target="#three-big-features-of-data">Three Big Features of Data</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02.0-statistics-foundations.html">2. Statistics Foundations</a></li><li class="breadcrumb-item"><a href="./02.1-describing-data.html">2.1 Describing Data</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">2.1 Describing Data</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>Before we can analyze data, we need to understand what our data represent.</p>
+<p>At its core, statistics is about using data to answer questions. In most research settings, data are organized in a <button class="glossary" title="A structured collection of data, often organized in rows and columns.">dataset</button>, often in a spreadsheet format. Each row usually represents one <button class="glossary" title="One unit in a dataset, such as one participant, case, trial, or response. Observations are usually represented by rows.">observation</button>, such as one participant, and each column represents one <button class="glossary" title="Anything measured, observed, manipulated, or recorded that can vary across observations.">variable</button>, such as age, condition, or test score.</p>
+<p>This structure matters because statistical software, including jamovi, expects data to be organized in a clear and consistent way.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Learning Objectives">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this section, you should be able to:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li>explain how data are organized in a dataset</li>
+<li>distinguish between observations and variables</li>
+<li>explain why data need context to be meaningful</li>
+<li>describe the purpose of descriptive statistics</li>
+<li>identify center, variability, and shape as three major features we use to describe data</li>
 </ul>
+</div>
+</div>
+<section id="what-are-data" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-data">What Are Data?</h2>
+<p>Data are pieces of information we collect, record, or observe. In research, data might come from surveys, experiments, interviews, observations, tests, records, or existing datasets.</p>
+<p>A value by itself does not usually tell us much. Imagine seeing the number 75 in a dataset. Is that a test score? A heart rate? A temperature? A percentile rank? A participant ID number? The number only becomes meaningful when we know what it represents.</p>
+<p>That is why context matters. To interpret data correctly, we need to know:</p>
+<ul>
+<li>what each variable represents</li>
+<li>how each variable was measured</li>
+<li>what the values mean</li>
+<li>whether any values are missing, miscoded, or unusual</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="A Note About the Word Data">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>A Note About the Word Data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In formal scientific writing, including APA style, <em>data</em> is usually treated as plural: “The data are consistent with the hypothesis.” In everyday speech, many people use <em>data</em> as singular: “The data is stored in a spreadsheet.” You will see both. In formal research writing, use the plural form unless your instructor or style guide says otherwise.</p>
+</div>
+</div>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
+<section id="how-datasets-are-organized" class="level2">
+<h2 class="anchored" data-anchor-id="how-datasets-are-organized">How Datasets Are Organized</h2>
+<p>Most datasets are organized in a rectangular format. This means:</p>
+<ul>
+<li>rows represent observations, such as participants, cases, trials, or responses</li>
+<li>columns represent variables, such as age, test score, condition, or group membership</li>
+<li>each cell contains one value for one observation on one variable</li>
+</ul>
+<p>For example, imagine a study with 40 students. Each student completes a study skills intervention and then takes a quiz. In the dataset, each row would represent one student. Columns might include the student’s assigned group, quiz score, year in school, and number of hours studied.</p>
+<p>This structure may seem obvious, but it is one of the first places data problems show up. If two variables are accidentally combined in one column, if one person has data spread across multiple rows without a clear reason, or if missing values are handled inconsistently, the analysis becomes harder and more error-prone.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="what-is-a-variable" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-variable">What Is a Variable?</h2>
+<p>A variable is anything we measure, observe, manipulate, or record that can vary across observations.</p>
+<p>Examples of variables include:</p>
+<ul>
+<li>age</li>
+<li>major</li>
+<li>treatment condition</li>
+<li>test score</li>
+<li>reaction time</li>
+<li>number of symptoms</li>
+<li>whether someone completed an assignment</li>
+</ul>
+<p>Some variables describe characteristics of participants. Others describe the outcome we care about. Still others describe the condition someone was assigned to or the context in which data were collected.</p>
+<p>You will learn more about different types of variables in the next section. For now, the key idea is that variables are the building blocks of statistical analysis.</p>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="why-do-we-describe-data" class="level2">
+<h2 class="anchored" data-anchor-id="why-do-we-describe-data">Why Do We Describe Data?</h2>
+<p>Once we collect data, the first step is to describe what we have. Raw data can be difficult to interpret on their own. Descriptive statistics help us summarize, organize, and make sense of data.</p>
+<p>Descriptive statistics help us answer questions such as:</p>
+<ul>
+<li>What value is typical?</li>
+<li>How spread out are the values?</li>
+<li>Are there unusual values?</li>
+<li>How many people are in each category?</li>
+<li>What does the overall pattern look like?</li>
+</ul>
+<p>This is not just busywork before the “real” statistics begin. Describing data is part of analysis. It helps us understand what happened in the sample and helps us catch problems before we make larger claims.</p>
+</section>
+<section id="three-big-features-of-data" class="level2">
+<h2 class="anchored" data-anchor-id="three-big-features-of-data">Three Big Features of Data</h2>
+<p>When we describe data, we often focus on three major features.</p>
+<section id="center-what-is-typical" class="level3">
+<h3 class="anchored" data-anchor-id="center-what-is-typical">Center: What Is Typical?</h3>
+<p>The center of a variable tells us what a typical value looks like. Common measures of center include the <button class="glossary" title="The arithmetic average, calculated by adding all values and dividing by the number of values.">mean</button>, <button class="glossary" title="The middle value when values are ordered from lowest to highest.">median</button>, and <button class="glossary" title="The most frequently occurring value or category.">mode</button>.</p>
+<p>These are all sometimes called “averages,” but that word can be vague. If you say “the average was 10,” be clear about which average you mean.</p>
+</section>
+<section id="variability-how-spread-out-are-the-values" class="level3">
+<h3 class="anchored" data-anchor-id="variability-how-spread-out-are-the-values">Variability: How Spread Out Are the Values?</h3>
+<p>Variability describes how much the values differ from one another. Some datasets are tightly clustered, while others are more spread out. Common measures of variability include the <button class="glossary" title="The difference between the maximum and minimum value.">range</button>, <button class="glossary" title="The range of the middle 50% of values in a distribution, calculated as the distance between the first quartile and third quartile.">interquartile range</button>, <button class="glossary" title="A measure of variability based on squared deviations from the mean.">variance</button>, and <button class="glossary" title="A measure of variability that describes how spread out values are around the mean, expressed in the original units of the variable.">standard deviation</button>.</p>
+<p>Variability matters because two groups can have the same mean but look very different if one group has scores clustered closely together and the other has scores spread all over the place.</p>
+</section>
+<section id="shape-what-does-the-pattern-look-like" class="level3">
+<h3 class="anchored" data-anchor-id="shape-what-does-the-pattern-look-like">Shape: What Does the Pattern Look Like?</h3>
+<p>The shape of the data tells us how values are distributed. Are most values near the center? Is the distribution lopsided? Are there outliers? Is the shape roughly normal?</p>
+<p>We will return to shape in <a href="./02.4-understanding-distributions-variability.html">2.4 Understanding Distributions and Variability</a>, and later you will learn how to examine shape using graphs in jamovi.</p>
+</section>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>Describing data is always one of the first steps in statistical analysis. You will use these ideas when you:</p>
+<ul>
+<li>summarize your data in jamovi</li>
+<li>choose graphs</li>
+<li>check assumptions</li>
+<li>interpret statistical tests</li>
+<li>write results in APA style</li>
+</ul>
+<p>The point is not just to produce numbers. The point is to understand what the numbers are telling you.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>In a dataset, what does each row usually represent? What does each column usually represent?</li>
+<li>Why does the number 75 not mean much without context?</li>
+<li>What are the three major features we often use to describe data?</li>
+</ol>
+<details>
+<summary>
+Answers
+</summary>
+<ol type="1">
+<li>Each row usually represents one observation, such as one participant or case. Each column usually represents one variable.</li>
+<li>The number 75 could represent many different things, such as a test score, heart rate, temperature, or ID number. We need to know what variable it belongs to and how it was measured.</li>
+<li>Center, variability, and shape.</li>
+</ol>
+</details>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1330,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./02.0-statistics-foundations.html" class="pagination-link" aria-label="2. Statistics Foundations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2. Statistics Foundations</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02.2-types-of-variables-levels-of-measurement.html" class="pagination-link" aria-label="2.2 Types of Variables and Levels of Measurement">
+        <span class="nav-page-text">2.2 Types of Variables and Levels of Measurement</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

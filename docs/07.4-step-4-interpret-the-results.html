@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>7.4 Step 4: Interpret the Results – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./07.5-putting-it-all-together.html" rel="next">
+<link href="./07.3-step-3-perform-the-test.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07.0-hypothesis-testing.html">7. Hypothesis Testing</a></li><li class="breadcrumb-item"><a href="./07.4-step-4-interpret-the-results.html">7.4 Step 4: Interpret the Results</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -387,11 +386,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./07.0-hypothesis-testing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">7. Hypothesis Testing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07.1-step-1-look-at-the-data.html" class="sidebar-item-text sidebar-link">
@@ -412,7 +411,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.4-step-4-interpret-the-results.html" class="sidebar-item-text sidebar-link">
+  <a href="./07.4-step-4-interpret-the-results.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">7.4 Step 4: Interpret the Results</span></a>
   </div>
 </li>
@@ -748,60 +747,177 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#reject-or-fail-to-reject-the-null" id="toc-reject-or-fail-to-reject-the-null" class="nav-link active" data-scroll-target="#reject-or-fail-to-reject-the-null">Reject or Fail to Reject the Null</a></li>
+  <li><a href="#interpreting-the-bobo-doll-example" id="toc-interpreting-the-bobo-doll-example" class="nav-link" data-scroll-target="#interpreting-the-bobo-doll-example">Interpreting the Bobo Doll Example</a></li>
+  <li><a href="#statistical-significance-and-practical-significance" id="toc-statistical-significance-and-practical-significance" class="nav-link" data-scroll-target="#statistical-significance-and-practical-significance">Statistical Significance and Practical Significance</a></li>
+  <li><a href="#type-i-and-type-ii-errors" id="toc-type-i-and-type-ii-errors" class="nav-link" data-scroll-target="#type-i-and-type-ii-errors">Type I and Type II Errors</a></li>
+  <li><a href="#a-brief-apa-style-preview" id="toc-a-brief-apa-style-preview" class="nav-link" data-scroll-target="#a-brief-apa-style-preview">A Brief APA-Style Preview</a></li>
+  <li><a href="#visualizing-the-results" id="toc-visualizing-the-results" class="nav-link" data-scroll-target="#visualizing-the-results">Visualizing the Results</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07.0-hypothesis-testing.html">7. Hypothesis Testing</a></li><li class="breadcrumb-item"><a href="./07.4-step-4-interpret-the-results.html">7.4 Step 4: Interpret the Results</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">7.4 Step 4: Interpret the Results</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>The final step is to interpret the results and connect them back to the research question.</p>
+<p>This is where students often want to write something too strong, such as “the alternative hypothesis was proven” or “there is no effect.” Slow down here. Hypothesis testing gives us a decision about the null hypothesis, not certainty about the real world.</p>
+<section id="reject-or-fail-to-reject-the-null" class="level2">
+<h2 class="anchored" data-anchor-id="reject-or-fail-to-reject-the-null">Reject or Fail to Reject the Null</h2>
+<p>In null hypothesis significance testing, we make one of two decisions:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li>reject the null hypothesis; or</li>
+<li>fail to reject the null hypothesis.</li>
 </ul>
+<p>Note my language carefully: <strong>reject</strong> or <strong>fail to reject</strong> the null hypothesis.</p>
+<p>I am not saying that we prove the alternative hypothesis. I am not saying that we accept the null hypothesis. NHST is built around testing the null hypothesis, so our formal decision is about the null.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Result</th>
+<th>Statistical decision</th>
+<th>Plain-language meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>p &lt; α</td>
+<td>Reject the null hypothesis</td>
+<td>The data are surprising enough under the null that we reject it.</td>
+</tr>
+<tr class="even">
+<td>p ≥ α</td>
+<td>Fail to reject the null hypothesis</td>
+<td>The data are not surprising enough under the null, or we do not have enough evidence to reject it.</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
+<section id="interpreting-the-bobo-doll-example" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-the-bobo-doll-example">Interpreting the Bobo Doll Example</h2>
+<p>Suppose we analyze the Bobo doll data and get p &lt; .001.</p>
+<p>If α = .05, then p &lt; α. The result is statistically significant, so we reject the null hypothesis.</p>
+<p>In context, we might say:</p>
+<blockquote class="blockquote">
+<p>Children who watched the aggressive video showed more aggressive behaviors than children who watched the calm video. The difference was statistically significant, so we reject the null hypothesis that children in the aggressive-video condition show the same or fewer aggressive behaviors than children in the calm-video condition.</p>
+</blockquote>
+<p>That is a statistical conclusion. We should still interpret it alongside the study design, effect size, measurement quality, sample, and broader research literature.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="statistical-significance-and-practical-significance" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-significance-and-practical-significance">Statistical Significance and Practical Significance</h2>
+<p>Statistical significance tells us whether a result crossed the threshold for rejecting the null hypothesis.</p>
+<p><button class="glossary" title="The real-world or applied importance of an effect, beyond whether it is statistically significant.">practical significance</button> asks whether the result matters in context.</p>
+<p>These are related, but they are not the same.</p>
+<p>A result can be statistically significant but practically trivial. For example, a huge study might find a tiny difference that does not matter much in real life.</p>
+<p>A result can also be practically meaningful but not statistically significant. For example, a small pilot study might show a potentially important pattern but not have enough power to detect it clearly.</p>
+<p>This is why we care about both p-values and effect sizes.</p>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="type-i-and-type-ii-errors" class="level2">
+<h2 class="anchored" data-anchor-id="type-i-and-type-ii-errors">Type I and Type II Errors</h2>
+<p>Hypothesis testing involves uncertainty. We can make the best decision available from the data and still be wrong.</p>
+<p>A <button class="glossary" title="Rejecting the null hypothesis when the null hypothesis is actually true. This is also called a false positive.">Type I error</button> occurs when we reject the null hypothesis even though the null hypothesis is actually true. This is sometimes called a false positive.</p>
+<p>A <button class="glossary" title="Failing to reject the null hypothesis when the alternative hypothesis is actually true. This is also called a false negative.">Type II error</button> occurs when we fail to reject the null hypothesis even though the alternative hypothesis is actually true. This is sometimes called a false negative.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Reality</th>
+<th>We reject H<sub>0</sub></th>
+<th>We fail to reject H<sub>0</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>H<sub>0</sub> is true</td>
+<td>Type I error</td>
+<td>Correct decision</td>
+</tr>
+<tr class="even">
+<td>H<sub>1</sub> is true</td>
+<td>Correct decision</td>
+<td>Type II error</td>
+</tr>
+</tbody>
+</table>
+<p>In real research, we do not know with certainty whether H<sub>0</sub> or H<sub>1</sub> is true. If we knew, we would not need to collect data. This table helps us remember that hypothesis testing is decision-making under uncertainty.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Another Careful Language Moment">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Another Careful Language Moment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A statistically significant result does not guarantee that the null hypothesis is false. A non-significant result does not guarantee that the null hypothesis is true. Either decision can be wrong.</p>
+</div>
+</div>
+</section>
+<section id="a-brief-apa-style-preview" class="level2">
+<h2 class="anchored" data-anchor-id="a-brief-apa-style-preview">A Brief APA-Style Preview</h2>
+<p>Later, Chapter 10 will focus on writing results in APA style. For now, it is useful to see what a complete result might look like.</p>
+<p>For our Bobo doll example, a write-up could look something like this:</p>
+<blockquote class="blockquote">
+<p>Children who viewed the aggressive video (M = 11.20, SD = 3.10) exhibited more aggressive behavior than children who viewed the calm video (M = 5.40, SD = 2.80), t(28) = 5.39, p &lt; .001, d = 1.97.</p>
+</blockquote>
+<p>You do not need to understand every symbol in that sentence yet. The later test-specific chapters and the APA results chapter will walk you through the details. For now, notice that the write-up includes descriptive statistics, the inferential test result, the p-value, and the effect size.</p>
+</section>
+<section id="visualizing-the-results" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-the-results">Visualizing the Results</h2>
+<p>A complete analysis should usually include a graph. For this example, a box plot with individual data points would help show the difference between conditions, the spread within each condition, and any possible outliers.</p>
+<p>The graph does not replace the statistical test. It helps readers see the pattern behind the numbers.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>What are the two formal decisions we make in NHST?</li>
+<li>Why should we avoid saying that we “accept” the null hypothesis?</li>
+<li>What is a Type I error?</li>
+<li>What is a Type II error?</li>
+<li>Why is practical significance different from statistical significance?</li>
+</ol>
+<p><strong>Answers</strong></p>
+<ol type="1">
+<li>We reject the null hypothesis or fail to reject the null hypothesis.</li>
+<li>Failing to reject the null does not prove the null is true. It only means we do not have enough evidence to reject it.</li>
+<li>A Type I error occurs when we reject the null hypothesis even though it is true.</li>
+<li>A Type II error occurs when we fail to reject the null hypothesis even though the alternative hypothesis is true.</li>
+<li>Statistical significance tells us whether a result crosses a threshold for rejecting the null. Practical significance asks whether the effect matters in context.</li>
+</ol>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1323,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./07.3-step-3-perform-the-test.html" class="pagination-link" aria-label="7.3 Step 3: Perform the Test">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">7.3 Step 3: Perform the Test</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./07.5-putting-it-all-together.html" class="pagination-link" aria-label="7.5 Putting It All Together">
+        <span class="nav-page-text">7.5 Putting It All Together</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

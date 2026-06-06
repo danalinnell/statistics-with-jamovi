@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>2.4 Understanding Distributions and Variability – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./02.5-research-design-terms-youll-see-again.html" rel="next">
+<link href="./02.3-descriptive-vs-inferential-statistics.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02.0-statistics-foundations.html">2. Statistics Foundations</a></li><li class="breadcrumb-item"><a href="./02.4-understanding-distributions-variability.html">2.4 Understanding Distributions and Variability</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -140,11 +139,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./02.0-statistics-foundations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2. Statistics Foundations</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02.1-describing-data.html" class="sidebar-item-text sidebar-link">
@@ -165,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.4-understanding-distributions-variability.html" class="sidebar-item-text sidebar-link">
+  <a href="./02.4-understanding-distributions-variability.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">2.4 Understanding Distributions and Variability</span></a>
   </div>
 </li>
@@ -748,60 +747,147 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#what-is-a-distribution" id="toc-what-is-a-distribution" class="nav-link active" data-scroll-target="#what-is-a-distribution">What Is a Distribution?</a></li>
+  <li><a href="#measures-of-variability" id="toc-measures-of-variability" class="nav-link" data-scroll-target="#measures-of-variability">Measures of Variability</a></li>
+  <li><a href="#shape-of-a-distribution" id="toc-shape-of-a-distribution" class="nav-link" data-scroll-target="#shape-of-a-distribution">Shape of a Distribution</a></li>
+  <li><a href="#skew" id="toc-skew" class="nav-link" data-scroll-target="#skew">Skew</a></li>
+  <li><a href="#kurtosis" id="toc-kurtosis" class="nav-link" data-scroll-target="#kurtosis">Kurtosis</a></li>
+  <li><a href="#outliers" id="toc-outliers" class="nav-link" data-scroll-target="#outliers">Outliers</a></li>
+  <li><a href="#why-visualizing-data-matters" id="toc-why-visualizing-data-matters" class="nav-link" data-scroll-target="#why-visualizing-data-matters">Why Visualizing Data Matters</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02.0-statistics-foundations.html">2. Statistics Foundations</a></li><li class="breadcrumb-item"><a href="./02.4-understanding-distributions-variability.html">2.4 Understanding Distributions and Variability</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">2.4 Understanding Distributions and Variability</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>Descriptive statistics are useful, but a single number never tells the whole story. A mean, median, or standard deviation becomes much more meaningful when we understand the shape and spread of the data behind it.</p>
+<p>That is where distributions and variability come in.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Learning Objectives">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this section, you should be able to:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li>explain what a distribution is</li>
+<li>describe why variability matters</li>
+<li>distinguish among range, interquartile range, variance, and standard deviation</li>
+<li>explain skew and why it affects interpretation</li>
+<li>recognize why outliers should be examined before analysis</li>
+<li>explain why visualizing data is an important part of statistical reasoning</li>
 </ul>
+</div>
+</div>
+<section id="what-is-a-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-distribution">What Is a Distribution?</h2>
+<p>A <button class="glossary" title="The pattern of values for a variable, including which values are common, which are rare, and how values are spread out.">distribution</button> shows how values are arranged for a variable. It tells us which values are common, which values are rare, and whether the values are clustered, spread out, symmetric, or lopsided.</p>
+<p>For example, imagine two classes both have an average exam score of 80. In one class, almost everyone scored between 78 and 82. In the other class, some students scored near 50 and others scored near 100. The mean is the same, but the distributions are very different.</p>
+<p>This is why we do not want to rely only on one summary statistic. We need to understand the pattern of values.</p>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
+<section id="measures-of-variability" class="level2">
+<h2 class="anchored" data-anchor-id="measures-of-variability">Measures of Variability</h2>
+<p>Variability describes how spread out the values are. There are several common ways to summarize variability.</p>
+<p>The range is the difference between the maximum and minimum value. If the minimum score is 17 and the maximum score is 49, the range is 32.</p>
+<p>The interquartile range, or IQR, describes the middle 50% of the data. It is the distance between the first quartile (Q1, the 25th percentile) and the third quartile (Q3, the 75th percentile). The IQR is often useful when data are skewed or include outliers because it focuses on the middle of the distribution.</p>
+<p>The variance is based on how far values are from the mean. More specifically, it is based on squared deviations from the mean. The standard deviation is the square root of the variance. In practice, students usually find the standard deviation easier to interpret because it is in the original units of the variable.</p>
+<p>I sometimes include equations in this book because formulas help some people understand what is happening behind the scenes. However, I rarely expect you to calculate statistics by hand. The more important goal is to understand what the statistic means and how to interpret it.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="shape-of-a-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="shape-of-a-distribution">Shape of a Distribution</h2>
+<p>The shape of a distribution tells us how the values are arranged.</p>
+<p>A <button class="glossary" title="A symmetric, bell-shaped distribution with values clustered around the center and fewer values farther from the center.">normal distribution</button> is symmetric, with values clustered around the center and fewer values farther away from the center. It is sometimes called a bell curve.</p>
+<p>Many statistical ideas are easier to explain using a normal distribution, but real data are not always perfectly normal. That is okay. The important thing is to learn how to recognize and think about the shape of your data.</p>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="skew" class="level2">
+<h2 class="anchored" data-anchor-id="skew">Skew</h2>
+<p><button class="glossary" title="Asymmetry in a distribution, where one tail is longer than the other.">skew</button> refers to asymmetry in a distribution. A distribution is skewed when one tail is longer than the other.</p>
+<ul>
+<li>In a positively skewed distribution, the long tail points toward higher values. Most values are on the lower end.</li>
+<li>In a negatively skewed distribution, the long tail points toward lower values. Most values are on the higher end.</li>
+</ul>
+<p>Skew matters because it can affect which measure of center is most useful. In a strongly skewed distribution, the mean can be pulled toward the long tail. The median may better represent a typical value.</p>
+</section>
+<section id="kurtosis" class="level2">
+<h2 class="anchored" data-anchor-id="kurtosis">Kurtosis</h2>
+<p><button class="glossary" title="A description of the tail behavior of a distribution relative to a normal distribution.">kurtosis</button> describes the weight of the tails of a distribution relative to a normal distribution. In everyday terms, it is related to how much the distribution has heavier or lighter tails than expected.</p>
+<p>There are some fancy terms related to kurtosis that you may hear, such as leptokurtic and platykurtic. Honestly, I do not hear researchers use those terms very often in applied work. For this book, the main point is that kurtosis can signal unusual tail behavior, including the possibility of more extreme values.</p>
+</section>
+<section id="outliers" class="level2">
+<h2 class="anchored" data-anchor-id="outliers">Outliers</h2>
+<p>An <button class="glossary" title="An unusually extreme value compared with the rest of the data.">outlier</button> is an unusually extreme value compared with the rest of the data.</p>
+<p>Outliers are not automatically errors. Sometimes they are real and meaningful. For example, if you are studying income, a very high income value may be accurate. If you are studying reaction time, an extremely slow response might mean the participant got distracted.</p>
+<p>But outliers are worth examining because they can affect means, standard deviations, graphs, assumptions, and statistical tests. When you find an outlier, the goal is not to delete it automatically. The goal is to understand it.</p>
+</section>
+<section id="why-visualizing-data-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-visualizing-data-matters">Why Visualizing Data Matters</h2>
+<p>Graphs help us see patterns that descriptive statistics can hide. Histograms, density plots, boxplots, and scatterplots can show us shape, spread, clusters, gaps, and outliers.</p>
+<p>You will learn more about data visualization later, but the habit starts here: <strong>always look at your data.</strong> Numbers are useful, but graphs often reveal what the numbers alone do not.</p>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>Distributions and variability will come back throughout the book. You will use them when you:</p>
+<ul>
+<li>describe continuous variables</li>
+<li>choose graphs</li>
+<li>check statistical assumptions</li>
+<li>interpret standard deviations and effect sizes</li>
+<li>decide whether results are meaningful in context</li>
+</ul>
+<p>In other words, this is not just background information. It is part of the logic you will use every time you analyze data.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Why can two datasets have the same mean but still look very different?</li>
+<li>What does skew tell us about a distribution?</li>
+<li>Why should outliers be examined rather than automatically deleted?</li>
+</ol>
+<details>
+<summary>
+Answers
+</summary>
+<ol type="1">
+<li>They may have different variability or different shapes. One dataset might be tightly clustered around the mean while another is widely spread out.</li>
+<li>Skew tells us that a distribution is asymmetrical, with one tail longer than the other.</li>
+<li>Outliers may be errors, but they may also be real and meaningful values. We should understand them before deciding what to do.</li>
+</ol>
+</details>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1293,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./02.3-descriptive-vs-inferential-statistics.html" class="pagination-link" aria-label="2.3 Descriptive vs. Inferential Statistics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2.3 Descriptive vs.&nbsp;Inferential Statistics</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02.5-research-design-terms-youll-see-again.html" class="pagination-link" aria-label="2.5 Research Design Terms You’ll See Again">
+        <span class="nav-page-text">2.5 Research Design Terms You’ll See Again</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

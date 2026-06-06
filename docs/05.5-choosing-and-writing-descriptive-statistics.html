@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>5.5 Choosing and Writing Descriptive Statistics – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./05.6-putting-it-all-together.html" rel="next">
+<link href="./05.4-describing-continuous-variables-across-groups.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05.0-describing-data-in-jamovi.html">5. Describing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./05.5-choosing-and-writing-descriptive-statistics.html">5.5 Choosing and Writing Descriptive Statistics</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +113,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -287,11 +285,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./05.0-describing-data-in-jamovi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5. Describing Data in jamovi</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05.1-checking-variable-setup-before-describing-data.html" class="sidebar-item-text sidebar-link">
@@ -318,7 +316,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05.5-choosing-and-writing-descriptive-statistics.html" class="sidebar-item-text sidebar-link">
+  <a href="./05.5-choosing-and-writing-descriptive-statistics.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">5.5 Choosing and Writing Descriptive Statistics</span></a>
   </div>
 </li>
@@ -748,60 +746,148 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#choosing-descriptive-statistics" id="toc-choosing-descriptive-statistics" class="nav-link active" data-scroll-target="#choosing-descriptive-statistics">Choosing Descriptive Statistics</a></li>
+  <li><a href="#writing-descriptive-statistics-in-text" id="toc-writing-descriptive-statistics-in-text" class="nav-link" data-scroll-target="#writing-descriptive-statistics-in-text">Writing Descriptive Statistics in Text</a></li>
+  <li><a href="#simple-writing-templates" id="toc-simple-writing-templates" class="nav-link" data-scroll-target="#simple-writing-templates">Simple Writing Templates</a></li>
+  <li><a href="#when-to-use-a-table" id="toc-when-to-use-a-table" class="nav-link" data-scroll-target="#when-to-use-a-table">When to Use a Table</a></li>
+  <li><a href="#apa-style-details" id="toc-apa-style-details" class="nav-link" data-scroll-target="#apa-style-details">APA-Style Details</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05.0-describing-data-in-jamovi.html">5. Describing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./05.5-choosing-and-writing-descriptive-statistics.html">5.5 Choosing and Writing Descriptive Statistics</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">5.5 Choosing and Writing Descriptive Statistics</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>Descriptive statistics are not just numbers you produce. They are information you communicate to help readers understand your data.</p>
+<p>The key is to choose descriptive statistics that match the variable and the purpose.</p>
+<section id="choosing-descriptive-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="choosing-descriptive-statistics">Choosing Descriptive Statistics</h2>
+<p>Here is a general guide:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable type</th>
+<th>Useful descriptives</th>
+<th>Usually avoid</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nominal</td>
+<td>counts, percentages, mode</td>
+<td>mean, standard deviation</td>
+</tr>
+<tr class="even">
+<td>Ordinal</td>
+<td>counts, percentages, median, range/IQR when appropriate</td>
+<td>assuming equal spacing without thought</td>
+</tr>
+<tr class="odd">
+<td>Continuous, roughly symmetric</td>
+<td>mean, standard deviation, minimum, maximum</td>
+<td>reporting every statistic available</td>
+</tr>
+<tr class="even">
+<td>Continuous, skewed or with outliers</td>
+<td>median, IQR, range, sometimes mean/SD with caution</td>
+<td>relying only on the mean</td>
+</tr>
+<tr class="odd">
+<td>Continuous by group</td>
+<td>group-specific mean/SD or median/IQR, group n</td>
+<td>claiming significance without a test</td>
+</tr>
+</tbody>
+</table>
+<p>These are guidelines, not laws. Your research question and audience matter.</p>
+</section>
+<section id="writing-descriptive-statistics-in-text" class="level2">
+<h2 class="anchored" data-anchor-id="writing-descriptive-statistics-in-text">Writing Descriptive Statistics in Text</h2>
+<p>For a small number of variables, you can often report descriptive statistics in a sentence or paragraph.</p>
+<p>For example:</p>
+<blockquote class="blockquote">
+<p>Participants reported moderate boredom scores (<em>M</em> = 2.72, <em>SD</em> = 0.99) and somewhat higher mind wandering scores (<em>M</em> = 3.45, <em>SD</em> = 0.99).</p>
+</blockquote>
+<p>This sentence gives the reader the central tendency and spread for both variables without overwhelming them.</p>
+</section>
+<section id="simple-writing-templates" class="level2">
+<h2 class="anchored" data-anchor-id="simple-writing-templates">Simple Writing Templates</h2>
+<p>For a continuous variable:</p>
+<blockquote class="blockquote">
+<p>Scores on [variable] ranged from [minimum] to [maximum], with a mean of [M] and standard deviation of [SD].</p>
+</blockquote>
+<p>For a categorical variable:</p>
+<blockquote class="blockquote">
+<p>Most participants were [category] ([n], [%]), followed by [category] ([n], [%]).</p>
+</blockquote>
+<p>For a continuous variable split by group:</p>
+<blockquote class="blockquote">
+<p>Participants in [group 1] had a mean [variable] score of [M] (SD = [SD]), whereas participants in [group 2] had a mean score of [M] (SD = [SD]).</p>
+</blockquote>
+<p>These are templates, not scripts. Your final write-up should always make sense for the variable, research question, and audience.</p>
+</section>
+<section id="when-to-use-a-table" class="level2">
+<h2 class="anchored" data-anchor-id="when-to-use-a-table">When to Use a Table</h2>
+<p>If you have many variables or many categories, a table may be clearer than a paragraph.</p>
+<p>The old rule I use is this: if the paragraph becomes a wall of numbers, it probably wants to be a table.</p>
+<p>Here is an example of descriptive statistics reported in a paragraph from applied research:</p>
+<p><img src="images/02-stats-foundations/example1.png" class="img-fluid" width="602"></p>
+<p>And here is an example where a table is more efficient because there are many variables to summarize:</p>
+<p><img src="images/02-stats-foundations/example2.png" class="img-fluid" width="400"></p>
+</section>
+<section id="apa-style-details" class="level2">
+<h2 class="anchored" data-anchor-id="apa-style-details">APA-Style Details</h2>
+<p>When writing descriptive statistics in APA style:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li>italicize statistical symbols such as <em>M</em>, <em>SD</em>, and <em>n</em> when appropriate</li>
+<li>round consistently, often to two decimal places for means and standard deviations</li>
+<li>define variables clearly enough that the reader knows what was measured</li>
+<li>do not report unnecessary statistics just because jamovi produced them</li>
 </ul>
-</section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
-</section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
-</section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A paragraph includes means, medians, modes, standard deviations, variances, minimums, maximums, skewness, kurtosis, and frequency tables for two variables. What is the likely problem?</p>
+<details>
+<summary>
+Answer
+</summary>
+<p>The writer is probably reporting too much output without deciding what the reader actually needs. Descriptive statistics should be selected based on the variable type and purpose.</p>
+</details>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1293,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./05.4-describing-continuous-variables-across-groups.html" class="pagination-link" aria-label="5.4 Describing Continuous Variables Across Groups">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">5.4 Describing Continuous Variables Across Groups</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05.6-putting-it-all-together.html" class="pagination-link" aria-label="5.6 Putting It All Together">
+        <span class="nav-page-text">5.6 Putting It All Together</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

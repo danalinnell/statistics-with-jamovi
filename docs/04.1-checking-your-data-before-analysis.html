@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>4.1 Checking Your Data Before Analysis – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./04.2-fixing-incorrect-variable-types.html" rel="next">
+<link href="./04.0-cleaning-and-preparing-data-in-jamovi.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04.0-cleaning-and-preparing-data-in-jamovi.html">4. Cleaning and Preparing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./04.1-checking-your-data-before-analysis.html">4.1 Checking Your Data Before Analysis</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -234,14 +233,14 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./04.0-cleaning-and-preparing-data-in-jamovi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">4. Cleaning and Preparing Data in jamovi</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.1-checking-your-data-before-analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="./04.1-checking-your-data-before-analysis.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">4.1 Checking Your Data Before Analysis</span></a>
   </div>
 </li>
@@ -748,60 +747,117 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#check-variable-names" id="toc-check-variable-names" class="nav-link active" data-scroll-target="#check-variable-names">Check Variable Names</a></li>
+  <li><a href="#check-data-types" id="toc-check-data-types" class="nav-link" data-scroll-target="#check-data-types">Check Data Types</a></li>
+  <li><a href="#check-measure-types" id="toc-check-measure-types" class="nav-link" data-scroll-target="#check-measure-types">Check Measure Types</a></li>
+  <li><a href="#check-missing-values" id="toc-check-missing-values" class="nav-link" data-scroll-target="#check-missing-values">Check Missing Values</a></li>
+  <li><a href="#save-before-you-go-further" id="toc-save-before-you-go-further" class="nav-link" data-scroll-target="#save-before-you-go-further">Save Before You Go Further</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04.0-cleaning-and-preparing-data-in-jamovi.html">4. Cleaning and Preparing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./04.1-checking-your-data-before-analysis.html">4.1 Checking Your Data Before Analysis</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">4.1 Checking Your Data Before Analysis</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>The first step in data analysis is not running a statistical test. The first step is making sure your dataset is set up correctly.</p>
+<p>This is true even when someone else gives you a dataset. It is tempting to assume that the file is ready to use, especially if it opens without an error. But opening a file successfully does not mean that jamovi understands every variable correctly.</p>
+<p>Before analyzing a dataset, I recommend checking at least four things:</p>
+<ol type="1">
+<li>Are the variable names meaningful?</li>
+<li>Are the <button class="glossary" title="The kind of values stored in a variable, such as integer, decimal, or text.">data types</button> correct?</li>
+<li>Are the <button class="glossary" title="How jamovi understands a variable for analysis purposes, such as nominal, ordinal, continuous, or ID.">measure types</button> correct?</li>
+<li>Are missing values coded correctly?</li>
+</ol>
+<section id="check-variable-names" class="level2">
+<h2 class="anchored" data-anchor-id="check-variable-names">Check Variable Names</h2>
+<p>Variable names should help you understand what each column represents. A variable named <code>Q35</code> might technically work, but it is not very helpful when you are trying to remember what the item measured. A name like <code>BDI_Total</code>, <code>Gender</code>, or <code>Study_Hours</code> gives you more information.</p>
+<p>That said, variable names should still be short enough to use easily. In jamovi, I usually use short variable names and then add a longer variable description when I need more context.</p>
+</section>
+<section id="check-data-types" class="level2">
+<h2 class="anchored" data-anchor-id="check-data-types">Check Data Types</h2>
+<p>A <button class="glossary" title="The kind of values stored in a variable, such as integer, decimal, or text.">data type</button> tells jamovi what kind of values are stored in the variable. Common data types include:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li><button class="glossary" title="A whole number with no decimal places.">integer</button>: whole numbers, such as 0, 1, 2, 3</li>
+<li><button class="glossary" title="A numeric value that can include decimal places.">decimal</button>: numbers that can include decimals, such as 2.75 or 4.63</li>
+<li><button class="glossary" title="A data type containing words, labels, or other nonnumeric values.">text</button>: words, labels, or other nonnumeric values</li>
 </ul>
+<p>Data type is about how the data are stored. It is not exactly the same as measurement level. For example, a Likert-type item might be stored as text if the response options are written as “Strongly disagree,” “Disagree,” and so on. If you want to compute a scale score, you may need to transform those text responses into numeric values first.</p>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
+<section id="check-measure-types" class="level2">
+<h2 class="anchored" data-anchor-id="check-measure-types">Check Measure Types</h2>
+<p>A <button class="glossary" title="How jamovi understands a variable for analysis purposes, such as nominal, ordinal, continuous, or ID.">measure type</button> tells jamovi how the variable should be treated analytically. In jamovi, variables are usually set as one of the following:</p>
+<ul>
+<li><p><button class="glossary" title="A categorical variable with categories that do not have a meaningful order.">Nominal</button></p></li>
+<li><p><button class="glossary" title="A categorical variable with categories that have a meaningful order, but not necessarily equal spacing between categories.">Ordinal</button></p></li>
+<li><p><button class="glossary" title="A variable whose values represent quantities or amounts. Continuous variables are often summarized with means and standard deviations.">Continuous</button></p></li>
+<li><p><button class="glossary" title="A variable used to identify cases or observations, such as participant ID, rather than a variable usually analyzed statistically.">ID</button></p></li>
+</ul>
+<p>This matters because the measure type affects which analyses jamovi will allow you to run and which variables can go in which boxes.</p>
+<p>For example, a participant ID number may look numeric, but it is not a continuous variable. Participant 200 is not “twice as much participant” as participant 100. That variable should usually be set as an ID variable.</p>
 </section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
+<section id="check-missing-values" class="level2">
+<h2 class="anchored" data-anchor-id="check-missing-values">Check Missing Values</h2>
+<p>Sometimes missing data are blank. Other times, missing data are coded with a specific number such as <code>99</code>, <code>999</code>, or <code>-9</code>. If those codes are not identified as missing, jamovi may treat them as real values.</p>
+<p>That can create serious problems. Imagine a depression scale ranging from 0 to 3 where a missing response is coded as 99. If jamovi treats 99 as a real score, the descriptive statistics will be wildly wrong.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A dataset has a variable called <code>Participant_ID</code> with values 101, 102, 103, and so on. What measure type should this variable use in jamovi?</p>
+<details>
+<summary>
+Answer
+</summary>
+<p>It should usually be set as an ID variable. Even though the values are numbers, they are labels used to identify participants, not quantities that should be analyzed with means or standard deviations.</p>
+</details>
+</div>
+</div>
 </section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="save-before-you-go-further" class="level2">
+<h2 class="anchored" data-anchor-id="save-before-you-go-further">Save Before You Go Further</h2>
+<p>Once you have opened the dataset and checked the setup, save the file as a jamovi file (<code>.omv</code>). This saves the data, analyses, output, and settings together. If you later transform variables, compute scale scores, or run descriptives, those steps will stay with the file.</p>
+<p>I recommend saving after every major step. It is much easier to recover from a mistake if you have saved your work along the way.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Keep Your Original Data">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Keep Your Original Data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Whenever possible, keep your original variables and create new cleaned, transformed, or computed variables.</p>
+<p>For example, if you need to recode a text variable into numbers, do not simply replace the original text variable. Create a new variable with a clear name. That way, you can always go back and check what you did.</p>
+<p>A good rule: your cleaned dataset should make your work easier to understand, not harder to retrace.</p>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1263,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./04.0-cleaning-and-preparing-data-in-jamovi.html" class="pagination-link" aria-label="4. Cleaning and Preparing Data in jamovi">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">4. Cleaning and Preparing Data in jamovi</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./04.2-fixing-incorrect-variable-types.html" class="pagination-link" aria-label="4.2 Fixing Incorrect Variable Types">
+        <span class="nav-page-text">4.2 Fixing Incorrect Variable Types</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

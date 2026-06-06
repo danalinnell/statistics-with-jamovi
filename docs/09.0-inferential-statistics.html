@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dana Linnell">
-<meta name="dcterms.date" content="2026-06-06">
-<meta name="description" content="An open textbook for learning statistics, interpreting research, and analyzing data with jamovi.">
 
-<title>Stats with jamovi</title>
+<title>9. Inferential Statistics – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01.0-intro.html" rel="next">
+<link href="./09.1-choosing-the-correct-test.html" rel="next">
+<link href="./08.5-putting-it-all-together.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-33087a4a86506d221ab5f8b7de35c90c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">1. Statistics With jamovi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09.0-inferential-statistics.html">9. Inferential Statistics</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Statistics With jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.0-intro.html" class="sidebar-item-text sidebar-link">
@@ -467,13 +466,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./09.0-inferential-statistics.html" class="sidebar-item-text sidebar-link">
+            <a href="./09.0-inferential-statistics.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">9. Inferential Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09.1-choosing-the-correct-test.html" class="sidebar-item-text sidebar-link">
@@ -748,60 +747,93 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#statistics-with-jamovi" id="toc-statistics-with-jamovi" class="nav-link active" data-scroll-target="#statistics-with-jamovi">1. Statistics With jamovi</a>
-  <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
-  <li><a href="#a-note-about-learning-statistics" id="toc-a-note-about-learning-statistics" class="nav-link" data-scroll-target="#a-note-about-learning-statistics">A Note About Learning Statistics</a></li>
-  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book">About This Book</a></li>
-  </ul></li>
+  <li><a href="#types-of-inferential-statistics" id="toc-types-of-inferential-statistics" class="nav-link active" data-scroll-target="#types-of-inferential-statistics">Types of inferential statistics</a></li>
+  <li><a href="#how-this-fits-with-the-4-step-process" id="toc-how-this-fits-with-the-4-step-process" class="nav-link" data-scroll-target="#how-this-fits-with-the-4-step-process">How this fits with the 4-step process</a></li>
+  <li><a href="#what-this-chapter-will-cover" id="toc-what-this-chapter-will-cover" class="nav-link" data-scroll-target="#what-this-chapter-will-cover">What this chapter will cover</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stats with jamovi</h1></header>
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">9. Inferential Statistics</h1>
+</div>
 
-<p class="author">Dana Linnell</p>
 
-<p class="date">2026-06-06</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
 </header>
 
 
-<section id="statistics-with-jamovi" class="level1 unnumbered">
-<h1 class="unnumbered">1. Statistics With jamovi</h1>
-<p><img src="images/Cover.jpg" class="img-fluid"></p>
-<p>Welcome! This book is designed to help you learn statistics in a way that is practical, approachable, and connected to real research and decision making.</p>
-<p>I wrote this book because I want statistics to feel more usable and less mysterious. You do not need to become a mathematician to use statistics well. You do need to learn how to ask good questions, choose appropriate analyses, interpret results carefully, and explain what those results mean.</p>
-<section id="what-youll-learn" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
-<p>By using this book, you will learn how to:</p>
+<p>In <a href="./07.0-hypothesis-testing.html">Chapter 7</a>, you learned the basic logic of <button class="glossary" title="A statistical decision-making framework that evaluates how surprising the data are assuming the null hypothesis is true.">null hypothesis significance testing</button>. In <a href="./08.0-bean.html">Chapter 8</a>, you learned why beta/power, <button class="glossary" title="A statistic that describes the size or strength of an effect, difference, or relationship.">effect size</button>, <button class="glossary" title="The threshold researchers set for deciding whether a result counts as statistically significant, often .05.">alpha level</button>, and <button class="glossary" title="The number of observations or participants in a study.">sample size</button> all matter.</p>
+<p>Now we need to answer two very practical questions:</p>
+<ol type="1">
+<li>Which inferential statistic should I use?</li>
+<li>Do the data meet the assumptions for that statistic?</li>
+</ol>
+<p>That is the purpose of this chapter. This chapter is less about memorizing a list of tests and more about learning how to make a decision. When you are handed a dataset, you need to be able to slow down, identify the variables, think about the design, check the assumptions, and then choose the statistical test that fits the research question.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="For Dana's Students">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>For Dana’s Students
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In my courses, you will probably use this chapter in two different ways. When we first discuss BEAN and power, you will focus more on the assumption-checking material. Later, when we move into inferential statistics, you will return to this chapter to practice choosing the correct statistical test.</p>
+<p>That is intentional. Choosing a test and checking assumptions are connected, but they are different skills. It is normal if this chapter feels like one you return to more than once.</p>
+</div>
+</div>
+<section id="types-of-inferential-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-inferential-statistics">Types of inferential statistics</h2>
+<p>There are many inferential statistical tests, but a helpful starting distinction is between <button class="glossary" title="Statistical tests that make assumptions about the data, such as assumptions about normality, variance, or the scale of the dependent variable.">parametric statistics</button> and <button class="glossary" title="Statistical tests that generally make fewer assumptions about the shape of the distribution than parametric tests.">non-parametric statistics</button>.</p>
+<p><strong>Parametric statistics</strong> make assumptions about the data. For example, many parametric tests assume the dependent variable is continuous, observations are independent, the data are reasonably normal, and variances are similar across groups.</p>
+<p><strong>Non-parametric statistics</strong> generally make fewer assumptions about the shape of the distribution. They are not assumption-free, but they are often useful when parametric assumptions are not reasonable.</p>
+<p>Here is the important thing: non-parametric tests are not the “bad” tests or the “backup” tests in a shameful way. They are tools. Sometimes the parametric tool is appropriate. Sometimes the non-parametric tool is more appropriate. Our job is to understand the data well enough to make a defensible choice.</p>
+</section>
+<section id="how-this-fits-with-the-4-step-process" class="level2">
+<h2 class="anchored" data-anchor-id="how-this-fits-with-the-4-step-process">How this fits with the 4-step process</h2>
+<p>This chapter connects directly to the 4-step hypothesis-testing framework from <a href="./07.0-hypothesis-testing.html">Chapter 7</a>:</p>
+<ol type="1">
+<li><a href="./07.1-step-1-look-at-the-data.html">Look at the data</a>.</li>
+<li><a href="./07.2-step-2-check-assumptions.html">Check assumptions</a>.</li>
+<li><a href="./07.3-step-3-perform-the-test.html">Perform the test</a>.</li>
+<li><a href="./07.4-step-4-interpret-the-results.html">Interpret the results</a>.</li>
+</ol>
+<p>Choosing the correct test mostly depends on Step 1. You need to know the research question, the variables, and the study design. Checking assumptions is Step 2. If the assumptions are not reasonable, that affects Step 3 because you may need to choose a different version of the test or a different test altogether.</p>
+</section>
+<section id="what-this-chapter-will-cover" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-chapter-will-cover">What this chapter will cover</h2>
+<p>By the end of this chapter, you should be able to:</p>
 <ul>
-<li>understand and interpret statistical results</li>
-<li>analyze data using <em>jamovi</em></li>
-<li>connect statistics to research questions and real-world decisions</li>
-<li>choose statistical tools that fit your variables and research design</li>
-<li>communicate findings clearly using APA-style reporting</li>
+<li>identify the dependent variable and independent variable(s) in a research question;</li>
+<li>determine whether variables are categorical or continuous;</li>
+<li>distinguish between between-subjects and within-subjects designs;</li>
+<li>use a decision process to choose an appropriate inferential statistic;</li>
+<li>explain why assumptions matter;</li>
+<li>check basic parametric assumptions in jamovi;</li>
+<li>describe what to do when assumptions are violated;</li>
+<li>explain why assumption decisions should be reported clearly in results.</li>
 </ul>
 </section>
-<section id="get-started" class="level2">
-<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
-<p>If you are new to this book, start with <a href="./01.0-intro.html">How to Use This Book</a>. That chapter explains the different ways you can move through the book, including how to use it for a course, how to use it as a reference, and how to find help when you get stuck.</p>
-<p>This book uses <em>jamovi</em>, a free and user-friendly statistical software program. You can download <em>jamovi</em> from <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a>. The early chapters will help you install the software, open data, check your variables, and begin running analyses.</p>
-</section>
-<section id="a-note-about-learning-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-about-learning-statistics">A Note About Learning Statistics</h2>
-<p>Statistics can feel overwhelming at first, and that is completely normal. Many students come into statistics unsure, anxious, or convinced that they are “not a stats person.” If that sounds like you, you are in good company.</p>
-<p>This book is designed to help you build confidence step by step. Focus less on memorizing isolated rules and more on understanding what the results mean. When you can explain what a statistic is helping you decide, you are doing the real work of statistics.</p>
-</section>
-<section id="about-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-book">About This Book</h2>
-<p>This is an open educational resource (OER), which means it is free to use, share, and adapt with attribution. It is also a living resource. I update it based on student questions, instructor feedback, changes to <em>jamovi</em>, and places where the explanations can be clearer.</p>
-<p>You can learn more about the book, licensing, attribution, errors, suggestions, and the author in <a href="./01.1-about-this-book.html">About This Book</a>.</p>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking ahead</h2>
+<p>This chapter prepares you for the test-specific chapters that come later. In those chapters, you will learn exactly how to run chi-square tests, t-tests, ANOVAs, correlations, and regressions in jamovi. Before you can run those tests well, though, you need to know which test fits the data and whether the assumptions are reasonable.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,10 +1239,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./08.5-putting-it-all-together.html" class="pagination-link" aria-label="8.5 Putting It All Together">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8.5 Putting It All Together</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.0-intro.html" class="pagination-link" aria-label="1.1 How to Use This Book">
-        <span class="nav-page-text">1.1 How to Use This Book</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./09.1-choosing-the-correct-test.html" class="pagination-link" aria-label="9.1 Choosing the Correct Test">
+        <span class="nav-page-text">9.1 Choosing the Correct Test</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
