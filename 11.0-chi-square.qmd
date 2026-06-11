@@ -6,18 +6,27 @@ library(viridis)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
 
-The chi-square (pronounced "kai") is a categorical data analysis such that you are only analyzing categorical data. There are two basic types of chi-square tests we'll be covering:
+Chi-square (pronounced "kai-square") tests are used to analyze categorical data. The hypothesis-testing process remains the same, but chi-square tests examine frequencies or counts rather than means.
 
-1.  $\chi^2$ **goodness-of-fit**: used with one variable to find if the observed frequencies match the expected frequencies
+We will cover the following chi-square tests:
 
-2.  $\chi^2$ **test of independence (or association)**: used with two variables to find if the observed frequencies match the expected frequencies. In other words, are the two nominal variables independent or associated with one another?
+| Test | Variables and Design | Research Question |
+|------------------------|------------------------|------------------------|
+| **Chi-square goodness-of-fit** | One categorical variable | Do the observed proportions match specified expected proportions? |
+| **Chi-square test of independence** | Two categorical variables with independent observations | Are the two variables associated? |
+| **Fisher’s exact test** | Two categorical variables in a 2 × 2 table with small expected frequencies | Are the two variables associated when the chi-square approximation is inappropriate? |
+| **McNemar’s test** | Two paired binary variables | Does a binary response change across two related measurements? |
 
-    1.  **Fisher's exact test**: This is an alternative to the $\chi^2$ test of independence that we use when our frequencies are small.
+The key distinctions are the number of variables, whether observations are independent or paired, and whether the expected frequencies are sufficiently large.
 
-    2.  **McNemar's test**: This is an alternative to the $\chi^2$ test of independence that we have a 2x2 repeated-measures design. For example, perhaps we examine pass/fail rates before and after a training.
+Because these tests analyze categorical frequencies, they do not assume that a continuous variable follows a normal distribution. They do, however, have assumptions about how the observations were collected and, for some tests, how large the expected frequencies are. These tests are generally classified as *nonparametric statistics*.
 
-Because these tests are all with categorical data, there are no assumptions about the distribution of the data. For that reason, these are all *non-parametric statistics*.
+Each test in this chapter follows the same four-step hypothesis-testing process introduced in Chapter 7: look at the data, check assumptions, perform the test, and interpret the results. What changes from test to test is the type of categorical data being analyzed, the assumptions that must be checked, and the specific output reported.
 
-## Entering Data in jamovi {.unlisted .unnumbered}
+## Data Setup for Chi-Square Tests {.unlisted .unnumbered}
 
-One thing to note that is unique about the chi-square is that you can either setup your data in the raw format or you can use the frequency tables as your data. If you use the frequency table, then you can move the counts/frequency variable into the Counts box in either the goodness-of-fit or test of independence analyses.
+Chi-square data can be entered in two formats.
+
+In the raw-data format, each row represents one participant or observation.
+
+In the frequency-table format, each row represents a category or combination of categories, with a separate variable containing the number of observations. When using frequency-table data, move the frequency variable into the **Counts** box in the goodness-of-fit or test-of-independence analysis. The Small S Scientist has [an example of running a chi-square with a frequency table](https://small-s.science/2021/03/chi-square-test-for-independence-with-summary-data-in-jamovi/).
