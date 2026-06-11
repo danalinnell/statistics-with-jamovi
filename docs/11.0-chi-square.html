@@ -73,35 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -380,20 +351,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.3-visualizing-continuous-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.3 Visualizing Continuous Variables</span></a>
+  <a href="./06.3-visualizing-one-or-more-categorical-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Visualizing One or More Categorical Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.4-visualizing-categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Visualizing Categorical Variables</span></a>
+  <a href="./06.4-visualizing-one-or-more-continuous-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.4 Visualizing One or More Continuous Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.5-visualizing-continuous-variables-across-groups.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.5 Visualizing Continuous Variables Across Groups</span></a>
+  <a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.5 Visualizing a Continuous Variable Across a Categorical Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -795,19 +766,52 @@ window.Quarto = {
 </header>
 
 
-<p>The chi-square (pronounced “kai”) is a categorical data analysis such that you are only analyzing categorical data. There are two basic types of chi-square tests we’ll be covering:</p>
-<ol type="1">
-<li><p><span class="math inline">\(\chi^2\)</span> <strong>goodness-of-fit</strong>: used with one variable to find if the observed frequencies match the expected frequencies</p></li>
-<li><p><span class="math inline">\(\chi^2\)</span> <strong>test of independence (or association)</strong>: used with two variables to find if the observed frequencies match the expected frequencies. In other words, are the two nominal variables independent or associated with one another?</p>
-<ol type="1">
-<li><p><strong>Fisher’s exact test</strong>: This is an alternative to the <span class="math inline">\(\chi^2\)</span> test of independence that we use when our frequencies are small.</p></li>
-<li><p><strong>McNemar’s test</strong>: This is an alternative to the <span class="math inline">\(\chi^2\)</span> test of independence that we have a 2x2 repeated-measures design. For example, perhaps we examine pass/fail rates before and after a training.</p></li>
-</ol></li>
-</ol>
-<p>Because these tests are all with categorical data, there are no assumptions about the distribution of the data. For that reason, these are all <em>non-parametric statistics</em>.</p>
-<section id="entering-data-in-jamovi" class="level2 unlisted unnumbered">
-<h2 class="unlisted unnumbered anchored" data-anchor-id="entering-data-in-jamovi">Entering Data in jamovi</h2>
-<p>One thing to note that is unique about the chi-square is that you can either setup your data in the raw format or you can use the frequency tables as your data. If you use the frequency table, then you can move the counts/frequency variable into the Counts box in either the goodness-of-fit or test of independence analyses.</p>
+<p>Chi-square (pronounced “kai-square”) tests are used to analyze categorical data. The hypothesis-testing process remains the same, but chi-square tests examine frequencies or counts rather than means.</p>
+<p>We will cover the following chi-square tests:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>Variables and Design</th>
+<th>Research Question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Chi-square goodness-of-fit</strong></td>
+<td>One categorical variable</td>
+<td>Do the observed proportions match specified expected proportions?</td>
+</tr>
+<tr class="even">
+<td><strong>Chi-square test of independence</strong></td>
+<td>Two categorical variables with independent observations</td>
+<td>Are the two variables associated?</td>
+</tr>
+<tr class="odd">
+<td><strong>Fisher’s exact test</strong></td>
+<td>Two categorical variables in a 2 × 2 table with small expected frequencies</td>
+<td>Are the two variables associated when the chi-square approximation is inappropriate?</td>
+</tr>
+<tr class="even">
+<td><strong>McNemar’s test</strong></td>
+<td>Two paired binary variables</td>
+<td>Does a binary response change across two related measurements?</td>
+</tr>
+</tbody>
+</table>
+<p>The key distinctions are the number of variables, whether observations are independent or paired, and whether the expected frequencies are sufficiently large.</p>
+<p>Because these tests analyze categorical frequencies, they do not assume that a continuous variable follows a normal distribution. They do, however, have assumptions about how the observations were collected and, for some tests, how large the expected frequencies are. These tests are generally classified as <em>nonparametric statistics</em>.</p>
+<p>Each test in this chapter follows the same four-step hypothesis-testing process introduced in Chapter 7: look at the data, check assumptions, perform the test, and interpret the results. What changes from test to test is the type of categorical data being analyzed, the assumptions that must be checked, and the specific output reported.</p>
+<section id="data-setup-for-chi-square-tests" class="level2 unlisted unnumbered">
+<h2 class="unlisted unnumbered anchored" data-anchor-id="data-setup-for-chi-square-tests">Data Setup for Chi-Square Tests</h2>
+<p>Chi-square data can be entered in two formats.</p>
+<p>In the raw-data format, each row represents one participant or observation.</p>
+<p>In the frequency-table format, each row represents a category or combination of categories, with a separate variable containing the number of observations. When using frequency-table data, move the frequency variable into the <strong>Counts</strong> box in the goodness-of-fit or test-of-independence analysis. The Small S Scientist has <a href="https://small-s.science/2021/03/chi-square-test-for-independence-with-summary-data-in-jamovi/">an example of running a chi-square with a frequency table</a>.</p>
 
 
 </section>

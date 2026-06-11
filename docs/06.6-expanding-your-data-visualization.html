@@ -34,7 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./06.7-putting-it-all-together.html" rel="next">
-<link href="./06.5-visualizing-continuous-variables-across-groups.html" rel="prev">
+<link href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -351,20 +351,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.3-visualizing-continuous-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.3 Visualizing Continuous Variables</span></a>
+  <a href="./06.3-visualizing-one-or-more-categorical-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Visualizing One or More Categorical Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.4-visualizing-categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Visualizing Categorical Variables</span></a>
+  <a href="./06.4-visualizing-one-or-more-continuous-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.4 Visualizing One or More Continuous Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.5-visualizing-continuous-variables-across-groups.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.5 Visualizing Continuous Variables Across Groups</span></a>
+  <a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.5 Visualizing a Continuous Variable Across a Categorical Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -746,7 +746,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#keep-building-your-visualization-judgment" id="toc-keep-building-your-visualization-judgment" class="nav-link active" data-scroll-target="#keep-building-your-visualization-judgment">Keep Building Your Visualization Judgment</a></li>
+  <li><a href="#make-the-message-clear" id="toc-make-the-message-clear" class="nav-link active" data-scroll-target="#make-the-message-clear">Make the Message Clear</a></li>
+  <li><a href="#avoid-misleading-graphs" id="toc-avoid-misleading-graphs" class="nav-link" data-scroll-target="#avoid-misleading-graphs">Avoid Misleading Graphs</a></li>
+  <li><a href="#going-beyond-jamovi" id="toc-going-beyond-jamovi" class="nav-link" data-scroll-target="#going-beyond-jamovi">Going Beyond jamovi</a></li>
   </ul>
 </nav>
     </div>
@@ -772,30 +774,68 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>jamovi is useful for quick and clear exploratory graphs. For many assignments and early analyses, jamovi graphs are exactly what you need.</p>
-<p>As you continue working with data, you may eventually want more control over design, labels, colors, or layout. Many researchers create final publication or presentation figures using other tools, such as Excel, R, or specialized visualization software.</p>
-<p>Here is an example of a visualization created in Excel:</p>
-<p><img src="images/02-stats-foundations/example3.png" class="img-fluid"></p>
-<p>Here is an example of a visualization created in R:</p>
-<p><img src="images/02-stats-foundations/example4.png" class="img-fluid"></p>
-<p>The goal is not to learn every possible visualization tool right away. The goal is to understand what makes a graph useful:</p>
+<p>The Plots tab in jamovi provides enough flexibility for many course assignments and common research questions. However, creating an effective visualization requires more than selecting the correct plot type.</p>
+<section id="make-the-message-clear" class="level2">
+<h2 class="anchored" data-anchor-id="make-the-message-clear">Make the Message Clear</h2>
+<p>A graph should be understandable without requiring the reader to inspect your dataset or analysis setup.</p>
+<p>Before using a graph in an assignment or report, check that:</p>
 <ul>
-<li>it matches the data</li>
-<li>it supports the research question</li>
-<li>it is readable</li>
-<li>it does not mislead</li>
-<li>it helps the reader see something important</li>
+<li>The title communicates what is being shown.</li>
+<li>The axes describe the variables in reader-friendly language.</li>
+<li>Units are included when needed.</li>
+<li>The legend is clear and only included when necessary.</li>
+<li>Category labels are readable.</li>
+<li>Counts, percentages, means, and error bars are identified accurately.</li>
+<li>The graph emphasizes the comparison relevant to the research question.</li>
 </ul>
-<section id="keep-building-your-visualization-judgment" class="level2">
-<h2 class="anchored" data-anchor-id="keep-building-your-visualization-judgment">Keep Building Your Visualization Judgment</h2>
-<p>At this point, focus on choosing graphs that match your variables. Later, you can worry more about aesthetics, publication-quality figures, and advanced customization.</p>
-<p>For now, ask yourself:</p>
-<blockquote class="blockquote">
-<p>What do I want the graph to help me understand?</p>
-</blockquote>
-<p>That question will usually guide you toward a better visualization.</p>
+<p>Avoid using raw variable names such as <code>Q17_total</code> as titles or axis labels when a descriptive phrase such as <em>Job Satisfaction Score</em> would be clearer.</p>
+</section>
+<section id="avoid-misleading-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="avoid-misleading-graphs">Avoid Misleading Graphs</h2>
+<p>Even technically correct graphs can mislead readers. Watch for the following issues:</p>
+<ul>
+<li>Using counts to compare groups with very different sample sizes</li>
+<li>Truncating an axis in a way that exaggerates small differences</li>
+<li>Connecting unordered categories with a line</li>
+<li>Displaying group means without showing or describing variability</li>
+<li>Using too many categories, groups, labels, or decorative elements</li>
+<li>Treating possible outliers as errors without investigating them</li>
+<li>Choosing a plot because it looks impressive rather than because it answers the question</li>
+</ul>
+</section>
+<section id="going-beyond-jamovi" class="level2">
+<h2 class="anchored" data-anchor-id="going-beyond-jamovi">Going Beyond jamovi</h2>
+<p>Although jamovi can create many useful plots, other programs provide additional flexibility. For much of my work, I use Excel because it is relatively easy to create polished and highly customized figures. Here’s an example of a visualization made in Excel<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
+<p><img src="images/02-stats-foundations/example3.png" class="img-fluid"></p>
+<p>For more complicated figures, I use the <code>ggplot2</code> package in R. Here’s an example of a visualization made in R<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>:</p>
+<p><img src="images/02-stats-foundations/example4.png" class="img-fluid"></p>
+<p>The software may change, but the underlying goal remains the same: choose a visualization that helps the reader understand the data accurately and efficiently.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A graph of average scores across two groups begins its y-axis at 98 rather than 0. The group means are 99 and 100, but the bars appear dramatically different.</p>
+<p>What concern should you have when interpreting the graph?</p>
+<div class="collapse" title="Check Your Answer">
+<p>The truncated axis exaggerates the visual difference between the groups. A truncated axis is not always inappropriate, but the scale should be chosen and labeled carefully so that readers are not misled about the size of the difference.</p>
+</div>
+</div>
+</div>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>This comes from <a href="https://doi.org/10.1080/08993408.2020.1714313">Wanzer et al.&nbsp;(2020), <em>Promoting intentions to persist in computing: An examination of six years of the EarSketch program</em></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This comes from <a href="https://journals.sagepub.com/doi/10.1177/1098214020920710">Wanzer (2020), <em>What is evaluation? Perspectives of how evaluation differs (or not) from research</em></a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -1201,8 +1241,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06.5-visualizing-continuous-variables-across-groups.html" class="pagination-link" aria-label="6.5 Visualizing Continuous Variables Across Groups">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">6.5 Visualizing Continuous Variables Across Groups</span>
+      <a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" class="pagination-link" aria-label="6.5 Visualizing a Continuous Variable Across a Categorical Variable">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">6.5 Visualizing a Continuous Variable Across a Categorical Variable</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

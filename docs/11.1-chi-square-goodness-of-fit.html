@@ -381,20 +381,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.3-visualizing-continuous-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.3 Visualizing Continuous Variables</span></a>
+  <a href="./06.3-visualizing-one-or-more-categorical-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Visualizing One or More Categorical Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.4-visualizing-categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Visualizing Categorical Variables</span></a>
+  <a href="./06.4-visualizing-one-or-more-continuous-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.4 Visualizing One or More Continuous Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.5-visualizing-continuous-variables-across-groups.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.5 Visualizing Continuous Variables Across Groups</span></a>
+  <a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.5 Visualizing a Continuous Variable Across a Categorical Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -780,7 +780,6 @@ window.Quarto = {
   <li><a href="#step-2-check-assumptions" id="toc-step-2-check-assumptions" class="nav-link" data-scroll-target="#step-2-check-assumptions">Step 2: Check Assumptions</a></li>
   <li><a href="#step-3-perform-the-test" id="toc-step-3-perform-the-test" class="nav-link" data-scroll-target="#step-3-perform-the-test">Step 3: Perform the Test</a></li>
   <li><a href="#step-4-interpret-results" id="toc-step-4-interpret-results" class="nav-link" data-scroll-target="#step-4-interpret-results">Step 4: Interpret Results</a></li>
-  <li><a href="#additional-practice" id="toc-additional-practice" class="nav-link" data-scroll-target="#additional-practice">Additional Practice</a></li>
   </ul>
 </nav>
     </div>
@@ -806,20 +805,20 @@ window.Quarto = {
 </header>
 
 
-<p>The <span class="math inline">\(\chi^2\)</span> (chi-square) goodness-of-fit tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution.</p>
-<p>Our general hypotheses for the chi-square goodness-of-fit test is as follows:</p>
+<p>The <span class="math inline">\(\chi^2\)</span> (chi-square) goodness-of-fit test determines whether the observed frequencies for one categorical variable match a specified set of expected frequencies.</p>
+<p>The general hypotheses for a chi-square goodness-of-fit test are:</p>
 <ul>
-<li><p><span class="math inline">\(H_0\)</span>: The observed frequencies match the expected frequencies. In other words, the frequencies of the categories of the independent variable are what we would expect.</p></li>
-<li><p><span class="math inline">\(H_1\)</span>: At least one observed frequency doesn’t match the expected frequency. In other words, the frequencies of at least one category of the independent variable are not what we would expect.</p></li>
+<li><p><span class="math inline">\(H_0\)</span>: The population proportions match the expected proportions.</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: At least one population proportion differs from its expected proportion.</p></li>
 </ul>
 <div class="danger">
-<p>Note that these are not how you should report your hypotheses! You should specify your hypotheses in relation to the nature of your data. For example, if we have a deck of cards and want to see if people don’t choose cards randomly, the null hypothesis would be that there is a 25% probability of getting each hearts, clubs, spades, and diamonds.</p>
+<p>These general statements should be adapted to your specific research question. For example, when testing whether people choose card suits randomly, the null hypothesis would state that each of the four suits has a probability of .25.</p>
 </div>
-<p>There is no directionality for a chi-square test, so there is no such thing as a one-tailed or two-tailed hypothesis.</p>
+<p>The chi-square goodness-of-fit test is nondirectional: it tests whether the observed distribution differs from the expected distribution, not whether a particular category is higher or lower than expected.</p>
 <section id="step-1-look-at-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-look-at-the-data">Step 1: Look at the Data</h2>
-<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “randomness”. This dataset has participants pull two cards from a deck. For now, we’re just going to work with <code>choice_1</code>. We’re interested in finding out if participants pull cards randomly from the deck.</p>
-<p>Here’s a video walking through the chi-square goodness of fit test example for this chapter.</p>
+<p>Let’s use the <code>randomness</code> dataset from the <code>lsj-data</code> library. In this study, participants selected two cards from a deck. For this example, we will analyze <code>choice_1</code>, the suit of the first card selected, to determine whether participants selected the four suits with equal probability.</p>
+<p>The following <a href="https://www.youtube.com/watch?v=Pg1EA0eh2p0">video walks through the chi-square goodness-of-fit example</a> used in this section.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="vembedr">
@@ -829,99 +828,151 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<section id="data-set-up" class="level3">
-<h3 class="anchored" data-anchor-id="data-set-up">Data Set-Up</h3>
-<p>Our data set-up for a chi-square goodness-of-fit test is pretty simple, We just need a single column with the nominal categories of the independent variable that each participant is in.</p>
+<section id="data-setup" class="level3">
+<h3 class="anchored" data-anchor-id="data-setup">Data Setup</h3>
+<p>In the raw-data format, a chi-square goodness-of-fit test requires one categorical variable, with one row for each participant or observation. In this example, <code>choice_1</code> records the suit selected by each participant.</p>
 <p><img src="images/09-chi-square/chi-square_data.png" class="img-fluid"></p>
 </section>
-<section id="describe-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="describe-your-data">Describe Your Data</h3>
-<p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. With nominal variables like <code>choice_1</code>, we should request Frequency tables, not descriptive statistics like the mean and median. The mean for <code>choice_1</code> would be, quite frankly, meaningless. What’s the average card type? It can’t exist. So we do frequencies instead.</p>
-<p>Notice how jamovi is pretty smart here and knows not to give us the mean, median, minimum, and maximum. Check the box for Frequency tables to receive those. From our data, we see that most participants pulled a hearts card first (<em>n</em> = 64, 32%) followed by diamonds (<em>n</em> = 51, 26%), spades (<em>n</em> = 50, 25%), and finally clubs (<em>n</em> = 35, 18%).</p>
+<section id="describe-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="describe-the-data">Describe the Data</h3>
+<p>Once we confirm that the data are set up correctly in jamovi, we should examine the frequencies and percentages for each category. For a nominal variable such as <code>choice_1</code>, the mean and median are not meaningful. Instead, select <strong>Frequency tables</strong> to obtain the number and percentage of observations in each category.</p>
+<p>The largest percentage of participants selected hearts first (<em>n</em> = 64, 32%), followed by diamonds (<em>n</em> = 51, 25.5%), spades (<em>n</em> = 50, 25%), and clubs (<em>n</em> = 35, 17.5%).</p>
 <p><img src="images/09-chi-square/chi-square_descriptives.png" class="img-fluid"></p>
 <p>A bar plot can visualize these descriptive statistics nicely.</p>
 <p><img src="images/09-chi-square/chi-square_bar.png" class="img-fluid" width="300"></p>
 </section>
 <section id="specify-the-hypotheses" class="level3">
 <h3 class="anchored" data-anchor-id="specify-the-hypotheses">Specify the Hypotheses</h3>
-<p>We’re interested in finding out if participants pull cards randomly from a deck of cards. A typical deck of cards has 52 cards, 13 for each of the four suits (clubs, spades, hearts, diamonds). Because there are 4 suits, then 1/4 is 25% which is our expected frequency of pulling cards randomly from the deck.</p>
+<p>We want to determine whether participants selected the four card suits with equal probability. A standard deck contains 13 cards from each of four suits, so the expected proportion for each suit is .25 or 25%.</p>
 <ul>
-<li><p><span class="math inline">\(H_0\)</span>: Participants pull cards randomly from the deck. In other words, there is a 25% probability of pulling each hearts, clubs, spades, and diamonds.</p></li>
-<li><p><span class="math inline">\(H_1\)</span>: Participants pull cards not at random from the deck. In other words, participants have a different probability than 25% of pulling at least one of the types of cards.</p></li>
+<li><p><span class="math inline">\(H_0\)</span>: Participants select hearts, diamonds, spades, and clubs with equal probability (25%)</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: Participants do not select all four suits with equal probability; at least one suit has a probability different from 25%.</p></li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A university reports that its student population is 40% first-year students, 30% sophomores, 20% juniors, and 10% seniors. A researcher collects a sample and wants to determine whether the class-year distribution in the sample matches the university population.</p>
+<ol type="1">
+<li>Would equal expected proportions be appropriate?</li>
+<li>What expected proportions should be entered in jamovi?</li>
+<li>Write the null hypothesis.</li>
+</ol>
+<div class="collapse" title="Check Your Answer">
+<ol type="1">
+<li>No.&nbsp;The university population is not evenly distributed across the four class years.</li>
+<li>The expected proportions are .40, .30, .20, and .10.</li>
+<li>The null hypothesis is that the proportions of first-year students, sophomores, juniors, and seniors in the population represented by the sample match the university proportions of .40, .30, .20, and .10.</li>
+</ol>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="step-2-check-assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-check-assumptions">Step 2: Check Assumptions</h2>
-<p>The chi-square goodness-of-fit test has just one assumption: <strong>Expected frequencies are sufficiently large</strong>, which is usually greater than 5.</p>
-<p>You test for this assumption by checking the “Expected counts” box. You will then see rows of expected counts in your contingency table. Look at the “expected” numbers and check that they are all 5 or greater.</p>
+<p>The chi-square goodness-of-fit test assumes that observations are independent and that the expected frequencies are sufficiently large.</p>
+<ol type="1">
+<li><p><strong>Independent observations:</strong> Each participant or observation should contribute to only one category. This assumption must be evaluated from the study design.</p></li>
+<li><p><strong>Sufficiently large expected frequencies:</strong> As a general guideline for this course, each expected frequency should be at least 5. Select <strong>Expected counts</strong> in jamovi and verify that each expected count meets this guideline.</p></li>
+</ol>
+<p>In this example, each participant contributes one <code>choice_1</code> observation, and one participant’s selection does not determine another participant’s selection. The independence assumption is therefore met. The expected count for each suit is 50 (25% of 200 selections), so the expected-frequency assumption is also met.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A researcher asks 40 participants to select their favorite of five campus dining options. The expected proportion for each option is .20.</p>
+<ol type="1">
+<li>What is the expected frequency for each dining option?</li>
+<li>Is the expected-frequency guideline met?</li>
+<li>What additional assumption must be evaluated from the study design?</li>
+</ol>
+<div class="collapse" title="Check Your Answer">
+<ol type="1">
+<li>The expected frequency is (40 = 8) for each option.</li>
+<li>Yes. Each expected frequency is at least 5.</li>
+<li>The observations must be independent. Each participant should contribute to only one category, and one participant’s response should not determine another participant’s response.</li>
+</ol>
+</div>
+</div>
+</div>
 </section>
 <section id="step-3-perform-the-test" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-perform-the-test">Step 3: Perform the Test</h2>
-<p>To perform the chi-square goodness of fit test, do the following steps:</p>
+<p>To perform the chi-square goodness-of-fit test in jamovi:</p>
 <ol type="1">
 <li><p>Go to the Analyses tab, click the Frequencies button, and choose “One sample proportion tests - N outcomes”.</p></li>
 <li><p>Move your variable into the Variable box. In this case, move <code>choice_1</code> into the Variable box.</p></li>
-<li><p>Select <code>Expected counts</code> so you can check for your assumption of expected frequencies.</p></li>
+<li><p>Select <strong>Expected counts</strong> so you can check for your assumption of expected frequencies.</p></li>
 </ol>
 <p>When you are done, your setup should look like this:</p>
 <p><img src="images/09-chi-square/chi-square_setup.png" class="img-fluid"></p>
-<section id="expected-proportions-different-expected-frequencies" class="level3">
-<h3 class="anchored" data-anchor-id="expected-proportions-different-expected-frequencies">Expected Proportions: Different Expected Frequencies</h3>
-<p>As you will see in the output, jamovi automatically assumed equal proportions of frequencies (in this case 1/4 or 25% chance of pulling each card). However, there might be times when you want to test a different null hypothesis. Maybe we’re testing the whether our sample frequencies match the population frequencies and those are uneven (e.g., whether our 40/60 gender split matches the 36/64 gender split in the population).</p>
-<p>We can use the <code>Expected Proportions</code> in the setup to specify different expected frequencies. Note that this is not us checking the assumption of expected frequencies!</p>
-<p>For example, in our current scenario maybe we think our deck is a little stacked in favor of red cards–or we think our participants are more likely to choose red cards than black cards. We can specify our expected proportions and then interpret the results, such as the example shown in the figure below. In this case, assuming a null distribution of a stacked deck for red cards, participants do not seem more likely to choose red cards based on the expected frequencies we provided.</p>
+<section id="specifying-unequal-expected-proportions" class="level3">
+<h3 class="anchored" data-anchor-id="specifying-unequal-expected-proportions">Specifying Unequal Expected Proportions</h3>
+<p>By default, jamovi assumes equal expected proportions across all categories. In this example, the expected proportion is .25 for each of the four suits. However, some research questions involve unequal expected proportions. For example, you might test whether a binary distribution in a sample matches a population distribution of 36% in one category and 64% in the other.</p>
+<p>Use <strong>Expected Proportions</strong> to enter the proportions specified by the null hypothesis. These values define the expected distribution; they are not the same as checking whether the resulting expected counts are sufficiently large.</p>
+<p>For example, suppose the null hypothesis predicts that red cards will be selected more frequently than black cards. We can enter those predicted proportions in jamovi and test whether the observed distribution differs from that specified distribution. In the example below, the observed frequencies do not differ significantly from the unequal expected proportions entered in the analysis.</p>
 <p><img src="images/09-chi-square/chi-square_results3.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="step-4-interpret-results" class="level2">
 <h2 class="anchored" data-anchor-id="step-4-interpret-results">Step 4: Interpret Results</h2>
 <p><img src="images/09-chi-square/chi-square_results.png" class="img-fluid"></p>
-<p>The first table shows us our observed frequencies (our data) and expected frequencies (N/k = 200/4 = 50 which is 25% for each one, like we previously calculated).</p>
-<p>The second table gives us our results. Our p-value is less than our alpha of .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. The degrees of freedom (df) is the number of categories minus one (in this case, 4-1 = 3).</p>
-<p>Note that the chi-square goodness of fit test does not provide us with any measures of effect size.</p>
+<p>The first table displays the observed and expected frequencies. Because the null hypothesis assigns equal probability to four categories, the expected frequency for each suit is (N/k = 200/4 = 50), or 25% of the sample. All expected frequencies exceed 5, so the expected-frequency assumption is met.</p>
+<p>The second table presents the chi-square test. The result is statistically significant, <em>p</em> = .038, so we reject the null hypothesis that all four suits are selected with equal probability. The degrees of freedom equal the number of categories minus one: (df = k - 1 = 4 - 1 = 3).</p>
+<p>This jamovi analysis does not provide an effect-size estimate for the goodness-of-fit test. An effect size such as Cohen’s (w) can be calculated using other software, but it is not required for the analyses in this course.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A chi-square goodness-of-fit test is statistically significant. One category has more observations than expected, and another has fewer observations than expected.</p>
+<p>Can you conclude from the omnibus chi-square test alone that each of those two categories differs significantly from its expected frequency?</p>
+<div class="collapse" title="Check Your Answer">
+<p>No.&nbsp;The significant omnibus test indicates that the overall observed distribution differs from the expected distribution somewhere. Descriptive differences can be discussed, but identifying which individual categories differ significantly requires additional follow-up analyses, such as the standardized residuals which jamovi currently does not provide for a goodness-of-fit test.</p>
+</div>
+</div>
+</div>
 <section id="write-up-the-results-in-apa-style" class="level3">
 <h3 class="anchored" data-anchor-id="write-up-the-results-in-apa-style">Write Up the Results in APA Style</h3>
 <p>We can write up our results in APA something like this:</p>
 <blockquote class="blockquote">
-<p>Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51 selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant (<span class="math inline">\(\chi^2\)</span> [3] = 8.44; <em>p</em> = .038), suggesting that people did not select suits purely at random. Participants chose the hearts (32%) more frequently than expected and the clubs (17%) less frequently than expected.</p>
+<p>Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51 selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits and indicated that the four suits were not selected with equal probability,<span class="math inline">\(\chi^2\)</span> (3) = 8.44; <em>p</em> = .038. Participants selected hearts more frequently than expected and clubs less frequently than expected.</p>
 </blockquote>
-<p>Note that I described the data in the first sentence, but I could have also described it in more detail in the last sentence as part of my interpretation or I could have even written up the results in a table! There are many ways to write up results in APA style, and what’s important is you have the four pieces of information as described in the Writing Results chapter of this textbook.</p>
+<p>This example includes the descriptive frequencies, identifies the analysis, reports the test statistic and <em>p</em>-value, and interprets the result. Depending on the number of categories, the descriptive frequencies could instead be presented in a table. See Chapter 10 for the required components of an APA-style results section.</p>
 </section>
 <section id="visualize-the-results" class="level3">
 <h3 class="anchored" data-anchor-id="visualize-the-results">Visualize the Results</h3>
-<p>The bar plot we can get using Exploration - Descriptives (as shown above in <a href="#describe-your-data">Describe your data</a>) does a decent job of visualizing the results. You can use the default bar plot in jamovi for your assignments.</p>
-<p>If you want to take your visualizations up a notch, we can also do this fairly simply in Excel. Instead of counts, perhaps we care more about percentages, and adding a line for the expected frequency (25%). Here’s an example, using instructions from <a href="https://exceljet.net/chart/column-chart-with-target-line">this tutorial</a>:</p>
+<p>We can easily visualize the results using the Plots feature in jamovi. Select <strong>Bar Plot</strong>, ensure you are in variable type Categorical, and move <code>choice_1</code> to the Categorical Variable box.</p>
+<p>The default is a good start, but you should retitle the x-axis with a descriptive label rather than the variable name, such as “Card Pull Choice #1.” To change the capitalization or order of the card suits, edit the variable’s levels in the data setup before creating the graph.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/09-chi-square/Chi-square goodness of fit plot.png" class="img-fluid figure-img"></p>
+<figcaption>Example plot in jamovi</figcaption>
+</figure>
+</div>
+<p>A more informative graph can display the observed percentages together with a reference line representing the expected percentage of 25%. The following graph was created in Excel using instructions from <a href="https://exceljet.net/chart/column-chart-with-target-line">this tutorial</a>:</p>
 <p><img src="images/09-chi-square/chi-square_excel.png" class="img-fluid" width="500"></p>
-</section>
-</section>
-<section id="additional-practice" class="level2">
-<h2 class="anchored" data-anchor-id="additional-practice">Additional Practice</h2>
-<p>One additional practice you can conduct is performing the same analysis as above but with <code>choice_2</code>! However, if you want to see how <code>choice_1</code> relates to <code>choice_2</code> then we need to perform the chi-square test of independence, which is in the next chapter.</p>
-<p>Another additional practice is in our Sample Dataset. Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
-<p>To get the most out of these exercises, try to first find out the answer on your own and then go to the appendix to check your answer.</p>
-<ol type="1">
-<li><p><strong>Are there equal numbers of athletes and non-athletes?</strong> (<code>Athlete</code> variable)</p>
-<ul>
-<li><p>Do you meet the assumptions?</p></li>
-<li><p>Are the observed frequencies similar to the expected frequencies?</p></li>
-<li><p>What is your chi-square value, rounded to two decimal places?</p></li>
-</ul></li>
-<li><p><strong>I happen to know the school this data comes from has 40% athletes and 60% non-athletes. Does our data match the school population?</strong></p>
-<ul>
-<li><p>Change your Expected Proportions ratio to .6 for non-athletes and .4 for athletes.</p></li>
-<li><p>Are the observed frequencies similar to the expected frequencies?</p></li>
-<li><p>What is your chi-square value, rounded to two decimal places?</p></li>
-</ul></li>
-<li><p><strong>Are there equal numbers of freshmen, sophomores, juniors, and seniors?</strong> (<code>Rank</code> variable)</p>
-<ul>
-<li><p>Do you meet the assumptions?</p></li>
-<li><p>Are the observed frequencies similar to the expected frequencies?</p></li>
-<li><p>What is your chi-square value, rounded to two decimal places?</p></li>
-</ul></li>
-</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

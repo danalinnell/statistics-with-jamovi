@@ -33,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./06.3-visualizing-continuous-variables.html" rel="next">
+<link href="./06.3-visualizing-one-or-more-categorical-variables.html" rel="next">
 <link href="./06.1-why-visualize-data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -351,20 +351,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.3-visualizing-continuous-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.3 Visualizing Continuous Variables</span></a>
+  <a href="./06.3-visualizing-one-or-more-categorical-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Visualizing One or More Categorical Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.4-visualizing-categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Visualizing Categorical Variables</span></a>
+  <a href="./06.4-visualizing-one-or-more-continuous-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.4 Visualizing One or More Continuous Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.5-visualizing-continuous-variables-across-groups.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.5 Visualizing Continuous Variables Across Groups</span></a>
+  <a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.5 Visualizing a Continuous Variable Across a Categorical Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -746,8 +746,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#do-not-overcomplicate-the-graph" id="toc-do-not-overcomplicate-the-graph" class="nav-link active" data-scroll-target="#do-not-overcomplicate-the-graph">Do Not Overcomplicate the Graph</a></li>
-  <li><a href="#graphs-and-future-analyses" id="toc-graphs-and-future-analyses" class="nav-link" data-scroll-target="#graphs-and-future-analyses">Graphs and Future Analyses</a></li>
+  <li><a href="#creating-a-plot-in-jamovi" id="toc-creating-a-plot-in-jamovi" class="nav-link active" data-scroll-target="#creating-a-plot-in-jamovi">Creating a Plot in jamovi</a></li>
+  <li><a href="#shared-formatting-options" id="toc-shared-formatting-options" class="nav-link" data-scroll-target="#shared-formatting-options">Shared Formatting Options</a></li>
   </ul>
 </nav>
     </div>
@@ -773,60 +773,125 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The right graph depends on the kind of variable you are visualizing and what you want to understand.</p>
+<p>The plot you choose should depend on the variables you have and the pattern you want readers to see. Start by identifying whether each variable is categorical or continuous. Then decide whether you want to show a distribution, compare groups, examine a relationship, or show change across a meaningful order.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>What you want to show</th>
-<th>Useful graph</th>
-<th>Why</th>
+<th>What Do You Want to Show?</th>
+<th>Variables</th>
+<th>Recommended Plot</th>
+<th>What the Plot Communicates</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Distribution of one continuous variable</td>
-<td>Histogram or density plot</td>
-<td>Shows shape, skew, and possible outliers</td>
+<td>Counts or percentages across categories</td>
+<td>One categorical variable</td>
+<td>Bar plot</td>
+<td>How common each category is</td>
 </tr>
 <tr class="even">
-<td>Summary of one continuous variable</td>
-<td>Box plot</td>
-<td>Shows median, quartiles, spread, and possible outliers</td>
+<td>Whether two categorical variables are associated</td>
+<td>Two categorical variables</td>
+<td>Grouped or stacked bar plot</td>
+<td>How the distribution of one categorical variable differs across the other</td>
 </tr>
 <tr class="odd">
-<td>Frequency of one categorical variable</td>
-<td>Bar plot</td>
-<td>Shows how many observations are in each category</td>
+<td>The distribution of one continuous variable</td>
+<td>One continuous variable</td>
+<td>Histogram or box plot</td>
+<td>Shape, center, spread, and possible unusual values</td>
 </tr>
 <tr class="even">
-<td>Continuous variable across groups</td>
-<td>Box plot, violin plot, jittered data, and/or mean</td>
-<td>Shows group differences, overlap, spread, and individual data points</td>
+<td>The relationship between two continuous variables</td>
+<td>Two continuous variables</td>
+<td>Scatterplot</td>
+<td>Direction, form, strength, and possible unusual cases in the relationship</td>
+</tr>
+<tr class="odd">
+<td>Change across time or another meaningfully ordered sequence</td>
+<td>A continuous outcome across ordered observations or conditions</td>
+<td>Line plot</td>
+<td>The pattern and direction of change across the sequence</td>
+</tr>
+<tr class="even">
+<td>A continuous outcome across categories</td>
+<td>One continuous variable and one or more categorical grouping variables</td>
+<td>Box plot, bar plot with error bars, or line plot when the categories are meaningfully ordered</td>
+<td>How groups differ in their distributions or summary values</td>
 </tr>
 </tbody>
 </table>
-<p>A good graph should help you answer a question. Before making a graph, ask: What do I want to see?</p>
-<section id="do-not-overcomplicate-the-graph" class="level2">
-<h2 class="anchored" data-anchor-id="do-not-overcomplicate-the-graph">Do Not Overcomplicate the Graph</h2>
-<p>A graph should make the data easier to understand. If the graph is so complicated that the reader has to work hard to understand it, it may not be doing its job.</p>
-<p>A good graph usually has:</p>
-<ul>
-<li>a clear purpose</li>
-<li>variables that match the graph type</li>
-<li>readable labels</li>
-<li>no unnecessary clutter</li>
-<li>a visual pattern that supports the interpretation</li>
-</ul>
+<p>A single dataset may support more than one reasonable plot. The best choice depends on what you want the reader to learn.</p>
+<p>For example, a box plot and a bar plot with error bars can both compare a continuous outcome across groups. A box plot reveals more about the distribution, whereas a bar plot emphasizes a summary such as the mean. Neither is automatically correct in every situation.</p>
+<section id="creating-a-plot-in-jamovi" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-plot-in-jamovi">Creating a Plot in jamovi</h2>
+<p>The specific settings differ across plots, but the basic process is similar:</p>
+<ol type="1">
+<li>Select the <strong>Plots</strong> tab.</li>
+<li>Choose the type of plot you want to create.</li>
+<li>Move the relevant variable or variables into the plot setup boxes.</li>
+<li>Add a grouping variable when you want to compare groups.</li>
+<li>Review the resulting graph.</li>
+<li>Revise the title, axis labels, legend, orientation, or value labels when needed.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Visualizing data/6.3 Plots feature.png" class="img-fluid figure-img"></p>
+<figcaption>Plots tab in jamovi</figcaption>
+</figure>
+</div>
+<p>The available options change depending on the plot and the types of variables being visualized. You do not need to learn every customization option now. Focus first on selecting the correct variables and making the graph understandable.</p>
 </section>
-<section id="graphs-and-future-analyses" class="level2">
-<h2 class="anchored" data-anchor-id="graphs-and-future-analyses">Graphs and Future Analyses</h2>
-<p>Visualizations are often part of the early analysis process. Before running inferential statistics, graphs can help you understand distributions, possible outliers, and group patterns.</p>
-<p>Graphs do not replace statistical tests, but they help you know what you are working with.</p>
+<section id="shared-formatting-options" class="level2">
+<h2 class="anchored" data-anchor-id="shared-formatting-options">Shared Formatting Options</h2>
+<p>Most plots include similar options for titles, axes, and legends:</p>
+<ul>
+<li><strong>Plot &amp; Axis Titles:</strong> Add a plot title, subtitle, caption, and reader-friendly axis titles.</li>
+<li><strong>Axes:</strong> Adjust label size or rotation. Some plots also allow you to change an axis range.</li>
+<li><strong>Legend:</strong> Rename, reposition, or hide the legend.</li>
+</ul>
+<p><img src="images/Visualizing data/6.2 Formatting options.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Be Careful When Changing an Axis Range">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Be Careful When Changing an Axis Range
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Changing an axis range can make a graph easier to read, but it can also exaggerate or minimize differences. Any adjusted range should be clearly labeled and should not mislead the reader about the size of an effect.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="A Basic Standard for Every Graph">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>A Basic Standard for Every Graph
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A reader should be able to understand what the variables and groups represent without seeing your dataset or jamovi setup screen.</p>
+</div>
+</div>
+<p>When reviewing a graph, ask:</p>
+<ul>
+<li>Does the plot type match the variables and the question?</li>
+<li>Are the title and axis labels descriptive?</li>
+<li>Is the legend needed, and is it clear?</li>
+<li>Would counts or percentages provide a fairer comparison?</li>
+<li>Does the graph show the feature of the data that matters for the research question?</li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -837,15 +902,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You have a categorical variable with four class levels. Which graph would usually make the most sense?</p>
-<details>
-<summary>
-Answer
-</summary>
-<p>A bar plot. Bar plots show the counts or percentages for categories.</p>
-</details>
+<p>A researcher wants to examine whether weekly study time is related to exam performance. Both variables are continuous. Which plot should the researcher use, and what should they look for?</p>
+<div class="collapse" title="Check Your Answer">
+<p>The researcher should use a scatterplot. They should examine the direction, form, and strength of the relationship and look for unusual observations.</p>
 </div>
 </div>
+</div>
+<p>Want to learn more about choosing the right chart? <a href="https://www.highcharts.com/chartchooser/">Chart Chooser</a> provides a useful tutorial based on the variables and communication objective.</p>
 
 
 </section>
@@ -1258,8 +1321,8 @@ Answer
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06.3-visualizing-continuous-variables.html" class="pagination-link" aria-label="6.3 Visualizing Continuous Variables">
-        <span class="nav-page-text">6.3 Visualizing Continuous Variables</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./06.3-visualizing-one-or-more-categorical-variables.html" class="pagination-link" aria-label="6.3 Visualizing One or More Categorical Variables">
+        <span class="nav-page-text">6.3 Visualizing One or More Categorical Variables</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

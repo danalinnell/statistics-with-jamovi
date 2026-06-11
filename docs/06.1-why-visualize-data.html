@@ -72,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="style.css">
@@ -351,20 +352,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.3-visualizing-continuous-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.3 Visualizing Continuous Variables</span></a>
+  <a href="./06.3-visualizing-one-or-more-categorical-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Visualizing One or More Categorical Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.4-visualizing-categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Visualizing Categorical Variables</span></a>
+  <a href="./06.4-visualizing-one-or-more-continuous-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.4 Visualizing One or More Continuous Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.5-visualizing-continuous-variables-across-groups.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.5 Visualizing Continuous Variables Across Groups</span></a>
+  <a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.5 Visualizing a Continuous Variable Across a Categorical Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -746,8 +747,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#graphs-can-reveal-problems" id="toc-graphs-can-reveal-problems" class="nav-link active" data-scroll-target="#graphs-can-reveal-problems">Graphs Can Reveal Problems</a></li>
-  <li><a href="#graphs-support-interpretation" id="toc-graphs-support-interpretation" class="nav-link" data-scroll-target="#graphs-support-interpretation">Graphs Support Interpretation</a></li>
+  <li><a href="#visualizations-in-practice" id="toc-visualizations-in-practice" class="nav-link active" data-scroll-target="#visualizations-in-practice">Visualizations in Practice</a></li>
+  <li><a href="#exploration-and-communication" id="toc-exploration-and-communication" class="nav-link" data-scroll-target="#exploration-and-communication">Exploration and Communication</a></li>
+  <li><a href="#key-takeaway" id="toc-key-takeaway" class="nav-link" data-scroll-target="#key-takeaway">Key Takeaway</a></li>
   </ul>
 </nav>
     </div>
@@ -773,37 +775,60 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>“A picture is worth a thousand words,” and in research, figures and graphs can be incredibly useful. They help us see patterns that might be difficult to notice in a table.</p>
-<p>Visualizations can help you answer questions like:</p>
+<p>Numerical summaries are essential, but they do not always tell the full story. Two datasets can have similar means and standard deviations while differing greatly in shape, clustering, outliers, or the relationship among variables. A visualization can reveal those differences immediately.</p>
+<p>Visualizations can help you:</p>
 <ul>
-<li>What does the distribution look like?</li>
-<li>Are values clustered or spread out?</li>
-<li>Are there outliers?</li>
-<li>Are there unexpected categories?</li>
-<li>Do groups look similar or different?</li>
-<li>Does something look wrong with the data?</li>
+<li>See the <strong>shape</strong> of a distribution, such as whether it is symmetric or skewed</li>
+<li>Identify <strong>outliers</strong> or unusual values</li>
+<li>Understand <strong>variability</strong> and spread</li>
+<li>Compare groups</li>
+<li>Detect relationships, changes, or trends</li>
+<li>Notice possible data-entry or measurement problems</li>
 </ul>
-<p>Remember: it is incredibly important to visualize your data. You never know what descriptive statistics may be hiding.</p>
-<section id="graphs-can-reveal-problems" class="level2">
-<h2 class="anchored" data-anchor-id="graphs-can-reveal-problems">Graphs Can Reveal Problems</h2>
-<p>Imagine two variables have the same mean and standard deviation. You might assume they look similar. But one could be normally distributed, another could be skewed, and another could have a few extreme outliers.</p>
-<p>The numbers are important, but they are not enough by themselves.</p>
+<section id="visualizations-in-practice" class="level2">
+<h2 class="anchored" data-anchor-id="visualizations-in-practice">Visualizations in Practice</h2>
+<p>Visualizations are useful both while analyzing data and while communicating results.</p>
+<p>During analysis, a graph can help you inspect the data before running an inferential test. For example, a histogram can reveal skew, a box plot can reveal possible outliers, and a scatterplot can reveal a nonlinear relationship that a correlation coefficient alone might hide.</p>
+<p>When communicating results, a well-designed graph can summarize a large amount of information efficiently. This is especially useful because journal articles, professional reports, presentations, and public-facing materials often need to communicate findings to readers who may not have strong statistical backgrounds.</p>
 </section>
-<section id="graphs-support-interpretation" class="level2">
-<h2 class="anchored" data-anchor-id="graphs-support-interpretation">Graphs Support Interpretation</h2>
-<p>Visualizations are also useful for communication. A well-chosen graph can help readers understand your data quickly. A poorly chosen graph can confuse readers or imply something the data do not support.</p>
-<p>The goal is not to make a graph because a graph is required. The goal is to choose a graph that helps you understand or communicate something meaningful about the data.</p>
-<div class="callout callout-style-default callout-warning callout-titled" title="Common Mistake">
+<section id="exploration-and-communication" class="level2">
+<h2 class="anchored" data-anchor-id="exploration-and-communication">Exploration and Communication</h2>
+<p>The graph you use to explore your data does not always need to be the graph you use to present your findings.</p>
+<ul>
+<li><strong>Exploratory visualizations</strong> help you understand the data, check assumptions, and notice unusual patterns. They may include more detail than you would show in a final report.</li>
+<li><strong>Communication visualizations</strong> emphasize the pattern most relevant to the research question and should be understandable without requiring the reader to inspect the dataset.</li>
+</ul>
+<p>jamovi provides visualizations in several places. <strong>Exploration → Descriptives</strong> remains especially useful for quickly inspecting distributions and possible outliers. The <strong>Plots</strong> tab provides more control over the appearance and labeling of graphs intended for communication.</p>
+</section>
+<section id="key-takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaway">Key Takeaway</h2>
+<p>Descriptive statistics and visualizations work together:</p>
+<ul>
+<li><strong>Statistics</strong> provide precise numerical summaries.</li>
+<li><strong>Visualizations</strong> provide an overall picture of the data.</li>
+</ul>
+<p>Using both allows you to better understand and communicate your results.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Remember">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Common Mistake
+<span class="screen-reader-only">Note</span>Remember
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Do not choose a graph only because it looks nice. Choose a graph because it matches the variable type and helps answer the question you are asking.</p>
+<p>Always visualize your data. You never know what a numerical summary may be hiding.</p>
+</div>
+</div>
+<p>Here’s a <a href="https://www.youtube.com/watch?v=d2wU0kmCJEY">video</a> walking through why it is so important to look at your data.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/d2wU0kmCJEY" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
 </div>
 </div>
 

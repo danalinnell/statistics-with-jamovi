@@ -380,20 +380,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.3-visualizing-continuous-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.3 Visualizing Continuous Variables</span></a>
+  <a href="./06.3-visualizing-one-or-more-categorical-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Visualizing One or More Categorical Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.4-visualizing-categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Visualizing Categorical Variables</span></a>
+  <a href="./06.4-visualizing-one-or-more-continuous-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.4 Visualizing One or More Continuous Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.5-visualizing-continuous-variables-across-groups.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.5 Visualizing Continuous Variables Across Groups</span></a>
+  <a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.5 Visualizing a Continuous Variable Across a Categorical Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -804,15 +804,15 @@ window.Quarto = {
 </header>
 
 
-<p>McNemar’s test is based on the <span class="math inline">\(\chi^2\)</span> (chi-square) test of independence (or association), but is used in a repeated measures or within-subjects design.</p>
-<p>We’ll go over a brief example so you’re familiar with this test, but in practice I don’t see this statistic often so we won’t go over it any further than this.</p>
+<p>McNemar’s test is used to compare two paired binary responses. It is appropriate when the same participants are measured twice, or when observations are otherwise matched, and the outcome has exactly two categories.</p>
+<p>This section provides a brief introduction to the test. The main goal is to help you recognize when paired categorical data require McNemar’s test rather than a standard chi-square test of independence.</p>
 <section id="step-1-look-at-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-look-at-the-data">Step 1: Look at the Data</h2>
-<p>For example, suppose we’re working with the <em>Australian Generic Political Party</em> (AGPP) and your job is to find out how effective AGPP political advertisements are. You gather 100 people and ask them to watch the AGPP ads. You ask participants before and after viewing ads whether they intend to vote for the AGPP.</p>
-<p>This data comes from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “agpp”. This dataset indicates the ID number of the participant and whether they would vote for AGPP before and after viewing the ads.</p>
-<section id="data-set-up" class="level3">
-<h3 class="anchored" data-anchor-id="data-set-up">Data Set-Up</h3>
-<p>Our data set-up for McNemar’s test is pretty simple. We just need two columns of nominal data, with one row per participant and each column being the same variable at two different time points. Here’s our data for our example we’ll be working with, which you can find in the lsj-data called <code>agpp</code>:</p>
+<p>Suppose the <em>Australian Generic Political Party</em> (AGPP) wants to evaluate whether its political advertisement changes voting intentions. One hundred participants report whether they intend to vote for the AGPP before and after viewing the advertisement.</p>
+<p>Open the <code>agpp</code> dataset from the <code>lsj-data</code> library. The dataset contains a participant identifier and two binary variables: voting intention before and voting intention after viewing the advertisement.</p>
+<section id="data-setup" class="level3">
+<h3 class="anchored" data-anchor-id="data-setup">Data Setup</h3>
+<p>In the raw-data format, McNemar’s test requires two binary categorical variables, with one row per participant or matched pair. The two variables represent the same response measured under two conditions or at two time points. The <code>agpp</code> dataset is structured as follows:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -875,22 +875,90 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
+<section id="describe-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="describe-the-data">Describe the Data</h3>
+<p>Before conducting the test, compare the frequencies of “yes” and “no” responses before and after the advertisement. Because the same participants provided both responses, the most important information is the number of participants who changed from “no” to “yes” and the number who changed from “yes” to “no.” McNemar’s test compares these two discordant cells.</p>
+<p>In this example:</p>
+<ul>
+<li><p>65 participants responded “no” at both time points.</p></li>
+<li><p>5 participants responded “yes” at both time points.</p></li>
+<li><p>5 participants changed from “no” to “yes.”</p></li>
+<li><p>25 participants changed from “yes” to “no.”</p></li>
+</ul>
+<p>The advertisement appears to have reduced support, but McNemar’s test is needed to determine whether the two types of change differ more than would be expected by chance.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a training study, 18 employees changed from fail to pass, 4 changed from pass to fail, 20 passed both times, and 8 failed both times.</p>
+<ol type="1">
+<li>Which observations does McNemar’s test compare?</li>
+<li>Based only on the descriptive frequencies, what direction of change appears more common?</li>
+</ol>
+<div class="collapse" title="Check Your Answer">
+<ol type="1">
+<li>McNemar’s test compares the 18 employees who changed from fail to pass with the 4 employees who changed from pass to fail.</li>
+<li>Improvement from fail to pass appears more common than decline from pass to fail.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
 <section id="specify-the-hypotheses" class="level3">
 <h3 class="anchored" data-anchor-id="specify-the-hypotheses">Specify the Hypotheses</h3>
-<p>Given you want to see if the AGPP political advertisements are, you want to see if participants are more likely to vote for AGPP after viewing the advertisement. Therefore, the alternative hypothesis is that intentions to vote for the AGPP don’t match the expected frequency of intentions to vote.</p>
+<p>We want to determine whether voting intentions change after participants view the advertisement. McNemar’s test compares the two types of disagreement: participants who change from “no” to “yes” and participants who change from “yes” to “no.”</p>
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>: The probability of changing from “no” to “yes” equals the probability of changing from “yes” to “no.” Voting intentions do not systematically change after viewing the advertisement.</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: The probability of changing from “no” to “yes” differs from the probability of changing from “yes” to “no.” Voting intentions systematically change after viewing the advertisement.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a training study, 18 employees changed from fail to pass, 4 changed from pass to fail, 20 passed both times, and 8 failed both times.</p>
+<ol type="1">
+<li>Which observations does McNemar’s test compare?</li>
+<li>Based only on the descriptive frequencies, what direction of change appears more common?</li>
+</ol>
+<div class="collapse" title="Check Your Answer">
+<ol type="1">
+<li>McNemar’s test compares the 18 employees who changed from fail to pass with the 4 employees who changed from pass to fail.</li>
+<li>Improvement from fail to pass appears more common than decline from pass to fail.</li>
+</ol>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="step-2-check-assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-check-assumptions">Step 2: Check Assumptions</h2>
-<p>You came here because you violated the assumptions of the test of independence’s assumption of independence. You should have a within-subjects design to perform this test. We meet this assumption so we can move on!</p>
+<p>McNemar’s test has the following assumptions:</p>
+<ol type="1">
+<li><p><strong>The observations are paired.</strong> The two responses must come from the same participants or from meaningfully matched pairs.</p></li>
+<li><p><strong>The outcome is binary at both measurements.</strong> Each response variable must contain exactly two categories, such as yes/no or pass/fail.</p></li>
+<li><p><strong>The pairs are independent of other pairs.</strong> One participant’s paired responses should not affect another participant’s paired responses.</p></li>
+</ol>
+<p>The <code>agpp</code> data meet these assumptions: each participant provides a before and after response, both variables contain the categories “yes” and “no,” and each participant represents a separate case.</p>
 </section>
 <section id="step-3-perform-the-test" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-perform-the-test">Step 3: Perform the Test</h2>
 <ol type="1">
 <li><p>Go to the Analyses tab, click the Frequencies button, and choose “Paired Samples - McNemar test”.</p></li>
-<li><p>Move <code>response_before</code> into rows and <code>response_after</code> into columns. Note that the placement in rows or columns doesn’t really matter.</p></li>
+<li><p>Move <code>response_before</code> into <strong>Rows</strong> and <code>response_after</code> into <strong>Columns</strong>. Reversing the variables will not change the McNemar test statistic, but keeping time in chronological order makes the table easier to interpret.</p></li>
 <li><p>Under the Statistics tab, select <span class="math inline">\(\chi^2\)</span> under Tests.</p></li>
-<li><p>Optionally, you can request under to show the row and column percentages.</p></li>
+<li><p>Optionally, request row and column percentages to help describe the pattern of responses.</p></li>
 </ol>
 <p>When you are done, your setup should look like this:</p>
 <p><img src="images/12-mcnemar/mcnemar_setup.png" class="img-fluid"></p>
@@ -898,14 +966,36 @@ window.Quarto = {
 <section id="step-4-interpret-results" class="level2">
 <h2 class="anchored" data-anchor-id="step-4-interpret-results">Step 4: Interpret Results</h2>
 <p><img src="images/12-mcnemar/mcnemar_results.png" class="img-fluid"></p>
-<p>The first table shows us our observed frequencies.</p>
-<p>The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. Unfortunately, looking at our table it also shows that the ads had a negative effect: people were less likely to vote AGPP after seeing the ads.</p>
+<p>The contingency table displays the four possible response patterns. McNemar’s test focuses on the discordant pairs: the 5 participants who changed from “no” to “yes” and the 25 participants who changed from “yes” to “no.”</p>
+<p>The McNemar test is statistically significant, <em>p</em> &lt; .001, so we reject the null hypothesis that the two types of change occur with equal probability. More participants changed from intending to vote for the AGPP to not intending to vote for the AGPP than changed in the opposite direction. The advertisement was therefore associated with a decrease in stated voting intention.</p>
+<p>The before-and-after comparison establishes that voting intentions changed after the advertisement, but the absence of a comparison condition limits a causal conclusion. Other influences associated with time or repeated measurement could also contribute to the change.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A McNemar test is statistically significant because substantially more participants changed from “yes” to “no” than from “no” to “yes.”</p>
+<p>What can the researcher conclude?</p>
+<div class="collapse" title="Check Your Answer">
+<p>The researcher can conclude that the paired binary response changed systematically and that movement from “yes” to “no” was more common than movement from “no” to “yes.” Whether the researcher can conclude that an intervention caused the change depends on the study design, including whether there was an appropriate comparison condition.</p>
+</div>
+</div>
+</div>
 <section id="write-up-the-results-in-apa-style" class="level3">
 <h3 class="anchored" data-anchor-id="write-up-the-results-in-apa-style">Write Up the Results in APA Style</h3>
 <p>We can write up our results in APA something like this:</p>
 <blockquote class="blockquote">
-<p>McNemar’s test indicated that support for AGPP changed from before to after reviewing the AGPP advertisement, <span class="math inline">\(\chi^2\)</span> (1) = 13.33, <em>p</em> &lt; .001. Most participants continued to not vote for AGPP after the ad (<em>n</em> = 65) and a few continued to vote for AGPP after the ad (<em>n</em> = 5). However, many participants who originally stated they would vote for AGPP changed to no longer voting for AGPP after the ad (<em>n</em> = 25); only five people who originally would not vote for AGPP changed to vote for AGPP after the ad.</p>
+<p>McNemar’s test indicated that support for AGPP changed from before to after viewing the AGPP advertisement, <span class="math inline">\(\chi^2\)</span> (1) = 13.33, <em>p</em> &lt; .001. Most participants continued to not vote for AGPP after the ad (<em>n</em> = 65) and a few continued to vote for AGPP after the ad (<em>n</em> = 5). However, many participants who originally stated they would vote for AGPP changed to no longer voting for AGPP after the ad (<em>n</em> = 25); only five people who originally would not vote for AGPP changed to vote for AGPP after the ad.</p>
 </blockquote>
+</section>
+<section id="visualize-the-results" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-the-results">Visualize the Results</h3>
+<p>A paired categorical outcome can be summarized using a 2 × 2 table or a graph showing the number of participants in each response pattern. The visualization should make the direction of change clear, especially the difference between participants who changed from “no” to “yes” and those who changed from “yes” to “no.”</p>
 
 
 </section>

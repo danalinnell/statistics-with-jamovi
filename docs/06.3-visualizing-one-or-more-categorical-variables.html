@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6.5 Visualizing Continuous Variables Across Groups – Stats with jamovi</title>
+<title>6.3 Visualizing One or More Categorical Variables – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./06.6-expanding-your-data-visualization.html" rel="next">
-<link href="./06.4-visualizing-categorical-variables.html" rel="prev">
+<link href="./06.4-visualizing-one-or-more-continuous-variables.html" rel="next">
+<link href="./06.2-choosing-the-right-graph.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -86,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06.0-visualizing-data-in-jamovi.html">6. Visualizing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./06.5-visualizing-continuous-variables-across-groups.html">6.5 Visualizing Continuous Variables Across Groups</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06.0-visualizing-data-in-jamovi.html">6. Visualizing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./06.3-visualizing-one-or-more-categorical-variables.html">6.3 Visualizing One or More Categorical Variables</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -351,20 +351,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.3-visualizing-continuous-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.3 Visualizing Continuous Variables</span></a>
+  <a href="./06.3-visualizing-one-or-more-categorical-variables.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">6.3 Visualizing One or More Categorical Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.4-visualizing-categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Visualizing Categorical Variables</span></a>
+  <a href="./06.4-visualizing-one-or-more-continuous-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.4 Visualizing One or More Continuous Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.5-visualizing-continuous-variables-across-groups.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">6.5 Visualizing Continuous Variables Across Groups</span></a>
+  <a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.5 Visualizing a Continuous Variable Across a Categorical Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -746,18 +746,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#useful-graph-options" id="toc-useful-graph-options" class="nav-link active" data-scroll-target="#useful-graph-options">Useful Graph Options</a></li>
-  <li><a href="#why-show-individual-data-points" id="toc-why-show-individual-data-points" class="nav-link" data-scroll-target="#why-show-individual-data-points">Why Show Individual Data Points?</a></li>
-  <li><a href="#what-to-look-for" id="toc-what-to-look-for" class="nav-link" data-scroll-target="#what-to-look-for">What to Look For</a></li>
+  <li><a href="#one-categorical-variable" id="toc-one-categorical-variable" class="nav-link active" data-scroll-target="#one-categorical-variable">One Categorical Variable</a></li>
+  <li><a href="#two-categorical-variables" id="toc-two-categorical-variables" class="nav-link" data-scroll-target="#two-categorical-variables">Two Categorical Variables</a></li>
+  <li><a href="#creating-a-categorical-bar-plot-in-jamovi" id="toc-creating-a-categorical-bar-plot-in-jamovi" class="nav-link" data-scroll-target="#creating-a-categorical-bar-plot-in-jamovi">Creating a Categorical Bar Plot in jamovi</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06.0-visualizing-data-in-jamovi.html">6. Visualizing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./06.5-visualizing-continuous-variables-across-groups.html">6.5 Visualizing Continuous Variables Across Groups</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06.0-visualizing-data-in-jamovi.html">6. Visualizing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./06.3-visualizing-one-or-more-categorical-variables.html">6.3 Visualizing One or More Categorical Variables</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">6.5 Visualizing Continuous Variables Across Groups</h1>
+<h1 class="title">6.3 Visualizing One or More Categorical Variables</h1>
 </div>
 
 
@@ -774,51 +774,60 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Sometimes we want to compare the distribution of a continuous variable across categories of another variable. For example, we might want to visualize boredom scores by class level or mind wandering scores by gender.</p>
-<p>This kind of graph usually combines:</p>
+<p>Categorical variables describe membership in categories. Because the values are categories rather than meaningful numerical quantities, we usually visualize them using a <strong>bar plot</strong>.</p>
+<section id="one-categorical-variable" class="level2">
+<h2 class="anchored" data-anchor-id="one-categorical-variable">One Categorical Variable</h2>
+<p>For one categorical variable, a bar plot shows the count or percentage of observations in each category. This makes it easy to see which categories are most and least common.</p>
+<p>For example, a bar plot of preferred course format could show how many students selected in-person, online, or hybrid instruction.</p>
+<p>When interpreting a bar plot of one categorical variable, ask:</p>
 <ul>
-<li>a continuous outcome variable</li>
-<li>a categorical grouping variable</li>
+<li>Which category is most common?</li>
+<li>Which category is least common?</li>
+<li>Are the categories approximately balanced or very unequal?</li>
+<li>Are counts or percentages more useful for the intended audience?</li>
 </ul>
-<section id="useful-graph-options" class="level2">
-<h2 class="anchored" data-anchor-id="useful-graph-options">Useful Graph Options</h2>
-<p>Personally, I love checking all four options: box plot, violin, data, and mean. Each one shows something a little different.</p>
-<ul>
-<li>The box plot shows the median, quartiles, spread, and possible outliers.</li>
-<li>The violin plot shows the shape of the distribution.</li>
-<li>The data points show individual observations, which can reveal patterns the summaries hide.</li>
-<li>The mean marker shows the average for each group.</li>
-</ul>
-<p>You will not always need all four in a final report, but when you are exploring your data, seeing more information is often helpful.</p>
+<p>Counts and percentages communicate similar information when there is only one sample. Percentages are often easier to compare across studies or datasets with different sample sizes.</p>
 </section>
-<section id="why-show-individual-data-points" class="level2">
-<h2 class="anchored" data-anchor-id="why-show-individual-data-points">Why Show Individual Data Points?</h2>
-<p>I like showing jittered data points because they make the sample visible. A mean and standard deviation can hide small sample sizes, unusual values, or uneven group sizes.</p>
-<p>For example, if one group has only one person, a mean exists, but it does not tell us much about a group pattern. Seeing the data points helps us notice that.</p>
-</section>
-<section id="what-to-look-for" class="level2">
-<h2 class="anchored" data-anchor-id="what-to-look-for">What to Look For</h2>
-<p>When visualizing continuous variables across groups, ask:</p>
+<section id="two-categorical-variables" class="level2">
+<h2 class="anchored" data-anchor-id="two-categorical-variables">Two Categorical Variables</h2>
+<p>A grouped or stacked bar plot can visualize the relationship between two categorical variables. One variable defines the main categories, and the second variable defines the groups within each category.</p>
+<p>For example, a plot could compare preferences for puppies, flowers, or data among robots and humans. The graph should make it possible to see whether the pattern of preferences differs by species.</p>
+<p>With two categorical variables, choosing between counts and percentages is especially important:</p>
 <ul>
-<li>Do groups have similar or different centers?</li>
-<li>Do groups differ in spread?</li>
-<li>Are some groups much smaller than others?</li>
-<li>Are there possible outliers?</li>
-<li>Are the distributions skewed within groups?</li>
-<li>Does the graph suggest a pattern worth testing later?</li>
+<li><strong>Counts</strong> show the number of observations in each combination of categories.</li>
+<li><strong>Percentages</strong> are often more useful when the groups contain different numbers of observations.</li>
 </ul>
-<p>Remember, visual group differences are descriptive. They help us understand the sample. They do not, by themselves, tell us whether a difference is statistically significant.</p>
-<div class="callout callout-style-default callout-warning callout-titled" title="Common Mistake">
+<p>A group with a larger sample will usually have taller count bars even when the relative pattern of responses is similar. Percentages place the groups on the same scale and can make the comparison fairer.</p>
+</section>
+<section id="creating-a-categorical-bar-plot-in-jamovi" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-categorical-bar-plot-in-jamovi">Creating a Categorical Bar Plot in jamovi</h2>
+<ol type="1">
+<li>Select <strong>Plots → Bar Plot</strong>.</li>
+<li>Select <strong>Categorical</strong> under <strong>Variable type</strong>.</li>
+<li>Move the primary categorical variable into <strong>Categorical Variable</strong>.</li>
+<li>To visualize two categorical variables, move the second variable into <strong>Grouping Variable</strong>.</li>
+<li>Under <strong>Group Options</strong>, choose <strong>Grouped</strong> to place bars beside one another or <strong>Stacked</strong> to combine them within each main category.</li>
+<li>Select <strong>Value labels</strong> when showing the exact counts or percentages would help the reader.</li>
+<li>Revise the title, axis titles, and legend as needed.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Visualizing data/6.3 Categorical bar plot.png" class="img-fluid figure-img"></p>
+<figcaption>Bar plot with two categorical variables in jamovi</figcaption>
+</figure>
+</div>
+<p>For the species-and-choice example, <code>species</code> could be the categorical variable and <code>choice</code> the grouping variable. Reversing them would display the same observations from a different perspective. Choose the arrangement that makes the research question easiest to answer.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Bar Plots Are Not Histograms">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Common Mistake
+<span class="screen-reader-only">Note</span>Bar Plots Are Not Histograms
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Do not conclude that groups are statistically different based only on a graph. Graphs help us see patterns. Inferential tests help us evaluate statistical evidence.</p>
+<p>Bar plots display separate categories, so the bars are separated by spaces. Histograms display intervals of a continuous variable, so the bars touch because the intervals form a continuous scale.</p>
 </div>
 </div>
 
@@ -1228,13 +1237,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06.4-visualizing-categorical-variables.html" class="pagination-link" aria-label="6.4 Visualizing Categorical Variables">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">6.4 Visualizing Categorical Variables</span>
+      <a href="./06.2-choosing-the-right-graph.html" class="pagination-link" aria-label="6.2 Choosing the Right Graph">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">6.2 Choosing the Right Graph</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06.6-expanding-your-data-visualization.html" class="pagination-link" aria-label="6.6 Expanding Your Data Visualization">
-        <span class="nav-page-text">6.6 Expanding Your Data Visualization</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./06.4-visualizing-one-or-more-continuous-variables.html" class="pagination-link" aria-label="6.4 Visualizing One or More Continuous Variables">
+        <span class="nav-page-text">6.4 Visualizing One or More Continuous Variables</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

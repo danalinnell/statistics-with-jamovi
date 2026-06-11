@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6.3 Visualizing Continuous Variables – Stats with jamovi</title>
+<title>6.4 Visualizing One or More Continuous Variables – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./06.4-visualizing-categorical-variables.html" rel="next">
-<link href="./06.2-choosing-the-right-graph.html" rel="prev">
+<link href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" rel="next">
+<link href="./06.3-visualizing-one-or-more-categorical-variables.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -86,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06.0-visualizing-data-in-jamovi.html">6. Visualizing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./06.3-visualizing-continuous-variables.html">6.3 Visualizing Continuous Variables</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06.0-visualizing-data-in-jamovi.html">6. Visualizing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./06.4-visualizing-one-or-more-continuous-variables.html">6.4 Visualizing One or More Continuous Variables</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -351,20 +351,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.3-visualizing-continuous-variables.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">6.3 Visualizing Continuous Variables</span></a>
+  <a href="./06.3-visualizing-one-or-more-categorical-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Visualizing One or More Categorical Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.4-visualizing-categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Visualizing Categorical Variables</span></a>
+  <a href="./06.4-visualizing-one-or-more-continuous-variables.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">6.4 Visualizing One or More Continuous Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.5-visualizing-continuous-variables-across-groups.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.5 Visualizing Continuous Variables Across Groups</span></a>
+  <a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.5 Visualizing a Continuous Variable Across a Categorical Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -746,18 +746,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#histograms-and-density-plots" id="toc-histograms-and-density-plots" class="nav-link active" data-scroll-target="#histograms-and-density-plots">Histograms and Density Plots</a></li>
-  <li><a href="#box-plots-violin-plots-data-points-and-mean" id="toc-box-plots-violin-plots-data-points-and-mean" class="nav-link" data-scroll-target="#box-plots-violin-plots-data-points-and-mean">Box Plots, Violin Plots, Data Points, and Mean</a></li>
-  <li><a href="#what-to-look-for" id="toc-what-to-look-for" class="nav-link" data-scroll-target="#what-to-look-for">What to Look For</a></li>
+  <li><a href="#histograms-the-distribution-of-one-continuous-variable" id="toc-histograms-the-distribution-of-one-continuous-variable" class="nav-link active" data-scroll-target="#histograms-the-distribution-of-one-continuous-variable">Histograms: The Distribution of One Continuous Variable</a></li>
+  <li><a href="#box-plots-compact-summaries-of-continuous-variables" id="toc-box-plots-compact-summaries-of-continuous-variables" class="nav-link" data-scroll-target="#box-plots-compact-summaries-of-continuous-variables">Box Plots: Compact Summaries of Continuous Variables</a></li>
+  <li><a href="#scatterplots-relationships-between-two-continuous-variables" id="toc-scatterplots-relationships-between-two-continuous-variables" class="nav-link" data-scroll-target="#scatterplots-relationships-between-two-continuous-variables">Scatterplots: Relationships Between Two Continuous Variables</a></li>
+  <li><a href="#line-plots-ordered-continuous-observations" id="toc-line-plots-ordered-continuous-observations" class="nav-link" data-scroll-target="#line-plots-ordered-continuous-observations">Line Plots: Ordered Continuous Observations</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06.0-visualizing-data-in-jamovi.html">6. Visualizing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./06.3-visualizing-continuous-variables.html">6.3 Visualizing Continuous Variables</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06.0-visualizing-data-in-jamovi.html">6. Visualizing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./06.4-visualizing-one-or-more-continuous-variables.html">6.4 Visualizing One or More Continuous Variables</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">6.3 Visualizing Continuous Variables</h1>
+<h1 class="title">6.4 Visualizing One or More Continuous Variables</h1>
 </div>
 
 
@@ -774,50 +775,123 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>For a single continuous variable, the main goal is usually to understand the distribution. You want to see where values are concentrated, whether the distribution is symmetric or skewed, and whether there are possible outliers.</p>
-<p>Useful visualizations include:</p>
+<p>Continuous variables contain meaningful numerical values. The best plot depends on whether you want to examine the distribution of one variable, compare the distributions of several variables, or examine the relationship between two variables.</p>
+<section id="histograms-the-distribution-of-one-continuous-variable" class="level2">
+<h2 class="anchored" data-anchor-id="histograms-the-distribution-of-one-continuous-variable">Histograms: The Distribution of One Continuous Variable</h2>
+<p>A <strong>histogram</strong> divides a continuous variable into intervals, called bins, and shows how many observations fall within each interval. Histograms are especially useful for examining:</p>
 <ul>
-<li>histogram</li>
-<li>density plot</li>
-<li>box plot</li>
-<li>violin plot</li>
-<li>jittered data points</li>
-<li>mean marker</li>
+<li>The overall shape of the distribution</li>
+<li>Symmetry or skew</li>
+<li>The location of most observations</li>
+<li>Gaps, clusters, or multiple peaks</li>
+<li>Possible extreme values</li>
 </ul>
-<section id="histograms-and-density-plots" class="level2">
-<h2 class="anchored" data-anchor-id="histograms-and-density-plots">Histograms and Density Plots</h2>
-<p>A histogram shows how often values fall within ranges. It is useful for seeing the overall shape of a distribution.</p>
-<p>A density plot smooths the distribution into a curve. In jamovi, you may be able to show a histogram with a density overlay. I like this because it gives a fuller picture of the variable.</p>
-<p>Use histograms and density plots to ask:</p>
-<ul>
-<li>Is the distribution roughly symmetric?</li>
-<li>Is it positively or negatively skewed?</li>
-<li>Are values clustered in one part of the scale?</li>
-<li>Are there possible outliers?</li>
-</ul>
+<p>Unlike a bar plot, the bars in a histogram touch because each bar represents part of a continuous scale.</p>
+<p>The apparent shape of a histogram can change depending on the number and width of the bins. Avoid drawing conclusions from one arbitrary bin setting alone, especially with a small sample.</p>
+<section id="creating-a-histogram-in-jamovi" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-histogram-in-jamovi">Creating a Histogram in jamovi</h3>
+<ol type="1">
+<li>Select <strong>Plots → Histogram</strong>.</li>
+<li>Move the continuous variable into <strong>Variable</strong>.</li>
+<li>Add an optional <strong>Grouping Variable</strong> only when comparing the distributions of clearly defined groups will help answer the research question.</li>
+<li>Leave <strong>Bin Width</strong> set to <strong>Auto</strong> unless you have a reason to adjust it.</li>
+<li>Select <strong>Show density</strong> when a smooth density curve would help reveal the overall shape.</li>
+<li>Revise the title and axis titles as needed.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Visualizing data/6.4 Histogram.png" class="img-fluid figure-img"></p>
+<figcaption>Example histogram in jamovi</figcaption>
+</figure>
+</div>
+<p>You may also use <strong>Exploration → Descriptives</strong> when quickly inspecting a variable or checking assumptions.</p>
 </section>
-<section id="box-plots-violin-plots-data-points-and-mean" class="level2">
-<h2 class="anchored" data-anchor-id="box-plots-violin-plots-data-points-and-mean">Box Plots, Violin Plots, Data Points, and Mean</h2>
-<p>jamovi also lets you combine several useful pieces of information:</p>
-<ul>
-<li><strong>Box plot</strong>: shows the median, quartiles, and possible outliers</li>
-<li><strong>Violin plot</strong>: shows the shape or density of the data</li>
-<li><strong>Data points</strong>: show individual observations, often jittered so they do not overlap as much</li>
-<li><strong>Mean</strong>: shows the average value</li>
-</ul>
-<p>Personally, I often like selecting all of these together when exploring a continuous variable. This lets you see the data, the distribution, the middle 50%, and the mean at the same time. It gives a lot of information and helps avoid hiding weird things in the data.</p>
 </section>
-<section id="what-to-look-for" class="level2">
-<h2 class="anchored" data-anchor-id="what-to-look-for">What to Look For</h2>
-<p>When looking at a continuous-variable graph, ask:</p>
+<section id="box-plots-compact-summaries-of-continuous-variables" class="level2">
+<h2 class="anchored" data-anchor-id="box-plots-compact-summaries-of-continuous-variables">Box Plots: Compact Summaries of Continuous Variables</h2>
+<p>A <strong>box plot</strong> summarizes a continuous variable using the median, quartiles, and spread of the data. It can also flag possible outliers.</p>
+<p>A box plot is less detailed than a histogram, but it is compact and makes it easier to compare several continuous variables or groups on a common scale.</p>
+<p>When interpreting a box plot, look for:</p>
 <ul>
-<li>Where are most values?</li>
-<li>Is the distribution roughly normal?</li>
-<li>Is there positive or negative skew?</li>
-<li>Are there outliers?</li>
-<li>Does the mean seem pulled away from the median?</li>
-<li>Do the values fall within the expected range?</li>
+<li>The median within the box</li>
+<li>The middle 50% of the data, represented by the box</li>
+<li>The spread represented by the whiskers</li>
+<li>Possible outliers beyond the whiskers</li>
+<li>Differences in spread or skew suggested by uneven boxes or whiskers</li>
 </ul>
+<p>Remember that a point flagged by a box plot is a <strong>possible outlier</strong>, not automatically an error or a value that should be removed.</p>
+<section id="creating-a-box-plot-in-jamovi" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-box-plot-in-jamovi">Creating a Box Plot in jamovi</h3>
+<ol type="1">
+<li>Select <strong>Plots → Box Plot</strong>.</li>
+<li>Move the continuous variable into <strong>Variable</strong>.</li>
+<li>Add <strong>Grouping Variable 1</strong> or <strong>Grouping Variable 2</strong> only when you want to compare the variable across categorical groups.</li>
+<li>Leave <strong>Show outliers</strong> selected so possible unusual observations remain visible.</li>
+<li>Select <strong>Flip axes</strong> when horizontal boxes make long category labels easier to read.</li>
+<li>Revise the title, axis titles, and legend as needed.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Visualizing data/6.4 Box plot (single).png" class="img-fluid figure-img"></p>
+<figcaption>Example box plot in jamovi</figcaption>
+</figure>
+</div>
+<p>The <strong>Notch</strong> option adds an approximate interval around the median. It is not necessary for the basic box plots used in this course unless an assignment specifically requests it.</p>
+</section>
+</section>
+<section id="scatterplots-relationships-between-two-continuous-variables" class="level2">
+<h2 class="anchored" data-anchor-id="scatterplots-relationships-between-two-continuous-variables">Scatterplots: Relationships Between Two Continuous Variables</h2>
+<p>A <strong>scatterplot</strong> shows the relationship between two continuous variables. Each point represents one observation with a value on the x-axis and a value on the y-axis.</p>
+<p>When interpreting a scatterplot, examine:</p>
+<ul>
+<li><strong>Direction:</strong> Is the relationship positive, negative, or absent?</li>
+<li><strong>Form:</strong> Is the relationship approximately linear, curved, or more complex?</li>
+<li><strong>Strength:</strong> How closely do the points follow the overall pattern?</li>
+<li><strong>Unusual observations:</strong> Are there points far from the rest of the data or from the overall relationship?</li>
+</ul>
+<p>A scatterplot is important even when you plan to calculate a correlation. Two datasets can have similar correlations while having very different patterns, such as a curved relationship or an influential outlier.</p>
+<section id="creating-a-scatterplot-in-jamovi" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-scatterplot-in-jamovi">Creating a Scatterplot in jamovi</h3>
+<ol type="1">
+<li>Select <strong>Plots → Scatter Plot</strong>.</li>
+<li>Move one continuous variable into <strong>X-Axis</strong> and the other into <strong>Y-Axis</strong>.</li>
+<li>Add a categorical <strong>Grouping Variable</strong> only when distinguishing groups helps answer the research question.</li>
+<li>Select <strong>Show line</strong> when a regression line would help summarize a linear pattern.</li>
+<li>Keep the confidence interval around the fitted line when communicating uncertainty would be useful.</li>
+<li>Revise the title and axis titles as needed.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Visualizing data/6.4 Scatterplot.png" class="img-fluid figure-img"></p>
+<figcaption>Example scatterplot in jamovi</figcaption>
+</figure>
+</div>
+<p>When possible, place a predictor or explanatory variable on the x-axis and an outcome variable on the y-axis. This convention does not establish causality; it simply makes the intended question easier to follow.</p>
+</section>
+</section>
+<section id="line-plots-ordered-continuous-observations" class="level2">
+<h2 class="anchored" data-anchor-id="line-plots-ordered-continuous-observations">Line Plots: Ordered Continuous Observations</h2>
+<p>A <strong>line plot</strong> connects observations across a meaningful order, such as time. It is useful when the sequence itself matters and the connecting line represents continuity or change.</p>
+<p>Do not use a line plot merely because values can be placed in some order. Connecting points implies that movement from one x-axis value to the next is meaningful.</p>
+<section id="creating-a-line-plot-in-jamovi" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-line-plot-in-jamovi">Creating a Line Plot in jamovi</h3>
+<ol type="1">
+<li>Select <strong>Plots → Line Plot</strong>.</li>
+<li>Move the ordered or time variable into <strong>X-Axis</strong>.</li>
+<li>Move the continuous outcome into <strong>Y-Axis</strong>.</li>
+<li>Add a categorical <strong>Grouping Variable</strong> when separate lines would help compare groups.</li>
+<li>Choose <strong>Individual points</strong> when each row represents a meaningful paired x- and y-observation.</li>
+<li>Choose <strong>Aggregated data</strong> when the graph should summarize observations at each x-axis value, such as displaying a mean at each time point.</li>
+<li>Keep <strong>Show lines</strong> and <strong>Show points</strong> selected when both the pattern and the observed locations matter.</li>
+<li>Use different colors, line types, or point types when groups must remain distinguishable.</li>
+<li>Revise the title, axis titles, and legend as needed.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Visualizing data/6.4 Line plot.png" class="img-fluid figure-img"></p>
+<figcaption>Example line plot in jamovi</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -828,17 +902,16 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A variable has most scores near the low end and a long tail toward higher scores. Is this positive skew or negative skew?</p>
-<details>
-<summary>
-Answer
-</summary>
-<p>This is positive skew because the long tail extends toward higher values.</p>
-</details>
+<p>A researcher measures stress and sleep quality for 150 participants. The researcher wants to know whether participants with greater stress tend to report poorer sleep quality.</p>
+<p>Which plot should be used? Why would a histogram not answer the same question?</p>
+<div class="collapse" title="Check Your Answer">
+<p>A scatterplot should be used because both variables are continuous and the question concerns their relationship. A histogram would show the distribution of only one variable at a time and would not show how stress and sleep quality vary together.</p>
+</div>
 </div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1244,13 +1317,13 @@ Answer
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06.2-choosing-the-right-graph.html" class="pagination-link" aria-label="6.2 Choosing the Right Graph">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">6.2 Choosing the Right Graph</span>
+      <a href="./06.3-visualizing-one-or-more-categorical-variables.html" class="pagination-link" aria-label="6.3 Visualizing One or More Categorical Variables">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">6.3 Visualizing One or More Categorical Variables</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06.4-visualizing-categorical-variables.html" class="pagination-link" aria-label="6.4 Visualizing Categorical Variables">
-        <span class="nav-page-text">6.4 Visualizing Categorical Variables</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" class="pagination-link" aria-label="6.5 Visualizing a Continuous Variable Across a Categorical Variable">
+        <span class="nav-page-text">6.5 Visualizing a Continuous Variable Across a Categorical Variable</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -353,20 +353,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.3-visualizing-continuous-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.3 Visualizing Continuous Variables</span></a>
+  <a href="./06.3-visualizing-one-or-more-categorical-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Visualizing One or More Categorical Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.4-visualizing-categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Visualizing Categorical Variables</span></a>
+  <a href="./06.4-visualizing-one-or-more-continuous-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.4 Visualizing One or More Continuous Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.5-visualizing-continuous-variables-across-groups.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.5 Visualizing Continuous Variables Across Groups</span></a>
+  <a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.5 Visualizing a Continuous Variable Across a Categorical Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -903,7 +903,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Under <strong>Plots</strong>, select histogram, density, box plot, and/or Q-Q plot.</li>
 <li>Under <strong>Normality</strong>, select Shapiro-Wilk if available.</li>
 </ol>
-<p>You learned how to describe continuous variables in <a href="./05.3-describing-continuous-variables.html">Describing Continuous Variables</a> and how to visualize continuous variables in <a href="./06.3-visualizing-continuous-variables.html">Visualizing Continuous Variables</a>. This is one reason those earlier chapters matter: descriptives and plots help you decide whether assumptions are reasonable.</p>
+<p>You learned how to describe continuous variables in <a href="./05.3-describing-continuous-variables.html">Describing Continuous Variables</a> and how to visualize continuous variables in <a href="06.3-visualizing-continuous-variables.qmd">Visualizing Continuous Variables</a>. This is one reason those earlier chapters matter: descriptives and plots help you decide whether assumptions are reasonable.</p>
 <section id="method-1-visualize-the-distribution" class="level4">
 <h4 class="anchored" data-anchor-id="method-1-visualize-the-distribution">Method 1: Visualize the Distribution</h4>
 <p>The first method is to visualize the distribution. In jamovi, go to <strong>Exploration → Descriptives</strong> and select a histogram, density plot, box plot, violin plot, and/or data points.</p>
@@ -1065,7 +1065,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Select box plot, violin plot, and/or data points.</li>
 </ol>
 <p>Large differences in spread across groups may suggest a violation.</p>
-<p>You practiced this kind of graph in <a href="./06.5-visualizing-continuous-variables-across-groups.html">Visualizing Continuous Variables Across Groups</a>.</p>
+<p>You practiced this kind of graph in <a href="06.5-visualizing-continuous-variables-across-groups.qmd">Visualizing Continuous Variables Across Groups</a>.</p>
 <p>For example, here is an example of data that violates the assumption of homogeneity of variance. The dependent variable is mile duration in minutes, split by gender. The spread of scores for females, coded as 1, is much wider than the spread of scores for males, coded as 0. I am looking at the data points and violin plot to see the spread; the 1 looks wider whereas the 0 looks skinnier.</p>
 <p><img src="images/06-inferential/homogeneity.png" class="img-fluid" width="500"></p>
 </section>
@@ -1089,7 +1089,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="method-3-conduct-levenes-test" class="level4">
 <h4 class="anchored" data-anchor-id="method-3-conduct-levenes-test">Method 3: Conduct Levene’s Test</h4>
-<p>The third method is to conduct <button class="glossary" title="">Levene's test</button>. Levene’s test is a formal statistical test of homogeneity of variance.</p>
+<p>The third method is to conduct <button class="glossary" title="A statistical test used to evaluate whether variances are similar across groups.">Levene's test</button>. Levene’s test is a formal statistical test of homogeneity of variance.</p>
 <p>You will often find Levene’s test inside the inferential test menu. For example, for a one-way ANOVA, you can select the homogeneity test option.</p>
 <p>In jamovi:</p>
 <ol type="1">

@@ -59,9 +59,9 @@ book:
       chapters:
         - 06.1-why-visualize-data.qmd
         - 06.2-choosing-the-right-graph.qmd
-        - 06.3-visualizing-continuous-variables.qmd
-        - 06.4-visualizing-categorical-variables.qmd
-        - 06.5-visualizing-continuous-variables-across-groups.qmd
+        - 06.3-visualizing-one-or-more-categorical-variables.qmd
+        - 06.4-visualizing-one-or-more-continuous-variables.qmd
+        - 06.5-visualizing-a-continuous-variable-across-a-categorical-variable.qmd
         - 06.6-expanding-your-data-visualization.qmd
         - 06.7-putting-it-all-together.qmd
 

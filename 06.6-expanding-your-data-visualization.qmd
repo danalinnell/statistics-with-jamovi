@@ -1,31 +1,57 @@
 # 6.6 Expanding Your Data Visualization {.unnumbered}
 
-jamovi is useful for quick and clear exploratory graphs. For many assignments and early analyses, jamovi graphs are exactly what you need.
+The Plots tab in jamovi provides enough flexibility for many course assignments and common research questions. However, creating an effective visualization requires more than selecting the correct plot type.
 
-As you continue working with data, you may eventually want more control over design, labels, colors, or layout. Many researchers create final publication or presentation figures using other tools, such as Excel, R, or specialized visualization software.
+## Make the Message Clear
 
-Here is an example of a visualization created in Excel:
+A graph should be understandable without requiring the reader to inspect your dataset or analysis setup.
+
+Before using a graph in an assignment or report, check that:
+
+- The title communicates what is being shown.
+- The axes describe the variables in reader-friendly language.
+- Units are included when needed.
+- The legend is clear and only included when necessary.
+- Category labels are readable.
+- Counts, percentages, means, and error bars are identified accurately.
+- The graph emphasizes the comparison relevant to the research question.
+
+Avoid using raw variable names such as `Q17_total` as titles or axis labels when a descriptive phrase such as *Job Satisfaction Score* would be clearer.
+
+## Avoid Misleading Graphs
+
+Even technically correct graphs can mislead readers. Watch for the following issues:
+
+- Using counts to compare groups with very different sample sizes
+- Truncating an axis in a way that exaggerates small differences
+- Connecting unordered categories with a line
+- Displaying group means without showing or describing variability
+- Using too many categories, groups, labels, or decorative elements
+- Treating possible outliers as errors without investigating them
+- Choosing a plot because it looks impressive rather than because it answers the question
+
+## Going Beyond jamovi
+
+Although jamovi can create many useful plots, other programs provide additional flexibility. For much of my work, I use Excel because it is relatively easy to create polished and highly customized figures. Here's an example of a visualization made in Excel[^06-visualizing-data-1]:
+
+[^06-visualizing-data-1]: This comes from [Wanzer et al. (2020), *Promoting intentions to persist in computing: An examination of six years of the EarSketch program*](https://doi.org/10.1080/08993408.2020.1714313).
 
 ![](images/02-stats-foundations/example3.png)
 
-Here is an example of a visualization created in R:
+For more complicated figures, I use the `ggplot2` package in R. Here's an example of a visualization made in R[^06-visualizing-data-2]:
+
+[^06-visualizing-data-2]: This comes from [Wanzer (2020), *What is evaluation? Perspectives of how evaluation differs (or not) from research*](https://journals.sagepub.com/doi/10.1177/1098214020920710).
 
 ![](images/02-stats-foundations/example4.png)
 
-The goal is not to learn every possible visualization tool right away. The goal is to understand what makes a graph useful:
+The software may change, but the underlying goal remains the same: choose a visualization that helps the reader understand the data accurately and efficiently.
 
-- it matches the data
-- it supports the research question
-- it is readable
-- it does not mislead
-- it helps the reader see something important
+::: {.callout-tip title="Check Your Understanding"}
+A graph of average scores across two groups begins its y-axis at 98 rather than 0. The group means are 99 and 100, but the bars appear dramatically different.
 
-## Keep Building Your Visualization Judgment
+What concern should you have when interpreting the graph?
 
-At this point, focus on choosing graphs that match your variables. Later, you can worry more about aesthetics, publication-quality figures, and advanced customization.
-
-For now, ask yourself:
-
-> What do I want the graph to help me understand?
-
-That question will usually guide you toward a better visualization.
+::: {.collapse title="Check Your Answer"}
+The truncated axis exaggerates the visual difference between the groups. A truncated axis is not always inappropriate, but the scale should be chosen and labeled carefully so that readers are not misled about the size of the difference.
+:::
+:::

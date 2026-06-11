@@ -381,20 +381,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.3-visualizing-continuous-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.3 Visualizing Continuous Variables</span></a>
+  <a href="./06.3-visualizing-one-or-more-categorical-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Visualizing One or More Categorical Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.4-visualizing-categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Visualizing Categorical Variables</span></a>
+  <a href="./06.4-visualizing-one-or-more-continuous-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.4 Visualizing One or More Continuous Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.5-visualizing-continuous-variables-across-groups.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.5 Visualizing Continuous Variables Across Groups</span></a>
+  <a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.5 Visualizing a Continuous Variable Across a Categorical Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -781,7 +781,6 @@ window.Quarto = {
   <li><a href="#step-3-perform-the-test" id="toc-step-3-perform-the-test" class="nav-link" data-scroll-target="#step-3-perform-the-test">Step 3: Perform the Test</a></li>
   <li><a href="#step-4-interpret-results" id="toc-step-4-interpret-results" class="nav-link" data-scroll-target="#step-4-interpret-results">Step 4: Interpret Results</a></li>
   <li><a href="#fishers-exact-test" id="toc-fishers-exact-test" class="nav-link" data-scroll-target="#fishers-exact-test">Fisher’s Exact Test</a></li>
-  <li><a href="#additional-practice" id="toc-additional-practice" class="nav-link" data-scroll-target="#additional-practice">Additional Practice</a></li>
   </ul>
 </nav>
     </div>
@@ -807,23 +806,23 @@ window.Quarto = {
 </header>
 
 
-<p>The <span class="math inline">\(\chi^2\)</span> (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness-of-fit test we are looking at the relationship, independence, or association between <em>two</em> variables.</p>
-<p>Our basic hypotheses for the chi-square test of indepdendence is as follows:</p>
+<p>The <span class="math inline">\(\chi^2\)</span> (chi-square) test of independence, also called a test of association, determines whether two categorical variables are related. It compares the observed frequencies in a contingency table with the frequencies that would be expected if the two variables were independent.</p>
+<p>The general hypotheses for the chi-square test of independence are:</p>
 <ul>
-<li><p><span class="math inline">\(H_0\)</span>: There are no differences in frequencies of how the categories in one variable relate to the levels in another variable.</p></li>
-<li><p><span class="math inline">\(H_1\)</span>: At least one category in one variable has significantly different frequencies in another variable than we would expect.</p></li>
+<li><p><span class="math inline">\(H_0\)</span>: The two categorical variables are independent; the distribution of one variable is the same across the categories of the other variable.</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: The two categorical variables are associated; the distribution of one variable differs across at least one category of the other variable.</p></li>
 </ul>
 <div class="warning">
-<p>Note that these are not how you should report your hypotheses! You should specify your hypotheses in relation to the nature of your two variables. It should be clear what your two variables are.</p>
+<p>Adapt these general hypotheses to the variables in your study. Both categorical variables should be clearly identified in the hypotheses.</p>
 </div>
-<p>There is no directionality for a chi-square test, so there is no such thing as a one-tailed or two-tailed hypothesis.</p>
-<p>We often communicate what kind of chi-square test we are performing by using language like “We performed a 2x3 chi-square test of independence.” This means that there are two variables, the first of which has 2 categories to the categorical variable and the second of which has 3 categories to the categorical variable. We might describe it in even more detail, such as “We performed a 2 (condition: experimental vs control) x 3 (mood: happy, sad, or neutral) chi-square test of independence.”</p>
+<p>The omnibus chi-square test is nondirectional. It determines whether an association exists but does not, by itself, identify which cells account for that association.</p>
+<p>The dimensions of a contingency table are often described using language such as a “2 × 3 chi-square test of independence.” This indicates that one variable has two categories and the other has three categories. A more detailed description might be: “We conducted a 2 (condition: experimental or control) × 3 (mood: happy, sad, or neutral) chi-square test of independence.”</p>
 <section id="step-1-look-at-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-look-at-the-data">Step 1: Look at the Data</h2>
-<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “chapek9”. This dataset indicates the ID number of the participant, the species (robot or human), and their preference of the three things (puppy, flower, or data).</p>
-<p>For this example, imagine we are watching a show about the planet <em>Chapek 9</em>. On this planet, for someone to gain access to their capital city they must prove they’re a robot, not a human. In order to determine whether or not a visitor is human, the natives ask whether the visitor prefers puppies, flowers, or large, properly formatted data files.</p>
-<p>This is what we would call a 2x3 chi-square test because the first variable species has two categories (robot or human) and the second variable choice has three categories (puppies, flowers, data).</p>
-<p>Here’s a video walking through the chi-square test of independence example in this chapter.</p>
+<p>Let’s use the <code>chapek9</code> dataset from the <code>lsj-data</code> library. The dataset includes each participant’s species (robot or human) and preference for puppies, flowers, or data.</p>
+<p>In the fictional setting of <em>Chapek 9</em>, only robots may enter the capital city. The residents attempt to distinguish robots from humans by asking whether each visitor prefers puppies, flowers, or large, properly formatted data files. We will test whether preference is associated with species.</p>
+<p>This produces a 2 × 3 contingency table: <code>species</code> has two categories, and <code>choice</code> has three categories.</p>
+<p>Here’s a <a href="https://www.youtube.com/watch?v=6a5soxXTfkw">video walking through the chi-square test of independence example</a> in this chapter.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="vembedr">
@@ -833,9 +832,9 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<section id="data-set-up" class="level3">
-<h3 class="anchored" data-anchor-id="data-set-up">Data Set-Up</h3>
-<p>Our data set-up for a chi-square test of independence is pretty simple. We just need two columns of nominal data, with one row per participant. Here’s our data for our example we’ll be working with, which you can find in the lsj-data called <code>chapek9</code>:</p>
+<section id="data-setup" class="level3">
+<h3 class="anchored" data-anchor-id="data-setup">Data Setup</h3>
+<p>In the raw-data format, the chi-square test of independence requires two categorical variables, with one row per participant or observation. The <code>chapek9</code> dataset is structured as follows:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -900,66 +899,139 @@ window.Quarto = {
 </section>
 <section id="describe-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="describe-the-data">Describe the Data</h3>
-<p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Remember that for nominal variables we should report frequency statistics, not means and medians and such. Bar plots continue to be a good way of visualizing the data.</p>
+<p>Once we confirm that the data are set up correctly, we should examine a contingency table containing the frequencies and percentages for each combination of categories. Means and medians are not appropriate for these nominal variables. A grouped or stacked bar plot can also help us compare the distributions.</p>
 <p><img src="images/11-independence/independence_data.png" class="img-fluid"></p>
 </section>
 <section id="specify-the-hypotheses" class="level3">
 <h3 class="anchored" data-anchor-id="specify-the-hypotheses">Specify the Hypotheses</h3>
-<p>The question here is whether humans and robots differ in preferring puppies, flowers, or data so we can determine who is a robot so only robots are let into the city. Therefore, our hypotheses might be something like this:</p>
+<p>The research question is whether preference for puppies, flowers, or data is associated with whether a visitor is a human or robot. The hypotheses are:</p>
 <ul>
-<li><p><span class="math inline">\(H_0\)</span>: Humans and robots have similar preferences.</p></li>
-<li><p><span class="math inline">\(H_1\)</span>: Humans and robots have different preferences.</p></li>
+<li><p><span class="math inline">\(H_0\)</span>: Species and preference are independent; humans and robots have the same distribution of preferences.</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: Species and preference are associated; humans and robots differ in their distribution of preferences.</p></li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A researcher examines whether employment status—employed or unemployed—is associated with preferred course format—in person, online, or hybrid.</p>
+<ol type="1">
+<li>How many categorical variables are there?</li>
+<li>What are the dimensions of the contingency table?</li>
+<li>Write the null hypothesis.</li>
+</ol>
+<div class="collapse" title="Check Your Answer">
+<ol type="1">
+<li>There are two categorical variables: employment status and preferred course format.</li>
+<li>This is a 2 × 3 contingency table.</li>
+<li>The null hypothesis is that employment status and preferred course format are independent. In other words, the distribution of course-format preferences is the same for employed and unemployed participants.</li>
+</ol>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="step-2-check-assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-check-assumptions">Step 2: Check Assumptions</h2>
 <p>The chi-square test of independence has the following assumptions:</p>
 <ol type="1">
-<li><p><strong>Expected frequencies are sufficiently large</strong>, which is usually greater than 5. If you violate this assumption, you can use <a href="#fishers-exact-test">Fisher’s exact test</a>.</p>
+<li><p><strong>Expected frequencies are sufficiently large</strong>. As a general guideline for this course, each expected frequency should be at least 5. For a 2 × 2 table with small expected frequencies, use <a href="#fishers-exact-test">Fisher’s exact test</a>.</p>
 <ul>
-<li>You test for this assumption by selecting “Expected counts” in the Cells tab for the test of independence. You will then see rows of expected counts in your contingency table. Look at the numbers and check that they are all 5 or greater.</li>
+<li>Evaluate this assumption by selecting <strong>Expected counts</strong> under <strong>Cells</strong>. Then inspect the expected count in each cell of the contingency table.</li>
 </ul></li>
-<li><p>Data are <strong>independent</strong> of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test (next chapter).</p>
+<li><p><strong>Observations are independent</strong>, meaning each participant or case contributes to only one cell of the contingency table. When the same participants provide two paired binary responses, go to chapter <a href="./11.3-mcnemars-test.html">11.3 McNemar’s test</a>.</p>
 <ul>
-<li>This requires knowing how your data was collected. If it’s a within-subjects design (i.e., all participants are in all conditions of one variable), then most likely you want to use McNemar’s test. If it’s a between-subjects design (i.e., some participants are in one condition of a variable), then you most likely meet this assumption and can perform the chi-square test of independence.</li>
+<li>This assumption must be evaluated from the study design rather than the jamovi output. A standard chi-square test of independence generally requires different, unrelated observations in the cells. McNemar’s test applies only to paired binary data, not to every within-subjects categorical design.</li>
 </ul></li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A researcher records pet ownership and housing type for 60 participants. Participants can appear in more than one pet category because some own both a dog and a cat.</p>
+<p>Is the independence assumption met?</p>
+<div class="collapse" title="Check Your Answer">
+<p>No.&nbsp;Each participant must contribute to only one cell of the contingency table. Allowing the same participant to appear in multiple pet categories violates the independence assumption.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="step-3-perform-the-test" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-perform-the-test">Step 3: Perform the Test</h2>
 <ol type="1">
 <li><p>Go to the Analyses tab, click the Frequencies button, and choose “Independent Samples - <span class="math inline">\(\chi^2\)</span> test of association”.</p></li>
-<li><p>Move your two variables into the rows and columns boxes. In this case, move <code>choice</code> into rows and <code>species</code> into columns. Note that the placement in rows or columns doesn’t really matter, but because we typically work with portrait pages I tend to prefer putting in rows whatever variable has more categories. In this case, choice has 3 categories and species only 2 so I like to put choice in rows and species in columns.</p></li>
-<li><p>Under the Statistics tab, select <span class="math inline">\(\chi^2\)</span> under Tests and <code>Phi and Cramer's V</code> under Nominal to get your effect size.</p></li>
-<li><p>Select <code>Expected counts</code> under Cells to test your assumption of expected frequencies. You can also request the row, column, and total percentages. I often find these easier to report and interpret.</p></li>
-<li><p>Select <code>Standardized residuals (adjusted Pearson)</code> under Post Hoc Tests and highlight values above 1.96 (the statistically significant z-score). You can also just leave it at 2 which is close enough.</p></li>
-<li><p>Select <code>Bar Plot</code> under plots. You may want to tinker with the settings here of determining whether you should use a side by side or stacked bar type, counts or percentages, and rows or columns.</p></li>
+<li><p>Move one categorical variable into <strong>Rows</strong> and the other into <strong>Columns</strong>. For this example, move <code>choice</code> into <strong>Rows</strong> and <code>species</code> into <strong>Columns</strong>. Reversing the variables will not change the chi-square statistic, although it will change how the table and percentages are displayed. Placing the variable with more categories in the rows often produces a table that fits more easily on a portrait-oriented page.</p></li>
+<li><p>Under <strong>Statistics</strong>, select <span class="math inline">\(\chi^2\)</span> under <strong>Tests</strong> and select <strong>Phi and Cramer’s V</strong> under <strong>Nominal</strong> to request an effect-size estimate.</p></li>
+<li><p>Select <strong>Expected Counts</strong> under Cells to test your assumption of expected frequencies. You can also request the row, column, and total percentages. I often find these easier to report and interpret.</p></li>
+<li><p>Select <strong>Standardized residuals (adjusted Pearson)</strong> under <strong>Post Hoc Tests</strong>. Cells with an absolute adjusted residual greater than approximately 1.96 contribute more strongly than expected to the significant association. The default highlighting threshold of 2 provides a close approximation.</p></li>
 </ol>
 <section id="ordinal-variables" class="level3">
-<h3 class="anchored" data-anchor-id="ordinal-variables">Ordinal Variable(s)</h3>
-<p>If either of your variables are ordinal, instead of selecting <code>Phi and Cramer's V</code> you should select <code>Gamma</code> or <code>Kendall's tau-b</code>. Which do you choose? <code>Kendall's tau-b</code> should only be chosen if you have a square table (e.g., 3x3, 4x4, 5x5) whereas <code>Gamma</code> can be done with any size table. <code>Kendall's tau-b</code> will be a slightly more conservative estimate compared to <code>Gamma</code>.</p>
+<h3 class="anchored" data-anchor-id="ordinal-variables">Ordinal Variables</h3>
+<p>The chi-square test can still be used when one or both variables are ordinal, but <span class="math inline">\(\chi^2\)</span>, Phi, and Cramer’s V do not incorporate the ordering of the categories. When the order is substantively meaningful, jamovi also provides ordinal measures of association.</p>
+<ul>
+<li><strong>Kendall’s tau-b</strong> adjusts for tied observations and is commonly used when the two ordinal variables have the same or similar numbers of categories.</li>
+</ul>
+<!-- -->
+<ul>
+<li><strong>Gamma</strong> measures ordinal association but does not adjust for tied pairs, so it may produce a larger estimate when many ties are present.</li>
+</ul>
+<p>When the table is strongly rectangular, other ordinal measures such as Kendall’s tau-c may be preferable, although they are not covered in this course.</p>
+<p>Choose the measure that best matches the structure of the table and explain why it is appropriate. For the nominal variables in the current example, report Cramer’s V.</p>
 </section>
 </section>
 <section id="step-4-interpret-results" class="level2">
 <h2 class="anchored" data-anchor-id="step-4-interpret-results">Step 4: Interpret Results</h2>
-<p>Below, I show the output for the Chi-Square test of independence, with the row % expected frequencies also shown to help in my interpretation of the results.</p>
+<p>The output below includes the observed frequencies, expected frequencies, row percentages, chi-square test, effect size, and adjusted residuals.</p>
 <p><img src="images/09-chi-square/chi-square_results1.png" class="img-fluid"></p>
-<p>The first table shows us our observed and expected frequencies. We use the expected frequencies to test our assumption that expected frequencies are greater than 5. Our smallest expected frequncy is 13.53 so we meet this assumption.</p>
+<p>The first table displays the observed and expected frequencies. The smallest expected frequency is 13.53, so all expected counts exceed 5 and the expected-frequency assumption is met.</p>
 <p><img src="images/09-chi-square/chi-square_results2.png" class="img-fluid"></p>
-<p>The second table gives us our results. Our p-value (<em>p</em> = .005) is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. The degrees of freedom (df) is the number of categories of one variable minus one times the number of categories in the second variable minus one which is (<em>r</em> - 1)(<em>c</em> - 1) or in this case (2-1)(3-1) = 2. Note that N = 180, meaning we have 180 rows of data.</p>
-<p>jamovi also gives us our Cramer’s V value. Note that it does not provide Phi because we don’t have a perfect square table (e.g., 2x2 or 3x3). These are measures of effect size for the chi-square. Cramer’s V can be interpreted similar to a correlation (ranges from 0 to 1, with higher scores meaning stronger relationships between the variables).</p>
-<p>Lastly, newer versions of jamovi finally have post hoc tests! This allows us to find out <em>where</em> the significant differences are. We should compare to the <em>z</em>-score of 1.96 to see which are statistically significant. In this case, we can see there is no difference between robots and humans in whether they selected puppies but robots were significantly more likely to select flowers whereas humans were significantly more likely to select data.</p>
+<p>The chi-square test is statistically significant, <em>p</em> = .005, so we reject the null hypothesis that species and preference are independent. The degrees of freedom are calculated as ((r - 1)(c - 1)). For this 2 × 3 table, df = (2 - 1)(3 - 1) = 2. The analysis includes (<em>N</em> = 180) observations.</p>
+<p>jamovi reports Cramer’s V as the effect size. Phi is generally used for a 2 × 2 table, whereas Cramer’s V can be used with larger contingency tables. Cramer’s V ranges from 0 to 1, with larger values indicating a stronger association. Unlike a correlation coefficient, it does not indicate a positive or negative direction.</p>
+<p>The adjusted residuals help identify which cells contribute most strongly to the significant association. Examine the absolute value of each residual; values greater than approximately |1.96| indicate that the observed count differs notably from the count expected under independence. In this example, the puppy counts are close to what would be expected. Robots selected flowers more often than expected, whereas humans selected data more often than expected.</p>
 <p><img src="images/11-independence/independence_posthoc.png" class="img-fluid" width="350"></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The overall chi-square test is statistically significant. One cell has an adjusted residual of −2.40.</p>
+<ol type="1">
+<li>Does this cell contain more or fewer observations than expected?</li>
+<li>Why should you examine the absolute value of an adjusted residual?</li>
+</ol>
+<div class="collapse" title="Check Your Answer">
+<ol type="1">
+<li>The negative residual indicates that the cell contains fewer observations than expected.</li>
+<li>Both unusually high positive residuals and unusually low negative residuals can contribute to the association. Therefore, the absolute value is compared with approximately 1.96.</li>
+</ol>
+</div>
+</div>
+</div>
 <section id="write-up-the-results-in-apa-style" class="level3">
 <h3 class="anchored" data-anchor-id="write-up-the-results-in-apa-style">Write Up the Results in APA Style</h3>
 <p>We can write up our results in APA something like this:</p>
 <blockquote class="blockquote">
-<p>Pearson’s <span class="math inline">\(\chi^2\)</span> test of independence showed a significant association between species and choice, <span class="math inline">\(\chi^2\)</span> (2) = 10.72, <em>p</em> = .005, Cramer’s V = .24. Robots were more likely to say they prefer flowers (70%) compared to humans (30%; <em>z</em> = 3.22) and humans were more likely to say they prefer data (60%) compared to robots (40%; <em>z</em> = 2.65). Robots (46%) and humans (54%; <em>z</em> = 0.22) were equally likely to prefer puppies.</p>
+<p>A Pearson chi-square test of independence across 180 participants indicated a statistically significant association between species and preference, <span class="math inline">\(\chi^2\)</span> (2) = 10.72, <em>p</em> = .005, Cramer’s V = .24. Robots were more likely to say they prefer flowers (70%) compared to humans (30%; <em>z</em> = 3.22) and humans were more likely to say they prefer data (60%) compared to robots (40%; <em>z</em> = 2.65). Robots (46%) and humans (54%; <em>z</em> = 0.22) were equally likely to prefer puppies.</p>
 </blockquote>
-<p>We can also use the observed frequencies to either visualize (see the next table) or write-up in a table. Here’s an example write-up with a table.</p>
+<p>When several frequencies must be communicated, the observed counts and percentages can be presented in a table rather than described entirely in the text. For example:</p>
 <blockquote class="blockquote">
-<p>Pearson’s <span class="math inline">\(\chi^2\)</span> test of independence showed a significant association between species and choice, <span class="math inline">\(\chi^2\)</span> (2) = 10.72, <em>p</em> = .005, Cramer’s V = .24. Robots were more likely to say they prefer flowers whereas humans were more likely to say they prefer data (see table below).</p>
+<p>A Pearson chi-square test of independence across 180 participants indicated a statistically significant association between species and preference, <span class="math inline">\(\chi^2\)</span> (2) = 10.72, <em>p</em> = .005, Cramer’s V = .24. Robots selected flowers more frequently than expected, whereas humans selected data more frequently than expected (see Table 1).</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -990,43 +1062,45 @@ window.Quarto = {
 </section>
 <section id="visualize-the-results" class="level3">
 <h3 class="anchored" data-anchor-id="visualize-the-results">Visualize the Results</h3>
-<p>jamovi has some decent plots with some of the latest updates. Here’s one I created after tinkering with the settings under Plots on the chi-square setup. These are sufficient for your homework assignments in this class, but note that sometimes when there are many bars or long labels for the categories of your variable it will scrunch up. Hopefully jamovi will fix it in the future.</p>
-<p><img src="images/09-chi-square/chi-square_results4.png" class="img-fluid"></p>
-<p>However, you can also create these pretty easily in Excel. There are two that I think work well for this dataset and our research questions. The first is a clustered column chart:</p>
+<p>Using the Plots feature in jamovi, you can specify the Categorical Variable as <code>species</code> and the Grouping Variable as <code>choice</code>, select <strong>Value labels</strong>, and make the x-axis in title case “Species.” I also tinkered with the legend to move it inside, horizontal, and positioned in a blank space. You can see my final figure below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/09-chi-square/Chi-square test of independence plot.png" class="img-fluid figure-img"></p>
+<figcaption>Example chi-square test of independence plot in jamovi</figcaption>
+</figure>
+</div>
+<p>However, you can also create these pretty easily in Excel. There are two that I think work well for this dataset and our research questions. A clustered column chart allows the categories to be compared side by side:</p>
 <p><img src="images/11-independence/independence_excel1.png" class="img-fluid" width="500"></p>
-<p>The second is a stacked bar chart with connected lines:</p>
+<p>A stacked bar chart emphasizes the distribution within each category:</p>
 <p><img src="images/11-independence/independence_excel2.png" class="img-fluid" width="500"></p>
-<p>Which do you choose? Whichever you think better communicates the message of the results of the analysis! This takes skill and practice, and probably an entirely separate course on effective data visualization.</p>
+<p>Select the graph that most clearly communicates the pattern relevant to the research question. Be especially careful about whether the graph displays counts, row percentages, or column percentages, because each answers a somewhat different descriptive question.</p>
 </section>
 </section>
 <section id="fishers-exact-test" class="level2">
 <h2 class="anchored" data-anchor-id="fishers-exact-test">Fisher’s Exact Test</h2>
-<p>If you violate the assumption that your expected frequencies are sufficiently large and you have a 2x2 table, you can still perform the <span class="math inline">\(\chi^2\)</span> test of independence but instead of selecting <span class="math inline">\(\chi^2\)</span>you’ll select <code>Fisher's exact test</code>. You’ll interpret your results exactly the same but specify you used Fisher’s exact test. Here’s an example write-up from the results above:</p>
+<p>For a chi-square test of independence with small expected frequencies, select Fisher’s exact test instead of relying on the Pearson chi-square approximation. Fisher’s exact test evaluates the same null hypothesis of independence but calculates an exact p-value.</p>
+<p>Report Fisher’s exact test by name rather than reporting the Pearson (\chi^2) statistic as though it were the Fisher statistic. For example:</p>
 <blockquote class="blockquote">
 <p>Fisher’s exact test of independence showed a significant association between species and choice, <span class="math inline">\(\chi^2\)</span> (2) = 10.72, <em>p</em> = .004, Cramer’s V = .24. Robots were more likely to say they prefer flowers (70%) compared to humans (30%) and humans were more likely to say they prefer data (60%) compared to robots (40%). Robots (46%) and humans (54%) were equally likely to prefer puppies.</p>
 </blockquote>
-<p>Note that what changes is only the p-value from the chi-square test and Fisher’s exact test.</p>
-</section>
-<section id="additional-practice" class="level2">
-<h2 class="anchored" data-anchor-id="additional-practice">Additional Practice</h2>
-<p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
-<p>To get the most out of these exercises, try to first find out the answer on your own and then go to the appendix to check your answer.</p>
-<ol type="1">
-<li><p><strong>Is Athlete related to Gender?</strong></p>
-<ul>
-<li><p>Do you meet the assumptions?</p></li>
-<li><p>Which test should you perform?</p></li>
-<li><p>Are the observed frequencies similar to the expected frequencies?</p></li>
-<li><p>What is your chi-square value, rounded to two decimal places?</p></li>
-</ul></li>
-<li><p><strong>Is Gender related to Rank?</strong></p>
-<ul>
-<li><p>Do you meet the assumptions?</p></li>
-<li><p>Which test should you perform?</p></li>
-<li><p>Are the observed frequencies similar to the expected frequencies?</p></li>
-<li><p>What is your chi-square value, rounded to two decimal places?</p></li>
-</ul></li>
-</ol>
+<p>Note that what changes is only the p-value from the chi-square test and Fisher’s exact test. Fisher’s exact test and Pearson’s chi-square test may produce different <em>p</em>-values because they use different methods of calculation. The descriptive frequencies and effect size do not change, but the inferential test being reported does.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A researcher has a 2 × 2 contingency table. Two cells have expected frequencies below 5.</p>
+<p>Which inferential test should the researcher use?</p>
+<div class="collapse" title="Check Your Answer">
+<p>The researcher should use Fisher’s exact test because the table is 2 × 2 and the expected frequencies are too small for the Pearson chi-square approximation.</p>
+</div>
+</div>
+</div>
 
 
 </section>

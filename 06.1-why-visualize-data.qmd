@@ -1,30 +1,49 @@
 # 6.1 Why Visualize Data? {.unnumbered}
 
-“A picture is worth a thousand words,” and in research, figures and graphs can be incredibly useful. They help us see patterns that might be difficult to notice in a table.
+Numerical summaries are essential, but they do not always tell the full story. Two datasets can have similar means and standard deviations while differing greatly in shape, clustering, outliers, or the relationship among variables. A visualization can reveal those differences immediately.
 
-Visualizations can help you answer questions like:
+Visualizations can help you:
 
-- What does the distribution look like?
-- Are values clustered or spread out?
-- Are there outliers?
-- Are there unexpected categories?
-- Do groups look similar or different?
-- Does something look wrong with the data?
+- See the **shape** of a distribution, such as whether it is symmetric or skewed
+- Identify **outliers** or unusual values
+- Understand **variability** and spread
+- Compare groups
+- Detect relationships, changes, or trends
+- Notice possible data-entry or measurement problems
 
-Remember: it is incredibly important to visualize your data. You never know what descriptive statistics may be hiding.
+## Visualizations in Practice
 
-## Graphs Can Reveal Problems
+Visualizations are useful both while analyzing data and while communicating results.
 
-Imagine two variables have the same mean and standard deviation. You might assume they look similar. But one could be normally distributed, another could be skewed, and another could have a few extreme outliers.
+During analysis, a graph can help you inspect the data before running an inferential test. For example, a histogram can reveal skew, a box plot can reveal possible outliers, and a scatterplot can reveal a nonlinear relationship that a correlation coefficient alone might hide.
 
-The numbers are important, but they are not enough by themselves.
+When communicating results, a well-designed graph can summarize a large amount of information efficiently. This is especially useful because journal articles, professional reports, presentations, and public-facing materials often need to communicate findings to readers who may not have strong statistical backgrounds.
 
-## Graphs Support Interpretation
+## Exploration and Communication
 
-Visualizations are also useful for communication. A well-chosen graph can help readers understand your data quickly. A poorly chosen graph can confuse readers or imply something the data do not support.
+The graph you use to explore your data does not always need to be the graph you use to present your findings.
 
-The goal is not to make a graph because a graph is required. The goal is to choose a graph that helps you understand or communicate something meaningful about the data.
+- **Exploratory visualizations** help you understand the data, check assumptions, and notice unusual patterns. They may include more detail than you would show in a final report.
+- **Communication visualizations** emphasize the pattern most relevant to the research question and should be understandable without requiring the reader to inspect the dataset.
 
-::: {.callout-warning title="Common Mistake"}
-Do not choose a graph only because it looks nice. Choose a graph because it matches the variable type and helps answer the question you are asking.
+jamovi provides visualizations in several places. **Exploration → Descriptives** remains especially useful for quickly inspecting distributions and possible outliers. The **Plots** tab provides more control over the appearance and labeling of graphs intended for communication.
+
+## Key Takeaway
+
+Descriptive statistics and visualizations work together:
+
+- **Statistics** provide precise numerical summaries.
+- **Visualizations** provide an overall picture of the data.
+
+Using both allows you to better understand and communicate your results.
+
+::: {.callout-note title="Remember"}
+Always visualize your data. You never know what a numerical summary may be hiding.
 :::
+
+Here's a [video](https://www.youtube.com/watch?v=d2wU0kmCJEY) walking through why it is so important to look at your data.
+
+```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=d2wU0kmCJEY")
+```

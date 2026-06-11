@@ -1,18 +1,23 @@
-# 6. Visualizing Data in jamovi
+# 6. Visualizing Data in jamovi {.unnumbered}
 
-Visualizations help us see our data. Descriptive statistics are useful, but they can hide important patterns. A graph can reveal skew, outliers, unusual categories, group differences, or data entry problems that might not be obvious from a table of numbers.
+In the previous chapter, we described data using numerical summaries such as means, standard deviations, frequencies, and percentages. In this chapter, we will describe data using **visualizations**.
 
-Visualizations are not separate from descriptive statistics. They help you understand the patterns behind the numbers. A mean and standard deviation can summarize a variable, but a graph can show whether the distribution is skewed, whether there are outliers, whether groups overlap, or whether something strange is happening in the data.
-
-In other words: descriptive statistics summarize; visualizations help you see.
-
-This chapter focuses on choosing and interpreting common visualizations in jamovi.
+Graphs allow us to see patterns that may not be obvious from numbers alone. They also help us communicate those patterns clearly to other people. A graph should therefore do more than look appealing: it should make the most important feature of the data easier to understand.
 
 By the end of this chapter, you should be able to:
 
-- explain why visualizing data is an important part of analysis
-- choose graphs based on variable type and research question
-- create and interpret graphs for continuous variables
-- create and interpret graphs for categorical variables
-- create and interpret graphs for continuous variables across groups
-- use graphs to identify patterns, outliers, and possible data problems
+- Choose an appropriate plot based on the variables and the question you are asking
+- Explain what common plots communicate about the data
+- Create and make basic edits to a plot in jamovi
+- Identify common choices that can make a graph clearer or more misleading
+
+The five main plots available through the **Plots** tab in jamovi are bar plots, box plots, histograms, scatterplots, and line plots. The sections in this chapter are organized by the types of variables you want to visualize rather than by the buttons in jamovi. This is intentional: choose a graph based on what you want to communicate, not simply because a particular plot is available.
+
+## Chapter Sections
+
+- [6.1 Why Visualize Data?](06.1-why-visualize-data.qmd)
+- [6.2 Choosing the Right Graph](06.2-choosing-the-right-graph.qmd)
+- [6.3 Visualizing One or More Categorical Variables](06.3-visualizing-one-or-more-categorical-variables.qmd)
+- [6.4 Visualizing One or More Continuous Variables](06.4-visualizing-one-or-more-continuous-variables.qmd)
+- [6.5 Visualizing a Continuous Variable Across a Categorical Variable](06.5-visualizing-a-continuous-variable-across-a-categorical-variable.qmd)
+- [6.6 Expanding Your Data Visualization](06.6-expanding-your-data-visualization.qmd)
