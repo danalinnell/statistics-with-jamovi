@@ -40,7 +40,7 @@ A group with a larger sample will usually have taller count bars even when the r
 6.  Select **Value labels** when showing the exact counts or percentages would help the reader.
 7.  Revise the title, axis titles, and legend as needed.
 
-![Bar plot with two categorical variables in jamovi](images/Visualizing data/6.3 Categorical bar plot.png)
+![Bar plot with two categorical variables in jamovi](images/Visualizing%20data/6.3%20Categorical%20bar%20plot.png)
 
 For the species-and-choice example, `species` could be the categorical variable and `choice` the grouping variable. Reversing them would display the same observations from a different perspective. Choose the arrangement that makes the research question easiest to answer.
 

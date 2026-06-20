@@ -76,7 +76,7 @@ A researcher examines whether employment status—employed or unemployed—is as
 2. What are the dimensions of the contingency table?
 3. Write the null hypothesis.
 
-::: {.collapse title="Check Your Answer"}
+::: {.callout-note title="Check Your Answer" collapse="true"}
 
 1. There are two categorical variables: employment status and preferred course format.
 2. This is a 2 × 3 contingency table.
@@ -103,7 +103,7 @@ A researcher records pet ownership and housing type for 60 participants. Partici
 
 Is the independence assumption met?
 
-::: {.collapse title="Check Your Answer"}
+::: {.callout-note title="Check Your Answer" collapse="true"}
 
 No. Each participant must contribute to only one cell of the contingency table. Allowing the same participant to appear in multiple pet categories violates the independence assumption.
 
@@ -161,7 +161,7 @@ The overall chi-square test is statistically significant. One cell has an adjust
 1. Does this cell contain more or fewer observations than expected?
 2. Why should you examine the absolute value of an adjusted residual?
 
-::: {.collapse title="Check Your Answer"}
+::: {.callout-note title="Check Your Answer" collapse="true"}
 
 1. The negative residual indicates that the cell contains fewer observations than expected.
 2. Both unusually high positive residuals and unusually low negative residuals can contribute to the association. Therefore, the absolute value is compared with approximately 1.96.
@@ -217,7 +217,7 @@ A researcher has a 2 × 2 contingency table. Two cells have expected frequencies
 
 Which inferential test should the researcher use?
 
-::: {.collapse title="Check Your Answer"}
+::: {.callout-note title="Check Your Answer" collapse="true"}
 
 The researcher should use Fisher’s exact test because the table is 2 × 2 and the expected frequencies are too small for the Pearson chi-square approximation.
 

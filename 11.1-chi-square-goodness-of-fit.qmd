@@ -65,7 +65,7 @@ A university reports that its student population is 40% first-year students, 30%
 2. What expected proportions should be entered in jamovi?
 3. Write the null hypothesis.
 
-::: {.collapse title="Check Your Answer"}
+::: {.callout-note title="Check Your Answer" collapse="true"}
 
 1. No. The university population is not evenly distributed across the four class years.
 2. The expected proportions are .40, .30, .20, and .10.
@@ -91,7 +91,7 @@ A researcher asks 40 participants to select their favorite of five campus dining
 2. Is the expected-frequency guideline met?
 3. What additional assumption must be evaluated from the study design?
 
-::: {.collapse title="Check Your Answer"}
+::: {.callout-note title="Check Your Answer" collapse="true"}
 
 1. The expected frequency is (40 \times .20 = 8) for each option.
 2. Yes. Each expected frequency is at least 5.
@@ -139,7 +139,7 @@ A chi-square goodness-of-fit test is statistically significant. One category has
 
 Can you conclude from the omnibus chi-square test alone that each of those two categories differs significantly from its expected frequency?
 
-::: {.collapse title="Check Your Answer"}
+::: {.callout-note title="Check Your Answer" collapse="true"}
 
 No. The significant omnibus test indicates that the overall observed distribution differs from the expected distribution somewhere. Descriptive differences can be discussed, but identifying which individual categories differ significantly requires additional follow-up analyses, such as the standardized residuals which jamovi currently does not provide for a goodness-of-fit test.
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12.1 One-Sample t-Test – Stats with jamovi</title>
+<title>12.1 One Sample t-Test – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -115,7 +115,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12.0-t-tests.html">12. t-Tests</a></li><li class="breadcrumb-item"><a href="./12.1-one-sample-t-test.html">12.1 One-Sample t-Test</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12.0-t-tests.html">12. t-Tests</a></li><li class="breadcrumb-item"><a href="./12.1-one-sample-t-test.html">12.1 One Sample <em>t</em>-Test</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -603,19 +603,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12.1-one-sample-t-test.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">12.1 One-Sample t-Test</span></a>
+ <span class="menu-text">12.1 One Sample <em>t</em>-Test</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12.2-independent-t-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12.2 Independent t-Test</span></a>
+ <span class="menu-text">12.2 Independent <em>t</em>-Test</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12.3-dependent-t-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12.3 Dependent t-Test</span></a>
+ <span class="menu-text">12.3 Dependent <em>t</em>-Test</span></a>
   </div>
 </li>
       </ul>
@@ -780,16 +780,15 @@ window.Quarto = {
   <li><a href="#step-3-perform-the-test" id="toc-step-3-perform-the-test" class="nav-link" data-scroll-target="#step-3-perform-the-test">Step 3: Perform the Test</a></li>
   <li><a href="#step-4-interpret-results" id="toc-step-4-interpret-results" class="nav-link" data-scroll-target="#step-4-interpret-results">Step 4: Interpret Results</a></li>
   <li><a href="#wilcoxon-w-test" id="toc-wilcoxon-w-test" class="nav-link" data-scroll-target="#wilcoxon-w-test">Wilcoxon W Test</a></li>
-  <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn">Your Turn!</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12.0-t-tests.html">12. t-Tests</a></li><li class="breadcrumb-item"><a href="./12.1-one-sample-t-test.html">12.1 One-Sample t-Test</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12.0-t-tests.html">12. t-Tests</a></li><li class="breadcrumb-item"><a href="./12.1-one-sample-t-test.html">12.1 One Sample <em>t</em>-Test</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">12.1 One-Sample t-Test</h1>
+<h1 class="title">12.1 One Sample <em>t</em>-Test</h1>
 </div>
 
 
@@ -806,185 +805,258 @@ window.Quarto = {
 </header>
 
 
-<p>The one-sample t-test is used to test the difference between our sample’s mean on the dependent variable and the mean of the population.</p>
-<p>There are three different types of alternative hypotheses we could have for the one sample t-test:</p>
+<p>A <strong>one sample <em>t</em>-test</strong> is used to test whether the mean of one continuous variable differs from a known or hypothesized comparison value. In jamovi, this test is labeled <strong>One Sample T-Test</strong>. Other sources may call it a <strong>one-sample <em>t</em>-test</strong>.</p>
+<p>There are three different types of alternative hypotheses we could have for a one sample <em>t</em>-test. In the hypotheses below, the sample mean is being compared to a specified comparison value.</p>
 <ol type="1">
 <li><p><strong>Two-tailed</strong></p>
 <ul>
-<li><span class="math inline">\(H_1\)</span>: The sample mean has a different mean than the population mean.</li>
-<li><span class="math inline">\(H_0\)</span>: There is no difference in means between the sample and population.</li>
+<li><span class="math inline">\(H_1\)</span>: The sample mean is different from the comparison value.</li>
+<li><span class="math inline">\(H_0\)</span>: The sample mean is equal to the comparison value.</li>
 </ul></li>
 <li><p><strong>One-tailed</strong></p>
 <ul>
-<li><span class="math inline">\(H_1\)</span>: The sample has a greater mean than the population.</li>
-<li><span class="math inline">\(H_0\)</span>: The mean for the sample is less than or equal to the mean for the population.</li>
+<li><span class="math inline">\(H_1\)</span>: The sample mean is greater than the comparison value.</li>
+<li><span class="math inline">\(H_0\)</span>: The sample mean is less than or equal to the comparison value.</li>
 </ul></li>
 <li><p><strong>One-tailed</strong></p>
 <ul>
-<li><span class="math inline">\(H_1\)</span>: The sample has a smaller mean than the population.</li>
-<li><span class="math inline">\(H_0\)</span>: The mean for the sample is greater than or equal to the mean for the population.</li>
+<li><span class="math inline">\(H_1\)</span>: The sample mean is less than the comparison value.</li>
+<li><span class="math inline">\(H_0\)</span>: The sample mean is greater than or equal to the comparison value.</li>
 </ul></li>
 </ol>
-<p>For this chapter, we’re going to work with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “zeppo”. This dataset is hypothetical data of 20 psychology students taking Dr.&nbsp;Zeppo’s introductory statistics class. Dr.&nbsp;Zeppo wants to know if the psychology students tend to get the same grade as everyone else (<em>M</em> = 67.5) or whether they get a higher or lower grade. As students in a psychology course, we’re going to assume psychology students get higher grades.</p>
+<p>For this chapter, we will work with the <code>zeppo</code> dataset from the <code>lsj-data</code> library. This dataset contains hypothetical data from 20 psychology students taking Dr.&nbsp;Zeppo’s introductory statistics class. Dr.&nbsp;Zeppo knows that the mean grade across all students in the course is 67.5. A psychology colleague hypothesizes that psychology students earn higher grades than the overall course average. We will use a one sample <em>t</em>-test to compare the mean grade for the psychology students in this sample to the comparison value of 67.5.</p>
 <section id="step-1-look-at-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-look-at-the-data">Step 1: Look at the Data</h2>
 <p>If you learn one thing through this course, it is that <em>you should always look at your data!!!</em> Descriptive and inferential statistics can sometimes hide weird things with your data, so it’s incredibly important you look at it first.</p>
 <section id="data-set-up" class="level3">
 <h3 class="anchored" data-anchor-id="data-set-up">Data Set-Up</h3>
-<p>To conduct the independent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis.</p>
+<p>To conduct a one sample <em>t</em>-test, the dataset needs one continuous variable. Each row should represent one participant or unit of analysis. The comparison value is not stored as a grouping variable in the dataset; instead, we enter it directly into jamovi when we run the test.</p>
 <p>Below is the first ten rows of our data from the zeppo dataset.</p>
 <p><img src="images/07.1-one_sample_t-test/data.png" class="img-fluid"></p>
 </section>
 <section id="describe-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="describe-the-data">Describe the Data</h3>
-<p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Our overall data consists of 20 cases and the students in our dataset have a mean grade of 72.30 (<em>SD</em> = 9.52). The minimum and maximum values look accurate; theoretically, student grades should range from 0-100. Lastly, the distribution of data looks possibly not normally distributed. Although we have a pretty small sample size, we can proceed with our analyses. First, though, we need to check our assumptions.</p>
+<p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Our overall data consists of 20 cases and the students in our dataset have a mean grade of 72.30 (<em>SD</em> = 9.52). The minimum and maximum values look accurate; theoretically, student grades should range from 0-100. The distribution does not look perfectly normal, which is common with small samples. Because a one sample <em>t</em>-test assumes the outcome is approximately normally distributed, we will formally check this assumption before interpreting the test results.</p>
 <p><img src="images/07.1-one_sample_t-test/descriptives.png" class="img-fluid"></p>
 <p><img src="images/07.1-one_sample_t-test/plot.png" class="img-fluid" width="523"></p>
 </section>
 <section id="specify-the-hypotheses" class="level3">
 <h3 class="anchored" data-anchor-id="specify-the-hypotheses">Specify the Hypotheses</h3>
-<p>For this chapter, we’re going to work with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “zeppo”. This dataset is hypothetical data of 20 psychology students taking Dr.&nbsp;Zeppo’s introductory statistics class. Dr.&nbsp;Zeppo wants to know if the psychology students tend to get the same grade as everyone else (<em>M</em> = 67.5) or whether they get a higher or lower grade. As students in a psychology course, we’re going to assume psychology students get higher grades.</p>
-<p>First, it may be useful to understand what our dependent and independent variables are. Our dependent variable is the outcome variable, and in this case it’s the grade students get in the course. Our independent variable that is presumed to “cause” the outcome, and in this case it’s our sample of psychology students whom we’re comparing to our population of all students.</p>
+<p>For a one sample <em>t</em>-test, we focus on one continuous outcome variable and one comparison value. In this example, the outcome variable is students’ course grades. The comparison value is the overall course mean of 67.5.</p>
 <p>Therefore our hypotheses can be written up as such:</p>
 <ul>
-<li><span class="math inline">\(H_1\)</span>: Psychology students get higher grades than the population of Dr.&nbsp;Zeppo’s students.</li>
-<li><span class="math inline">\(H_0\)</span>: There is no difference in student grades between psychology students and the population of Dr.&nbsp;Zeppo’s students.</li>
+<li><span class="math inline">\(H_1\)</span>: Psychology students have a higher mean grade than the overall course mean of 67.5.</li>
+<li><span class="math inline">\(H_0\)</span>: Psychology students have a mean grade less than or equal to the overall course mean of 67.5.</li>
 </ul>
-<p>Relatedly, we want to be clear about our alpha value. We’ll stick with the norm of <span class="math inline">\(\alpha\)</span> = .05. Therefore, for our results to be statistically significant we want our <em>p</em>-value to be less than our <span class="math inline">\(\alpha\)</span> and so we want <em>p</em> &lt; .05.</p>
+<p>We will use the conventional alpha value of <span class="math inline">\(\alpha = .05\)</span>. Therefore, we will consider the result statistically significant if the <em>p</em>-value is less than .05.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A researcher wants to test whether students’ average sleep is less than the recommended 8 hours per night.</p>
+<ol type="1">
+<li>What is the comparison value?</li>
+<li>Is the alternative hypothesis directional or non-directional?</li>
+<li>Write the alternative hypothesis in words.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>The comparison value is 8 hours.</li>
+<li>The alternative hypothesis is directional because the researcher predicts that the mean is less than 8 hours.</li>
+<li>The alternative hypothesis is that students’ mean sleep is less than 8 hours per night.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="step-2-check-assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-check-assumptions">Step 2: Check Assumptions</h2>
-<p>As a parametric test, the independent t-test has the same assumptions as other parametric tests (minus homogeneity of variance because there is only one group):</p>
+<p>As a parametric test, the one sample <em>t</em>-test has several assumptions:</p>
 <ol type="1">
-<li><p>The dependent variable is <strong>normally distributed</strong></p></li>
-<li><p>The dependent variable is <strong>interval or ratio</strong> (i.e., continuous)</p></li>
-<li><p>Scores are <strong>independent</strong> between groups</p></li>
+<li><p>The outcome variable is <strong>approximately normally distributed</strong> in the population.</p></li>
+<li><p>The outcome variable is <strong>interval or ratio</strong> (i.e., continuous).</p></li>
+<li><p>Observations are <strong>independent</strong>. Each participant or case should contribute one score, and one participant’s score should not determine another participant’s score.</p></li>
 </ol>
-<p>We cannot test the second and third assumptions; rather, those are based on knowing your data.</p>
-<p>However, we can and should test for the first assumption. Fortunately, the independent samples t-test in jamovi has two check boxes under “Assumption Checks” that lets us test for normality.</p>
+<p>We cannot test the second and third assumptions using the output alone; those assumptions are based on how the data were measured and collected.</p>
+<p>However, we can and should test for the first assumption. Fortunately, the one sample <em>t</em>-test in jamovi has options under <strong>Assumption Checks</strong> that help us evaluate normality.</p>
 <p>One thing to keep in mind in all statistical software is that we often check assumptions simultaneously to performing the statistical test. However, we should always check assumptions first before looking at and interpreting our results. Therefore, whereas the instructions for performing the test are below, we discuss checking assumptions here first to help ingrain the importance of always checking assumptions for interpreting results.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A one sample <em>t</em>-test compares the mean exam score from one sample to a passing score of 70. The dataset includes one row per student and one continuous exam score variable.</p>
+<ol type="1">
+<li>Is a grouping variable needed?</li>
+<li>Where does the comparison value of 70 go?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>No.&nbsp;A one sample <em>t</em>-test uses one continuous outcome variable and does not require a grouping variable.</li>
+<li>The comparison value is entered in the one sample <em>t</em>-test options in jamovi.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
 <section id="testing-normality" class="level3">
 <h3 class="anchored" data-anchor-id="testing-normality">Testing Normality</h3>
 <p>jamovi easily allows us to check for normality using all four methods we’ve learned about.</p>
-<p>First, the Shapiro-Wilk test was not statistically significant (W = .96, <em>p</em> = .586); therefore, this indicates the data is normally distributed.</p>
+<p>First, the Shapiro-Wilk test was not statistically significant (<em>W</em> = .96, <em>p</em> = .586), which means the test does not provide evidence that the distribution differs from normality.</p>
 <p>Second, the dots are fairly close to the diagonal line in the Q-Q plot.</p>
-<p><img src="images/07.1-one_sample_t-test/normality.png" class="img-fluid">“)</p>
+<p><img src="images/07.1-one_sample_t-test/normality.png" class="img-fluid"></p>
 <p>Third, we can examine the z-scores of skew and kurtosis:</p>
 <ul>
 <li><p><strong>Skew</strong>: <span class="math inline">\(-.53/.51 = -1.04\)</span></p></li>
 <li><p><strong>Kurtosis</strong>: <span class="math inline">\(.07/.99 = .07\)</span></p></li>
 </ul>
-<p>Remember that we divide the value by its standard error to determine the z-score. If the absolute value of it is below 1.96 then we assume it is normally distributed. Both skew and kurtosis meet the assumption of normality.</p>
-<p>Fourth, we can examine the distribution of the data using a density curve. The curve in the violin plot shown above looks fairly bell-shaped so we can say we met the assumption.</p>
+<p>Remember that we divide the value by its standard error to determine the z-score. If the absolute value of the z-score is below approximately 1.96, then the skew or kurtosis value does not suggest a substantial departure from normality. Both skew and kurtosis meet the assumption of normality.</p>
+<p>Fourth, we can examine the distribution of the data using a histogram, density curve, box plot, or violin plot. The distribution shown above is not perfectly normal, but it is close enough for this example.</p>
 <p>Overall, all four tests lead us to conclude that we satisfy the assumption of normality.</p>
 </section>
 </section>
 <section id="step-3-perform-the-test" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-perform-the-test">Step 3: Perform the Test</h2>
-<section id="decide-which-statistical-test-you-should-be-using" class="level3">
-<h3 class="anchored" data-anchor-id="decide-which-statistical-test-you-should-be-using">Decide Which Statistical Test You Should Be Using</h3>
-<p>If you fail to meet the assumption of normality, and no transformation fixes the data (refer back to the Cleaning data chapter you read previously!), then you can use the <a href="#wilcoxon-w-test">Wilcoxon W test</a>.</p>
-<p>If you meet the assumption of normality, then you can use the Student’s t-test.</p>
+<section id="decide-whether-to-use-the-parametric-or-nonparametric-test" class="level3">
+<h3 class="anchored" data-anchor-id="decide-whether-to-use-the-parametric-or-nonparametric-test">Decide Whether to Use the Parametric or Nonparametric Test</h3>
+<p>If the normality assumption is reasonably met, use the one sample Student’s <em>t</em>-test.</p>
+<p>If the normality assumption is seriously violated and no appropriate transformation addresses the issue, use the Wilcoxon signed-rank test. In jamovi, this option appears as <strong>Wilcoxon W</strong>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A researcher wants to run a one sample <em>t</em>-test, but the outcome variable is strongly skewed and the normality assumption is not met.</p>
+<p>Which test should the researcher consider instead?</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The researcher should consider the Wilcoxon signed-rank test, labeled <strong>Wilcoxon W</strong> in jamovi. This is the nonparametric alternative to the one sample <em>t</em>-test.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="decide-which-hypothesis-you-should-be-using" class="level3">
 <h3 class="anchored" data-anchor-id="decide-which-hypothesis-you-should-be-using">Decide Which Hypothesis You Should Be Using</h3>
-<p>When you specified the hypotheses you should understand whether you had a directional (one-tailed) or non-directional (two-tailed) alternative hypothesis based on the research question.</p>
+<p>When you specify hypotheses, decide whether the alternative hypothesis is directional (one-tailed) or non-directional (two-tailed) based on the research question.</p>
 <p>If the alternative hypothesis is non-directional (two-tailed) then you choose <code>≠Test value</code>.</p>
-<p>If the alternative hypothesis directional (one-tailed) then you choose <code>&gt; Test value</code> if you think your sample has a higher average than the population or <code>&lt; Test value</code> if you think your sample has a lower average than the population.</p>
+<p>If the alternative hypothesis is directional (one-tailed), choose <code>&gt; Test value</code> if the research question predicts that the sample mean is higher than the comparison value. Choose <code>&lt; Test value</code> if the research question predicts that the sample mean is lower than the comparison value.</p>
 <div class="warning">
 <p>Remember that the hypothesis you use is based on your alternative hypothesis and research question! This is not based on what the data looks like. It’s a function of the research question you have prior to looking at the data.</p>
 </div>
 </section>
 <section id="perform-the-test" class="level3">
 <h3 class="anchored" data-anchor-id="perform-the-test">Perform the Test</h3>
-<p>Now that we’ve checked the assumptions, we can perform the one sample t-test. Here are the steps for doing so in jamovi:</p>
+<p>Now that we have checked the assumptions, we can perform the one sample <em>t</em>-test. Here are the steps for doing so in jamovi:</p>
 <ol type="1">
-<li><p>Go to the Analyses tab, click the T-Tests button, and choose “One Sample T-Test”.</p></li>
-<li><p>Move your dependent variable <code>x</code> to the Dependent Variables box.</p></li>
-<li><p>Under Tests, select <code>Student's</code> if you met the assumption of normality or <code>Wilcoxon rank</code> if you did not. We met the assumption, so we will select <code>Student's</code>.</p></li>
-<li><p>Under Hypothesis, input the population mean. In our case, it is <code>67.5</code> (this is the mean given to us by Dr.&nbsp;Zeppo). Also, select the hypothesis that matches your hypothesis. In our case, select <code>&gt; Test value</code> because we believe psychology students have a higher mean than the test value (population mean).</p></li>
-<li><p>Under Additional Statistics, select <code>Mean difference</code>, <code>Effect size</code>, <code>Descriptives</code>, and (optionally) <code>Descriptives plots</code>.</p></li>
-<li><p>If you are using this test to check assumptions, under Assumption Checks, you can select both options: <code>Normality test</code> and <code>Q-Q plot</code>.</p></li>
+<li><p>Go to the <strong>Analyses</strong> tab, click <strong>T-Tests</strong>, and choose <strong>One Sample T-Test</strong>.</p></li>
+<li><p>Move the continuous outcome variable <code>x</code> to the <strong>Dependent Variables</strong> box.</p></li>
+<li><p>Under <strong>Tests</strong>, select <code>Student's</code> if the normality assumption is reasonably met. Select <code>Wilcoxon W</code> if the normality assumption is seriously violated. We met the assumption, so we will select <code>Student's</code>.</p></li>
+<li><p>Under <strong>Hypothesis</strong>, enter the comparison value. In this example, enter <code>67.5</code>. Then select the hypothesis that matches the research question. In this example, select <code>&gt; Test value</code> because the hypothesis predicts that psychology students have a higher mean grade than the comparison value.</p></li>
+<li><p>Under <strong>Additional Statistics</strong>, select <code>Mean difference</code>, <code>Effect size</code>, and <code>Descriptives</code>. You may also select <code>Descriptives plots</code>, although Chapter 6 provides better options for creating graphs.</p></li>
+<li><p>Under <strong>Assumption Checks</strong>, select <code>Normality test</code> and <code>Q-Q plot</code>.</p></li>
 </ol>
-<p>When you are done, your setup should look like this:</p>
-<p><img src="images/07.1-one_sample_t-test/setup.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="step-4-interpret-results" class="level2">
 <h2 class="anchored" data-anchor-id="step-4-interpret-results">Step 4: Interpret Results</h2>
-<p>Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.</p>
+<p>Once we are satisfied that the assumptions for the one sample <em>t</em>-test are reasonably met, we can interpret the results.</p>
 <p><img src="images/07.1-one_sample_t-test/results.png" class="img-fluid"></p>
 <p>Our p-value is less than our alpha value of .05, so our results are statistically significant. Like most of the statistics we’ll come across, the larger the t-statistic (or F-statistic, or chi-square statistic…), the smaller the p-value will be.</p>
 <div class="info">
 <p>What is “df”? That stands for degrees of freedom. The “key terms” chapter covers them in more detail, but in the case of the one-sample t-test they are calculated by the number of participants in our sample minus 1 (n-1) which in this case is 20-1 or 19.</p>
 </div>
-<p>Because our results are statistically significant, we reject our null hypothesis that the population mean is less than or equal to the sample mean of psychology students.</p>
+<p>Because the result is statistically significant, we reject the null hypothesis. The sample provides evidence that psychology students have a higher mean grade than the overall course mean of 67.5.</p>
 <p>However, remember what we’ve learned in the previous chapters! We rejected the null hypothesis, but there’s always the chance that we’ve made a type 1 error.</p>
 <section id="a-note-about-positive-and-negative-t-values" class="level3">
 <h3 class="anchored" data-anchor-id="a-note-about-positive-and-negative-t-values">A Note About Positive and Negative t Values</h3>
-<p>Students often worry about positive or negative t-statistic values and are unsure how to interpret it. Positive or negative t-statistic values simply occur based on which group is listed first. Our t-statistic above is positive because we tested the difference between our sample and the population: (sample - population) = (72.3 - 67.5) = 4.80.</p>
-<p>However, if our sample and population means were reversed, our mean difference would -4.80 and our t-statistic would be -2.25.</p>
-<p>All that is to say, <em>your positive or negative t-statistic is arbitrary</em>. So do not fret!</p>
-<p>One last note: this positive or negative t-statistic is only relevant for the t-test. You will not get negative values for the F-statistic or chi-square tests!</p>
+<p>Students often worry about whether a <em>t</em> statistic is positive or negative. For a one sample <em>t</em>-test, the sign shows whether the sample mean is above or below the comparison value. In this example, the <em>t</em> statistic is positive because the sample mean is higher than the comparison value: (72.30 - 67.50 = 4.80).</p>
+<p>If the sample mean had been lower than the comparison value, the mean difference and <em>t</em> statistic would have been negative. The sign helps identify the direction of the difference, but the <em>p</em>-value tells us whether that difference is statistically significant.</p>
+<p>You will not get negative values for chi-square or <em>F</em> statistics, but <em>t</em> statistics can be positive or negative.</p>
 </section>
 <section id="write-up-the-results-in-apa-style" class="level3">
 <h3 class="anchored" data-anchor-id="write-up-the-results-in-apa-style">Write Up the Results in APA Style</h3>
-<p>When writing up the results of a statistical test, we should always include the following information:</p>
-<ol type="1">
-<li>Description of your research question and/or hypotheses.</li>
-<li>Description of your data. If you fail to meet assumptions, you should specify that and describe what test you chose to perform as a result.</li>
-<li>The results of the inferential test, including what test was performed, the test value and degrees of freedom, p-value, and effect size.</li>
-<li>Interpretation of the results, including any other information as needed.</li>
-</ol>
+<p>As reviewed in <span class="quarto-unresolved-ref">?sec-apa-style</span>, an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result.</p>
 <p>We can write up our results in APA something like this:</p>
 <blockquote class="blockquote">
-<p>Dr.&nbsp;Zeppo’s psychology colleague hypothesized that his psychology students have a higher grade than the population of his students. Psychology students (<em>M</em> = 72.30, <em>SD</em> = 9.52, <em>n</em> = 20) had significantly higher grades than the population of Dr.&nbsp;Zeppo’s students (<em>M</em> = 67.50), <em>t</em> (19) = 2.25, <em>p</em> = .046, <em>d</em> = .50.</p>
-</blockquote>
-<p>Let’s analyze that against the 4 things we need to report:</p>
-<blockquote class="blockquote">
-<p><strong>#1</strong> Dr.&nbsp;Zeppo’s psychology colleague hypothesized that his psychology students have a higher grade than the population of his students. <strong>#4</strong> Psychology students <strong>#2</strong> (<em>M</em> = 72.30, <em>SD</em> = 9.52, <em>n</em> = 20) <strong>#4</strong> had significantly higher grades than the population of Dr.&nbsp;Zeppo’s students (<em>M</em> = 67.50), <strong>#3</strong> <em>t</em> (19) = 2.25, <em>p</em> = .046, <em>d</em> = .50.</p>
+<p>A one sample <em>t</em>-test indicated that psychology students had a significantly higher mean grade (<em>M</em> = 72.30, <em>SD</em> = 9.52, <em>n</em> = 20) than the overall course mean of 67.50, <em>t</em>(19) = 2.25, <em>p</em> = .046, <em>d</em> = .50.</p>
 </blockquote>
 <p>Note that this is not the only way we can write up the results in APA format. The key is that we include all four pieces of information as specified above.</p>
 <p>Also note that the M, SD, n, t, p, and d are all italicized! This is an important part of APA style to remember.</p>
 </section>
 <section id="visualize-the-results" class="level3">
 <h3 class="anchored" data-anchor-id="visualize-the-results">Visualize the Results</h3>
-<p>By selecting <code>Descriptives plots</code> in the setup, you get the figure below. Personally, I don’t think this is a very good plot. It’s not very informative. It just provides the mean (circle), 95% confidence interval (blue bars), and the median.</p>
+<p>For a one sample <em>t</em>-test, the graph should help readers understand the distribution of the continuous variable and how the sample compares to the comparison value. A histogram or box plot is usually more informative than the default descriptives plot from the one sample <em>t</em>-test output.</p>
+<p>A histogram can show the shape of the grade distribution, including whether the scores are roughly symmetric or skewed. A box plot can summarize the median, spread, and possible outliers. If possible, include a reference line or clear caption identifying the comparison value of 67.5.</p>
+<p>The goal is not simply to make a graph because jamovi provides one. The goal is to help readers understand what the sample grades look like and how they compare to the value used in the hypothesis test.</p>
+<p>By selecting <strong>Descriptives plots</strong> in the setup, you get the figure below. Personally, I don’t think this is a very good plot. It’s not very informative. It just provides the mean (circle), 95% confidence interval (blue bars), and the median.</p>
 <p><img src="images/07.1-one_sample_t-test/results-plot.png" class="img-fluid"></p>
-<p>Another default option in jamovi is via the Descriptives analysis. You can ask for the boxplot, violin plot, and data of your dependent variable split by your independent variable. This is a much better option. Not only does it show us our mean (black bars) and interquartile range (via the boxplot), but it also shows our distribution (violin plot) and data points (grey dots). This is much more informative. You can see this in the <em>Look at your data</em> section above. I would prefer to see the graph at the beginning of this chapter than the one that jamovi provides in your analysis.</p>
 </section>
 </section>
 <section id="wilcoxon-w-test" class="level2">
 <h2 class="anchored" data-anchor-id="wilcoxon-w-test">Wilcoxon W Test</h2>
-<p>If you fail to meet the assumption of normality, and no transformation fixes the data, then you can use the Wilcoxon W test.</p>
-<p>The Wilcoxon W is not calculated based on the mean but rather the median. It has no assumptions about the distribution of data. Therefore, it is a non-parametric test. Here is what the output for the student’s t-test and Wilcoxon W look like in jamovi:</p>
+<p>If the normality assumption is seriously violated and no appropriate transformation addresses the issue, you can use the Wilcoxon signed-rank test. In jamovi, this option is labeled <strong>Wilcoxon W</strong>.</p>
+<p>The Wilcoxon signed-rank test is a nonparametric alternative to the one sample <em>t</em>-test. It is based on ranks rather than the original values, so it does not test the mean in the same way as a <em>t</em>-test. Because of this, we usually describe the sample using the median when reporting the Wilcoxon result.</p>
+<p>The Wilcoxon signed-rank test does not require the same normality assumption as the one sample <em>t</em>-test, but it still requires an appropriate one-sample design with independent observations.</p>
 <p><img src="images/07.1-one_sample_t-test/wilcoxon.png" class="img-fluid"></p>
-<p>To conduct this in jamovi, under Tests select <code>Wilcoxon W</code>. You will interpret the results similarly to the one sample t-test:</p>
+<p>To conduct this test in jamovi, select <code>Wilcoxon W</code> under <strong>Tests</strong>. You will interpret whether the sample differs from the comparison value, but you should report the test as a Wilcoxon signed-rank test rather than as a <em>t</em>-test:</p>
 <blockquote class="blockquote">
-<p>Dr.&nbsp;Zeppo’s psychology colleague hypothesized that his psychology students have a higher grade than the population of his students. Using a Wilcoxon W test, psychology students (<em>Mdn</em> = 75.00, <em>SD</em> = 9.52, <em>n</em> = 20) had a higher grade than the population of Dr.&nbsp;Zeppo’s students (<em>M</em> = 67.5), <em>W</em> = 161, <em>p</em> = .038, <span class="math inline">\(r_{bn}\)</span> = .53.</p>
+<p>A Wilcoxon signed-rank test indicated that psychology students’ grades (<em>Mdn</em> = 75.00, <em>n</em> = 20) were significantly higher than the overall course comparison value of 67.5, <em>W</em> = 161, <em>p</em> = .038, (r_{rb} = .53).</p>
 </blockquote>
-<p>Note that we no longer report the mean but rather the median. That is because Wilcoxon W is based on the median, not the mean score.</p>
-</section>
-<section id="your-turn" class="level2">
-<h2 class="anchored" data-anchor-id="your-turn">Your Turn!</h2>
-<p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
-<p>Perform one sample t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!</p>
-<p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
-<ol type="1">
-<li><p><strong>Do the students in our dataset have a higher Writing score than the passing score (<em>M</em> = 70)?</strong></p>
-<ul>
-<li><p>Should you use a one-tailed or two-tailed hypothesis?</p></li>
-<li><p>Which statistic should you use based on your assumptions?</p></li>
-<li><p>Do the students in our dataset have a higher Writing score than the passing score?</p></li>
-</ul></li>
-<li><p><strong>Do the students in our dataset have the same national average height of college students (<em>M</em> = 68 inches)?</strong></p>
-<ul>
-<li><p>Should you use a one-tailed or two-tailed hypothesis?</p></li>
-<li><p>Which statistic should you use based on your assumptions?</p></li>
-<li><p>Do the students in our dataset have the same national average height of college students)?</p></li>
-</ul></li>
-</ol>
+<p>Notice that the Wilcoxon write-up reports the median rather than the mean. This is because the Wilcoxon signed-rank test is rank-based and is not testing a mean difference in the same way as the one sample <em>t</em>-test.</p>
 
 
 </section>
@@ -1397,8 +1469,8 @@ window.Quarto = {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./12.2-independent-t-test.html" class="pagination-link" aria-label="12.2 Independent t-Test">
-        <span class="nav-page-text">12.2 Independent t-Test</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./12.2-independent-t-test.html" class="pagination-link" aria-label="12.2 Independent *t*-Test">
+        <span class="nav-page-text">12.2 Independent <em>t</em>-Test</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

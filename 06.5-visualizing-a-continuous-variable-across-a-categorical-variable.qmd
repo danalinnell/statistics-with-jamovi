@@ -25,7 +25,7 @@ To create a grouped box plot in jamovi:
 5.  Leave **Show outliers** selected.
 6.  Revise the title, axis titles, and legend as needed.
 
-![Example box plot comparing groups in jamovi](images/Visualizing data/6.5 Box plot (by categorical).png)
+![Example box plot comparing groups in jamovi](images/Visualizing%20data/6.5%20Box%20plot%20(by%20categorical).png)
 
 In **Exploration → Descriptives**, jamovi can also supplement a box plot with violin shapes, jittered raw data points, and group means. These additions can reveal clusters, gaps, unusual observations, and small group sizes that a box plot alone may hide.
 
@@ -50,7 +50,7 @@ A bar plot of means can make group differences easy to see, but it hides the dis
 6.  Under **Continuous Options**, choose the error bars required for the analysis or assignment: **Standard deviation**, **Standard error**, or **Confidence interval**.
 7.  Revise the title, axis titles, legend, and value labels as needed.
 
-![Example bar plot comparing groups in jamovi](images/Visualizing data/6.5 Bar plot.png)
+![Example bar plot comparing groups in jamovi](images/Visualizing%20data/6.5%20Bar%20plot.png)
 
 Error bars may represent a standard deviation, standard error, or confidence interval. These quantities have different meanings. You will learn more about uncertainty and confidence intervals later in the textbook. For now, make sure the graph or its caption clearly identifies what the error bars represent.
 
@@ -73,7 +73,7 @@ To create a line plot of group summaries:
 5.  Select **Aggregated data** when the plot should display a summary such as the mean at each time point or ordered category.
 6.  Revise the title, axis titles, and legend as needed.
 
-![Example line plot across categories](images/Visualizing data/6.5 Line plot.png)
+![Example line plot across categories](images/Visualizing%20data/6.5%20Line%20plot.png)
 
 For repeated-measures data, a line plot can instead display individual participants' trajectories. A plot of individual trajectories and a plot of group means communicate different information, so choose based on the question you want to answer.
 

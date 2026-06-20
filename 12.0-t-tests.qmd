@@ -5,10 +5,16 @@ library(tidyverse)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
 
-The t-test looks at difference in means between two things (e.g., groups, time, observations). There are three different types of t-tests:
+A *t*-test is used when we want to evaluate a research question about a mean or a difference between means. Unlike the chi-square tests in @sec-chi-square, which analyze frequencies or counts, *t*-tests analyze continuous variables.
 
-1.  The **one-sample t-test** tests how the sample mean relates to the population mean.
+There are three main types of *t*-tests covered in this chapter. The appropriate test depends on what the sample mean is being compared to: a known or hypothesized value, another independent group, or a paired measurement from the same participants or matched cases.
 
-2.  The **independent t-test** has two *independent* groups. The participants or things in group 1 are *not* the same as the participants or things in group 2. This is a between-subjects design in which different participants are in the two groups.
+| Test | Variables and Design | Research Question |
+|---|---|---|
+| **One-sample *t*-test** | One continuous variable compared with a known or hypothesized value | Is the sample mean different from a comparison value? |
+| **Independent-samples *t*-test** | One continuous outcome and one categorical grouping variable with two independent groups | Do two independent groups differ in their means? |
+| **Dependent/paired-samples *t*-test** | One continuous outcome measured twice for the same participants or matched cases | Do two related means differ? |
 
-3.  The **dependent t-test** has *dependent* or *paired* data. The dependent variable is measured at two different times or for two different conditions for all participants or things. This is a within-subjects design in which case the same participants are in both groups.
+Each *t*-test follows the same four-step hypothesis-testing process introduced earlier in the book: look at the data, check assumptions, perform the test, and interpret the results. What changes across the three tests is the structure of the data and the comparison being made.
+
+The most important decision is whether the observations being compared are independent or paired. If the two means come from different people or different cases, use an independent-samples *t*-test. If the two means come from the same people measured twice or from matched pairs, use a dependent/paired-samples *t*-test.

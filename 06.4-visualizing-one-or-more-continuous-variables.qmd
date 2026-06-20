@@ -25,7 +25,7 @@ The apparent shape of a histogram can change depending on the number and width o
 5.  Select **Show density** when a smooth density curve would help reveal the overall shape.
 6.  Revise the title and axis titles as needed.
 
-![Example histogram in jamovi](images/Visualizing data/6.4 Histogram.png)
+![Example histogram in jamovi](images/Visualizing%20data/6.4%20Histogram.png)
 
 You may also use **Exploration → Descriptives** when quickly inspecting a variable or checking assumptions.
 
@@ -54,7 +54,7 @@ Remember that a point flagged by a box plot is a **possible outlier**, not autom
 5.  Select **Flip axes** when horizontal boxes make long category labels easier to read.
 6.  Revise the title, axis titles, and legend as needed.
 
-![Example box plot in jamovi](images/Visualizing data/6.4 Box plot (single).png)
+![Example box plot in jamovi](images/Visualizing%20data/6.4%20Box%20plot%20(single).png)
 
 The **Notch** option adds an approximate interval around the median. It is not necessary for the basic box plots used in this course unless an assignment specifically requests it.
 
@@ -80,7 +80,7 @@ A scatterplot is important even when you plan to calculate a correlation. Two da
 5.  Keep the confidence interval around the fitted line when communicating uncertainty would be useful.
 6.  Revise the title and axis titles as needed.
 
-![Example scatterplot in jamovi](images/Visualizing data/6.4 Scatterplot.png)
+![Example scatterplot in jamovi](images/Visualizing%20data/6.4%20Scatterplot.png)
 
 When possible, place a predictor or explanatory variable on the x-axis and an outcome variable on the y-axis. This convention does not establish causality; it simply makes the intended question easier to follow.
 
@@ -102,7 +102,7 @@ Do not use a line plot merely because values can be placed in some order. Connec
 8.  Use different colors, line types, or point types when groups must remain distinguishable.
 9.  Revise the title, axis titles, and legend as needed.
 
-![Example line plot in jamovi](images/Visualizing data/6.4 Line plot.png)
+![Example line plot in jamovi](images/Visualizing%20data/6.4%20Line%20plot.png)
 
 :::: {.callout-tip title="Check Your Understanding"}
 A researcher measures stress and sleep quality for 150 participants. The researcher wants to know whether participants with greater stress tend to report poorer sleep quality.

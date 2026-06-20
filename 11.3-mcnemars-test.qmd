@@ -56,7 +56,7 @@ In a training study, 18 employees changed from fail to pass, 4 changed from pass
 1. Which observations does McNemar’s test compare?
 2. Based only on the descriptive frequencies, what direction of change appears more common?
 
-::: {.collapse title="Check Your Answer"}
+::: {.callout-note title="Check Your Answer" collapse="true"}
 
 1. McNemar’s test compares the 18 employees who changed from fail to pass with the 4 employees who changed from pass to fail.
 2. Improvement from fail to pass appears more common than decline from pass to fail.
@@ -79,7 +79,7 @@ In a training study, 18 employees changed from fail to pass, 4 changed from pass
 1. Which observations does McNemar’s test compare?
 2. Based only on the descriptive frequencies, what direction of change appears more common?
 
-::: {.collapse title="Check Your Answer"}
+::: {.callout-note title="Check Your Answer" collapse="true"}
 
 1. McNemar’s test compares the 18 employees who changed from fail to pass with the 4 employees who changed from pass to fail.
 2. Improvement from fail to pass appears more common than decline from pass to fail.
@@ -129,7 +129,7 @@ A McNemar test is statistically significant because substantially more participa
 
 What can the researcher conclude?
 
-::: {.collapse title="Check Your Answer"}
+::: {.callout-note title="Check Your Answer" collapse="true"}
 
 The researcher can conclude that the paired binary response changed systematically and that movement from “yes” to “no” was more common than movement from “no” to “yes.” Whether the researcher can conclude that an intervention caused the change depends on the study design, including whether there was an appropriate comparison condition.
 

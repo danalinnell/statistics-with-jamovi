@@ -574,19 +574,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12.1-one-sample-t-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12.1 One-Sample t-Test</span></a>
+ <span class="menu-text">12.1 One Sample <em>t</em>-Test</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12.2-independent-t-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12.2 Independent t-Test</span></a>
+ <span class="menu-text">12.2 Independent <em>t</em>-Test</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12.3-dependent-t-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12.3 Dependent t-Test</span></a>
+ <span class="menu-text">12.3 Dependent <em>t</em>-Test</span></a>
   </div>
 </li>
       </ul>
@@ -766,12 +766,41 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The t-test looks at difference in means between two things (e.g., groups, time, observations). There are three different types of t-tests:</p>
-<ol type="1">
-<li><p>The <strong>one-sample t-test</strong> tests how the sample mean relates to the population mean.</p></li>
-<li><p>The <strong>independent t-test</strong> has two <em>independent</em> groups. The participants or things in group 1 are <em>not</em> the same as the participants or things in group 2. This is a between-subjects design in which different participants are in the two groups.</p></li>
-<li><p>The <strong>dependent t-test</strong> has <em>dependent</em> or <em>paired</em> data. The dependent variable is measured at two different times or for two different conditions for all participants or things. This is a within-subjects design in which case the same participants are in both groups.</p></li>
-</ol>
+<p>A <em>t</em>-test is used when we want to evaluate a research question about a mean or a difference between means. Unlike the chi-square tests in <span class="quarto-unresolved-ref">?sec-chi-square</span>, which analyze frequencies or counts, <em>t</em>-tests analyze continuous variables.</p>
+<p>There are three main types of <em>t</em>-tests covered in this chapter. The appropriate test depends on what the sample mean is being compared to: a known or hypothesized value, another independent group, or a paired measurement from the same participants or matched cases.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>Variables and Design</th>
+<th>Research Question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>One-sample <em>t</em>-test</strong></td>
+<td>One continuous variable compared with a known or hypothesized value</td>
+<td>Is the sample mean different from a comparison value?</td>
+</tr>
+<tr class="even">
+<td><strong>Independent-samples <em>t</em>-test</strong></td>
+<td>One continuous outcome and one categorical grouping variable with two independent groups</td>
+<td>Do two independent groups differ in their means?</td>
+</tr>
+<tr class="odd">
+<td><strong>Dependent/paired-samples <em>t</em>-test</strong></td>
+<td>One continuous outcome measured twice for the same participants or matched cases</td>
+<td>Do two related means differ?</td>
+</tr>
+</tbody>
+</table>
+<p>Each <em>t</em>-test follows the same four-step hypothesis-testing process introduced earlier in the book: look at the data, check assumptions, perform the test, and interpret the results. What changes across the three tests is the structure of the data and the comparison being made.</p>
+<p>The most important decision is whether the observations being compared are independent or paired. If the two means come from different people or different cases, use an independent-samples <em>t</em>-test. If the two means come from the same people measured twice or from matched pairs, use a dependent/paired-samples <em>t</em>-test.</p>
 
 
 
@@ -1183,8 +1212,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./12.1-one-sample-t-test.html" class="pagination-link" aria-label="12.1 One-Sample t-Test">
-        <span class="nav-page-text">12.1 One-Sample t-Test</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./12.1-one-sample-t-test.html" class="pagination-link" aria-label="12.1 One Sample *t*-Test">
+        <span class="nav-page-text">12.1 One Sample <em>t</em>-Test</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
