@@ -609,7 +609,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13.2 Finding Group Differences</span></a>
+ <span class="menu-text">13.2 Finding Group Differences After ANOVA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -659,6 +659,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">14.3 General Linear Model</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.4-comparing-strengths-of-correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.4 Comparing Strengths of Correlations</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -673,13 +679,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.1-threats-to-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.1 Threats to Reliability</span></a>
+ <span class="menu-text">15.1 Sources of Measurement Error</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.2-measuring-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.2 Measuring Reliability</span></a>
+ <span class="menu-text">15.2 Estimating Reliability</span></a>
   </div>
 </li>
       </ul>
@@ -702,7 +708,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16.2-threats-to-statistical-validity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">16.2 Threats to Statistical Validity</span></a>
+ <span class="menu-text">16.2 Threats to Statistical Conclusion Validity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -766,46 +772,53 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>ANOVA stands for <strong>AN</strong>alysis <strong>O</strong>f <strong>VA</strong>riance. ANOVAs analyze the variation between and within groups. There are multiple types of ANOVAs based on the nature of the independent variable(s):</p>
+<p>ANOVA stands for <strong>AN</strong>alysis <strong>O</strong>f <strong>VA</strong>riance. ANOVA is used when we want to compare means across groups, conditions, or time points. Like the <em>t</em>-tests in <span class="quarto-unresolved-ref">?sec-t-tests</span>, ANOVA is used with a continuous outcome variable. The major difference is that ANOVA can handle research questions with three or more groups, repeated measurements, or more than one independent variable.</p>
+<p>Although ANOVA is used to compare means, it does so by analyzing variability. ANOVA compares how much scores vary <strong>between</strong> groups or conditions to how much scores vary <strong>within</strong> groups or conditions. If the between-group variability is large relative to the within-group variability, the ANOVA is more likely to be statistically significant.</p>
+<p>Most ANOVA tests are <strong>omnibus tests</strong>. This means they test whether there is a difference somewhere among the means, but they do not always tell us exactly which means differ. When an omnibus ANOVA is statistically significant, we often need follow-up analyses, such as post hoc tests or planned contrasts, to identify the specific group differences.</p>
+<p>There are several types of ANOVA. The appropriate test depends on the number of independent variables and whether the groups or measurements are independent or related.</p>
 <table class="caption-top table">
 <colgroup>
+<col style="width: 10%">
 <col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
-<th><strong>Nature of IV(s)</strong></th>
-<th><strong>Type of ANOVA</strong></th>
+<th>Test</th>
+<th>Variables and Design</th>
+<th>Research Question</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1 between-subjects IV</td>
-<td>One-Way ANOVA</td>
+<td><strong>One-way ANOVA</strong></td>
+<td>One continuous outcome and one categorical independent variable with three or more independent groups</td>
+<td>Do three or more independent groups differ on the outcome?</td>
 </tr>
 <tr class="even">
-<td>1 within-subjects IV</td>
-<td>Repeated-measures ANOVA</td>
+<td><strong>Repeated-measures ANOVA</strong></td>
+<td>One continuous outcome measured across three or more related conditions or time points</td>
+<td>Do scores differ across three or more related measurements?</td>
 </tr>
 <tr class="odd">
-<td>2+ between-subjects IVs</td>
-<td>Independent factorial ANOVA</td>
+<td><strong>Factorial ANOVA</strong></td>
+<td>One continuous outcome and two or more categorical independent variables</td>
+<td>Do two or more independent variables predict the outcome, and do their effects depend on each other?</td>
 </tr>
 <tr class="even">
-<td>2+ within-subjects IVs</td>
-<td>Repeated measures factorial ANOVA</td>
+<td><strong>Mixed factorial ANOVA</strong></td>
+<td>One continuous outcome with at least one between-subjects independent variable and at least one within-subjects independent variable</td>
+<td>Do group differences, repeated-measurement differences, or their interaction predict the outcome?</td>
 </tr>
 <tr class="odd">
-<td>2+ IVs mixed between/within</td>
-<td>Mixed factorial ANOVA</td>
-</tr>
-<tr class="even">
-<td>1+ IV with a continuous covariate</td>
-<td>ANCOVA</td>
+<td><strong>ANCOVA</strong></td>
+<td>One continuous outcome, at least one categorical independent variable, and at least one continuous covariate</td>
+<td>Do groups differ on the outcome after statistically adjusting for a continuous covariate?</td>
 </tr>
 </tbody>
 </table>
-<p>Furthermore, there are ANOVAs for when there are multiple dependent variables (called the MANOVA or <strong>M</strong>ultiple <strong>ANOVA</strong>, as well as the MANCOVA or <strong>M</strong>ultiple <strong>ANCOVA</strong>) but we will not discuss them in this class.</p>
+<p>This chapter begins with the one-way ANOVA because it is the most direct extension of the independent <em>t</em>-test. We then examine how to follow up a significant ANOVA, how to analyze related measurements with repeated-measures ANOVA, and how to test more complex designs with factorial ANOVA. Finally, we briefly introduce ANCOVA as an extension of ANOVA that includes a continuous covariate.</p>
+<p>In each case, we will continue using the same four-step hypothesis-testing process: look at the data, check assumptions, perform the test, and interpret the results.</p>
 
 
 

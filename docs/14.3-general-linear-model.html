@@ -33,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./15.0-reliability.html" rel="next">
+<link href="./14.4-comparing-strengths-of-correlations.html" rel="next">
 <link href="./14.2-regression.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -73,35 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -638,7 +609,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13.2 Finding Group Differences</span></a>
+ <span class="menu-text">13.2 Finding Group Differences After ANOVA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -688,6 +659,12 @@ window.Quarto = {
  <span class="menu-text">14.3 General Linear Model</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.4-comparing-strengths-of-correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.4 Comparing Strengths of Correlations</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -702,13 +679,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.1-threats-to-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.1 Threats to Reliability</span></a>
+ <span class="menu-text">15.1 Sources of Measurement Error</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.2-measuring-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.2 Measuring Reliability</span></a>
+ <span class="menu-text">15.2 Estimating Reliability</span></a>
   </div>
 </li>
       </ul>
@@ -731,7 +708,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16.2-threats-to-statistical-validity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">16.2 Threats to Statistical Validity</span></a>
+ <span class="menu-text">16.2 Threats to Statistical Conclusion Validity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -775,10 +752,11 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#correlation-as-a-regression" id="toc-correlation-as-a-regression" class="nav-link active" data-scroll-target="#correlation-as-a-regression">Correlation as a Regression</a></li>
-  <li><a href="#independent-t-test-as-a-regression" id="toc-independent-t-test-as-a-regression" class="nav-link" data-scroll-target="#independent-t-test-as-a-regression">Independent t-Test as a Regression</a></li>
-  <li><a href="#dependent-t-test-as-a-regression" id="toc-dependent-t-test-as-a-regression" class="nav-link" data-scroll-target="#dependent-t-test-as-a-regression">Dependent t-Test as a Regression</a></li>
-  <li><a href="#one-way-anova-as-a-regression" id="toc-one-way-anova-as-a-regression" class="nav-link" data-scroll-target="#one-way-anova-as-a-regression">One-Way ANOVA as a Regression</a></li>
+  <li><a href="#correlation-as-regression" id="toc-correlation-as-regression" class="nav-link active" data-scroll-target="#correlation-as-regression">Correlation as Regression</a></li>
+  <li><a href="#independent-t-test-as-regression" id="toc-independent-t-test-as-regression" class="nav-link" data-scroll-target="#independent-t-test-as-regression">Independent <em>t</em>-Test as Regression</a></li>
+  <li><a href="#dependent-t-test-as-regression" id="toc-dependent-t-test-as-regression" class="nav-link" data-scroll-target="#dependent-t-test-as-regression">Dependent <em>t</em>-Test as Regression</a></li>
+  <li><a href="#one-way-anova-as-regression" id="toc-one-way-anova-as-regression" class="nav-link" data-scroll-target="#one-way-anova-as-regression">One-Way ANOVA as Regression</a></li>
+  <li><a href="#what-this-means" id="toc-what-this-means" class="nav-link" data-scroll-target="#what-this-means">What This Means</a></li>
   </ul>
 </nav>
     </div>
@@ -787,7 +765,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14.0-correlation-regression.html">14. Correlation and Regression</a></li><li class="breadcrumb-item"><a href="./14.3-general-linear-model.html">14.3 General Linear Model</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">14.3 General Linear Model</h1>
+<h1 class="title"><span id="sec-general-linear-model" class="quarto-section-identifier">14.3 General Linear Model</span></h1>
 </div>
 
 
@@ -804,35 +782,77 @@ window.Quarto = {
 </header>
 
 
-<p>The regression is a General Linear Model (GLM). Everything we’ve learned up to this point is also a general linear model. Pretty much everything we’ve learned in this class <em>could</em> be performed as a simple regression. You may wonder why we have not just taught regression and none of the others. There are some who are indeed proponents of that! However, I believe teaching “simpler” statistics like the t-test and correlation first is easiest to understand. Most of the statistics you will perform from here on out—including in your careers—will be what we have already learned (i.e., t-test, ANOVA, chi-square, correlation). However, I present this information so you may begin to see how all of this is related.</p>
-<p>If you’d like to learn more about this, there’s a fantastic online book on the subject called <a href="https://lindeloev.github.io/tests-as-linear/">Common statistical tests are linear models (or: how to teach stats)</a></p>
-<p>Note that for all these examples I am using the Sample_Dataset_2014.sav dataset, and I am only presenting the relevant output. I am also only going to cover the correlation, t-tests, and one-way ANOVA because they are the simplest to compare. You can run these yourself! You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
-<section id="correlation-as-a-regression" class="level2">
-<h2 class="anchored" data-anchor-id="correlation-as-a-regression">Correlation as a Regression</h2>
-<p>Imagine we want to see how English and Reading are related. We would do a Pearson correlation, as seen on the top. However, we could also run a simple regression with English predicting Reading or vice versa, as seen on the bottom.</p>
-<p>Notice how the Beta coefficient in the regression output is the <em>standardized coefficient</em> and that the correlation is the <em>standardized covariance</em>. Therefore, their values (and p-values) match identically!</p>
+<p>Regression is one example of a <strong>general linear model</strong>. In fact, many of the statistical tests we have learned can be understood as versions of the same general model: we use one or more variables to account for variation in an outcome.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this section, <strong>GLM</strong> means <strong>general linear model</strong>, not <strong>generalized linear model</strong>. These sound similar, but they refer to different ideas. The general linear model includes many familiar analyses with continuous outcomes, such as regression, <em>t</em>-tests, and ANOVA.</p>
+</div>
+</div>
+<p>This section is meant to help you see connections across the course. You do not need to run every analysis as a regression, and you do not need to memorize the regression version of each test. The goal is to notice the shared logic behind the tests we have learned.</p>
+<p>In the general linear model framework, many analyses can be written as:</p>
+<p>[ = + ]</p>
+<p>The <strong>model</strong> represents the part of the outcome we can account for using predictors, group membership, or repeated measurements. The <strong>error</strong> represents the part of the outcome that remains unexplained by the model.</p>
+<p>If you would like to learn more about this idea, Lindeløv’s online book <a href="https://lindeloev.github.io/tests-as-linear/"><em>Common statistical tests are linear models</em></a> provides a more detailed explanation.</p>
+<p>For the examples below, we will use the <code>Sample_Dataset_2014</code> dataset. I am only showing the relevant output so that you can focus on the connections between analyses. The dataset is available here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx</a>.</p>
+<p>We will focus on correlation, independent <em>t</em>-tests, dependent <em>t</em>-tests, and one-way ANOVA because these are the easiest to compare with regression.</p>
+<section id="correlation-as-regression" class="level2">
+<h2 class="anchored" data-anchor-id="correlation-as-regression">Correlation as Regression</h2>
+<p>Imagine we want to examine whether English scores and reading scores are related. We could use a Pearson correlation, as shown in the output at the top of the figure. We could also run a simple linear regression with English scores predicting reading scores, as shown in the output at the bottom of the figure.</p>
 <p><img src="images/14-regression-wrap-up/correlation.png" class="img-fluid"></p>
+<p>There are a few things to notice:</p>
+<ol type="1">
+<li>The Pearson correlation and the standardized regression coefficient are the same.</li>
+<li>The <em>p</em>-values are the same.</li>
+<li>The regression output is directional in setup because one variable is entered as the predictor and the other as the outcome.</li>
+<li>The correlation output is not directional in the same way because it simply describes the relationship between the two variables.</li>
+</ol>
+<p>This does not mean correlation and regression are always interchangeable in how we talk about them. Correlation is usually used to describe the strength and direction of a relationship between two variables. Regression is usually used when we want to predict or explain variation in an outcome.</p>
 </section>
-<section id="independent-t-test-as-a-regression" class="level2">
-<h2 class="anchored" data-anchor-id="independent-t-test-as-a-regression">Independent t-Test as a Regression</h2>
-<p>Next let’s look at how gender is related to reading scores. First, our t-statistic and p-value match directly from the independent t-test to the linear regression coefficient. Second, our unstandardized estimate in the regression <em>is exactly the mean difference between the two genders</em>!</p>
+<section id="independent-t-test-as-regression" class="level2">
+<h2 class="anchored" data-anchor-id="independent-t-test-as-regression">Independent <em>t</em>-Test as Regression</h2>
+<p>An independent <em>t</em>-test compares two independent groups on a continuous outcome. We can also represent that same comparison using regression if we code group membership as a predictor.</p>
+<p>In this example, we examine whether reading scores differ by gender. The independent <em>t</em>-test output is shown at the top of the figure, and the regression output is shown at the bottom.</p>
 <p><img src="images/14-regression-wrap-up/t-test.png" class="img-fluid"></p>
+<p>There are a few things to notice:</p>
+<ol type="1">
+<li>The <em>t</em> statistic and <em>p</em>-value match across the independent <em>t</em>-test and the regression output.</li>
+<li>The unstandardized regression coefficient represents the mean difference between the two groups.</li>
+<li>The intercept represents the mean for the reference group.</li>
+<li>The group coefficient tells us how much higher or lower the comparison group is relative to the reference group.</li>
+</ol>
+<p>This is why a two-group comparison can be represented as a regression model. The categorical group variable is translated into a coded predictor, and the regression coefficient represents the group difference.</p>
 </section>
-<section id="dependent-t-test-as-a-regression" class="level2">
-<h2 class="anchored" data-anchor-id="dependent-t-test-as-a-regression">Dependent t-Test as a Regression</h2>
-<p>The dependent t-test can’t be performed as a regression in the base jamovi, but it can if we run it in the Rj editor using the <code>stats</code> package (as opposed to using the <code>jamovi</code> package that we’ve been using as part of the jamovi software). The regression formula for a dependent t-test is <span class="math inline">\(y_1 -y_0 = 1\)</span> and jamovi doesn’t like it if there are not IVs, just an intercept. However, the stats package doesn’t mind! Notice that our t-statistic, df, and p-value are exactly the same, and that the intercept estimate and SE match the mean difference in the paired samples t-test.</p>
+<section id="dependent-t-test-as-regression" class="level2">
+<h2 class="anchored" data-anchor-id="dependent-t-test-as-regression">Dependent <em>t</em>-Test as Regression</h2>
+<p>A dependent <em>t</em>-test compares two related measurements, such as two scores from the same participant. This can also be represented using the general linear model, although it is not as straightforward to run in base jamovi’s regression menu.</p>
+<p>For a dependent <em>t</em>-test, we first create a difference score between the two related measurements. The model then tests whether the average difference score differs from zero.</p>
 <p><img src="images/14-regression-wrap-up/dependent_t-test.png" class="img-fluid"></p>
+<p>There are a few things to notice:</p>
+<ol type="1">
+<li>The <em>t</em> statistic, degrees of freedom, and <em>p</em>-value match across the dependent <em>t</em>-test and the regression-style model.</li>
+<li>The intercept in the regression-style model represents the mean difference score.</li>
+<li>The standard error of the intercept matches the standard error of the mean difference.</li>
+</ol>
+<p>This example shows that a dependent <em>t</em>-test is also a model of an outcome: the difference between two related measurements.</p>
 </section>
-<section id="one-way-anova-as-a-regression" class="level2">
-<h2 class="anchored" data-anchor-id="one-way-anova-as-a-regression">One-Way ANOVA as a Regression</h2>
-<p>The one-way ANOVA is the same as regression, too. Let’s examine how rank (an ordinal variable from 1-4) relates to English scores. In the linear regression, we asked for the ANOVA test under Model Coefficients; notice how it directly matches the ANOVA table.</p>
-<p>Although I did not directly ask for them, the estimated marginal means for the linear regression match that of the one-way ANOVA. However, I want to call attention to how the coefficients directly match. The intercept is the average English score when Rank = 1 (freshman). However, the estimate for 2 – 1 is .68, but 81.93 + .68 = 82.61; it’s not exact due to rounding errors, but it matches the mean for group 2 because in the linear equation if you set that value to 1 you are saying the other values are 0 so the group membership is Rank = 2 (sophomore). You can do this for all the groups and see how they match.</p>
+<section id="one-way-anova-as-regression" class="level2">
+<h2 class="anchored" data-anchor-id="one-way-anova-as-regression">One-Way ANOVA as Regression</h2>
+<p>A one-way ANOVA compares three or more independent groups on a continuous outcome. It can also be represented as a regression model by coding group membership using comparison variables.</p>
+<p>In this example, we examine whether English scores differ by rank. Rank has four levels, so the one-way ANOVA compares English scores across four groups. In the regression output, the group comparisons are represented through coefficients.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/14-regression-wrap-up/anova1.png" class="img-fluid figure-img" style="width:49.0%"></p>
-<figcaption>One-Way ANOVA as a regression</figcaption>
+<figcaption>One-way ANOVA as a regression</figcaption>
 </figure>
 </div>
 </div>
@@ -840,11 +860,111 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/14-regression-wrap-up/anova2.png" class="img-fluid figure-img" style="width:49.0%"></p>
-<figcaption>One-Way ANOVA as a regression</figcaption>
+<figcaption>One-way ANOVA as a regression</figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p>There are a few things to notice:</p>
+<ol type="1">
+<li>The overall ANOVA test from the regression output matches the one-way ANOVA table.</li>
+<li>The intercept represents the mean of the reference group.</li>
+<li>The group coefficients represent differences between each comparison group and the reference group.</li>
+<li>The estimated marginal means from the regression model match the group means from the ANOVA.</li>
+</ol>
+<p>For example, if Rank 1 is the reference group, the intercept represents the mean English score for Rank 1. A coefficient comparing Rank 2 to Rank 1 represents how much the Rank 2 mean differs from the Rank 1 mean. Adding the coefficient to the intercept gives the estimated mean for Rank 2, with small differences possible due to rounding.</p>
+<p>This is the same idea we saw with the independent <em>t</em>-test, but extended to more than two groups.</p>
+</section>
+<section id="what-this-means" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-means">What This Means</h2>
+<p>The purpose of this section is not to replace the tests we learned earlier. Instead, the purpose is to show that many familiar tests share a common structure.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Familiar Test</th>
+<th>General Linear Model Version</th>
+<th>What the Predictor Represents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pearson correlation</td>
+<td>Simple linear regression with a standardized coefficient</td>
+<td>A continuous predictor</td>
+</tr>
+<tr class="even">
+<td>Independent <em>t</em>-test</td>
+<td>Regression with one two-level categorical predictor</td>
+<td>Group membership</td>
+</tr>
+<tr class="odd">
+<td>Dependent <em>t</em>-test</td>
+<td>Model of a difference score</td>
+<td>Difference between related measurements</td>
+</tr>
+<tr class="even">
+<td>One-way ANOVA</td>
+<td>Regression with one categorical predictor with three or more levels</td>
+<td>Group membership across multiple groups</td>
+</tr>
+<tr class="odd">
+<td>Factorial ANOVA</td>
+<td>Regression with multiple categorical predictors and interactions</td>
+<td>Main effects and interactions</td>
+</tr>
+<tr class="even">
+<td>ANCOVA</td>
+<td>Regression/ANOVA with categorical predictors and continuous covariates</td>
+<td>Group membership and statistical adjustment variables</td>
+</tr>
+</tbody>
+</table>
+<p>Across these examples, the statistical question is often some version of: <strong>Can we use information from one or more variables to account for variation in an outcome?</strong></p>
+<p>The tests differ in the kinds of predictors they use and the kinds of research questions they answer. Correlation focuses on relationships between continuous variables. <em>t</em>-tests and ANOVA focus on group differences. Regression focuses on prediction and explanation. But under the surface, these analyses are closely related.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Match each familiar test to the general linear model idea it represents.</p>
+<ol type="1">
+<li>An independent <em>t</em>-test compares two groups on a continuous outcome.</li>
+<li>A Pearson correlation examines the relationship between two continuous variables.</li>
+<li>A one-way ANOVA compares three or more groups on a continuous outcome.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>An independent <em>t</em>-test can be represented as regression with one two-level categorical predictor.</li>
+<li>A Pearson correlation can be represented as simple linear regression with a continuous predictor.</li>
+<li>A one-way ANOVA can be represented as regression with one categorical predictor that has three or more levels.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The general linear model is useful because it helps us see the connections among statistical tests. Once you understand the shared model logic, the different tests may feel less like separate procedures and more like variations on the same underlying idea.</p>
 
 
 </section>
@@ -1257,8 +1377,8 @@ window.Quarto = {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./15.0-reliability.html" class="pagination-link" aria-label="15. Reliability">
-        <span class="nav-page-text">15. Reliability</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./14.4-comparing-strengths-of-correlations.html" class="pagination-link" aria-label="14.4 Comparing Strengths of Correlations">
+        <span class="nav-page-text">14.4 Comparing Strengths of Correlations</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -6,11 +6,11 @@ Instead, I want you to learn how to ask the right questions.
 
 The test you choose depends mostly on:
 
--   what kind of dependent variable you have;
--   what kind of independent variable(s) or predictor(s) you have;
--   how many variables, groups, levels, or time points are involved;
--   whether the same or different participants are in each condition;
--   whether the assumptions for the planned test are reasonable.
+- what kind of dependent variable you have;
+- what kind of independent variable(s) or predictor(s) you have;
+- how many variables, groups, levels, or time points are involved;
+- whether the same or different participants are in each condition;
+- whether the assumptions for the planned test are reasonable.
 
 This is where the material from [types of variables and levels of measurement](02.2-types-of-variables-levels-of-measurement.qmd), [describing data](05.0-describing-data-in-jamovi.qmd), and [visualizing data](06.0-visualizing-data-in-jamovi.qmd) starts to come together.
 
@@ -18,31 +18,17 @@ This is where the material from [types of variables and levels of measurement](0
 
 The chart below can help you determine what statistical test to perform. It is a map, not something you need to memorize.
 
-![](images/Statistical%20Choices.png)
+![Statistical Test Chooser](images/06-inferential/Statistical Choices.jpg)
 
 The chart uses several visual cues:
 
--   **Dark red boxes** are parametric tests.
+- On the right of the chart are **red boxes**, which are the statistical tests covered in this textbook, and **white boxes**, which are tests we will not cover in this textbook.
 
--   **Light red boxes** are non-parametric tests.
+- The blue/green colors indicate the type of variables being examined. **Blue** indicates continuous variables. **Green** indicates categorical variables. **Teal** indicates both categorical and continuous variables.
 
--   **White boxes** are tests we will not cover in this course.
+- The gradients of **orange** indicate the numbers (1, 2, 2+, or 3+) of IVs or categories within the IV.
 
--   **Blue** indicates continuous variables.
-
--   **Green** indicates categorical variables.
-
--   **Teal** indicates both categorical and continuous variables.
-
--   **Black** indicates between-subjects designs, meaning different participants are in each condition.
-
--   **Dark grey** indicates within-subjects designs, meaning the same participants are measured across conditions or time points.
-
--   **Light grey** indicates the design has at least one between-subject IV and at least one within-subjects IV.
-
-::: {.callout-note title="For Dana's Students"}
-In my courses, you may also have access to a high-resolution version of this chart on Canvas. Use that version when you need to zoom in or print it.
-:::
+- The gradients of **grey/blank** indicate the type of design. **Black** indicates between-subjects designs, meaning different participants are in each condition. **Dark grey** indicates within-subjects designs, meaning the same participants are measured across conditions or time points. **Light grey** indicates the design has at least one between-subject IV and at least one within-subjects IV.
 
 Another tool that can help you choose a statistical test is [StatsHand](https://stathand.net/). I still want you to learn the logic yourself, but tools like this can be useful for checking your thinking.
 
@@ -56,9 +42,9 @@ The {{< glossary "dependent variable" popup="hover" >}} is the outcome variable.
 
 Ask yourself:
 
--   What is the main outcome?
--   How was it measured?
--   Is it {{< glossary "categorical variable" popup="hover" >}} or {{< glossary "continuous variable" popup="hover" >}}?
+- What is the main outcome?
+- How was it measured?
+- Is it {{< glossary "categorical variable" popup="hover" >}} or {{< glossary "continuous variable" popup="hover" >}}?
 
 In this textbook, we will mostly work with statistical tests that have one dependent variable. If you are unsure whether the dependent variable is categorical or continuous, return to [types of variables and levels of measurement](02.2-types-of-variables-levels-of-measurement.qmd). This is one of the most important concepts for choosing the correct test.
 
@@ -68,9 +54,9 @@ The {{< glossary "independent variable" popup="hover" >}} is the variable used t
 
 Ask yourself:
 
--   How many independent variables or predictors are there?
--   Is each one categorical or continuous?
--   If categorical, how many levels or groups does it have?
+- How many independent variables or predictors are there?
+- Is each one categorical or continuous?
+- If categorical, how many levels or groups does it have?
 
 Some tests involve one independent variable. Others involve two or more. Some tests use categorical predictors, some use continuous predictors, and some can use both.
 
@@ -78,8 +64,8 @@ Some tests involve one independent variable. Others involve two or more. Some te
 
 If your independent variable is categorical, ask whether the same or different participants are in each condition.
 
--   **Between-subjects design**: different participants are in each condition.
--   **Within-subjects design**: the same participants are measured in each condition or at each time point.
+- **Between-subjects design**: different participants are in each condition.
+- **Within-subjects design**: the same participants are measured in each condition or at each time point.
 
 A helpful question is:
 
@@ -171,11 +157,11 @@ Keep in mind that this would not be an experimental design. We are not randomly 
 
 Choosing the correct test takes practice. Here are some common mistakes to watch for:
 
--   Choosing based on the name of the variable instead of how it was measured.
--   Forgetting whether the same participants were measured more than once.
--   Treating a categorical dependent variable like a continuous dependent variable.
--   Using ANOVA just because there are multiple variables, when the key issue is the number of groups or levels.
--   Forgetting that assumptions may change the exact test you interpret.
+- Choosing based on the name of the variable instead of how it was measured.
+- Forgetting whether the same participants were measured more than once.
+- Treating a categorical dependent variable like a continuous dependent variable.
+- Using ANOVA just because there are multiple variables, when the key issue is the number of groups or levels.
+- Forgetting that assumptions may change the exact test you interpret.
 
 ::: {.callout-tip title="Check Your Understanding"}
 For each scenario, identify the likely statistical test if assumptions are met.

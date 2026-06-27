@@ -1,119 +1,175 @@
-# 13.2 Finding Group Differences {.unnumbered}
+# 13.2 Finding Group Differences After ANOVA {.unnumbered}
 
-Often, we're not interested in just *whether* there is a difference (which the F-statistic can tell us), but *where* the differences are between groups (which the F-statistic cannot tell us). For that, we use either [planned contrasts]{.underline} (when you have specific hypotheses you want to test) or [post-hoc comparisons]{.underline} (when you have no specific hypotheses).
+A one-way ANOVA is an **omnibus test**. It tells us whether there is a difference somewhere among the group means, but it does not tell us exactly which groups differ from each other. When the overall ANOVA is statistically significant, we usually need follow-up analyses to identify the specific group differences.
 
-:::{.warning data-latex=""}
-You do not perform contrasts or post hoc comparisons if your overall F statistic is not statistically significant. You do not interpret group differences if you fail to reject the null hypothesis that there are no group differences!
+There are two main types of follow-up analyses:
+
+- **Post hoc comparisons** are used when we want to compare groups after looking at the overall ANOVA and do not have a small set of specific predictions.
+- **Planned contrasts** are used when we have specific group comparisons in mind before looking at the data.
+
+In this course, we will usually report follow-up analyses only when the overall ANOVA is statistically significant. Planned contrasts are a little different because they are based on specific *a priori* hypotheses, but we will keep the course rule simple: first interpret the overall ANOVA, then report the follow-up comparisons that match the research question.
+
+::: callout-warning
+Do not interpret a long list of group comparisons just because jamovi can produce them. Follow-up tests should be connected to the research question and the overall ANOVA result.
 :::
 
-Below I provide descriptive statistics for these results. You can get this information in jamovi either by asking for descriptives from the exploration tab, or by asking for the estimated marginal means tables in the ANOVA analysis.
+:::: {.callout-tip title="Check Your Understanding"}
+A one-way ANOVA comparing three teaching methods is statistically significant.
+
+1.  What does the significant ANOVA tell us?
+2.  What does the significant ANOVA not tell us?
+3.  What kind of analysis would help identify which teaching methods differ?
+
+::: {.callout-note title="Check Your Answer" collapse="true"}
+1.  The significant ANOVA tells us that there is a difference somewhere among the three teaching-method groups.
+2.  It does not tell us exactly which teaching methods differ from each other.
+3.  Follow-up analyses, such as post hoc comparisons or planned contrasts, would help identify the specific group differences.
+:::
+::::
+
+Before interpreting follow-up tests, we should return to the descriptive statistics and graph. The follow-up tests tell us which differences are statistically significant, but the means and visualizations help us understand the direction and size of those differences. You can get the group means from the **Estimated Marginal Means** table in the ANOVA analysis or from the **Exploration** menu.
 
 ## Post Hoc Comparisons
 
-Sometimes, we do not have any *a priori* (or planned) predictions or hypotheses about our group differences. In this case, we use post hoc procedures. These procedures do [pairwise comparisons]{.underline} among all of our groups, like t-tests across each of our groups. As we noted on the first page of this handout, this can be highly problematic for our Type I error rate! Therefore, we must perform corrections to control our familywise error rate.
+Post hoc comparisons are used after a significant omnibus ANOVA when we want to compare the groups pair by pair. We will continue using the clinical trial example from @sec-one-way-anova, where participants were assigned to one of three drug conditions: placebo, anxifree, or joyzepam.
 
-jamovi currently supports five types of post-hoc tests for the ANOVA test; I generally only use Tukey or Bonferonni:
+Because there are three groups, there are three pairwise comparisons:
 
-1.  **No correction**: This doesn't correct for a Type I error at all. This is just like if you were performing 3 separate t-tests, which we've learned we shouldn't do! So I do not recommend this option.
-2.  **Tukey**: This is the post hoc test I use most often. It controls the Type I error rate well, but isn't as conservative of a control as the Bonferonni. I won't get into the math for how this one works, but note how the p-values are not nearly as big as Bonferroni, but they are bigger than the unadjusted (no correction) p-values.
-3.  **Scheffe**: This has a complicated formula for calculating it, and quite frankly, I never use it so we won't get into it here.
-4.  **Bonferroni**: This is the most conservative correction to the p-value. It's good if you only have a small number of comparisons to make or if you *really* want to control your Type I error rate. If you have a lot of comparisons to test, then you may want to use something else. The way it works is it multiplies your p-value by the number of post-hoc comparisons being made. For example, in the example below, we are performing 3 t-tests so it is multiplying each p-value by 3 (e.g., .0006\*3=.0017, .1502\*3=.4506, etc.).
-5.  **Holm**: This is similar to the Bonferroni correction except that it corrects p-values sequentially such that the smallest p-value is multiplied by the number of post-hoc comparisons, the second smallest p-value is multiplied by the number of post-hoc comparisons minus 1, and so on until the biggest p-value is only multiplied by 1. For example, in the example below, the smallest p-value is for joyzepam - placebo (p \< .0001) and times by 3 is still p \< .0001; the second smallest p-value is for anxifree -- joyzepam (p = .0006) and times by 3-1=2 is p=.0011, and the largest p-value for anxifree - placebo stays the same at p = .1502.
+1.  placebo versus anxifree
+2.  placebo versus joyzepam
+3.  anxifree versus joyzepam
 
-To request post hoc tests from ANOVA, open the collapsed menu `Post Hoc Tests` in the setup menu. Select the single correction that you want, as well as the Cohen's d effect size.
+These comparisons are similar to conducting multiple independent *t*-tests, but they include corrections to control the familywise error rate. The **familywise error rate** is the probability of making at least one Type I error across a family of related tests.
 
-Below shows the post hoc test results for our one-way ANOVA. Notice the differences in p-values across the four post hoc tests! Notice how the Bonferroni is most conservative (i.e., has the largest p-values) and the no correction (just p column) is the least conservative (i.e., has the smallest p-values).
+In this course, use the following follow-up procedures:
+
+| Overall Test           | Follow-Up Procedure               |
+|------------------------|-----------------------------------|
+| Standard one-way ANOVA | Tukey post hoc comparisons        |
+| Welch’s ANOVA          | Games-Howell post hoc comparisons |
+| Kruskal-Wallis test    | DSCF pairwise comparisons         |
+
+Tukey’s HSD is a common post hoc procedure for one-way ANOVA. It adjusts the pairwise comparisons so that the overall Type I error rate is controlled across the set of comparisons.
+
+::: {.callout-note title="Optional: Other Post Hoc Corrections" collapse="true"}
+jamovi provides several post hoc correction options. `None` does not correct for multiple comparisons and is usually not appropriate when conducting several pairwise tests. `Bonferroni` is a conservative correction that adjusts *p*-values based on the number of comparisons. `Holm` is a sequential correction that is often less conservative than Bonferroni. `Scheffe` is another conservative option that can be useful in some settings but is not used in this course.
+
+For this course, use Tukey post hoc comparisons after a standard one-way ANOVA unless instructed otherwise.
+:::
+
+To request post hoc tests in jamovi, open the **Post Hoc Tests** menu in the ANOVA setup. Move the grouping variable, `drug`, into the post hoc comparisons box. Select `Tukey` as the correction and select Cohen’s (d) if you want an effect size for each pairwise comparison.
+
+The post hoc table shows each pairwise group comparison. For each comparison, focus on the group names, the mean difference, the adjusted *p*-value, and the effect size if requested. In this example, the Tukey results show that joyzepam differs significantly from both placebo and anxifree, but placebo and anxifree do not differ significantly from each other.
 
 ![Note that I rounded p-values to 4 dp to better demonstrate how the corrections work.](images/04_one-way-anova/posthoc.png)
 
-When you are performing Welch's F-test (due to unequal variances), you use the Games-Howell correction. When you are performing Kruskal-Wallis test (due to non-normal distribution), you use the DSCF pairwise comparisons.
+:::: {.callout-tip title="Check Your Understanding"}
+A Tukey post hoc table compares three groups: A, B, and C. The comparison between A and B has *p* = .018, the comparison between A and C has *p* = .641, and the comparison between B and C has *p* = .004.
 
-:::{.info data-latex=""}
-Keep in mind you do not normally ask for multiple post hoc comparisons. 
+1.  Which pairwise comparisons are statistically significant using (\alpha = .05)?
+2.  Which pairwise comparison is not statistically significant?
+3.  Why should you describe each *p*-value as a comparison between two groups?
 
-If you're not sure, I suggest just using Tukey's. In your homework assignments for PSYC 290 or PSYC 790 you will perform Tukey's unless you don't meet the assumptions of the parametric test, in which case you use the appropriate alternative.
+::: {.callout-note title="Check Your Answer" collapse="true"}
+1.  A versus B and B versus C are statistically significant.
+2.  A versus C is not statistically significant.
+3.  A post hoc *p*-value belongs to a pairwise comparison. It tells us whether two specific groups differ, not whether one group is significant by itself.
+:::
+::::
+
+If you report Welch’s ANOVA because the homogeneity-of-variance assumption was not met, use Games-Howell post hoc comparisons. If you report the Kruskal-Wallis test because the normality assumption was seriously violated, use DSCF pairwise comparisons.
+
+::: callout-note
+In practice, you should report one set of follow-up comparisons that matches the overall test you used. For this course, use Tukey after a standard one-way ANOVA, Games-Howell after Welch’s ANOVA, and DSCF pairwise comparisons after Kruskal-Wallis.
 :::
 
 ### Write Up Post Hoc Results in APA Style
 
-The way we would write up each of the post hoc comparisons is very similar. Given that I usually use Tukey, here is a write-up for those results. Note that the first sentence is from the previous chapter on the one-way ANOVA! The statistical information is from the table above, and the descriptive statistics can be found when requesting descriptives in the one-way ANOVA.
+As reviewed in @sec-apa-style, an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result. When an ANOVA is statistically significant, the write-up should also report the relevant follow-up comparisons.
 
-> There is a significant difference in mood gain across the three drug conditions, *F* (2, 15) = 18.61, *p* \< .001. Post hoc comparisons using Tukey's HSD revealed that our drug *Joyzepam* (*M* = 1.48, *SD* = .21) outperformed both *Anxifree* (*M* = .72, *SD* = .39; *t* (15) = 4.36, *p* = .002) and the placebo condition (*M* = .45, *SD* = .28; *t* (15) = 5.88, *p* \< .001); there were no differences between *Anxifree* and the placebo condition (*t* (15) = 1.52, *p* = .312).
+> A one-way ANOVA indicated that mood gain differed significantly across the three drug conditions, *F*(2, 15) = 18.61, *p* \< .001, (\omega\^2 = .66). Tukey post hoc comparisons indicated that participants in the joyzepam condition (*M* = 1.48, *SD* = 0.21) had significantly greater mood gain than participants in the anxifree condition (*M* = 0.72, *SD* = 0.39), *p* = .002, and the placebo condition (*M* = 0.45, *SD* = 0.28), *p* \< .001. Mood gain did not differ significantly between the anxifree and placebo conditions, *p* = .312.
 
-Writing up results in APA style is both a science and an art. There's a science to what you need to report. For example, you should aim to report as much as possible of the statistical information for the post hoc comparisons, such as the t-test, p-value, and Cohen's d. You also report the group means (*M*) and standard deviations (*SD*), although you can report them in-text like I did above or in a descriptives table (made in APA style).
+This is not the only correct way to write the result. The key is to report the overall ANOVA, describe the group means, identify which pairwise comparisons were statistically significant, and avoid treating a pairwise *p*-value as if it belongs to only one group.
 
-However, there's also an art to it. Notice how I wrote that up in a way to summarize the findings as succinctly as possible. I could have said there was a difference between *anxifree* and *joyzepam* and a difference between *joyzepam* and the placebo, but that's a lot more words and isn't written in a way to focus on what I'm hoping to see: that my drug *joyzepam* performed better than the competitor *anxifree* and a placebo condition.
-
-This is where you need to think creatively and be very critical in checking that what you say makes sense. Read your write-ups carefully! Have someone else read it. Can they understand what you mean?
-
-:::{.warning data-latex=""}
-A common issue I see in student write-ups is that they provide a p-value but only discuss it in relation to one group. Note that these are post hoc comparisons, so the p-values are for comparisons between two groups! So you should be describing the p-value for group1 vs group2, for example. It makes no sense to provide a p-value for a single group.
+::: callout-warning
+A post hoc *p*-value belongs to a comparison between two groups. Do not write that “joyzepam was significant” or “the placebo group was not significant.” Instead, write which two groups were compared and whether that comparison was statistically significant.
 :::
 
-## Welch's F-Test Post Hoc Tests
+## Games-Howell Post Hoc Tests After Welch’s ANOVA
 
-If you are using Welch's F-test using the One-Way ANOVA in jamovi, you should select under Post-Hoc Tests `Games-Howell (unequal variances)`. These will be interpreted similarly to the post hoc comparisons above.
+If you report Welch’s ANOVA because the homogeneity-of-variance assumption was not met, use Games-Howell post hoc comparisons. Games-Howell is designed for pairwise comparisons when group variances may be unequal.
 
-## Kruskal-Wallis Post Hoc Tests
+To request Games-Howell comparisons in jamovi, use **ANOVA → One-Way ANOVA**, move the outcome variable to **Dependent Variables**, move the grouping variable to **Grouping Variable**, and select `Games-Howell (unequal variances)` under **Post-Hoc Tests**.
 
-If you are using the Kruskal-Wallis test, you will select the check-box for `DSCF pairwise comparisons`. This stands for the Dwass-Steel-Critchlow-Fligner (DSCF) test. All you need to know is that they, too, are interpreted similarly to the post hoc comparisons above.
+Interpret the results the same way you would interpret Tukey post hoc comparisons: identify which pairwise group comparisons are statistically significant and describe the direction of those differences using the group means.
+
+## DSCF Pairwise Comparisons After Kruskal-Wallis
+
+If you report the Kruskal-Wallis test because the normality assumption was seriously violated, use DSCF pairwise comparisons. DSCF stands for Dwass-Steel-Critchlow-Fligner. You do not need to memorize that name, but you should recognize that DSCF is the follow-up procedure used with Kruskal-Wallis in jamovi.
+
+To request DSCF pairwise comparisons in jamovi, use **ANOVA → One-Way ANOVA, Kruskal-Wallis** and select `DSCF pairwise comparisons`.
+
+Interpret the results as pairwise comparisons between groups. Because Kruskal-Wallis and DSCF are rank-based, describe the groups using medians rather than relying only on means.
 
 ## Planned Contrasts
 
-If you have before-analysis hypotheses of group differences in your data, you will use planned contrasts. You can find the planned contrasts in the ANOVA (but not the one-way ANOVA) setup as a drop-down menu. Unfortunately, you cannot perform contrasts with either the Welch's F-test or Kruskal-Wallis test.
+Planned contrasts are used when we have specific group comparisons in mind before analyzing the data. Unlike post hoc comparisons, planned contrasts are not meant to search through every possible pairwise difference. They are used to test targeted predictions.
 
-Note that while I show all six contrasts that jamovi provides, you normally would only perform one contrast. These are just shown for illustrative purposes:
+In jamovi, planned contrasts are available under the **Contrasts** menu in the ANOVA analysis. The type of contrast determines which group comparisons are tested.
 
-1.  **Deviation**: compares the effect of each category (except the first category) to the overall experimental effect. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.
+| Contrast Type | What It Is Usually Used For |
+|--------------|----------------------------------------------------------|
+| **Simple** | Compares each group to a reference group. This is useful when one group is a control or comparison group. |
+| **Deviation** | Compares each group to the overall mean across groups. |
+| **Difference** | Compares each group to the average of the groups that came before it, based on the order of the factor levels. |
+| **Helmert** | Compares each group to the average of the groups that come after it, based on the order of the factor levels. |
+| **Repeated** | Compares adjacent groups, based on the order of the factor levels. This is useful when the groups have a meaningful sequence. |
+| **Polynomial** | Tests ordered trends, such as a linear or quadratic pattern. This is useful when the groups are ordered levels, such as low, medium, and high dosage. |
 
-    ![](images/04_one-way-anova/contrasts_deviation.png)
+The key idea is that the contrast type should match the research question. For example, if the main question is whether each drug condition differs from placebo, a simple contrast using placebo as the reference group may be appropriate. If the main question is whether mood gain increases across ordered dosage levels, a polynomial contrast may be appropriate. If the groups do not have a meaningful order, a polynomial contrast would usually not make sense.
 
-2.  **Simple**: Each category is compared to the first category. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.
-
-    ![](images/04_one-way-anova/contrasts_simple.png)
-
-3.  **Difference**: Each category (except the first) is compared to the mean effect of all previous categories.
-
-    ![](images/04_one-way-anova/contrasts_difference.png)
-
-4.  **Helmert**: Each category (except the last) is compared to the mean effect of all subsequent categories.
-
-    ![](images/04_one-way-anova/contrasts_helmert.png)
-
-5.  **Repeated**: Each category is compared to the last category.
-
-    ![](images/04_one-way-anova/contrasts_repeated.png)
-
-6.  **Polynomial**: Tests trends in the data. It will examine the *n-1*^th^ degree based on the number of groups. In this case, because we have 3 groups it is testing both a linear (^1^) and quadratic (^2^) trend. If we had 5 groups, it would test a linear (^1^), quadratic (^2^), cubic (^3^), and quartic (^4^) trend. Note that your factor levels must be ordinal for a polynomial contrast to make sense.
-
-    ![](images/04_one-way-anova/contrasts_polynomial.png)
-
-**Test yourself!** Which contrast do you think would make [most sense]{.underline} to test given that we want to know how our drug compares to each of the other two drugs?
+For this course, you are most likely to use post hoc comparisons after a one-way ANOVA. Planned contrasts are most useful when the research question clearly identifies specific comparisons before the analysis.
 
 ### Write Up Planned Contrasts in APA Style
 
-Here's some example write-ups of the above results.
+A planned-contrast write-up should identify the specific comparison being tested, report the relevant test result, and interpret the direction of the difference. If the contrast type matters for understanding the comparison, name it in the write-up.
 
-> There is a significant difference in mood gain across the three drug conditions, *F* (2, 15) = 18.61, *p* \< .001. Repeated contrasts showed that *Joyzepam* (*M* = 1.48, *SD* = .21) outperformed both *Anxifree* (*M* = .72, *SD* = .39; *t* = 4.36, *p* \< .001) and the placebo condition (*M* = .45, *SD* = .28; *t* = 5.88, *p* \< .001).
+For example, if the planned comparison used a simple contrast comparing each medication to the placebo condition, the write-up could say:
 
-Note how this next example makes no sense because our data is not ordinal, but here's an example polynomial write-up:
+> A one-way ANOVA indicated that mood gain differed significantly across the three drug conditions, *F*(2, 15) = 18.61, *p* \< .001, (\\omega\^2 = .66). Simple planned contrasts using placebo as the reference group indicated that participants in the joyzepam condition had significantly greater mood gain than participants in the placebo condition, *p* \< .001. Participants in the anxifree condition did not differ significantly from participants in the placebo condition, *p* = \[value\].
 
-> There is a significant difference in mood gain across the three drug conditions, *F* (2, 15) = 18.61, *p* \< .001. There was not a significant linear trend across the drug conditions (*p* = .150).
+If the planned comparison tested whether the new drug differed from the two comparison conditions combined, the write-up could say:
 
-## Additional Practice
+> A one-way ANOVA indicated that mood gain differed significantly across the three drug conditions, *F*(2, 15) = 18.61, *p* \< .001, (\\omega\^2 = .66). A planned contrast comparing the joyzepam condition to the placebo and anxifree conditions combined indicated that participants in the joyzepam condition showed greater mood gain than participants in the two comparison conditions, *p* \< .001.
 
-Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
+Only use planned contrasts when the comparison follows from the research question. If the goal is to examine all pairwise group differences after a significant ANOVA, use post hoc comparisons instead.
 
-Perform one-way ANOVAs based on the following research questions. Check your assumptions and ensure you are using the correct tests.
+:::: {.callout-tip title="Check Your Understanding"}
+A researcher compares four therapy conditions. Before collecting data, the researcher predicts that the new therapy will outperform the three existing therapies. The researcher is less interested in comparing all existing therapies to each other.
 
-To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
+Would post hoc comparisons or planned contrasts better match this research question?
 
-**Note**: These are the same questions as in the one-way ANOVA chapter, but now you focus on the group differences.
+::: {.callout-note title="Check Your Answer" collapse="true"}
+Planned contrasts better match this research question because the researcher has a specific comparison in mind before analyzing the data: the new therapy compared with the existing therapies.
+:::
+::::
 
-1.  **Do students differ on English scores by rank (i.e., freshmen, sophomore, junior, senior)?**
+:::: {.callout-tip title="Check Your Understanding"}
+In the clinical trial example, suppose our specific prediction is that joyzepam will lead to greater mood gain than the two comparison conditions.
 
-    -   Perform Tukey's post hoc tests. What are the results of the post hoc comparison?
+1.  Is this a post hoc question or a planned contrast question?
+2.  Why should this decision be made before looking at the results?
 
-2.  **Does smoking status (Smoking: Nonsmoker = 0, Past smoker = 1, Current smoker = 2) relate to sprint time?**
+::: {.callout-note title="Check Your Answer" collapse="true"}
+1.  This is a planned contrast question because it focuses on a specific predicted comparison.
+2.  The decision should be made before looking at the results so that the researcher is not choosing comparisons based on which results appear statistically significant.
+:::
+::::
 
-    -   Perform Tukey's post hoc tests. What are the results of the post hoc comparison?
+### Write Up Planned Contrasts in APA Style
+
+A planned-contrast write-up should identify the specific comparison being tested, report the relevant test result, and interpret the direction of the difference.
+
+> A one-way ANOVA indicated that mood gain differed significantly across the three drug conditions, *F*(2, 15) = 18.61, *p* \< .001, (\omega\^2 = .66). A planned contrast comparing the joyzepam condition to the two comparison conditions combined indicated that participants in the joyzepam condition showed greater mood gain than participants in the placebo and anxifree conditions, *p* \< .001.
+
+Only use planned contrasts when the comparison follows from the research question. If the goal is to examine all pairwise group differences after a significant ANOVA, use post hoc comparisons instead.

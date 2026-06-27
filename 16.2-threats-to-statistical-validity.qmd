@@ -1,12 +1,43 @@
-# 16.2 Threats to Statistical Validity {.unnumbered}
-1.  Low statistical power
+# 16.2 Threats to Statistical Conclusion Validity {.unnumbered}
 
-2.  Violated statistical assumptions
+Statistical conclusion validity concerns whether the statistical conclusions drawn from a study are reasonable. It focuses on whether researchers are justified in concluding that variables are related, groups differ, or an effect is present.
 
-3.  Not correcting for multiple tests (i.e., p-hacking)
+Threats to statistical conclusion validity can lead researchers to miss real effects, detect effects that are not real, or misestimate the size or precision of an effect.
 
-4.  Unreliability of measures
+## Common Threats to Statistical Conclusion Validity
 
-5.  Restriction of range
+### Low Statistical Power
 
-6.  Unreliability of treatment implementation
+Low statistical power makes it harder to detect effects that truly exist. Power can be reduced by small sample sizes, unreliable measures, weak manipulations, restricted range, high variability, or inappropriate statistical tests.
+
+Low power can also produce unstable estimates. Even when a result is statistically significant, the estimated effect size may be imprecise.
+
+### Violated Statistical Assumptions
+
+Statistical tests depend on assumptions. When assumptions are seriously violated, *p*-values, confidence intervals, and effect-size estimates may be misleading.
+
+For example, severe non-normality, unequal variances, non-independence of observations, influential outliers, or model misspecification can weaken statistical conclusion validity.
+
+### Multiple Testing and Researcher Degrees of Freedom
+
+Running many tests increases the chance of finding at least one statistically significant result by chance. This is especially problematic when researchers test many models, outcomes, subgroups, or exclusion rules and report only the significant findings.
+
+Corrections for multiple tests, preregistration, transparent reporting, and theoretically justified analyses can help reduce this threat.
+
+### Unreliable Measures
+
+Measurement error weakens observed relationships and can make real effects harder to detect. If a measure produces unreliable scores, correlations with other variables may be attenuated, group differences may be obscured, and estimates may be less stable.
+
+### Restricted Range
+
+Restricted range occurs when the sample does not include enough variability on a key variable. This can weaken correlations and reduce the ability to detect relationships.
+
+For example, if a study of academic performance includes only students with very high GPAs, the restricted GPA range may make it harder to detect relationships between GPA and other variables.
+
+### Unreliable Treatment Implementation
+
+In intervention or experimental studies, statistical conclusions can be weakened if the treatment is not implemented consistently. If participants in the same condition receive meaningfully different versions of the treatment, the estimated effect may be unclear or diluted.
+
+### Inappropriate Statistical Model
+
+Statistical conclusion validity can also be threatened when the model does not match the research question or data structure. For example, treating nested data as independent, using linear regression for a clearly non-linear relationship, or ignoring clustering can lead to misleading conclusions.

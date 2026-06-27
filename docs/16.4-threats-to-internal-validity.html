@@ -609,7 +609,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13.2 Finding Group Differences</span></a>
+ <span class="menu-text">13.2 Finding Group Differences After ANOVA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -659,6 +659,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">14.3 General Linear Model</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.4-comparing-strengths-of-correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.4 Comparing Strengths of Correlations</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -673,13 +679,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.1-threats-to-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.1 Threats to Reliability</span></a>
+ <span class="menu-text">15.1 Sources of Measurement Error</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.2-measuring-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.2 Measuring Reliability</span></a>
+ <span class="menu-text">15.2 Estimating Reliability</span></a>
   </div>
 </li>
       </ul>
@@ -702,7 +708,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16.2-threats-to-statistical-validity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">16.2 Threats to Statistical Validity</span></a>
+ <span class="menu-text">16.2 Threats to Statistical Conclusion Validity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -741,8 +747,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#common-threats-to-internal-validity" id="toc-common-threats-to-internal-validity" class="nav-link active" data-scroll-target="#common-threats-to-internal-validity">Common Threats to Internal Validity</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -766,18 +778,64 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<ol type="1">
-<li><p><strong>Maturation</strong>: physiological processes that count account for changes in the behavior due to simple passage of time. For instance, the aging process of simply growing older and the developmental changes associated, or physiological states like hunger, fatigue, attention span, or motivation that change over time naturally.</p></li>
-<li><p><strong>Regression to the mean</strong>: the tendency that participants who receive extreme scores when tested tend to have less extreme scores on subsequent retesting even in the absence of treatment effects.</p></li>
-<li><p><strong>Selection of subjects</strong>: Any bias in selecting and assigning participants to groups that results in systematic differences between the participants in each group.</p></li>
-<li><p><strong>Selection by maturation interaction</strong>: The treatment and no-treatment groups, although similar at one point, would have grown apart (i.e., developed differently) even if no treatment had been administered. Even though pretest scores may have been the same, groups that are not matched as well on other relevant variables may cause the groups to naturally become different after a period of time.</p></li>
-<li><p><strong>Mortality</strong>: Differential dropping out of some subjects from the comparison groups before the experiment is finished, resulting in differences between the groups that may be unrelated to the treatment effects. The subjects who drop out may be different than those who complete the treatment, which may inflate, obscure, or confuse the treatment effects of interest. Researcher’s exclusion criteria may also cause a mortality bias.</p></li>
-<li><p><strong>Instrumentation</strong>: Changes in the measurement procedures that may result in differences between the comparison groups that are confused with the treatment effects.</p></li>
-<li><p><strong>Testing</strong>: When participants are repeatedly tested, changes in test scores may be due to practice or knowledge about the test procedure gained from earlier experiences rather than any treatment effects. Similar to maturation except that the change is caused by the treatment procedure itself.</p></li>
-<li><p><strong>History</strong>: Extraneous events occurring during the course of the experiment that may affect the participants’ responses on the dependent measure. Examples may be major events in society or minor events within the experimental situation.</p></li>
-</ol>
+<p>Internal validity concerns whether an observed relationship between variables can be interpreted as causal. A study has stronger internal validity when alternative explanations for the observed effect have been ruled out.</p>
+<p>Threats to internal validity are especially important in intervention, experimental, and quasi-experimental research. These threats provide alternative explanations for why groups differ or why scores change over time.</p>
+<section id="common-threats-to-internal-validity" class="level2">
+<h2 class="anchored" data-anchor-id="common-threats-to-internal-validity">Common Threats to Internal Validity</h2>
+<p>Keep in mind the acronym MRS. SMITH to remember all of these threats to internal validity.</p>
+<section id="maturation" class="level3">
+<h3 class="anchored" data-anchor-id="maturation">Maturation</h3>
+<p>Maturation refers to naturally occurring changes within participants over time that could account for changes in the outcome. These changes may include development, aging, fatigue, hunger, boredom, motivation, attention, or recovery.</p>
+<p>For example, children may improve on a cognitive task over several months because of normal development rather than because of an educational intervention.</p>
+</section>
+<section id="regression-to-the-mean" class="level3">
+<h3 class="anchored" data-anchor-id="regression-to-the-mean">Regression to the Mean</h3>
+<p>Regression to the mean occurs when participants are selected because they have extreme scores, and their scores become less extreme when measured again, even without an intervention.</p>
+<p>For example, students selected for tutoring because they performed unusually poorly on one test may score closer to average on a later test partly because extreme scores tend to be less extreme on retesting.</p>
+</section>
+<section id="selection" class="level3">
+<h3 class="anchored" data-anchor-id="selection">Selection</h3>
+<p>Selection refers to systematic differences between groups before the treatment or intervention begins. If groups differ at baseline, post-treatment differences may reflect those preexisting differences rather than the treatment.</p>
+<p>For example, if participants choose whether to join an exercise program, those who join may already differ in motivation, health, or available time.</p>
+</section>
+<section id="selection-by-maturation-interaction" class="level3">
+<h3 class="anchored" data-anchor-id="selection-by-maturation-interaction">Selection by Maturation Interaction</h3>
+<p>Selection by maturation interaction occurs when groups differ in how they would naturally change over time, even without the treatment. The groups may look similar at pretest but still be on different developmental or change trajectories.</p>
+<p>For example, two classrooms may have similar pretest scores, but one classroom may include students who are likely to improve faster over the semester because of prior preparation or outside support.</p>
+</section>
+<section id="attrition-or-mortality" class="level3">
+<h3 class="anchored" data-anchor-id="attrition-or-mortality">Attrition or Mortality</h3>
+<p>Attrition occurs when participants drop out of a study. It threatens internal validity when dropout is systematic rather than random.</p>
+<p>For example, if participants who find an intervention difficult are more likely to drop out, the remaining participants may make the intervention look more effective than it really is.</p>
+</section>
+<section id="instrumentation" class="level3">
+<h3 class="anchored" data-anchor-id="instrumentation">Instrumentation</h3>
+<p>Instrumentation refers to changes in the measurement instrument, scoring rules, observers, or data collection procedures over time.</p>
+<p>For example, if observers become more lenient after receiving feedback, changes in scores may reflect changes in observation procedures rather than changes in participant behavior.</p>
+</section>
+<section id="testing" class="level3">
+<h3 class="anchored" data-anchor-id="testing">Testing</h3>
+<p>Testing effects occur when taking a test or completing a measurement procedure changes later scores. Participants may improve because of practice, familiarity, memory, or increased awareness of what is being measured.</p>
+<p>For example, participants may score higher on a second knowledge test because they remember questions from the pretest, not because of the intervention.</p>
+</section>
+<section id="history" class="level3">
+<h3 class="anchored" data-anchor-id="history">History</h3>
+<p>History refers to external events that occur during the study and could influence the outcome. These events may occur in society, the organization, the classroom, the clinic, or the participants’ lives.</p>
+<p>For example, a workplace stress intervention might appear effective or ineffective partly because a major organizational restructuring occurred during the study.</p>
+</section>
+<section id="diffusion-or-contamination" class="level3">
+<h3 class="anchored" data-anchor-id="diffusion-or-contamination">Diffusion or Contamination</h3>
+<p>Diffusion occurs when participants in one condition are exposed to elements of another condition. This can reduce differences between groups or make it unclear what treatment each group actually received.</p>
+<p>For example, students in a control classroom may receive materials from students in the intervention classroom.</p>
+</section>
+<section id="compensatory-rivalry-and-resentful-demoralization" class="level3">
+<h3 class="anchored" data-anchor-id="compensatory-rivalry-and-resentful-demoralization">Compensatory Rivalry and Resentful Demoralization</h3>
+<p>Participants or groups may respond to condition assignment in ways that affect outcomes. <strong>Compensatory rivalry</strong> occurs when comparison-group participants work harder because they know they are not receiving the treatment. <strong>Resentful demoralization</strong> occurs when comparison-group participants become discouraged because they know they are not receiving the treatment.</p>
+<p>Both can change outcomes for reasons other than the treatment itself.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -1,10 +1,38 @@
 # 16.3 Threats to External Validity {.unnumbered}
-Any factors within a study that reduce the generalizability of the results
 
-1.  **Selection biases**: Whether the sample or selection of participants are representative of the populations they are drawn from.
+External validity concerns the extent to which findings generalize beyond the specific conditions of a study. A study may support a conclusion for one sample, setting, treatment version, or outcome measure, but that does not automatically mean the same conclusion holds elsewhere.
 
-2.  **Construct biases**: Whether the measurement of the construct can be generalizable or is representative of the behavior itself. See “Threats to Construct Validity” above.
+One way to think about external validity is through **UTOS**:
 
-3.  **The ‘real world’ vs the ‘experimental world’**: Whether the study procedures are representative of the real world the study is attempting to mimic.
+- **Units**: To whom do the findings generalize?
+- **Treatments**: Across what versions or variations of the treatment, manipulation, or intervention do the findings generalize?
+- **Outcomes**: Across what outcome measures or operationalizations do the findings generalize?
+- **Settings**: Across what contexts, locations, cultures, organizations, or historical periods do the findings generalize?
 
-4.  4**History effects and maturation**: Whether the timing of the study (in history and the length of the study itself) can be generalized to other studies with other timings (e.g., a different year).
+## Common Threats to External Validity
+
+### Selection Biases
+
+Selection biases occur when the sample differs from the population to which researchers want to generalize. This can happen because of recruitment methods, exclusion criteria, self-selection, attrition, or limited access to participants.
+
+For example, a study of therapy outcomes based only on participants who can attend weekday daytime sessions may not generalize to people with different work schedules, caregiving responsibilities, or access barriers.
+
+### Treatment Variation
+
+Findings may not generalize across different versions of a treatment or intervention. A treatment delivered by one highly trained provider in a controlled setting may not have the same effect when delivered by many providers in routine practice.
+
+### Outcome Variation
+
+Findings may depend on how the outcome is measured. A study may show an effect on self-reported anxiety but not on clinician-rated anxiety, behavioral avoidance, or physiological indicators.
+
+This overlaps with construct validity because generalizing across outcomes requires confidence that the outcome measures represent the intended construct.
+
+### Setting and Context
+
+The “real world” may differ from the research setting in important ways. Laboratory studies can provide control, but findings may not always generalize to naturalistic settings. Similarly, field studies conducted in one organization, school, clinic, or community may not generalize to others.
+
+### Historical and Temporal Context
+
+Findings may depend on when the study was conducted. Social norms, technology, policies, economic conditions, and major historical events can shape whether results generalize to later time periods.
+
+Longer studies may also be influenced by changes that occur during the study itself. These issues can affect both external validity and, in some designs, internal validity.

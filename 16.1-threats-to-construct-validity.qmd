@@ -1,10 +1,49 @@
 # 16.1 Threats to Construct Validity {.unnumbered}
-1.  **Inexact definitions of constructs**: Poorly defined constructs such that (a) its essential or important components have not been clearly thought out, (b) the various levels of the construct have not been determine such that no exact operational definition can be provided, and (c) insufficient arguments have been provided to explain its content and boundaries. For instance, aggression is intent to harm others and a harmful results. Thinking about aggression, or harming another person, alone are not sufficient for aggression. Our measurements must capture this.
 
-2.  **Reducing levels of measurement**: Taking a continuous variable and making it ordinal or nominal
+Construct validity concerns whether the measures, manipulations, or operational definitions in a study adequately represent the intended construct. A threat to construct validity occurs when there is a mismatch between the theoretical construct and the way it is operationalized.
 
-3.  **Mono-method bias**: Using a single method to measure something. Some methods may introduce bias.
+In measurement, construct validity is not established by a single statistic. Instead, it is supported by a body of evidence about score meaning, structure, relationships with other variables, and consequences of use.
 
-4.  **Mono-operation bias**: Using only a single operationalization of the construct which underrepresents the overall construct. For instance, examining the effect of background music on task performance. Could test for presence/absence of music on task performance, but different types of music and loudness of music would probably have differential effects.
+## Common Threats to Construct Validity
 
-5.  **Construct confounding**: Jingle Jangle fallacy: Two constructs can be called the same thing but operationally different, but also two construct can be called two separate things but be operationally the same.
+### Inadequate Construct Definition
+
+A construct must be clearly defined before it can be measured well. An inadequate construct definition occurs when the construct’s boundaries, dimensions, or essential features are unclear.
+
+For example, if a researcher says they are measuring aggression, they need to define whether aggression includes intent to harm, actual harm, verbal behavior, physical behavior, relational behavior, or hostile thoughts. A measure that only captures angry thoughts may not adequately represent aggression if aggression is defined as behavior intended to harm another person.
+
+### Construct Underrepresentation
+
+Construct underrepresentation occurs when the measure captures only part of the intended construct. The operationalization is too narrow.
+
+For example, if job performance is defined as task performance, teamwork, communication, and adaptability, but the measure only includes task completion, the measure underrepresents the construct.
+
+### Construct-Irrelevant Variance
+
+Construct-irrelevant variance occurs when scores are influenced by something outside the intended construct.
+
+For example, a depression questionnaire written with unnecessarily complex vocabulary may partly measure reading comprehension. A timed math test may partly measure processing speed or test anxiety rather than only mathematical knowledge.
+
+### Mono-Operation Bias
+
+Mono-operation bias occurs when a construct is represented by only one operationalization. A single operationalization may not capture the full construct domain.
+
+For example, a study examining the effect of background music on task performance might operationalize music only as present versus absent. However, genre, volume, lyrics, familiarity, and personal preference may all matter.
+
+### Mono-Method Bias
+
+Mono-method bias occurs when a construct is measured using only one method. The observed relationship may reflect method-specific influences rather than the construct itself.
+
+For example, if both stress and job satisfaction are measured using self-report surveys at the same time, the relationship between them may be influenced by shared response style, mood, or social desirability.
+
+### Jingle and Jangle Fallacies
+
+The **jingle fallacy** occurs when two measures or constructs have the same name but measure different things. The **jangle fallacy** occurs when two measures or constructs have different names but measure essentially the same thing.
+
+These fallacies are common in psychological measurement because constructs are often abstract and overlapping. They create problems when researchers assume that labels alone tell us what a measure captures.
+
+### Reducing Levels of Measurement
+
+Reducing a continuous variable into categories can weaken construct representation and reduce statistical information. For example, turning a continuous anxiety score into “low anxiety” and “high anxiety” may hide meaningful variation among people.
+
+Categorizing variables is not always wrong, but it should be theoretically or practically justified rather than done only for convenience.

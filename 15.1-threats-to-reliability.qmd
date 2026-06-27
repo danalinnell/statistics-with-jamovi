@@ -1,19 +1,60 @@
-# 15.1 Threats to Reliability {.unnumbered}
-Error is what takes us away from a participant's true score. In other
-words, error can produce threats to the reliability scores that we
-produce. There are three areas that can introduce error to our
-reliability scores:
+# 15.1 Sources of Measurement Error {#sec-sources-measurement-error .unnumbered}
 
-1.  *The researcher or measurement instrument:* For example, if you’re
-    measuring time to do a task, when do you start and stop the
-    stopwatch? How quickly can you react to starting and stopping the
-    stopwatch? What if multiple researchers are using a stopwatch?
+Measurement error is the part of an observed score that does not reflect the construct we are trying to measure. In classical test theory, error is what separates an observed score from a theoretical true score:
 
-2.  *The participant*: For instance, a participant’s mood may affect how
-    they respond to a survey or the time of day may affect their weight
-    on a scale (note that their weight fluctuates throughout the day but
-    that affects the reliability of their weight, not the reliability of
-    the scale!)
+\[
+X = T + E
+\]
 
-3.  *The environment*: For example, baking at different altitudes
-    requires different oven temperatures and baking times.
+Reliability is concerned primarily with **random measurement error**. Random error introduces inconsistency into scores. If a person completed the same measurement procedure repeatedly under comparable conditions, random error would cause their observed score to vary across occasions, forms, raters, or items.
+
+Not all error is random. **Systematic error** affects scores in a consistent direction. For example, a scale that always reads five pounds too high contains systematic error. Systematic error may not lower reliability because the scores can still be consistent, but it can threaten validity because the scores may not mean what we think they mean.
+
+:::{.callout-note}
+A measurement procedure can produce highly reliable scores and still be biased or invalid. Reliability is about consistency; validity is about the meaning and appropriateness of score interpretations and uses.
+:::
+
+## Sources of Error
+
+Measurement error can come from several sources. These sources are often discussed separately, but in real measurement situations they can overlap.
+
+### Instrument or Measurement Procedure
+
+Error can be introduced by the measurement instrument or the procedure used to collect scores. Examples include unclear items, poorly calibrated equipment, ambiguous scoring rules, low-quality translations, inconsistent test administration, or differences in how instructions are delivered.
+
+For example, if researchers are timing how long participants take to complete a task, reliability may be affected by when the stopwatch is started and stopped, how quickly the researcher reacts, and whether different researchers follow the same timing procedure.
+
+### Participants or Respondents
+
+Error can also come from temporary characteristics of the participant or respondent. Mood, fatigue, distraction, motivation, hunger, illness, response style, or misunderstanding of instructions can all affect scores.
+
+For example, a participant’s self-reported stress score may be higher on a day when they are tired, rushed, or experiencing an unusual event. This does not necessarily mean the measure is poor, but it does mean that observed scores may include temporary influences that are not part of the stable construct of interest.
+
+### Raters, Observers, or Coders
+
+When human judgment is involved, raters can introduce error. Raters may interpret criteria differently, apply scoring rules inconsistently, drift over time, or be influenced by expectations about the participant. These issues are especially important for observations, interviews, performance assessments, qualitative coding, and rubric-based scoring.
+
+For example, two raters may assign different scores to the same interview response because one rater emphasizes completeness while another emphasizes clarity. Inter-rater reliability evidence helps evaluate whether scores are consistent across raters.
+
+### Environment or Context
+
+The measurement environment can also introduce error. Noise, lighting, temperature, interruptions, testing location, time of day, technology problems, or differences in administration setting can affect observed scores.
+
+For example, performance on a cognitive task may differ depending on whether the participant completes it in a quiet lab, a noisy classroom, or at home on an unreliable internet connection.
+
+## Error Depends on the Construct and Use
+
+Whether something counts as error depends on the construct and intended use of the scores. For example, time of day might be error if we are trying to measure a person’s typical weight, but it might be meaningful if we are studying daily weight fluctuation. Participant mood might be error when measuring a stable personality trait, but it may be central when measuring current affect.
+
+This is why reliability cannot be evaluated in the abstract. We need to ask: reliable scores for whom, under what conditions, using what procedure, and for what purpose?
+
+## Summary
+
+| Source of Error | Examples | Reliability Concern |
+|---|---|---|
+| Instrument or procedure | unclear items, poor calibration, inconsistent instructions | Scores may vary because the measurement process is inconsistent |
+| Participant or respondent | fatigue, mood, motivation, distraction, misunderstanding | Scores may vary because temporary participant states influence responses |
+| Rater, observer, or coder | scoring drift, inconsistent criteria, rater bias | Scores may vary because human judgments are inconsistent |
+| Environment or context | noise, lighting, time of day, technology problems | Scores may vary because testing conditions differ |
+
+Understanding sources of measurement error helps us choose appropriate reliability evidence. Test-retest reliability focuses on consistency over time, internal consistency focuses on consistency across items or indicators, and inter-rater reliability focuses on consistency across raters, observers, or coders.

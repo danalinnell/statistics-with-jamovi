@@ -120,6 +120,7 @@ book:
         - 14.1-correlation.qmd
         - 14.2-regression.qmd
         - 14.3-general-linear-model.qmd
+        - 14.4-comparing-strengths-of-correlations.qmd
     
     - part: 15.0-reliability.qmd
       chapters:

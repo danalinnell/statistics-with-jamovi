@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6.5 Visualizing a Continuous Variable Across a Categorical Variable – Stats with jamovi</title>
+<title>14.4 Comparing Strengths of Correlations – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./06.6-expanding-your-data-visualization.html" rel="next">
-<link href="./06.4-visualizing-one-or-more-continuous-variables.html" rel="prev">
+<link href="./15.0-reliability.html" rel="next">
+<link href="./14.3-general-linear-model.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -86,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06.0-visualizing-data-in-jamovi.html">6. Visualizing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html">6.5 Visualizing a Continuous Variable Across a Categorical Variable</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14.0-correlation-regression.html">14. Correlation and Regression</a></li><li class="breadcrumb-item"><a href="./14.4-comparing-strengths-of-correlations.html">14.4 Comparing Strengths of Correlations</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -332,11 +332,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./06.0-visualizing-data-in-jamovi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">6. Visualizing Data in jamovi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06.1-why-visualize-data.html" class="sidebar-item-text sidebar-link">
@@ -363,7 +363,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" class="sidebar-item-text sidebar-link active">
+  <a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">6.5 Visualizing a Continuous Variable Across a Categorical Variable</span></a>
   </div>
 </li>
@@ -636,11 +636,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./14.0-correlation-regression.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">14. Correlation and Regression</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14.1-correlation.html" class="sidebar-item-text sidebar-link">
@@ -661,7 +661,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./14.4-comparing-strengths-of-correlations.html" class="sidebar-item-text sidebar-link">
+  <a href="./14.4-comparing-strengths-of-correlations.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">14.4 Comparing Strengths of Correlations</span></a>
   </div>
 </li>
@@ -752,18 +752,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#box-plots-comparing-group-distributions" id="toc-box-plots-comparing-group-distributions" class="nav-link active" data-scroll-target="#box-plots-comparing-group-distributions">Box Plots: Comparing Group Distributions</a></li>
-  <li><a href="#bar-plots-comparing-group-summaries" id="toc-bar-plots-comparing-group-summaries" class="nav-link" data-scroll-target="#bar-plots-comparing-group-summaries">Bar Plots: Comparing Group Summaries</a></li>
-  <li><a href="#line-plots-comparing-ordered-categories-or-time-points" id="toc-line-plots-comparing-ordered-categories-or-time-points" class="nav-link" data-scroll-target="#line-plots-comparing-ordered-categories-or-time-points">Line Plots: Comparing Ordered Categories or Time Points</a></li>
+  <li><a href="#independent-versus-dependent-correlations" id="toc-independent-versus-dependent-correlations" class="nav-link active" data-scroll-target="#independent-versus-dependent-correlations">Independent Versus Dependent Correlations</a></li>
+  <li><a href="#example-dataset" id="toc-example-dataset" class="nav-link" data-scroll-target="#example-dataset">Example Dataset</a></li>
+  <li><a href="#comparing-correlations-from-independent-samples" id="toc-comparing-correlations-from-independent-samples" class="nav-link" data-scroll-target="#comparing-correlations-from-independent-samples">Comparing Correlations From Independent Samples</a></li>
+  <li><a href="#comparing-correlations-from-dependent-samples" id="toc-comparing-correlations-from-dependent-samples" class="nav-link" data-scroll-target="#comparing-correlations-from-dependent-samples">Comparing Correlations From Dependent Samples</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06.0-visualizing-data-in-jamovi.html">6. Visualizing Data in jamovi</a></li><li class="breadcrumb-item"><a href="./06.5-visualizing-a-continuous-variable-across-a-categorical-variable.html">6.5 Visualizing a Continuous Variable Across a Categorical Variable</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14.0-correlation-regression.html">14. Correlation and Regression</a></li><li class="breadcrumb-item"><a href="./14.4-comparing-strengths-of-correlations.html">14.4 Comparing Strengths of Correlations</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">6.5 Visualizing a Continuous Variable Across a Categorical Variable</h1>
+<h1 class="title"><span id="sec-comparing-correlations" class="quarto-section-identifier">14.4 Comparing Strengths of Correlations</span></h1>
 </div>
 
 
@@ -780,110 +782,63 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Many research questions compare a continuous outcome across categories. Examples include comparing exam scores across instructional formats, job satisfaction across departments, or stress across experimental conditions.</p>
-<p>Several plots can answer this type of question. The best choice depends on whether you want to emphasize the <strong>distribution of the observations</strong>, a <strong>summary of each group</strong>, or <strong>change across ordered categories</strong>.</p>
-<section id="box-plots-comparing-group-distributions" class="level2">
-<h2 class="anchored" data-anchor-id="box-plots-comparing-group-distributions">Box Plots: Comparing Group Distributions</h2>
-<p>A grouped box plot displays a separate distribution for each category. It allows readers to compare:</p>
-<ul>
-<li>Medians</li>
-<li>Variability</li>
-<li>Possible skew</li>
-<li>Possible outliers</li>
-<li>The extent to which the group distributions overlap</li>
-</ul>
-<p>Box plots are usually preferable when you want readers to see more than just the group means.</p>
-<p>To create a grouped box plot in jamovi:</p>
-<ol type="1">
-<li>Select <strong>Plots → Box Plot</strong>.</li>
-<li>Move the continuous outcome into <strong>Variable</strong>.</li>
-<li>Move the categorical variable into <strong>Grouping Variable 1</strong>.</li>
-<li>Add <strong>Grouping Variable 2</strong> only when a second categorical distinction is important to the research question.</li>
-<li>Leave <strong>Show outliers</strong> selected.</li>
-<li>Revise the title, axis titles, and legend as needed.</li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/Visualizing data/6.5 Box plot (by categorical).png" class="img-fluid figure-img"></p>
-<figcaption>Example box plot comparing groups in jamovi</figcaption>
-</figure>
-</div>
-<p>In <strong>Exploration → Descriptives</strong>, jamovi can also supplement a box plot with violin shapes, jittered raw data points, and group means. These additions can reveal clusters, gaps, unusual observations, and small group sizes that a box plot alone may hide.</p>
-</section>
-<section id="bar-plots-comparing-group-summaries" class="level2">
-<h2 class="anchored" data-anchor-id="bar-plots-comparing-group-summaries">Bar Plots: Comparing Group Summaries</h2>
-<p>A bar plot can display a continuous variable across one or two categorical grouping variables. In this case, the height of each bar represents the <strong>mean</strong> of the continuous variable rather than a count.</p>
-<p>A bar plot of means can make group differences easy to see, but it hides the distribution of the individual observations. When using this type of plot:</p>
-<ul>
-<li>Include error bars when available.</li>
-<li>Identify what the error bars represent.</li>
-<li>Do not assume that the bars show the range of the data.</li>
-<li>Consider whether a box plot or raw-data display would communicate more information.</li>
-</ul>
-<section id="creating-a-bar-plot-of-a-continuous-variable-in-jamovi" class="level3">
-<h3 class="anchored" data-anchor-id="creating-a-bar-plot-of-a-continuous-variable-in-jamovi">Creating a Bar Plot of a Continuous Variable in jamovi</h3>
-<ol type="1">
-<li>Select <strong>Plots → Bar Plot</strong>.</li>
-<li>Select <strong>Continuous</strong> under <strong>Variable type</strong>.</li>
-<li>Move the continuous outcome into <strong>Continuous Variable</strong>.</li>
-<li>Move the primary categorical variable into <strong>Grouping Variable 1</strong>.</li>
-<li>Add <strong>Grouping Variable 2</strong> only when a second categorical grouping is necessary.</li>
-<li>Under <strong>Continuous Options</strong>, choose the error bars required for the analysis or assignment: <strong>Standard deviation</strong>, <strong>Standard error</strong>, or <strong>Confidence interval</strong>.</li>
-<li>Revise the title, axis titles, legend, and value labels as needed.</li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/Visualizing data/6.5 Bar plot.png" class="img-fluid figure-img"></p>
-<figcaption>Example bar plot comparing groups in jamovi</figcaption>
-</figure>
-</div>
-<p>Error bars may represent a standard deviation, standard error, or confidence interval. These quantities have different meanings. You will learn more about uncertainty and confidence intervals later in the textbook. For now, make sure the graph or its caption clearly identifies what the error bars represent.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Do Not Choose Error Bars Only Because They Look Smaller">
+<div class="callout callout-style-default callout-note callout-titled" title="Advanced Material">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Do Not Choose Error Bars Only Because They Look Smaller
+<span class="screen-reader-only">Note</span>Advanced Material
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The error-bar type should match what you intend to communicate. Standard deviations describe variability among observations. Standard errors and confidence intervals describe uncertainty around an estimated mean.</p>
+<p>This is an advanced sub-chapter. You do not need to compare correlations unless an assignment specifically asks you to do so. The main goal is to understand when two correlations can be compared and what information is needed for the comparison.</p>
 </div>
 </div>
-</section>
-</section>
-<section id="line-plots-comparing-ordered-categories-or-time-points" class="level2">
-<h2 class="anchored" data-anchor-id="line-plots-comparing-ordered-categories-or-time-points">Line Plots: Comparing Ordered Categories or Time Points</h2>
-<p>A line plot may be useful when the categorical variable has a meaningful order, such as measurement occasions, dosage levels, or stages of a process. Connecting the points emphasizes the pattern of change across that order.</p>
-<p>A line plot is generally not appropriate for unordered categories such as academic major, geographic region, or treatment labels with no meaningful sequence. Connecting those categories would imply a progression that does not exist.</p>
-<p>To create a line plot of group summaries:</p>
-<ol type="1">
-<li>Select <strong>Plots → Line Plot</strong>.</li>
-<li>Move the ordered category or time variable into <strong>X-Axis</strong>.</li>
-<li>Move the continuous outcome into <strong>Y-Axis</strong>.</li>
-<li>Add a categorical <strong>Grouping Variable</strong> when separate lines should represent different groups.</li>
-<li>Select <strong>Aggregated data</strong> when the plot should display a summary such as the mean at each time point or ordered category.</li>
-<li>Revise the title, axis titles, and legend as needed.</li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/Visualizing data/6.5 Line plot.png" class="img-fluid figure-img"></p>
-<figcaption>Example line plot across categories</figcaption>
-</figure>
-</div>
-<p>For repeated-measures data, a line plot can instead display individual participants’ trajectories. A plot of individual trajectories and a plot of group means communicate different information, so choose based on the question you want to answer.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Choosing Between Common Options">
+<p>Sometimes we want to know whether one correlation is stronger than another correlation. For example, we might ask whether the relationship between English and reading scores is stronger than the relationship between English and writing scores. We might also ask whether the relationship between English and reading scores differs for men and women.</p>
+<p>These questions are different from asking whether each correlation is statistically significant. Two correlations can both be statistically significant, but that does not automatically mean they are significantly different from each other. To test whether two correlations differ, we need a separate comparison test.</p>
+<p>In this sub-chapter, we will use the online calculator <a href="https://www.psychometrica.de/correlation.html">Testing the Significance of Correlations</a>. This calculator includes options for comparing correlations from independent samples and dependent samples.</p>
+<section id="independent-versus-dependent-correlations" class="level2">
+<h2 class="anchored" data-anchor-id="independent-versus-dependent-correlations">Independent Versus Dependent Correlations</h2>
+<p>Before comparing correlations, we need to identify whether the correlations come from independent samples or dependent samples.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type of Comparison</th>
+<th>When to Use It</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Independent samples</strong></td>
+<td>The two correlations come from different groups of people or cases.</td>
+<td>Compare the correlation between English and reading scores for men with the correlation between English and reading scores for women.</td>
+</tr>
+<tr class="even">
+<td><strong>Dependent samples</strong></td>
+<td>The two correlations come from the same group of people or cases and share at least one variable.</td>
+<td>Compare the correlation between English and reading scores with the correlation between English and writing scores using the same students.</td>
+</tr>
+</tbody>
+</table>
+<p>Use the calculator’s <strong>Independent Samples</strong> option when the correlations come from different samples. Use the <strong>Dependent Samples</strong> option when the correlations come from the same sample and share one variable.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Choosing Between Common Options
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Use a <strong>box plot</strong> when the distribution, variability, or possible outliers matter. Use a <strong>bar plot with error bars</strong> when the primary message is a comparison of group means. Use a <strong>line plot</strong> when the groups or observations have a meaningful order and the pattern of change matters.</p>
+<p>Do not compare two correlations just by looking at which one is larger. A correlation of .37 is larger than a correlation of .32, but that does not tell us whether the difference between them is statistically significant.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
@@ -896,19 +851,257 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A researcher compares anxiety scores across three therapy conditions. The conditions are separate treatment types with no meaningful order.</p>
+<p>A researcher wants to compare two correlations:</p>
 <ol type="1">
-<li>Would a line plot be the best choice?</li>
-<li>What plots would be more appropriate?</li>
+<li>The correlation between English and reading scores for men</li>
+<li>The correlation between English and reading scores for women</li>
 </ol>
-<div class="collapse" title="Check Your Answer">
+<p>Should the researcher use the independent-samples or dependent-samples comparison?</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The researcher should use the <strong>independent-samples</strong> comparison because the two correlations come from different groups of people: men and women.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="example-dataset">Example Dataset</h2>
+<p>We will use the <code>Sample_Dataset_2014.xlsx</code> file for both examples in this sub-chapter. You can download the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx</a>.</p>
+<p>The examples use three test-score variables:</p>
+<ul>
+<li><code>English</code></li>
+<li><code>Reading</code></li>
+<li><code>Writing</code></li>
+</ul>
+<p>The independent-samples example also uses <code>Gender</code> to create two separate groups.</p>
+</section>
+<section id="comparing-correlations-from-independent-samples" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-correlations-from-independent-samples">Comparing Correlations From Independent Samples</h2>
+<p>In the first example, we want to test whether the correlation between English and reading scores differs for men and women. Because men and women are different groups of students, this is an independent-samples comparison.</p>
+<section id="step-1-get-the-correlation-for-the-first-group" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-get-the-correlation-for-the-first-group">Step 1: Get the Correlation for the First Group</h3>
+<p>First, we need to obtain the correlation between <code>English</code> and <code>Reading</code> for men.</p>
 <ol type="1">
-<li>No.&nbsp;Connecting the three treatment types would imply a meaningful progression from one condition to the next.</li>
-<li>A grouped box plot would show the distributions, or a bar plot with clearly identified error bars could emphasize the group means.</li>
+<li>Go to the <strong>Data</strong> tab in jamovi.</li>
+<li>Click <strong>Filters</strong>.</li>
+<li>Enter the filter equation <code>Gender == 0</code>.</li>
+<li>Go to the <strong>Analyses</strong> tab.</li>
+<li>Click <strong>Regression</strong> and choose <strong>Correlation Matrix</strong>.</li>
+<li>Move <code>English</code> and <code>Reading</code> into the variables box.</li>
+<li>Select <code>N</code> so that jamovi reports the sample size for the correlation.</li>
 </ol>
+<p>For men, the correlation is <em>r</em> = .36, <em>p</em> &lt; .001, with <em>n</em> = 181.</p>
+</section>
+<section id="step-2-get-the-correlation-for-the-second-group" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-get-the-correlation-for-the-second-group">Step 2: Get the Correlation for the Second Group</h3>
+<p>Next, we need to obtain the correlation between <code>English</code> and <code>Reading</code> for women.</p>
+<ol type="1">
+<li>Return to the <strong>Data</strong> tab.</li>
+<li>Open the filter you created.</li>
+<li>Change the filter equation to <code>Gender == 1</code>.</li>
+<li>Return to the correlation output.</li>
+</ol>
+<p>The output should update automatically because the filter changed. For women, the correlation is <em>r</em> = .33, <em>p</em> &lt; .001, with <em>n</em> = 210.</p>
+</section>
+<section id="step-3-compare-the-two-correlations" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-compare-the-two-correlations">Step 3: Compare the Two Correlations</h3>
+<p>Now we can enter the information into the <a href="https://www.psychometrica.de/correlation.html#independent">Testing the Significance of Correlations - Independent Samples</a> calculator.</p>
+<p>Enter the following values:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Correlation</th>
+<th style="text-align: right;"><em>n</em></th>
+<th style="text-align: right;"><em>r</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Men</td>
+<td style="text-align: right;">181</td>
+<td style="text-align: right;">.36</td>
+</tr>
+<tr class="even">
+<td>Women</td>
+<td style="text-align: right;">210</td>
+<td style="text-align: right;">.33</td>
+</tr>
+</tbody>
+</table>
+<p>The result is not statistically significant, <em>p</em> = .369. This means that the correlation between English and reading scores does not differ significantly between men and women.</p>
+<p><img src="images/08-correlation/compare-correlations-independent.png" class="img-fluid"></p>
+</section>
+<section id="write-up-the-independent-samples-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="write-up-the-independent-samples-comparison">Write Up the Independent-Samples Comparison</h3>
+<p>An APA-style write-up could say:</p>
+<blockquote class="blockquote">
+<p>The correlation between English and reading scores was significant for men, <em>r</em> = .36, <em>p</em> &lt; .001, and women, <em>r</em> = .33, <em>p</em> &lt; .001. However, the strength of the correlation did not differ significantly between men and women, <em>p</em> = .369.</p>
+</blockquote>
+</section>
+</section>
+<section id="comparing-correlations-from-dependent-samples" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-correlations-from-dependent-samples">Comparing Correlations From Dependent Samples</h2>
+<p>In the second example, we want to test whether the correlation between English and reading scores differs from the correlation between English and writing scores. Both correlations come from the same students and both correlations include <code>English</code>, so this is a dependent-samples comparison.</p>
+<p>For this comparison, we need three correlations:</p>
+<ol type="1">
+<li>The correlation between <code>English</code> and <code>Reading</code></li>
+<li>The correlation between <code>English</code> and <code>Writing</code></li>
+<li>The correlation between <code>Reading</code> and <code>Writing</code></li>
+</ol>
+<p>The third correlation is needed because the two correlations we are comparing are dependent. The calculator needs to know how strongly the two non-shared variables, <code>Reading</code> and <code>Writing</code>, are related to each other.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The dependent-samples test used here applies when the two correlations come from the same sample and share one variable. It is not used when comparing two completely separate correlations, such as the correlation between Variable A and Variable B versus the correlation between Variable C and Variable D.</p>
+</div>
+</div>
+<section id="step-1-turn-off-any-previous-filters" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-turn-off-any-previous-filters">Step 1: Turn Off Any Previous Filters</h3>
+<p>If you still have the gender filter turned on from the previous example, turn it off before continuing.</p>
+<ol type="1">
+<li>Go to the <strong>Data</strong> tab.</li>
+<li>Click <strong>Filters</strong>.</li>
+<li>Delete the filter or toggle it off.</li>
+</ol>
+</section>
+<section id="step-2-get-the-three-correlations" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-get-the-three-correlations">Step 2: Get the Three Correlations</h3>
+<p>Return to the <strong>Correlation Matrix</strong> analysis and include <code>English</code>, <code>Reading</code>, and <code>Writing</code>.</p>
+<p>However, there is a complication: the correlation matrix may show different sample sizes because some students have missing data on one or more variables. The dependent-samples calculator requires one sample size, so we need the same cases included in all three correlations.</p>
+<p>To do this in jamovi, use filters to create listwise deletion for the three variables. Add filters so that cases are included only when they have data for <code>English</code>, <code>Reading</code>, and <code>Writing</code>.</p>
+<p><img src="images/08-correlation/correlation-filters.png" class="img-fluid"></p>
+<p>After applying the filters, the correlation matrix should update so that all three correlations use the same sample size. In this example, all three correlations use <em>n</em> = 370.</p>
+</section>
+<section id="step-3-compare-the-two-correlations-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-compare-the-two-correlations-1">Step 3: Compare the Two Correlations</h3>
+<p>Now enter the information into the <a href="https://www.psychometrica.de/correlation.html#dependent">Testing the Significance of Correlations - Dependent Samples</a> calculator.</p>
+<p>The calculator asks for:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Input</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>n</em></td>
+<td>The sample size used for all three correlations</td>
+</tr>
+<tr class="even">
+<td>(r_{12})</td>
+<td>The correlation between Variable 1 and Variable 2</td>
+</tr>
+<tr class="odd">
+<td>(r_{13})</td>
+<td>The correlation between Variable 1 and Variable 3</td>
+</tr>
+<tr class="even">
+<td>(r_{23})</td>
+<td>The correlation between Variable 2 and Variable 3</td>
+</tr>
+</tbody>
+</table>
+<p>For this example:</p>
+<ul>
+<li>Variable 1 is <code>English</code>.</li>
+<li>Variable 2 is <code>Reading</code>.</li>
+<li>Variable 3 is <code>Writing</code>.</li>
+</ul>
+<p>Enter the correlations from the jamovi correlation matrix. The result is not statistically significant, <em>p</em> = .213. This means that the correlation between English and reading scores, <em>r</em> = .32, does not differ significantly from the correlation between English and writing scores, <em>r</em> = .37.</p>
+<p><img src="images/08-correlation/compare-correlations-dependent.png" class="img-fluid"></p>
+</section>
+<section id="write-up-the-dependent-samples-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="write-up-the-dependent-samples-comparison">Write Up the Dependent-Samples Comparison</h3>
+<p>An APA-style write-up could say:</p>
+<blockquote class="blockquote">
+<p>English scores were significantly correlated with reading scores, <em>r</em> = .32, <em>p</em> &lt; .001, and writing scores, <em>r</em> = .37, <em>p</em> &lt; .001. A dependent-samples comparison indicated that these two correlations did not differ significantly in strength, <em>p</em> = .213.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A researcher wants to compare two correlations from the same students:</p>
+<ol type="1">
+<li>The correlation between motivation and exam score</li>
+<li>The correlation between motivation and final grade</li>
+</ol>
+<p>The researcher also has the correlation between exam score and final grade.</p>
+<p>Should the researcher use the independent-samples or dependent-samples comparison?</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The researcher should use the <strong>dependent-samples</strong> comparison because the correlations come from the same students and share one variable: motivation.</p>
 </div>
 </div>
 </div>
+</div>
+</div>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Comparison Type</th>
+<th>Information Needed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Do two correlations from different groups differ?</td>
+<td>Independent samples</td>
+<td>The two correlations and their two sample sizes</td>
+</tr>
+<tr class="even">
+<td>Do two correlations from the same group differ when they share one variable?</td>
+<td>Dependent samples</td>
+<td>The three correlations among the variables and one shared sample size</td>
+</tr>
+</tbody>
+</table>
+<p>When reporting these analyses, remember that the comparison test answers a specific question: whether the two correlations differ significantly in strength. It does not replace the original correlation tests, and it does not establish causation.</p>
 
 
 </section>
@@ -1316,13 +1509,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06.4-visualizing-one-or-more-continuous-variables.html" class="pagination-link" aria-label="6.4 Visualizing One or More Continuous Variables">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">6.4 Visualizing One or More Continuous Variables</span>
+      <a href="./14.3-general-linear-model.html" class="pagination-link" aria-label="14.3 General Linear Model">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">14.3 General Linear Model</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06.6-expanding-your-data-visualization.html" class="pagination-link" aria-label="6.6 Expanding Your Data Visualization">
-        <span class="nav-page-text">6.6 Expanding Your Data Visualization</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./15.0-reliability.html" class="pagination-link" aria-label="15. Reliability">
+        <span class="nav-page-text">15. Reliability</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

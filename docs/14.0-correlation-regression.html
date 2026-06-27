@@ -609,7 +609,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13.2 Finding Group Differences</span></a>
+ <span class="menu-text">13.2 Finding Group Differences After ANOVA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -659,6 +659,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">14.3 General Linear Model</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.4-comparing-strengths-of-correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.4 Comparing Strengths of Correlations</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -673,13 +679,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.1-threats-to-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.1 Threats to Reliability</span></a>
+ <span class="menu-text">15.1 Sources of Measurement Error</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.2-measuring-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.2 Measuring Reliability</span></a>
+ <span class="menu-text">15.2 Estimating Reliability</span></a>
   </div>
 </li>
       </ul>
@@ -702,7 +708,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16.2-threats-to-statistical-validity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">16.2 Threats to Statistical Validity</span></a>
+ <span class="menu-text">16.2 Threats to Statistical Conclusion Validity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -766,9 +772,63 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Correlations are the relationships between two (usually) continuous variables.</p>
-<p>Regressions have one or more predictor variables (usually at least one is a continuous variable) and a single continuous dependent variable.</p>
-<p>The last chapter will show how all these inferential statistics we’ve learned are all related.</p>
+<p>So far, most of our inferential tests have focused on group differences or differences between observed and expected frequencies. In this chapter, we shift to statistical relationships between variables.</p>
+<p>Correlation and regression are both used to examine relationships among variables, but they answer different kinds of questions. <strong>Correlation</strong> describes the strength and direction of the relationship between two variables. <strong>Regression</strong> uses one or more predictor variables to predict or explain variation in a continuous outcome variable.</p>
+<p>A key difference is that correlation treats the two variables symmetrically. We ask whether two variables are related, but we do not label one variable as the predictor and the other as the outcome. Regression is directional in its setup: one variable is the outcome, and one or more variables are used as predictors.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 39%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Analysis</th>
+<th>Variables and Design</th>
+<th>Research Question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Pearson correlation</strong></td>
+<td>Two continuous variables</td>
+<td>Are the two variables linearly related?</td>
+</tr>
+<tr class="even">
+<td><strong>Spearman correlation</strong></td>
+<td>Two ordinal or non-normally distributed variables, or a monotonic relationship</td>
+<td>Are the two variables related in rank order?</td>
+</tr>
+<tr class="odd">
+<td><strong>Simple linear regression</strong></td>
+<td>One predictor variable and one continuous outcome variable</td>
+<td>Does one variable predict the outcome?</td>
+</tr>
+<tr class="even">
+<td><strong>Multiple regression</strong></td>
+<td>Two or more predictor variables and one continuous outcome variable</td>
+<td>How well do the predictors work together to predict the outcome?</td>
+</tr>
+<tr class="odd">
+<td><strong>Regression with categorical predictors</strong></td>
+<td>Continuous outcome with categorical and/or continuous predictors</td>
+<td>Do groups differ on the outcome after being represented in a regression model?</td>
+</tr>
+<tr class="even">
+<td><strong>Hierarchical regression</strong></td>
+<td>Predictors entered in blocks or steps</td>
+<td>Does adding a new set of predictors improve the model?</td>
+</tr>
+<tr class="odd">
+<td><strong>General linear model</strong></td>
+<td>A broad framework that includes many analyses we have learned</td>
+<td>How are correlation, <em>t</em>-tests, ANOVA, and regression connected?</td>
+</tr>
+</tbody>
+</table>
+<p>This chapter begins with correlation in <span class="quarto-unresolved-ref">?sec-correlation</span>, where we focus on describing the strength and direction of relationships between variables. We then move to regression in <span class="quarto-unresolved-ref">?sec-regression</span>, where we use predictors to estimate or explain a continuous outcome. Finally, <span class="quarto-unresolved-ref">?sec-general-linear-model</span> shows how many of the statistical tests we have learned are connected through the general linear model.</p>
+<p>As always, we will continue using the same four-step hypothesis-testing process: look at the data, check assumptions, perform the test, and interpret the results. The main difference is that we are now asking about relationships among variables rather than comparing groups or frequencies.</p>
+<p>One important caution applies throughout this chapter: <strong>relationships do not automatically imply causation</strong>. A correlation or regression coefficient can show that variables are related, but causal conclusions depend on the research design, measurement quality, and alternative explanations.</p>
 
 
 

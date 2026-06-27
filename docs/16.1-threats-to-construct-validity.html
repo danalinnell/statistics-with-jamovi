@@ -609,7 +609,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13.2 Finding Group Differences</span></a>
+ <span class="menu-text">13.2 Finding Group Differences After ANOVA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -659,6 +659,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">14.3 General Linear Model</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.4-comparing-strengths-of-correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.4 Comparing Strengths of Correlations</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -673,13 +679,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.1-threats-to-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.1 Threats to Reliability</span></a>
+ <span class="menu-text">15.1 Sources of Measurement Error</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.2-measuring-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.2 Measuring Reliability</span></a>
+ <span class="menu-text">15.2 Estimating Reliability</span></a>
   </div>
 </li>
       </ul>
@@ -702,7 +708,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16.2-threats-to-statistical-validity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">16.2 Threats to Statistical Validity</span></a>
+ <span class="menu-text">16.2 Threats to Statistical Conclusion Validity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -741,8 +747,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#common-threats-to-construct-validity" id="toc-common-threats-to-construct-validity" class="nav-link active" data-scroll-target="#common-threats-to-construct-validity">Common Threats to Construct Validity</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -766,15 +778,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<ol type="1">
-<li><p><strong>Inexact definitions of constructs</strong>: Poorly defined constructs such that (a) its essential or important components have not been clearly thought out, (b) the various levels of the construct have not been determine such that no exact operational definition can be provided, and (c) insufficient arguments have been provided to explain its content and boundaries. For instance, aggression is intent to harm others and a harmful results. Thinking about aggression, or harming another person, alone are not sufficient for aggression. Our measurements must capture this.</p></li>
-<li><p><strong>Reducing levels of measurement</strong>: Taking a continuous variable and making it ordinal or nominal</p></li>
-<li><p><strong>Mono-method bias</strong>: Using a single method to measure something. Some methods may introduce bias.</p></li>
-<li><p><strong>Mono-operation bias</strong>: Using only a single operationalization of the construct which underrepresents the overall construct. For instance, examining the effect of background music on task performance. Could test for presence/absence of music on task performance, but different types of music and loudness of music would probably have differential effects.</p></li>
-<li><p><strong>Construct confounding</strong>: Jingle Jangle fallacy: Two constructs can be called the same thing but operationally different, but also two construct can be called two separate things but be operationally the same.</p></li>
-</ol>
+<p>Construct validity concerns whether the measures, manipulations, or operational definitions in a study adequately represent the intended construct. A threat to construct validity occurs when there is a mismatch between the theoretical construct and the way it is operationalized.</p>
+<p>In measurement, construct validity is not established by a single statistic. Instead, it is supported by a body of evidence about score meaning, structure, relationships with other variables, and consequences of use.</p>
+<section id="common-threats-to-construct-validity" class="level2">
+<h2 class="anchored" data-anchor-id="common-threats-to-construct-validity">Common Threats to Construct Validity</h2>
+<section id="inadequate-construct-definition" class="level3">
+<h3 class="anchored" data-anchor-id="inadequate-construct-definition">Inadequate Construct Definition</h3>
+<p>A construct must be clearly defined before it can be measured well. An inadequate construct definition occurs when the construct’s boundaries, dimensions, or essential features are unclear.</p>
+<p>For example, if a researcher says they are measuring aggression, they need to define whether aggression includes intent to harm, actual harm, verbal behavior, physical behavior, relational behavior, or hostile thoughts. A measure that only captures angry thoughts may not adequately represent aggression if aggression is defined as behavior intended to harm another person.</p>
+</section>
+<section id="construct-underrepresentation" class="level3">
+<h3 class="anchored" data-anchor-id="construct-underrepresentation">Construct Underrepresentation</h3>
+<p>Construct underrepresentation occurs when the measure captures only part of the intended construct. The operationalization is too narrow.</p>
+<p>For example, if job performance is defined as task performance, teamwork, communication, and adaptability, but the measure only includes task completion, the measure underrepresents the construct.</p>
+</section>
+<section id="construct-irrelevant-variance" class="level3">
+<h3 class="anchored" data-anchor-id="construct-irrelevant-variance">Construct-Irrelevant Variance</h3>
+<p>Construct-irrelevant variance occurs when scores are influenced by something outside the intended construct.</p>
+<p>For example, a depression questionnaire written with unnecessarily complex vocabulary may partly measure reading comprehension. A timed math test may partly measure processing speed or test anxiety rather than only mathematical knowledge.</p>
+</section>
+<section id="mono-operation-bias" class="level3">
+<h3 class="anchored" data-anchor-id="mono-operation-bias">Mono-Operation Bias</h3>
+<p>Mono-operation bias occurs when a construct is represented by only one operationalization. A single operationalization may not capture the full construct domain.</p>
+<p>For example, a study examining the effect of background music on task performance might operationalize music only as present versus absent. However, genre, volume, lyrics, familiarity, and personal preference may all matter.</p>
+</section>
+<section id="mono-method-bias" class="level3">
+<h3 class="anchored" data-anchor-id="mono-method-bias">Mono-Method Bias</h3>
+<p>Mono-method bias occurs when a construct is measured using only one method. The observed relationship may reflect method-specific influences rather than the construct itself.</p>
+<p>For example, if both stress and job satisfaction are measured using self-report surveys at the same time, the relationship between them may be influenced by shared response style, mood, or social desirability.</p>
+</section>
+<section id="jingle-and-jangle-fallacies" class="level3">
+<h3 class="anchored" data-anchor-id="jingle-and-jangle-fallacies">Jingle and Jangle Fallacies</h3>
+<p>The <strong>jingle fallacy</strong> occurs when two measures or constructs have the same name but measure different things. The <strong>jangle fallacy</strong> occurs when two measures or constructs have different names but measure essentially the same thing.</p>
+<p>These fallacies are common in psychological measurement because constructs are often abstract and overlapping. They create problems when researchers assume that labels alone tell us what a measure captures.</p>
+</section>
+<section id="reducing-levels-of-measurement" class="level3">
+<h3 class="anchored" data-anchor-id="reducing-levels-of-measurement">Reducing Levels of Measurement</h3>
+<p>Reducing a continuous variable into categories can weaken construct representation and reduce statistical information. For example, turning a continuous anxiety score into “low anxiety” and “high anxiety” may hide meaningful variation among people.</p>
+<p>Categorizing variables is not always wrong, but it should be theoretically or practically justified rather than done only for convenience.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1184,8 +1229,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./16.2-threats-to-statistical-validity.html" class="pagination-link" aria-label="16.2 Threats to Statistical Validity">
-        <span class="nav-page-text">16.2 Threats to Statistical Validity</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./16.2-threats-to-statistical-validity.html" class="pagination-link" aria-label="16.2 Threats to Statistical Conclusion Validity">
+        <span class="nav-page-text">16.2 Threats to Statistical Conclusion Validity</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,25 +1,27 @@
 # 15. Reliability {.unnumbered}
 
-::: {.callout-note}
-This chapter is a work in progress.
-:::
+**Reliability** refers to the consistency or dependability of scores. In psychometrics, reliability is not simply a property of a test or instrument by itself. Instead, reliability is a property of scores obtained from a particular measure, with a particular group of people, in a particular context, for a particular purpose.
 
-**Reliability** is the consistency of a measure. This is a crude, rough
-definition. More exactly, reliability is the extent to which observed or
-measured scores are consistent with differences in their true scores. We
-can never get a true score for participants, and so reliability helps us
-determine how close we got to a true score with observed scores.
+A common starting point for thinking about reliability is **classical test theory**. In classical test theory, an observed score is understood as a combination of a true score and measurement error:
 
-There are three types of consistency:
+\[
+X = T + E
+\]
 
-1.  *Test-retest reliability*: consistency over time (measured with a
-    correlation, usually)
+In this model, \(X\) is the observed score, \(T\) is the true score, and \(E\) is error. The true score is a theoretical value: the score a person would receive if measurement were perfectly consistent and free from random error. We cannot observe true scores directly, so reliability helps us evaluate how consistently a measurement procedure captures differences among people, occasions, items, or raters.
 
-2.  *Internal consistency*: consistency across items (measured with
-    Cronbach’s alpha usually, but there are other methods out there
-    including Omega which may be more appropriate; more info provided
-    soon)
+From this perspective, reliability can be understood as the proportion of observed-score variance that reflects true-score variance rather than error variance. Higher reliability means that a larger share of the variability in observed scores reflects consistent differences rather than random measurement error. Lower reliability means that more of the variability in observed scores may be due to error.
 
-3.  *Inter-rater reliability*: consistency across different researchers
-    (various methods, including percent agreement, interclass or
-    intraclass correlation, Cohen’s Kappa, Fleiss’ Kappa, etc.)
+Reliability is especially important because measurement error affects the conclusions we draw from data. When scores are unreliable, relationships with other variables can be weakened, group differences can be harder to detect, individual decisions become less defensible, and validity evidence becomes more difficult to interpret.
+
+There are several ways scores can be consistent. Three common forms of reliability evidence are:
+
+1. **Test-retest reliability**: consistency of scores over time. This is useful when the construct is expected to be relatively stable across the time interval.
+
+2. **Internal consistency**: consistency across items or indicators intended to measure the same construct. Cronbach’s alpha is commonly reported, although coefficient omega and other model-based estimates are often more appropriate depending on the measurement model.
+
+3. **Inter-rater reliability**: consistency across raters, observers, or coders. The appropriate statistic depends on the number of raters, level of measurement, rating design, and whether all raters evaluate all targets.
+
+Reliability is necessary but not sufficient for validity. Scores can be highly reliable but still fail to measure the intended construct. For example, a measure could consistently capture reading ability when the intended construct is depression. Reliability tells us about consistency; validity concerns the meaning, interpretation, and use of scores.
+
+In the next sections, we will examine common sources of measurement error and review several approaches to estimating reliability. The goal is not to memorize one “best” reliability statistic, but to select a reliability approach that matches the measurement design, construct, scoring procedure, and intended use of the scores.

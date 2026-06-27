@@ -639,7 +639,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13.2 Finding Group Differences</span></a>
+ <span class="menu-text">13.2 Finding Group Differences After ANOVA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -689,6 +689,12 @@ window.Quarto = {
  <span class="menu-text">14.3 General Linear Model</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.4-comparing-strengths-of-correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.4 Comparing Strengths of Correlations</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -703,13 +709,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.1-threats-to-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.1 Threats to Reliability</span></a>
+ <span class="menu-text">15.1 Sources of Measurement Error</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.2-measuring-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.2 Measuring Reliability</span></a>
+ <span class="menu-text">15.2 Estimating Reliability</span></a>
   </div>
 </li>
       </ul>
@@ -732,7 +738,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16.2-threats-to-statistical-validity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">16.2 Threats to Statistical Validity</span></a>
+ <span class="menu-text">16.2 Threats to Statistical Conclusion Validity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -780,8 +786,7 @@ window.Quarto = {
   <li><a href="#step-2-check-assumptions" id="toc-step-2-check-assumptions" class="nav-link" data-scroll-target="#step-2-check-assumptions">Step 2: Check Assumptions</a></li>
   <li><a href="#step-3-perform-the-test" id="toc-step-3-perform-the-test" class="nav-link" data-scroll-target="#step-3-perform-the-test">Step 3: Perform the Test</a></li>
   <li><a href="#step-4-interpret-results" id="toc-step-4-interpret-results" class="nav-link" data-scroll-target="#step-4-interpret-results">Step 4: Interpret Results</a></li>
-  <li><a href="#friedmans-test" id="toc-friedmans-test" class="nav-link" data-scroll-target="#friedmans-test">Friedman’s Test</a></li>
-  <li><a href="#additional-practice" id="toc-additional-practice" class="nav-link" data-scroll-target="#additional-practice">Additional Practice</a></li>
+  <li><a href="#friedman-test" id="toc-friedman-test" class="nav-link" data-scroll-target="#friedman-test">Friedman Test</a></li>
   </ul>
 </nav>
     </div>
@@ -807,17 +812,22 @@ window.Quarto = {
 </header>
 
 
-<p>The repeated measures analysis of variance (ANOVA) is used to test the difference in our dependent variable between <u>three or more</u> groups of observations in which all participants participate in all groups or levels. Our grouping variable is our independent variable. In other words, we use the repeated measures ANOVA when we have a research question with a <strong>continuous dependent variable</strong> and a <strong>categorical independent variable with three or more categories in which the <u>same</u> participants are in each category</strong>.</p>
-<p>The repeated measures ANOVA is also sometimes called the one-way related ANOVA.</p>
-<p>There are two ways we could have the repeated measures ANOVA. Perhaps the same group of participants are measured in the same dependent variable at three or more time points. In this case, our independent variable is time and our dependent variable is whatever is measured at each time point.</p>
+<p>A <strong>repeated measures ANOVA</strong> is used to test whether three or more related measurements differ on one continuous outcome variable. We use a repeated measures ANOVA when the same participants are measured across three or more time points, conditions, or tasks.</p>
+<p>A repeated measures ANOVA is similar to a dependent <em>t</em>-test, but it is used when there are three or more related measurements instead of two. In jamovi, this test is labeled <strong>Repeated Measures ANOVA</strong>. Other sources may call it a <strong>one-way repeated measures ANOVA</strong> or <strong>one-way within-subjects ANOVA</strong>.</p>
+<p>There are two common ways we might use a repeated measures ANOVA. First, the same participants might be measured on the same outcome at three or more time points. In that case, the repeated measures factor is time.</p>
 <p><img src="images/05-repeated-measures-anova/Laerd1.png" class="img-fluid"></p>
-<p>The other way we might have the repeated measures ANOVA is if all our participants participate in all conditions of our study. In this case, our independent variable is the treatment or condition and the dependent variable is whatever is measured in each treatment or condition.</p>
+<p>Second, the same participants might complete three or more conditions or tasks. In that case, the repeated measures factor is condition or task.</p>
 <p><img src="images/05-repeated-measures-anova/Laerd2.png" class="img-fluid"></p>
 <section id="step-1-look-at-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-look-at-the-data">Step 1: Look at the Data</h2>
-<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “broca”.</p>
-<p>This dataset is hypothetical data in which six patients suffering from Broca’s Aphasia (a language deficit commonly experienced following a stroke) complete three word recognition tasks. On the first (speech production) task, patients were required to repeat single words read aloud by the researcher. On the second (conceptual) task, designed to test word comprehension, patients were required to match a series of pictures with their correct name. On the third (syntax) task, designed to test knowledge of correct word order, patients were asked to reorder syntactically incorrect sentences. Each patient completed all three tasks. The order in which patients attempted the tasks was counterbalanced between participants. Each task consisted of a series of 10 attempts. The number of attempts successfully completed by each patient are provided in the dataset.</p>
-<p>Here’s a video walking through the repeated measures ANOVA test.</p>
+<p>For this chapter, we will work with the <code>broca</code> dataset from the <code>lsj-data</code> library. This dataset contains hypothetical data from six patients with Broca’s aphasia, a language difficulty that can occur after a stroke. Each patient completed three word-recognition tasks:</p>
+<ol type="1">
+<li><strong>Speech:</strong> repeating single words read aloud by the researcher</li>
+<li><strong>Conceptual:</strong> matching pictures with their correct names</li>
+<li><strong>Syntax:</strong> reordering syntactically incorrect sentences</li>
+</ol>
+<p>Each task included 10 attempts, and the score for each task is the number of attempts completed successfully. Because each patient completed all three tasks, the three task scores are related measurements. Our research question is: Do patients differ in word-recognition scores across the three tasks?</p>
+<p>The <a href="https://www.youtube.com/watch?v=Fl6S9IBC1q0">video</a> below walks through a repeated measures ANOVA in jamovi.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="vembedr">
@@ -829,99 +839,285 @@ window.Quarto = {
 </div>
 <section id="data-set-up" class="level3">
 <h3 class="anchored" data-anchor-id="data-set-up">Data Set-Up</h3>
-<p>To conduct the repeated measures ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires multiple columns, one for each condition or time measurement, with the values indicating the measurement of the DV for that condition or time. Each row is a unique participant or unit of analysis.</p>
-<p>So for our broca dataset, we have our Participant column indicating their participant number and then one column for each of the three word recognition tasks (speech, conceptual, syntax), with their scores on the knowledge test indicating the dependent variable for each condition.</p>
+<p>To conduct a repeated measures ANOVA in jamovi, the dataset usually needs one column for each related measurement. Each row should represent one participant or matched case. The scores in the same row are related because they come from the same participant or matched case.</p>
+<p>In the <code>broca</code> dataset, each row represents one patient. The three related measurements are <code>speech</code>, <code>conceptual</code>, and <code>syntax</code>, which contain each patient’s score on the three word-recognition tasks.</p>
 <p><img src="images/05-repeated-measures-anova/rm_data.png" class="img-fluid"></p>
-<p>In the data above, what is your <strong>independent variable</strong>? What is your <strong>dependent variable</strong>?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Look at the data shown above.</p>
+<ol type="1">
+<li>What are the three related measurements?</li>
+<li>How do you know this dataset is set up for a repeated measures ANOVA?</li>
+<li>Why would this not be a one-way ANOVA with independent groups?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>The three related measurements are <code>speech</code>, <code>conceptual</code>, and <code>syntax</code>.</li>
+<li>The dataset is set up for a repeated measures ANOVA because each row represents one patient, and each patient has a score for all three tasks.</li>
+<li>This is not a one-way ANOVA with independent groups because the three scores being compared come from the same patients rather than from three separate groups of patients.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="describe-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="describe-the-data">Describe the Data</h3>
-<p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. We see that there are only six cases total (oof, really small data set!) and the average test score on each of the three conditions. It appears participants did best on the speech condition, but we’ll need to run our repeated measures ANOVA to know for sure. Note that I am describing the continuous DV split by the categorical IV here because of how our data is set up in jamovi.</p>
+<p>Once we confirm that the data are set up correctly in jamovi, we should describe each related measurement. In this example, there are only six patients, so the dataset is very small. The descriptive statistics show that patients appear to score highest on the speech task and lowest on the syntax task. However, we need the repeated measures ANOVA to test whether the differences across tasks are statistically significant.</p>
+<p>For repeated measures data, the pattern of scores within participants is important. A table of means and standard deviations is useful, but a graph showing the repeated measurements can help us see whether most participants show a similar pattern across tasks.</p>
 <p><img src="images/05-repeated-measures-anova/rm_descriptives.png" class="img-fluid"></p>
 </section>
 <section id="specify-your-hypotheses" class="level3">
 <h3 class="anchored" data-anchor-id="specify-your-hypotheses">Specify Your Hypotheses</h3>
-<p>In this scenario, we want to see if there is a difference in word recognition across the three tasks. Just like the one-way ANOVA, we have fairly simple hypotheses for the basic repeated measures ANOVA:</p>
+<p>Our research question is: Do patients differ in word-recognition scores across the three tasks? This research question is non-directional because the repeated measures ANOVA tests whether there is a difference somewhere across the related measurements. Therefore, our hypotheses are:</p>
 <ul>
-<li><span class="math inline">\(H_0\)</span>: There is <strong>no difference</strong> in word recognition across the three tasks.</li>
-<li><span class="math inline">\(H_1\)</span>: There is <strong>a difference</strong> in word recognition across the three tasks.</li>
+<li><span class="math inline">\(H_0\)</span>: There is no difference in word-recognition scores across the three tasks.</li>
+<li><span class="math inline">\(H_1\)</span>: There is a difference in word-recognition scores between at least two of the three tasks.</li>
 </ul>
+<p>We will use the conventional alpha value of <span class="math inline">\(\alpha = .05\)</span>. Therefore, we will consider the result statistically significant if the <em>p</em>-value is less than .05.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A researcher measures students’ anxiety at the beginning, middle, and end of the semester.</p>
+<ol type="1">
+<li>What is the repeated measures factor?</li>
+<li>How many related measurements are there?</li>
+<li>Write the alternative hypothesis in words.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>The repeated measures factor is time.</li>
+<li>There are three related measurements: beginning, middle, and end of the semester.</li>
+<li>Anxiety differs between at least two of the three time points.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="step-2-check-assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-check-assumptions">Step 2: Check Assumptions</h2>
-<p>As a parametric test, the repeated measures ANOVA has the same assumptions as other parametric tests:</p>
+<p>As a parametric test, the repeated measures ANOVA has several assumptions:</p>
 <ol type="1">
-<li><p>The dependent variable is <strong>normally distributed</strong></p></li>
-<li><p>Variances in the two groups are roughly equal (i.e., <strong>homogeneity of variances</strong>); in repeated measures ANOVA this is called the assumption of <strong>sphericity</strong></p></li>
-<li><p>The dependent variable is <strong>interval or ratio</strong> (i.e., continuous)</p></li>
-<li><p><del>Scores are <strong>independent</strong> between groups</del> (this assumption is not relevant because all participants participate in all conditions)</p></li>
+<li><p>The outcome is <strong>approximately normally distributed within the repeated measurements</strong>, or the model residuals are approximately normal.</p></li>
+<li><p>The variances of the differences between pairs of repeated measurements are roughly equal. This is called <strong>sphericity</strong>.</p></li>
+<li><p>The outcome variable is <strong>interval or ratio</strong> (i.e., continuous).</p></li>
+<li><p>Cases are <strong>independent of other cases</strong>. The repeated measurements within a row are related, but each participant or matched case should be independent of the other participants or matched cases.</p></li>
 </ol>
-<p>We cannot <em>test</em> the third and fourth assumptions; rather, those are based on knowing your data.</p>
-<p>However, we can and should test for the first two assumptions. Fortunately, the repated measures ANOVA in jamovi has check boxes under “Assumption Checks” that lets us test for both assumptions.</p>
+<p>We cannot test the third and fourth assumptions using the output alone; those assumptions are based on how the data were measured and collected. However, we can and should evaluate normality and sphericity.</p>
 <section id="testing-normality" class="level3">
 <h3 class="anchored" data-anchor-id="testing-normality">Testing Normality</h3>
-<div class="info">
-<p>Note how the way we test normality for the repeated measures ANOVA is different than what we’ve learned before!</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>We cannot test normality using all four methods we previously learned about because in this case we are checking normality of the residuals. You don’t need to know what that means yet (we’ll discuss it more when we go over regression).</p>
-<p>To check normality for the repeated measures ANOVA, we have to go run the repeated measures ANOVA in jamovi. To test normality, under ‘Assumption Checks’ we select Q-Q plot. It is currently the only option we have available for testing normality in the repeated measures ANOVA.</p>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Normality is evaluated a little differently for repeated measures ANOVA than for the tests we have used so far. In jamovi’s repeated measures ANOVA output, the main normality check available is the Q-Q plot of the residuals.</p>
+</div>
+</div>
+<p>For repeated measures ANOVA, we are interested in whether the repeated-measures model is reasonably consistent with the normality assumption. In jamovi, select <code>Q-Q plot</code> under <strong>Assumption Checks</strong>. If the points fall reasonably close to the diagonal line, then the normality assumption appears reasonable.</p>
+<p>When possible, you should also examine the distributions of the repeated measurements using descriptive statistics and graphs. This may include checking skew and kurtosis values and visually inspecting histograms, box plots, or violin plots for each repeated measurement. These checks do not replace the residual Q-Q plot, but they can help you better understand the data.</p>
 </section>
 <section id="testing-sphericity" class="level3">
 <h3 class="anchored" data-anchor-id="testing-sphericity">Testing Sphericity</h3>
-<p>The sphericity assumption is essentially the repeated measures ANOVA equivalent of homogeneity of variances. Sphericity means there is equality of variances of the <em>differences</em> between treatment levels. For example, if there are three groups, then the difference in all three pairs of differences (1-2, 1-3, 2-3) need to have approximately equal variances. You only need to care about sphericity when there are at least three conditions, which is why we did not talk about this with the dependent t-test.</p>
-<p>Fortunately, like the other assumption checks, testing for sphericity is as simple as a checkbox in jamovi. Check the box <code>Sphericity tests</code> under the Assumption Checks drop-down menu. That produces the following output:</p>
+<p>Sphericity is the repeated measures ANOVA assumption that is most different from the tests we have used so far. Sphericity means that the variances of the differences between pairs of repeated measurements are approximately equal.</p>
+<p>For example, with three tasks, there are three sets of difference scores:</p>
+<ol type="1">
+<li>speech minus conceptual</li>
+<li>speech minus syntax</li>
+<li>conceptual minus syntax</li>
+</ol>
+<p>The sphericity assumption asks whether the variability of those difference scores is roughly equal across the three pairs. This assumption only applies when there are three or more related measurements, which is why we did not discuss it for the dependent <em>t</em>-test.</p>
 <p><img src="images/05-repeated-measures-anova/rm-anova_sphericity.png" class="img-fluid"></p>
-<p>Mauchly’s test of sphericity tests the null hypothesis that the variances of the differences between the conditions are equal. Therefore, just like with our previous assumption checks, if Mauchly’s test is non-significant (i.e., <em>p</em> &gt; .05, as is the case in this analysis) then it is reasonable to conclude that the variances of the differences are not significantly different. This means we satisfy the assumption of sphericity and can conclude that the variances of the differences are roughly equal.</p>
-<p>If Mauchly’s test had been statistically significant (<em>p</em> &lt; .05), then we would conclude that the assumption had <em>not</em> been met. In that case, we would apply a correction to the <em>F</em>-value obtained in the repeated measures ANOVA:</p>
-<ul>
-<li>If sphericity is not violated, then only select the None option.</li>
-<li>If sphericity is violated and if the Greenhouse-Geisser value in the “Tests of Sphericity” table is &gt; .75 then you should select the Huynh-Feldt correction and de-select the None option.</li>
-<li>If sphericity is violated and if the Greenhouse-Geisser value is &lt; .75, then you should select the Greenhouse-Geisser correction and de-select the None option.</li>
-</ul>
-<p>You can select these corrections in the Assumption Checks drop-down menu.</p>
-</section>
-</section>
-<section id="step-3-perform-the-test" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-perform-the-test">Step 3: Perform the Test</h2>
-<section id="decide-which-statistical-test-you-should-be-using" class="level3">
-<h3 class="anchored" data-anchor-id="decide-which-statistical-test-you-should-be-using">Decide Which Statistical Test You Should Be Using</h3>
-<p>Here’s what statistic you should choose based on satisfying assumptions:</p>
+<p>Mauchly’s test of sphericity tests the null hypothesis that the sphericity assumption is met. If Mauchly’s test is not statistically significant, the test does not provide evidence that sphericity has been violated. In this example, Mauchly’s test is not statistically significant, so the sphericity assumption appears reasonable.</p>
+<p>If Mauchly’s test is statistically significant, then the sphericity assumption is not met. In that case, we should use a sphericity correction, such as Greenhouse-Geisser or Huynh-Feldt, when interpreting the repeated measures ANOVA.</p>
+<p>For this course, use the following rule:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th><strong>Normality: satisfied</strong></th>
-<th><strong>Normality: not satisfied</strong></th>
+<th>Sphericity Result</th>
+<th>What to Report</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Sphericity: satisfied</strong></td>
-<td>Repeated measures ANOVA</td>
-<td><a href="#friedmans-test">Friedman’s test</a></td>
+<td>Mauchly’s test is not statistically significant</td>
+<td>Report the uncorrected repeated measures ANOVA result</td>
 </tr>
 <tr class="even">
-<td><strong>Sphericity: not satisfied</strong></td>
-<td>Repeated measures ANOVA with one of the sphericity corrections</td>
-<td><a href="#friedmans-test">Friedman’s test</a></td>
+<td>Mauchly’s test is statistically significant and Greenhouse-Geisser (&lt; .75)</td>
+<td>Report the Greenhouse-Geisser corrected result</td>
+</tr>
+<tr class="odd">
+<td>Mauchly’s test is statistically significant and Greenhouse-Geisser ()</td>
+<td>Report the Huynh-Feldt corrected result</td>
 </tr>
 </tbody>
 </table>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A repeated measures ANOVA has four time points. Mauchly’s test is statistically significant, and the Greenhouse-Geisser epsilon value is .62.</p>
+<ol type="1">
+<li>Is the sphericity assumption met?</li>
+<li>Which correction should be reported for this course?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>No.&nbsp;A statistically significant Mauchly’s test suggests that the sphericity assumption is not met.</li>
+<li>The Greenhouse-Geisser correction should be reported because the Greenhouse-Geisser epsilon value is below .75.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="step-3-perform-the-test" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-perform-the-test">Step 3: Perform the Test</h2>
+<section id="decide-whether-to-use-repeated-measures-anova-or-friedmans-test" class="level3">
+<h3 class="anchored" data-anchor-id="decide-whether-to-use-repeated-measures-anova-or-friedmans-test">Decide Whether to Use Repeated Measures ANOVA or Friedman’s Test</h3>
+<p>The appropriate test depends on whether the assumptions are reasonably met. In this course, use the assumption checks to decide which test to report.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Assumption Pattern</th>
+<th>Test to Report</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Normality appears reasonable and sphericity is met</td>
+<td>Repeated measures ANOVA</td>
+</tr>
+<tr class="even">
+<td>Normality appears reasonable but sphericity is not met</td>
+<td>Repeated measures ANOVA with the appropriate sphericity correction</td>
+</tr>
+<tr class="odd">
+<td>Normality is seriously violated and no appropriate transformation addresses the issue</td>
+<td>Friedman test</td>
+</tr>
+</tbody>
+</table>
+<p>The Friedman test is the nonparametric alternative to the repeated measures ANOVA. It is used when the normality assumption is seriously violated for a design with three or more related measurements.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A researcher compares reaction time across three related conditions. The Q-Q plot looks reasonable, but Mauchly’s test is statistically significant.</p>
+<p>Which test result should the researcher report for this course?</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The researcher should report the repeated measures ANOVA with the appropriate sphericity correction. The normality assumption appears reasonable, but sphericity is not met.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="perform-the-test" class="level3">
 <h3 class="anchored" data-anchor-id="perform-the-test">Perform the Test</h3>
 <p>We have already discussed what to do if you violate the assumption of sphericity above; you select one of the two sphericity corrections based on the values of the sphericity tests.</p>
 <p>If you violate the assumption of normality or if the dependent variable is ordinal, then you can use the Friedman test. You can select this using the Repeated Measures ANOVA - Friedman option under the ANOVA analysis.</p>
 <ol type="1">
-<li><p>To perform a repeated measures ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose “Repeated Measures ANOVA”.</p></li>
-<li><p>Under “Repeated Measures Factors” name your independent variable where it says <code>RM Factor 1</code> and rename the levels to match the repeated measurements. In this case you can name the factor “Task”. Rename the three levels of Task: Speech, Conceptual, and Syntax.</p></li>
-<li><p>Under “Repeated Measures Cells” move the given variable into the correct level. For example, you’ll move Speech to the Speech cell.</p></li>
-<li><p>Select Generalised <span class="math inline">\(\eta^2\)</span> as your measure of effect size.</p></li>
-<li><p>Rename your Dependent Variable Label to match what is being measured across all conditions or time points. In this case, in the three conditions we are measuring their scores on the word recognition task. I will just call this “Word recognition score.”</p></li>
-<li><p>In the Assumption Checks drop-down menu, select <code>Sphericity tests</code> and <code>Q-Q Plots</code>. You’ll note that if you violate the assumption of sphericity, there are two corrections provided (see <a href="#testing-sphericity">testing sphericity</a>). Uncheck “none” if you fail to meet the assumption so you only perform one test.</p></li>
-<li><p>In the Post Hoc Tests drop-down menu, select <code>Tukey</code>. Remember that we only interpret these if the overall <em>F</em> is statistically significant.</p></li>
-<li><p>In the Estimated Marginal Means drop-down menu, move Task to the Marginal Means box, select <code>Marginal means tables</code>, and select <code>Observed scores</code> . Uncheck <code>Equal cell weights</code>.</p></li>
+<li><p>Go to the <strong>Analyses</strong> tab, click <strong>ANOVA</strong>, and choose <strong>Repeated Measures ANOVA</strong>.</p></li>
+<li><p>Under <strong>Repeated Measures Factors</strong>, rename <code>RM Factor 1</code> to <code>Task</code>.</p></li>
+<li><p>Rename the three levels of <code>Task</code> as <code>Speech</code>, <code>Conceptual</code>, and <code>Syntax</code>.</p></li>
+<li><p>Under <strong>Repeated Measures Cells</strong>, move each variable into the correct cell. Move <code>speech</code> to the Speech cell, <code>conceptual</code> to the Conceptual cell, and <code>syntax</code> to the Syntax cell.</p></li>
+<li><p>Select generalized eta-squared, (^2_G), as the effect size.</p></li>
+<li><p>Rename the <strong>Dependent Variable Label</strong> to describe what is measured across the repeated tasks. In this example, use <code>Word recognition score</code>.</p></li>
+<li><p>Under <strong>Assumption Checks</strong>, select <code>Sphericity tests</code> and <code>Q-Q plot</code>. If the sphericity assumption is violated, report the appropriate corrected result rather than the uncorrected result.</p></li>
+<li><p>Under <strong>Post Hoc Tests</strong>, select <code>Tukey</code>. Remember that we only interpret post hoc tests if the overall repeated measures ANOVA is statistically significant.</p></li>
+<li><p>Under <strong>Estimated Marginal Means</strong>, move <code>Task</code> to the <strong>Marginal Means</strong> box. Select <code>Marginal means tables</code>, <code>Marginal means plots</code>, and <code>Observed scores</code>. Uncheck <code>Equal cell weights</code>.</p></li>
 </ol>
 <p>When you are done, your setup should look like this:</p>
 <p><img src="images/05-repeated-measures-anova/rm-anova_setup1.png" class="img-fluid"></p>
@@ -930,53 +1126,136 @@ window.Quarto = {
 </section>
 <section id="step-4-interpret-results" class="level2">
 <h2 class="anchored" data-anchor-id="step-4-interpret-results">Step 4: Interpret Results</h2>
-<p>Once we are satisfied we have satisfied the assumptions for the repeated measures, we can interpret our results.</p>
+<p>Once we are satisfied that the assumptions for the repeated measures ANOVA are reasonably met, we can interpret the results.</p>
 <p><img src="images/05-repeated-measures-anova/rm-anova_results.png" class="img-fluid"></p>
-<p>You’ll notice that jamovi provides you both a Within Subjects Effects table and Between Subjects Effects table. However, we only have a within-subjects effect (Task). Why did it give us a between-subjects table? With the repeated-measures ANOVA (which only has within-subjects IVs), this is just our <span class="math inline">\(SS_{BG}\)</span>. However, because we don’t have one, it’s not calculating anything. We can ignore it. It is only useful if we are conducting a mixed factorial ANOVA with both between-subjects and within-subjects effects (see chapter 9.4 on the factorial ANOVA).</p>
-<p>Therefore, the Within Subjects Effects table is of most use to us. We can see that the overall effect of Task is statistically significant (<em>p</em> = .013). Furthermore, the degrees of freedom are similar to the one-way ANOVA in which the within-subjects df is the number of conditions minus one (k-1); however, the residual df is (n-1)(k-1) or in this case (6-1)(3-1) = 5*2 = 10.</p>
-<p>Since the overall effect is significant, we can look at our Post Hoc Tests results:</p>
+<p>jamovi provides a <strong>Within Subjects Effects</strong> table and a <strong>Between Subjects Effects</strong> table. In this example, we only have a within-subjects effect: <code>Task</code>. The Within Subjects Effects table is the table we need for the repeated measures ANOVA result. The Between Subjects Effects table can be ignored here because we do not have a between-subjects grouping variable. It becomes useful in mixed factorial ANOVA, where a design includes both repeated measurements and independent groups.</p>
+<p>The overall effect of Task is statistically significant, <em>F</em>(2, 10) = 6.93, <em>p</em> = .013. We reject the null hypothesis of no task differences. The sample provides evidence that word-recognition scores differ across the three tasks.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Optional: Where Do the Degrees of Freedom Come From?">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Optional: Where Do the Degrees of Freedom Come From?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The repeated measures ANOVA has two degrees-of-freedom values.</p>
+<ol type="1">
+<li><p>The first value is based on the number of repeated measurements. It is calculated as (k - 1), where (k) is the number of repeated measurements. In this example, (3 - 1 = 2).</p></li>
+<li><p>The second value is the residual degrees of freedom. For a simple repeated measures ANOVA, it is calculated as ((n - 1)(k - 1)), where (n) is the number of participants and (k) is the number of repeated measurements. In this example, ((6 - 1)(3 - 1) = 10).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<p>Because the repeated measures ANOVA is an omnibus test, this result tells us that at least two task scores differ from each other. It does not tell us which specific tasks differ. We need follow-up comparisons to answer that question.</p>
 <p><img src="images/05-repeated-measures-anova/rm-anova_tukey.png" class="img-fluid"></p>
-<p>The Tukey post hoc differences show that there was a significant difference between speech and syntax (<em>p</em> = .011), but not between conceptual and both speech and syntax. Last, we can look at the Estimated Marginal Means - Task table to see the group means for reporting purposes. This shows us that participants recognized significantly more words in the speech task than in the syntax task.</p>
+<p>Because the overall repeated measures ANOVA is statistically significant, we can interpret the Tukey post hoc comparisons. The post hoc table shows that scores differed significantly between the speech and syntax tasks, <em>p</em> = .011. The conceptual task did not differ significantly from either the speech task or the syntax task.</p>
+<p>The estimated marginal means table helps us interpret the direction of the difference. Participants recognized more words in the speech task than in the syntax task.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A repeated measures ANOVA comparing three related time points is statistically significant. Tukey post hoc comparisons show that Time 1 differs from Time 3, but Time 2 does not differ from either Time 1 or Time 3.</p>
+<ol type="1">
+<li>What does the significant overall ANOVA tell us?</li>
+<li>Which specific comparison is statistically significant?</li>
+<li>Why do we need the estimated means?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>The significant overall ANOVA tells us that there is a difference somewhere across the three related time points.</li>
+<li>The statistically significant comparison is Time 1 versus Time 3.</li>
+<li>The estimated means tell us the direction of the difference, such as whether scores were higher at Time 1 or Time 3.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
 <section id="write-up-the-results-in-apa-style" class="level3">
 <h3 class="anchored" data-anchor-id="write-up-the-results-in-apa-style">Write Up the Results in APA Style</h3>
-<p>We can write this up in APA style similar to the one-way ANOVA.</p>
+<p>As reviewed in <span class="quarto-unresolved-ref">?sec-apa-style</span>, an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result. When a repeated measures ANOVA is statistically significant, the write-up should also report appropriate follow-up comparisons.</p>
 <blockquote class="blockquote">
-<p>A repeated measures ANOVA was performed examining how three tasks affected word recognition in patients suffering from Broca’s Aphasia. Task significantly affected word recall, <em>F</em> (2, 10) = 6.93, <em>p</em> = .013, <span class="math inline">\(\eta^2_G\)</span> = .41. Tukey’s post hoc difference tests indicated that participants recognized significantly more words in the speech task (<em>M</em> = 7.17, <em>SE</em> = .62) than participants in the syntax task (<em>M</em> = 4.33, <em>SE</em> = .62; <em>p</em>&nbsp;= .011). There were no differences between the conceptual task (<em>M</em> = 6.17, <em>SE</em> = .62) and both the speech and syntax tasks.</p>
+<p>A repeated measures ANOVA indicated that word-recognition scores differed significantly across the three tasks, <em>F</em>(2, 10) = 6.93, <em>p</em> = .013, (^2_G = .41). Tukey post hoc comparisons indicated that participants recognized significantly more words in the speech task (<em>M</em> = 7.17, <em>SE</em> = 0.62) than in the syntax task (<em>M</em> = 4.33, <em>SE</em> = 0.62), <em>p</em> = .011. Scores on the conceptual task (<em>M</em> = 6.17, <em>SE</em> = 0.62) did not differ significantly from scores on the speech or syntax tasks.</p>
 </blockquote>
-<p>Note that the post hoc tests give the pooled standard error (SE) instead of the standard deviation (SD). The SE is the SD of the overall effect of condition (which is why we call it pooled) divided by the square root of the sample size.</p>
+<p>This is not the only correct way to write the result. The key is to report the overall repeated measures ANOVA, the relevant descriptive statistics, the effect size, the follow-up comparisons, and the interpretation.</p>
 </section>
 <section id="visualize-the-results" class="level3">
 <h3 class="anchored" data-anchor-id="visualize-the-results">Visualize the Results</h3>
-<p>Under ’Estimated Marginal Means” move your repeated measures factor to the Term 1 box. Select <code>Marginal means plots</code> under Output and check the box for <code>Observed scores</code>. Here’s the resulting output from our scenario.</p>
+<p>For a repeated measures ANOVA, the graph should help readers understand how scores changed across the related measurements. Because the same participants completed all three tasks, the most informative graph often shows the repeated nature of the data.</p>
+<p>A line plot can be useful when the repeated measurements have a meaningful order, such as time points. For unordered tasks or conditions, a plot of estimated marginal means with observed scores can still help readers compare the task scores, but the connecting line should not be interpreted as a trend over time.</p>
+<p>For this example, the plot should communicate that word-recognition scores were highest for the speech task and lowest for the syntax task. The observed scores are useful because the sample is very small.</p>
 <p><img src="images/05-repeated-measures-anova/RM ANOVA visual.png" class="img-fluid"></p>
 </section>
 </section>
-<section id="friedmans-test" class="level2">
-<h2 class="anchored" data-anchor-id="friedmans-test">Friedman’s Test</h2>
-<p>Friedman’s test can only examine one within-subjects variable (i.e., we can’t have a non-parametric repeated measures factorial ANOVA), so you will move all three conditions (Speech, Conceptual, and Syntax) to the Measures box. Select <code>Pairwise comparisons (Durbin-Conover</code> for post hoc comparisons and <code>Descriptives</code> for the Means and Medians. Optionally, you can select to plot either the Means or Medians. The setup is shown below.</p>
+<section id="friedman-test" class="level2">
+<h2 class="anchored" data-anchor-id="friedman-test">Friedman Test</h2>
+<p>The Friedman test is the nonparametric alternative to the repeated measures ANOVA. It is used when the normality assumption is seriously violated and no appropriate transformation addresses the issue.</p>
+<p>The Friedman test is based on ranks rather than the original outcome values, so it does not test mean differences in the same way as a repeated measures ANOVA. Because it is rank-based, we usually describe the repeated measurements using medians when reporting the result.</p>
+<p>To conduct the Friedman test in jamovi, go to <strong>ANOVA</strong> and choose <strong>Repeated Measures ANOVA - Friedman</strong>. Move the related measurements, <code>speech</code>, <code>conceptual</code>, and <code>syntax</code>, to the <strong>Measures</strong> box. Select <code>Pairwise comparisons (Durbin-Conover)</code> for follow-up comparisons and <code>Descriptives</code> for means and medians.</p>
 <p><img src="images/05-repeated-measures-anova/rm-anova_friedman_setup.png" class="img-fluid"></p>
-<p>Once you’ve set-up the analysis, you can interpret the results. Overall, we continue to see a statistically significant result and that there is only a significant difference between speech and syntax.</p>
+<p>The Friedman test is statistically significant, which suggests that word-recognition scores differ across the three tasks. The Durbin-Conover pairwise comparisons show that the only statistically significant pairwise difference is between speech and syntax.</p>
 <p><img src="images/05-repeated-measures-anova/rm-anova_friedman.png" class="img-fluid"></p>
 <p>We can write up the results similarly as before except using the median because as a non-parametric test it is analyzing the median and not the mean:</p>
 <blockquote class="blockquote">
-<p>Friedman’s test was performed examining how three tasks affected word recognition in patients suffering from Broca’s Aphasia. Task significantly affected word recall, <span class="math inline">\(\chi^2\)</span> (2) = 6.64, <em>p</em> = .036. Pairwise comparisons using Durbin-Conover indicated that participants recognized significantly more words in the speech task (<em>M</em> = 7.17, <em>Mdn</em> = 7.50) than participants in the syntax task (<em>M</em> = 4.33, <em>Mdn</em> = 6.50; <em>p</em> = .006). There were no differences between the conceptual task (<em>M</em> = 6.17, <em>Mdn</em> = 6.50) and both the speech and syntax tasks.</p>
+<p>A Friedman test indicated that word-recognition scores differed significantly across the three tasks, (^2(2) = 6.64), <em>p</em> = .036. Durbin-Conover pairwise comparisons indicated that participants recognized more words in the speech task (<em>Mdn</em> = 7.50) than in the syntax task (<em>Mdn</em> = 6.50), <em>p</em> = .006. Scores on the conceptual task (<em>Mdn</em> = 6.50) did not differ significantly from scores on the speech or syntax tasks.</p>
 </blockquote>
-</section>
-<section id="additional-practice" class="level2">
-<h2 class="anchored" data-anchor-id="additional-practice">Additional Practice</h2>
-<p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
-<p>Perform a repeated measures ANOVA based on the following research questions. Check your assumptions and ensure you are using the correct tests.</p>
-<p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A researcher compares scores across three related conditions, but the normality assumption is seriously violated.</p>
 <ol type="1">
-<li><p><strong>Do students differ on their test scores (English, Reading, Math, Writing)?</strong></p>
-<ul>
-<li><p>Based on your understanding of the nature of the test scores, which statistic should you use?</p></li>
-<li><p>Should you apply a sphericity correction? If so, which one?</p></li>
-<li><p>Do students differ on their test scores?</p></li>
-<li><p>Should you perform a planned contrast or post hoc comparison?</p></li>
-<li><p>What are the results of the post hoc comparison?</p></li>
-</ul></li>
+<li>Which nonparametric test should the researcher consider?</li>
+<li>Why should the researcher describe the repeated measurements using medians?</li>
 </ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>The researcher should consider the Friedman test.</li>
+<li>The Friedman test is rank-based rather than mean-based, so medians are usually more appropriate descriptive statistics for the write-up.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -1384,8 +1663,8 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./13.2-finding-group-differences.html" class="pagination-link" aria-label="13.2 Finding Group Differences">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">13.2 Finding Group Differences</span>
+      <a href="./13.2-finding-group-differences.html" class="pagination-link" aria-label="13.2 Finding Group Differences After ANOVA">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">13.2 Finding Group Differences After ANOVA</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

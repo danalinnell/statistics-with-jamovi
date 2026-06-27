@@ -1,14 +1,22 @@
 # 13. ANOVA {.unnumbered}
 
-ANOVA stands for **AN**alysis **O**f **VA**riance. ANOVAs analyze the variation between and within groups. There are multiple types of ANOVAs based on the nature of the independent variable(s):
+ANOVA stands for **AN**alysis **O**f **VA**riance. ANOVA is used when we want to compare means across groups, conditions, or time points. Like the *t*-tests in @sec-t-tests, ANOVA is used with a continuous outcome variable. The major difference is that ANOVA can handle research questions with three or more groups, repeated measurements, or more than one independent variable.
 
-| **Nature of IV(s)**               | **Type of ANOVA**                 |
-|-----------------------------------|-----------------------------------|
-| 1 between-subjects IV             | One-Way ANOVA                     |
-| 1 within-subjects IV              | Repeated-measures ANOVA           |
-| 2+ between-subjects IVs           | Independent factorial ANOVA       |
-| 2+ within-subjects IVs            | Repeated measures factorial ANOVA |
-| 2+ IVs mixed between/within       | Mixed factorial ANOVA             |
-| 1+ IV with a continuous covariate | ANCOVA                            |
+Although ANOVA is used to compare means, it does so by analyzing variability. ANOVA compares how much scores vary **between** groups or conditions to how much scores vary **within** groups or conditions. If the between-group variability is large relative to the within-group variability, the ANOVA is more likely to be statistically significant.
 
-Furthermore, there are ANOVAs for when there are multiple dependent variables (called the MANOVA or **M**ultiple **ANOVA**, as well as the MANCOVA or **M**ultiple **ANCOVA**) but we will not discuss them in this class.
+Most ANOVA tests are **omnibus tests**. This means they test whether there is a difference somewhere among the means, but they do not always tell us exactly which means differ. When an omnibus ANOVA is statistically significant, we often need follow-up analyses, such as post hoc tests or planned contrasts, to identify the specific group differences.
+
+There are several types of ANOVA. The appropriate test depends on the number of independent variables and whether the groups or measurements are independent or related.
+
+| Test                        | Variables and Design                                                                                                                 | Research Question                                                                                    |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| **One-way ANOVA**           | One continuous outcome and one categorical independent variable with three or more independent groups                                | Do three or more independent groups differ on the outcome?                                           |
+| **Repeated-measures ANOVA** | One continuous outcome measured across three or more related conditions or time points                                               | Do scores differ across three or more related measurements?                                          |
+| **Factorial ANOVA**         | One continuous outcome and two or more categorical independent variables                                                             | Do two or more independent variables predict the outcome, and do their effects depend on each other? |
+| **Mixed factorial ANOVA**   | One continuous outcome with at least one between-subjects independent variable and at least one within-subjects independent variable | Do group differences, repeated-measurement differences, or their interaction predict the outcome?    |
+| **ANCOVA**                  | One continuous outcome, at least one categorical independent variable, and at least one continuous covariate                         | Do groups differ on the outcome after statistically adjusting for a continuous covariate?            |
+
+This chapter begins with the one-way ANOVA because it is the most direct extension of the independent *t*-test. We then examine how to follow up a significant ANOVA, how to analyze related measurements with repeated-measures ANOVA, and how to test more complex designs with factorial ANOVA. Finally, we briefly introduce ANCOVA as an extension of ANOVA that includes a continuous covariate.
+
+In each case, we will continue using the same four-step hypothesis-testing process: look at the data, check assumptions, perform the test, and interpret the results.
+

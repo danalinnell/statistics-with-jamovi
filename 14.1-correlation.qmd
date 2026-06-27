@@ -1,31 +1,59 @@
-# 14.1 Correlation {.unnumbered}
+# 14.1 Correlation {#sec-correlation .unnumbered}
 
 ```{r, echo = FALSE, message=FALSE}
 library(tidyverse)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
 
-Correlation (*r*) tests the relationship between two variables, which are usually continuous (i.e., ratio or interval) variables. The relationship between those two variables could be *positively related*, *negatively related*, or *not related at all*.
+Correlation is used to describe the relationship between two variables. In this section, we focus mostly on the **Pearson correlation**, which is used when we want to examine the linear relationship between two continuous variables.
 
-**Note**: Remember that correlation does not always equal causation!
+A correlation can tell us three things about a relationship:
 
-We will learn about other types of correlations, but mainly we are interested in the Pearson product moment correlation, which is often just called the Pearson correlation or simply correlation. Other correlations are generally referred to by their specific name.
+1. **Direction**: whether the relationship is positive or negative.
+2. **Strength**: how closely the variables are related.
+3. **Statistical significance**: whether the observed relationship is unlikely to have occurred by chance if there were no relationship in the population.
 
-The strength of the correlation is determined by how closely the points in the scatterplot matrix fit on the regression line. Correlations are really *standardized covariances*. [Covariance]{.underline} is the extent to which the deviation of one variable from its mean matches the deviation of the other variable from its mean. We then standardize the covariance into the correlation which ranges from -1 to +1. Because correlations are standardized, they are considered effect sizes! Commonly, we describe values of ±.1 as a small effect size, ±.3 as medium, and ±.5 as large, but remember that this heuristic is simply a heuristic and it's best to think about size in relation to your field.
+Correlation coefficients range from -1 to +1.
+
+- A **positive correlation** means that higher scores on one variable tend to go with higher scores on the other variable.
+- A **negative correlation** means that higher scores on one variable tend to go with lower scores on the other variable.
+- A correlation close to **0** means there is little or no linear relationship between the variables.
+
+Correlation does not show causation. A statistically significant correlation tells us that two variables are related, but it does not tell us whether one variable caused the other.
+
+Pearson correlations are standardized, so they are also effect sizes. As a rough heuristic, values around \(|.10|\) are often described as small, values around \(|.30|\) as medium, and values around \(|.50|\) as large. These are only general guidelines. The importance of a correlation depends on the research context.
+
+
+:::{.callout-note title="Optional: Why Is Correlation Standardized?" collapse="true"}
+
+Correlations are standardized covariances. Covariance describes the extent to which two variables vary together. Because covariance depends on the original units of measurement, it can be hard to interpret directly. Correlation standardizes covariance so that the result always ranges from -1 to +1.
+
+:::
 
 ![](images/08-correlation/correlation-examples.png)
 
-**Note**: Try your hand at guessing the correlation coefficient! Play at [www.guessthecorrelation.com](www.guessthecorrelation.com)
+:::{.callout-note}
+Want to practice estimating correlations from scatterplots? Try [Guess the Correlation](https://www.guessthecorrelation.com/).
+:::
 
-**Note**: Another fun website to play around with is the interactive visualization website Interpreting Correlations by Kristoffer Magnusson. You can play around with what data looks like at various correlations. <https://rpsychologist.com/correlation/>
+:::{.callout-note}
+Kristoffer Magnusson’s interactive visualization, [Interpreting Correlations](https://rpsychologist.com/correlation/), is also useful for seeing how different correlation values look in scatterplots.
+:::
+
 
 ## Step 1: Look at the Data
 
-Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "parenthood". This dataset measures a new mother's[^14.1-correlation-1] daily grumpiness very precisely, on a scale from 0 (not at all grumpy) to 100 (extremely grumpy). In addition, I am also tracking her sleeping patterns and her son's sleeping patterns across 100 days.
+For this chapter, we will work with the `parenthood` dataset from the `lsj-data` library. This dataset contains 100 days of data about a new parent’s daily grumpiness, the parent’s sleep quality, and the baby’s sleep quality.
 
-[^14.1-correlation-1]: The dataset built into jamovi says the person's name is Dan, but they now go by Danielle. You can follow her on Twitter/X at [\@djnavarro](https://x.com/djnavarro).
+The main variables we will use are:
 
-Here's a video walking through the correlation.
+- `dan.grump`: the parent’s grumpiness, measured from 0 to 100
+- `dan.sleep`: the parent’s sleep quality
+- `baby.sleep`: the baby’s sleep quality
+
+The dataset also includes `day`, which records the day of the study from 1 to 100. We may inspect `day`, but it is not one of the main variables in our research question.
+
+Here's a [video](https://www.youtube.com/watch?v=p4LNqatn2sg) walking through the correlation.
 
 ```{r echo = FALSE, eval = knitr::is_html_output(excludes = "epub"), message = FALSE, warning = FALSE}
 library(vembedr)
@@ -34,174 +62,238 @@ embed_url("https://www.youtube.com/watch?v=p4LNqatn2sg")
 
 ### Data Set-Up
 
-To conduct the correlation we first need to ensure our data is set-up properly in our dataset. This requires having two columns, one for each of our continuous variables. Each row is a unique participant or unit of analysis. Note that jamovi might have incorrectly imported `dan.grump` as a nominal variable but that is incorrect! This shows the importance of looking at your data and checking your measure types.
+To conduct a Pearson correlation, the dataset needs two continuous variables. Each row should represent one participant, case, or unit of analysis, and each case should have a score on both variables.
+
+In this example, each row represents one day. The variables `dan.grump`, `dan.sleep`, and `baby.sleep` are continuous variables. If jamovi imports one of these variables as nominal, change the measure type before running the correlation. This is why it is important to inspect the data before analyzing it.
 
 ![](images/08-correlation/correlation-data.png){width="500"}
 
+::: {.callout-tip title="Check Your Understanding"}
+
+A researcher wants to test whether hours of sleep are related to exam scores.
+
+1. What are the two variables?
+2. What type of variables are needed for a Pearson correlation?
+3. What should each row of the dataset represent?
+
+::: {.callout-note title="Check Your Answer" collapse="true"}
+
+1. The two variables are hours of sleep and exam score.
+2. A Pearson correlation uses two continuous variables.
+3. Each row should represent one participant, with one value for hours of sleep and one value for exam score.
+
+:::
+
+:::
+
 ### Describe the Data
 
-Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. We can see first that we have 100 cases and no missing data. The means, medians, standard deviations, and variances are then shown, followed by the minimum and maximum values.
+Once we confirm that the data are set up correctly in jamovi, we should describe the variables using descriptive statistics and graphs. For correlation, we should examine each variable individually and then examine the relationship between the variables.
 
-We also see skew and kurtosis. Calculating the *z*-score for all the skew and kurtosis (remember: skew or kurtosis divided by its standard error) suggests we do not violate the assumption of normality much except for `day`. However, notice what the variable `day` is! It's just the day of the study, from 1-100. If you look at the graph, it has a *uniform distribution* (completely flat and uniform) not a normal distribution (bell curve)!
+The descriptive statistics show the sample size, missing data, means, medians, standard deviations, minimum values, maximum values, skew, and kurtosis. These help us understand the scale and distribution of each variable.
+
+We should also create scatterplots for the pairs of variables we plan to correlate. A scatterplot helps us see the direction, form, strength, and possible outliers in the relationship. This is important because a Pearson correlation summarizes a **linear** relationship. If the relationship is strongly curved or affected by an extreme outlier, the Pearson correlation may be misleading.
 
 ![](images/08-correlation/correlation-descriptives.png)
+::: {.callout-tip title="Check Your Understanding"}
+
+Why should we look at a scatterplot before interpreting a Pearson correlation?
+
+::: {.callout-note title="Check Your Answer" collapse="true"}
+
+A scatterplot helps us see whether the relationship is roughly linear and whether any unusual points may strongly influence the correlation. A Pearson correlation can be misleading if the relationship is curved or driven by an outlier.
+
+:::
+
+:::
 
 ### Specify Your Hypotheses
 
-The null hypothesis is there is no correlation whereas the alternative hypothesis is that there is a correlation. In this case, our hypothesis is a two-tailed hypothesis, although we could have an *a priori* hypothesis about the relationship between our variables such that it is either correlated positively or negatively. But since we just want to see if there is a relationship, we will specify a non-directional hypothesis.
+For a Pearson correlation, the null hypothesis is that there is no linear relationship between the two variables. The alternative hypothesis depends on whether the research question is directional or non-directional.
 
-Note that in this particular scenario we're examining multiple correlations, and so in fact, we have multiple hypotheses we are testing.
+For a two-tailed correlation:
+
+- \(H_0\): There is no linear relationship between the two variables.
+- \(H_1\): There is a linear relationship between the two variables.
+
+For a directional positive correlation:
+
+- \(H_0\): The variables are not positively related.
+- \(H_1\): The variables are positively related.
+
+For a directional negative correlation:
+
+- \(H_0\): The variables are not negatively related.
+- \(H_1\): The variables are negatively related.
+
+In this example, we will focus on whether the parent’s grumpiness is related to the parent’s sleep quality and the baby’s sleep quality. Because we are not specifying a direction before looking at the results, we will use two-tailed hypotheses.
+
+Because we are examining more than one pair of variables, each correlation has its own hypothesis test.
+
+::: {.callout-tip title="Check Your Understanding"}
+
+A researcher predicts that students who sleep more hours will have lower stress scores.
+
+1. Is this a directional or non-directional hypothesis?
+2. Is the predicted relationship positive or negative?
+3. Which jamovi hypothesis option should be selected?
+
+::: {.callout-note title="Check Your Answer" collapse="true"}
+
+1. This is a directional hypothesis because the researcher predicts the direction of the relationship.
+2. The predicted relationship is negative because higher sleep is expected to be related to lower stress.
+3. Select `Correlated negatively`.
+
+:::
+
+:::
 
 ## Step 2: Check Assumptions
 
-The Pearson correlation has the three following assumptions:
+The Pearson correlation has several assumptions:
 
-1.  Both variables are **normally distributed**
+1. Both variables are measured at the **interval or ratio** level, meaning they are continuous.
 
-2.  Both variables are measured at the **interval or ratio** (i.e., continuous) level (however, we will see what we can do if we violate this)
+2. The observations are **paired and independent**. Each case should have one score on each variable, and one case should not determine another case.
 
-3.  The relationship between the two variables is **linear**
+3. The relationship between the two variables is **linear**.
 
-The third assumption requires looking at a scatterplot of one variable on the x-axis and the other variable on the y-axis.
+4. The variables are **approximately normally distributed**. In practice, we evaluate normality using the same checks introduced earlier: Shapiro-Wilk tests, Q-Q plots, skew and kurtosis z-scores, and visual inspection.
+
+5. The relationship should not be driven by **extreme outliers**.
+
+We cannot test the first two assumptions using the output alone; those assumptions are based on how the data were measured and collected. However, we can evaluate normality, linearity, and outliers using descriptive statistics and graphs.
 
 ### Testing Normality
 
-By now we've had a lot of practice testing for normality. We test for normal distribution using the Exploration-Descriptives analysis in jamovi, looking at Shapiro-Wilk's test, the Q-Q plot, a histogram or density plot, and skew and kurtosis z-scores.
+For Pearson correlation, we evaluate the normality of both continuous variables included in the correlation. We use the four normality checks introduced earlier: Shapiro-Wilk tests, Q-Q plots, skew and kurtosis z-scores, and visual inspection of the distributions.
 
-One thing to note is that **for the correlation we test normality of both continuous variables**.
+In this example, the main variables of interest are `dan.grump`, `dan.sleep`, and `baby.sleep`. The variable `day` is different because it simply records the day of the study from 1 to 100. It has a uniform distribution by design, so it is not useful for judging the normality of the main psychological variables.
 
-One of our data points (`day)` is strange because it's just a linear number 1-100, so we can ignore it. The Q-Q plot for `dan.sleep` looks a bit iffy, but the density plot, skew, kurtosis, and Shapiro-Wilk's tests look fine. We will say we met the assumption of normality. Below, you can see our density plots in the diagonal of our scatterplot matrix.
+Overall, the normality checks for the main variables do not raise major concerns.
 
 ![](images/08-correlation/correlation-plots.png)
 
-### Testing Linearity
+### Testing Linearity and Outliers
 
-To check linearity we examine the scatterplots as shown above. We look at all the **dots** and look to see if there is a non-linear (e.g., curvilinear) relationship. If there seems to be a curve to the data points then you fail to meet this assumption. Note that you need to look at the data points themselves; the correlation matrix will always produce lines even if the underlying data looks curvilinear.
+To check linearity, examine a scatterplot for each pair of variables being correlated. The points should show a roughly straight-line pattern. The relationship does not need to be perfect, but it should not show a strong curve.
 
-The scatterplots above do not suggest a non-linear relationship, so we meet the assumption of linearity.
+We should also look for extreme outliers. An outlier can strongly affect a correlation, especially in small samples. If one unusual point appears to drive the relationship, the correlation should be interpreted cautiously.
 
-This image by [Laerd Statistics](https://statistics.laerd.com/spss-tutorials/pearsons-product-moment-correlation-using-spss-statistics.php) shows what non-linear relationships might look like.
+In this example, the scatterplots do not suggest strong non-linear relationships or extreme outliers, so the linearity assumption appears reasonable.
+
+The image below by [Laerd Statistics](https://statistics.laerd.com/spss-tutorials/pearsons-product-moment-correlation-using-spss-statistics.php) illustrates the difference between linear and non-linear relationships. 
 
 ![](images/08-correlation/linear-non-linear.png)
 
 ## Step 3: Perform the Test
 
-### Decide Which Statistical Test You Should Be Using
+### Decide Whether to Use Pearson or Spearman
 
-If you violate any of the three assumptions, you can choose to perform Spearman's rank correlation instead of a Pearson correlation. Both Spearman's rho and Kendall's tau are non-parametric statistics based on rank order. To perform Spearman's correlation, change the check mark in jamovi from Pearson to Spearman. You will interpret just the same; however, instead of using the letter *r* you can either use $r_s$, $r_{spearman}$, or $\rho$ (the Greek letter rho).
+If the variables are continuous, approximately normal, and linearly related, use the Pearson correlation.
 
-What about Kendall's tau? It will likely give you the same results as Spearman's rho but it is interpreted slightly differently. We won't use it in this class.
+If the variables are ordinal, seriously non-normal, or better described by a monotonic rank-order relationship, use Spearman’s rank correlation instead. In jamovi, Spearman’s correlation is labeled `Spearman`.
+
+Kendall’s tau is another rank-based correlation. It can be useful in some settings, especially with small samples or many tied ranks, but we will not use it in this course.
 
 ### Decide Which Hypothesis You Should Be Using
 
-If you have a directional alternative hypothesis then you should specify `Correlated positively` or `Correlated negatively`. However, if you don't have a prior hypothesis of the direction of the effect (i.e., you have a non-directional alternative hypothesis), then you should select `Correlated`.
+If the alternative hypothesis is non-directional, select `Correlated`.
+
+If the alternative hypothesis is directional and predicts a positive relationship, select `Correlated positively`.
+
+If the alternative hypothesis is directional and predicts a negative relationship, select `Correlated negatively`.
+
+The direction should be chosen based on the research question before looking at the results.
 
 ### Perform the Test
 
-1.  To perform a correlation, go to Regression and select "Correlation Matrix".
+1. Go to the **Analyses** tab, click **Regression**, and choose **Correlation Matrix**.
 
-2.  Move the variables of your correlation hypothesis/hypotheses into the variables box. In this case, we have four variables, so move all four variables into the dialogue box on the right (`dan.sleep`, `baby.sleep`, `day`, and `dan.grump`).
+2. Move the variables you want to correlate into the **Variables** box. In this example, move `dan.grump`, `dan.sleep`, and `baby.sleep`.
 
-3.  Select the correlation coefficient you are using based on which assumptions you met. In this case, we met the assumptions of linearity and normality, so we will use `Pearson`.
+3. Select the correlation coefficient based on the assumptions. In this example, the assumptions appear reasonable, so select `Pearson`.
 
-4.  Under Additional Options, select `Report significance`, `Flag significant correlations`, and, if you have missing data, `N` (we don't have missing data, so we can ignore this).
+4. Under **Hypothesis**, select the option that matches your research question. In this example, select `Correlated`.
 
-5.  Under Plot, select `Correlation matrix`. Alternatively, you can ask for `Densities for variables` to see the density plots for each variable and `Statistics` to have the correlation coefficient added to the plot.
+5. Under **Additional Options**, select `Report significance` and `Flag significant correlations`. If you have missing data, also select `N`.
+
+6. Under **Plots**, select `Correlation matrix`. You can also select `Densities for variables` and `Statistics` if you want the plot to display the distributions and correlation coefficients.
 
 When you are done, your setup should look like this:
 
-![](images/08-correlation/correlation-setup.png){width="500"}
+![](images/08-correlation/correlation-setup.png)
 
 ## Step 4: Interpreting Results
 
-Once we are satisfied we have satisfied the assumptions for the correlation, we can interpret our results.
+Once we are satisfied that the assumptions for Pearson correlation are reasonably met, we can interpret the results.
 
 ![](images/08-correlation/correlation-matrix.png)
 
-It looks like three of the variables are significantly (*p* \< .05) correlated with each other: `dan.sleep`, `baby.sleep`, and `dan.grump`. `day` does not seem to be significantly correlated with any of the other three variables.
+The correlation matrix shows the correlation coefficient and *p*-value for each pair of variables. The sign of the correlation tells us the direction of the relationship, and the absolute value tells us the strength of the relationship.
 
-Note that it's not included in the correlation matrix for some reason, but the degrees of freedom for a correlation are n-2.
+In this example, the parent’s grumpiness is negatively correlated with the parent’s sleep quality. This means that days with better parent sleep tend to be days with lower grumpiness. The parent’s grumpiness is also negatively correlated with the baby’s sleep quality. This means that days with better baby sleep also tend to be days with lower parent grumpiness.
+
+The parent’s sleep quality and the baby’s sleep quality are positively correlated, meaning that days with better baby sleep tend to also be days with better parent sleep.
+
+The degrees of freedom for a Pearson correlation are calculated as \(n - 2\). With 100 days of data, \(df = 98\).
 
 ### Write Up the Results in APA Style
 
-We can write up our results in APA something like this:
+As reviewed in @sec-apa-style, an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result.
 
-> Dan's grumpiness (*M* = 63.71, *SD* = 10.05) is negatively correlated with both Dan's quality of sleep (*M* = 6.97, *SD* = 1.02; *r* = -.90, *p* \< .001) and the baby's quality of sleep (*M* = 8.05, *SD* = 2.07; *r* = -.57, *p* \< .001). Furthermore, Dan's and the baby's quality of sleep are positively correlated (*r* = .63, *p* \< .001).
+> Pearson correlations indicated that the parent’s grumpiness was negatively related to the parent’s sleep quality, *r*(98) = -.90, *p* < .001, and the baby’s sleep quality, *r*(98) = -.57, *p* < .001. The parent’s sleep quality was positively related to the baby’s sleep quality, *r*(98) = .63, *p* < .001.
+
+This write-up focuses on the correlations. If the descriptive statistics are important for the research question, you could also report the means and standard deviations for each variable before reporting the correlations.
+
+> Pearson correlations indicated that the parent’s grumpiness (*M* = 63.71, *SD* = 10.05) was negatively related to the parent’s sleep quality (*M* = 6.97, *SD* = 1.02), *r*(98) = -.90, *p* < .001, and the baby’s sleep quality(*M* = 8.05, *SD* = 2.07), *r*(98) = -.57, *p* < .001. The parent’s sleep quality was positively related to the baby’s sleep quality, *r*(98) = .63, *p* < .001.
 
 ### Visualize the Results
 
-The default in the Correlation Matrix is to plot the correlation matrix of all the variables, and optionally show the densities for variables and the statistics. This is fine, but I'm not a huge fan of it. You can see it below:
+For correlation, the most useful visualization is usually a scatterplot. A scatterplot shows each case as a point, with one variable on the x-axis and the other variable on the y-axis. This helps readers see the direction, form, strength, and possible outliers in the relationship.
 
-![](images/08-correlation/correlation-plots.png)
+A correlation matrix plot can be useful when we are examining several variables at once. However, when writing about a specific correlation, a single scatterplot is often clearer.
 
-Personally, this is why I like the `scatr` module in jamovi. You can create high-quality scatterplots of the six graphs above and then stitch them together in a nicer version. For example, here's the correlation between the sleep quality of both Dan and the baby with a linear regression line and standard error:
+For this example, a scatterplot of `dan.sleep` and `dan.grump` would show the strong negative relationship between the parent’s sleep quality and grumpiness. A fitted line can help summarize the linear trend, but the points themselves are important because they show the actual data.
 
-![](images/08-correlation/correlation-plot1.png){width="500"}
+![](images/08-correlation/correlation-plot1.png)
 
-### R-Squared
+### Shared Variance
 
-The cool thing about the correlation is that we can square $r$ to get $r^2$, which is the percentage of variance overlap. It is the percentage of variance in one variable that is shared by the other. You simply square the $r$ correlation coefficient to find the $r^2$. For example, our correlation above between Dan's grumpiness and Dan's quality of sleep is $r$ = -.90; therefore, it's $r^2$ = .81 or 81%. 81% of the variance in Dan's grumpiness can be explained by Dan's quality of sleep!
+When we square the Pearson correlation coefficient, we get \(r^2\). This value represents the proportion of variance shared by the two variables.
 
-## Comparing Strengths of Correlations
+For example, the correlation between the parent’s grumpiness and the parent’s sleep quality is \(r = -.90\). Squaring this value gives:
 
-:::{.info data-latex=""}
-For PSYC 290 students, you can read the below information if you are interested, but otherwise you can ignore this section. This is advanced material.
+\[
+r^2 = (-.90)^2 = .81
+\]
+
+This means that approximately 81% of the variance in one variable is shared with the other variable. Because correlation does not establish causation, we should avoid saying that sleep quality “explains” or “causes” 81% of grumpiness unless the research design supports a causal interpretation.
+
+::: {.callout-tip title="Check Your Understanding"}
+
+A correlation between social support and stress is \(r = -.40\).
+
+1. Is the relationship positive or negative?
+2. What is \(r^2\)?
+3. Can we conclude that social support causes lower stress?
+
+::: {.callout-note title="Check Your Answer" collapse="true"}
+
+1. The relationship is negative.
+2. \(r^2 = (-.40)^2 = .16\), so the variables share about 16% of their variance.
+3. No. A correlation shows that the variables are related, but it does not establish causation.
+
 :::
 
-Sometimes you want to compare two correlations to find out if one correlation is significantly stronger than another. You can use this calculator to calculate the p-value: [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html)
+:::
 
-Note that you use #1 (Independent Samples) when the correlations come from different samples and #2 (Dependent Samples) when the correlations come from the same sample. For example, to compare the correlation between English and Reading to the correlation between English and Writing, you would use #2 (Dependent Samples). But to compare the correlations between English and Reading for men and women, you would use #1 (Independent Samples).
+## Spearman Correlation
 
-Let's try them both with our [Sample_Dataset_2014.xlsx](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx).
+Spearman’s correlation is the rank-based alternative to Pearson correlation. Use Spearman’s correlation when the variables are ordinal, when the normality assumption is seriously violated, or when the relationship is monotonic but not well described as linear.
 
-### Comparison of Correlations From Independent Samples
+A monotonic relationship means that as one variable increases, the other variable tends to increase or tends to decrease, but the pattern does not have to form a straight line.
 
-We want to test the correlations between English and Reading for men and women. We first need to gather those correlations in jamovi. We can do this through **filters**.
+A Spearman correlation is reported similarly to Pearson correlation, but the statistic is usually written as \(r_s\) or \(\rho\).
 
-Let's first find the correlation for men. Go to the Data tab in jamovi, click Filters, and enter in the $\int_x$ = Gender == 0. Next, go to the Analyses tab in jamovi, click Regression, and choose Correlation Matrix. Move our two variables over (`English` and `Reading`) and check the box for `N`. You should get *r* = .36, *p* \< .001, *n* = 181.
-
-Now let's find the correlation for women. Go back to the Data tab in jamovi, click Filters, and change the equation to $\int_x$ = Gender == 1. Your results should automatically update because the filter changed. For women, you should get *r* = .33, *p* \< .001, *n* = 210.
-
-Now we can compare the correlations in [Testing the Significance of Correlations - Independent Samples](https://www.psychometrica.de/correlation.html#independent). In Correlation 1, put 181 in the n column and .36 in the r column. In Correlation 2, put 210 in the n column and .33 in the r column. The results are shown below. The z-score is not statistically significant (*p* = .369), so there is no significant difference in correlation strength.
-
-![](images/08-correlation/compare-correlations-independent.png)
-
-### Comparison of Correlations From Dependent Samples
-
-Now let's test whether the correlation between English and Reading differs from the correlation between English and Writing.
-
-Notice how we have three tests we are comparing: (1) English, (2) Reading, and (3) Writing. We can't use this test if we are testing the correlation between variables A and B and the correlation between variables C and D. There needs to be overlap.
-
-If you still have your filter on in your dataset from the previous analysis, turn it off. Go to the Data tab, click Filters, and either select the X to delete it or toggle the active button so it's turned off. Return to your Correlation Matrix results and click on it to edit it. Add Writing to the box.
-
-However, we have a problem! The [Testing the Significance of Correlations - Dependent Samples](https://www.psychometrica.de/correlation.html#dependent) webpage (#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get *listwise deletion* in jamovi):
-
-![](images/08-correlation/correlation-filters.png)
-
-Our correlation matrix should have automatically updated and all the N's equal 370. Great! We now have all the information we need to input into our [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html) webpage, #2. For n we input 370. For $r_{12}$ we enter the correlation between (1) English and (2) Reading. For $r_{13}$ we enter the correlation between (1) English and (3) Writing. For $r_{23}$ we enter the correlation between (2) Reading and (3) Writing. Our z-score is not statistically significant (*p* = .213) so there is no significant difference in the correlation between English and Reading (*r* = .32) with the correlation between English and Writing (*r* = .37).
-
-![](images/08-correlation/compare-correlations-dependent.png)
-
-## Additional Practice
-
-Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
-
-Perform correlations based on the following research questions.
-
-To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
-
-1.  **Are there significant correlations among the four tests (English, reading, math, writing)?**
-
-    -   Do you meet the assumption of normality for all four tests?
-
-    -   Do you meet the assumption of linearity for all four tests?
-
-    -   Are the four tests significantly correlated among each other?
-
-    -   Round your answers to two decimal places:
-
-        -   What is the correlation between reading and math?
-
-        -   What is the correlation between writing and reading?
-
-        -   What is the correlation between writing and English?
+> A Spearman correlation indicated that the two variables were significantly related, \(r_s = .42\), *p* = .018.

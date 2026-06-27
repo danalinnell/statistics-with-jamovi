@@ -1,71 +1,96 @@
-# 15.2 Measuring Reliability {.unnumbered}
+# 15.2 Estimating Reliability {.unnumbered}
+
+Reliability is not estimated in one single way. The appropriate reliability evidence depends on the measurement design, the construct, the scoring procedure, and the source of error we are trying to evaluate.
+
+A reliability coefficient should answer a specific question. For example:
+
+| Reliability Question                                                       | Common Form of Evidence                       |
+| -------------------------------------------------------------------------- | --------------------------------------------- |
+| Are scores consistent over time?                                           | Test-retest reliability                       |
+| Are two forms of a measure interchangeable?                                | Alternate-forms or parallel-forms reliability |
+| Do items intended to measure the same construct produce consistent scores? | Internal consistency                          |
+| Do raters, observers, or coders assign consistent scores?                  | Inter-rater reliability                       |
+
+Reliability coefficients are often interpreted like correlations, with values closer to 1.00 indicating greater consistency. However, there is no universal cutoff that makes scores “reliable.” The level of reliability needed depends on the purpose of the scores. For example, higher reliability is needed when scores are used to make decisions about individuals than when they are used for exploratory group-level research.
+
 ## Test-Retest Reliability
 
-Once you have collected data of a test at two time points, you can check
-for test-retest reliability using a correlation test. Higher correlation
-values indicate higher test-retest reliability (i.e., consistency across
-time points). If you have multiple time points to measure the test-test
-reliability with you can use a test of internal consistency instead (see
-below).
+**Test-retest reliability** evaluates the stability of scores over time. To estimate test-retest reliability, the same measurement procedure is administered to the same people on two occasions, and the scores from the two time points are correlated.
 
-You can also check for equivalence, similar to test-retest reliability,
-with parallel forms of tests, which are two versions of the same test.
-For example, instead of giving the same test to all participants, you
-might create two or more versions of the same test that measure things
-equivalently and check that equivalency using test-retest reliability.
-This is also tested with correlation.
+Higher correlations indicate greater consistency across time. However, test-retest reliability only makes sense when the construct is expected to be relatively stable across the time interval. For example, test-retest reliability may be appropriate for a trait measure, but it may not be appropriate for a measure of current mood if mood is expected to change.
+
+The time interval matters. If the interval is too short, participants may remember their earlier responses, which can inflate the reliability estimate. If the interval is too long, real change in the construct may occur, which can lower the estimate even if the measure is functioning well.
+
+When there are more than two time points, the analysis should still match the question of stability over time. Researchers might examine correlations among repeated administrations, estimate stability using longitudinal models, or use other approaches designed for repeated measurements. Multiple time points do not turn test-retest reliability into internal consistency. Internal consistency concerns consistency across items, not consistency across occasions.
+
+## Alternate-Forms Reliability
+
+**Alternate-forms reliability** evaluates whether two versions of a measure produce similar scores. This is useful when researchers or practitioners need different forms of a test that are intended to be interchangeable.
+
+For example, an instructor might create two versions of an exam to reduce copying. A test developer might create alternate forms so that people can be assessed more than once without receiving the exact same items. If the two forms are intended to measure the same construct at the same difficulty level, scores on the forms should be highly related.
+
+Alternate-forms reliability is usually estimated by administering both forms to the same people and correlating the scores. If the forms are administered at different times, the estimate reflects both form equivalence and stability over time.
+
+Parallel forms are a stricter version of alternate forms. In classical test theory, parallel forms are assumed to have equal true scores and equal error variances. In practice, truly parallel forms are difficult to create, so many researchers use the broader term alternate forms.
 
 ## Internal Consistency
 
-There are some older methods of testing internal consistency of a test
-such as split-half reliability; we will not discuss them here as they
-are typically inappropriate to use now that we have more advanced
-computation abilities.
+**Internal consistency** evaluates whether items or indicators intended to measure the same construct produce consistent scores. Internal consistency is relevant when a scale includes multiple items that are combined into a total score, average score, or subscale score.
 
-Historically, Cronbach's alpha has been the most popular way to test for
-internal consistency. Mathematically, it's essentially an average score
-of all possible split-half reliability estimates.
+Historically, **Cronbach’s alpha** has been the most commonly reported estimate of internal consistency. Alpha is related to the average covariance among items and the number of items in the scale. It is sometimes described as the average of all possible split-half reliability estimates, although that interpretation depends on assumptions.
 
-However, more contemporary views of Cronbach's alpha is that it is not
-the most ideal indicator of reliability (e.g., [McNeish,
-2018](https://psycnet.apa.org/record/2017-23572-001)). One reason for
-this is that the assumptions of Cronbach's alpha (i.e., tau equivalence,
-items measured on a continuous scale and are normally distributed, error
-of items do not covary, scale is unidimensional) are often difficult to
-meet and therefor can introduce error to alpha scores.
+Cronbach’s alpha is widely used, but it is often overused or misinterpreted. Alpha is most appropriate when the scale is essentially unidimensional and when items meet assumptions such as tau-equivalence, meaning that items contribute equally to the underlying construct. Alpha can be misleading when a scale is multidimensional, when item loadings differ substantially, when errors covary, or when ordinal item responses are treated as continuous without care.
 
-There are many strategies one can use to overcome some of these
-limitations of Cronbach's alpha (e.g., confidence intervals,
-bootstrapping) but another popular strategy is to use an alternative
-test of internal consistency: coefficient omega. There are various types
-of coefficient omega and [Flora
-(2020)](https://doi.org/10.1177/2515245920951747) provides guidance on
-selecting the correct coefficient omega (see Fig. 4 of the article for a
-decision tree).
+A high alpha does not prove that a scale is unidimensional. A scale can have a high alpha because it has many items, because items are redundant, or because multiple related dimensions are being combined. For this reason, internal consistency evidence should usually be considered alongside evidence about the scale’s dimensionality, such as factor analysis.
+
+**Coefficient omega** is often recommended as an alternative to alpha because it is based on a measurement model and can be more appropriate when items differ in how strongly they relate to the construct. There are different forms of omega, and the appropriate version depends on the measurement model. For example, omega total and omega hierarchical answer different reliability questions.
+
+Internal consistency is not appropriate for every measure. If items are intentionally heterogeneous or represent different aspects of a broad construct, low internal consistency may not necessarily mean the measure is poor. For formative indexes or checklists where items are not expected to be interchangeable, internal consistency may be the wrong reliability evidence.
 
 ## Inter-Rater Reliability
 
-You might think that you can test for inter-rater reliability just by
-looking at the percent of agreement; do raters agree or don't they and
-then scale that to 0-100%. However, this is a weak approach to
-inter-rater reliability because it doesn't account for agreement that
-occurs by chance or *degree* of agreement if there are ordinal ratings.
-As such, this is a poor estimate of reliability and you should avoid
-using percent agreement as your measurement.
+**Inter-rater reliability** evaluates the consistency of scores assigned by raters, observers, judges, or coders. This is important whenever human judgment is part of the measurement process.
 
-There are a variety of tests of inter-rater reliability depending on the
-number of raters, the level of measurement of the ratings, and whether
-there is any missingness to the data. Typically, most measures are
-interpreted similar to a correlation such that higher values (which top
-out at 1.00) indicate higher reliability.
+Percent agreement can be useful as a descriptive statistic, but it is usually not sufficient as the main estimate of inter-rater reliability. Percent agreement does not account for agreement that could occur by chance, and it does not capture the degree of disagreement when ratings are ordinal or continuous.
 
-A generally useful measure of inter-rater reliability is Cohen's kappa.
-This is used when two raters are rating all samples with a binary rating
-(e.g., yes vs no).
+The appropriate inter-rater reliability statistic depends on the rating design:
 
-Other measures of inter-rater reliability include intraclass correlation
-coefficient (ICC), Fleiss' kappa, Kendall's W coefficient, and
-Krippendorff's alpha. There are many tools out there to help you measure
-inter-rater reliability; for example,
-[k-alpha.org](https://www.k-alpha.org/) can support you in calculating
-Krippendorff's alpha.
+| Rating Design                                                       | Possible Reliability Statistic      |
+| ------------------------------------------------------------------- | ----------------------------------- |
+| Two raters, nominal categories                                      | Cohen’s kappa                       |
+| Two raters, ordinal categories                                      | Weighted kappa                      |
+| More than two raters, nominal categories                            | Fleiss’ kappa or related extensions |
+| Ratings are continuous or interval-like                             | Intraclass correlation coefficient  |
+| Ordinal rankings across targets                                     | Kendall’s W                         |
+| Complex designs, missing ratings, or multiple levels of measurement | Krippendorff’s alpha                |
+
+Cohen’s kappa is commonly used when two raters classify the same cases into nominal categories. For ordinal ratings, weighted kappa is often more appropriate because it can distinguish small disagreements from large disagreements.
+
+The **intraclass correlation coefficient**, or ICC, is commonly used for continuous ratings. There are multiple forms of ICC, and the correct form depends on the design. Important questions include whether the same raters rated every target, whether raters are treated as fixed or randomly sampled, and whether the researcher cares about consistency or absolute agreement.
+
+Krippendorff’s alpha is a flexible option that can be used with different levels of measurement and can handle some missing data patterns. It is especially common in content analysis and coding studies.
+
+## Reporting Reliability Evidence
+
+When reporting reliability, do not simply state that a measure “was reliable.” Instead, identify the type of reliability evidence, the sample, the scoring procedure, and the coefficient.
+
+For example:
+
+> Scores on the five-item scale showed good internal consistency in the present sample, (\omega = .86).
+
+> Two trained coders independently coded 25% of the responses. Inter-rater reliability was acceptable, (\kappa = .79).
+
+> Test-retest reliability over a four-week interval was high, (r = .84).
+
+Whenever possible, report confidence intervals for reliability estimates. Reliability coefficients are sample statistics, so they are estimated with uncertainty.
+
+## Summary
+
+| Reliability Evidence        | Main Question                                       | Common Caution                                            |
+| --------------------------- | --------------------------------------------------- | --------------------------------------------------------- |
+| Test-retest reliability     | Are scores stable over time?                        | Only appropriate when the construct should be stable      |
+| Alternate-forms reliability | Are two forms interchangeable?                      | May reflect both form differences and time-related change |
+| Internal consistency        | Are items or indicators consistent with each other? | Does not prove unidimensionality or validity              |
+| Inter-rater reliability     | Are raters, observers, or coders consistent?        | The statistic must match the rating design                |
+
+The key is to align the reliability estimate with the measurement question. Reliability is not just a number to report; it is evidence about how consistently scores are produced in a particular context.

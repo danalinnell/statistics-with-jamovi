@@ -74,35 +74,6 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -639,7 +610,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13.2 Finding Group Differences</span></a>
+ <span class="menu-text">13.2 Finding Group Differences After ANOVA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -689,6 +660,12 @@ window.Quarto = {
  <span class="menu-text">14.3 General Linear Model</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.4-comparing-strengths-of-correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.4 Comparing Strengths of Correlations</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -703,13 +680,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.1-threats-to-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.1 Threats to Reliability</span></a>
+ <span class="menu-text">15.1 Sources of Measurement Error</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.2-measuring-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.2 Measuring Reliability</span></a>
+ <span class="menu-text">15.2 Estimating Reliability</span></a>
   </div>
 </li>
       </ul>
@@ -732,7 +709,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16.2-threats-to-statistical-validity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">16.2 Threats to Statistical Validity</span></a>
+ <span class="menu-text">16.2 Threats to Statistical Conclusion Validity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -779,7 +756,8 @@ window.Quarto = {
   <li><a href="#step-1-look-at-the-data" id="toc-step-1-look-at-the-data" class="nav-link active" data-scroll-target="#step-1-look-at-the-data">Step 1: Look at the Data</a></li>
   <li><a href="#step-2-check-assumptions" id="toc-step-2-check-assumptions" class="nav-link" data-scroll-target="#step-2-check-assumptions">Step 2: Check Assumptions</a></li>
   <li><a href="#step-3-perform-the-test" id="toc-step-3-perform-the-test" class="nav-link" data-scroll-target="#step-3-perform-the-test">Step 3: Perform the Test</a></li>
-  <li><a href="#step-3-interpret-results" id="toc-step-3-interpret-results" class="nav-link" data-scroll-target="#step-3-interpret-results">Step 3: Interpret Results</a></li>
+  <li><a href="#step-4-interpret-results" id="toc-step-4-interpret-results" class="nav-link" data-scroll-target="#step-4-interpret-results">Step 4: Interpret Results</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -805,19 +783,71 @@ window.Quarto = {
 </header>
 
 
-<p><strong>ANCOVA</strong> (<strong>AN</strong>alysis of <strong>COVA</strong>riance) examines the difference in means between <u>three or more</u> groups, while controlling for or partialling out the effect of one or more continuous confounds or covariates.</p>
-<p><strong>Some definitions</strong>: A <em>confounding</em> variable is a variable that affects or is related to both the independent and dependent variable. A <em>covariate</em> variable is a variable that only affects or is only related to the dependent variable.</p>
+<p><strong>ANCOVA</strong> stands for <strong>AN</strong>alysis of <strong>COVA</strong>riance. ANCOVA is an extension of ANOVA that includes one or more continuous covariates. Like ANOVA, ANCOVA is used when we have a continuous outcome variable and one or more categorical independent variables. The difference is that ANCOVA also includes a continuous variable that we want to statistically adjust for.</p>
+<p>A <strong>covariate</strong> is a continuous variable included in the model because it is related to the outcome variable. Including a useful covariate can sometimes reduce unexplained error variance and provide a clearer estimate of group differences.</p>
+<p>A <strong>confounding variable</strong> is a variable that is related to both the independent variable and the outcome variable. ANCOVA can sometimes be used to statistically adjust for a potential confounder, but this does not automatically solve all design problems. If groups differ on important covariates because participants were not randomly assigned, the results should be interpreted cautiously.</p>
 <p><img src="images/02-stats-foundations/Possible-relationships-of-a-covariate-and-a-confounder-to-an-exposure-variable-and-an.png" class="img-fluid"></p>
-<p>There are two main reasons for including covariates:</p>
+<p>There are two common reasons for including covariates:</p>
 <ol type="1">
-<li><p><strong>To reduce within-group error variance</strong>: Remember that to get a larger F-statistic, we need to maximize between-groups variance and minimize within-groups variance. Adding covariates can sometimes minimize within-groups variance if that covariate helps <em>explain</em> some of the within-group variance.</p></li>
-<li><p><strong>Elimination of covariates</strong>: Sometimes there are other variables that also explain our outcome variable. We want to look at the effect of another variable on the outcome while removing or eliminating the other variables (confounds) that also explain our outcome variable.</p></li>
+<li><p><strong>To reduce error variance</strong>: If the covariate helps explain individual differences in the outcome, including it can reduce the unexplained variability in the model.</p></li>
+<li><p><strong>To statistically adjust group comparisons</strong>: If groups differ on a variable that is related to the outcome, including that variable as a covariate can help estimate group differences after adjusting for that variable.</p></li>
 </ol>
+<p>ANCOVA is useful, but it is not magic. It cannot turn a weak design into a strong causal design, and it depends on assumptions that need to be checked carefully.</p>
+<p>We use ANCOVA when we have:</p>
+<ul>
+<li>one continuous outcome variable,</li>
+<li>one or more categorical independent variables,</li>
+<li>one or more continuous covariates,</li>
+<li>and a research question about group differences after statistically adjusting for the covariate.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A researcher compares exam scores across three teaching methods. Students also differ in prior GPA, and prior GPA is related to exam scores.</p>
+<ol type="1">
+<li>What is the outcome variable?</li>
+<li>What is the categorical independent variable?</li>
+<li>What variable could be included as a covariate?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>The outcome variable is exam score.</li>
+<li>The categorical independent variable is teaching method.</li>
+<li>Prior GPA could be included as a covariate because it is continuous and related to exam scores.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
 <section id="step-1-look-at-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-look-at-the-data">Step 1: Look at the Data</h2>
-<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “ancova”. This data is fictional data from a health psychologist who was interested in the effect of routine cycling (1 = driving, 2 = cycling) and stress (1 = high, 2 = low) on happiness levels, with age as a covariate. Notice how this is a 2x2 independent factorial design with a covariate!</p>
-<p>I’m going to skip some of the looking at the data stuff. Look at how the data is setup in this example and check your descriptive statistics first!</p>
-<p>Here’s a video walking through the ANCOVA test.</p>
+<p>For this chapter, we will work with the <code>ancova</code> dataset from the <code>lsj-data</code> library. This fictional dataset comes from a health psychology study examining happiness. The outcome variable is <code>happiness</code>. The study includes two categorical independent variables:</p>
+<ul>
+<li><code>commute</code>: whether participants usually drive or cycle</li>
+<li><code>stress</code>: whether participants report high or low stress</li>
+</ul>
+<p>The continuous covariate is <code>age</code>.</p>
+<p>This is a 2 × 2 independent factorial design with a covariate because there are two categorical independent variables, each with two levels, and one continuous covariate. Our research question is: Do happiness scores differ by commute type, stress level, and their interaction after statistically adjusting for age?</p>
+<p>Here’s a <a href="https://www.youtube.com/watch?v=OdKyMYoO0VU">video</a> walking through the ANCOVA test.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="vembedr">
@@ -827,54 +857,215 @@ window.Quarto = {
 </div>
 </div>
 </div>
+<section id="data-set-up" class="level3">
+<h3 class="anchored" data-anchor-id="data-set-up">Data Set-Up</h3>
+<p>To conduct ANCOVA in jamovi, the dataset should include one continuous outcome variable, one or more categorical independent variables, and one or more continuous covariates. Each row should represent one participant or unit of analysis.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Look at the ANCOVA example.</p>
+<ol type="1">
+<li>What is the continuous outcome variable?</li>
+<li>What are the categorical independent variables?</li>
+<li>What is the continuous covariate?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>The continuous outcome variable is <code>happiness</code>.</li>
+<li>The categorical independent variables are <code>stress</code> and <code>commute</code>.</li>
+<li>The continuous covariate is <code>age</code>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="step-2-check-assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-check-assumptions">Step 2: Check Assumptions</h2>
-<p>The ANCOVA has two additional assumptions we’ll get to next; otherwise, it also has the same assumptions as the one-way ANOVA (i.e., normal distribution, homogeneity of variance, interval or ratio DV, scores are independent between groups). Let’s test those first. Shapiro-Wilk’s test was not statistically significant (<em>p</em> = .735), the Q-Q plot looks good, skew and kurtosis were fine, and distribution looks fine; therefore, we’ve satisfied the assumption of normality. Levene’s test was not statistically significant (<em>p</em> = .925); therefore, we’ve satisfied the assumption of homogeneity of variance.</p>
+<p>ANCOVA has many of the same assumptions as ANOVA:</p>
+<ol type="1">
+<li><p>The outcome variable is approximately normally distributed within the model, or the model residuals are approximately normal.</p></li>
+<li><p>The groups have roughly equal variances, which is called <strong>homogeneity of variance</strong>.</p></li>
+<li><p>The outcome variable is interval or ratio (i.e., continuous).</p></li>
+<li><p>Observations are independent. Each participant or case should contribute one score and belong to only one combination of factor levels.</p></li>
+</ol>
+<p>ANCOVA also has assumptions related to the covariate:</p>
+<ol start="5" type="1">
+<li><p>The covariate should have a roughly linear relationship with the outcome variable.</p></li>
+<li><p>The relationship between the covariate and the outcome should be similar across groups. This is called <strong>homogeneity of regression slopes</strong>.</p></li>
+<li><p>In an experimental design, the covariate should not systematically differ across the treatment groups. If the covariate differs across groups, the analysis can still be run, but the results should be interpreted more cautiously.</p></li>
+</ol>
+<p>We can evaluate normality using the Shapiro-Wilk test, Q-Q plot, skew and kurtosis values, and visual inspection when available. In this example, the Shapiro-Wilk test was not statistically significant, <em>p</em> = .735, the Q-Q plot looked reasonable, and the skew and kurtosis checks did not raise major concerns. Therefore, the normality assumption appears reasonable.</p>
+<p>We evaluate homogeneity of variance using Levene’s test and by comparing the variability of the outcome across groups. Levene’s test was not statistically significant, <em>p</em> = .925, so the homogeneity-of-variance assumption appears reasonable.</p>
 <p><img src="images/07-ancova/ancova_assumptions.png" class="img-fluid"></p>
-<p>The ANCOVA has two additional assumptions.</p>
-<section id="independence-of-the-covariate-and-treatment-effect" class="level3">
-<h3 class="anchored" data-anchor-id="independence-of-the-covariate-and-treatment-effect"><strong>Independence of the Covariate and Treatment Effect</strong></h3>
-<p>When the covariate and treatment effect are related, then we can have incorrect F-statistic values. However, this is only important in experimental designs. In quasi-experimental designs, this is often violated and you just have to interpret results accordingly.</p>
-<ul>
-<li>If you do have an experimental manipulation with a covariate, you can test this assumption by running a one-way ANOVA but with your experimental manipulation as your IV or group variable and your covariate as your DV. If there is a significant F-statistic, then you have violated this assumption. In this case, one of our IVs (stress) is significantly related to age, so we violate this assumption. This suggests that age is not a covariate, but more appropriately a confounder, which necessitates a different type of analysis not described here (mediation).</li>
-</ul>
+<section id="covariate-balance-across-groups" class="level3">
+<h3 class="anchored" data-anchor-id="covariate-balance-across-groups">Covariate Balance Across Groups</h3>
+<p>In randomized experimental designs, the covariate should not systematically differ across treatment groups. If the covariate differs across groups, it suggests that the groups were not equivalent on that variable before adjustment.</p>
+<p>We can examine this by testing whether the covariate differs across the categorical independent variables. In this example, age differs by stress level. This means age is not evenly balanced across the stress groups.</p>
+<p>This does not mean we must stop the analysis, and it does not automatically mean mediation is needed. Instead, it means we should interpret the adjusted group differences cautiously. Age may be acting as a potential confounder because it is related to both the grouping variable and the outcome.</p>
 <p><img src="images/07-ancova/ancova_assumptions2.png" class="img-fluid"></p>
 </section>
 <section id="homogeneity-of-regression-slopes" class="level3">
-<h3 class="anchored" data-anchor-id="homogeneity-of-regression-slopes"><strong>Homogeneity of Regression Slopes</strong></h3>
-<p>The second additional assumption is that the relationship between the covariate and the dependent variable is similar for all levels of the independent variable (homogeneity of regression slopes). We can test this by adding an interaction term between the covariate and each independent variable in jamovi under the Model drop-down menu. Age does not significantly interact with either stress (<em>p</em> = .520) or commute (<em>p</em> = .771).</p>
-<p><img src="images/07-ancova/ancova_assumptions3.png" class="img-fluid"></p>
+<h3 class="anchored" data-anchor-id="homogeneity-of-regression-slopes">Homogeneity of Regression Slopes</h3>
+<p>The homogeneity-of-regression-slopes assumption means that the relationship between the covariate and the outcome is similar across groups. In this example, the relationship between age and happiness should be similar across the levels of stress and commute.</p>
+<p>We test this assumption by adding interaction terms between the covariate and the categorical independent variables. If the covariate-by-factor interaction is statistically significant, the assumption may be violated.</p>
+<p>In this example, age does not significantly interact with stress, <em>p</em> = .520, or commute, <em>p</em> = .771. Therefore, the homogeneity-of-regression-slopes assumption appears reasonable.</p>
+<p><img src="images/07-ancova/ancova_assumptions3.png" class="img-fluid"> ::: {.callout-tip title=“Check Your Understanding”}</p>
+<p>In an ANCOVA, the interaction between the covariate and the grouping variable is statistically significant.</p>
+<p>What assumption is causing concern?</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The homogeneity-of-regression-slopes assumption is causing concern. A significant covariate-by-group interaction suggests that the relationship between the covariate and the outcome differs across groups.</p>
+</div>
+</div>
+</div>
+<p>:::</p>
 </section>
 </section>
 <section id="step-3-perform-the-test" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-perform-the-test">Step 3: Perform the Test</h2>
+<p>To perform an ANCOVA in jamovi:</p>
 <ol type="1">
-<li><p>To perform an ANCOVA in jamovi, select ANCOVA under the ANOVA analysis menu.</p></li>
-<li><p>Move your dependent variable <code>happiness</code> to the Dependent Variable box, your independent variables <code>stress</code> and <code>commute</code> to the Fixed Factors box, and your covariate <code>age</code> to the Covariates box.</p></li>
-<li><p>Select <span class="math inline">\(\omega^2\)</span> as your effect size.</p></li>
-<li><p>Under Assumption Checks, select all three assumption checks: <code>Homogeneity test</code>, <code>Normality test</code>, and <code>Q-Q Plot</code>.</p></li>
-<li><p>Under Post Hoc Tests, move both of your independent variables over, select the <code>Tukey</code> correction and select <code>Cohen's d</code> for your effect size.</p></li>
-<li><p>Under Estimated Marginal Means, move each of your independent variables over into its own term box. Also include combinations of your independent variables if you have an interaction term in your model. Select both plots and tables, select <code>Observed scores</code>, and de-select <code>Equal cell weights</code>.</p></li>
+<li><p>Go to the <strong>Analyses</strong> tab, click <strong>ANOVA</strong>, and choose <strong>ANCOVA</strong>.</p></li>
+<li><p>Move the continuous outcome variable <code>happiness</code> to the <strong>Dependent Variable</strong> box.</p></li>
+<li><p>Move the categorical independent variables <code>stress</code> and <code>commute</code> to the <strong>Fixed Factors</strong> box.</p></li>
+<li><p>Move the continuous covariate <code>age</code> to the <strong>Covariates</strong> box.</p></li>
+<li><p>Under <strong>Effect Size</strong>, select (^2).</p></li>
+<li><p>Under <strong>Assumption Checks</strong>, select <code>Homogeneity test</code>, <code>Normality test</code>, and <code>Q-Q Plot</code>.</p></li>
+<li><p>Under <strong>Estimated Marginal Means</strong>, request tables and plots for <code>stress</code>, <code>commute</code>, and the <code>stress * commute</code> interaction. Select <code>Observed scores</code> if you want to display the observed data along with the estimated means.</p></li>
 </ol>
+<p>Because both <code>stress</code> and <code>commute</code> have only two levels, post hoc tests are not needed for the main effects. If the interaction is statistically significant, focus on the interaction plot and the estimated marginal means for the <code>stress * commute</code> combination.</p>
 </section>
-<section id="step-3-interpret-results" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-interpret-results">Step 3: Interpret Results</h2>
-<p>The ANCOVA table shows that both independent variables (<code>stress</code> and <code>commute</code>), the interaction term (<code>stress * commute*</code>), and the covariate (<code>age</code>) are statistically significant. Therefore, we can look at our post hoc tests to find where the differences are.</p>
+<section id="step-4-interpret-results" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-interpret-results">Step 4: Interpret Results</h2>
+<p>The ANCOVA table shows statistically significant main effects of <code>stress</code> and <code>commute</code>, a statistically significant <code>stress * commute</code> interaction, and a statistically significant effect of the covariate <code>age</code>.</p>
+<p>Because the <code>stress * commute</code> interaction is statistically significant, we should interpret the main effects cautiously. The interaction tells us that the relationship between commute type and happiness depends on stress level, or that the relationship between stress and happiness depends on commute type.</p>
+<p>The estimated marginal means and interaction plot help us understand the pattern. In this example, happiness is similar across commute types in the low-stress condition, but in the high-stress condition, participants who cycle report higher happiness than participants who drive.</p>
 <p><img src="images/07-ancova/ancova_results.png" class="img-fluid"></p>
-<p>Technically, we don’t need to look at the post hoc table much in this example. Because there are only two groups, we already know one group will have higher means than the other group if the F-test is significant. In fact, check this out: the square root of our F-statistic is equal to the t-statistic in our post hoc table. Neat!</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Optional: Why Do Some Follow-Up Tests Look Like *t*-Tests?">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Optional: Why Do Some Follow-Up Tests Look Like <em>t</em>-Tests?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>When a factor has only two levels, the <em>F</em> test for that factor is equivalent to a two-group comparison. In that case, the square root of the <em>F</em> statistic equals the absolute value of the corresponding <em>t</em> statistic. This is interesting mathematically, but it is not essential for interpreting the ANCOVA.</p>
+</div>
+</div>
+</div>
 <p>Post hoc tests show that low stress had higher happiness than high stress, and that cycling had higher happiness than driving. We can also look to the estimated marginal means tables and plots for information for reporting.</p>
-<p><img src="images/07-ancova/ancova_tukey.png" class="img-fluid"></p>
+<p><img src="images/07-ancova/ancova_tukey.png" class="img-fluid"> ::: {.callout-tip title=“Check Your Understanding”}</p>
+<p>An ANCOVA shows a statistically significant interaction between stress and commute type.</p>
+<p>What does this interaction mean in words?</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It means that the relationship between commute type and happiness differs depending on stress level. For example, cycling may be associated with higher happiness under high stress but not under low stress.</p>
+</div>
+</div>
+</div>
+<p>:::</p>
 <section id="write-up-the-results-in-apa-style" class="level3">
 <h3 class="anchored" data-anchor-id="write-up-the-results-in-apa-style">Write Up the Results in APA Style</h3>
-<p>Last, we can write-up our results! Reporting ANCOVA is very similar to reporting an ANOVA test (in this case an independent factorial ANOVA) except that we also report the effect of the covariate, as well. Here’s an example write-up:</p>
+<p>As reviewed in <span class="quarto-unresolved-ref">?sec-apa-style</span>, an APA-style results section should describe the research question, summarize the relevant descriptive statistics or estimated marginal means, report the inferential test and effect size, and interpret the result. For ANCOVA, the write-up should also identify the covariate.</p>
 <blockquote class="blockquote">
-<p>We conducted a study examining how stress and commute affect happiness levels in a 2 (stress: high or low) x 2 (commute: cycling or driving) independent factorial design. Furthermore, we collected data on age as a covariate of our study. We satisfied all assumptions of the ANCOVA except that age was in fact a confounding variable in that it relates to our independent variable of stress. Despite failing to meet this assumption, we proceeded with the ANCOVA analysis.</p>
-<p>There was a significant main effect of stress on happiness such that participants in the low stress condition (<em>M</em> = 68.45, <em>SE</em> = 2.55) reported significantly greater happiness than participants in the high stress condition (<em>M</em> = 39.85, <em>SE</em> = 2.55), <em>F</em> (1, 15) = 52.61, <em>p</em> &lt; .001, <span class="math inline">\(\omega^2\)</span> = .39. There was also a significant main effect of commute on happiness such that participants who commuted via cycling (<em>M</em> = 64.70, <em>SE</em> = 2.29) reported significantly greater happiness than participants who commuted via driving (<em>M</em> = 43.60, <em>SE</em> = 2.29), <em>F</em> (1, 15) = 42.33, <em>p</em> &lt; .001, <span class="math inline">\(\omega^2\)</span> = .31. There was a significant interaction between stress and commute type such that happiness levels were similar in the low stress condition for both commute types, but happiness was significantly higher for participants who cycled versus those who drove in the high stress condition, <em>F</em> (1, 15) = 14.15, <em>p</em>&nbsp;= .002, <span class="math inline">\(\omega^2\)</span> = .10. Furthermore, age was a significant covariate of our dependent variable, <em>F</em> (1, 15) = 6.39, <em>p</em> = .023, <span class="math inline">\(\omega^2\)</span> = .04.</p>
+<p>A 2 × 2 ANCOVA was conducted to examine whether happiness differed by stress level and commute type after statistically adjusting for age. Stress and commute type were included as categorical independent variables, and age was included as a continuous covariate. The normality, homogeneity-of-variance, and homogeneity-of-regression-slopes assumptions appeared reasonable. However, age differed by stress level, so the adjusted stress effect should be interpreted cautiously.</p>
+<p>There was a significant main effect of stress, <em>F</em>(1, 15) = 52.61, <em>p</em> &lt; .001, (^2 = .39), and a significant main effect of commute type, <em>F</em>(1, 15) = 42.33, <em>p</em> &lt; .001, (^2 = .31). These main effects were qualified by a significant Stress × Commute interaction, <em>F</em>(1, 15) = 14.15, <em>p</em> = .002, (^2 = .10). Estimated marginal means indicated that happiness was similar across commute types in the low-stress condition, but in the high-stress condition, participants who cycled reported higher happiness than participants who drove. Age was also significantly associated with happiness, <em>F</em>(1, 15) = 6.39, <em>p</em> = .023, (^2 = .04).</p>
 </blockquote>
-
-
 </section>
+<section id="visualize-the-results" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-the-results">Visualize the Results</h3>
+<p>For ANCOVA, the graph should help readers understand the adjusted group means and, when relevant, the interaction pattern. Because this example includes a statistically significant Stress × Commute interaction, an interaction plot is especially useful.</p>
+<p>A good plot would show adjusted happiness means for each combination of stress level and commute type. The plot should make it clear that commute type matters more in the high-stress condition than in the low-stress condition.</p>
+<p>If you use an ANCOVA plot, be clear that the plotted means are adjusted for the covariate. Adjusted means are not always identical to the raw group means because the model has statistically adjusted for age.</p>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>What It Means in ANCOVA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Outcome variable</td>
+<td>The continuous variable being predicted or compared</td>
+</tr>
+<tr class="even">
+<td>Fixed factor</td>
+<td>A categorical independent variable</td>
+</tr>
+<tr class="odd">
+<td>Covariate</td>
+<td>A continuous variable included to statistically adjust the model</td>
+</tr>
+<tr class="even">
+<td>Adjusted mean</td>
+<td>A group mean estimated after accounting for the covariate</td>
+</tr>
+<tr class="odd">
+<td>Homogeneity of regression slopes</td>
+<td>The covariate has a similar relationship with the outcome across groups</td>
+</tr>
+<tr class="even">
+<td>Interaction</td>
+<td>The effect of one factor depends on another factor</td>
+</tr>
+</tbody>
+</table>
+
+
 </section>
 
 </main> <!-- /main -->

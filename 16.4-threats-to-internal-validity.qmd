@@ -1,16 +1,69 @@
 # 16.4 Threats to Internal Validity {.unnumbered}
-1.  **Maturation**: physiological processes that count account for changes in the behavior due to simple passage of time. For instance, the aging process of simply growing older and the developmental changes associated, or physiological states like hunger, fatigue, attention span, or motivation that change over time naturally.
 
-2.  **Regression to the mean**: the tendency that participants who receive extreme scores when tested tend to have less extreme scores on subsequent retesting even in the absence of treatment effects.
+Internal validity concerns whether an observed relationship between variables can be interpreted as causal. A study has stronger internal validity when alternative explanations for the observed effect have been ruled out.
 
-3.  **Selection of subjects**: Any bias in selecting and assigning participants to groups that results in systematic differences between the participants in each group.
+Threats to internal validity are especially important in intervention, experimental, and quasi-experimental research. These threats provide alternative explanations for why groups differ or why scores change over time.
 
-4.  **Selection by maturation interaction**: The treatment and no-treatment groups, although similar at one point, would have grown apart (i.e., developed differently) even if no treatment had been administered. Even though pretest scores may have been the same, groups that are not matched as well on other relevant variables may cause the groups to naturally become different after a period of time.
+## Common Threats to Internal Validity
 
-5.  **Mortality**: Differential dropping out of some subjects from the comparison groups before the experiment is finished, resulting in differences between the groups that may be unrelated to the treatment effects. The subjects who drop out may be different than those who complete the treatment, which may inflate, obscure, or confuse the treatment effects of interest. Researcher’s exclusion criteria may also cause a mortality bias.
+Keep in mind the acronym MRS. SMITH to remember all of these threats to internal validity.
 
-6.  **Instrumentation**: Changes in the measurement procedures that may result in differences between the comparison groups that are confused with the treatment effects.
+### Maturation
 
-7.  **Testing**: When participants are repeatedly tested, changes in test scores may be due to practice or knowledge about the test procedure gained from earlier experiences rather than any treatment effects. Similar to maturation except that the change is caused by the treatment procedure itself.
+Maturation refers to naturally occurring changes within participants over time that could account for changes in the outcome. These changes may include development, aging, fatigue, hunger, boredom, motivation, attention, or recovery.
 
-8.  **History**: Extraneous events occurring during the course of the experiment that may affect the participants’ responses on the dependent measure. Examples may be major events in society or minor events within the experimental situation.
+For example, children may improve on a cognitive task over several months because of normal development rather than because of an educational intervention.
+
+### Regression to the Mean
+
+Regression to the mean occurs when participants are selected because they have extreme scores, and their scores become less extreme when measured again, even without an intervention.
+
+For example, students selected for tutoring because they performed unusually poorly on one test may score closer to average on a later test partly because extreme scores tend to be less extreme on retesting.
+
+### Selection
+
+Selection refers to systematic differences between groups before the treatment or intervention begins. If groups differ at baseline, post-treatment differences may reflect those preexisting differences rather than the treatment.
+
+For example, if participants choose whether to join an exercise program, those who join may already differ in motivation, health, or available time.
+
+### Selection by Maturation Interaction
+
+Selection by maturation interaction occurs when groups differ in how they would naturally change over time, even without the treatment. The groups may look similar at pretest but still be on different developmental or change trajectories.
+
+For example, two classrooms may have similar pretest scores, but one classroom may include students who are likely to improve faster over the semester because of prior preparation or outside support.
+
+### Attrition or Mortality
+
+Attrition occurs when participants drop out of a study. It threatens internal validity when dropout is systematic rather than random.
+
+For example, if participants who find an intervention difficult are more likely to drop out, the remaining participants may make the intervention look more effective than it really is.
+
+### Instrumentation
+
+Instrumentation refers to changes in the measurement instrument, scoring rules, observers, or data collection procedures over time.
+
+For example, if observers become more lenient after receiving feedback, changes in scores may reflect changes in observation procedures rather than changes in participant behavior.
+
+### Testing
+
+Testing effects occur when taking a test or completing a measurement procedure changes later scores. Participants may improve because of practice, familiarity, memory, or increased awareness of what is being measured.
+
+For example, participants may score higher on a second knowledge test because they remember questions from the pretest, not because of the intervention.
+
+### History
+
+History refers to external events that occur during the study and could influence the outcome. These events may occur in society, the organization, the classroom, the clinic, or the participants’ lives.
+
+For example, a workplace stress intervention might appear effective or ineffective partly because a major organizational restructuring occurred during the study.
+
+### Diffusion or Contamination
+
+Diffusion occurs when participants in one condition are exposed to elements of another condition. This can reduce differences between groups or make it unclear what treatment each group actually received.
+
+For example, students in a control classroom may receive materials from students in the intervention classroom.
+
+### Compensatory Rivalry and Resentful Demoralization
+
+Participants or groups may respond to condition assignment in ways that affect outcomes. **Compensatory rivalry** occurs when comparison-group participants work harder because they know they are not receiving the treatment. **Resentful demoralization** occurs when comparison-group participants become discouraged because they know they are not receiving the treatment.
+
+Both can change outcomes for reasons other than the treatment itself.

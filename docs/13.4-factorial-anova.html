@@ -74,35 +74,6 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -639,7 +610,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13.2 Finding Group Differences</span></a>
+ <span class="menu-text">13.2 Finding Group Differences After ANOVA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -689,6 +660,12 @@ window.Quarto = {
  <span class="menu-text">14.3 General Linear Model</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.4-comparing-strengths-of-correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.4 Comparing Strengths of Correlations</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -703,13 +680,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.1-threats-to-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.1 Threats to Reliability</span></a>
+ <span class="menu-text">15.1 Sources of Measurement Error</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.2-measuring-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.2 Measuring Reliability</span></a>
+ <span class="menu-text">15.2 Estimating Reliability</span></a>
   </div>
 </li>
       </ul>
@@ -732,7 +709,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16.2-threats-to-statistical-validity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">16.2 Threats to Statistical Validity</span></a>
+ <span class="menu-text">16.2 Threats to Statistical Conclusion Validity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -779,6 +756,7 @@ window.Quarto = {
   <li><a href="#independent-factorial-anova" id="toc-independent-factorial-anova" class="nav-link active" data-scroll-target="#independent-factorial-anova">Independent Factorial ANOVA</a></li>
   <li><a href="#repeated-measures-factorial-anova" id="toc-repeated-measures-factorial-anova" class="nav-link" data-scroll-target="#repeated-measures-factorial-anova">Repeated Measures Factorial ANOVA</a></li>
   <li><a href="#mixed-factorial-anova" id="toc-mixed-factorial-anova" class="nav-link" data-scroll-target="#mixed-factorial-anova">Mixed Factorial ANOVA</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -804,18 +782,162 @@ window.Quarto = {
 </header>
 
 
-<p>Factorial ANOVA allows us to examine two or more independent variables (IVs) simultaneously against a continuous dependent variable (DV). There are several types of factorial designs:</p>
+<p>Factorial ANOVA allows us to examine two or more independent variables at the same time. Like the ANOVA tests in the previous sections, factorial ANOVA is used with one continuous outcome variable. What makes it factorial is that the model includes two or more factors.</p>
+<p>Factorial ANOVA allows us to test two kinds of effects:</p>
 <ul>
-<li><strong>Independent factorial design</strong>: several between-group (independent) IVs</li>
-<li><strong>Repeated measures factorial design</strong>: several within-group (repeated-measures) IVs</li>
-<li><strong>Mixed factorial design</strong>: some between-group and some within-group IVs</li>
+<li><strong>Main effects</strong>, which test whether each factor is related to the outcome while accounting for the other factors in the model.</li>
+<li><strong>Interaction effects</strong>, which test whether the effect of one factor depends on the level of another factor.</li>
 </ul>
-<p>Furthermore, you may read about ANOVAs referred to as “one-way”, “two-way”, “three-way” or greater. This simply refers to how many independent variables there are. Factorial ANOVAs are sometimes also referenced by how many groups per IV there are; for example, a 2 x 3 ANOVA is a factorial ANOVA in which the first IV has two conditions and the second IV has three conditions. You would also specify which IVs are between-group and which are within-group. For example, you might write that your design is a 2 (between-subjects: gender) x3 (within-subjects: task) mixed factorial.</p>
-<p>We won’t be going into too much detail on the different factorial ANOVA designs. Instead, I will walk through illustrative cases so that if you want to apply them in the future you can mimic the procedures below. Note that the assumptions are essentially the same as the one-way ANOVA and/or repeated measures ANOVA depending on whether you are using between- or within-group IVs, respectively.</p>
+<p>There are several types of factorial designs:</p>
+<ul>
+<li><strong>Independent factorial design</strong>: two or more between-subjects factors</li>
+<li><strong>Repeated measures factorial design</strong>: two or more within-subjects or repeated-measures factors</li>
+<li><strong>Mixed factorial design</strong>: at least one between-subjects factor and at least one within-subjects factor</li>
+</ul>
+<p>You may also see factorial ANOVAs described as <strong>two-way</strong>, <strong>three-way</strong>, or <strong>n-way</strong> ANOVAs. This refers to the number of independent variables or factors in the model. For example, a two-way ANOVA has two factors, and a three-way ANOVA has three factors.</p>
+<p>Factorial designs are also described by the number of levels in each factor. For example, a 2 × 3 ANOVA has two factors: one factor with two levels and one factor with three levels. If one factor is between-subjects and the other is within-subjects, we would describe the design as a 2 × 3 mixed factorial ANOVA.</p>
+<p>This section introduces three common factorial designs. The goal is not to memorize every possible factorial model, but to learn how to recognize the design, identify main effects and interactions, and interpret the output.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Factorial ANOVA is an extension topic in this course. You do not need to memorize every possible factorial design. Focus on identifying whether each factor is between-subjects or within-subjects, interpreting main effects and interactions, and recognizing when follow-up comparisons are needed.</p>
+</div>
+</div>
+<p>Because factorial ANOVA is an extension topic in this course, this section moves more quickly than the previous ANOVA sections. However, we are still using the same four-step hypothesis-testing process:</p>
+<ol type="1">
+<li>Look at the data and identify the design.</li>
+<li>Check assumptions.</li>
+<li>Perform the test.</li>
+<li>Interpret the main effects, interactions, and follow-up comparisons when needed.</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Design</th>
+<th>Factor Structure</th>
+<th>Example Question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Independent factorial ANOVA</strong></td>
+<td>Two or more between-subjects factors</td>
+<td>Do attendance, reading, and their interaction predict grades?</td>
+</tr>
+<tr class="even">
+<td><strong>Repeated measures factorial ANOVA</strong></td>
+<td>Two or more within-subjects factors</td>
+<td>Do performance scores differ by time, area, and their interaction when the same people complete all conditions?</td>
+</tr>
+<tr class="odd">
+<td><strong>Mixed factorial ANOVA</strong></td>
+<td>At least one between-subjects factor and at least one within-subjects factor</td>
+<td>Do cravings differ by condition, reward type, and their interaction when reward is measured within participants?</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For each study below, identify the type of factorial ANOVA design.</p>
+<ol type="1">
+<li><p>A researcher compares test anxiety across two teaching formats: online and in person. Students are also classified by class year: first-year, sophomore, junior, or senior. Each student belongs to one teaching format and one class year.</p></li>
+<li><p>A researcher measures the same participants’ reaction times under three sound conditions and two lighting conditions. Every participant completes all six combinations.</p></li>
+<li><p>A researcher compares therapy and waitlist control groups on depression scores measured at pretest, posttest, and follow-up. Each participant belongs to only one group but provides depression scores at all three time points.</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>This is an <strong>independent factorial ANOVA</strong> because both factors are between-subjects factors. Each student belongs to only one teaching format and one class year.</p></li>
+<li><p>This is a <strong>repeated measures factorial ANOVA</strong> because both factors are within-subjects factors. Each participant completes all sound conditions and all lighting conditions.</p></li>
+<li><p>This is a <strong>mixed factorial ANOVA</strong> because one factor is between-subjects and one factor is within-subjects. Group is between-subjects because each participant is in either therapy or waitlist control. Time is within-subjects because each participant is measured at pretest, posttest, and follow-up.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
 <section id="independent-factorial-anova" class="level2">
 <h2 class="anchored" data-anchor-id="independent-factorial-anova">Independent Factorial ANOVA</h2>
-<p>The independent factorial ANOVA has multiple between-group IVs. Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “rtfm”. This data has two IVs: attend (whether or not the student turned up to lectures) and reading (whether or not the student actually read the textbook). 1 = they did and 0 = they did not.</p>
-<p>Here’s a video walking through the independent factorial ANOVA.</p>
+<p>An independent factorial ANOVA includes two or more between-subjects factors. Each participant belongs to one level of each factor, and different participants are in the different combinations of factor levels.</p>
+<section id="identify-the-design" class="level3">
+<h3 class="anchored" data-anchor-id="identify-the-design">Identify the Design</h3>
+<p>For this example, we will use the <code>rtfm</code> dataset from the <code>lsj-data</code> library. The continuous outcome variable is <code>grade</code>. There are two between-subjects factors:</p>
+<ul>
+<li><code>attend</code>: whether the student attended lectures</li>
+<li><code>reading</code>: whether the student read the textbook</li>
+</ul>
+<p>Both factors have two levels: <code>0</code> = no and <code>1</code> = yes. This is a 2 × 2 independent factorial ANOVA because there are two between-subjects factors and each factor has two levels. Our research question is: Do attendance, reading, and their interaction predict student grades?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A researcher studies whether sleep condition and caffeine condition affect reaction time. Participants are randomly assigned to either normal sleep or sleep deprivation. They are also randomly assigned to either caffeine or no caffeine.</p>
+<ol type="1">
+<li>How many factors are there?</li>
+<li>What are the factors?</li>
+<li>Why is this an independent factorial design?</li>
+<li>What would the interaction test?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>There are two factors.</li>
+<li>The factors are sleep condition and caffeine condition.</li>
+<li>This is an independent factorial design because both factors are between-subjects factors. Each participant is assigned to only one sleep condition and only one caffeine condition.</li>
+<li>The interaction would test whether the effect of caffeine on reaction time depends on sleep condition.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Here’s a <a href="https://www.youtube.com/watch?v=EynjbSDW56I">video</a> walking through the independent factorial ANOVA.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="vembedr">
@@ -825,34 +947,139 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Because we do not have a within-group IV, we will select the ANOVA analysis. Move grade to your Dependent Variable box and both attend and reading to your Fixed Factors. Select all the same options as you did for the one-way ANOVA (i.e., <span class="math inline">\(\omega^2\)</span>, assumption checks, Tukey’s post hoc tests for the two variables attend and reading, estimated marginal means).</p>
-<p>Let’s go through the output (check that your output matches!) and then discuss how to write up the results in APA format. First, we need to check assumptions. The Levene’s test and Shapiro-Wilk’s test are shown below. We can see that we meet the assumption of normality but fail to meet the assumption of homogeneity of variance. Unfortunately, we cannot perform a Welch’s F-test with more than one independent factorial so we will note this failed assumption and move on.</p>
+</section>
+<section id="check-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="check-assumptions">Check Assumptions</h3>
+<p>For an independent factorial ANOVA, the assumptions are similar to the one-way ANOVA: approximate normality, homogeneity of variance, a continuous outcome variable, and independent observations.</p>
+<p>In this example, the normality assumption appears reasonable, but Levene’s test is statistically significant, which suggests that the homogeneity-of-variance assumption may not be met. jamovi does not provide a simple Welch’s ANOVA option for factorial designs in the same way it does for one-way ANOVA. Because this example is being used to illustrate factorial ANOVA, we will continue with the standard factorial ANOVA but note the assumption concern when interpreting the results.</p>
 <p><img src="images/06-factorial-anova/independent-factorial_assumptions.png" class="img-fluid"></p>
-<p>Let’s look at the main results next. We got three lines of results in addition to the typical residuals (error). The first two lines are our main effects of <code>attend</code> and <code>reading</code> on grades. The p-values for both are statistically significant indicating attend affects grades and reading affects grades. However, it also added an interaction term of <code>attend * reading</code>, which is not statistically significant. This means we do not have an interaction between attend and reading on grades. Interactions will be discussed in more detail in the next section.</p>
+</section>
+<section id="run-the-factorial-anova-in-jamovi" class="level3">
+<h3 class="anchored" data-anchor-id="run-the-factorial-anova-in-jamovi">Run the Factorial ANOVA in jamovi</h3>
+<p>Because both factors are between-subjects factors, use <strong>ANOVA → ANOVA</strong> in jamovi.</p>
+<ol type="1">
+<li><p>Move the continuous outcome variable <code>grade</code> to the <strong>Dependent Variable</strong> box.</p></li>
+<li><p>Move both grouping variables, <code>attend</code> and <code>reading</code>, to the <strong>Fixed Factors</strong> box.</p></li>
+<li><p>Under <strong>Effect Size</strong>, select (^2).</p></li>
+<li><p>Under <strong>Assumption Checks</strong>, select <code>Homogeneity test</code>, <code>Normality test</code>, and <code>Q-Q plot</code>.</p></li>
+<li><p>Under <strong>Estimated Marginal Means</strong>, request marginal means tables and plots for <code>attend</code>, <code>reading</code>, and the <code>attend * reading</code> interaction.</p></li>
+<li><p>If needed, use <strong>Post Hoc Tests</strong> for factors with three or more levels. In this example, each factor has only two levels, so the main effects can be interpreted directly from the marginal means.</p></li>
+</ol>
+</section>
+<section id="interpret-main-effects-and-interactions" class="level3">
+<h3 class="anchored" data-anchor-id="interpret-main-effects-and-interactions">Interpret Main Effects and Interactions</h3>
+<p>The ANOVA table includes three effects: the main effect of <code>attend</code>, the main effect of <code>reading</code>, and the <code>attend * reading</code> interaction.</p>
+<p>The main effect of <code>attend</code> tests whether grades differ between students who attended lectures and students who did not, averaging across reading status. The main effect of <code>reading</code> tests whether grades differ between students who read the textbook and students who did not, averaging across attendance status. The interaction tests whether the relationship between attendance and grades depends on whether students read the textbook.</p>
+<p>In this example, both main effects are statistically significant. Students who attended lectures had higher grades than students who did not, and students who read the textbook had higher grades than students who did not. The interaction is not statistically significant, which suggests that the effect of attendance does not clearly depend on whether students read the textbook.</p>
 <p><img src="images/06-factorial-anova/independent-factorial_results.png" class="img-fluid"></p>
-<p>Although we could simply look at the means to know whether attending or reading had higher grades than not attending or not reading because there are only two conditions, we can also look at the post hoc tests and definitely need to look at them if we have three or more conditions per IV. These are shown below. Because the mean differences are negative, we can determine that the second group had higher means than the first group. We can confirm that with the estimated marginal means (not shown here).</p>
+<p>Because both <code>attend</code> and <code>reading</code> have only two levels, we do not need post hoc tests to determine which levels differ. Each significant main effect already compares the two levels of that factor. The estimated marginal means tell us the direction of the differences.</p>
+<p>Post hoc tests become more useful when a factor has three or more levels. For example, if <code>reading</code> had three levels, we would need follow-up comparisons to identify which levels differed.</p>
 <p><img src="images/06-factorial-anova/independent-factorial_posthoc.png" class="img-fluid"></p>
-<p>Last, we can write-up our results!</p>
-<blockquote class="blockquote">
-<p>We were interested in knowing how attendance and reading affected student grades. An independent factorial ANOVA showed that both attendance (<em>F</em> [1, 4] = 18.25, <em>p</em> = .013, <span class="math inline">\(\omega^2\)</span> = .26) and reading (<em>F</em> [1, 4] = 44.17, <em>p</em> = .003, <span class="math inline">\(\omega^2\)</span> = .64) affected student grades; there was no significant interaction between attendance and reading (<em>F</em> [1, 4] = 8.00, <em>p</em> = .660, <span class="math inline">\(\omega^2\)</span> = -.01). Tukey’s post hoc comparisons show that students who attended lectures (<em>M</em> = 75.50, <em>SE</em> = 2.98) had higher grades than students who did not (<em>M</em>&nbsp;= 57.50, <em>SE</em> = 2.98; <em>p</em> = .003, <em>d</em> = 4.70); furthermore, students who read (<em>M</em> = 80.50, <em>SE</em> = 2.98) had higher grades than students who did not (<em>M</em> = 52.50, <em>SE</em> = 2.98; <em>p</em> = .013; <em>d</em> = 3.02).</p>
-</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a 2 × 2 factorial ANOVA, the main effect of Factor A is statistically significant, the main effect of Factor B is statistically significant, and the interaction is not statistically significant.</p>
+<p>What does the nonsignificant interaction suggest?</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The nonsignificant interaction suggests that the effect of one factor does not clearly depend on the level of the other factor. In other words, the pattern for one factor is fairly similar across the levels of the other factor.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="interactions" class="level3">
 <h3 class="anchored" data-anchor-id="interactions">Interactions</h3>
-<p>Interactions occur when the effect of one IV on the DV depends on the level of the other IV. If you did not want to test for interaction effects, you could remove them from the Model Terms in the Model drop-down menu.</p>
-<p>However, by default they will include them. If you have 2-3 IVs, it may be reasonable to look at these interactions. However, 3-variable interactions (e.g., IV1 * IV2 * IV3) are pushing it and 4-variable interactions are highly implausible. Be critical in which interaction terms you include!</p>
-<p>jamovi can provide a plot of your interaction, which can be helpful to help interpret your results. Below is the plot for our interaction of attendance on reading.</p>
+<p>An <strong>interaction</strong> occurs when the relationship between one factor and the outcome changes across the levels of another factor. In other words, the effect of one factor depends on the level of the other factor.</p>
+<p>Interaction plots can help us understand the pattern. In a simple two-factor interaction plot, the lines represent the levels of one factor and the x-axis represents the levels of the other factor. When lines are roughly parallel, that usually suggests little or no interaction. When lines are clearly nonparallel or cross, that suggests a possible interaction.</p>
+<p>However, the plot is not the statistical test. We use the ANOVA table to determine whether the interaction is statistically significant, and we use the plot to understand the pattern.</p>
+<p>In this example, the lines are roughly parallel, which is consistent with the nonsignificant interaction. The plot also shows that grades are higher for students who attended lectures and higher for students who read the textbook, which is consistent with the significant main effects.</p>
 <p><img src="images/06-factorial-anova/independent-factorial_plot.png" class="img-fluid"></p>
-<p>The parallel lines that are sloping upward tell me there is a significant main effect for both IVs but no interaction. How do I know that? With two variables, there are only so many interaction shapes possible. You can <a href="https://statisticsbyjim.com/regression/interaction-effects/">read more about interaction effects</a> from Statistics by Jim. <a href="https://courses.washington.edu/smartpsy/interactions.htm">This website</a> does a fantastic time showing you all 8 combinations of the three effects (2 main effects and 1 interaction effect). Spend some time looking through it and familiarizing yourself with the plots!</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In an interaction plot, the lines for two groups cross.</p>
+<p>Does this automatically mean the interaction is statistically significant?</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>No.&nbsp;Crossing or nonparallel lines suggest that an interaction may be present, but the ANOVA table provides the statistical test of the interaction. The plot helps us interpret the pattern.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="write-up-the-results" class="level3">
+<h3 class="anchored" data-anchor-id="write-up-the-results">Write Up the Results</h3>
+<blockquote class="blockquote">
+<p>A 2 × 2 independent factorial ANOVA was conducted to examine whether attendance and textbook reading were associated with student grades. There was a significant main effect of attendance, <em>F</em>(1, 4) = 18.25, <em>p</em> = .013, (^2 = .26), such that students who attended lectures had higher grades than students who did not. There was also a significant main effect of reading, <em>F</em>(1, 4) = 44.17, <em>p</em> = .003, (^2 = .64), such that students who read the textbook had higher grades than students who did not. The attendance × reading interaction was not statistically significant, <em>F</em>(1, 4) = 8.00, <em>p</em> = .600, (^2 = -.01).</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Tukey’s post hoc comparisons show that students who attended lectures (<em>M</em> = 75.50, <em>SE</em> = 2.98) had higher grades than students who did not (<em>M</em> = 57.50, <em>SE</em> = 2.98; <em>p</em> = .003, <em>d</em> = 4.70); furthermore, students who read (<em>M</em> = 80.50, <em>SE</em> = 2.98) had higher grades than students who did not (<em>M</em> = 52.50, <em>SE</em> = 2.98; <em>p</em> = .013; <em>d</em> = 3.02).</p>
+</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Because each factor has only two levels, follow-up pairwise comparisons are not necessary for the main effects. The estimated marginal means can be used to describe the direction of each main effect.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="repeated-measures-factorial-anova" class="level2">
 <h2 class="anchored" data-anchor-id="repeated-measures-factorial-anova">Repeated Measures Factorial ANOVA</h2>
-<p>This is also sometimes called the two-way (or three-way or n-way, depending on the <em>n</em> of IVs you have) repeated measures ANOVA. Let’s go through an example repeated measures factorial ANOVA. The dataset is courtesy of <a href="https://www.real-statistics.com/anova-repeated-measures/two-within-subjects-factors/">Real Statistics Using Excel</a>.</p>
-<blockquote class="blockquote">
-<p>A company has created a new training program for their customer service staff. To test the effectiveness of the program they took a sample of 10 employees and assessed their performance in three areas: &nbsp;Product (knowledge of the company’s products and services), Client (their ability to relate to the customer with politeness and empathy) and Action (their ability to take action to help the customer). They then had the same 10 employees take the training course and rated their performance after the program in the same three areas.</p>
-</blockquote>
-<p>You can find the dataset here to follow along: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Repeated-measures-factorial-ANOVA.xlsx">Repeated-measures-factorial-ANOVA.xlsx Download</a></p>
-<p>Here’s a video walking through the repeated measures factorial ANOVA.</p>
+<p>A repeated measures factorial ANOVA includes two or more within-subjects factors. Each participant provides scores for every combination of the repeated-measures factor levels.</p>
+<section id="identify-the-design-1" class="level3">
+<h3 class="anchored" data-anchor-id="identify-the-design-1">Identify the Design</h3>
+<p>In this example, 10 employees were evaluated before and after a training program. They were evaluated in three performance areas: product knowledge, client relations, and action. This creates a 2 × 3 repeated measures factorial design:</p>
+<ul>
+<li><strong>Time:</strong> pre-training and post-training</li>
+<li><strong>Area:</strong> product, client, and action</li>
+</ul>
+<p>Both factors are within-subjects factors because the same employees are measured at every time point and in every area.</p>
+<p>The dataset is adapted from an example from <a href="https://www.real-statistics.com/anova-repeated-measures/two-within-subjects-factors/">Real Statistics Using Excel</a>. You can find the dataset here to follow along: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Repeated-measures-factorial-ANOVA.xlsx">Repeated-measures-factorial-ANOVA.xlsx Download</a>.</p>
+<p>Here’s a <a href="https://www.youtube.com/watch?v=BQAFjSzoFHU">video</a> walking through the repeated measures factorial ANOVA.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="vembedr">
@@ -862,33 +1089,123 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>In jamovi, select Repeated Measures ANOVA under the ANOVA analysis option. Here are the general steps:</p>
-<ol type="1">
-<li><p>In Repeated Measures Factors, you’ll need to name both factors. Rename <code>RM Factor 1</code> to Time and <code>RM Factor 2</code> to Area. Under Time, specify two levels: Pre and Post. Under Area, specify three levels: Product, Client, and Action.</p></li>
-<li><p>In Repeated Measures Cells, you’ll now have six cells with the combinations of the 6 columns you have. Drag the variable from the left into the correct cell on the right. Be careful here! For example, you need to put the Pre-Product variable into the cell “Pre, Product”.</p></li>
-<li><p>Name your dependent variable label “Performance” and select `Generalised <span class="math inline">\(\eta^2\)</span>.</p></li>
-<li><p>Under Assumption Checks, select Sphericity tests</p></li>
-<li><p>Under Post Hoc Tests, move Area and Time over and select Tukey.</p></li>
-<li><p>Under Estimated Marginal Means, move Time over into Term 1, Area into Term 2, and both Time and Area into Term 3. Select plots and tables, Observed scores, and Equal cell weights.</p></li>
-</ol>
-<p>Now let’s go over selected output. Not shown here is the Q-Q plot, which we use to test normality. First, we need to check our assumption of sphericity. All the Mauchly’s W’s are not statistically significant so we satisfy the assumption of sphericity and do not need to apply any sphericity corrections.</p>
+</section>
+<section id="check-assumptions-1" class="level3">
+<h3 class="anchored" data-anchor-id="check-assumptions-1">Check Assumptions</h3>
+<p>First, we check sphericity for the within-subjects effects. In a repeated measures factorial ANOVA, sphericity may be tested for each within-subjects factor and interaction that has more than two levels. Mauchly’s tests are not statistically significant in this example, so the sphericity assumption appears reasonable and no correction is needed.</p>
 <p><img src="images/06-factorial-anova/rm-factorial_assumption.png" class="img-fluid"></p>
-<p>Next let’s look at the within subjects effects table. Remember, we do not need to worry about the between subjects effects table because we do not have one; it will be used in the mixed factorial design below. Overall, we see a significant main effect of area, a significant main effect of time, and a significant interaction effect of both area and time. Neat!</p>
+</section>
+<section id="run-the-repeated-measures-factorial-anova-in-jamovi" class="level3">
+<h3 class="anchored" data-anchor-id="run-the-repeated-measures-factorial-anova-in-jamovi">Run the Repeated Measures Factorial ANOVA in jamovi</h3>
+<p>In jamovi, select <strong>ANOVA → Repeated Measures ANOVA</strong>.</p>
+<ol type="1">
+<li><p>Under <strong>Repeated Measures Factors</strong>, rename <code>RM Factor 1</code> to <code>Time</code> and give it two levels: <code>Pre</code> and <code>Post</code>.</p></li>
+<li><p>Add a second repeated measures factor named <code>Area</code> and give it three levels: <code>Product</code>, <code>Client</code>, and <code>Action</code>.</p></li>
+<li><p>Under <strong>Repeated Measures Cells</strong>, move each variable into the correct cell. For example, move the pre-training product score into the <code>Pre, Product</code> cell.</p></li>
+<li><p>Rename the <strong>Dependent Variable Label</strong> to <code>Performance</code>.</p></li>
+<li><p>Select generalized eta-squared, (^2_G), as the effect size.</p></li>
+<li><p>Under <strong>Assumption Checks</strong>, select <code>Sphericity tests</code> and <code>Q-Q plot</code>.</p></li>
+<li><p>Under <strong>Post Hoc Tests</strong>, request Tukey comparisons for statistically significant main effects. If the interaction is statistically significant and you want to understand it more fully, you may also need follow-up comparisons for the interaction term.</p></li>
+<li><p>Under <strong>Estimated Marginal Means</strong>, request tables and plots for <code>Time</code>, <code>Area</code>, and the <code>Time * Area</code> interaction. Select <code>Observed scores</code>.</p></li>
+</ol>
+</section>
+<section id="interpret-main-effects-and-interactions-1" class="level3">
+<h3 class="anchored" data-anchor-id="interpret-main-effects-and-interactions-1">Interpret Main Effects and Interactions</h3>
+<p>The Within Subjects Effects table shows three effects: the main effect of <code>Time</code>, the main effect of <code>Area</code>, and the <code>Time * Area</code> interaction.</p>
+<p>The main effect of Time tests whether performance differs from pre-training to post-training, averaging across performance areas. The main effect of Area tests whether performance differs across product, client, and action areas, averaging across time. The interaction tests whether the pre-to-post change differs across the three performance areas.</p>
+<p>In this example, there is a statistically significant main effect of Time, a statistically significant main effect of Area, and a statistically significant Time × Area interaction. Because the interaction is statistically significant, the main effects should be interpreted cautiously and in relation to the interaction pattern.</p>
 <p><img src="images/06-factorial-anova/rm-factorial_results.png" class="img-fluid"></p>
-<p>Next, we can look at post hoc comparisons because the main effects were all statistically significant. For area, we can see that client and action had significantly higher means than product, but there was no difference between client and action. Furthermore, post-intervention performance was significantly higher than pre-intervention.</p>
+<p>Because the main effects are statistically significant, we can examine the Tukey post hoc comparisons for Time and Area. The post hoc comparisons indicate that post-training performance was higher than pre-training performance. For Area, client and action performance were higher than product performance, but client and action performance did not differ from each other.</p>
 <p><img src="images/06-factorial-anova/rm-factorial_tukey.png" class="img-fluid"></p>
-<p>Last, let’s look at the interaction to get a sense of what the interaction looks like. It appears that although there are no differences between pre- and post-intervention for product, there are significant differences from pre- to post-intervention for both client and action. To be more specific on where the statistically significant differences are, you can also ask for post hoc tests for the interaction term. This is where including a plot can be very helpful for your audience!</p>
+<p>Because the Time × Area interaction is statistically significant, we should also examine the interaction plot and, if needed, follow-up comparisons for the interaction. The plot suggests that performance improved from pre-training to post-training for client and action performance, but not as clearly for product performance.</p>
 <p><img src="images/06-factorial-anova/rm-factorial_interaction.png" class="img-fluid"></p>
-<p>Now we have everything we need (in addition to the estimated marginal means) and can write-up our results.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a 2 × 3 repeated measures factorial ANOVA, the Time × Area interaction is statistically significant.</p>
+<p>What does this interaction mean in words?</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It means that the change across time is not the same for every area. For example, performance might improve from pre to post in some areas but not others.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="write-up-the-results-1" class="level3">
+<h3 class="anchored" data-anchor-id="write-up-the-results-1">Write Up the Results</h3>
 <blockquote class="blockquote">
-<p>We tested a 2 (time: pre- and post-intervention) x 3 (area: product, client, action) repeated measures factorial design to examine how both time and area affected performance. We satisfied the assumption of sphericity for all effects. There was a significant main effect of time (<em>F</em> [1, 9] = 33.85, <em>p</em> &lt; .001, <span class="math inline">\(\eta^2_G\)</span> = .25) such that performance at post-intervention (<em>M</em> = 26.80, <em>SE</em> = 1.84) was higher than at pre-intervention (<em>M</em> = 19.37, <em>SE</em> = 1.84). There was also a significant main effect of area (<em>F</em> [2, 18] = 26.96, <em>p</em> &lt; .001, <span class="math inline">\(\eta^2_G\)</span> = .36) such that both client (<em>M</em> = 25.10, <em>SE</em> = 1.95) and action (<em>M</em> = 27.65, <em>SE</em>&nbsp;= 19.5) performance was higher than product performance (<em>M</em> = 16.50, <em>SE</em> = 1.95), but there was no difference between client and action performance. Lastly, there was a significant interaction between time and area such that there were no differences in product performance from pre- to post-intervention but there was for client and action performance (see Figure 1).</p>
+<p>A 2 × 3 repeated measures factorial ANOVA was conducted to examine whether employee performance differed by time and performance area. The sphericity assumption appeared reasonable for all within-subjects effects. There was a significant main effect of time, <em>F</em>(1, 9) = 33.85, <em>p</em> &lt; .001, (^2_G = .25), such that post-training performance was higher than pre-training performance. There was also a significant main effect of area, <em>F</em>(2, 18) = 26.96, <em>p</em> &lt; .001, (^2_G = .36). Tukey post hoc comparisons indicated that client and action performance were higher than product performance, but client and action performance did not differ from each other. These main effects were qualified by a significant Time × Area interaction, indicating that the pre-to-post change differed across performance areas, <em>F</em>(2, 18) = 12.63, <em>p</em> &lt; .001, (^2_G = .08). As shown in Figure 1, performance improved from pre-training to post-training for client and action performance, but not clearly for product performance.</p>
 </blockquote>
+</section>
 </section>
 <section id="mixed-factorial-anova" class="level2">
 <h2 class="anchored" data-anchor-id="mixed-factorial-anova">Mixed Factorial ANOVA</h2>
-<p>You can find the dataset here to follow along: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/mixed-factorial.sav">mixed-factorial.sav Download</a></p>
-<p>This dataset comes from a larger studying examining the effect of a delayed reward preference of three commodities (food, money, and music) on food cravings (as rated by the Food Craving Questionnaire [FCQ]) for each participant. Participants were in one of two conditions: the control condition did not do anything and the experimental condition had participants do the tasks while fasting.</p>
-<p>Therefore, this study is a 2 (between-subjects: condition [control or fasting]) x 3 (within-subjects: reward [food, money, and music]) mixed factorial design.</p>
+<p>A mixed factorial ANOVA includes at least one between-subjects factor and at least one within-subjects factor. Participants belong to only one level of the between-subjects factor, but they provide scores for all levels of the within-subjects factor.</p>
+<section id="identify-the-design-2" class="level3">
+<h3 class="anchored" data-anchor-id="identify-the-design-2">Identify the Design</h3>
+<p>In this example, participants were assigned to one of two conditions: a control condition or a fasting condition. Each participant also rated cravings for three reward types: food, money, and music. This creates a 2 × 3 mixed factorial design:</p>
+<ul>
+<li><strong>Condition:</strong> control or fasting, between-subjects</li>
+<li><strong>Reward:</strong> food, money, or music, within-subjects</li>
+</ul>
+<p>The outcome variable is food craving rating. You can find the dataset here to follow along: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/mixed-factorial.sav">mixed-factorial.sav Download</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Check Your Understanding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check Your Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A researcher compares anxiety across three time points: baseline, post-treatment, and follow-up. Participants are also assigned to one of two treatment groups: therapy or waitlist control.</p>
+<ol type="1">
+<li>Which factor is within-subjects?</li>
+<li>Which factor is between-subjects?</li>
+<li>What would the Time × Group interaction test?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Check Your Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Time is the within-subjects factor because the same participants are measured at baseline, post-treatment, and follow-up.</li>
+<li>Group is the between-subjects factor because each participant is in either the therapy group or the waitlist control group.</li>
+<li>The Time × Group interaction tests whether the pattern of change over time differs between the therapy and waitlist control groups.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>Here’s a video walking through the mixed factorial ANOVA.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -899,31 +1216,96 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>To perform a mixed factorial ANOVA, we use the same procedures as the repeated measures ANOVA but we also need to add a between-subjects factor.</p>
-<ol type="1">
-<li><p>To perform a mixed factorial ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose “Repeated Measures ANOVA”.</p></li>
-<li><p>Under “Repeated Measures Factors” name your independent variable. In this case you can name it “Reward”. Rename the three levels of Task: Food, Money, and Music.</p></li>
-<li><p>Under “Repeated Measures Cells” move the given variable into the correct level. For example, you’ll move FQ_1 to Food, FQ_2 to Money, and FQ_3 to Music.</p></li>
-<li><p>Under “Between Subject Factors” add your between-subjects variable “condition.</p></li>
-<li><p>Select Generalised <span class="math inline">\(\eta^2\)</span> as your measure of effect size.</p></li>
-<li><p>In the Assumption Checks drop-down menu, select <code>Sphericity tests</code>.</p></li>
-<li><p>In the Post Hoc Tests drop-down menu, move your two independent variables over and select <code>Tukey</code>. Remember that we only interpret these if the overall <em>F</em> is statistically significant.</p></li>
-<li><p>In the Estimated Marginal Means drop-down menu, move Reward, Condition, and both reward and condition into the terms under Marginal Means. Select tables and plots, and select <code>Observed scores</code>. Uncheck <code>Equal cell weights</code>.</p></li>
-</ol>
-<p>Now let’s go through the output!</p>
-<p>First, as always we check our assumption of sphericity. Mauchly’s W is not statistically significant (<em>p</em> = .073) so we satisfy the assumption of sphericity. We do not need to apply a sphericity correction.</p>
+</section>
+<section id="check-assumptions-2" class="level3">
+<h3 class="anchored" data-anchor-id="check-assumptions-2">Check Assumptions</h3>
+<p>First, we check sphericity for the within-subjects factor, Reward. Mauchly’s test is not statistically significant, <em>p</em> = .073, so the sphericity assumption appears reasonable and no correction is needed.</p>
 <p><img src="images/06-factorial-anova/mixed_assumptions.png" class="img-fluid"></p>
-<p>Next, we interpret out output! This time we interpret both our within subjects effects and between subjects effects tables. In the within subjects effects table, our main effect of reward is statistically significant. In the between subjects effects table, our main effect of condition is statistically significant. However, in the within subjects effects table, there is no statistically significant interaction effect of reward on condition.</p>
+</section>
+<section id="run-the-mixed-factorial-anova-in-jamovi" class="level3">
+<h3 class="anchored" data-anchor-id="run-the-mixed-factorial-anova-in-jamovi">Run the Mixed Factorial ANOVA in jamovi</h3>
+<p>To perform a mixed factorial ANOVA, use <strong>ANOVA → Repeated Measures ANOVA</strong> because the design includes a within-subjects factor.</p>
+<ol type="1">
+<li><p>Under <strong>Repeated Measures Factors</strong>, rename <code>RM Factor 1</code> to <code>Reward</code>.</p></li>
+<li><p>Rename the three levels of <code>Reward</code> as <code>Food</code>, <code>Money</code>, and <code>Music</code>.</p></li>
+<li><p>Under <strong>Repeated Measures Cells</strong>, move each variable into the correct cell. Move <code>FQ_1</code> to Food, <code>FQ_2</code> to Money, and <code>FQ_3</code> to Music.</p></li>
+<li><p>Move the between-subjects variable <code>condition</code> to <strong>Between Subjects Factors</strong>.</p></li>
+<li><p>Select generalized eta-squared, (^2_G), as the effect size.</p></li>
+<li><p>Under <strong>Assumption Checks</strong>, select <code>Sphericity tests</code> and <code>Q-Q plot</code>.</p></li>
+<li><p>Under <strong>Post Hoc Tests</strong>, request Tukey comparisons for statistically significant main effects. If the interaction is statistically significant, you may need follow-up comparisons for the interaction term.</p></li>
+<li><p>Under <strong>Estimated Marginal Means</strong>, request tables and plots for <code>Reward</code>, <code>Condition</code>, and the <code>Reward * Condition</code> interaction. Select <code>Observed scores</code>.</p></li>
+</ol>
+</section>
+<section id="interpret-main-effects-and-interactions-2" class="level3">
+<h3 class="anchored" data-anchor-id="interpret-main-effects-and-interactions-2">Interpret Main Effects and Interactions</h3>
+<p>For a mixed factorial ANOVA, we interpret both the Within Subjects Effects table and the Between Subjects Effects table. The Within Subjects Effects table includes the main effect of the within-subjects factor, Reward, and the Reward × Condition interaction. The Between Subjects Effects table includes the main effect of the between-subjects factor, Condition.</p>
+<p>In this example, the main effect of Reward is statistically significant, and the main effect of Condition is statistically significant. The Reward × Condition interaction is not statistically significant. This suggests that food craving ratings differ by reward type and by condition, but the pattern across reward types does not clearly differ between the control and fasting conditions.</p>
 <p><img src="images/06-factorial-anova/mixed_results.png" class="img-fluid"></p>
-<p>To understand where the differences lie between conditions or reward preferences, we look to our post hoc tests. For reward, it looks like there is only a significant difference between food and music (<em>p</em> = .009). For condition, it looks like cravings were higher in the fasting group than in the control group. We can look at the estimated marginal means tables to find the actual Means of the conditions and see the plots.</p>
+<p>Because the main effect of Reward is statistically significant, we can examine the Tukey post hoc comparisons for Reward. The only significant pairwise difference is between food and music. Because the main effect of Condition has only two levels, no post hoc test is needed to identify the difference; the estimated marginal means show that cravings were higher in the fasting condition than in the control condition.</p>
 <p><img src="images/06-factorial-anova/mixed_posthoc.png" class="img-fluid"></p>
-<p>We can look at the interaction plot, but notice that the lines are parallel which is a good indication that there is no significant interaction.</p>
+<p>The interaction plot is still useful for understanding the pattern. In this example, the lines are fairly parallel, which is consistent with the nonsignificant Reward × Condition interaction.</p>
 <p><img src="images/06-factorial-anova/mixed_interaction.png" class="img-fluid"></p>
-<p>Lastly, we can write up the results in APA style!</p>
+</section>
+<section id="write-up-the-results-2" class="level3">
+<h3 class="anchored" data-anchor-id="write-up-the-results-2">Write Up the Results</h3>
 <blockquote class="blockquote">
-<p>To test how both condition (control or fasting) and reward preference (food, money, and music) affected food cravings, we performed a mixed factorial ANOVA. There was a significant main effect of condition (<em>F</em> [1, 98] = 82.44, <em>p</em> &lt; .001, <span class="math inline">\(\eta^2_G\)</span> = .43) and a significant main effect of reward (<em>F</em> [2, 196] = 4.45, <em>p</em> = .013, <span class="math inline">\(\eta^2_G\)</span> = .00). However, there was no statistically significant interaction effect of reward on condition (<em>F</em> [2, 196] = .66, <em>p</em> = .519, <span class="math inline">\(\eta^2_G\)</span> = .00).</p>
-<p>For condition, participants who fasted (<em>M</em> = 3.81, <em>SE</em> = .11) reported significantly more food cravings than participants in the control condition (<em>M</em> = 2.33, <em>SE</em> = .11; <span class="math inline">\(p_{Tukey}\)</span> &lt; .001). For reward, the food reward (<em>M</em> = 3.14, <em>SE</em> = .09) led to significantly higher food cravings than the music reward (<em>M</em> = 3.00, <em>SE</em> = .09; <span class="math inline">\(p_{Tukey}\)</span> = .009), but there was no differences between the money reward (<em>M</em> = 3.07, <em>SE</em> = .09) and both food (<span class="math inline">\(p_{Tukey}\)</span> = .340) or music (<span class="math inline">\(p_{Tukey}\)</span> = .258).</p>
+<p>A 2 × 3 mixed factorial ANOVA was conducted to examine whether food craving ratings differed by condition and reward type. Condition was a between-subjects factor with two levels: control and fasting. Reward was a within-subjects factor with three levels: food, money, and music. The sphericity assumption appeared reasonable for Reward, so no correction was applied.</p>
+<p>There was a significant main effect of condition, <em>F</em>(1, 98) = 82.44, <em>p</em> &lt; .001, (^2_G = .43), such that participants in the fasting condition reported higher cravings (<em>M</em> = 3.81, <em>SE</em> = 0.11) than participants in the control condition (<em>M</em> = 2.33, <em>SE</em> = 0.11). There was also a significant main effect of reward, <em>F</em>(2, 196) = 4.45, <em>p</em> = .013, (^2_G = .00). Tukey post hoc comparisons indicated that cravings were higher for food rewards (<em>M</em> = 3.14, <em>SE</em> = 0.09) than music rewards (<em>M</em> = 3.00, <em>SE</em> = 0.09), <em>p</em> = .009. Cravings for money rewards (<em>M</em> = 3.07, <em>SE</em> = 0.09) did not differ significantly from food rewards, <em>p</em> = .340, or music rewards, <em>p</em> = .258. The Reward × Condition interaction was not statistically significant, <em>F</em>(2, 196) = 0.66, <em>p</em> = .519, (^2_G = .00).</p>
 </blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Some effect sizes may appear as .00 after rounding, especially when the effect is very small. Always interpret the effect size in context rather than relying on statistical significance alone.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Design</th>
+<th style="text-align: right;">Between-Subjects Factors</th>
+<th style="text-align: right;">Within-Subjects Factors</th>
+<th>Main Output Tables</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Independent factorial ANOVA</td>
+<td style="text-align: right;">Two or more</td>
+<td style="text-align: right;">None</td>
+<td>ANOVA table</td>
+</tr>
+<tr class="even">
+<td>Repeated measures factorial ANOVA</td>
+<td style="text-align: right;">None</td>
+<td style="text-align: right;">Two or more</td>
+<td>Within Subjects Effects</td>
+</tr>
+<tr class="odd">
+<td>Mixed factorial ANOVA</td>
+<td style="text-align: right;">One or more</td>
+<td style="text-align: right;">One or more</td>
+<td>Within Subjects Effects and Between Subjects Effects</td>
+</tr>
+</tbody>
+</table>
+<p>Across all factorial ANOVA designs, remember to interpret main effects and interactions separately. Main effects describe the overall relationship between one factor and the outcome. Interactions describe whether the relationship between one factor and the outcome depends on another factor.</p>
 
 
 </section>

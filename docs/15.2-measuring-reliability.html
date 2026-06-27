@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>15.2 Measuring Reliability – Stats with jamovi</title>
+<title>15.2 Estimating Reliability – Stats with jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -86,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15.0-reliability.html">15. Reliability</a></li><li class="breadcrumb-item"><a href="./15.2-measuring-reliability.html">15.2 Measuring Reliability</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15.0-reliability.html">15. Reliability</a></li><li class="breadcrumb-item"><a href="./15.2-measuring-reliability.html">15.2 Estimating Reliability</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -609,7 +609,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13.2 Finding Group Differences</span></a>
+ <span class="menu-text">13.2 Finding Group Differences After ANOVA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -659,6 +659,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">14.3 General Linear Model</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.4-comparing-strengths-of-correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.4 Comparing Strengths of Correlations</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -673,13 +679,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.1-threats-to-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.1 Threats to Reliability</span></a>
+ <span class="menu-text">15.1 Sources of Measurement Error</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.2-measuring-reliability.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">15.2 Measuring Reliability</span></a>
+ <span class="menu-text">15.2 Estimating Reliability</span></a>
   </div>
 </li>
       </ul>
@@ -702,7 +708,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16.2-threats-to-statistical-validity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">16.2 Threats to Statistical Validity</span></a>
+ <span class="menu-text">16.2 Threats to Statistical Conclusion Validity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -747,17 +753,20 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#test-retest-reliability" id="toc-test-retest-reliability" class="nav-link active" data-scroll-target="#test-retest-reliability">Test-Retest Reliability</a></li>
+  <li><a href="#alternate-forms-reliability" id="toc-alternate-forms-reliability" class="nav-link" data-scroll-target="#alternate-forms-reliability">Alternate-Forms Reliability</a></li>
   <li><a href="#internal-consistency" id="toc-internal-consistency" class="nav-link" data-scroll-target="#internal-consistency">Internal Consistency</a></li>
   <li><a href="#inter-rater-reliability" id="toc-inter-rater-reliability" class="nav-link" data-scroll-target="#inter-rater-reliability">Inter-Rater Reliability</a></li>
+  <li><a href="#reporting-reliability-evidence" id="toc-reporting-reliability-evidence" class="nav-link" data-scroll-target="#reporting-reliability-evidence">Reporting Reliability Evidence</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15.0-reliability.html">15. Reliability</a></li><li class="breadcrumb-item"><a href="./15.2-measuring-reliability.html">15.2 Measuring Reliability</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15.0-reliability.html">15. Reliability</a></li><li class="breadcrumb-item"><a href="./15.2-measuring-reliability.html">15.2 Estimating Reliability</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">15.2 Measuring Reliability</h1>
+<h1 class="title">15.2 Estimating Reliability</h1>
 </div>
 
 
@@ -774,24 +783,163 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Reliability is not estimated in one single way. The appropriate reliability evidence depends on the measurement design, the construct, the scoring procedure, and the source of error we are trying to evaluate.</p>
+<p>A reliability coefficient should answer a specific question. For example:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 62%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Reliability Question</th>
+<th>Common Form of Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Are scores consistent over time?</td>
+<td>Test-retest reliability</td>
+</tr>
+<tr class="even">
+<td>Are two forms of a measure interchangeable?</td>
+<td>Alternate-forms or parallel-forms reliability</td>
+</tr>
+<tr class="odd">
+<td>Do items intended to measure the same construct produce consistent scores?</td>
+<td>Internal consistency</td>
+</tr>
+<tr class="even">
+<td>Do raters, observers, or coders assign consistent scores?</td>
+<td>Inter-rater reliability</td>
+</tr>
+</tbody>
+</table>
+<p>Reliability coefficients are often interpreted like correlations, with values closer to 1.00 indicating greater consistency. However, there is no universal cutoff that makes scores “reliable.” The level of reliability needed depends on the purpose of the scores. For example, higher reliability is needed when scores are used to make decisions about individuals than when they are used for exploratory group-level research.</p>
 <section id="test-retest-reliability" class="level2">
 <h2 class="anchored" data-anchor-id="test-retest-reliability">Test-Retest Reliability</h2>
-<p>Once you have collected data of a test at two time points, you can check for test-retest reliability using a correlation test. Higher correlation values indicate higher test-retest reliability (i.e., consistency across time points). If you have multiple time points to measure the test-test reliability with you can use a test of internal consistency instead (see below).</p>
-<p>You can also check for equivalence, similar to test-retest reliability, with parallel forms of tests, which are two versions of the same test. For example, instead of giving the same test to all participants, you might create two or more versions of the same test that measure things equivalently and check that equivalency using test-retest reliability. This is also tested with correlation.</p>
+<p><strong>Test-retest reliability</strong> evaluates the stability of scores over time. To estimate test-retest reliability, the same measurement procedure is administered to the same people on two occasions, and the scores from the two time points are correlated.</p>
+<p>Higher correlations indicate greater consistency across time. However, test-retest reliability only makes sense when the construct is expected to be relatively stable across the time interval. For example, test-retest reliability may be appropriate for a trait measure, but it may not be appropriate for a measure of current mood if mood is expected to change.</p>
+<p>The time interval matters. If the interval is too short, participants may remember their earlier responses, which can inflate the reliability estimate. If the interval is too long, real change in the construct may occur, which can lower the estimate even if the measure is functioning well.</p>
+<p>When there are more than two time points, the analysis should still match the question of stability over time. Researchers might examine correlations among repeated administrations, estimate stability using longitudinal models, or use other approaches designed for repeated measurements. Multiple time points do not turn test-retest reliability into internal consistency. Internal consistency concerns consistency across items, not consistency across occasions.</p>
+</section>
+<section id="alternate-forms-reliability" class="level2">
+<h2 class="anchored" data-anchor-id="alternate-forms-reliability">Alternate-Forms Reliability</h2>
+<p><strong>Alternate-forms reliability</strong> evaluates whether two versions of a measure produce similar scores. This is useful when researchers or practitioners need different forms of a test that are intended to be interchangeable.</p>
+<p>For example, an instructor might create two versions of an exam to reduce copying. A test developer might create alternate forms so that people can be assessed more than once without receiving the exact same items. If the two forms are intended to measure the same construct at the same difficulty level, scores on the forms should be highly related.</p>
+<p>Alternate-forms reliability is usually estimated by administering both forms to the same people and correlating the scores. If the forms are administered at different times, the estimate reflects both form equivalence and stability over time.</p>
+<p>Parallel forms are a stricter version of alternate forms. In classical test theory, parallel forms are assumed to have equal true scores and equal error variances. In practice, truly parallel forms are difficult to create, so many researchers use the broader term alternate forms.</p>
 </section>
 <section id="internal-consistency" class="level2">
 <h2 class="anchored" data-anchor-id="internal-consistency">Internal Consistency</h2>
-<p>There are some older methods of testing internal consistency of a test such as split-half reliability; we will not discuss them here as they are typically inappropriate to use now that we have more advanced computation abilities.</p>
-<p>Historically, Cronbach’s alpha has been the most popular way to test for internal consistency. Mathematically, it’s essentially an average score of all possible split-half reliability estimates.</p>
-<p>However, more contemporary views of Cronbach’s alpha is that it is not the most ideal indicator of reliability (e.g., <a href="https://psycnet.apa.org/record/2017-23572-001">McNeish, 2018</a>). One reason for this is that the assumptions of Cronbach’s alpha (i.e., tau equivalence, items measured on a continuous scale and are normally distributed, error of items do not covary, scale is unidimensional) are often difficult to meet and therefor can introduce error to alpha scores.</p>
-<p>There are many strategies one can use to overcome some of these limitations of Cronbach’s alpha (e.g., confidence intervals, bootstrapping) but another popular strategy is to use an alternative test of internal consistency: coefficient omega. There are various types of coefficient omega and <a href="https://doi.org/10.1177/2515245920951747">Flora (2020)</a> provides guidance on selecting the correct coefficient omega (see Fig. 4 of the article for a decision tree).</p>
+<p><strong>Internal consistency</strong> evaluates whether items or indicators intended to measure the same construct produce consistent scores. Internal consistency is relevant when a scale includes multiple items that are combined into a total score, average score, or subscale score.</p>
+<p>Historically, <strong>Cronbach’s alpha</strong> has been the most commonly reported estimate of internal consistency. Alpha is related to the average covariance among items and the number of items in the scale. It is sometimes described as the average of all possible split-half reliability estimates, although that interpretation depends on assumptions.</p>
+<p>Cronbach’s alpha is widely used, but it is often overused or misinterpreted. Alpha is most appropriate when the scale is essentially unidimensional and when items meet assumptions such as tau-equivalence, meaning that items contribute equally to the underlying construct. Alpha can be misleading when a scale is multidimensional, when item loadings differ substantially, when errors covary, or when ordinal item responses are treated as continuous without care.</p>
+<p>A high alpha does not prove that a scale is unidimensional. A scale can have a high alpha because it has many items, because items are redundant, or because multiple related dimensions are being combined. For this reason, internal consistency evidence should usually be considered alongside evidence about the scale’s dimensionality, such as factor analysis.</p>
+<p><strong>Coefficient omega</strong> is often recommended as an alternative to alpha because it is based on a measurement model and can be more appropriate when items differ in how strongly they relate to the construct. There are different forms of omega, and the appropriate version depends on the measurement model. For example, omega total and omega hierarchical answer different reliability questions.</p>
+<p>Internal consistency is not appropriate for every measure. If items are intentionally heterogeneous or represent different aspects of a broad construct, low internal consistency may not necessarily mean the measure is poor. For formative indexes or checklists where items are not expected to be interchangeable, internal consistency may be the wrong reliability evidence.</p>
 </section>
 <section id="inter-rater-reliability" class="level2">
 <h2 class="anchored" data-anchor-id="inter-rater-reliability">Inter-Rater Reliability</h2>
-<p>You might think that you can test for inter-rater reliability just by looking at the percent of agreement; do raters agree or don’t they and then scale that to 0-100%. However, this is a weak approach to inter-rater reliability because it doesn’t account for agreement that occurs by chance or <em>degree</em> of agreement if there are ordinal ratings. As such, this is a poor estimate of reliability and you should avoid using percent agreement as your measurement.</p>
-<p>There are a variety of tests of inter-rater reliability depending on the number of raters, the level of measurement of the ratings, and whether there is any missingness to the data. Typically, most measures are interpreted similar to a correlation such that higher values (which top out at 1.00) indicate higher reliability.</p>
-<p>A generally useful measure of inter-rater reliability is Cohen’s kappa. This is used when two raters are rating all samples with a binary rating (e.g., yes vs no).</p>
-<p>Other measures of inter-rater reliability include intraclass correlation coefficient (ICC), Fleiss’ kappa, Kendall’s W coefficient, and Krippendorff’s alpha. There are many tools out there to help you measure inter-rater reliability; for example, <a href="https://www.k-alpha.org/">k-alpha.org</a> can support you in calculating Krippendorff’s alpha.</p>
+<p><strong>Inter-rater reliability</strong> evaluates the consistency of scores assigned by raters, observers, judges, or coders. This is important whenever human judgment is part of the measurement process.</p>
+<p>Percent agreement can be useful as a descriptive statistic, but it is usually not sufficient as the main estimate of inter-rater reliability. Percent agreement does not account for agreement that could occur by chance, and it does not capture the degree of disagreement when ratings are ordinal or continuous.</p>
+<p>The appropriate inter-rater reliability statistic depends on the rating design:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 65%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rating Design</th>
+<th>Possible Reliability Statistic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Two raters, nominal categories</td>
+<td>Cohen’s kappa</td>
+</tr>
+<tr class="even">
+<td>Two raters, ordinal categories</td>
+<td>Weighted kappa</td>
+</tr>
+<tr class="odd">
+<td>More than two raters, nominal categories</td>
+<td>Fleiss’ kappa or related extensions</td>
+</tr>
+<tr class="even">
+<td>Ratings are continuous or interval-like</td>
+<td>Intraclass correlation coefficient</td>
+</tr>
+<tr class="odd">
+<td>Ordinal rankings across targets</td>
+<td>Kendall’s W</td>
+</tr>
+<tr class="even">
+<td>Complex designs, missing ratings, or multiple levels of measurement</td>
+<td>Krippendorff’s alpha</td>
+</tr>
+</tbody>
+</table>
+<p>Cohen’s kappa is commonly used when two raters classify the same cases into nominal categories. For ordinal ratings, weighted kappa is often more appropriate because it can distinguish small disagreements from large disagreements.</p>
+<p>The <strong>intraclass correlation coefficient</strong>, or ICC, is commonly used for continuous ratings. There are multiple forms of ICC, and the correct form depends on the design. Important questions include whether the same raters rated every target, whether raters are treated as fixed or randomly sampled, and whether the researcher cares about consistency or absolute agreement.</p>
+<p>Krippendorff’s alpha is a flexible option that can be used with different levels of measurement and can handle some missing data patterns. It is especially common in content analysis and coding studies.</p>
+</section>
+<section id="reporting-reliability-evidence" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-reliability-evidence">Reporting Reliability Evidence</h2>
+<p>When reporting reliability, do not simply state that a measure “was reliable.” Instead, identify the type of reliability evidence, the sample, the scoring procedure, and the coefficient.</p>
+<p>For example:</p>
+<blockquote class="blockquote">
+<p>Scores on the five-item scale showed good internal consistency in the present sample, (= .86).</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Two trained coders independently coded 25% of the responses. Inter-rater reliability was acceptable, (= .79).</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Test-retest reliability over a four-week interval was high, (r = .84).</p>
+</blockquote>
+<p>Whenever possible, report confidence intervals for reliability estimates. Reliability coefficients are sample statistics, so they are estimated with uncertainty.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 37%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Reliability Evidence</th>
+<th>Main Question</th>
+<th>Common Caution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Test-retest reliability</td>
+<td>Are scores stable over time?</td>
+<td>Only appropriate when the construct should be stable</td>
+</tr>
+<tr class="even">
+<td>Alternate-forms reliability</td>
+<td>Are two forms interchangeable?</td>
+<td>May reflect both form differences and time-related change</td>
+</tr>
+<tr class="odd">
+<td>Internal consistency</td>
+<td>Are items or indicators consistent with each other?</td>
+<td>Does not prove unidimensionality or validity</td>
+</tr>
+<tr class="even">
+<td>Inter-rater reliability</td>
+<td>Are raters, observers, or coders consistent?</td>
+<td>The statistic must match the rating design</td>
+</tr>
+</tbody>
+</table>
+<p>The key is to align the reliability estimate with the measurement question. Reliability is not just a number to report; it is evidence about how consistently scores are produced in a particular context.</p>
 
 
 </section>
@@ -1199,8 +1347,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./15.1-threats-to-reliability.html" class="pagination-link" aria-label="15.1 Threats to Reliability">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">15.1 Threats to Reliability</span>
+      <a href="./15.1-threats-to-reliability.html" class="pagination-link" aria-label="15.1 Sources of Measurement Error">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">15.1 Sources of Measurement Error</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

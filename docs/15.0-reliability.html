@@ -34,7 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./15.1-threats-to-reliability.html" rel="next">
-<link href="./14.3-general-linear-model.html" rel="prev">
+<link href="./14.4-comparing-strengths-of-correlations.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -609,7 +609,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13.2 Finding Group Differences</span></a>
+ <span class="menu-text">13.2 Finding Group Differences After ANOVA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -659,6 +659,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">14.3 General Linear Model</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.4-comparing-strengths-of-correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.4 Comparing Strengths of Correlations</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -673,13 +679,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.1-threats-to-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.1 Threats to Reliability</span></a>
+ <span class="menu-text">15.1 Sources of Measurement Error</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.2-measuring-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.2 Measuring Reliability</span></a>
+ <span class="menu-text">15.2 Estimating Reliability</span></a>
   </div>
 </li>
       </ul>
@@ -702,7 +708,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16.2-threats-to-statistical-validity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">16.2 Threats to Statistical Validity</span></a>
+ <span class="menu-text">16.2 Threats to Statistical Conclusion Validity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -766,26 +772,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This chapter is a work in progress.</p>
-</div>
-</div>
-<p><strong>Reliability</strong> is the consistency of a measure. This is a crude, rough definition. More exactly, reliability is the extent to which observed or measured scores are consistent with differences in their true scores. We can never get a true score for participants, and so reliability helps us determine how close we got to a true score with observed scores.</p>
-<p>There are three types of consistency:</p>
+<p><strong>Reliability</strong> refers to the consistency or dependability of scores. In psychometrics, reliability is not simply a property of a test or instrument by itself. Instead, reliability is a property of scores obtained from a particular measure, with a particular group of people, in a particular context, for a particular purpose.</p>
+<p>A common starting point for thinking about reliability is <strong>classical test theory</strong>. In classical test theory, an observed score is understood as a combination of a true score and measurement error:</p>
+<p>[ X = T + E ]</p>
+<p>In this model, (X) is the observed score, (T) is the true score, and (E) is error. The true score is a theoretical value: the score a person would receive if measurement were perfectly consistent and free from random error. We cannot observe true scores directly, so reliability helps us evaluate how consistently a measurement procedure captures differences among people, occasions, items, or raters.</p>
+<p>From this perspective, reliability can be understood as the proportion of observed-score variance that reflects true-score variance rather than error variance. Higher reliability means that a larger share of the variability in observed scores reflects consistent differences rather than random measurement error. Lower reliability means that more of the variability in observed scores may be due to error.</p>
+<p>Reliability is especially important because measurement error affects the conclusions we draw from data. When scores are unreliable, relationships with other variables can be weakened, group differences can be harder to detect, individual decisions become less defensible, and validity evidence becomes more difficult to interpret.</p>
+<p>There are several ways scores can be consistent. Three common forms of reliability evidence are:</p>
 <ol type="1">
-<li><p><em>Test-retest reliability</em>: consistency over time (measured with a correlation, usually)</p></li>
-<li><p><em>Internal consistency</em>: consistency across items (measured with Cronbach’s alpha usually, but there are other methods out there including Omega which may be more appropriate; more info provided soon)</p></li>
-<li><p><em>Inter-rater reliability</em>: consistency across different researchers (various methods, including percent agreement, interclass or intraclass correlation, Cohen’s Kappa, Fleiss’ Kappa, etc.)</p></li>
+<li><p><strong>Test-retest reliability</strong>: consistency of scores over time. This is useful when the construct is expected to be relatively stable across the time interval.</p></li>
+<li><p><strong>Internal consistency</strong>: consistency across items or indicators intended to measure the same construct. Cronbach’s alpha is commonly reported, although coefficient omega and other model-based estimates are often more appropriate depending on the measurement model.</p></li>
+<li><p><strong>Inter-rater reliability</strong>: consistency across raters, observers, or coders. The appropriate statistic depends on the number of raters, level of measurement, rating design, and whether all raters evaluate all targets.</p></li>
 </ol>
+<p>Reliability is necessary but not sufficient for validity. Scores can be highly reliable but still fail to measure the intended construct. For example, a measure could consistently capture reading ability when the intended construct is depression. Reliability tells us about consistency; validity concerns the meaning, interpretation, and use of scores.</p>
+<p>In the next sections, we will examine common sources of measurement error and review several approaches to estimating reliability. The goal is not to memorize one “best” reliability statistic, but to select a reliability approach that matches the measurement design, construct, scoring procedure, and intended use of the scores.</p>
 
 
 
@@ -1192,13 +1192,13 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./14.3-general-linear-model.html" class="pagination-link" aria-label="14.3 General Linear Model">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">14.3 General Linear Model</span>
+      <a href="./14.4-comparing-strengths-of-correlations.html" class="pagination-link" aria-label="14.4 Comparing Strengths of Correlations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">14.4 Comparing Strengths of Correlations</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./15.1-threats-to-reliability.html" class="pagination-link" aria-label="15.1 Threats to Reliability">
-        <span class="nav-page-text">15.1 Threats to Reliability</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./15.1-threats-to-reliability.html" class="pagination-link" aria-label="15.1 Sources of Measurement Error">
+        <span class="nav-page-text">15.1 Sources of Measurement Error</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

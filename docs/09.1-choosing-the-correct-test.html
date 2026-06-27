@@ -611,7 +611,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13.2-finding-group-differences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13.2 Finding Group Differences</span></a>
+ <span class="menu-text">13.2 Finding Group Differences After ANOVA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -661,6 +661,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">14.3 General Linear Model</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14.4-comparing-strengths-of-correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14.4 Comparing Strengths of Correlations</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -675,13 +681,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.1-threats-to-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.1 Threats to Reliability</span></a>
+ <span class="menu-text">15.1 Sources of Measurement Error</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15.2-measuring-reliability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15.2 Measuring Reliability</span></a>
+ <span class="menu-text">15.2 Estimating Reliability</span></a>
   </div>
 </li>
       </ul>
@@ -704,7 +710,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16.2-threats-to-statistical-validity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">16.2 Threats to Statistical Validity</span></a>
+ <span class="menu-text">16.2 Threats to Statistical Conclusion Validity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -793,32 +799,19 @@ ul.task-list li input[type="checkbox"] {
 <section id="a-decision-tool-for-choosing-tests" class="level2">
 <h2 class="anchored" data-anchor-id="a-decision-tool-for-choosing-tests">A decision tool for choosing tests</h2>
 <p>The chart below can help you determine what statistical test to perform. It is a map, not something you need to memorize.</p>
-<p><img src="images/Statistical Choices.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/06-inferential/Statistical Choices.jpg" class="img-fluid figure-img"></p>
+<figcaption>Statistical Test Chooser</figcaption>
+</figure>
+</div>
 <p>The chart uses several visual cues:</p>
 <ul>
-<li><p><strong>Dark red boxes</strong> are parametric tests.</p></li>
-<li><p><strong>Light red boxes</strong> are non-parametric tests.</p></li>
-<li><p><strong>White boxes</strong> are tests we will not cover in this course.</p></li>
-<li><p><strong>Blue</strong> indicates continuous variables.</p></li>
-<li><p><strong>Green</strong> indicates categorical variables.</p></li>
-<li><p><strong>Teal</strong> indicates both categorical and continuous variables.</p></li>
-<li><p><strong>Black</strong> indicates between-subjects designs, meaning different participants are in each condition.</p></li>
-<li><p><strong>Dark grey</strong> indicates within-subjects designs, meaning the same participants are measured across conditions or time points.</p></li>
-<li><p><strong>Light grey</strong> indicates the design has at least one between-subject IV and at least one within-subjects IV.</p></li>
+<li><p>On the right of the chart are <strong>red boxes</strong>, which are the statistical tests covered in this textbook, and <strong>white boxes</strong>, which are tests we will not cover in this textbook.</p></li>
+<li><p>The blue/green colors indicate the type of variables being examined. <strong>Blue</strong> indicates continuous variables. <strong>Green</strong> indicates categorical variables. <strong>Teal</strong> indicates both categorical and continuous variables.</p></li>
+<li><p>The gradients of <strong>orange</strong> indicate the numbers (1, 2, 2+, or 3+) of IVs or categories within the IV.</p></li>
+<li><p>The gradients of <strong>grey/blank</strong> indicate the type of design. <strong>Black</strong> indicates between-subjects designs, meaning different participants are in each condition. <strong>Dark grey</strong> indicates within-subjects designs, meaning the same participants are measured across conditions or time points. <strong>Light grey</strong> indicates the design has at least one between-subject IV and at least one within-subjects IV.</p></li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled" title="For Dana's Students">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>For Dana’s Students
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In my courses, you may also have access to a high-resolution version of this chart on Canvas. Use that version when you need to zoom in or print it.</p>
-</div>
-</div>
 <p>Another tool that can help you choose a statistical test is <a href="https://stathand.net/">StatsHand</a>. I still want you to learn the logic yourself, but tools like this can be useful for checking your thinking.</p>
 </section>
 <section id="a-step-by-step-approach" class="level2">
@@ -969,7 +962,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Suggested Answers">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -978,7 +971,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Independent t-test: continuous DV, one categorical IV with two between-subjects groups.</li>

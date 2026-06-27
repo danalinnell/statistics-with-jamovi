@@ -1,23 +1,31 @@
 # 16. Validity {.unnumbered}
 
-::: {.callout-note}
-This chapter is a work in progress.
-:::
+Validity refers to the degree to which evidence and theory support the interpretations and uses of scores, measures, or study findings. In psychometrics, validity is not usually treated as a fixed property of a test itself. Instead, validity concerns whether particular interpretations and uses of scores are justified for a particular purpose, population, and context.
 
-There are four general types of validity:
+Reliability and validity are related but distinct. Reliability concerns the consistency of scores. Validity concerns the meaning and appropriateness of the inferences we make from those scores. Scores can be reliable but invalid if they consistently measure something other than the intended construct.
 
-1.  **Construct**: validity of inferences about the higher-order constructs that represent sampling particulars. There are various types of construct validity, and ways to measure them, which include but are not limited to:
+There are two related ways we will discuss validity in this chapter.
 
-    -   **Content validity**: experts using their judgment that something measures what it is supposed to measure
+First, in measurement and psychometrics, we focus on **validity evidence**. Common sources of validity evidence include:
 
-    -   **Convergent validity**: correlations among two theoretically related constructs are strong and positive
+1. **Evidence based on test content**: Do the items, tasks, or indicators adequately represent the construct domain?
 
-    -   **Divergent validity**: correlations among two theoretically not-related constructs are zero/null
+2. **Evidence based on response processes**: Are respondents, raters, or participants engaging with the measure in ways that match the intended construct?
 
-    -   **Criterion validity**: content on one test (predictor) correlates with performance on relevant criterion measures (outcome)
+3. **Evidence based on internal structure**: Do the items or components of the measure relate to each other in ways that match the theoretical structure of the construct?
 
-2.  **Statistical**: validity of inferences about the correlation between treatment and outcome
+4. **Evidence based on relationships with other variables**: Do scores relate to other variables in theoretically expected ways? This includes convergent, discriminant, criterion-related, predictive, and concurrent evidence.
 
-3.  **Internal**: validity about whether the observed relationship between A and B reflects a *causal* relationship between A and B
+5. **Evidence based on consequences of use**: What are the intended and unintended consequences of using the scores for decisions, classifications, or interpretations?
 
-4.  **External**: validity of inferences about whether the cause-effect relationship holds over variation in units/persons, treatment variations, outcomes, and settings (UTOS)
+Second, in research design, validity is often discussed in terms of threats to different kinds of inference:
+
+1. **Construct validity**: Are we interpreting the measures, manipulations, or operationalizations as the intended constructs?
+
+2. **Statistical conclusion validity**: Are the statistical conclusions about relationships or differences reasonable?
+
+3. **Internal validity**: Is the observed relationship plausibly causal, or could alternative explanations account for it?
+
+4. **External validity**: To what extent might the findings generalize across people, settings, treatments, outcomes, and time?
+
+These two traditions overlap. For example, construct validity is central to both measurement and research design. However, they are not identical. Measurement validity focuses on whether score interpretations and uses are justified. Research-design validity focuses more broadly on whether inferences from a study are warranted.
