@@ -1125,9 +1125,24 @@ Note
 </section>
 <section id="visualize-the-results" class="level3">
 <h3 class="anchored" data-anchor-id="visualize-the-results">Visualize the Results</h3>
-<p>For an independent <em>t</em>-test, the graph should help readers compare the distribution of the continuous outcome across the two groups. A box plot is usually a good choice because it shows the median, spread, overlap between groups, and possible outliers.</p>
-<p>A bar plot with error bars can also be used to communicate group means, especially when the goal is to summarize the mean difference. However, a bar plot hides the shape of the distribution, so it is less useful when we are first examining the data or checking assumptions.</p>
-<p>For this example, a grouped box plot of <code>grade</code> by <code>tutor</code> would allow readers to compare the grade distributions for Anastasia’s and Bernadette’s students. If you use a bar plot of means, clearly identify what the error bars represent, such as standard errors or confidence intervals.</p>
+<p>For an independent <em>t</em>-test, the graph should help readers compare the distribution of the continuous outcome across the two groups. I recommend using the Plots feature in jamovi to create the visualization of results for an independent <em>t</em>-test.</p>
+<p>A box plot is usually a good choice because it shows the median, spread, overlap between groups, and possible outliers.</p>
+<p>A bar plot with error bars can also be used to communicate group means, especially when the goal is to summarize the mean difference. However, a bar plot hides the shape of the distribution, so it is less useful when we are first examining the data or checking assumptions. If you use a bar plot of means, clearly identify what the error bars represent, such as standard errors or confidence intervals.</p>
+<p>For this example, a grouped box plot with violin plot of <code>grade</code> by <code>tutor</code> would allow readers to compare the grade distributions for Anastasia’s and Bernadette’s students.</p>
+<p><img src="images/02-independent_t-test/independent_t-test_plot.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Many students make the mistake of presenting a Q-Q plot as their visualization of results. However, the Q-Q plot is a visualization used to check the assumption of normality, so this is not an appropriate visualization of the results.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="welchs-t-test" class="level2">
@@ -1188,7 +1203,7 @@ Warning
 <p>A researcher compares two independent groups, but the continuous outcome is strongly skewed in both groups and the normality assumption is seriously violated.</p>
 <p>Which test should the researcher consider instead of an independent <em>t</em>-test?</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Check Your Answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1197,7 +1212,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The researcher should consider the Mann-Whitney U test, the nonparametric alternative to the independent <em>t</em>-test.</p>
 </div>

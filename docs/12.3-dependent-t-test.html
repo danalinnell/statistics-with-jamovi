@@ -1081,8 +1081,22 @@ Note
 <section id="visualize-the-results" class="level3">
 <h3 class="anchored" data-anchor-id="visualize-the-results">Visualize the Results</h3>
 <p>For a dependent <em>t</em>-test, the graph should help readers understand how scores changed across the two related measurements. Because the same participants provide both scores, the most informative graph often shows the paired nature of the data.</p>
-<p>A line plot can show change from the first measurement to the second measurement when the data are in a format that supports that graph. A plot of the difference scores can also be useful, especially when checking the normality assumption. A table of the two means and standard deviations is often enough when the focus is the hypothesis test rather than the individual pattern of change.</p>
-<p>For this example, a simple graph should communicate that students tended to score higher on the second test than on the first test. Avoid using a graph that makes the two measurements look like independent groups, because the scores are paired within the same students.</p>
+<p>Unfortunately, jamovi’s Plots feature cannot yet incorporate multiple continuous variables into a single plot to appropriately visualize the results of a dependent <em>t</em>-test into a single figure. Until it has this feature, you should select “Descriptives plots” in the Additional Statistics options when setting up the dependent <em>t</em>-test in jamovi to get an appropriate visualization.</p>
+<p>The figure below shows what the default Descriptives plots looks like in jamovi for our example analysis from above.</p>
+<p><img src="images/03_dependent_t-test/dependent_results_plot.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Many students make the mistake of presenting a Q-Q plot as their visualization of results. However, the Q-Q plot is a visualization used to check the assumption of normality, so this is not an appropriate visualization of the results.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="wilcoxon-signed-rank-test" class="level2">

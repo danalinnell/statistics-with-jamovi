@@ -13,21 +13,20 @@ In jamovi, this test is labeled **Independent Samples T-Test**. Other sources ma
 
 There are three different types of alternative hypotheses we could have for an independent *t*-test:
 
-1. **Two-tailed**
+1.  **Two-tailed**
 
-   * $H_1$: There is a difference between the two groups on the outcome variable.
-   * $H_0$: There is no difference between the two groups on the outcome variable.
+    - $H_1$: There is a difference between the two groups on the outcome variable.
+    - $H_0$: There is no difference between the two groups on the outcome variable.
 
-2. **One-tailed**
+2.  **One-tailed**
 
-   * $H_1$: Group 1 scores higher than Group 2 on the outcome variable.
-   * $H_0$: Group 1 scores the same as or lower than Group 2 on the outcome variable.
+    - $H_1$: Group 1 scores higher than Group 2 on the outcome variable.
+    - $H_0$: Group 1 scores the same as or lower than Group 2 on the outcome variable.
 
-3. **One-tailed**
+3.  **One-tailed**
 
-   * $H_1$: Group 1 scores lower than Group 2 on the outcome variable.
-   * $H_0$: Group 1 scores the same as or higher than Group 2 on the outcome variable.
-
+    - $H_1$: Group 1 scores lower than Group 2 on the outcome variable.
+    - $H_0$: Group 1 scores the same as or higher than Group 2 on the outcome variable.
 
 We use an independent *t*-test whenever we compare two separate groups on one continuous outcome variable. For example, we might use an independent *t*-test in an experiment comparing a treatment group and a control group on an outcome of interest. We might also use an independent *t*-test to compare two existing groups, such as students taught by two different tutors.
 
@@ -50,22 +49,19 @@ Below is the first ten rows of our data from the Harpo dataset.
 
 ![](images/02-independent_t-test/independent_t-test_data.png)
 
-::: {.callout-tip title="Check Your Understanding"}
-
+:::: {.callout-tip title="Check Your Understanding"}
 A researcher compares final exam scores for students in an online section and an in-person section of the same course.
 
-1. What is the continuous outcome variable?
-2. What is the categorical grouping variable?
-3. Why would this be an independent *t*-test rather than a dependent *t*-test?
+1.  What is the continuous outcome variable?
+2.  What is the categorical grouping variable?
+3.  Why would this be an independent *t*-test rather than a dependent *t*-test?
 
 ::: {.callout-note title="Check Your Answer" collapse="true"}
-
-1. The continuous outcome variable is final exam score.
-2. The categorical grouping variable is course section, with two groups: online and in person.
-3. This is an independent *t*-test because different students are in the two groups.
-
+1.  The continuous outcome variable is final exam score.
+2.  The categorical grouping variable is course section, with two groups: online and in person.
+3.  This is an independent *t*-test because different students are in the two groups.
 :::
-:::
+::::
 
 ### Describe the Data
 
@@ -81,25 +77,22 @@ In this example, Anastasia’s students had a higher mean grade than Bernadette�
 
 Our research question is: Do students taught by Anastasia and Bernadette differ in their grades? This research question is non-directional because it does not predict which tutor’s students will have higher grades. Therefore, our hypotheses are:
 
-* $H_1$: There is a difference in grades between students taught by Anastasia and students taught by Bernadette.
-* $H_0$: There is no difference in grades between students taught by Anastasia and students taught by Bernadette.
+- $H_1$: There is a difference in grades between students taught by Anastasia and students taught by Bernadette.
+- $H_0$: There is no difference in grades between students taught by Anastasia and students taught by Bernadette.
 
 We will use the conventional alpha value of $\alpha = .05$. Therefore, we will consider the result statistically significant if the *p*-value is less than .05.
 
-::: {.callout-tip title="Check Your Understanding"}
-
+:::: {.callout-tip title="Check Your Understanding"}
 A researcher asks whether employees in Department A and Department B differ in job satisfaction. The researcher does not predict which department will have higher satisfaction.
 
-1. Is the alternative hypothesis directional or non-directional?
-2. Which jamovi hypothesis option should be selected?
+1.  Is the alternative hypothesis directional or non-directional?
+2.  Which jamovi hypothesis option should be selected?
 
 ::: {.callout-note title="Check Your Answer" collapse="true"}
-
-1. The alternative hypothesis is non-directional because the researcher predicts a difference but does not predict which group will have the higher mean.
-2. Select `Group 1 ≠ Group 2`.
-
+1.  The alternative hypothesis is non-directional because the researcher predicts a difference but does not predict which group will have the higher mean.
+2.  Select `Group 1 ≠ Group 2`.
 :::
-:::
+::::
 
 ## Step 2: Check Assumptions
 
@@ -127,9 +120,9 @@ jamovi allows us to check normality using the Shapiro-Wilk test and Q-Q plots. F
 
 Remember that we can also test for normality by **looking at our data** (e.g., a histogram or density plot, which you can see above) and by examining **skew and kurtosis**. However, you will need to view them using Exploration --\> Descriptives, not in the t-tests menu. Here is our skew and kurtosis:
 
--   **Skew**: $.06/.41 = .15$
+- **Skew**: $.06/.41 = .15$
 
--   **Kurtosis**: $.33/.80 = .41$
+- **Kurtosis**: $.33/.80 = .41$
 
 Remember that we divide each value by its standard error to calculate a z-score. If the absolute value of the z-score is below approximately 1.96, then the skew or kurtosis value does not suggest a substantial departure from normality. In this example, the skew and kurtosis values do not raise major concerns. The Shapiro-Wilk test, Q-Q plots, and visual displays also suggest that the normality assumption is reasonable.
 
@@ -143,7 +136,7 @@ We evaluate homogeneity of variance using Levene’s test and by comparing the v
 
 That said, the sample sizes are small (*n* = 15 for Anastasia and *n* = 18 for Bernadette), so the assumption checks should be interpreted cautiously. The group standard deviations also differ somewhat, which is visible in the grouped plot. When sample sizes are small, it is especially helpful to examine the graph and descriptive statistics rather than relying on Levene’s test alone.
 
-::: {.callout-note}
+::: callout-note
 In fact, we've read in the BEAN chapters how to calculate for power! We could use our knowledge to identify what size effect size we could reliably detect (e.g., with 80% power at an alpha of .05) given our sample sizes. Try it out!
 :::
 
@@ -154,25 +147,22 @@ In fact, we've read in the BEAN chapters how to calculate for power! We could us
 The independent *t*-test menu in jamovi includes three options: Student’s, Welch’s, and Mann-Whitney U. In this course, use the assumption checks to decide which option to report.
 
 | Assumption Pattern | Test to Report |
-|---|---|
+|------------------------------------|------------------------------------|
 | Normality is reasonably met and homogeneity of variance is reasonably met | Student’s *t*-test |
 | Normality is reasonably met but homogeneity of variance is not met | Welch’s *t*-test |
 | Normality is seriously violated and no appropriate transformation addresses the issue | Mann-Whitney U test |
 
 Some researchers prefer Welch’s *t*-test as the default because it performs well when variances are unequal and usually gives very similar results to Student’s *t*-test when variances are equal. For this course, we will only use Welch’s test when the homogeneity-of-variance assumption is not met.
 
-::: {.callout-tip title="Check Your Understanding"}
-
+:::: {.callout-tip title="Check Your Understanding"}
 A researcher wants to compare two independent groups on a continuous outcome. The normality assumption appears reasonable, but Levene’s test is statistically significant.
 
 Which test should the researcher report for this course?
 
 ::: {.callout-note title="Check Your Answer" collapse="true"}
-
 The researcher should report Welch’s *t*-test because normality appears reasonable but the homogeneity-of-variance assumption is not met.
-
 :::
-:::
+::::
 
 ### Decide Which Hypothesis You Should Be Using
 
@@ -182,7 +172,7 @@ If the alternative hypothesis is non-directional, choose `Group 1 ≠ Group 2`.
 
 If the alternative hypothesis is directional, choose `Group 1 > Group 2` or `Group 1 < Group 2` based on the direction predicted by the research question. Do not choose the direction after looking at which group has the higher sample mean.
 
-:::{.callout-warning}
+::: callout-warning
 The hypothesis direction must be chosen *before* looking at the results. Do not switch from a two-tailed test to a one-tailed test because the sample means appear to differ in one direction.
 :::
 
@@ -218,13 +208,13 @@ The *p*-value is less than our alpha value of .05, so the result is statisticall
 
 Because Anastasia’s students had the higher sample mean, the difference is in favor of Anastasia’s class. However, the statistical test tells us whether the group means differ more than we would expect by chance; it does not, by itself, prove that the tutor caused the difference unless the study design supports a causal conclusion.
 
-:::{.callout-note}
-The abbreviation **df** stands for degrees of freedom. For Student’s independent *t*-test, the degrees of freedom are calculated as \(n_1 + n_2 - 2\). In this example, \(df = 15 + 18 - 2 = 31\).
+::: callout-note
+The abbreviation **df** stands for degrees of freedom. For Student’s independent *t*-test, the degrees of freedom are calculated as (n_1 + n_2 - 2). In this example, (df = 15 + 18 - 2 = 31).
 :::
 
 ### A Note About Positive and Negative *t* Values
 
-Students often worry about whether a *t* statistic is positive or negative. For an independent *t*-test, the sign depends on which group is treated as Group 1 and which group is treated as Group 2. In this example, the mean difference is calculated as Anastasia’s class minus Bernadette’s class: \(74.53 - 69.06 = 5.47\). Because Anastasia’s class has the higher mean, the *t* statistic is positive.
+Students often worry about whether a *t* statistic is positive or negative. For an independent *t*-test, the sign depends on which group is treated as Group 1 and which group is treated as Group 2. In this example, the mean difference is calculated as Anastasia’s class minus Bernadette’s class: (74.53 - 69.06 = 5.47). Because Anastasia’s class has the higher mean, the *t* statistic is positive.
 
 If the group order were reversed, the mean difference and *t* statistic would be negative. The sign helps identify the direction of the difference based on the group order, but the *p*-value tells us whether that difference is statistically significant.
 
@@ -242,19 +232,27 @@ This is not the only correct way to write the result. The key is to include the 
 
 ### Visualize the Results
 
-For an independent *t*-test, the graph should help readers compare the distribution of the continuous outcome across the two groups. A box plot is usually a good choice because it shows the median, spread, overlap between groups, and possible outliers.
+For an independent *t*-test, the graph should help readers compare the distribution of the continuous outcome across the two groups. I recommend using the Plots feature in jamovi to create the visualization of results for an independent *t*-test.
 
-A bar plot with error bars can also be used to communicate group means, especially when the goal is to summarize the mean difference. However, a bar plot hides the shape of the distribution, so it is less useful when we are first examining the data or checking assumptions.
+A box plot is usually a good choice because it shows the median, spread, overlap between groups, and possible outliers.
 
-For this example, a grouped box plot of `grade` by `tutor` would allow readers to compare the grade distributions for Anastasia’s and Bernadette’s students. If you use a bar plot of means, clearly identify what the error bars represent, such as standard errors or confidence intervals.
+A bar plot with error bars can also be used to communicate group means, especially when the goal is to summarize the mean difference. However, a bar plot hides the shape of the distribution, so it is less useful when we are first examining the data or checking assumptions. If you use a bar plot of means, clearly identify what the error bars represent, such as standard errors or confidence intervals.
+
+For this example, a grouped box plot with violin plot of `grade` by `tutor` would allow readers to compare the grade distributions for Anastasia’s and Bernadette’s students.
+
+![](images/02-independent_t-test/independent_t-test_plot.png)
+
+::: callout-warning
+Many students make the mistake of presenting a Q-Q plot as their visualization of results. However, the Q-Q plot is a visualization used to check the assumption of normality, so this is not an appropriate visualization of the results.
+:::
 
 ## Welch’s *t*-Test {#welchs-t-test}
 
-Welch’s *t*-test is used when the outcome variable is approximately normally distributed but the homogeneity-of-variance assumption is not met. Welch’s test does not pool the group variances, and its degrees of freedom are adjusted rather than calculated as \(n_1 + n_2 - 2\). Welch’s *t*-test is still a parametric test because it still assumes that the outcome is approximately normally distributed within groups.
+Welch’s *t*-test is used when the outcome variable is approximately normally distributed but the homogeneity-of-variance assumption is not met. Welch’s test does not pool the group variances, and its degrees of freedom are adjusted rather than calculated as (n_1 + n_2 - 2). Welch’s *t*-test is still a parametric test because it still assumes that the outcome is approximately normally distributed within groups.
 
 ![](images/02-independent_t-test/independent_t-test_full-results.png)
 
-:::{.callout-warning}
+::: callout-warning
 In practice, you should report the test that matches your assumptions rather than reporting Student’s, Welch’s, and Mann-Whitney U together. They are shown together here only so you can compare how the output differs.
 :::
 
@@ -272,23 +270,20 @@ If the normality assumption is seriously violated and no appropriate transformat
 
 ![](images/02-independent_t-test/independent_t-test_full-results.png)
 
-:::{.callout-warning}
+::: callout-warning
 In practice, you should report the test that matches your assumptions rather than reporting Student’s, Welch’s, and Mann-Whitney U together. They are shown together here only so you can compare how the output differs.
 :::
 
 The basic idea is that the Mann-Whitney U test ranks all scores across both groups and compares the rank patterns between groups. You interpret the *p*-value in the usual way, but the result should be reported as a Mann-Whitney U test rather than as an independent *t*-test.
 
-> A Mann-Whitney U test indicated that grades differed significantly between students taught by Anastasia (*Mdn* = 76, *n* = 15) and students taught by Bernadette (*Mdn* = 69, *n* = 18), *U* = 79.50, *p* = .046, \(r_{pb} = .41\).
+> A Mann-Whitney U test indicated that grades differed significantly between students taught by Anastasia (*Mdn* = 76, *n* = 15) and students taught by Bernadette (*Mdn* = 69, *n* = 18), *U* = 79.50, *p* = .046, (r\_{pb} = .41).
 
-::: {.callout-tip title="Check Your Understanding"}
-
+:::: {.callout-tip title="Check Your Understanding"}
 A researcher compares two independent groups, but the continuous outcome is strongly skewed in both groups and the normality assumption is seriously violated.
 
 Which test should the researcher consider instead of an independent *t*-test?
 
 ::: {.callout-note title="Check Your Answer" collapse="true"}
-
 The researcher should consider the Mann-Whitney U test, the nonparametric alternative to the independent *t*-test.
-
 :::
-:::
+::::

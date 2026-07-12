@@ -13,18 +13,18 @@ There are three different types of alternative hypotheses we could have for a de
 
 1.  **Two-tailed**
 
-    -   $H_1$: There is a difference between the two related measurements.
-    -   $H_0$: There is no difference between the two related measurements.
+    - $H_1$: There is a difference between the two related measurements.
+    - $H_0$: There is no difference between the two related measurements.
 
 2.  **One-tailed**
 
-    -   $H_1$: Scores are higher on Measurement 1 than on Measurement 2.
-    -   $H_0$: Scores are the same or lower on Measurement 1 than on Measurement 2.
+    - $H_1$: Scores are higher on Measurement 1 than on Measurement 2.
+    - $H_0$: Scores are the same or lower on Measurement 1 than on Measurement 2.
 
 3.  **One-tailed**
 
-    -   $H_1$: Scores are lower on Measurement 1 than on Measurement 2.
-    -   $H_0$: Scores are the same or higher on Measurement 1 than on Measurement 2.
+    - $H_1$: Scores are lower on Measurement 1 than on Measurement 2.
+    - $H_0$: Scores are the same or higher on Measurement 1 than on Measurement 2.
 
 ## Step 1: Look at the Data
 
@@ -43,22 +43,19 @@ To conduct a dependent *t*-test in jamovi, the dataset usually needs two columns
 
 ![](images/03_dependent_t-test/dependent_data.png)
 
-::: {.callout-tip title="Check Your Understanding"}
-
+:::: {.callout-tip title="Check Your Understanding"}
 Look at the data shown above.
 
-1. What are the two related measurements?
-2. How do you know this dataset is set up for a dependent *t*-test?
-3. Why would this not be an independent *t*-test?
+1.  What are the two related measurements?
+2.  How do you know this dataset is set up for a dependent *t*-test?
+3.  Why would this not be an independent *t*-test?
 
 ::: {.callout-note title="Check Your Answer" collapse="true"}
-
-1. The two related measurements are `grade_test1` and `grade_test2`.
-2. The dataset is set up for a dependent *t*-test because each row represents one student, and each student has a score for both tests.
-3. This is not an independent *t*-test because the two scores being compared come from the same students rather than from two separate groups of students.
-
+1.  The two related measurements are `grade_test1` and `grade_test2`.
+2.  The dataset is set up for a dependent *t*-test because each row represents one student, and each student has a score for both tests.
+3.  This is not an independent *t*-test because the two scores being compared come from the same students rather than from two separate groups of students.
 :::
-:::
+::::
 
 ### Describe the Data
 
@@ -72,27 +69,24 @@ For a dependent *t*-test, we should also pay attention to the pattern of change 
 
 Dr. Chico predicts that students will score higher on the second test than on the first test. This is a directional research question. Therefore, our hypotheses are:
 
--   $H_1$: Students score higher on the second test than on the first test.
--   $H_0$: Students score the same or lower on the second test than on the first test.
+- $H_1$: Students score higher on the second test than on the first test.
+- $H_0$: Students score the same or lower on the second test than on the first test.
 
 We will use the conventional alpha value of $\alpha = .05$. Therefore, we will consider the result statistically significant if the *p*-value is less than .05.
 
-::: {.callout-tip title="Check Your Understanding"}
-
+:::: {.callout-tip title="Check Your Understanding"}
 A researcher measures confidence before and after a public-speaking workshop. The researcher predicts that confidence will be higher after the workshop.
 
-1. Is this a directional or non-directional hypothesis?
-2. What are the two related measurements?
-3. Why is a dependent *t*-test appropriate?
+1.  Is this a directional or non-directional hypothesis?
+2.  What are the two related measurements?
+3.  Why is a dependent *t*-test appropriate?
 
 ::: {.callout-note title="Check Your Answer" collapse="true"}
-
-1. The hypothesis is directional because the researcher predicts that confidence will be higher after the workshop.
-2. The two related measurements are confidence before the workshop and confidence after the workshop.
-3. A dependent *t*-test is appropriate because the same participants provide both confidence scores.
-
+1.  The hypothesis is directional because the researcher predicts that confidence will be higher after the workshop.
+2.  The two related measurements are confidence before the workshop and confidence after the workshop.
+3.  A dependent *t*-test is appropriate because the same participants provide both confidence scores.
 :::
-:::
+::::
 
 ## Step 2: Check Assumptions
 
@@ -120,7 +114,7 @@ We evaluate normality of the difference scores using multiple pieces of evidence
 
 ![](images/03_dependent_t-test/dependent_normality.png)
 
-:::{.callout-note}
+::: callout-note
 A dependent *t*-test does not require a homogeneity-of-variance test because the two measurements are paired rather than independent groups. The key assumption is that the **difference scores** are approximately normally distributed. When there are three or more related measurements, we use repeated-measures ANOVA and evaluate a related assumption called sphericity.
 :::
 
@@ -132,18 +126,15 @@ If the normality assumption for the difference scores is reasonably met, use the
 
 If the normality assumption is seriously violated and no appropriate transformation addresses the issue, use the Wilcoxon signed-rank test. In jamovi, this option is labeled **Wilcoxon rank**.
 
-::: {.callout-tip title="Check Your Understanding"}
-
+:::: {.callout-tip title="Check Your Understanding"}
 A researcher measures participants’ stress before and after a mindfulness exercise. The difference scores are strongly skewed, and the normality assumption is not met.
 
 Which test should the researcher consider instead of the dependent *t*-test?
 
 ::: {.callout-note title="Check Your Answer" collapse="true"}
-
 The researcher should consider the Wilcoxon signed-rank test, labeled **Wilcoxon rank** in jamovi. This is the nonparametric alternative to the dependent *t*-test.
-
 :::
-:::
+::::
 
 ### Decide Which Hypothesis You Should Be Using
 
@@ -153,7 +144,7 @@ If the alternative hypothesis is non-directional, choose `Measure 1 ≠ Measure 
 
 If the alternative hypothesis is directional, choose `Measure 1 > Measure 2` or `Measure 1 < Measure 2` based on the direction predicted by the research question and the order of the paired variables in jamovi. Do not choose the direction after looking at which measurement has the higher sample mean.
 
-:::{.callout-warning}
+::: callout-warning
 The hypothesis direction must be chosen before looking at the results. Also pay attention to the order of the paired variables in jamovi. `Measure 1 < Measure 2` means the first variable listed is predicted to have a lower mean than the second variable listed.
 :::
 
@@ -185,13 +176,13 @@ Once we are satisfied that the assumptions for the dependent *t*-test are reason
 
 The *p*-value is less than .05, so the result is statistically significant. We reject the null hypothesis. The sample provides evidence that students scored higher on the second test than on the first test.
 
-:::{.callout-note}
-The abbreviation **df** stands for degrees of freedom. For a dependent *t*-test, the degrees of freedom are calculated as \(n - 1\), where \(n\) is the number of pairs. In this example, there are 20 students, so \(df = 20 - 1 = 19\).
+::: callout-note
+The abbreviation **df** stands for degrees of freedom. For a dependent *t*-test, the degrees of freedom are calculated as (n - 1), where (n) is the number of pairs. In this example, there are 20 students, so (df = 20 - 1 = 19).
 :::
 
 ### A Note About Positive and Negative *t* Values
 
-Students often worry about whether a *t* statistic is positive or negative. For a dependent *t*-test, the sign depends on the order of the paired variables. In this example, `grade_test1` is listed before `grade_test2`, so the mean difference is calculated as Test 1 minus Test 2: \(56.98 - 58.38 = -1.40\). Because the first test mean is lower than the second test mean, the *t* statistic is negative.
+Students often worry about whether a *t* statistic is positive or negative. For a dependent *t*-test, the sign depends on the order of the paired variables. In this example, `grade_test1` is listed before `grade_test2`, so the mean difference is calculated as Test 1 minus Test 2: (56.98 - 58.38 = -1.40). Because the first test mean is lower than the second test mean, the *t* statistic is negative.
 
 If the variables were entered in the reverse order, the mean difference and *t* statistic would be positive. The sign helps identify the direction of the difference based on the variable order, but the *p*-value tells us whether that difference is statistically significant.
 
@@ -203,7 +194,7 @@ As reviewed in @sec-apa-style, an APA-style results section should describe the 
 
 We can write up our results in APA something like this:
 
-> A dependent *t*-test indicated that students scored significantly higher on the second test (*M* = 58.38, *SD* = 6.41) than on the first test (*M* = 56.98, *SD* = 6.62), *t*(19) = 6.48, *p* < .001, *d* = 1.45.
+> A dependent *t*-test indicated that students scored significantly higher on the second test (*M* = 58.38, *SD* = 6.41) than on the first test (*M* = 56.98, *SD* = 6.62), *t*(19) = 6.48, *p* \< .001, *d* = 1.45.
 
 This is not the only correct way to write the result. The key is to include the correct information (i.e., the descriptive statistics for both measurements, test statistic, degrees of freedom, *p*-value, effect size, and interpretation) and to make it clear and easy to read.
 
@@ -211,9 +202,15 @@ This is not the only correct way to write the result. The key is to include the 
 
 For a dependent *t*-test, the graph should help readers understand how scores changed across the two related measurements. Because the same participants provide both scores, the most informative graph often shows the paired nature of the data.
 
-A line plot can show change from the first measurement to the second measurement when the data are in a format that supports that graph. A plot of the difference scores can also be useful, especially when checking the normality assumption. A table of the two means and standard deviations is often enough when the focus is the hypothesis test rather than the individual pattern of change.
+Unfortunately, jamovi's Plots feature cannot yet incorporate multiple continuous variables into a single plot to appropriately visualize the results of a dependent *t*-test into a single figure. Until it has this feature, you should select "Descriptives plots" in the Additional Statistics options when setting up the dependent *t*-test in jamovi to get an appropriate visualization.
 
-For this example, a simple graph should communicate that students tended to score higher on the second test than on the first test. Avoid using a graph that makes the two measurements look like independent groups, because the scores are paired within the same students.
+The figure below shows what the default Descriptives plots looks like in jamovi for our example analysis from above.
+
+![](images/03_dependent_t-test/dependent_results_plot.png)
+
+::: callout-warning
+Many students make the mistake of presenting a Q-Q plot as their visualization of results. However, the Q-Q plot is a visualization used to check the assumption of normality, so this is not an appropriate visualization of the results.
+:::
 
 ## Wilcoxon Signed-Rank Test
 
@@ -225,13 +222,12 @@ To conduct this test in jamovi, select `Wilcoxon rank` under **Tests**. The outp
 
 ![](images/03_dependent_t-test/dependent_results_full.png)
 
-:::{.callout-warning}
+::: callout-warning
 In practice, you should report the test that matches your assumptions rather than reporting both Student’s and Wilcoxon signed-rank tests together. They are shown together here only so you can compare how the output differs.
 :::
 
 You will interpret whether the paired measurements differ, but you should report the test as a Wilcoxon signed-rank test rather than as a *t*-test:
 
-> A Wilcoxon signed-rank test indicated that students scored significantly higher on the second test (*Mdn* = 59.70) than on the first test (*Mdn* = 57.70), *W* = 2.00, *p* < .001.
+> A Wilcoxon signed-rank test indicated that students scored significantly higher on the second test (*Mdn* = 59.70) than on the first test (*Mdn* = 57.70), *W* = 2.00, *p* \< .001.
 
 The note about tied values indicates that at least one participant (in this case, student15) had the same score on both tests. You usually do not need to discuss this note in the write-up unless tied values are important for understanding the data.
-
