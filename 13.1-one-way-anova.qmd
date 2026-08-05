@@ -179,9 +179,9 @@ The appropriate test depends on whether the assumptions are reasonably met. In t
 
 | Assumption Pattern | Test to Report |
 |------------------------------------|------------------------------------|
-| Normality is reasonably met and homogeneity of variance is reasonably met | One-way ANOVA |
-| Normality is reasonably met but homogeneity of variance is not met | Welch’s ANOVA |
-| Normality is seriously violated and no appropriate transformation addresses the issue | Kruskal-Wallis test |
+| Normality is met and homogeneity of variance is met | One-way ANOVA |
+| Normality is met but homogeneity of variance is not met | Welch’s ANOVA |
+| Normality is not met | Kruskal-Wallis test |
 
 Welch’s ANOVA is the alternative when group variances are unequal but the outcome is still approximately normal. The Kruskal-Wallis test is the nonparametric alternative when the normality assumption is seriously violated.
 

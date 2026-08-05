@@ -150,7 +150,7 @@ The independent *t*-test menu in jamovi includes three options: Student’s, Wel
 |------------------------------------|------------------------------------|
 | Normality is reasonably met and homogeneity of variance is reasonably met | Student’s *t*-test |
 | Normality is reasonably met but homogeneity of variance is not met | Welch’s *t*-test |
-| Normality is seriously violated and no appropriate transformation addresses the issue | Mann-Whitney U test |
+| Normality is not met | Mann-Whitney U test |
 
 Some researchers prefer Welch’s *t*-test as the default because it performs well when variances are unequal and usually gives very similar results to Student’s *t*-test when variances are equal. For this course, we will only use Welch’s test when the homogeneity-of-variance assumption is not met.
 

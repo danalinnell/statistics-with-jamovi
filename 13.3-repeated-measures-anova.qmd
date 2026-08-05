@@ -157,9 +157,9 @@ The appropriate test depends on whether the assumptions are reasonably met. In t
 
 | Assumption Pattern | Test to Report |
 |------------------------------------|------------------------------------|
-| Normality appears reasonable and sphericity is met | Repeated measures ANOVA |
-| Normality appears reasonable but sphericity is not met | Repeated measures ANOVA with the appropriate sphericity correction |
-| Normality is seriously violated and no appropriate transformation addresses the issue | Friedman test |
+| Normality is met and sphericity is met | Repeated measures ANOVA |
+| Normality is met but sphericity is not met | Repeated measures ANOVA with the appropriate sphericity correction |
+| Normality is not met | Friedman test |
 
 The Friedman test is the nonparametric alternative to the repeated measures ANOVA. It is used when the normality assumption is seriously violated for a design with three or more related measurements.
 
@@ -277,20 +277,16 @@ The Friedman test is statistically significant, which suggests that word-recogni
 
 We can write up the results similarly as before except using the median because as a non-parametric test it is analyzing the median and not the mean:
 
-> A Friedman test indicated that word-recognition scores differed significantly across the three tasks, \(\chi^2(2) = 6.64\), *p* = .036. Durbin-Conover pairwise comparisons indicated that participants recognized more words in the speech task (*Mdn* = 7.50) than in the syntax task (*Mdn* = 6.50), *p* = .006. Scores on the conceptual task (*Mdn* = 6.50) did not differ significantly from scores on the speech or syntax tasks.
+> A Friedman test indicated that word-recognition scores differed significantly across the three tasks, (\chi\^2(2) = 6.64), *p* = .036. Durbin-Conover pairwise comparisons indicated that participants recognized more words in the speech task (*Mdn* = 7.50) than in the syntax task (*Mdn* = 6.50), *p* = .006. Scores on the conceptual task (*Mdn* = 6.50) did not differ significantly from scores on the speech or syntax tasks.
 
-::: {.callout-tip title="Check Your Understanding"}
-
+:::: {.callout-tip title="Check Your Understanding"}
 A researcher compares scores across three related conditions, but the normality assumption is seriously violated.
 
-1. Which nonparametric test should the researcher consider?
-2. Why should the researcher describe the repeated measurements using medians?
+1.  Which nonparametric test should the researcher consider?
+2.  Why should the researcher describe the repeated measurements using medians?
 
 ::: {.callout-note title="Check Your Answer" collapse="true"}
-
-1. The researcher should consider the Friedman test.
-2. The Friedman test is rank-based rather than mean-based, so medians are usually more appropriate descriptive statistics for the write-up.
-
+1.  The researcher should consider the Friedman test.
+2.  The Friedman test is rank-based rather than mean-based, so medians are usually more appropriate descriptive statistics for the write-up.
 :::
-
-:::
+::::
