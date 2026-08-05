@@ -29,7 +29,7 @@ In our example:
 | Independent variable | Video condition: aggressive model or calm model | Categorical, nominal |
 | Dependent variable | Number of aggressive behaviors | Continuous |
 
-This connects back to Chapter 2. Statistical tests depend heavily on what kinds of variables we have. A test that works for a continuous dependent variable may not work for a categorical dependent variable.
+This connects back to [Chapter 2: Statistics Foundations](02.0-statistics-foundations.qmd). Statistical tests depend heavily on what kinds of variables we have. A test that works for a continuous dependent variable may not work for a categorical dependent variable.
 
 ## Identify the Design
 
@@ -72,7 +72,7 @@ For this example, a box plot with individual data points would be useful because
 - possible outliers; and
 - whether the two groups overlap.
 
-This connects directly to the fundamentals chapters: identifying variables and distributions in Chapter 2, preparing data in Chapter 4, describing data in Chapter 5, and visualizing data in Chapter 6.
+This connects directly to the fundamentals chapters: identifying variables and distributions in [Chapter 2](02.0-statistics-foundations.qmd), preparing data in [Chapter 4](04.0-cleaning-and-preparing-data-in-jamovi.qmd), describing data in [Chapter 5](05.0-describing-data-in-jamovi.qmd), and visualizing data in [Chapter 6](06.0-visualizing-data-in-jamovi.qmd)
 
 ## State the Hypotheses
 

@@ -68,6 +68,6 @@ A researcher is planning a study with an independent-samples *t*-test. They expe
 
 ## Looking Ahead
 
-Chapter 7 introduced the logic of hypothesis testing. Chapter 8 helped us understand the tradeoffs behind that logic.
+[Chapter 7](07.0-hypothesis-testing.qmd) introduced the logic of hypothesis testing. [Chapter 8](08.0-bean.qmd) helped us understand the tradeoffs behind that logic.
 
 Next, we will focus on choosing the correct inferential test and checking assumptions. That is where the general logic of hypothesis testing starts becoming more test-specific.

@@ -245,7 +245,7 @@ A repeated measures ANOVA comparing three related time points is statistically s
 
 ### Write Up the Results in APA Style
 
-As reviewed in @sec-apa-style, an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result. When a repeated measures ANOVA is statistically significant, the write-up should also report appropriate follow-up comparisons.
+As reviewed in [Chapter 10: Writing Results in APA Style](10.0-writing-results-in-apa-style.qmd), an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result. When a repeated measures ANOVA is statistically significant, the write-up should also report appropriate follow-up comparisons.
 
 > A repeated measures ANOVA indicated that word-recognition scores differed significantly across the three tasks, *F*(2, 10) = 6.93, *p* = .013, (\eta\^2_G = .41). Tukey post hoc comparisons indicated that participants recognized significantly more words in the speech task (*M* = 7.17, *SE* = 0.62) than in the syntax task (*M* = 4.33, *SE* = 0.62), *p* = .011. Scores on the conceptual task (*M* = 6.17, *SE* = 0.62) did not differ significantly from scores on the speech or syntax tasks.
 

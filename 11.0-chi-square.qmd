@@ -21,7 +21,7 @@ The key distinctions are the number of variables, whether observations are indep
 
 Because these tests analyze categorical frequencies, they do not assume that a continuous variable follows a normal distribution. They do, however, have assumptions about how the observations were collected and, for some tests, how large the expected frequencies are. These tests are generally classified as *nonparametric statistics*.
 
-Each test in this chapter follows the same four-step hypothesis-testing process introduced in Chapter 7: look at the data, check assumptions, perform the test, and interpret the results. What changes from test to test is the type of categorical data being analyzed, the assumptions that must be checked, and the specific output reported.
+Each test in this chapter follows the same four-step hypothesis-testing process introduced in introduced in [Chapter 7: Hypothesis Testing](07.0-hypothesis-testing.qmd): look at the data, check assumptions, perform the test, and interpret the results. What changes from test to test is the type of categorical data being analyzed, the assumptions that must be checked, and the specific output reported.
 
 ## Data Setup for Chi-Square Tests {.unlisted .unnumbered}
 

@@ -172,7 +172,7 @@ Now that we have checked the assumptions, we can perform the one sample *t*-test
 
 4.  Under **Hypothesis**, enter the comparison value. In this example, enter `67.5`. Then select the hypothesis that matches the research question. In this example, select `> Test value` because the hypothesis predicts that psychology students have a higher mean grade than the comparison value.
 
-5.  Under **Additional Statistics**, select `Mean difference`, `Effect size`, and `Descriptives`. You may also select `Descriptives plots`, although Chapter 6 provides better options for creating graphs.
+5.  Under **Additional Statistics**, select `Mean difference`, `Effect size`, and `Descriptives`. You may also select `Descriptives plots`, although [Chapter 6](06.0-visualizing-data-in-jamovi.qmd) provides better options for creating graphs
 
 6.  Under **Assumption Checks**, select `Normality test` and `Q-Q plot`.
 

@@ -16,7 +16,7 @@ A key difference is that correlation treats the two variables symmetrically. We 
 | **Hierarchical regression**                | Predictors entered in blocks or steps                                          | Does adding a new set of predictors improve the model?                         |
 | **General linear model**                   | A broad framework that includes many analyses we have learned                  | How are correlation, *t*-tests, ANOVA, and regression connected?               |
 
-This chapter begins with correlation in @sec-correlation, where we focus on describing the strength and direction of relationships between variables. We then move to regression in @sec-regression, where we use predictors to estimate or explain a continuous outcome. Finally, @sec-general-linear-model shows how many of the statistical tests we have learned are connected through the general linear model.
+This chapter begins with correlation in [Section 14.1: Correlation](14.1-correlation.qmd), where we focus on describing the strength and direction of relationships between variables. We then move to regression in [Section 14.2: Regression](14.2-regression.qmd), where we use predictors to estimate or explain a continuous outcome. Finally, [Section 14.3: General Linear Model](14.3-general-linear-model.qmd) shows how many of the statistical tests we have learned are connected through the general linear model.
 
 As always, we will continue using the same four-step hypothesis-testing process: look at the data, check assumptions, perform the test, and interpret the results. The main difference is that we are now asking about relationships among variables rather than comparing groups or frequencies.
 

@@ -88,7 +88,7 @@ Power depends on several things, including:
 
 For now, you only need the basic idea: a study with low power may fail to detect a real effect. This is one reason non-significant results require careful interpretation.
 
-Chapter 8 will focus on BEAN, which brings together beta/power, effect size, alpha, and sample size.
+[Chapter 8: BEAN](08.0-bean.qmd) will focus on BEAN, which brings together beta/power, effect size, alpha, and sample size.
 
 ## What the Test Gives Us
 

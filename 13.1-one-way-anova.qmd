@@ -16,7 +16,7 @@ The general hypotheses for a one-way ANOVA are:
 - $H_0$: There is no difference between the groups on the outcome variable.
 - $H_1$: There is a difference between at least two groups on the outcome variable.
 
-If the one-way ANOVA is statistically significant, we usually need follow-up analyses, such as planned contrasts or post hoc tests, to determine which groups differ. These follow-up analyses are covered in @sec-finding-group-differences.
+If the one-way ANOVA is statistically significant, we usually need follow-up analyses, such as planned contrasts or post hoc tests, to determine which groups differ. These follow-up analyses are covered in [Section 13.2: Finding Group Differences](13.2-finding-group-differences.qmd).
 
 ## Why Not Multiple t-Tests?
 
@@ -199,7 +199,7 @@ The researcher should report Welch’s ANOVA because normality appears reasonabl
 
 The overall ANOVA is not directional in the same way a *t*-test can be directional. The *F* statistic tests whether there is a difference somewhere among the groups, but it does not test whether one specific group is higher or lower than another specific group.
 
-Directional predictions can be tested with planned contrasts or interpreted through follow-up comparisons, which are covered in @sec-finding-group-differences.
+Directional predictions can be tested with planned contrasts or interpreted through follow-up comparisons, which are covered in [Section 13.2: Finding Group Differences](13.2-finding-group-differences.qmd).
 
 ### Perform the Test
 
@@ -217,7 +217,7 @@ For the main one-way ANOVA in this course, use **ANOVA** in jamovi rather than *
 
 5.  Under **Assumption Checks**, select `Homogeneity test`, `Normality test`, and `Q-Q plot`.
 
-6.  Ignore the **Model**, **Contrasts**, and **Post Hoc Tests** menus for now. Follow-up analyses are covered in @sec-finding-group-differences.
+6.  Ignore the **Model**, **Contrasts**, and **Post Hoc Tests** menus for now. Follow-up analyses are covered in [Section 13.2: Finding Group Differences](13.2-finding-group-differences.qmd).
 
 7.  Under **Estimated Marginal Means**, move `drug` to the **Marginal Means** box. Select `Marginal means tables`, `Marginal means plots`, and `Observed scores`.
 
@@ -261,7 +261,7 @@ Values closer to 0 indicate a smaller effect, and values closer to 1 indicate a 
 This write-up reports only the overall ANOVA. If the ANOVA is statistically significant, a complete results section should also report appropriate follow-up analyses, such as post hoc tests or planned contrasts.
 :::
 
-As reviewed in @sec-apa-style, an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result.
+As reviewed in [Chapter 10: Writing Results in APA Style](10.0-writing-results-in-apa-style.qmd), an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result.
 
 > A one-way ANOVA indicated that mood gain differed significantly across the three drug conditions, *F*(2, 15) = 18.61, *p* \< .001, (\omega\^2 = .66).
 
@@ -295,7 +295,7 @@ The Kruskal-Wallis test is the nonparametric alternative to the one-way ANOVA. I
 
 The Kruskal-Wallis test is based on ranks rather than the original outcome values, so it does not test group means in the same way as a one-way ANOVA. Because it is rank-based, we usually describe each group using medians when reporting the result.
 
-To conduct the Kruskal-Wallis test in jamovi, go to **ANOVA** and choose **One-Way ANOVA, Kruskal-Wallis**. Move `mood.gain` to the **Dependent Variables** box and `drug` to the **Grouping Variable** box. Select `Effect size`. If follow-up comparisons are needed, use `DSCF pairwise comparisons`, which are discussed in @sec-finding-group-differences.
+To conduct the Kruskal-Wallis test in jamovi, go to **ANOVA** and choose **One-Way ANOVA, Kruskal-Wallis**. Move `mood.gain` to the **Dependent Variables** box and `drug` to the **Grouping Variable** box. Select `Effect size`. If follow-up comparisons are needed, use `DSCF pairwise comparisons`, which are discussed in [Section 13.2: Finding Group Differences](13.2-finding-group-differences.qmd).
 
 ::: callout-warning
 In practice, you should report the test that matches your assumptions rather than reporting both the one-way ANOVA and Kruskal-Wallis test together. They are shown together here only so you can compare how the output differs.

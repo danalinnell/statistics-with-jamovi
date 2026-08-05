@@ -47,7 +47,7 @@ If you enter data manually:
 - enter values consistently; and
 - check the measure type and data type for each variable.
 
-This is another place where Chapter 2 matters. A variable coded with numbers is not automatically continuous, and a dataset that looks like a spreadsheet is not automatically ready for analysis.
+This is another place where [Chapter 2: Statistics Foundations](02.0-statistics-foundations.qmd) matters. A variable coded with numbers is not automatically continuous, and a dataset that looks like a spreadsheet is not automatically ready for analysis.
 
 Alexander Swan has a video on [entering data manually in jamovi](https://youtu.be/g3a2hGwNZ7o).
 

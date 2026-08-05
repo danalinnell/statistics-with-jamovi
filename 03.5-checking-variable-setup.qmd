@@ -43,7 +43,7 @@ In jamovi, variables are set as one of four measure types:
 
 4. ![](images/03-jamovi/variable-id.png) **ID**: an identifier variable you usually would not analyze, such as participant ID
 
-This connects directly to Chapter 2. A variable may be coded with numbers, such as 0 = no and 1 = yes, but that does not make it continuous. You still need to set the measure type based on what the variable represents.
+This connects directly to [Chapter 2: Statistics Foundations](02.0-statistics-foundations.qmd). A variable may be coded with numbers, such as 0 = no and 1 = yes, but that does not make it continuous. You still need to set the measure type based on what the variable represents.
 
 ## Data Types
 

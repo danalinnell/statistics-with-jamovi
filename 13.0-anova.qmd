@@ -1,6 +1,6 @@
 # 13. ANOVA {.unnumbered}
 
-ANOVA stands for **AN**alysis **O**f **VA**riance. ANOVA is used when we want to compare means across groups, conditions, or time points. Like the *t*-tests in @sec-t-tests, ANOVA is used with a continuous outcome variable. The major difference is that ANOVA can handle research questions with three or more groups, repeated measurements, or more than one independent variable.
+ANOVA stands for **AN**alysis **O**f **VA**riance. ANOVA is used when we want to compare means across groups, conditions, or time points. Like the *t*-tests in [Chapter 12: t-Tests](12.0-t-tests.qmd), ANOVA is used with a continuous outcome variable. The major difference is that ANOVA can handle research questions with three or more groups, repeated measurements, or more than one independent variable.
 
 Although ANOVA is used to compare means, it does so by analyzing variability. ANOVA compares how much scores vary **between** groups or conditions to how much scores vary **within** groups or conditions. If the between-group variability is large relative to the within-group variability, the ANOVA is more likely to be statistically significant.
 

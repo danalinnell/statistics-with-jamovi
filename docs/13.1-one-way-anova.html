@@ -823,7 +823,7 @@ window.Quarto = {
 <li><span class="math inline">\(H_0\)</span>: There is no difference between the groups on the outcome variable.</li>
 <li><span class="math inline">\(H_1\)</span>: There is a difference between at least two groups on the outcome variable.</li>
 </ul>
-<p>If the one-way ANOVA is statistically significant, we usually need follow-up analyses, such as planned contrasts or post hoc tests, to determine which groups differ. These follow-up analyses are covered in <span class="quarto-unresolved-ref">?sec-finding-group-differences</span>.</p>
+<p>If the one-way ANOVA is statistically significant, we usually need follow-up analyses, such as planned contrasts or post hoc tests, to determine which groups differ. These follow-up analyses are covered in <a href="./13.2-finding-group-differences.html">Section 13.2: Finding Group Differences</a>.</p>
 <section id="why-not-multiple-t-tests" class="level2">
 <h2 class="anchored" data-anchor-id="why-not-multiple-t-tests">Why Not Multiple t-Tests?</h2>
 <p>The reason we do not perform several separate <em>t</em>-tests is that each additional test increases the chance of making at least one Type I error. This overall error rate is called the <strong>familywise error rate</strong> or <strong>experimentwise error rate</strong>.</p>
@@ -1125,7 +1125,7 @@ Note
 <section id="a-note-about-directional-hypotheses-in-anova" class="level3">
 <h3 class="anchored" data-anchor-id="a-note-about-directional-hypotheses-in-anova">A Note About Directional Hypotheses in ANOVA</h3>
 <p>The overall ANOVA is not directional in the same way a <em>t</em>-test can be directional. The <em>F</em> statistic tests whether there is a difference somewhere among the groups, but it does not test whether one specific group is higher or lower than another specific group.</p>
-<p>Directional predictions can be tested with planned contrasts or interpreted through follow-up comparisons, which are covered in <span class="quarto-unresolved-ref">?sec-finding-group-differences</span>.</p>
+<p>Directional predictions can be tested with planned contrasts or interpreted through follow-up comparisons, which are covered in <a href="./13.2-finding-group-differences.html">Section 13.2: Finding Group Differences</a>.</p>
 </section>
 <section id="perform-the-test" class="level3">
 <h3 class="anchored" data-anchor-id="perform-the-test">Perform the Test</h3>
@@ -1148,7 +1148,7 @@ Warning
 <li><p>Move the categorical grouping variable <code>drug</code> to the <strong>Fixed Factors</strong> box.</p></li>
 <li><p>Under <strong>Effect Size</strong>, select (^2) (omega-squared).</p></li>
 <li><p>Under <strong>Assumption Checks</strong>, select <code>Homogeneity test</code>, <code>Normality test</code>, and <code>Q-Q plot</code>.</p></li>
-<li><p>Ignore the <strong>Model</strong>, <strong>Contrasts</strong>, and <strong>Post Hoc Tests</strong> menus for now. Follow-up analyses are covered in <span class="quarto-unresolved-ref">?sec-finding-group-differences</span>.</p></li>
+<li><p>Ignore the <strong>Model</strong>, <strong>Contrasts</strong>, and <strong>Post Hoc Tests</strong> menus for now. Follow-up analyses are covered in <a href="./13.2-finding-group-differences.html">Section 13.2: Finding Group Differences</a>.</p></li>
 <li><p>Under <strong>Estimated Marginal Means</strong>, move <code>drug</code> to the <strong>Marginal Means</strong> box. Select <code>Marginal means tables</code>, <code>Marginal means plots</code>, and <code>Observed scores</code>.</p></li>
 </ol>
 <p>When you are done, your setup should look like this:</p>
@@ -1202,7 +1202,7 @@ Warning
 <p>This write-up reports only the overall ANOVA. If the ANOVA is statistically significant, a complete results section should also report appropriate follow-up analyses, such as post hoc tests or planned contrasts.</p>
 </div>
 </div>
-<p>As reviewed in <span class="quarto-unresolved-ref">?sec-apa-style</span>, an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result.</p>
+<p>As reviewed in <a href="./10.0-writing-results-in-apa-style.html">Chapter 10: Writing Results in APA Style</a>, an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result.</p>
 <blockquote class="blockquote">
 <p>A one-way ANOVA indicated that mood gain differed significantly across the three drug conditions, <em>F</em>(2, 15) = 18.61, <em>p</em> &lt; .001, (^2 = .66).</p>
 </blockquote>
@@ -1246,7 +1246,7 @@ Warning
 <h2 class="anchored" data-anchor-id="kruskal-wallis-test">Kruskal-Wallis Test</h2>
 <p>The Kruskal-Wallis test is the nonparametric alternative to the one-way ANOVA. It is used when the normality assumption is seriously violated and no appropriate transformation addresses the issue.</p>
 <p>The Kruskal-Wallis test is based on ranks rather than the original outcome values, so it does not test group means in the same way as a one-way ANOVA. Because it is rank-based, we usually describe each group using medians when reporting the result.</p>
-<p>To conduct the Kruskal-Wallis test in jamovi, go to <strong>ANOVA</strong> and choose <strong>One-Way ANOVA, Kruskal-Wallis</strong>. Move <code>mood.gain</code> to the <strong>Dependent Variables</strong> box and <code>drug</code> to the <strong>Grouping Variable</strong> box. Select <code>Effect size</code>. If follow-up comparisons are needed, use <code>DSCF pairwise comparisons</code>, which are discussed in <span class="quarto-unresolved-ref">?sec-finding-group-differences</span>.</p>
+<p>To conduct the Kruskal-Wallis test in jamovi, go to <strong>ANOVA</strong> and choose <strong>One-Way ANOVA, Kruskal-Wallis</strong>. Move <code>mood.gain</code> to the <strong>Dependent Variables</strong> box and <code>drug</code> to the <strong>Grouping Variable</strong> box. Select <code>Effect size</code>. If follow-up comparisons are needed, use <code>DSCF pairwise comparisons</code>, which are discussed in <a href="./13.2-finding-group-differences.html">Section 13.2: Finding Group Differences</a>.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

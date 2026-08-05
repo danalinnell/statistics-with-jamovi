@@ -67,7 +67,7 @@ A statistically significant result does not guarantee that the null hypothesis i
 
 ## A Brief APA-Style Preview
 
-Later, Chapter 10 will focus on writing results in APA style. For now, it is useful to see what a complete result might look like.
+Later, [Chapter 10: Writing Results in APA Style](10.0-writing-results-in-apa-style.qmd) will focus on writing results in APA style. For now, it is useful to see what a complete result might look like.
 
 For our Bobo doll example, a write-up could look something like this:
 

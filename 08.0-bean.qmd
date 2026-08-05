@@ -9,7 +9,7 @@ BEAN is not actually about beans. It is an acronym that helps us understand the 
 - **A**lpha
 - **N**, or sample size
 
-In Chapter 7, you learned the basic logic of hypothesis testing: state your hypotheses, look at your data, check assumptions, perform the test, and interpret the result. Chapter 8 slows down and asks a deeper question: **What affects whether we detect an effect and how should we think about statistical significance?**
+In [Chapter 7: Hypothesis Testing](07.0-hypothesis-testing.qmd), you learned the basic logic of hypothesis testing: state your hypotheses, look at your data, check assumptions, perform the test, and interpret the result. Chapter 8 slows down and asks a deeper question: **What affects whether we detect an effect and how should we think about statistical significance?**
 
 That is where BEAN comes in.
 

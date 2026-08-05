@@ -18,7 +18,7 @@ There are several regression approaches you may encounter:
 
 3. **Hierarchical regression** uses two or more blocks of predictors. This allows us to test whether adding a new block of predictors improves the model beyond the predictors already included.
 
-Regression is also connected to many of the statistical tests we have already learned. A regression with one dichotomous predictor produces results that are closely related to an independent *t*-test. A regression with one categorical predictor with three or more levels is closely related to ANOVA. A regression with one continuous predictor is closely related to correlation. We will return to this larger connection in @sec-general-linear-model.
+Regression is also connected to many of the statistical tests we have already learned. A regression with one dichotomous predictor produces results that are closely related to an independent *t*-test. A regression with one categorical predictor with three or more levels is closely related to ANOVA. A regression with one continuous predictor is closely related to correlation. We will return to this larger connection in [Section 14.3: General Linear Model](14.3-general-linear-model.qmd).
 
 ## Understanding Regression
 
@@ -308,7 +308,7 @@ For each one-unit increase in hours studied, predicted exam score increases by 4
 
 ### Write Up the Results in APA Style
 
-As reviewed in @sec-apa-style, an APA-style results section should describe the research question, report the model fit, report the relevant coefficients, and interpret the result.
+As reviewed in [Chapter 10: Writing Results in APA Style](10.0-writing-results-in-apa-style.qmd), an APA-style results section should describe the research question, report the model fit, report the relevant coefficients, and interpret the result.
 
 > A multiple regression was conducted to examine whether Dan's sleep quality and the baby's sleep quality predicted Dan's grumpiness across 100 days. The overall model was statistically significant, *F*(2, 97) = 215.24, *p* < .001, adjusted \(R^2 = .81\). Dan's sleep quality significantly predicted grumpiness, \(b = -8.95\), *SE* = .55, \(\beta = -.90\), *t*(97) = -16.17, *p* < .001, such that days with better Dan sleep were associated with lower grumpiness. The baby's sleep quality did not significantly predict Dan's grumpiness after accounting for Dan's sleep quality, \(b = .01\), *SE* = .27, \(\beta = .00\), *t*(97) = .04, *p* = .969.
 

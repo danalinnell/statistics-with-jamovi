@@ -152,7 +152,7 @@ We can write up our results in APA something like this:
 
 > Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51 selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits and indicated that the four suits were not selected with equal probability,$\chi^2$ (3) = 8.44; *p* = .038. Participants selected hearts more frequently than expected and clubs less frequently than expected.
 
-This example includes the descriptive frequencies, identifies the analysis, reports the test statistic and *p*-value, and interprets the result. Depending on the number of categories, the descriptive frequencies could instead be presented in a table. See Chapter 10 for the required components of an APA-style results section.
+This example includes the descriptive frequencies, identifies the analysis, reports the test statistic and *p*-value, and interprets the result. Depending on the number of categories, the descriptive frequencies could instead be presented in a table. SSee [Chapter 10: Writing Results in APA Style](10.0-writing-results-in-apa-style.qmd) for the required components
 
 ### Visualize the Results
 

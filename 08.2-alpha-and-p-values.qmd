@@ -1,6 +1,6 @@
 # 8.2 Alpha and p-values {.unnumbered}
 
-Chapter 7 introduced {{< glossary "p-value" popup="hover" >}}s as part of hypothesis testing. In this section, we slow down and talk more carefully about what *p*-values mean, what {{< glossary "alpha level" popup="hover" >}} means, and why both are so easy to misuse.
+[Chapter 7](07.0-hypothesis-testing.qmd) introduced {{< glossary "p-value" popup="hover" >}}s as part of hypothesis testing. In this section, we slow down and talk more carefully about what *p*-values mean, what {{< glossary "alpha level" popup="hover" >}} means, and why both are so easy to misuse.
 
 ## What Is a p-value?
 

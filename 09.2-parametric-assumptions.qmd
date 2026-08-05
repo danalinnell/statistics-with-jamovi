@@ -113,7 +113,7 @@ A general way to check normality is through **Exploration → Descriptives**:
 4. Under **Plots**, select histogram, density, box plot, and/or Q-Q plot.
 5. Under **Normality**, select Shapiro-Wilk if available.
 
-You learned how to describe continuous variables in [Describing Continuous Variables](05.3-describing-continuous-variables.qmd) and how to visualize continuous variables in [Visualizing Continuous Variables](06.3-visualizing-continuous-variables.qmd). This is one reason those earlier chapters matter: descriptives and plots help you decide whether assumptions are reasonable.
+You learned how to describe continuous variables in [Describing Continuous Variables](05.3-describing-continuous-variables.qmd) and how to visualize continuous variables in [Visualizing One or More Continuous Variables](06.4-visualizing-one-or-more-continuous-variables.qmd). This is one reason those earlier chapters matter: descriptives and plots help you decide whether assumptions are reasonable.
 
 #### Method 1: Visualize the Distribution
 
@@ -257,7 +257,7 @@ In jamovi:
 
 Large differences in spread across groups may suggest a violation.
 
-You practiced this kind of graph in [Visualizing Continuous Variables Across Groups](06.5-visualizing-continuous-variables-across-groups.qmd).
+You practiced this kind of graph in [Visualizing a Continuous Variable Across a Categorical Variable](06.5-visualizing-a-continuous-variable-across-a-categorical-variable.qmd).
 
 For example, here is an example of data that violates the assumption of homogeneity of variance. The dependent variable is mile duration in minutes, split by gender. The spread of scores for females, coded as 1, is much wider than the spread of scores for males, coded as 0. I am looking at the data points and violin plot to see the spread; the 1 looks wider whereas the 0 looks skinnier.
 

@@ -102,6 +102,6 @@ If you can answer those questions, you are ready for the next layer.
 
 Before we move into specific statistical tests, the next few chapters build the remaining pieces you need.
 
-Chapter 8 introduces BEAN: beta/power, effect size, alpha, and sample size. Chapter 9 focuses on choosing the correct inferential test and checking assumptions. Chapter 10 focuses on writing statistical results clearly in APA style.
+[Chapter 8](08.0-bean.qmd) introduces BEAN: beta/power, effect size, alpha, and sample size. [Chapter 9](09.0-inferential-statistics.qmd) focuses on choosing the correct inferential test and checking assumptions. [Chapter 10](10.0-writing-results-in-apa-style.qmd) focuses on writing statistical results clearly in APA style.
 
 After that, Chapters 11 through 14 apply the same four-step process to specific inferential statistics.

@@ -5,7 +5,7 @@ library(tidyverse)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
 
-A *t*-test is used when we want to evaluate a research question about a mean or a difference between means. Unlike the chi-square tests in @sec-chi-square, which analyze frequencies or counts, *t*-tests analyze continuous variables.
+A *t*-test is used when we want to evaluate a research question about a mean or a difference between means. Unlike the chi-square tests in [Chapter 11: Chi-Square](11.0-chi-square.qmd), which analyze frequencies or counts, *t*-tests analyze continuous variables.
 
 There are three main types of *t*-tests covered in this chapter. The appropriate test depends on what the sample mean is being compared to: a known or hypothesized value, another independent group, or a paired measurement from the same participants or matched cases.
 

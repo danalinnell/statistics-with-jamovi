@@ -240,7 +240,7 @@ The degrees of freedom for a Pearson correlation are calculated as \(n - 2\). Wi
 
 ### Write Up the Results in APA Style
 
-As reviewed in @sec-apa-style, an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result.
+As reviewed in [Chapter 10: Writing Results in APA Style](10.0-writing-results-in-apa-style.qmd), an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result.
 
 > Pearson correlations indicated that the parent’s grumpiness was negatively related to the parent’s sleep quality, *r*(98) = -.90, *p* < .001, and the baby’s sleep quality, *r*(98) = -.57, *p* < .001. The parent’s sleep quality was positively related to the baby’s sleep quality, *r*(98) = .63, *p* < .001.
 

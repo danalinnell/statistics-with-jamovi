@@ -38,7 +38,7 @@ Normality refers to the shape of the distribution. For many parametric tests, we
 
 This does not mean real data must be perfectly bell-shaped. Real data are messy. The question is whether the data are close enough for the test to work reasonably well.
 
-Later, Chapter 9 will show you how to examine normality using visualizations, skew and kurtosis, Shapiro-Wilk tests, and Q-Q plots.
+Later, [Chapter 9: Inferential Statistics](09.0-inferential-statistics.qmd) will show you how to examine normality using visualizations, skew and kurtosis, Shapiro-Wilk tests, and Q-Q plots.
 
 ## Homogeneity of Variance
 
@@ -60,7 +60,7 @@ Depending on the test and the assumption, you may need to:
 - report the violation and interpret results cautiously; or
 - choose a different analysis.
 
-Chapter 9 will cover these decisions more carefully. For now, tuck this idea into your brain: the test you run depends not only on the research question, but also on whether your data meet the assumptions for that test.
+[Chapter 9](09.0-inferential-statistics.qmd) will cover these decisions more carefully. For now, tuck this idea into your brain: the test you run depends not only on the research question, but also on whether your data meet the assumptions for that test.
 
 ::: {.callout-tip title="Check Your Understanding"}
 1. What is a statistical assumption?

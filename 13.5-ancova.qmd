@@ -202,7 +202,7 @@ It means that the relationship between commute type and happiness differs depend
 
 ### Write Up the Results in APA Style
 
-As reviewed in @sec-apa-style, an APA-style results section should describe the research question, summarize the relevant descriptive statistics or estimated marginal means, report the inferential test and effect size, and interpret the result. For ANCOVA, the write-up should also identify the covariate.
+As reviewed in [Chapter 10: Writing Results in APA Style](10.0-writing-results-in-apa-style.qmd), an APA-style results section should describe the research question, summarize the relevant descriptive statistics or estimated marginal means, report the inferential test and effect size, and interpret the result. For ANCOVA, the write-up should also identify the covariate.
 
 > A 2 × 2 ANCOVA was conducted to examine whether happiness differed by stress level and commute type after statistically adjusting for age. Stress and commute type were included as categorical independent variables, and age was included as a continuous covariate. The normality, homogeneity-of-variance, and homogeneity-of-regression-slopes assumptions appeared reasonable. However, age differed by stress level, so the adjusted stress effect should be interpreted cautiously.
 >

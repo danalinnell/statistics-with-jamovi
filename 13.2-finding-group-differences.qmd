@@ -31,7 +31,7 @@ Before interpreting follow-up tests, we should return to the descriptive statist
 
 ## Post Hoc Comparisons
 
-Post hoc comparisons are used after a significant omnibus ANOVA when we want to compare the groups pair by pair. We will continue using the clinical trial example from @sec-one-way-anova, where participants were assigned to one of three drug conditions: placebo, anxifree, or joyzepam.
+Post hoc comparisons are used after a significant omnibus ANOVA when we want to compare the groups pair by pair. We will continue using the clinical trial example from [Section 13.1: One-Way ANOVA](13.1-one-way-anova.qmd), where participants were assigned to one of three drug conditions: placebo, anxifree, or joyzepam.
 
 Because there are three groups, there are three pairwise comparisons:
 
@@ -85,7 +85,7 @@ In practice, you should report one set of follow-up comparisons that matches the
 
 ### Write Up Post Hoc Results in APA Style
 
-As reviewed in @sec-apa-style, an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result. When an ANOVA is statistically significant, the write-up should also report the relevant follow-up comparisons.
+As reviewed in [Chapter 10: Writing Results in APA Style](10.0-writing-results-in-apa-style.qmd), an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result. When an ANOVA is statistically significant, the write-up should also report the relevant follow-up comparisons.
 
 > A one-way ANOVA indicated that mood gain differed significantly across the three drug conditions, *F*(2, 15) = 18.61, *p* \< .001, (\omega\^2 = .66). Tukey post hoc comparisons indicated that participants in the joyzepam condition (*M* = 1.48, *SD* = 0.21) had significantly greater mood gain than participants in the anxifree condition (*M* = 0.72, *SD* = 0.39), *p* = .002, and the placebo condition (*M* = 0.45, *SD* = 0.28), *p* \< .001. Mood gain did not differ significantly between the anxifree and placebo conditions, *p* = .312.
 
@@ -118,7 +118,7 @@ Planned contrasts are used when we have specific group comparisons in mind befor
 In jamovi, planned contrasts are available under the **Contrasts** menu in the ANOVA analysis. The type of contrast determines which group comparisons are tested.
 
 | Contrast Type | What It Is Usually Used For |
-|--------------|----------------------------------------------------------|
+|-----------------|-------------------------------------------------------|
 | **Simple** | Compares each group to a reference group. This is useful when one group is a control or comparison group. |
 | **Deviation** | Compares each group to the overall mean across groups. |
 | **Difference** | Compares each group to the average of the groups that came before it, based on the order of the factor levels. |

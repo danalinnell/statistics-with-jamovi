@@ -2,7 +2,7 @@
 
 An {{< glossary "effect size" popup="hover" >}} is a quantitative description of the size or strength of an effect, difference, or relationship.
 
-In Chapter 7, we used the *p*-value to decide whether a result was statistically significant. That is useful, but it is not enough. A statistically significant result can be tiny and practically unimportant. A non-significant result can still be interesting, especially if the study had low power or a small sample.
+In [Chapter 7](07.0-hypothesis-testing.qmd), we used the *p*-value to decide whether a result was statistically significant. That is useful, but it is not enough. A statistically significant result can be tiny and practically unimportant. A non-significant result can still be interesting, especially if the study had low power or a small sample.
 
 Effect sizes help us ask a different question:
 

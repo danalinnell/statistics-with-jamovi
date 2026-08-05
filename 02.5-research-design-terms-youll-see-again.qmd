@@ -70,7 +70,7 @@ For now, you only need the basic idea:
 - The alternative hypothesis usually states that there is an effect, difference, or relationship.
 - The null hypothesis usually states that there is no effect, difference, or relationship.
 
-We will cover this more carefully in Chapter 7.
+We will cover this more carefully in [Chapter 7: Hypothesis Testing](07.0-hypothesis-testing.qmd).
 
 ## Reliability and Validity
 

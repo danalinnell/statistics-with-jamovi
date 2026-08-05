@@ -147,7 +147,7 @@ In fact, we've read in the BEAN chapters how to calculate for power! We could us
 The independent *t*-test menu in jamovi includes three options: Student’s, Welch’s, and Mann-Whitney U. In this course, use the assumption checks to decide which option to report.
 
 | Assumption Pattern | Test to Report |
-|------------------------------------|------------------------------------|
+|----|----|
 | Normality is reasonably met and homogeneity of variance is reasonably met | Student’s *t*-test |
 | Normality is reasonably met but homogeneity of variance is not met | Welch’s *t*-test |
 | Normality is not met | Mann-Whitney U test |
@@ -190,7 +190,7 @@ Now that we have checked the assumptions, we can perform the independent *t*-tes
 
 5.  Under **Hypothesis**, select the option that matches the research question. In this example, select `Group 1 ≠ Group 2` because the research question is two-tailed.
 
-6.  Under **Additional Statistics**, select `Mean difference`, `Effect size`, and `Descriptives`. You may also select `Descriptives plots`, although Chapter 6 provides better options for creating graphs.
+6.  Under **Additional Statistics**, select `Mean difference`, `Effect size`, and `Descriptives`. You may also select `Descriptives plots`, although [Chapter 6](06.0-visualizing-data-in-jamovi.qmd) provides better options for creating graphs
 
 7.  Under **Assumption Checks**, select `Homogeneity test`, `Normality test`, and `Q-Q plot`.
 
@@ -222,7 +222,7 @@ You will not get negative values for *F* statistics or chi-square statistics, bu
 
 ### Write Up the Results in APA Style
 
-As reviewed in @sec-apa-style, an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result.
+As reviewed in [Chapter 10: Writing Results in APA Style](10.0-writing-results-in-apa-style.qmd), an APA-style results section should describe the research question, summarize the relevant descriptive statistics, report the inferential test and effect size, and interpret the result.
 
 We can write up our results in APA something like this:
 
